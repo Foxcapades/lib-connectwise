@@ -4,20 +4,22 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
+import java.util.List;
+
 @JacksonXmlRootElement(localName = "FindCompaniesResponse")
 public class FindCompanyResponse
 {
-  protected final CompanyFindResult[] results;
+  private final List< FoundCompany > results;
 
   @JsonCreator
   public FindCompanyResponse (
-    @JacksonXmlProperty(localName = "FindCompaniesResult") final CompanyFindResult[] results
+    @JacksonXmlProperty(localName = "FindCompaniesResult") final List < FoundCompany > results
   )
   {
     this.results = results;
   }
 
-  public CompanyFindResult[] getResults ()
+  public List < FoundCompany > getResults ()
   {
     return results;
   }

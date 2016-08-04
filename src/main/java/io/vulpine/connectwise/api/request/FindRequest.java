@@ -26,9 +26,9 @@ abstract public class FindRequest < T > extends CwRequest < T >
   @JacksonXmlProperty( localName = "returnFields" )
   protected List < String > returnFields;
 
-  public FindRequest ( final Credentials credentials, final XmlMapper x, final ConnectwiseSubApiInterface i )
+  public FindRequest ( final Credentials credentials, final XmlMapper xmlMapper, final ConnectwiseSubApiInterface api )
   {
-    super(credentials, x, i);
+    super(credentials, xmlMapper, api);
   }
 
   public String getConditions ()
