@@ -37,7 +37,7 @@ public class ConnectwiseApi
       .setIntegratorLoginId(c.getApiUsername())
       .setIntegratorPassword(c.getApiPassword());
     agreementApi = new AgreementApi(this, x, r);
-    companyApi = new CompanyApi(this);
+    companyApi = new CompanyApi(this, r, x);
     productApi = new ProductApi(this, r, x);
   }
 
