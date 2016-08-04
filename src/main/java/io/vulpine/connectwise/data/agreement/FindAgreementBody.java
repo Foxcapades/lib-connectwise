@@ -1,0 +1,24 @@
+package io.vulpine.connectwise.data.agreement;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
+@JacksonXmlRootElement (namespace = "soap", localName = "Body")
+public class FindAgreementBody
+{
+  protected final FindAgreementsResponse response;
+
+  @JsonCreator
+  public FindAgreementBody (
+    @JacksonXmlProperty( localName = "FindAgreementsResponse") final FindAgreementsResponse response
+  )
+  {
+    this.response = response;
+  }
+
+  public FindAgreementsResponse getResponse ()
+  {
+    return response;
+  }
+}
