@@ -36,7 +36,7 @@ abstract public class FindRequest < T > extends CwRequest < T >
     return conditions;
   }
 
-  public FindRequest setConditions ( final String conditions )
+  public FindRequest < T > setConditions ( final String conditions )
   {
     this.conditions = conditions;
     return this;
