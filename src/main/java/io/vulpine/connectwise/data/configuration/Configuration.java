@@ -65,12 +65,6 @@ public class Configuration extends CwObject
   @JacksonXmlProperty( localName = "WarrantyExpiration" )
   protected Date warrantyExpiration;
 
-  @JacksonXmlProperty( localName = "LastUpdated" )
-  protected Date lastUpdated;
-
-  @JacksonXmlProperty( localName = "UpdatedBy" )
-  protected String updatedBy;
-
   @JacksonXmlProperty( localName = "AddressId" )
   protected int addressId;
 
@@ -361,16 +355,6 @@ public class Configuration extends CwObject
   public void setWarrantyExpiration ( Date warrantyExpiration )
   {
     this.warrantyExpiration = warrantyExpiration;
-  }
-
-  public Date getLastUpdated ()
-  {
-    return lastUpdated;
-  }
-
-  public void setLastUpdated ( Date lastUpdated )
-  {
-    this.lastUpdated = lastUpdated;
   }
 
   public int getAddressId ()

@@ -24,7 +24,7 @@ public class DeleteProductRequest extends DeleteRequest
   @Override
   public Void submit () throws IOException
   {
-    i.send(this);
+    api.send(this);
     return null;
   }
 }

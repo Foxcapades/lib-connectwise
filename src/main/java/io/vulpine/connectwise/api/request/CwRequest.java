@@ -14,24 +14,28 @@ abstract public class CwRequest < R >
   protected final String xmlns = "http://connectwise.com";
 
   @JacksonXmlProperty( localName = "credentials" )
-  protected final Credentials c;
+  protected final Credentials credentials;
 
   @JsonIgnore
-  protected final XmlMapper x;
+  protected final XmlMapper xmlMapper;
 
   @JsonIgnore
-  protected final ConnectwiseSubApiInterface i;
+  protected final ConnectwiseSubApiInterface api;
 
-  public CwRequest ( final Credentials c, final XmlMapper x, final ConnectwiseSubApiInterface i )
+  public CwRequest (
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final ConnectwiseSubApiInterface api
+  )
   {
-    this.c = c;
-    this.x = x;
-    this.i = i;
+    this.credentials = credentials;
+    this.xmlMapper = xmlMapper;
+    this.api = api;
   }
 
   public Credentials getCredentials ()
   {
-    return c;
+    return credentials;
   }
 
   abstract public R submit () throws IOException;
