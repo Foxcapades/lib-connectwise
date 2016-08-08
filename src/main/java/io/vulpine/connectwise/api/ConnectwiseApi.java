@@ -1,14 +1,11 @@
 package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.SoapConfig;
 import io.vulpine.http.Request;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class ConnectwiseApi
@@ -64,20 +61,10 @@ public class ConnectwiseApi
         .post()
         .setHeader("Content-Type", "text/xml; charset=utf-8")
         .setHeader("Content-Length", String.valueOf(xml.getBytes("UTF-8").length))
+        .addErrorHandler((s, r) -> System.out.println(s))
         .requestBody(xml)
         .submit()
         .getBody()
     ).replaceAll("");
-  }
-
-  String format ( final String xml )
-  {
-    return String.format(xml, c.getCompany(), c.getApiUsername(), c.getApiPassword());
-  }
-
-  String getXml ( final String path )
-  {
-    final InputStream is = getClass().getResourceAsStream("/xml/" + path);
-    return new Scanner(is).useDelimiter("\\Z").next();
   }
 }

@@ -30,8 +30,8 @@ public class ConnectwiseSubApi implements ConnectwiseSubApiInterface
   @Override
   public String send ( CwRequest r ) throws IOException
   {
-    return soap.matcher(
-      api.send(api.c.getApiPath() + endpoint, xmlMapper.writeValueAsString(new SoapEnvelope(r)))
-    ).replaceAll("");
+    final String out = xmlMapper.writeValueAsString(new SoapEnvelope(r));
+    if ("ALL".equals(System.getProperty("javax.net.debug", "off").toUpperCase())) { System.out.println(out); }
+    return soap.matcher(api.send(api.c.getApiPath() + endpoint, out)).replaceAll("");
   }
 }
