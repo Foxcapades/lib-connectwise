@@ -109,8 +109,8 @@ public class Agreement extends CwObject
   @JacksonXmlProperty ( localName = "CarryOverUnused" )
   protected boolean carryOverUnused;
 
-  @JacksonXmlProperty ( localName = "AllowOverrruns" )
-  protected boolean allowOverrruns;
+  @JacksonXmlProperty ( localName = "AllowOverruns" )
+  protected boolean allowOverruns;
 
   @JacksonXmlProperty ( localName = "ExpiredDays" )
   protected int expiredDays;
@@ -541,14 +541,14 @@ public class Agreement extends CwObject
     this.carryOverUnused = carryOverUnused;
   }
 
-  public boolean isAllowOverrruns ()
+  public boolean isAllowOverruns ()
   {
-    return allowOverrruns;
+    return allowOverruns;
   }
 
-  public void setAllowOverrruns ( boolean allowOverrruns )
+  public void setAllowOverruns ( boolean allowOverruns )
   {
-    this.allowOverrruns = allowOverrruns;
+    this.allowOverruns = allowOverruns;
   }
 
   public int getExpiredDays ()

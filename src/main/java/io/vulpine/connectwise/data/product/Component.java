@@ -2,8 +2,6 @@ package io.vulpine.connectwise.data.product;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import io.vulpine.connectwise.data.CwObject;
-
 @SuppressWarnings( "unused" )
 public class Component extends AbstractSubProduct
 {

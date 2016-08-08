@@ -2,8 +2,6 @@ package io.vulpine.connectwise.data.project;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import io.vulpine.connectwise.data.CwObject;
-
 import java.util.Date;
 import java.util.List;
 
