@@ -1,5 +1,6 @@
 package io.vulpine.connectwise.api.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.data.CwObject;
@@ -22,6 +23,7 @@ public abstract class AddRequest < T extends CwObject > extends CwRequest < T >
     this.data = data;
   }
 
+  @JsonIgnore
   public int getId ()
   {
     return data.getId();
@@ -33,6 +35,7 @@ public abstract class AddRequest < T extends CwObject > extends CwRequest < T >
     return this;
   }
 
+  @JsonIgnore
   public String getUpdatedBy ()
   {
     return data.getUpdatedBy();
@@ -44,6 +47,7 @@ public abstract class AddRequest < T extends CwObject > extends CwRequest < T >
     return this;
   }
 
+  @JsonIgnore
   public Date getLastUpdate ()
   {
     return data.getLastUpdate();
@@ -55,6 +59,7 @@ public abstract class AddRequest < T extends CwObject > extends CwRequest < T >
     return this;
   }
 
+  @JsonIgnore
   public String getDescription ()
   {
     return data.getDescription();
@@ -66,6 +71,7 @@ public abstract class AddRequest < T extends CwObject > extends CwRequest < T >
     return this;
   }
 
+  @JsonIgnore
   public Date getLastUpdated ()
   {
     return data.getLastUpdated();

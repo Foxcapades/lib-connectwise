@@ -1,5 +1,6 @@
 package io.vulpine.connectwise.api.company;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
@@ -12,6 +13,7 @@ import io.vulpine.connectwise.data.company.Company;
 import java.io.IOException;
 import java.util.List;
 
+@JsonFilter( "empty-filter" )
 @JacksonXmlRootElement( localName = "AddCompany" )
 public class AddCompanyRequest extends AddRequest< Company >
 {
