@@ -13,7 +13,7 @@ import io.vulpine.connectwise.data.company.Company;
 import java.io.IOException;
 import java.util.List;
 
-@JsonFilter( "empty-filter" )
+@JsonFilter( "filter-empty" )
 @JacksonXmlRootElement( localName = "AddCompany" )
 public class AddCompanyRequest extends AddRequest< Company >
 {
@@ -190,6 +190,7 @@ public class AddCompanyRequest extends AddRequest< Company >
 
   @Override
   @JacksonXmlProperty( localName = "company" )
+  @JsonFilter( "filter-empty" )
   public Company getRequestData ()
   {
     return data;

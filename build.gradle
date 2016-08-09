@@ -1,13 +1,13 @@
 def config = [:];
 
 config['group'] = 'io.vulpine.lib';
-config['version'] = '0.0.2'
+config['version'] = '0.0.3'
 
 
 group config['group']
 version config['version']
 
-def jacksonVersion = '2.7.5'
+def jacksonVersion = '2.8.1'
 
 task wrapper(type: Wrapper) {
   gradleVersion = '2.9'

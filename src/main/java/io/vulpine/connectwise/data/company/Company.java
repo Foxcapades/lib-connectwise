@@ -1,9 +1,11 @@
 package io.vulpine.connectwise.data.company;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.List;
 
+@JsonFilter( "filter-empty" )
 public class Company extends Common
 {
 
@@ -15,6 +17,7 @@ public class Company extends Common
 
   @JacksonXmlProperty( localName = "AccountNumber" )
   protected String accountNumber;
+
   @JacksonXmlProperty( localName = "WebSite" )
   protected String webSite;
 
