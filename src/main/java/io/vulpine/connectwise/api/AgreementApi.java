@@ -15,7 +15,7 @@ public class AgreementApi extends ConnectwiseSubApi implements ConnectwiseSubApi
   protected Find find = null;
   protected Get get = null;
 
-  AgreementApi ( final ConnectwiseApi a, final XmlMapper x, final Credentials c )
+  AgreementApi ( final ConnectwiseApi a, final Credentials c, final XmlMapper x )
   {
     super(a, c, x, "AgreementApi.asmx");
   }

@@ -1,4 +1,4 @@
-package io.vulpine.connectwise.api.product;
+package io.vulpine.connectwise.api.product.find;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.util.List;
 
 @JacksonXmlRootElement(localName = "FindProducts")
-public class FindProductRequest extends FindRequest < List < FoundProduct > >
+public class FindProducts extends FindRequest < List < FoundProduct > >
 {
-  public FindProductRequest ( final Credentials credentials, final XmlMapper x, final ConnectwiseSubApiInterface i )
+  public FindProducts ( final Credentials credentials, final XmlMapper x, final ConnectwiseSubApiInterface i )
   {
     super(credentials, x, i);
   }

@@ -1,4 +1,4 @@
-package io.vulpine.connectwise.api.product;
+package io.vulpine.connectwise.api.product.delete;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
@@ -10,9 +10,9 @@ import io.vulpine.connectwise.api.request.DeleteRequest;
 import java.io.IOException;
 
 @JacksonXmlRootElement(localName = "DeleteProduct")
-public class DeleteProductRequest extends DeleteRequest
+public class DeleteProduct extends DeleteRequest
 {
-  public DeleteProductRequest (
+  public DeleteProduct (
     final Credentials c,
     final XmlMapper x,
     final ConnectwiseSubApiInterface i

@@ -2,8 +2,8 @@ package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
-import io.vulpine.connectwise.api.product.DeleteProductRequest;
-import io.vulpine.connectwise.api.product.FindProductRequest;
+import io.vulpine.connectwise.api.product.delete.DeleteProduct;
+import io.vulpine.connectwise.api.product.find.FindProducts;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.SoapEnvelope;
 import io.vulpine.connectwise.api.request.CwRequest;
@@ -33,14 +33,14 @@ public class ProductApi implements ConnectwiseSubApiInterface
   {
   }
 
-  public DeleteProductRequest deleteProduct ()
+  public DeleteProduct deleteProduct ()
   {
-    return new DeleteProductRequest(c, x, this);
+    return new DeleteProduct(c, x, this);
   }
 
-  public FindProductRequest findProducts()
+  public FindProducts findProducts()
   {
-    return new FindProductRequest(c, x, this);
+    return new FindProducts(c, x, this);
   }
 
   public Product getProduct ()

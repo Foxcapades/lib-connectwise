@@ -14,9 +14,9 @@ public class ConnectwiseApi
   // This is to filter those elements out of the responses.
   final static Pattern nilFilter = Pattern.compile("<[\\w -]+xsi:nil=\"true\"[\\w -]+/>");
 
-  protected final AgreementApi agreementApi;
-  protected final CompanyApi   companyApi;
-  protected final ProductApi   productApi;
+  protected AgreementApi agreementApi = null;
+  protected CompanyApi   companyApi   = null;
+  protected ProductApi   productApi   = null;
 
   public final Credentials r;
 
@@ -33,23 +33,31 @@ public class ConnectwiseApi
     this.r = new Credentials().setCompanyId(c.getCompany())
       .setIntegratorLoginId(c.getApiUsername())
       .setIntegratorPassword(c.getApiPassword());
-    agreementApi = new AgreementApi(this, x, r);
-    companyApi = new CompanyApi(this, r, x);
-    productApi = new ProductApi(this, r, x);
   }
 
   public AgreementApi agreementApi ()
   {
+    if ( null == agreementApi ) {
+      agreementApi = new AgreementApi(this, r, x);
+    }
+
     return agreementApi;
   }
 
   public CompanyApi companyApi ()
   {
+    if ( null == companyApi ) {
+      companyApi = new CompanyApi(this, r, x);
+    }
+
     return companyApi;
   }
 
   public ProductApi productApi ()
   {
+    if ( null == productApi ) {
+      productApi = new ProductApi(this, r, x);
+    }
     return productApi;
   }
 
@@ -61,7 +69,7 @@ public class ConnectwiseApi
         .post()
         .setHeader("Content-Type", "text/xml; charset=utf-8")
         .setHeader("Content-Length", String.valueOf(xml.getBytes("UTF-8").length))
-        .addErrorHandler((s, r) -> System.out.println(s))
+        .addErrorHandler(( s, r ) -> System.out.println(s))
         .requestBody(xml)
         .submit()
         .getBody()
