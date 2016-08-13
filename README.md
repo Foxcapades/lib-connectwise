@@ -1,4 +1,4 @@
-# ConnectWise
+# connectwise
 
 Fluent Java API for interacting with an instance of ConnectWise
 
