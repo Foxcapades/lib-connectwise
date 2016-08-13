@@ -2,44 +2,57 @@ package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
-import io.vulpine.connectwise.api.agreement.FindAgreementAdditions;
-import io.vulpine.connectwise.api.agreement.FindAgreements;
+import io.vulpine.connectwise.api.agreement.AddOrUpdate;
+import io.vulpine.connectwise.api.agreement.Delete;
+import io.vulpine.connectwise.api.agreement.Find;
+import io.vulpine.connectwise.api.agreement.Get;
 import io.vulpine.connectwise.api.request.Credentials;
-import io.vulpine.connectwise.api.request.CwRequest;
-import io.vulpine.connectwise.api.request.SoapEnvelope;
 
-import java.io.IOException;
-
-public class AgreementApi implements ConnectwiseSubApiInterface
+public class AgreementApi extends ConnectwiseSubApi implements ConnectwiseSubApiInterface
 {
-  private final ConnectwiseApi a;
-  private final XmlMapper x;
-  private final Credentials c;
-  private static final String u = "AgreementApi.asmx";
+  protected AddOrUpdate addOrUpdate = null;
+  protected Delete delete = null;
+  protected Find find = null;
+  protected Get get = null;
 
   AgreementApi ( final ConnectwiseApi a, final XmlMapper x, final Credentials c )
   {
-    this.a = a;
-    this.x = x;
-    this.c = c;
+    super(a, c, x, "AgreementApi.asmx");
   }
 
-  public FindAgreements findAgreements () throws IOException
+  public AddOrUpdate addOrUpdate ()
   {
-    return new FindAgreements(c, x, this);
+    if ( null == addOrUpdate ) {
+      addOrUpdate = new AddOrUpdate(credentials, xmlMapper, this);
+    }
+
+    return addOrUpdate;
   }
 
-  public FindAgreementAdditions findAgreementAdditions () throws IOException
+  public Delete delete ()
   {
-    return new FindAgreementAdditions(c, x, this);
+    if ( null == delete ) {
+      delete = new Delete(credentials, xmlMapper, this);
+    }
+
+    return delete;
   }
 
-  @Override
-  public String send ( final CwRequest r ) throws IOException
+  public Find find ()
   {
-    return soap.matcher(a.send(
-      a.c.getApiPath() + u,
-      a.x.writeValueAsString(new SoapEnvelope(r))
-    )).replaceAll("");
+    if ( null == find ) {
+      find = new Find(credentials, xmlMapper, this);
+    }
+
+    return find;
+  }
+
+  public Get get ()
+  {
+    if ( null == get ) {
+      get = new Get(credentials, xmlMapper, this);
+    }
+
+    return get;
   }
 }
