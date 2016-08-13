@@ -56,14 +56,37 @@ dependencies {
 }
 
 class Wrap {
-  Node u
-  Wrap p
-  Wrap(n) { u = n }
-  Wrap(a, b) { u = a; p = b }
-  Wrap m(s, Map v) { def c = u.appendNode(s); v.forEach({ k, d -> c.appendNode(k, d) }); return new Wrap(c, this) }
-  Wrap n(s, ... l) { def n = u.appendNode(s); for (def c : l) n.append(c); return newWrap(n, this) }
-  Wrap a(a, b) { def n = u.appendNode(a, b); return new Wrap(n, this) }
+  Node u;
+  Wrap p;
+
+  Wrap(n) {
+    u = n;
+  }
+
+  Wrap( Node a, Wrap b ) {
+    u = a;
+    p = b;
+  }
+
+  Wrap m(s, Map v) {
+    Node c = u.appendNode(s);
+    v.forEach({ k, d -> c.appendNode(k, d) });
+    return new Wrap(c, this)
+  };
+
+  Wrap n(s, ...l) {
+    Node n = u.appendNode(s);
+    for (def c : l) n.append(c);
+    return new Wrap(n, this)
+  };
+
+  Wrap a(a, b) {
+    def n = u.appendNode(a, b);
+    return new Wrap(n, this)
+  };
+
   Wrap up() { return p }
+
 }
 
 publishing {
