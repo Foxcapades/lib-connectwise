@@ -2,6 +2,7 @@ package io.vulpine.connectwise.type.agreement.addition;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
+import io.vulpine.connectwise.type.agreement.BillCustomer;
 
 import java.util.Date;
 
@@ -30,7 +31,7 @@ public class Addition extends AbstractSubAgreement
   protected Date CancelledDate;
 
   @JacksonXmlProperty( localName = "BillCustomer" )
-  protected String BillCustomer;
+  protected BillCustomer billCustomer;
 
   @JacksonXmlProperty( localName = "TaxableFlag" )
   protected boolean Taxable;
@@ -122,14 +123,14 @@ public class Addition extends AbstractSubAgreement
     CancelledDate = cancelledDate;
   }
 
-  public String getBillCustomer ()
+  public BillCustomer getBillCustomer ()
   {
-    return BillCustomer;
+    return billCustomer;
   }
 
-  public void setBillCustomer ( String billCustomer )
+  public void setBillCustomer ( BillCustomer billCustomer )
   {
-    BillCustomer = billCustomer;
+    this.billCustomer = billCustomer;
   }
 
   public boolean isTaxable ()

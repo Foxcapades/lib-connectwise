@@ -2,6 +2,8 @@ package io.vulpine.connectwise.type.agreement.worktype;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import io.vulpine.connectwise.type.agreement.BillableOption;
+import io.vulpine.connectwise.type.agreement.RateType;
 
 import java.util.Date;
 
@@ -13,7 +15,7 @@ public class WorkType extends AbstractWorkType
   protected int LocationId;
 
   @JacksonXmlProperty( localName = "RateType" )
-  protected String RateType;
+  protected RateType RateType;
 
   @JacksonXmlProperty( localName = "Rate" )
   protected double Rate;
@@ -25,7 +27,7 @@ public class WorkType extends AbstractWorkType
   protected Date EndingDate;
 
   @JacksonXmlProperty( localName = "BillTime" )
-  protected String BillTime;
+  protected BillableOption BillTime;
 
   @JacksonXmlProperty( localName = "HoursMin" )
   protected double HoursMin;
@@ -44,16 +46,6 @@ public class WorkType extends AbstractWorkType
   public void setLocationId ( int locationId )
   {
     LocationId = locationId;
-  }
-
-  public String getRateType ()
-  {
-    return RateType;
-  }
-
-  public void setRateType ( String rateType )
-  {
-    RateType = rateType;
   }
 
   public double getRate ()
@@ -86,16 +78,6 @@ public class WorkType extends AbstractWorkType
     EndingDate = endingDate;
   }
 
-  public String getBillTime ()
-  {
-    return BillTime;
-  }
-
-  public void setBillTime ( String billTime )
-  {
-    BillTime = billTime;
-  }
-
   public double getHoursMin ()
   {
     return HoursMin;
@@ -124,5 +106,25 @@ public class WorkType extends AbstractWorkType
   public void setAddressId ( int addressId )
   {
     AddressId = addressId;
+  }
+
+  public RateType getRateType ()
+  {
+    return RateType;
+  }
+
+  public void setRateType ( RateType rateType )
+  {
+    RateType = rateType;
+  }
+
+  public BillableOption getBillTime ()
+  {
+    return BillTime;
+  }
+
+  public void setBillTime ( BillableOption billTime )
+  {
+    BillTime = billTime;
   }
 }

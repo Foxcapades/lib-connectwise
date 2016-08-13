@@ -2,6 +2,8 @@ package io.vulpine.connectwise.type.agreement.addition;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.PriceAttribute;
+import io.vulpine.connectwise.type.agreement.ProductClass;
 
 @SuppressWarnings( "unused" )
 public class AdditionProduct extends CwObject
@@ -55,10 +57,10 @@ public class AdditionProduct extends CwObject
   protected String VendorSku;
 
   @JacksonXmlProperty( localName = "ProductClass" )
-  protected String ProductClass;
+  protected ProductClass ProductClass;
 
   @JacksonXmlProperty( localName = "PriceAttribute" )
-  protected String PriceAttribute;
+  protected PriceAttribute PriceAttribute;
 
   @JacksonXmlProperty( localName = "MinimumStock" )
   protected int MinimumStock;
@@ -223,22 +225,22 @@ public class AdditionProduct extends CwObject
     VendorSku = vendorSku;
   }
 
-  public String getProductClass ()
+  public ProductClass getProductClass ()
   {
     return ProductClass;
   }
 
-  public void setProductClass ( String productClass )
+  public void setProductClass ( ProductClass productClass )
   {
     ProductClass = productClass;
   }
 
-  public String getPriceAttribute ()
+  public PriceAttribute getPriceAttribute ()
   {
     return PriceAttribute;
   }
 
-  public void setPriceAttribute ( String priceAttribute )
+  public void setPriceAttribute ( PriceAttribute priceAttribute )
   {
     PriceAttribute = priceAttribute;
   }

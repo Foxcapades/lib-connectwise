@@ -2,6 +2,7 @@ package io.vulpine.connectwise.type.agreement.workrole;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import io.vulpine.connectwise.type.agreement.RateType;
 
 import java.util.Date;
 
@@ -13,7 +14,7 @@ public class WorkRole extends AbstractWorkRole
   protected int LocationId;
 
   @JacksonXmlProperty( localName = "RateType" )
-  protected String RateType;
+  protected RateType RateType;
 
   @JacksonXmlProperty( localName = "Rate" )
   protected double Rate;
@@ -37,12 +38,12 @@ public class WorkRole extends AbstractWorkRole
     LocationId = locationId;
   }
 
-  public String getRateType ()
+  public RateType getRateType ()
   {
     return RateType;
   }
 
-  public void setRateType ( String rateType )
+  public void setRateType ( RateType rateType )
   {
     RateType = rateType;
   }
