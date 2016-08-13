@@ -5,7 +5,6 @@ import io.vulpine.connectwise.api.ApiDivision;
 import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.company.getAll.GetAllCompanyNotes;
 import io.vulpine.connectwise.api.request.Credentials;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class GetAll extends ApiDivision
 {
@@ -16,7 +15,7 @@ public class GetAll extends ApiDivision
 
   public GetAllCompanyNotes getAllCompanyNotes()
   {
-    throw new NotImplementedException();
+    return null;
   }
 
 }

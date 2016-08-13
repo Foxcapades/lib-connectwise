@@ -6,7 +6,6 @@ import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.company.update.UpdateCompany;
 import io.vulpine.connectwise.api.company.update.UpdateCompanyProfile;
 import io.vulpine.connectwise.api.request.Credentials;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Update extends ApiDivision
 {
@@ -22,11 +21,11 @@ public class Update extends ApiDivision
    */
   public UpdateCompany updateCompany ()
   {
-    throw new NotImplementedException();
+    return null;
   }
 
   public UpdateCompanyProfile updateCompanyProfile()
   {
-    throw new NotImplementedException();
+    return null;
   }
 }

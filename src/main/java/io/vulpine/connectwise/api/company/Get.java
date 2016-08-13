@@ -8,7 +8,6 @@ import io.vulpine.connectwise.api.company.get.GetCompanyNote;
 import io.vulpine.connectwise.api.company.get.GetCompanyProfile;
 import io.vulpine.connectwise.api.company.get.GetCompanyTeam;
 import io.vulpine.connectwise.api.request.Credentials;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Get extends ApiDivision
 {
@@ -26,21 +25,21 @@ public class Get extends ApiDivision
    */
   public GetCompany getCompany ( final int id )
   {
-     throw new NotImplementedException();
+     return null;
   }
 
   public GetCompanyProfile getCompanyProfile()
   {
-    throw new NotImplementedException();
+    return null;
   }
 
   public GetCompanyNote getCompanyNote()
     {
-    throw new NotImplementedException();
+    return null;
   }
 
   public GetCompanyTeam getCompanyTeam()
   {
-    throw new NotImplementedException();
+    return null;
   }
 }

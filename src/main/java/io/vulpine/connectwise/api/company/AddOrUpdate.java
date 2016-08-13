@@ -8,7 +8,6 @@ import io.vulpine.connectwise.api.company.addOrUpdate.AddOrUpdateCompanyCustomFi
 import io.vulpine.connectwise.api.company.addOrUpdate.AddOrUpdateCompanyNote;
 import io.vulpine.connectwise.api.company.addOrUpdate.AddOrUpdateCompanyTeam;
 import io.vulpine.connectwise.api.request.Credentials;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class AddOrUpdate extends ApiDivision
 {
@@ -24,21 +23,21 @@ public class AddOrUpdate extends ApiDivision
    */
   public AddOrUpdateCompany company ()
   {
-    throw new NotImplementedException();
+    return null;
   }
 
   public AddOrUpdateCompanyNote note()
   {
-    throw new NotImplementedException();
+    return null;
   }
 
   public AddOrUpdateCompanyCustomField customField()
   {
-    throw new NotImplementedException();
+    return null;
   }
 
   public AddOrUpdateCompanyTeam team()
   {
-    throw new NotImplementedException();
+    return null;
   }
 }

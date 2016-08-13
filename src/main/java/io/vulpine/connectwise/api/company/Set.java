@@ -5,7 +5,6 @@ import io.vulpine.connectwise.api.ApiDivision;
 import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.company.set.SetCompanyDefaultContact;
 import io.vulpine.connectwise.api.request.Credentials;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Set extends ApiDivision
 {
@@ -16,7 +15,7 @@ public class Set extends ApiDivision
 
   public SetCompanyDefaultContact setCompanyDefaultContact()
   {
-    throw new NotImplementedException();
+    return null;
   }
 
 }

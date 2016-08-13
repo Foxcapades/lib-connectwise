@@ -7,7 +7,6 @@ import io.vulpine.connectwise.api.company.delete.DeleteCompany;
 import io.vulpine.connectwise.api.company.delete.DeleteCompanyNote;
 import io.vulpine.connectwise.api.company.delete.DeleteCompanyTeam;
 import io.vulpine.connectwise.api.request.Credentials;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Delete extends ApiDivision
 {
@@ -30,12 +29,12 @@ public class Delete extends ApiDivision
 
   public DeleteCompanyNote deleteCompanyNote()
   {
-    throw new NotImplementedException();
+    return null;
   }
 
   public DeleteCompanyTeam deleteCompanyTeam()
   {
-    throw new NotImplementedException();
+    return null;
   }
 
 }

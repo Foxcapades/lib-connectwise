@@ -1,48 +1,105 @@
-def config = [:];
+plugins { id "com.jfrog.bintray" version "1.7.1" }
 
-config['group'] = 'io.vulpine.lib';
-config['version'] = '0.0.3'
+def config = [
+  group   : 'io.vulpine.lib',
+  groupKey: 'Vulpine-IO',
+  version : '0.0.4',
+  name    : 'connectwise',
+  repo    : 'lib-connectwise',
+  jvm     : '1.8'
+];
 
+group config.group
+version config.version
 
-group config['group']
-version config['version']
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
-def jacksonVersion = '2.8.1'
+sourceCompatibility = config.jvm
+targetCompatibility = config.jvm
+
+/*
+ * BinTray Configuration
+ */
+bintray {
+  user = System.getenv('BINTRAY_USER')
+  key = System.getenv('BINTRAY_KEY')
+  publications = ['maven']
+  pkg {
+    repo = 'maven'
+    name = config.name
+    userOrg = 'vpx'
+    licenses = ['Apache-2.0']
+    vcsUrl = "https://github.com/${config.groupKey}/${config.name}"
+    version {
+      name = config.version
+      released = new Date()
+      vcsTag = config.version
+    }
+  }
+}
 
 task wrapper(type: Wrapper) {
   gradleVersion = '2.14.1'
   distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }
 
-apply plugin: 'java'
-apply plugin: 'maven'
-
-sourceCompatibility = 1.8
-
 repositories {
   mavenCentral()
-  maven { url 'https://jitpack.io' }
+  maven { url "http://dl.bintray.com/vpx/maven" }
 }
-
 dependencies {
-  compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${jacksonVersion}",
+  compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.8.1',
     'org.codehaus.woodstox:woodstox-core-asl:4.4.1',
-    'com.github.vulpine-io:http:1.1.1'
-  testCompile group: 'junit', name: 'junit', version: '4.11'
+    'io.vulpine.lib:http-requests:0.1.1'
 }
 
-jar {
-  from {
-    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-  }
+class Wrap {
+  Node u
+  Wrap p
+  Wrap(n) { u = n }
+  Wrap(a, b) { u = a; p = b }
+  Wrap m(s, Map v) { def c = u.appendNode(s); v.forEach({ k, d -> c.appendNode(k, d) }); return new Wrap(c, this) }
+  Wrap n(s, ... l) { def n = u.appendNode(s); for (def c : l) n.append(c); return newWrap(n, this) }
+  Wrap a(a, b) { def n = u.appendNode(a, b); return new Wrap(n, this) }
+  Wrap up() { return p }
 }
 
-task createPom << {
-  pom {
-    project {
-      groupId config['group']
-      artifactId rootProject.name
-      version config['version']
+publishing {
+  repositories { maven { url "https://api.bintray.com/maven/vpx/maven/${config.name}/;publish=1" } }
+  publications {
+    maven(MavenPublication) {
+      from components.java;
+      pom.withXml {
+        { Node project ->
+          def ghu = "https://github.com/${config.groupKey}/${config.repo}";
+          new Wrap(project)
+            .a('inceptionYear', '2016').up()
+            .m('organization', [ name: 'Vulpine IO', url : 'http://vulpine.io' ]).up()
+            .n('developers')
+            .m('developer', [ id: 'elliefops', name: 'Elizabeth Harper', email: 'elliefops@gmail.com' ]).up().up()
+            .m('issueManagement', [
+              system: 'YouTrack',
+              url: "http://vulpine.myjetbrains.com/youtrack/issues?q=project%3A+${config.repo}"
+            ])
+            .up()
+            .m('ciManagement', [ system: 'Travis CI', url: "https://travis-ci.org/${config.groupKey}" ]).up()
+            .m('scm', [
+              connection: "scm:git:${ghu}.git",
+              developerConnection: "scm:git:${ghu}.git",
+              tag: 'master',
+              url: ghu
+            ]).up()
+            .n('licenses')
+            .m('license', [
+              name: 'Apache License, Version 2.0',
+              url: 'http://www.apache.org/licenses/LICENSE-2.0.txt',
+              distribution: 'repo'
+            ]);
+          return project;
+        }.call((Node) asNode())
+      }
     }
-  }.writeTo("pom.xml")
+  }
 }
