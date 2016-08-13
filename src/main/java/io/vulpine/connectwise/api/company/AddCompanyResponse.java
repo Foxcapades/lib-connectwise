@@ -2,7 +2,7 @@ package io.vulpine.connectwise.api.company;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.data.company.Company;
+import io.vulpine.connectwise.type.company.Company;
 
 @JacksonXmlRootElement ( localName = "AddCompanyResponse" )
 public class AddCompanyResponse

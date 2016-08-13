@@ -7,7 +7,7 @@ import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.FindRequest;
 import io.vulpine.connectwise.api.company.FindProductsResponse;
-import io.vulpine.connectwise.data.product.FoundProduct;
+import io.vulpine.connectwise.type.product.FoundProduct;
 
 import java.io.IOException;
 import java.util.List;

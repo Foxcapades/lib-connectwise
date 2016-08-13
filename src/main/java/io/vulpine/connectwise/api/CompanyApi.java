@@ -3,8 +3,8 @@ package io.vulpine.connectwise.api;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.EmptyFilter;
-import io.vulpine.connectwise.api.company.AddCompanyRequest;
-import io.vulpine.connectwise.api.company.FindCompanyRequest;
+import io.vulpine.connectwise.api.company.AddCompany;
+import io.vulpine.connectwise.api.company.FindCompany;
 import io.vulpine.connectwise.api.request.Credentials;
 
 public class CompanyApi extends ConnectwiseSubApi
@@ -16,13 +16,13 @@ public class CompanyApi extends ConnectwiseSubApi
     xmlMapper.setFilterProvider(new SimpleFilterProvider().addFilter("filter-empty", new EmptyFilter()));
   }
 
-  public FindCompanyRequest findCompanies ()
+  public FindCompany findCompanies ()
   {
-    return new FindCompanyRequest(credentials, xmlMapper, this);
+    return new FindCompany(credentials, xmlMapper, this);
   }
 
-  public AddCompanyRequest addCompany( final String name, final String identifier )
+  public AddCompany addCompany( final String name, final String identifier )
   {
-    return new AddCompanyRequest(credentials, xmlMapper, this).companyName(name).companyIdentifier(identifier);
+    return new AddCompany(credentials, xmlMapper, this).companyName(name).companyIdentifier(identifier);
   }
 }

@@ -2,8 +2,8 @@ package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
-import io.vulpine.connectwise.api.agreement.FindAgreementAdditionsRequest;
-import io.vulpine.connectwise.api.agreement.FindAgreementRequest;
+import io.vulpine.connectwise.api.agreement.FindAgreementAdditions;
+import io.vulpine.connectwise.api.agreement.FindAgreements;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.CwRequest;
 import io.vulpine.connectwise.api.request.SoapEnvelope;
@@ -24,14 +24,14 @@ public class AgreementApi implements ConnectwiseSubApiInterface
     this.c = c;
   }
 
-  public FindAgreementRequest findAgreements () throws IOException
+  public FindAgreements findAgreements () throws IOException
   {
-    return new FindAgreementRequest(c, x, this);
+    return new FindAgreements(c, x, this);
   }
 
-  public FindAgreementAdditionsRequest findAgreementAdditions () throws IOException
+  public FindAgreementAdditions findAgreementAdditions () throws IOException
   {
-    return new FindAgreementAdditionsRequest(c, x, this);
+    return new FindAgreementAdditions(c, x, this);
   }
 
   @Override

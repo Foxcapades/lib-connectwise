@@ -3,7 +3,7 @@ package io.vulpine.connectwise.api.company;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.data.product.FoundProduct;
+import io.vulpine.connectwise.type.product.FoundProduct;
 
 import java.util.List;
 
