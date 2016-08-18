@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-set -ev
+set -e
 
 # Get current branch
-BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+BRANCH=$(git branch | sed -rn 's/^  ([^(]+)/\1/ p')
 echo "Running build on branch $BRANCH."
 
 # Execute Build
