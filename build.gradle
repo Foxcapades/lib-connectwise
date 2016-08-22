@@ -3,7 +3,7 @@ plugins { id "com.jfrog.bintray" version "1.7.1" }
 def config = [
   group   : 'io.vulpine.lib',
   groupKey: 'Vulpine-IO',
-  version : '0.0.4',
+  version : '0.0.5',
   name    : 'connectwise',
   repo    : 'lib-connectwise',
   jvm     : '1.8'
@@ -41,7 +41,7 @@ bintray {
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '2.14.1'
+  gradleVersion = '3.0'
   distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }
 

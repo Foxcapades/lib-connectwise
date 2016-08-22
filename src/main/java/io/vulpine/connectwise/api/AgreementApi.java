@@ -7,6 +7,9 @@ import io.vulpine.connectwise.api.agreement.Delete;
 import io.vulpine.connectwise.api.agreement.Find;
 import io.vulpine.connectwise.api.agreement.Get;
 import io.vulpine.connectwise.api.request.Credentials;
+import io.vulpine.connectwise.api.request.CwRequest;
+
+import java.io.IOException;
 
 public class AgreementApi extends ConnectwiseSubApi implements ConnectwiseSubApiInterface
 {
@@ -54,5 +57,11 @@ public class AgreementApi extends ConnectwiseSubApi implements ConnectwiseSubApi
     }
 
     return get;
+  }
+
+  @Override
+  public String send( final CwRequest r ) throws IOException
+  {
+    return super.send(r).replaceAll("Overrruns", "Overruns");
   }
 }
