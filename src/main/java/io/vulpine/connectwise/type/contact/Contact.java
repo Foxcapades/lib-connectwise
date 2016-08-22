@@ -1,5 +1,6 @@
 package io.vulpine.connectwise.type.contact;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import io.vulpine.connectwise.type.CwObject;
 
@@ -89,9 +90,11 @@ public class Contact extends CwObject
   @JacksonXmlProperty( localName = "Gender" )
   protected Gender gender;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "BirthDay" )
   protected Date birthDay;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "Anniversary" )
   protected Date anniversary;
 

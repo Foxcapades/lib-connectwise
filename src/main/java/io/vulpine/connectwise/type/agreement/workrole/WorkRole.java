@@ -1,5 +1,6 @@
 package io.vulpine.connectwise.type.agreement.workrole;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.type.agreement.RateType;
@@ -22,9 +23,11 @@ public class WorkRole extends AbstractWorkRole
   @JacksonXmlProperty( localName = "LimitTo" )
   protected double LimitTo;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "EffectiveDate" )
   protected Date EffectiveDate;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "EndingDate" )
   protected Date EndingDate;
 

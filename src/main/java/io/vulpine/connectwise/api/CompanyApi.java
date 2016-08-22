@@ -1,36 +1,103 @@
 package io.vulpine.connectwise.api;
 
-import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.EmptyFilter;
 import io.vulpine.connectwise.api.company.*;
 import io.vulpine.connectwise.api.request.Credentials;
 
 public class CompanyApi extends ConnectwiseSubApi
 {
-  public final Add         add;
-  public final AddOrUpdate addOrUpdate;
-  public final Delete      delete;
-  public final Find        find;
-  public final Get         get;
-  public final GetAll      getAll;
-  public final Load        load;
-  public final Set         set;
-  public final Update      update;
+  protected Add add = null;
 
-  public CompanyApi ( final ConnectwiseApi api, final Credentials creds, final XmlMapper mapper )
+  protected AddOrUpdate addOrUpdate = null;
+
+  protected Delete delete = null;
+
+  protected Find find = null;
+
+  protected Get get = null;
+
+  protected GetAll getAll = null;
+
+  protected Load load = null;
+
+  protected Set set = null;
+
+  protected Update update = null;
+
+  public CompanyApi( final ConnectwiseApi api, final Credentials creds, final XmlMapper mapper )
   {
     super(api, creds, mapper, "CompanyApi.asmx");
-    mapper.setFilterProvider(new SimpleFilterProvider().addFilter("filter-empty", new EmptyFilter()));
+  }
 
-    delete      = new Delete(creds, mapper, this);
-    find        = new Find(creds, mapper, this);
-    add         = new Add(creds, mapper, this);
-    addOrUpdate = new AddOrUpdate(creds, mapper, this);
-    get         = new Get(creds, mapper, this);
-    getAll      = new GetAll(creds, mapper, this);
-    load        = new Load(creds, mapper, this);
-    set         = new Set(creds, mapper, this);
-    update      = new Update(creds, mapper, this);
+  public Add getAdd()
+  {
+    if (null == add)
+      add = new Add(credentials, xmlMapper, this);
+
+    return add;
+  }
+
+  public AddOrUpdate getAddOrUpdate()
+  {
+    if (null == addOrUpdate)
+      addOrUpdate = new AddOrUpdate(credentials, xmlMapper, this);
+
+    return addOrUpdate;
+  }
+
+  public Delete getDelete()
+  {
+    if (null == delete)
+      delete = new Delete(credentials, xmlMapper, this);
+
+    return delete;
+  }
+
+  public Find getFind()
+  {
+    if (null == find)
+      find = new Find(credentials, xmlMapper, this);
+
+    return find;
+  }
+
+  public Get getGet()
+  {
+    if (null == get)
+      get = new Get(credentials, xmlMapper, this);
+
+    return get;
+  }
+
+  public GetAll getGetAll()
+  {
+    if (null == getAll)
+      getAll = new GetAll(credentials, xmlMapper, this);
+
+    return getAll;
+  }
+
+  public Load getLoad()
+  {
+    if (null == load)
+      load = new Load(credentials, xmlMapper, this);
+
+    return load;
+  }
+
+  public Set getSet()
+  {
+    if (null == set)
+      set = new Set(credentials, xmlMapper, this);
+
+    return set;
+  }
+
+  public Update getUpdate()
+  {
+    if (null == update)
+      update = new Update(credentials, xmlMapper, this);
+
+    return update;
   }
 }

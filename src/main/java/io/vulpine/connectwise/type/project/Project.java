@@ -1,7 +1,7 @@
 package io.vulpine.connectwise.type.project;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-
 import io.vulpine.connectwise.type.CwObject;
 
 import java.util.Date;
@@ -37,9 +37,11 @@ public class Project extends CwObject
   @JacksonXmlProperty(localName = "EstimatedRevenue")
   protected double estimatedRevenue;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "EstimatedStart")
   protected Date estimatedStart;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "EstimatedEnd")
   protected Date estimatedEnd;
 

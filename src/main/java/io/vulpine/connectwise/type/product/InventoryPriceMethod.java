@@ -1,5 +1,7 @@
 package io.vulpine.connectwise.type.product;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public enum InventoryPriceMethod
 {
   FLAT_RATE("FlatRate"),
@@ -20,6 +22,7 @@ public enum InventoryPriceMethod
     return value;
   }
 
+  @JsonCreator
   public static InventoryPriceMethod fromString ( final String value )
   {
     for ( InventoryPriceMethod inv : values() ) {

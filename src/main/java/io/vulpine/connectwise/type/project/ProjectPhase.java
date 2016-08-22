@@ -1,5 +1,6 @@
 package io.vulpine.connectwise.type.project;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Date;
@@ -46,6 +47,7 @@ public class ProjectPhase extends AbstractSubProject
   @JacksonXmlProperty(localName = "Notes")
   protected String notes;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "DateDeadline")
   protected Date dateDeadline;
 

@@ -1,83 +1,103 @@
 package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-
-import io.vulpine.connectwise.api.product.delete.DeleteProduct;
-import io.vulpine.connectwise.api.product.find.FindProducts;
+import io.vulpine.connectwise.api.product.*;
 import io.vulpine.connectwise.api.request.Credentials;
-import io.vulpine.connectwise.api.request.SoapEnvelope;
-import io.vulpine.connectwise.api.request.CwRequest;
-import io.vulpine.connectwise.type.product.Product;
 
-import java.io.IOException;
-
-public class ProductApi implements ConnectwiseSubApiInterface
+public class ProductApi extends ConnectwiseSubApi
 {
-  protected final ConnectwiseApi a;
-  protected final Credentials    c;
-  protected final XmlMapper      x;
-  protected final static String api = "ProductApi.asmx";
+  private Add add = null;
 
-  public ProductApi ( final ConnectwiseApi api, final Credentials c, final XmlMapper x )
+  private Delete delete = null;
+
+  private AddOrUpdate addOrUpdate = null;
+
+  private Update update = null;
+
+  private Set set = null;
+
+  private Remove remove = null;
+
+  private Load load = null;
+
+  private Get get = null;
+
+  private Find find = null;
+
+  public ProductApi( final ConnectwiseApi api, final Credentials c, final XmlMapper x )
   {
-    this.a = api;
-    this.c = c;
-    this.x = x;
+    super(api, c, x, "ProductApi.asmx");
   }
 
-  public void addOrUpdateProduct ()
+  public Add add()
   {
+    if (null == add)
+      add = new Add(credentials, xmlMapper, this);
+
+    return add;
   }
 
-  public void addProduct ()
+  public AddOrUpdate addOrUpdate()
   {
+    if (null == addOrUpdate)
+      addOrUpdate = new AddOrUpdate(credentials, xmlMapper, this);
+
+    return addOrUpdate;
   }
 
-  public DeleteProduct deleteProduct ()
+  public Delete delete()
   {
-    return new DeleteProduct(c, x, this);
+    if (null == delete)
+      delete = new Delete(credentials, xmlMapper, this);
+
+    return delete;
   }
 
-  public FindProducts findProducts()
+  public Find find()
   {
-    return new FindProducts(c, x, this);
+    if (null == find)
+      find = new Find(credentials, xmlMapper, this);
+
+    return find;
   }
 
-  public Product getProduct ()
+  public Get get()
   {
-    return null;
+    if (null == get)
+      get = new Get(credentials, xmlMapper, this);
+
+    return get;
   }
 
-  public void getQuantityOnHand ()
+  public Load load()
   {
+    if (null == load)
+      load = new Load(credentials, xmlMapper, this);
+
+    return load;
   }
 
-  public void loadProduct ()
+  public Remove remove()
   {
+    if (null == remove)
+      remove = new Remove(credentials, xmlMapper, this);
+
+    return remove;
   }
 
-  public void updateProduct ()
+  public Set set()
   {
+    if (null == set)
+      set = new Set(credentials, xmlMapper, this);
+
+    return set;
   }
 
-  public void addOrUpdateProductPickedandShipped ()
+  public Update update()
   {
-  }
+    if (null == update)
+      update = new Update(credentials, xmlMapper, this);
 
-  public void getProductPickedandShipped ()
-  {
-  }
-
-  public void deleteProductPickedandShipped ()
-  {
-  }
-
-  @Override
-  public String send ( final CwRequest r ) throws IOException
-  {
-    return soap.matcher(a.send(
-      a.c.getApiPath() + api,
-      a.x.writeValueAsString(new SoapEnvelope(r))
-    )).replaceAll("");
+    return update;
   }
 }

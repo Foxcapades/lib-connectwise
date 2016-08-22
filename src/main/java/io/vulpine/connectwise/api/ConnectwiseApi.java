@@ -1,6 +1,8 @@
 package io.vulpine.connectwise.api;
 
+import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.EmptyFilter;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.SoapConfig;
 import io.vulpine.http.Request;
@@ -29,6 +31,8 @@ public class ConnectwiseApi
   {
     this.c = credentials;
     this.x = xml;
+
+    x.setFilterProvider(new SimpleFilterProvider().addFilter("filter-empty", new EmptyFilter()));
 
     this.r = new Credentials().setCompanyId(c.getCompany())
       .setIntegratorLoginId(c.getApiUsername())

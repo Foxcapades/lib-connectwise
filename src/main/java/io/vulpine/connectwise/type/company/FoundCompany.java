@@ -4,7 +4,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 @JacksonXmlRootElement( localName = "CompanyFindResult" )
-public class FoundCompany extends Common
+public class FoundCompany extends _Common
 {
 
   @JacksonXmlProperty( localName = "AddressLine1" )

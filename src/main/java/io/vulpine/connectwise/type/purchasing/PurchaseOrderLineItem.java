@@ -1,7 +1,7 @@
 package io.vulpine.connectwise.type.purchasing;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-
 import io.vulpine.connectwise.type.CwObject;
 
 import java.util.Date;
@@ -30,6 +30,7 @@ public class PurchaseOrderLineItem extends CwObject
   @JacksonXmlProperty(localName = "TrackingNumber")
   protected String trackingNumber;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "ShipDate")
   protected Date shipDate;
 
@@ -39,6 +40,7 @@ public class PurchaseOrderLineItem extends CwObject
   @JacksonXmlProperty(localName = "IsBackordered")
   protected boolean isBackordered;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "ExpectedShipDate")
   protected Date expectedShipDate;
 

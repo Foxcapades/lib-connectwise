@@ -2,9 +2,10 @@ package io.vulpine.connectwise.type.company;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.type.CwObject;
 
-@SuppressWarnings( "unused" )
+@JacksonXmlRootElement( localName = "CompanyNote" )
 public class CompanyNote extends CwObject
 {
   @JacksonXmlProperty (localName = "NoteType")

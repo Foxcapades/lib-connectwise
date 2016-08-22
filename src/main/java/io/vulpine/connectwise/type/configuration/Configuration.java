@@ -1,11 +1,13 @@
 package io.vulpine.connectwise.type.configuration;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.type.CwObject;
 
 import java.util.Date;
 
-@SuppressWarnings( "unused" )
+@JacksonXmlRootElement( localName = "Configuration" )
 public class Configuration extends CwObject
 {
   @JacksonXmlProperty( localName = "ConfigurationTypeId" )
@@ -53,15 +55,18 @@ public class Configuration extends CwObject
   @JacksonXmlProperty( localName = "TagNumber" )
   protected String tagNumber;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "PurchaseDate" )
   protected Date purchaseDate;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "InstallationDate" )
   protected Date installationDate;
 
   @JacksonXmlProperty( localName = "InstalledBy" )
   protected String installedBy;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "WarrantyExpiration" )
   protected Date warrantyExpiration;
 
@@ -113,6 +118,7 @@ public class Configuration extends CwObject
   @JacksonXmlProperty( localName = "BackupRestores" )
   protected int backupRestores;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "LastBackupDate" )
   protected Date lastBackupDate;
 
@@ -138,16 +144,16 @@ public class Configuration extends CwObject
   protected String defaultGateway;
 
   @JacksonXmlProperty( localName = "OSType" )
-  protected String oSType;
+  protected String osType;
 
   @JacksonXmlProperty( localName = "OSInfo" )
-  protected String oSInfo;
+  protected String osInfo;
 
   @JacksonXmlProperty( localName = "CPUSpeed" )
-  protected String cPUSpeed;
+  protected String cpuSpeed;
 
   @JacksonXmlProperty( localName = "RAM" )
-  protected String rAM;
+  protected String ram;
 
   @JacksonXmlProperty( localName = "LocalHardDrives" )
   protected String localHardDrives;
@@ -597,44 +603,44 @@ public class Configuration extends CwObject
     this.defaultGateway = defaultGateway;
   }
 
-  public String getoSType ()
+  public String getOsType()
   {
-    return oSType;
+    return osType;
   }
 
-  public void setoSType ( String oSType )
+  public void setOsType( String osType )
   {
-    this.oSType = oSType;
+    this.osType = osType;
   }
 
-  public String getoSInfo ()
+  public String getOsInfo()
   {
-    return oSInfo;
+    return osInfo;
   }
 
-  public void setoSInfo ( String oSInfo )
+  public void setOsInfo( String osInfo )
   {
-    this.oSInfo = oSInfo;
+    this.osInfo = osInfo;
   }
 
-  public String getcPUSpeed ()
+  public String getCpuSpeed()
   {
-    return cPUSpeed;
+    return cpuSpeed;
   }
 
-  public void setcPUSpeed ( String cPUSpeed )
+  public void setCpuSpeed( String cpuSpeed )
   {
-    this.cPUSpeed = cPUSpeed;
+    this.cpuSpeed = cpuSpeed;
   }
 
-  public String getrAM ()
+  public String getRam()
   {
-    return rAM;
+    return ram;
   }
 
-  public void setrAM ( String rAM )
+  public void setRam( String ram )
   {
-    this.rAM = rAM;
+    this.ram = ram;
   }
 
   public String getLocalHardDrives ()

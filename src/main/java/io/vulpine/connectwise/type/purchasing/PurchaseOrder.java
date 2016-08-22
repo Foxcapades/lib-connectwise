@@ -1,7 +1,7 @@
 package io.vulpine.connectwise.type.purchasing;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-
 import io.vulpine.connectwise.type.CwObject;
 
 import java.util.Date;
@@ -31,6 +31,7 @@ public class PurchaseOrder extends CwObject
   @JacksonXmlProperty( localName = "PoNumber")
   protected String poNumber;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty (localName = "PurchaseDate")
   protected Date purchaseDate;
 
@@ -64,6 +65,7 @@ public class PurchaseOrder extends CwObject
   @JacksonXmlProperty(localName = "ShipmentMethod")
   protected String shipmentMethod;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "ShipDate")
   protected Date shipDate;
 
@@ -76,6 +78,7 @@ public class PurchaseOrder extends CwObject
   @JacksonXmlProperty(localName = "IsClosed")
   protected boolean isClosed;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "DateClosed")
   protected Date dateClosed;
 

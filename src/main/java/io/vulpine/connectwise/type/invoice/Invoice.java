@@ -1,7 +1,7 @@
 package io.vulpine.connectwise.type.invoice;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-
 import io.vulpine.connectwise.type.CwObject;
 
 import java.util.Date;
@@ -27,9 +27,11 @@ public class Invoice extends CwObject
   @JacksonXmlProperty( localName = "GlPosted" )
   protected boolean glPosted;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty ( localName = "DueDate" )
   protected Date dueDate;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty ( localName = "InvoiceDate" )
   protected Date invoiceDate;
 
