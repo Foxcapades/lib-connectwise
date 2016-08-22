@@ -1,13 +1,13 @@
 package io.vulpine.connectwise.api.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.type.CwObject;
 
-import java.io.IOException;
-
-public class AddOrUpdateRequest < T extends CwObject > extends CwRequest < T >
+public abstract class AddOrUpdateRequest < T extends CwObject > extends CwRequest < T >
 {
+  @JsonIgnore
   protected T data;
 
   public AddOrUpdateRequest(
@@ -25,11 +25,5 @@ public class AddOrUpdateRequest < T extends CwObject > extends CwRequest < T >
   public T getData()
   {
     return data;
-  }
-
-  @Override
-  public T submit() throws IOException
-  {
-    return null;
   }
 }

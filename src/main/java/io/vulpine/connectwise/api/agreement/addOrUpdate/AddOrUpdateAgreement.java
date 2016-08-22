@@ -6,6 +6,8 @@ import io.vulpine.connectwise.api.request.AddOrUpdateRequest;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.type.agreement.Agreement;
 
+import java.io.IOException;
+
 public class AddOrUpdateAgreement extends AddOrUpdateRequest < Agreement >
 {
   public AddOrUpdateAgreement(
@@ -16,5 +18,11 @@ public class AddOrUpdateAgreement extends AddOrUpdateRequest < Agreement >
   )
   {
     super(credentials, xmlMapper, api, data);
+  }
+
+  @Override
+  public Agreement submit() throws IOException
+  {
+    return null;
   }
 }
