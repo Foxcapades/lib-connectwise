@@ -9,20 +9,16 @@ import io.vulpine.connectwise.api.request.DeleteRequest;
 
 import java.io.IOException;
 
-@JacksonXmlRootElement(localName = "DeleteProduct")
+@JacksonXmlRootElement( localName = "DeleteProduct" )
 public class DeleteProduct extends DeleteRequest
 {
-  public DeleteProduct (
-    final Credentials c,
-    final XmlMapper x,
-    final ConnectwiseSubApiInterface i
-  )
+  public DeleteProduct( final Credentials c, final XmlMapper x, final ConnectwiseSubApiInterface i )
   {
     super(c, x, i);
   }
 
   @Override
-  public Void submit () throws IOException
+  public Void submit() throws IOException
   {
     api.send(this);
     return null;

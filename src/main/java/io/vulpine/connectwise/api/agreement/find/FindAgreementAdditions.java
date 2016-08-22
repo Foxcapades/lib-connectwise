@@ -7,7 +7,6 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.FindRequest;
-import io.vulpine.connectwise.type.agreement.addition.FindAdditionsResponse;
 import io.vulpine.connectwise.type.agreement.addition.FoundAddition;
 
 import java.io.IOException;
@@ -31,7 +30,7 @@ public class FindAgreementAdditions extends FindRequest < List < FoundAddition >
   @Override
   public List < FoundAddition > submit() throws IOException
   {
-    final FindAdditionsResponse r = xmlMapper.readerFor(FindAdditionsResponse.class).readValue(api.send(this));
+    final FindAgreementAdditionsResponse r = xmlMapper.readerFor(FindAgreementAdditionsResponse.class).readValue(api.send(this));
     return r.getResults();
   }
 

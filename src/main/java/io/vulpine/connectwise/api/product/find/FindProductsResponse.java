@@ -1,4 +1,4 @@
-package io.vulpine.connectwise.api.company.find;
+package io.vulpine.connectwise.api.product.find;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;

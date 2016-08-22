@@ -4,8 +4,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import io.vulpine.connectwise.type.CwObject;
 
-@SuppressWarnings( "unused" )
-abstract class AbstractSubProduct extends CwObject
+class _Common extends CwObject
 {
   @JacksonXmlProperty( localName = "ItemIdentifier" )
   protected String itemIdentifier;

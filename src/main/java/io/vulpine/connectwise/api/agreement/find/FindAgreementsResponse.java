@@ -1,8 +1,9 @@
-package io.vulpine.connectwise.type.agreement;
+package io.vulpine.connectwise.api.agreement.find;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import io.vulpine.connectwise.type.agreement.FoundAgreement;
 
 import java.util.List;
 

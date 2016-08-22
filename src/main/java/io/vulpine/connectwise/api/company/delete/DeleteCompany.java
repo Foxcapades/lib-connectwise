@@ -11,10 +11,13 @@ import java.io.IOException;
 @JacksonXmlRootElement( localName = "DeleteCompany" )
 public class DeleteCompany extends DeleteRequest
 {
-  public DeleteCompany ( Credentials c, XmlMapper x, ConnectwiseSubApiInterface i ) { super(c, x, i); }
+  public DeleteCompany( Credentials c, XmlMapper x, ConnectwiseSubApiInterface i )
+  {
+    super(c, x, i);
+  }
 
   @Override
-  public Void submit () throws IOException
+  public Void submit() throws IOException
   {
     api.send(this);
     return null;

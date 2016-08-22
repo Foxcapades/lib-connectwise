@@ -5,7 +5,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.List;
 
 @SuppressWarnings( "unused" )
-public class Product extends AbstractSubProduct
+public class Product extends _Common
 {
   @JacksonXmlProperty( localName = "Type" )
   protected String type;

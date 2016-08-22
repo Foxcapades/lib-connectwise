@@ -7,7 +7,6 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.FindRequest;
-import io.vulpine.connectwise.type.agreement.FindAgreementsResponse;
 import io.vulpine.connectwise.type.agreement.FoundAgreement;
 
 import java.io.IOException;

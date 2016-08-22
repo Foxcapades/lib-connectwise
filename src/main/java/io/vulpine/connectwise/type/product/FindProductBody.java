@@ -3,7 +3,7 @@ package io.vulpine.connectwise.type.product;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.api.company.find.FindProductsResponse;
+import io.vulpine.connectwise.api.product.find.FindProductsResponse;
 
 @JacksonXmlRootElement( namespace = "soap", localName = "Body" )
 public class FindProductBody
