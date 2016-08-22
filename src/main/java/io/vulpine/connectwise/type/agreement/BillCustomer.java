@@ -1,5 +1,7 @@
 package io.vulpine.connectwise.type.agreement;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public enum BillCustomer
 {
   BILLABLE("Billable"),
@@ -20,6 +22,7 @@ public enum BillCustomer
     return this.value;
   }
 
+  @JsonCreator
   public static BillCustomer fromString ( final String value )
   {
     for ( BillCustomer bill : values() ) {

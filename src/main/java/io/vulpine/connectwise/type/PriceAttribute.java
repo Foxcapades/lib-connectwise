@@ -1,5 +1,7 @@
 package io.vulpine.connectwise.type;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public enum PriceAttribute
 {
   FIXED_FEE("FixedFee"),
@@ -21,6 +23,7 @@ public enum PriceAttribute
     return this.value;
   }
 
+  @JsonCreator
   public static PriceAttribute fromString( final String value )
   {
     for ( PriceAttribute pri : values() ) {

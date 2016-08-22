@@ -6,16 +6,16 @@ import io.vulpine.connectwise.type.CwObject;
 public abstract class AbstractSubAgreement extends CwObject
 {
   @JacksonXmlProperty( localName = "AgreementId" )
-  protected int AgreementId;
+  protected int agreementId;
 
   public int getAgreementId ()
   {
-    return AgreementId;
+    return agreementId;
   }
 
   public void setAgreementId ( int agreementId )
   {
-    AgreementId = agreementId;
+    this.agreementId = agreementId;
   }
 
 }

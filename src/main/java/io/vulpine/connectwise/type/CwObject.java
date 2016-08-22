@@ -1,5 +1,6 @@
 package io.vulpine.connectwise.type;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Date;
@@ -12,14 +13,16 @@ public class CwObject
   @JacksonXmlProperty ( localName = "UpdatedBy" )
   protected String updatedBy;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty ( localName = "LastUpdate" )
   protected Date lastUpdate;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "LastUpdated" )
   protected Date lastUpdated;
 
   @JacksonXmlProperty( localName = "Description" )
-  protected String Description;
+  protected String description;
 
   public int getId ()
   {
@@ -53,12 +56,12 @@ public class CwObject
 
   public String getDescription ()
   {
-    return Description;
+    return description;
   }
 
   public void setDescription ( String description )
   {
-    Description = description;
+    this.description = description;
   }
 
   public Date getLastUpdated ()

@@ -21,6 +21,12 @@ public class AddOrUpdateAgreement extends AddOrUpdateRequest < Agreement >
   }
 
   @Override
+  public Agreement getRequestData()
+  {
+    return null;
+  }
+
+  @Override
   public Agreement submit() throws IOException
   {
     return null;

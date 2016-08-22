@@ -1,245 +1,248 @@
 package io.vulpine.connectwise.type.agreement.addition;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 import io.vulpine.connectwise.type.agreement.BillCustomer;
 
 import java.util.Date;
 
-@SuppressWarnings( "unused" )
 public class Addition extends AbstractSubAgreement
 {
+
   @JacksonXmlProperty( localName = "AdditionsProduct" )
-  protected AdditionProduct AdditionProduct;
+  protected AdditionProduct additionProduct;
 
   @JacksonXmlProperty( localName = "Quantity" )
-  protected double Quantity;
+  protected double quantity;
 
   @JacksonXmlProperty( localName = "LessIncluded" )
-  protected double LessIncluded;
+  protected double lessIncluded;
 
   @JacksonXmlProperty( localName = "UnitPrice" )
-  protected double UnitPrice;
+  protected double unitPrice;
 
   @JacksonXmlProperty( localName = "UnitCost" )
-  protected double UnitCost;
+  protected double unitCost;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "EffectiveDate" )
-  protected Date EffectiveDate;
+  protected Date effectiveDate;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "CancelledDate" )
-  protected Date CancelledDate;
+  protected Date cancelledDate;
 
   @JacksonXmlProperty( localName = "BillCustomer" )
   protected BillCustomer billCustomer;
 
   @JacksonXmlProperty( localName = "TaxableFlag" )
-  protected boolean Taxable;
+  protected boolean taxable;
 
   @JacksonXmlProperty( localName = "SerialNumber" )
-  protected String SerialNumber;
+  protected String serialNumber;
 
   @JacksonXmlProperty( localName = "InvoiceDescription" )
-  protected String InvoiceDescription;
+  protected String invoiceDescription;
 
   @JacksonXmlProperty( localName = "PurchaseItemFlag" )
-  protected boolean PurchaseItem;
+  protected boolean purchaseItem;
 
   @JacksonXmlProperty( localName = "SpecialOrderFlag" )
-  protected boolean SpecialOrder;
+  protected boolean specialOrder;
 
   @JacksonXmlProperty( localName = "BilledQuantity" )
-  protected double BilledQuantity;
+  protected double billedQuantity;
 
   @JacksonXmlProperty( localName = "UOM" )
-  protected String UOM;
+  protected String uom;
 
   @JacksonXmlProperty( localName = "ExtPrice" )
-  protected double ExtPrice;
+  protected double extPrice;
 
   @JacksonXmlProperty( localName = "ExtCost" )
-  protected double ExtCost;
+  protected double extCost;
 
   @JacksonXmlProperty( localName = "Margin" )
-  protected double Margin;
+  protected double margin;
 
-  public double getQuantity ()
+  public AdditionProduct getAdditionProduct()
   {
-    return Quantity;
+    return additionProduct;
   }
 
-  public void setQuantity ( double quantity )
+  public void setAdditionProduct( final AdditionProduct additionProduct )
   {
-    Quantity = quantity;
+    this.additionProduct = additionProduct;
   }
 
-  public double getLessIncluded ()
+  public double getQuantity()
   {
-    return LessIncluded;
+    return quantity;
   }
 
-  public void setLessIncluded ( double lessIncluded )
+  public void setQuantity( final double quantity )
   {
-    LessIncluded = lessIncluded;
+    this.quantity = quantity;
   }
 
-  public double getUnitPrice ()
+  public double getLessIncluded()
   {
-    return UnitPrice;
+    return lessIncluded;
   }
 
-  public void setUnitPrice ( double unitPrice )
+  public void setLessIncluded( final double lessIncluded )
   {
-    UnitPrice = unitPrice;
+    this.lessIncluded = lessIncluded;
   }
 
-  public double getUnitCost ()
+  public double getUnitPrice()
   {
-    return UnitCost;
+    return unitPrice;
   }
 
-  public void setUnitCost ( double unitCost )
+  public void setUnitPrice( final double unitPrice )
   {
-    UnitCost = unitCost;
+    this.unitPrice = unitPrice;
   }
 
-  public Date getEffectiveDate ()
+  public double getUnitCost()
   {
-    return EffectiveDate;
+    return unitCost;
   }
 
-  public void setEffectiveDate ( Date effectiveDate )
+  public void setUnitCost( final double unitCost )
   {
-    EffectiveDate = effectiveDate;
+    this.unitCost = unitCost;
   }
 
-  public Date getCancelledDate ()
+  public Date getEffectiveDate()
   {
-    return CancelledDate;
+    return effectiveDate;
   }
 
-  public void setCancelledDate ( Date cancelledDate )
+  public void setEffectiveDate( final Date effectiveDate )
   {
-    CancelledDate = cancelledDate;
+    this.effectiveDate = effectiveDate;
   }
 
-  public BillCustomer getBillCustomer ()
+  public Date getCancelledDate()
+  {
+    return cancelledDate;
+  }
+
+  public void setCancelledDate( final Date cancelledDate )
+  {
+    this.cancelledDate = cancelledDate;
+  }
+
+  public BillCustomer getBillCustomer()
   {
     return billCustomer;
   }
 
-  public void setBillCustomer ( BillCustomer billCustomer )
+  public void setBillCustomer( final BillCustomer billCustomer )
   {
     this.billCustomer = billCustomer;
   }
 
-  public boolean isTaxable ()
+  public boolean isTaxable()
   {
-    return Taxable;
+    return taxable;
   }
 
-  public void setTaxable ( boolean taxable )
+  public void setTaxable( final boolean taxable )
   {
-    Taxable = taxable;
+    this.taxable = taxable;
   }
 
-  public String getSerialNumber ()
+  public String getSerialNumber()
   {
-    return SerialNumber;
+    return serialNumber;
   }
 
-  public void setSerialNumber ( String serialNumber )
+  public void setSerialNumber( final String serialNumber )
   {
-    SerialNumber = serialNumber;
+    this.serialNumber = serialNumber;
   }
 
-  public String getInvoiceDescription ()
+  public String getInvoiceDescription()
   {
-    return InvoiceDescription;
+    return invoiceDescription;
   }
 
-  public void setInvoiceDescription ( String invoiceDescription )
+  public void setInvoiceDescription( final String invoiceDescription )
   {
-    InvoiceDescription = invoiceDescription;
+    this.invoiceDescription = invoiceDescription;
   }
 
-  public boolean isPurchaseItem ()
+  public boolean isPurchaseItem()
   {
-    return PurchaseItem;
+    return purchaseItem;
   }
 
-  public void setPurchaseItem ( boolean purchaseItem )
+  public void setPurchaseItem( final boolean purchaseItem )
   {
-    PurchaseItem = purchaseItem;
+    this.purchaseItem = purchaseItem;
   }
 
-  public boolean isSpecialOrder ()
+  public boolean isSpecialOrder()
   {
-    return SpecialOrder;
+    return specialOrder;
   }
 
-  public void setSpecialOrder ( boolean specialOrder )
+  public void setSpecialOrder( final boolean specialOrder )
   {
-    SpecialOrder = specialOrder;
+    this.specialOrder = specialOrder;
   }
 
-  public double getBilledQuantity ()
+  public double getBilledQuantity()
   {
-    return BilledQuantity;
+    return billedQuantity;
   }
 
-  public void setBilledQuantity ( double billedQuantity )
+  public void setBilledQuantity( final double billedQuantity )
   {
-    BilledQuantity = billedQuantity;
+    this.billedQuantity = billedQuantity;
   }
 
-  public String getUOM ()
+  public String getUom()
   {
-    return UOM;
+    return uom;
   }
 
-  public void setUOM ( String UOM )
+  public void setUom( final String uom )
   {
-    this.UOM = UOM;
+    this.uom = uom;
   }
 
-  public double getExtPrice ()
+  public double getExtPrice()
   {
-    return ExtPrice;
+    return extPrice;
   }
 
-  public void setExtPrice ( double extPrice )
+  public void setExtPrice( final double extPrice )
   {
-    ExtPrice = extPrice;
+    this.extPrice = extPrice;
   }
 
-  public double getExtCost ()
+  public double getExtCost()
   {
-    return ExtCost;
+    return extCost;
   }
 
-  public void setExtCost ( double extCost )
+  public void setExtCost( final double extCost )
   {
-    ExtCost = extCost;
+    this.extCost = extCost;
   }
 
-  public double getMargin ()
+  public double getMargin()
   {
-    return Margin;
+    return margin;
   }
 
-  public void setMargin ( double margin )
+  public void setMargin( final double margin )
   {
-    Margin = margin;
-  }
-
-  public AdditionProduct getAdditionProduct ()
-  {
-    return AdditionProduct;
-  }
-
-  public void setAdditionProduct ( AdditionProduct additionProduct )
-  {
-    AdditionProduct = additionProduct;
+    this.margin = margin;
   }
 }

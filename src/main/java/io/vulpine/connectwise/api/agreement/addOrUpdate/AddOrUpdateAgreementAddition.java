@@ -31,12 +31,13 @@ public class AddOrUpdateAgreementAddition extends AddOrUpdateRequest < Addition 
     final AddOrUpdateAgreementAdditionResponse response = xmlMapper
       .readerFor(AddOrUpdateAgreementAdditionResponse.class)
       .readValue(api.send(this));
-    return null;
+    return response.getUpdatedAddition();
   }
 
+  @Override
   @JsonFilter( "filter-empty" )
   @JacksonXmlProperty ( localName = "agreementAddition" )
-  public Addition getAddition()
+  public Addition getRequestData()
   {
     return data;
   }

@@ -7,7 +7,7 @@ import io.vulpine.connectwise.type.agreement.addition.Addition;
 @JacksonXmlRootElement( localName = "AddOrUpdateAgreementAdditionResponse" )
 public class AddOrUpdateAgreementAdditionResponse
 {
-  @JacksonXmlProperty ( localName = "AddOrUpdateAgreementAdditionResult ")
+  @JacksonXmlProperty ( localName = "AddOrUpdateAgreementAdditionResult" )
   protected Addition updatedAddition;
 
   public Addition getUpdatedAddition()

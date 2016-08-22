@@ -1,5 +1,7 @@
 package io.vulpine.connectwise.type.agreement;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public enum ProductClass
 {
   AGREEMENT("Agreement"),
@@ -14,13 +16,13 @@ public enum ProductClass
     this.value = value;
   }
 
-
   @Override
   public String toString ()
   {
     return this.value;
   }
 
+  @JsonCreator
   public static ProductClass fromString( final String value )
   {
     for ( ProductClass pro : values() ) {

@@ -1,5 +1,7 @@
 package io.vulpine.connectwise.type.agreement;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public enum ApplicationUnit
 {
   AMOUNT("Amount"), HOURS("Hours"), INCIDENTS("Incidents");
@@ -11,6 +13,7 @@ public enum ApplicationUnit
   @Override
   public String toString () { return value; }
 
+  @JsonCreator
   public static ApplicationUnit fromString ( final String value )
   {
     for ( final ApplicationUnit u : ApplicationUnit.values() ) if ( u.value.equals(value) ) return u;

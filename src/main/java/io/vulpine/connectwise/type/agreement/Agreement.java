@@ -1,5 +1,6 @@
 package io.vulpine.connectwise.type.agreement;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import io.vulpine.connectwise.type.CwObject;
@@ -40,9 +41,11 @@ public class Agreement extends CwObject
   @JacksonXmlProperty ( localName = "RestrictDepartmentFlag" )
   protected boolean restrictDepartment;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty ( localName = "StartDate" )
   protected Date startDate;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty ( localName = "EndDate" )
   protected Date endDate;
 
@@ -55,6 +58,7 @@ public class Agreement extends CwObject
   @JacksonXmlProperty ( localName = "CancelledFlag" )
   protected boolean cancelled;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty ( localName = "DateCancelled" )
   protected Date dateCancelled;
 
@@ -163,6 +167,7 @@ public class Agreement extends CwObject
   @JacksonXmlProperty ( localName = "ProrateFirstBill" )
   protected double prorateFirstBill;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty ( localName = "BillStartDate" )
   protected Date billStartDate;
 
