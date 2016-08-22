@@ -13,9 +13,13 @@ public class Set extends ApiDivision
     super(c, m, a);
   }
 
+  /**
+   * Create a new Set Company Default Contact request
+   *
+   * @return a new company api request object.
+   */
   public SetCompanyDefaultContact defaultContact()
   {
-    return null;
+    return new SetCompanyDefaultContact();
   }
-
 }

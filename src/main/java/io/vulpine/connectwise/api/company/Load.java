@@ -20,6 +20,6 @@ public class Load extends ApiDivision
    */
   public LoadCompany company ()
   {
-    return null;
+    return new LoadCompany();
   }
 }

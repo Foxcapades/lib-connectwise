@@ -15,7 +15,6 @@ public class GetAll extends ApiDivision
 
   public GetAllCompanyNotes notes()
   {
-    return null;
+    return new GetAllCompanyNotes();
   }
-
 }

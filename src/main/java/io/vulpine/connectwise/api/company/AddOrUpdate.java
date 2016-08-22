@@ -23,21 +23,36 @@ public class AddOrUpdate extends ApiDivision
    */
   public AddOrUpdateCompany company ()
   {
-    return null;
+    return new AddOrUpdateCompany();
   }
 
+  /**
+   * Create a new Add Or Update Company Note request.
+   *
+   * @return new company request object.
+   */
   public AddOrUpdateCompanyNote note()
   {
-    return null;
+    return new AddOrUpdateCompanyNote();
   }
 
+  /**
+   * Create a new Add Or Update Company Note request.
+   *
+   * @return new company request object.
+   */
   public AddOrUpdateCompanyCustomField customField()
   {
-    return null;
+    return new AddOrUpdateCompanyCustomField();
   }
 
+  /**
+   * Create a new Add Or Update Company Note request.
+   *
+   * @return new company request object.
+   */
   public AddOrUpdateCompanyTeam team()
   {
-    return null;
+    return new AddOrUpdateCompanyTeam();
   }
 }

@@ -25,21 +25,21 @@ public class Get extends ApiDivision
    */
   public GetCompany company ( final int id )
   {
-     return null;
+     return new GetCompany();
   }
 
   public GetCompanyProfile profile()
   {
-    return null;
+    return new GetCompanyProfile();
   }
 
   public GetCompanyNote note()
     {
-    return null;
+    return new GetCompanyNote();
   }
 
   public GetCompanyTeam team()
   {
-    return null;
+    return new GetCompanyTeam();
   }
 }
