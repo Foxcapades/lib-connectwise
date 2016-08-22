@@ -3,7 +3,7 @@ package io.vulpine.connectwise.api.company;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.ApiDivision;
 import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
-import io.vulpine.connectwise.api.company.find.FindCompany;
+import io.vulpine.connectwise.api.company.find.FindCompanies;
 import io.vulpine.connectwise.api.request.Credentials;
 
 public class Find extends ApiDivision
@@ -18,8 +18,8 @@ public class Find extends ApiDivision
    *
    * @return a new Find Company request object.
    */
-  public FindCompany findCompanies ()
+  public FindCompanies companies()
   {
-    return new FindCompany(credentials, mapper, api);
+    return new FindCompanies(credentials, mapper, api);
   }
 }

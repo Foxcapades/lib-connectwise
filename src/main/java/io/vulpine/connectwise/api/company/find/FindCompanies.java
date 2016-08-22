@@ -11,9 +11,9 @@ import java.io.IOException;
 import java.util.List;
 
 @JacksonXmlRootElement ( localName = "FindCompanies" )
-public class FindCompany extends FindRequest < List< FoundCompany > >
+public class FindCompanies extends FindRequest < List< FoundCompany > >
 {
-  public FindCompany ( Credentials credentials, XmlMapper xmlMapper, ConnectwiseSubApiInterface api )
+  public FindCompanies( Credentials credentials, XmlMapper xmlMapper, ConnectwiseSubApiInterface api )
   {
     super(credentials, xmlMapper, api);
   }

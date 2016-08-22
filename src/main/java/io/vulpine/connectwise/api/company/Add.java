@@ -21,7 +21,7 @@ public class Add extends ApiDivision
    *
    * @return a new Add Company request object.
    */
-  public AddCompany addCompany ( final String name, final String identifier )
+  public AddCompany company ( final String name, final String identifier )
   {
     return new AddCompany(credentials, mapper, api).companyName(name).companyIdentifier(identifier);
   }

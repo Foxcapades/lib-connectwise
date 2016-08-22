@@ -19,12 +19,12 @@ public class Update extends ApiDivision
    *
    * @return a new Update Company request object.
    */
-  public UpdateCompany updateCompany ()
+  public UpdateCompany company ()
   {
     return null;
   }
 
-  public UpdateCompanyProfile updateCompanyProfile()
+  public UpdateCompanyProfile profile()
   {
     return null;
   }

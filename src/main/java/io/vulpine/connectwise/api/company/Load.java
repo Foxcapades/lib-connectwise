@@ -18,7 +18,7 @@ public class Load extends ApiDivision
    *
    * @return a new Load Company request object.
    */
-  public LoadCompany loadCompany ()
+  public LoadCompany company ()
   {
     return null;
   }

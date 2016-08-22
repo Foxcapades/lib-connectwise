@@ -19,17 +19,17 @@ public class Delete extends ApiDivision
 
   public DeletePriceBreak priceBreak()
   {
-    return new DeletePriceBreak();
+    return new DeletePriceBreak(credentials, mapper, api);
   }
 
   public DeletePricingDetail pricingDetail()
   {
-    return new DeletePricingDetail();
+    return new DeletePricingDetail(credentials, mapper, api);
   }
 
   public DeletePricingSchedule pricingSchedule()
   {
-    return new DeletePricingSchedule();
+    return new DeletePricingSchedule(credentials, mapper, api);
   }
 
   public DeleteProduct product()
@@ -39,6 +39,6 @@ public class Delete extends ApiDivision
 
   public DeleteProductPickedAndShipped productPickedAndShipped()
   {
-    return new DeleteProductPickedAndShipped();
+    return new DeleteProductPickedAndShipped(credentials, mapper, api);
   }
 }

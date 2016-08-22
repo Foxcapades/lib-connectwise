@@ -13,7 +13,7 @@ public class GetAll extends ApiDivision
     super(credentials, mapper, api);
   }
 
-  public GetAllCompanyNotes getAllCompanyNotes()
+  public GetAllCompanyNotes notes()
   {
     return null;
   }

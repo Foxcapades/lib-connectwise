@@ -22,19 +22,19 @@ public class Delete extends ApiDivision
    *
    * @return a new Delete Company request object.
    */
-  public DeleteCompany deleteCompany ( final int companyId )
+  public DeleteCompany company ( final int companyId )
   {
     return (DeleteCompany) new DeleteCompany(credentials, mapper, api).setId(companyId);
   }
 
-  public DeleteCompanyNote deleteCompanyNote()
+  public DeleteCompanyNote note()
   {
-    return null;
+    return new DeleteCompanyNote(credentials, mapper, api);
   }
 
-  public DeleteCompanyTeam deleteCompanyTeam()
+  public DeleteCompanyTeam team()
   {
-    return null;
+    return new DeleteCompanyTeam(credentials, mapper, api);
   }
 
 }

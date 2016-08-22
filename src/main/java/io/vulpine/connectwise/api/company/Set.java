@@ -13,7 +13,7 @@ public class Set extends ApiDivision
     super(c, m, a);
   }
 
-  public SetCompanyDefaultContact setCompanyDefaultContact()
+  public SetCompanyDefaultContact defaultContact()
   {
     return null;
   }
