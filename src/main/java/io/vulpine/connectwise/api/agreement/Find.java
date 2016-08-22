@@ -16,15 +16,13 @@ public class Find extends ApiDivision
     super(credentials, mapper, api);
   }
 
-  public FindAgreements findAgreements () throws IOException
+  public FindAgreements agreements() throws IOException
   {
     return new FindAgreements(credentials, mapper, api);
   }
 
-  public FindAgreementAdditions findAgreementAdditions() throws IOException
+  public FindAgreementAdditions additions() throws IOException
   {
     return new FindAgreementAdditions(credentials, mapper, api);
   }
-
-
 }
