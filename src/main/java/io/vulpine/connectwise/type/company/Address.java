@@ -3,13 +3,13 @@ package io.vulpine.connectwise.type.company;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.List;
 
 @JsonFilter( "filter-empty" )
 @JacksonXmlRootElement( localName = "Address" )
-public class Address extends CwObject
+public class Address extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "DefaultFlag" )
   protected boolean defaultFlag;

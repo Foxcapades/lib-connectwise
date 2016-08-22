@@ -2,9 +2,9 @@ package io.vulpine.connectwise.type.product;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
-class _Common extends CwObject
+class _Common extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "ItemIdentifier" )
   protected String itemIdentifier;

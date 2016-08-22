@@ -3,10 +3,10 @@ package io.vulpine.connectwise.type.company;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 @JacksonXmlRootElement( localName = "CompanyNote" )
-public class CompanyNote extends CwObject
+public class CompanyNote extends ConnectwiseCommon
 {
   @JacksonXmlProperty (localName = "NoteType")
   protected String noteType;

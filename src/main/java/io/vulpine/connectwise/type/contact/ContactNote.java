@@ -1,10 +1,10 @@
 package io.vulpine.connectwise.type.contact;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 @SuppressWarnings( "unused" )
-public class ContactNote extends CwObject
+public class ContactNote extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "NoteType" )
   protected String noteType;

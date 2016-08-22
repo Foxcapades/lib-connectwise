@@ -2,10 +2,10 @@ package io.vulpine.connectwise.type.purchasing;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 @SuppressWarnings( "unused" )
-public class ShipToCompany extends CwObject
+public class ShipToCompany extends ConnectwiseCommon
 {
   @JacksonXmlProperty(localName = "CompanyIdentifier")
   protected String CompanyIdentifier;

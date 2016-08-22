@@ -2,12 +2,12 @@ package io.vulpine.connectwise.type.project;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 
 @SuppressWarnings( "unused" )
-public class ProjectSummaryInfo extends CwObject
+public class ProjectSummaryInfo extends ConnectwiseCommon
 {
   @JacksonXmlProperty(localName = "ScheduledHours")
   protected double scheduledHours;

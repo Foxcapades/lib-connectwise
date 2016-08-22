@@ -1,11 +1,11 @@
 package io.vulpine.connectwise.type.agreement.addition;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 import io.vulpine.connectwise.type.PriceAttribute;
 import io.vulpine.connectwise.type.agreement.ProductClass;
 
-public class AdditionProduct extends CwObject
+public class AdditionProduct extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "ItemIdentifier" )
   protected String itemIdentifier;

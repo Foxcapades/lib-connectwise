@@ -2,10 +2,10 @@ package io.vulpine.connectwise.type.purchasing;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 @SuppressWarnings( "unused" )
-public class DropShipAddress extends CwObject
+public class DropShipAddress extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "ContactName" )
   protected String ContactName;

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Date;
 
-public class CwObject
+public class ConnectwiseCommon
 {
   @JacksonXmlProperty ( localName = "Id" )
   protected int id;

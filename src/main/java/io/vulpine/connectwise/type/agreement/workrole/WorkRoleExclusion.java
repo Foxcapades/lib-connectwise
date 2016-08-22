@@ -5,7 +5,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 @SuppressWarnings( "unused" )
 @JacksonXmlRootElement( localName = "GetAgreementWorkRoleExclusionResult" )
-public class WorkRoleExclusion extends AbstractWorkRole
+public class WorkRoleExclusion extends _Common
 {
   @JacksonXmlProperty( localName = "AddAllWorkRoles" )
   protected boolean AddAllWorkRoles;

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.util.Date;
 
-public class ProjectTicket extends AbstractSubProject
+public class ProjectTicket extends _Common
 {
   @JacksonXmlProperty( localName = "Summary" )
   protected String summary;

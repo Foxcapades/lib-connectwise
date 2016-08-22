@@ -4,7 +4,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 
 @SuppressWarnings( "unused" )
-abstract class AbstractWorkRole extends AbstractSubAgreement
+class _Common extends AbstractSubAgreement
 {
   @JacksonXmlProperty( localName = "WorkRoleId" )
   protected int WorkRoleId;

@@ -2,12 +2,12 @@ package io.vulpine.connectwise.type.invoice;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 
 @SuppressWarnings( "unused" )
-public class Invoice extends CwObject
+public class Invoice extends ConnectwiseCommon
 {
   @JacksonXmlProperty ( localName = "IsClientLocation" )
   protected boolean isClientLocation;

@@ -2,13 +2,13 @@ package io.vulpine.connectwise.type.contact;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 import java.util.List;
 
 @SuppressWarnings( "unused" )
-public class Contact extends CwObject
+public class Contact extends ConnectwiseCommon
 {
   public enum Gender
   {

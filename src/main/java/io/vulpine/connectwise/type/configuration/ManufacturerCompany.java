@@ -1,10 +1,10 @@
 package io.vulpine.connectwise.type.configuration;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 @SuppressWarnings( "unused" )
-public class ManufacturerCompany extends CwObject
+public class ManufacturerCompany extends ConnectwiseCommon
 {
   @JacksonXmlProperty ( localName = "Name")
   protected String name;

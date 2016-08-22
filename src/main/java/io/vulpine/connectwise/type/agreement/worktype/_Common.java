@@ -3,7 +3,7 @@ package io.vulpine.connectwise.type.agreement.worktype;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 
-abstract class AbstractWorkType extends AbstractSubAgreement
+class _Common extends AbstractSubAgreement
 {
   @JacksonXmlProperty( localName = "WorkTypeId" )
   protected int WorkTypeId;

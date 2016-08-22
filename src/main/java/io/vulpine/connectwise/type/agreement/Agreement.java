@@ -3,12 +3,12 @@ package io.vulpine.connectwise.type.agreement;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 
 @SuppressWarnings( "unused" )
-public class Agreement extends CwObject
+public class Agreement extends ConnectwiseCommon
 {
   @JacksonXmlProperty ( localName = "AgreementTypeId" )
   protected int agreementTypeId;

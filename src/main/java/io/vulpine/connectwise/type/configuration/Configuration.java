@@ -3,12 +3,12 @@ package io.vulpine.connectwise.type.configuration;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 
 @JacksonXmlRootElement( localName = "Configuration" )
-public class Configuration extends CwObject
+public class Configuration extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "ConfigurationTypeId" )
   protected int configurationTypeId;

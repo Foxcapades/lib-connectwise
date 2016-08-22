@@ -1,10 +1,10 @@
 package io.vulpine.connectwise.type.configuration;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 @SuppressWarnings( "unused" )
-public class ConfigurationQuestion extends CwObject
+public class ConfigurationQuestion extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "QuestionId" )
   protected int questionId;

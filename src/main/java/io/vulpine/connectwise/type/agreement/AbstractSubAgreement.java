@@ -1,9 +1,9 @@
 package io.vulpine.connectwise.type.agreement;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
-public abstract class AbstractSubAgreement extends CwObject
+public abstract class AbstractSubAgreement extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "AgreementId" )
   protected int agreementId;

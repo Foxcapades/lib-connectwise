@@ -9,7 +9,7 @@ import java.util.Date;
 
 @SuppressWarnings( "unused" )
 @JacksonXmlRootElement( localName = "GetAgreementWorkRoleResult" )
-public class WorkRole extends AbstractWorkRole
+public class WorkRole extends _Common
 {
   @JacksonXmlProperty( localName = "LocationId" )
   protected int LocationId;
