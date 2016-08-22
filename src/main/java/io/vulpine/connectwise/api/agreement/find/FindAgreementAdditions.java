@@ -13,13 +13,13 @@ import io.vulpine.connectwise.type.agreement.addition.FoundAddition;
 import java.io.IOException;
 import java.util.List;
 
-@JacksonXmlRootElement(localName = "FindAgreementAdditions")
-public class FindAgreementAdditions extends FindRequest < List< FoundAddition > >
+@JacksonXmlRootElement( localName = "FindAgreementAdditions" )
+public class FindAgreementAdditions extends FindRequest < List < FoundAddition > >
 {
   @JacksonXmlProperty( localName = "isOpen" )
   protected Boolean open = null;
 
-  public FindAgreementAdditions (
+  public FindAgreementAdditions(
     final Credentials credentials,
     final XmlMapper x,
     final ConnectwiseSubApiInterface i
@@ -29,18 +29,18 @@ public class FindAgreementAdditions extends FindRequest < List< FoundAddition > 
   }
 
   @Override
-  public List < FoundAddition > submit () throws IOException
+  public List < FoundAddition > submit() throws IOException
   {
     final FindAdditionsResponse r = xmlMapper.readerFor(FindAdditionsResponse.class).readValue(api.send(this));
     return r.getResults();
   }
 
-  public Boolean isOpen ()
+  public Boolean isOpen()
   {
     return open;
   }
 
-  public FindAgreementAdditions setOpen ( final Boolean open )
+  public FindAgreementAdditions setOpen( final Boolean open )
   {
     this.open = open;
     return this;

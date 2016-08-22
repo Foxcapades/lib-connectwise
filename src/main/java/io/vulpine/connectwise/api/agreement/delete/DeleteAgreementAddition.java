@@ -7,9 +7,9 @@ import io.vulpine.connectwise.api.request.DeleteRequest;
 
 import java.io.IOException;
 
-public class DeleteAgreementWorkType extends DeleteRequest
+public class DeleteAgreementAddition extends DeleteRequest
 {
-  public DeleteAgreementWorkType(
+  public DeleteAgreementAddition(
     final Credentials c,
     final XmlMapper x,
     final ConnectwiseSubApiInterface i
