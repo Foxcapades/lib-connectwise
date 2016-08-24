@@ -1,8 +1,8 @@
 package io.vulpine.connectwise.api.company;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.ApiDivision;
-import io.vulpine.connectwise.api.ConnectwiseSubApi;
+import io.vulpine.connectwise.api.common.ApiDivision;
+import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.company.add.AddCompany;
 import io.vulpine.connectwise.api.request.Credentials;
 

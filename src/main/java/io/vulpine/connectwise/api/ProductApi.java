@@ -1,32 +1,83 @@
 package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.product.*;
 import io.vulpine.connectwise.api.request.Credentials;
 
 public class ProductApi extends ConnectwiseSubApi
 {
+  /**
+   * "Add" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
   private Add add = null;
 
+  /**
+   * "Delete" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
   private Delete delete = null;
 
+  /**
+   * "Add or Update" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
   private AddOrUpdate addOrUpdate = null;
 
+  /**
+   * "Update" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
   private Update update = null;
 
+  /**
+   * "Set" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
   private Set set = null;
 
+  /**
+   * "Remove" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
   private Remove remove = null;
 
+  /**
+   * "Load" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
   private Load load = null;
 
+  /**
+   * "Get" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
   private Get get = null;
 
+  /**
+   * "Find" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
   private Find find = null;
 
-  public ProductApi( final ConnectwiseApi api, final Credentials c, final XmlMapper x )
+  public ProductApi(
+    final ConnectwiseApi connectwiseApi,
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final String endpoint
+  )
   {
-    super(api, c, x, "ProductApi.asmx");
+    super(connectwiseApi, credentials, xmlMapper, endpoint + "ProductApi.asmx");
   }
 
   public Add add()

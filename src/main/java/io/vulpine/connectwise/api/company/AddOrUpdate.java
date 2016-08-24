@@ -1,8 +1,8 @@
 package io.vulpine.connectwise.api.company;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.ApiDivision;
-import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.common.ApiDivision;
+import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.company.addOrUpdate.AddOrUpdateCompany;
 import io.vulpine.connectwise.api.company.addOrUpdate.AddOrUpdateCompanyCustomField;
 import io.vulpine.connectwise.api.company.addOrUpdate.AddOrUpdateCompanyNote;

@@ -2,7 +2,7 @@ package io.vulpine.connectwise.api.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;

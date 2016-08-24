@@ -3,7 +3,7 @@ package io.vulpine.connectwise.api.request;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
 
 public abstract class DeleteRequest extends CwRequest < Void >
 {

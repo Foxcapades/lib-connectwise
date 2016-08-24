@@ -1,8 +1,8 @@
 package io.vulpine.connectwise.api.product;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.ApiDivision;
-import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.common.ApiDivision;
+import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.product.remove.RemoveCompanyPricingSchedule;
 import io.vulpine.connectwise.api.request.Credentials;
 

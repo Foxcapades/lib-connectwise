@@ -1,8 +1,8 @@
 package io.vulpine.connectwise.api.agreement;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.ApiDivision;
-import io.vulpine.connectwise.api.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.common.ApiDivision;
+import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.agreement.find.FindAgreementAdditions;
 import io.vulpine.connectwise.api.agreement.find.FindAgreements;
 import io.vulpine.connectwise.api.request.Credentials;

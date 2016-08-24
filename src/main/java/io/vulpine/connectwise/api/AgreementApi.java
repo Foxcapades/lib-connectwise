@@ -6,6 +6,8 @@ import io.vulpine.connectwise.api.agreement.AddOrUpdate;
 import io.vulpine.connectwise.api.agreement.Delete;
 import io.vulpine.connectwise.api.agreement.Find;
 import io.vulpine.connectwise.api.agreement.Get;
+import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
+import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.CwRequest;
 
@@ -13,46 +15,74 @@ import java.io.IOException;
 
 public class AgreementApi extends ConnectwiseSubApi implements ConnectwiseSubApiInterface
 {
-  protected AddOrUpdate addOrUpdate = null;
-  protected Delete delete = null;
-  protected Find find = null;
-  protected Get get = null;
+  /**
+   * "Add or Update" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private AddOrUpdate addOrUpdate = null;
 
-  AgreementApi ( final ConnectwiseApi a, final Credentials c, final XmlMapper x )
+  /**
+   * "Delete" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private Delete delete = null;
+
+  /**
+   * "Find" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private Find find = null;
+
+  /**
+   * "Get" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private Get get = null;
+
+  AgreementApi(
+    final ConnectwiseApi connectwiseApi,
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final String endpoint
+  )
   {
-    super(a, c, x, "AgreementApi.asmx");
+    super(connectwiseApi, credentials, xmlMapper, endpoint + "AgreementApi.asmx");
   }
 
-  public AddOrUpdate addOrUpdate ()
+  public AddOrUpdate addOrUpdate()
   {
-    if ( null == addOrUpdate ) {
+    if (null == addOrUpdate) {
       addOrUpdate = new AddOrUpdate(credentials, xmlMapper, this);
     }
 
     return addOrUpdate;
   }
 
-  public Delete delete ()
+  public Delete delete()
   {
-    if ( null == delete ) {
+    if (null == delete) {
       delete = new Delete(credentials, xmlMapper, this);
     }
 
     return delete;
   }
 
-  public Find find ()
+  public Find find()
   {
-    if ( null == find ) {
+    if (null == find) {
       find = new Find(credentials, xmlMapper, this);
     }
 
     return find;
   }
 
-  public Get get ()
+  public Get get()
   {
-    if ( null == get ) {
+    if (null == get) {
       get = new Get(credentials, xmlMapper, this);
     }
 

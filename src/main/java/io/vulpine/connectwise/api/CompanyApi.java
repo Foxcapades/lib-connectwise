@@ -1,35 +1,86 @@
 package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.company.*;
 import io.vulpine.connectwise.api.request.Credentials;
 
 public class CompanyApi extends ConnectwiseSubApi
 {
-  protected Add add = null;
+  /**
+   * "Add" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private Add add = null;
 
-  protected AddOrUpdate addOrUpdate = null;
+  /**
+   * "Add or Update" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private AddOrUpdate addOrUpdate = null;
 
-  protected Delete delete = null;
+  /**
+   * "Delete" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private Delete delete = null;
 
-  protected Find find = null;
+  /**
+   * "Find" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private Find find = null;
 
-  protected Get get = null;
+  /**
+   * "Get" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private Get get = null;
 
-  protected GetAll getAll = null;
+  /**
+   * "Get All" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private GetAll getAll = null;
 
-  protected Load load = null;
+  /**
+   * "Load" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private Load load = null;
 
-  protected Set set = null;
+  /**
+   * "Set" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private Set set = null;
 
-  protected Update update = null;
+  /**
+   * "Update" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private Update update = null;
 
-  public CompanyApi( final ConnectwiseApi api, final Credentials creds, final XmlMapper mapper )
+  public CompanyApi(
+    final ConnectwiseApi connectwiseApi,
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final String endpoint
+  )
   {
-    super(api, creds, mapper, "CompanyApi.asmx");
+    super(connectwiseApi, credentials, xmlMapper, endpoint + "CompanyApi.asmx");
   }
 
-  public Add getAdd()
+  public Add add()
   {
     if (null == add)
       add = new Add(credentials, xmlMapper, this);
@@ -37,7 +88,7 @@ public class CompanyApi extends ConnectwiseSubApi
     return add;
   }
 
-  public AddOrUpdate getAddOrUpdate()
+  public AddOrUpdate addOrUpdate()
   {
     if (null == addOrUpdate)
       addOrUpdate = new AddOrUpdate(credentials, xmlMapper, this);
@@ -45,7 +96,7 @@ public class CompanyApi extends ConnectwiseSubApi
     return addOrUpdate;
   }
 
-  public Delete getDelete()
+  public Delete delete()
   {
     if (null == delete)
       delete = new Delete(credentials, xmlMapper, this);
@@ -53,7 +104,7 @@ public class CompanyApi extends ConnectwiseSubApi
     return delete;
   }
 
-  public Find getFind()
+  public Find find()
   {
     if (null == find)
       find = new Find(credentials, xmlMapper, this);
@@ -61,7 +112,7 @@ public class CompanyApi extends ConnectwiseSubApi
     return find;
   }
 
-  public Get getGet()
+  public Get get()
   {
     if (null == get)
       get = new Get(credentials, xmlMapper, this);
@@ -69,7 +120,7 @@ public class CompanyApi extends ConnectwiseSubApi
     return get;
   }
 
-  public GetAll getGetAll()
+  public GetAll getAll()
   {
     if (null == getAll)
       getAll = new GetAll(credentials, xmlMapper, this);
@@ -77,7 +128,7 @@ public class CompanyApi extends ConnectwiseSubApi
     return getAll;
   }
 
-  public Load getLoad()
+  public Load load()
   {
     if (null == load)
       load = new Load(credentials, xmlMapper, this);
@@ -85,7 +136,7 @@ public class CompanyApi extends ConnectwiseSubApi
     return load;
   }
 
-  public Set getSet()
+  public Set set()
   {
     if (null == set)
       set = new Set(credentials, xmlMapper, this);
@@ -93,7 +144,7 @@ public class CompanyApi extends ConnectwiseSubApi
     return set;
   }
 
-  public Update getUpdate()
+  public Update update()
   {
     if (null == update)
       update = new Update(credentials, xmlMapper, this);

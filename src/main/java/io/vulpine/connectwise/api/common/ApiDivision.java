@@ -1,6 +1,7 @@
-package io.vulpine.connectwise.api;
+package io.vulpine.connectwise.api.common;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.request.Credentials;
 
 public class ApiDivision
