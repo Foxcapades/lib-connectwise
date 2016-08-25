@@ -23,7 +23,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.Date;
 import java.util.List;
 
-public class ProjectPhase extends _Common
+public class ProjectPhase extends ProjectCommon
 {
   @JacksonXmlProperty(localName = "Description")
   protected String description;

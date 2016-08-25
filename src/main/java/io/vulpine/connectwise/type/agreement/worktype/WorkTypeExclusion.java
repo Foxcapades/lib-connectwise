@@ -22,7 +22,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 @SuppressWarnings( "unused" )
 @JacksonXmlRootElement( localName = "GetAgreementWorkTypeExclusionResult" )
-public class WorkTypeExclusion extends _Common
+public class WorkTypeExclusion extends WorkTypeCommon
 {
   @JacksonXmlProperty( localName = "AddAllWorkTypes" )
   protected boolean AddAllWorkTypes;

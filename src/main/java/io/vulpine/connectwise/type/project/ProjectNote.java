@@ -20,7 +20,7 @@ package io.vulpine.connectwise.type.project;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 @SuppressWarnings( "unused" )
-public class ProjectNote extends _Common
+public class ProjectNote extends ProjectCommon
 {
   @JacksonXmlProperty(localName = "Notes")
   protected String notes;

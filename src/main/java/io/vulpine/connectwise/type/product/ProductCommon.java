@@ -21,7 +21,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
-class _Common extends ConnectwiseCommon
+public class ProductCommon extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "ItemIdentifier" )
   protected String itemIdentifier;

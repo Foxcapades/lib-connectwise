@@ -14,24 +14,24 @@
  * limitations under the License.
  *
  */
-
-package io.vulpine.connectwise.type.agreement.worktype;
+package io.vulpine.connectwise.type.project;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 
-class _Common extends AbstractSubAgreement
+import io.vulpine.connectwise.type.ConnectwiseCommon;
+
+class ProjectCommon extends ConnectwiseCommon
 {
-  @JacksonXmlProperty( localName = "WorkTypeId" )
-  protected int WorkTypeId;
+  @JacksonXmlProperty(localName = "ProjectId")
+  protected int projectId;
 
-  public int getWorkTypeId ()
+  public int getProjectId()
   {
-    return WorkTypeId;
+    return projectId;
   }
 
-  public void setWorkTypeId ( int workTypeId )
+  public void setProjectId( final int projectId )
   {
-    WorkTypeId = workTypeId;
+    this.projectId = projectId;
   }
 }

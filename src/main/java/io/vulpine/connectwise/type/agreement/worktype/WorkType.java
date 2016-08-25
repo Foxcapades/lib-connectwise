@@ -26,7 +26,7 @@ import java.util.Date;
 
 @SuppressWarnings( "unused" )
 @JacksonXmlRootElement( localName = "GetAgreementWorkTypeResult" )
-public class WorkType extends _Common
+public class WorkType extends WorkTypeCommon
 {
   @JacksonXmlProperty( localName = "LocationId" )
   protected int LocationId;

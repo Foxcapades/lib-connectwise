@@ -15,6 +15,30 @@
  */
 package io.vulpine.connectwise.api.activity.delete;
 
-public class DeleteActivity
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.request.Credentials;
+import io.vulpine.connectwise.api.request.DeleteRequest;
+
+import java.io.IOException;
+
+public class DeleteActivity extends DeleteRequest
 {
+  public DeleteActivity(
+    final Credentials c,
+    final XmlMapper x,
+    final ConnectwiseSubApiInterface i,
+    final int activityId
+  )
+  {
+    super(c, x, i);
+    setId(activityId);
+  }
+
+  @Override
+  public Void submit() throws IOException
+  {
+    api.send(this);
+    return null;
+  }
 }

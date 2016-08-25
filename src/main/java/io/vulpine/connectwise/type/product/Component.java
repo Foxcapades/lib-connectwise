@@ -20,7 +20,7 @@ package io.vulpine.connectwise.type.product;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 @SuppressWarnings( "unused" )
-public class Component extends _Common
+public class Component extends ProductCommon
 {
   @JacksonXmlProperty( localName = "SequenceNumber" )
   protected int sequenceNumber;

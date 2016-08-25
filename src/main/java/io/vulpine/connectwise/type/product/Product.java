@@ -22,7 +22,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.List;
 
 @SuppressWarnings( "unused" )
-public class Product extends _Common
+public class Product extends ProductCommon
 {
   @JacksonXmlProperty( localName = "Type" )
   protected String type;
