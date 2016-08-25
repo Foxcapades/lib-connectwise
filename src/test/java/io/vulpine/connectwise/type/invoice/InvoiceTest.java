@@ -16,11 +16,10 @@
  */
 package io.vulpine.connectwise.type.invoice;
 
+import de.bechte.junit.runners.context.HierarchicalContextRunner;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
 
 import java.lang.reflect.Field;
 import java.util.Date;
@@ -28,66 +27,21 @@ import java.util.Date;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 
-@RunWith(Suite.class)
-@Suite.SuiteClasses({
-  InvoiceTest.IsClientLocation.class,
-  InvoiceTest.Taxable.class,
-  InvoiceTest.Email.class,
-  InvoiceTest.Closed.class,
-  InvoiceTest.Sent.class,
-  InvoiceTest.GlPosted.class,
-  InvoiceTest.DueDate.class,
-  InvoiceTest.InvoiceDate.class,
-  InvoiceTest.InvoiceType.class,
-  InvoiceTest.DownpaymentAmount.class,
-  InvoiceTest.InvoiceAmount.class,
-  InvoiceTest.ProjectBillingAmount.class,
-  InvoiceTest.ProjectBillingRate.class,
-  InvoiceTest.SalesTaxAmount.class,
-  InvoiceTest.TaxableAmount.class,
-  InvoiceTest.TaxRate.class,
-  InvoiceTest.TicketBillingAmount.class,
-  InvoiceTest.DueDays.class,
-  InvoiceTest.AgreementName.class,
-  InvoiceTest.AgreementType.class,
-  InvoiceTest.BillingDelivery.class,
-  InvoiceTest.BillingMethod.class,
-  InvoiceTest.BillingTerms.class,
-  InvoiceTest.BillingTermsXref.class,
-  InvoiceTest.BusinessUnit.class,
-  InvoiceTest.CurrencyName.class,
-  InvoiceTest.CurrencySymbol.class,
-  InvoiceTest.GlBatchId.class,
-  InvoiceTest.TopComment.class,
-  InvoiceTest.BottomComment.class,
-  InvoiceTest.InvoiceNumber.class,
-  InvoiceTest.Location.class,
-  InvoiceTest.PoNumber.class,
-  InvoiceTest.ProjectName.class,
-  InvoiceTest.ProjectNumber.class,
-  InvoiceTest.PhaseName.class,
-  InvoiceTest.RoutedMemberIdentifier.class,
-  InvoiceTest.RoutedMemberName.class,
-  InvoiceTest.RemitName.class,
-  InvoiceTest.RemitPhone.class,
-  InvoiceTest.SalesRepIdentifier.class,
-  InvoiceTest.Status.class,
-  InvoiceTest.TaxCodeDescription.class,
-  InvoiceTest.TaxCode.class,
-  InvoiceTest.Territory.class,
-  InvoiceTest.TicketNumber.class,
-  InvoiceTest.TicketResolution.class,
-  InvoiceTest.TicketSummary.class
-})
+@RunWith( HierarchicalContextRunner.class )
 public class InvoiceTest
 {
-  private static final String TEST_STRING = "Test string value.";
+  private static final String  TEST_STRING  = "Test string value.";
+
   private static final boolean TEST_BOOLEAN = true;
-  private static final int TEST_INT = 666;
-  private static final Date TEST_DATE = new Date();
-  private static final double TEST_DOUBLE = 6.66;
+
+  private static final int     TEST_INT     = 666;
+
+  private static final Date    TEST_DATE    = new Date();
+
+  private static final double  TEST_DOUBLE  = 6.66;
 
   private static Invoice invoice = new Invoice();
+  private static Field field;
 
   @Before
   public void setUp()
@@ -95,12 +49,10 @@ public class InvoiceTest
     invoice = new Invoice();
   }
 
-  public static class IsClientLocation
+  public class IsClientLocation
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("isClientLocation");
       field.setAccessible(true);
@@ -121,12 +73,10 @@ public class InvoiceTest
     }
   }
 
-  public static class Taxable
+  public class Taxable
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("taxable");
       field.setAccessible(true);
@@ -147,12 +97,10 @@ public class InvoiceTest
     }
   }
 
-  public static class Email
+  public class Email
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("email");
       field.setAccessible(true);
@@ -171,14 +119,12 @@ public class InvoiceTest
       invoice.setEmail(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(invoice));
     }
-}
+  }
 
-  public static class Closed
+  public class Closed
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("closed");
       field.setAccessible(true);
@@ -197,14 +143,12 @@ public class InvoiceTest
       invoice.setClosed(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(invoice));
     }
-}
+  }
 
-  public static class Sent
+  public class Sent
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("sent");
       field.setAccessible(true);
@@ -225,16 +169,15 @@ public class InvoiceTest
     }
   }
 
-  public static class GlPosted
+  public class GlPosted
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("glPosted");
       field.setAccessible(true);
     }
+
     @Test
     public void isGlPosted() throws Exception
     {
@@ -250,12 +193,10 @@ public class InvoiceTest
     }
   }
 
-  public static class DueDate
+  public class DueDate
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("dueDate");
       field.setAccessible(true);
@@ -276,12 +217,10 @@ public class InvoiceTest
     }
   }
 
-  public static class InvoiceDate
+  public class InvoiceDate
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("invoiceDate");
       field.setAccessible(true);
@@ -302,12 +241,10 @@ public class InvoiceTest
     }
   }
 
-  public static class InvoiceType
+  public class InvoiceType
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("invoiceType");
       field.setAccessible(true);
@@ -328,12 +265,10 @@ public class InvoiceTest
     }
   }
 
-  public static class DownpaymentAmount
+  public class DownpaymentAmount
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("downpaymentAmount");
       field.setAccessible(true);
@@ -354,12 +289,10 @@ public class InvoiceTest
     }
   }
 
-  public static class InvoiceAmount
+  public class InvoiceAmount
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("invoiceAmount");
       field.setAccessible(true);
@@ -380,12 +313,10 @@ public class InvoiceTest
     }
   }
 
-  public static class ProjectBillingAmount
+  public class ProjectBillingAmount
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("projectBillingAmount");
       field.setAccessible(true);
@@ -406,12 +337,10 @@ public class InvoiceTest
     }
   }
 
-  public static class ProjectBillingRate
+  public class ProjectBillingRate
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("projectBillingRate");
       field.setAccessible(true);
@@ -432,12 +361,10 @@ public class InvoiceTest
     }
   }
 
-  public static class SalesTaxAmount
+  public class SalesTaxAmount
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("salesTaxAmount");
       field.setAccessible(true);
@@ -458,12 +385,10 @@ public class InvoiceTest
     }
   }
 
-  public static class TaxableAmount
+  public class TaxableAmount
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("taxableAmount");
       field.setAccessible(true);
@@ -484,12 +409,10 @@ public class InvoiceTest
     }
   }
 
-  public static class TaxRate
+  public class TaxRate
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("taxRate");
       field.setAccessible(true);
@@ -510,12 +433,10 @@ public class InvoiceTest
     }
   }
 
-  public static class TicketBillingAmount
+  public class TicketBillingAmount
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("ticketBillingAmount");
       field.setAccessible(true);
@@ -536,12 +457,10 @@ public class InvoiceTest
     }
   }
 
-  public static class DueDays
+  public class DueDays
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("dueDays");
       field.setAccessible(true);
@@ -562,12 +481,10 @@ public class InvoiceTest
     }
   }
 
-  public static class AgreementName
+  public class AgreementName
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("agreementName");
       field.setAccessible(true);
@@ -588,12 +505,10 @@ public class InvoiceTest
     }
   }
 
-  public static class AgreementType
+  public class AgreementType
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("agreementType");
       field.setAccessible(true);
@@ -614,12 +529,10 @@ public class InvoiceTest
     }
   }
 
-  public static class BillingDelivery
+  public class BillingDelivery
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("billingDelivery");
       field.setAccessible(true);
@@ -640,12 +553,10 @@ public class InvoiceTest
     }
   }
 
-  public static class BillingMethod
+  public class BillingMethod
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("billingMethod");
       field.setAccessible(true);
@@ -666,12 +577,10 @@ public class InvoiceTest
     }
   }
 
-  public static class BillingTerms
+  public class BillingTerms
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("billingTerms");
       field.setAccessible(true);
@@ -692,12 +601,10 @@ public class InvoiceTest
     }
   }
 
-  public static class BillingTermsXref
+  public class BillingTermsXref
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("billingTermsXref");
       field.setAccessible(true);
@@ -718,12 +625,10 @@ public class InvoiceTest
     }
   }
 
-  public static class BusinessUnit
+  public class BusinessUnit
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("businessUnit");
       field.setAccessible(true);
@@ -744,12 +649,10 @@ public class InvoiceTest
     }
   }
 
-  public static class CurrencyName
+  public class CurrencyName
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("currencyName");
       field.setAccessible(true);
@@ -770,12 +673,10 @@ public class InvoiceTest
     }
   }
 
-  public static class CurrencySymbol
+  public class CurrencySymbol
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("currencySymbol");
       field.setAccessible(true);
@@ -796,12 +697,10 @@ public class InvoiceTest
     }
   }
 
-  public static class GlBatchId
+  public class GlBatchId
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("glBatchId");
       field.setAccessible(true);
@@ -822,12 +721,10 @@ public class InvoiceTest
     }
   }
 
-  public static class TopComment
+  public class TopComment
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("topComment");
       field.setAccessible(true);
@@ -848,12 +745,10 @@ public class InvoiceTest
     }
   }
 
-  public static class BottomComment
+  public class BottomComment
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("bottomComment");
       field.setAccessible(true);
@@ -874,12 +769,10 @@ public class InvoiceTest
     }
   }
 
-  public static class InvoiceNumber
+  public class InvoiceNumber
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("invoiceNumber");
       field.setAccessible(true);
@@ -900,12 +793,10 @@ public class InvoiceTest
     }
   }
 
-  public static class Location
+  public class Location
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("location");
       field.setAccessible(true);
@@ -926,12 +817,10 @@ public class InvoiceTest
     }
   }
 
-  public static class PoNumber
+  public class PoNumber
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("poNumber");
       field.setAccessible(true);
@@ -952,12 +841,10 @@ public class InvoiceTest
     }
   }
 
-  public static class ProjectName
+  public class ProjectName
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("projectName");
       field.setAccessible(true);
@@ -978,12 +865,10 @@ public class InvoiceTest
     }
   }
 
-  public static class ProjectNumber
+  public class ProjectNumber
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("projectNumber");
       field.setAccessible(true);
@@ -1004,12 +889,10 @@ public class InvoiceTest
     }
   }
 
-  public static class PhaseName
+  public class PhaseName
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("phaseName");
       field.setAccessible(true);
@@ -1030,12 +913,10 @@ public class InvoiceTest
     }
   }
 
-  public static class RoutedMemberIdentifier
+  public class RoutedMemberIdentifier
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("routedMemberIdentifier");
       field.setAccessible(true);
@@ -1056,12 +937,10 @@ public class InvoiceTest
     }
   }
 
-  public static class RoutedMemberName
+  public class RoutedMemberName
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("routedMemberName");
       field.setAccessible(true);
@@ -1082,12 +961,10 @@ public class InvoiceTest
     }
   }
 
-  public static class RemitName
+  public class RemitName
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("remitName");
       field.setAccessible(true);
@@ -1108,12 +985,10 @@ public class InvoiceTest
     }
   }
 
-  public static class RemitPhone
+  public class RemitPhone
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("remitPhone");
       field.setAccessible(true);
@@ -1134,12 +1009,10 @@ public class InvoiceTest
     }
   }
 
-  public static class SalesRepIdentifier
+  public class SalesRepIdentifier
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("salesRepIdentifier");
       field.setAccessible(true);
@@ -1160,12 +1033,10 @@ public class InvoiceTest
     }
   }
 
-  public static class Status
+  public class Status
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("status");
       field.setAccessible(true);
@@ -1186,12 +1057,10 @@ public class InvoiceTest
     }
   }
 
-  public static class TaxCodeDescription
+  public class TaxCodeDescription
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("taxCodeDescription");
       field.setAccessible(true);
@@ -1212,12 +1081,10 @@ public class InvoiceTest
     }
   }
 
-  public static class TaxCode
+  public class TaxCode
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("taxCode");
       field.setAccessible(true);
@@ -1238,12 +1105,10 @@ public class InvoiceTest
     }
   }
 
-  public static class Territory
+  public class Territory
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("territory");
       field.setAccessible(true);
@@ -1264,12 +1129,10 @@ public class InvoiceTest
     }
   }
 
-  public static class TicketNumber
+  public class TicketNumber
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("ticketNumber");
       field.setAccessible(true);
@@ -1290,12 +1153,10 @@ public class InvoiceTest
     }
   }
 
-  public static class TicketResolution
+  public class TicketResolution
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("ticketResolution");
       field.setAccessible(true);
@@ -1316,12 +1177,10 @@ public class InvoiceTest
     }
   }
 
-  public static class TicketSummary
+  public class TicketSummary
   {
-    private static Field field;
-
-    @BeforeClass
-    public static void setUpClass() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
       field = Invoice.class.getDeclaredField("ticketSummary");
       field.setAccessible(true);

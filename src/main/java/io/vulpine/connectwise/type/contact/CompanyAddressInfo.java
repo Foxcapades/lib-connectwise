@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.type.contact;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
