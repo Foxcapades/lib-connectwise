@@ -15,6 +15,8 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -24,1746 +26,1167 @@ import static org.junit.Assert.*;
 
 public class AgreementTest
 {
+  private static final int     intTest     = 159753;
+  private static final String  stringTest  = "Test String Value.";
+  private static final boolean booleanTest = true;
+  private static final Date    dateTest    = new Date();
+  private static final double  doubleTest  = 66.6;
+
+  private static Field
+    agreementTypeId,
+    agreementName,
+    parentAgreementId,
+    companyId,
+    contactId,
+    customerPo,
+    locationId,
+    departmentId,
+    restrictLocation,
+    restrictDepartment,
+    startDate,
+    endDate,
+    noEndingDate,
+    opportunityId,
+    cancelled,
+    dateCancelled,
+    reasonCancelled,
+    slaId,
+    subContractCompanyId,
+    subContractContactId,
+    workOrder,
+    internalNotes,
+    applicationUnits,
+    applicationLimit,
+    applicationCycle,
+    periodType,
+    applicationUnlimited,
+    oneTime,
+    coverAgreementTime,
+    coverAgreementProduct,
+    coverAgreementExpense,
+    coverSalesTax,
+    carryOverUnused,
+    allowOverruns,
+    expiredDays,
+    limit,
+    expireWhenZero,
+    chargeToFirm,
+    employeeCompRate,
+    employeeCompNotExceed,
+    compHourlyRate,
+    compLimitAmount,
+    billCycleId,
+    billOneTime,
+    billTermsId,
+    invoicingCycle,
+    billToCompanyId,
+    billToAddressId,
+    billAmount,
+    taxable,
+    prorateFirstBill,
+    billStartDate,
+    taxCodeId,
+    restrictDownPayment,
+    invoiceDescription,
+    topComment,
+    bottomComment,
+    workRoleId,
+    workTypeId,
+    projectTypeId,
+    invoiceTemplateId,
+    billTime,
+    billExpenses,
+    billProducts,
+    billableTimeInvoice,
+    billableExpenseInvoice,
+    billableProductInvoice;
+
+  private Agreement agreement;
+
+  @BeforeClass
+  public static void setUpClass () throws Exception
+  {
+    final Class < Agreement > c = Agreement.class;
+    agreementTypeId = c.getDeclaredField("agreementTypeId");
+    agreementTypeId.setAccessible(true);
+    agreementName = c.getDeclaredField("agreementName");
+    agreementName.setAccessible(true);
+    billableProductInvoice = c.getDeclaredField("billableProductInvoice");
+    billableProductInvoice.setAccessible(true);
+    billableExpenseInvoice = c.getDeclaredField("billableExpenseInvoice");
+    billableExpenseInvoice.setAccessible(true);
+    parentAgreementId = c.getDeclaredField("parentAgreementId");
+    parentAgreementId.setAccessible(true);
+    companyId = c.getDeclaredField("companyId");
+    companyId.setAccessible(true);
+    contactId = c.getDeclaredField("contactId");
+    contactId.setAccessible(true);
+    customerPo = c.getDeclaredField("customerPo");
+    customerPo.setAccessible(true);
+    locationId = c.getDeclaredField("locationId");
+    locationId.setAccessible(true);
+    departmentId = c.getDeclaredField("departmentId");
+    departmentId.setAccessible(true);
+    restrictLocation = c.getDeclaredField("restrictLocation");
+    restrictLocation.setAccessible(true);
+    restrictDepartment = c.getDeclaredField("restrictDepartment");
+    restrictDepartment.setAccessible(true);
+    startDate = c.getDeclaredField("startDate");
+    startDate.setAccessible(true);
+    endDate = c.getDeclaredField("endDate");
+    endDate.setAccessible(true);
+    noEndingDate = c.getDeclaredField("noEndingDate");
+    noEndingDate.setAccessible(true);
+    opportunityId = c.getDeclaredField("opportunityId");
+    opportunityId.setAccessible(true);
+    cancelled = c.getDeclaredField("cancelled");
+    cancelled.setAccessible(true);
+    dateCancelled = c.getDeclaredField("dateCancelled");
+    dateCancelled.setAccessible(true);
+    reasonCancelled = c.getDeclaredField("reasonCancelled");
+    reasonCancelled.setAccessible(true);
+    slaId = c.getDeclaredField("slaId");
+    slaId.setAccessible(true);
+    subContractCompanyId = c.getDeclaredField("subContractCompanyId");
+    subContractCompanyId.setAccessible(true);
+    subContractContactId = c.getDeclaredField("subContractContactId");
+    subContractContactId.setAccessible(true);
+    workOrder = c.getDeclaredField("workOrder");
+    workOrder.setAccessible(true);
+    internalNotes = c.getDeclaredField("internalNotes");
+    internalNotes.setAccessible(true);
+    applicationUnits = c.getDeclaredField("applicationUnits");
+    applicationUnits.setAccessible(true);
+    applicationLimit = c.getDeclaredField("applicationLimit");
+    applicationLimit.setAccessible(true);
+    applicationCycle = c.getDeclaredField("applicationCycle");
+    applicationCycle.setAccessible(true);
+    periodType = c.getDeclaredField("periodType");
+    periodType.setAccessible(true);
+    applicationUnlimited = c.getDeclaredField("applicationUnlimited");
+    applicationUnlimited.setAccessible(true);
+    oneTime = c.getDeclaredField("oneTime");
+    oneTime.setAccessible(true);
+    coverAgreementTime = c.getDeclaredField("coverAgreementTime");
+    coverAgreementTime.setAccessible(true);
+    coverAgreementProduct = c.getDeclaredField("coverAgreementProduct");
+    coverAgreementProduct.setAccessible(true);
+    coverAgreementExpense = c.getDeclaredField("coverAgreementExpense");
+    coverAgreementExpense.setAccessible(true);
+    coverSalesTax = c.getDeclaredField("coverSalesTax");
+    coverSalesTax.setAccessible(true);
+    carryOverUnused = c.getDeclaredField("carryOverUnused");
+    carryOverUnused.setAccessible(true);
+    allowOverruns = c.getDeclaredField("allowOverruns");
+    allowOverruns.setAccessible(true);
+    expiredDays = c.getDeclaredField("expiredDays");
+    expiredDays.setAccessible(true);
+    limit = c.getDeclaredField("limit");
+    limit.setAccessible(true);
+    expireWhenZero = c.getDeclaredField("expireWhenZero");
+    expireWhenZero.setAccessible(true);
+    chargeToFirm = c.getDeclaredField("chargeToFirm");
+    chargeToFirm.setAccessible(true);
+    employeeCompRate = c.getDeclaredField("employeeCompRate");
+    employeeCompRate.setAccessible(true);
+    employeeCompNotExceed = c.getDeclaredField("employeeCompNotExceed");
+    employeeCompNotExceed.setAccessible(true);
+    compHourlyRate = c.getDeclaredField("compHourlyRate");
+    compHourlyRate.setAccessible(true);
+    compLimitAmount = c.getDeclaredField("compLimitAmount");
+    compLimitAmount.setAccessible(true);
+    billCycleId = c.getDeclaredField("billCycleId");
+    billCycleId.setAccessible(true);
+    billOneTime = c.getDeclaredField("billOneTime");
+    billOneTime.setAccessible(true);
+    billTermsId = c.getDeclaredField("billTermsId");
+    billTermsId.setAccessible(true);
+    invoicingCycle = c.getDeclaredField("invoicingCycle");
+    invoicingCycle.setAccessible(true);
+    billToCompanyId = c.getDeclaredField("billToCompanyId");
+    billToCompanyId.setAccessible(true);
+    billToAddressId = c.getDeclaredField("billToAddressId");
+    billToAddressId.setAccessible(true);
+    billAmount = c.getDeclaredField("billAmount");
+    billAmount.setAccessible(true);
+    taxable = c.getDeclaredField("taxable");
+    taxable.setAccessible(true);
+    prorateFirstBill = c.getDeclaredField("prorateFirstBill");
+    prorateFirstBill.setAccessible(true);
+    billStartDate = c.getDeclaredField("billStartDate");
+    billStartDate.setAccessible(true);
+    taxCodeId = c.getDeclaredField("taxCodeId");
+    taxCodeId.setAccessible(true);
+    restrictDownPayment = c.getDeclaredField("restrictDownPayment");
+    restrictDownPayment.setAccessible(true);
+    invoiceDescription = c.getDeclaredField("invoiceDescription");
+    invoiceDescription.setAccessible(true);
+    topComment = c.getDeclaredField("topComment");
+    topComment.setAccessible(true);
+    bottomComment = c.getDeclaredField("bottomComment");
+    bottomComment.setAccessible(true);
+    workRoleId = c.getDeclaredField("workRoleId");
+    workRoleId.setAccessible(true);
+    workTypeId = c.getDeclaredField("workTypeId");
+    workTypeId.setAccessible(true);
+    projectTypeId = c.getDeclaredField("projectTypeId");
+    projectTypeId.setAccessible(true);
+    invoiceTemplateId = c.getDeclaredField("invoiceTemplateId");
+    invoiceTemplateId.setAccessible(true);
+    billTime = c.getDeclaredField("billTime");
+    billTime.setAccessible(true);
+    billExpenses = c.getDeclaredField("billExpenses");
+    billExpenses.setAccessible(true);
+    billProducts = c.getDeclaredField("billProducts");
+    billProducts.setAccessible(true);
+    billableTimeInvoice = c.getDeclaredField("billableTimeInvoice");
+    billableTimeInvoice.setAccessible(true);
+    billableExpenseInvoice = c.getDeclaredField("billableExpenseInvoice");
+    billableExpenseInvoice.setAccessible(true);
+  }
+
+  @Before
+  public void setUp ()
+  {
+    agreement = new Agreement();
+  }
+
   @Test
   public void getAgreementTypeId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("agreementTypeId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getAgreementTypeId());
+    agreementTypeId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getAgreementTypeId());
   }
 
   @Test
   public void setAgreementTypeId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("agreementTypeId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setAgreementTypeId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setAgreementTypeId(intTest);
+    assertEquals(intTest, agreementTypeId.get(agreement));
   }
 
   @Test
   public void getAgreementName () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("agreementName");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getAgreementName());
+    agreementName.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getAgreementName());
   }
 
   @Test
   public void setAgreementName () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("agreementName");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    agreement.setAgreementName(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setAgreementName(stringTest);
+    assertEquals(stringTest, agreementName.get(agreement));
   }
 
   @Test
   public void getParentAgreementId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("parentAgreementId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getParentAgreementId());
+    parentAgreementId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getParentAgreementId());
   }
 
   @Test
   public void setParentAgreementId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("parentAgreementId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setParentAgreementId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setParentAgreementId(intTest);
+    assertEquals(intTest, parentAgreementId.get(agreement));
   }
 
   @Test
   public void getCompanyId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("companyId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getCompanyId());
+    companyId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getCompanyId());
   }
 
   @Test
   public void setCompanyId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("companyId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setCompanyId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setCompanyId(intTest);
+    assertEquals(intTest, companyId.get(agreement));
   }
 
   @Test
   public void getContactId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("contactId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getContactId());
+    contactId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getContactId());
   }
 
   @Test
   public void setContactId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("contactId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setContactId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setContactId(intTest);
+    assertEquals(intTest, contactId.get(agreement));
   }
 
   @Test
   public void getCustomerPo () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("customerPo");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getCustomerPo());
+    customerPo.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getCustomerPo());
   }
 
   @Test
   public void setCustomerPo () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("customerPo");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    agreement.setCustomerPo(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setCustomerPo(stringTest);
+    assertEquals(stringTest, customerPo.get(agreement));
   }
 
   @Test
   public void getLocationId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("locationId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getLocationId());
+    locationId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getLocationId());
   }
 
   @Test
   public void setLocationId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("locationId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setLocationId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setLocationId(intTest);
+    assertEquals(intTest, locationId.get(agreement));
   }
 
   @Test
   public void getDepartmentId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("departmentId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getDepartmentId());
+    departmentId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getDepartmentId());
   }
 
   @Test
   public void setDepartmentId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("departmentId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setDepartmentId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setDepartmentId(intTest);
+    assertEquals(intTest, departmentId.get(agreement));
   }
 
   @Test
   public void isRestrictLocation () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("restrictLocation");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isRestrictLocation());
+    restrictLocation.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isRestrictLocation());
   }
 
   @Test
   public void setRestrictLocation () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("restrictLocation");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setRestrictLocation(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setRestrictLocation(booleanTest);
+    assertEquals(booleanTest, restrictLocation.get(agreement));
   }
 
   @Test
   public void isRestrictDepartment () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("restrictDepartment");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isRestrictDepartment());
+    restrictDepartment.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isRestrictDepartment());
   }
 
   @Test
   public void setRestrictDepartment () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("restrictDepartment");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setRestrictDepartment(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setRestrictDepartment(booleanTest);
+    assertEquals(booleanTest, restrictDepartment.get(agreement));
   }
 
   @Test
   public void getStartDate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("startDate");
-    final Date      value     = new Date();
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getStartDate());
+    startDate.set(agreement, dateTest);
+    assertEquals(dateTest, agreement.getStartDate());
   }
 
   @Test
   public void setStartDate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("startDate");
-    final Date      value     = new Date();
-
-    prop.setAccessible(true);
-    agreement.setStartDate(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setStartDate(dateTest);
+    assertEquals(dateTest, startDate.get(agreement));
   }
 
   @Test
   public void getEndDate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("endDate");
-    final Date      value     = new Date();
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getEndDate());
+    endDate.set(agreement, dateTest);
+    assertEquals(dateTest, agreement.getEndDate());
   }
 
   @Test
   public void setEndDate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("endDate");
-    final Date      value     = new Date();
-
-    prop.setAccessible(true);
-    agreement.setEndDate(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setEndDate(dateTest);
+    assertEquals(dateTest, endDate.get(agreement));
   }
 
   @Test
   public void isNoEndingDate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("noEndingDate");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isNoEndingDate());
+    noEndingDate.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isNoEndingDate());
   }
 
   @Test
   public void setNoEndingDate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("noEndingDate");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setNoEndingDate(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setNoEndingDate(booleanTest);
+    assertEquals(booleanTest, noEndingDate.get(agreement));
   }
 
   @Test
   public void getOpportunityId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("opportunityId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getOpportunityId());
+    opportunityId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getOpportunityId());
   }
 
   @Test
   public void setOpportunityId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("opportunityId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setOpportunityId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setOpportunityId(intTest);
+    assertEquals(intTest, opportunityId.get(agreement));
   }
 
   @Test
   public void isCancelled () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("cancelled");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isCancelled());
+    cancelled.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isCancelled());
   }
 
   @Test
   public void setCancelled () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("cancelled");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setCancelled(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setCancelled(booleanTest);
+    assertEquals(booleanTest, cancelled.get(agreement));
   }
 
   @Test
   public void getDateCancelled () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("dateCancelled");
-    final Date      value     = new Date();
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getDateCancelled());
+    dateCancelled.set(agreement, dateTest);
+    assertEquals(dateTest, agreement.getDateCancelled());
   }
 
   @Test
   public void setDateCancelled () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("dateCancelled");
-    final Date      value     = new Date();
-
-    prop.setAccessible(true);
-    agreement.setDateCancelled(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setDateCancelled(dateTest);
+    assertEquals(dateTest, dateCancelled.get(agreement));
   }
 
   @Test
   public void getReasonCancelled () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("reasonCancelled");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getReasonCancelled());
+    reasonCancelled.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getReasonCancelled());
   }
 
   @Test
   public void setReasonCancelled () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("reasonCancelled");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    agreement.setReasonCancelled(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setReasonCancelled(stringTest);
+    assertEquals(stringTest, reasonCancelled.get(agreement));
   }
 
   @Test
   public void getSlaId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("slaId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getSlaId());
+    slaId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getSlaId());
   }
 
   @Test
   public void setSlaId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("slaId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setSlaId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setSlaId(intTest);
+    assertEquals(intTest, slaId.get(agreement));
   }
 
   @Test
   public void getSubContractCompanyId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("subContractCompanyId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getSubContractCompanyId());
+    subContractCompanyId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getSubContractCompanyId());
   }
 
   @Test
   public void setSubContractCompanyId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("subContractCompanyId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setSubContractCompanyId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setSubContractCompanyId(intTest);
+    assertEquals(intTest, subContractCompanyId.get(agreement));
   }
 
   @Test
   public void getSubContractContactId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("subContractContactId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getSubContractContactId());
+    subContractContactId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getSubContractContactId());
   }
 
   @Test
   public void setSubContractContactId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("subContractContactId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setSubContractContactId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setSubContractContactId(intTest);
+    assertEquals(intTest, subContractContactId.get(agreement));
   }
 
   @Test
   public void getWorkOrder () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("workOrder");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getWorkOrder());
+    workOrder.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getWorkOrder());
   }
 
   @Test
   public void setWorkOrder () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("workOrder");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    agreement.setWorkOrder(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setWorkOrder(stringTest);
+    assertEquals(stringTest, workOrder.get(agreement));
   }
 
   @Test
   public void getInternalNotes () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("internalNotes");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getInternalNotes());
+    internalNotes.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getInternalNotes());
   }
 
   @Test
   public void setInternalNotes () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("internalNotes");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    agreement.setInternalNotes(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setInternalNotes(stringTest);
+    assertEquals(stringTest, internalNotes.get(agreement));
   }
 
   @Test
   public void getApplicationUnits () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("applicationUnits");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getApplicationUnits());
+    applicationUnits.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getApplicationUnits());
   }
 
   @Test
   public void setApplicationUnits () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("applicationUnits");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    agreement.setApplicationUnits(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setApplicationUnits(stringTest);
+    assertEquals(stringTest, applicationUnits.get(agreement));
   }
 
   @Test
   public void getApplicationLimit () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("applicationLimit");
-    final double    value     = 66.6;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getApplicationLimit(), 0);
+    applicationLimit.set(agreement, doubleTest);
+    assertEquals(doubleTest, agreement.getApplicationLimit(), 0);
   }
 
   @Test
   public void setApplicationLimit () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("applicationLimit");
-    final double    value     = 66.6;
-
-    prop.setAccessible(true);
-    agreement.setApplicationLimit(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setApplicationLimit(doubleTest);
+    assertEquals(doubleTest, applicationLimit.get(agreement));
   }
 
   @Test
   public void getApplicationCycle () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("applicationCycle");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getApplicationCycle());
+    applicationCycle.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getApplicationCycle());
   }
 
   @Test
   public void setApplicationCycle () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("applicationCycle");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    agreement.setApplicationCycle(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setApplicationCycle(stringTest);
+    assertEquals(stringTest, applicationCycle.get(agreement));
   }
 
   @Test
   public void getPeriodType () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("periodType");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getPeriodType());
+    periodType.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getPeriodType());
   }
 
   @Test
   public void setPeriodType () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("periodType");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    agreement.setPeriodType(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setPeriodType(stringTest);
+    assertEquals(stringTest, periodType.get(agreement));
   }
 
   @Test
   public void isApplicationUnlimited () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("applicationUnlimited");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isApplicationUnlimited());
+    applicationUnlimited.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isApplicationUnlimited());
   }
 
   @Test
   public void setApplicationUnlimited () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("applicationUnlimited");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setApplicationUnlimited(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setApplicationUnlimited(booleanTest);
+    assertEquals(booleanTest, applicationUnlimited.get(agreement));
   }
 
   @Test
   public void isOneTime () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("oneTime");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isOneTime());
+    oneTime.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isOneTime());
   }
 
   @Test
   public void setOneTime () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("oneTime");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setOneTime(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setOneTime(booleanTest);
+    assertEquals(booleanTest, oneTime.get(agreement));
   }
 
   @Test
   public void isCoverAgreementTime () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("coverAgreementTime");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isCoverAgreementTime());
+    coverAgreementTime.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isCoverAgreementTime());
   }
 
   @Test
   public void setCoverAgreementTime () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("coverAgreementTime");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setCoverAgreementTime(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setCoverAgreementTime(booleanTest);
+    assertEquals(booleanTest, coverAgreementTime.get(agreement));
   }
 
   @Test
   public void isCoverAgreementProduct () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("coverAgreementProduct");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isCoverAgreementProduct());
+    coverAgreementProduct.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isCoverAgreementProduct());
   }
 
   @Test
   public void setCoverAgreementProduct () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("coverAgreementProduct");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setCoverAgreementProduct(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setCoverAgreementProduct(booleanTest);
+    assertEquals(booleanTest, coverAgreementProduct.get(agreement));
   }
 
   @Test
   public void isCoverAgreementExpense () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("coverAgreementExpense");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isCoverAgreementExpense());
+    coverAgreementExpense.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isCoverAgreementExpense());
   }
 
   @Test
   public void setCoverAgreementExpense () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("coverAgreementExpense");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setCoverAgreementExpense(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setCoverAgreementExpense(booleanTest);
+    assertEquals(booleanTest, coverAgreementExpense.get(agreement));
   }
 
   @Test
   public void isCoverSalesTax () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("coverSalesTax");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isCoverSalesTax());
+    coverSalesTax.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isCoverSalesTax());
   }
 
   @Test
   public void setCoverSalesTax () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("coverSalesTax");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setCoverSalesTax(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setCoverSalesTax(booleanTest);
+    assertEquals(booleanTest, coverSalesTax.get(agreement));
   }
 
   @Test
   public void isCarryOverUnused () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("carryOverUnused");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isCarryOverUnused());
+    carryOverUnused.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isCarryOverUnused());
   }
 
   @Test
   public void setCarryOverUnused () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("carryOverUnused");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setCarryOverUnused(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setCarryOverUnused(booleanTest);
+    assertEquals(booleanTest, carryOverUnused.get(agreement));
   }
 
   @Test
   public void isAllowOverruns () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("allowOverruns");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isAllowOverruns());
+    allowOverruns.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isAllowOverruns());
   }
 
   @Test
   public void setAllowOverruns () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("allowOverruns");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setAllowOverruns(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setAllowOverruns(booleanTest);
+    assertEquals(booleanTest, allowOverruns.get(agreement));
   }
 
   @Test
   public void getExpiredDays () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("expiredDays");
-    final int       value     = 54675;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getExpiredDays());
+    expiredDays.set(agreement, intTest);
+    assertEquals(intTest, agreement.getExpiredDays());
   }
 
   @Test
   public void setExpiredDays () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("expiredDays");
-    final int       value     = 54675;
-
-    prop.setAccessible(true);
-    agreement.setExpiredDays(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setExpiredDays(intTest);
+    assertEquals(intTest, expiredDays.get(agreement));
   }
 
   @Test
   public void getLimit () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("limit");
-    final int       value     = 54675;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getLimit());
+    limit.set(agreement, intTest);
+    assertEquals(intTest, agreement.getLimit());
   }
 
   @Test
   public void setLimit () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("limit");
-    final int       value     = 54675;
-
-    prop.setAccessible(true);
-    agreement.setLimit(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setLimit(intTest);
+    assertEquals(intTest, limit.get(agreement));
   }
 
   @Test
   public void isExpireWhenZero () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("expireWhenZero");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isExpireWhenZero());
+    expireWhenZero.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isExpireWhenZero());
   }
 
   @Test
   public void setExpireWhenZero () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("expireWhenZero");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setExpireWhenZero(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setExpireWhenZero(booleanTest);
+    assertEquals(booleanTest, expireWhenZero.get(agreement));
   }
 
   @Test
   public void isChargeToFirm () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("chargeToFirm");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isChargeToFirm());
+    chargeToFirm.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isChargeToFirm());
   }
 
   @Test
   public void setChargeToFirm () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("chargeToFirm");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setChargeToFirm(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setChargeToFirm(booleanTest);
+    assertEquals(booleanTest, chargeToFirm.get(agreement));
   }
 
   @Test
   public void getEmployeeCompRate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("employeeCompRate");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getEmployeeCompRate());
+    employeeCompRate.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getEmployeeCompRate());
   }
 
   @Test
   public void setEmployeeCompRate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("employeeCompRate");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    agreement.setEmployeeCompRate(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setEmployeeCompRate(stringTest);
+    assertEquals(stringTest, employeeCompRate.get(agreement));
   }
 
   @Test
   public void getEmployeeCompNotExceed () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("employeeCompNotExceed");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getEmployeeCompNotExceed());
+    employeeCompNotExceed.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getEmployeeCompNotExceed());
   }
 
   @Test
   public void setEmployeeCompNotExceed () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("employeeCompNotExceed");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    agreement.setEmployeeCompNotExceed(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setEmployeeCompNotExceed(stringTest);
+    assertEquals(stringTest, employeeCompNotExceed.get(agreement));
   }
 
   @Test
   public void getCompHourlyRate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("compHourlyRate");
-    final double    value     = 6.66;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getCompHourlyRate(), 0);
+    compHourlyRate.set(agreement, doubleTest);
+    assertEquals(doubleTest, agreement.getCompHourlyRate(), 0);
   }
 
   @Test
   public void setCompHourlyRate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("compHourlyRate");
-    final double    value     = 6.66;
-
-    prop.setAccessible(true);
-    agreement.setCompHourlyRate(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setCompHourlyRate(doubleTest);
+    assertEquals(doubleTest, compHourlyRate.get(agreement));
   }
 
   @Test
   public void getCompLimitAmount () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("compLimitAmount");
-    final double    value     = 666.0;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getCompLimitAmount(), 0);
+    compLimitAmount.set(agreement, doubleTest);
+    assertEquals(doubleTest, agreement.getCompLimitAmount(), 0);
   }
 
   @Test
   public void setCompLimitAmount () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("compLimitAmount");
-    final double    value     = 666.0;
-
-    prop.setAccessible(true);
-    agreement.setCompLimitAmount(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setCompLimitAmount(doubleTest);
+    assertEquals(doubleTest, compLimitAmount.get(agreement));
   }
 
   @Test
   public void getBillCycleId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billCycleId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getBillCycleId());
+    billCycleId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getBillCycleId());
   }
 
   @Test
   public void setBillCycleId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billCycleId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setBillCycleId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillCycleId(intTest);
+    assertEquals(intTest, billCycleId.get(agreement));
   }
 
   @Test
   public void isBillOneTime () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billOneTime");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isBillOneTime());
+    billOneTime.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isBillOneTime());
   }
 
   @Test
   public void setBillOneTime () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billOneTime");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setBillOneTime(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillOneTime(booleanTest);
+    assertEquals(booleanTest, billOneTime.get(agreement));
   }
 
   @Test
   public void getBillTermsId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billTermsId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getBillTermsId());
+    billTermsId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getBillTermsId());
   }
 
   @Test
   public void setBillTermsId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billTermsId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setBillTermsId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillTermsId(intTest);
+    assertEquals(intTest, billTermsId.get(agreement));
   }
 
   @Test
   public void getInvoicingCycle () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("invoicingCycle");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getInvoicingCycle());
+    invoicingCycle.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getInvoicingCycle());
   }
 
   @Test
   public void setInvoicingCycle () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("invoicingCycle");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    agreement.setInvoicingCycle(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setInvoicingCycle(stringTest);
+    assertEquals(stringTest, invoicingCycle.get(agreement));
   }
 
   @Test
   public void getBillToCompanyId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billToCompanyId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getBillToCompanyId());
+    billToCompanyId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getBillToCompanyId());
   }
 
   @Test
   public void setBillToCompanyId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billToCompanyId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setBillToCompanyId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillToCompanyId(intTest);
+    assertEquals(intTest, billToCompanyId.get(agreement));
   }
 
   @Test
   public void getBillToAddressId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billToAddressId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getBillToAddressId());
+    billToAddressId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getBillToAddressId());
   }
 
   @Test
   public void setBillToAddressId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billToAddressId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setBillToAddressId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillToAddressId(intTest);
+    assertEquals(intTest, billToAddressId.get(agreement));
   }
 
   @Test
   public void getBillAmount () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billAmount");
-    final double    value     = 0.666;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getBillAmount(), 0);
+    billAmount.set(agreement, doubleTest);
+    assertEquals(doubleTest, agreement.getBillAmount(), 0);
   }
 
   @Test
   public void setBillAmount () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billAmount");
-    final double    value     = 0.666;
-
-    prop.setAccessible(true);
-    agreement.setBillAmount(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillAmount(doubleTest);
+    assertEquals(doubleTest, billAmount.get(agreement));
   }
 
   @Test
   public void isTaxable () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("taxable");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isTaxable());
+    taxable.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isTaxable());
   }
 
   @Test
   public void setTaxable () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("taxable");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setTaxable(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setTaxable(booleanTest);
+    assertEquals(booleanTest, taxable.get(agreement));
   }
 
   @Test
   public void getProrateFirstBill () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("prorateFirstBill");
-    final double    value     = 66.6;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getProrateFirstBill(), 0);
+    prorateFirstBill.set(agreement, doubleTest);
+    assertEquals(doubleTest, agreement.getProrateFirstBill(), 0);
   }
 
   @Test
   public void setProrateFirstBill () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("prorateFirstBill");
-    final double    value     = 66.6;
-
-    prop.setAccessible(true);
-    agreement.setProrateFirstBill(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setProrateFirstBill(doubleTest);
+    assertEquals(doubleTest, prorateFirstBill.get(agreement));
   }
 
   @Test
   public void getBillStartDate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billStartDate");
-    final Date      value     = new Date();
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getBillStartDate());
+    billStartDate.set(agreement, dateTest);
+    assertEquals(dateTest, agreement.getBillStartDate());
   }
 
   @Test
   public void setBillStartDate () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billStartDate");
-    final Date      value     = new Date();
-
-    prop.setAccessible(true);
-    agreement.setBillStartDate(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillStartDate(dateTest);
+    assertEquals(dateTest, billStartDate.get(agreement));
   }
 
   @Test
   public void getTaxCodeId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("taxCodeId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getTaxCodeId());
+    taxCodeId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getTaxCodeId());
   }
 
   @Test
   public void setTaxCodeId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("taxCodeId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setTaxCodeId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setTaxCodeId(intTest);
+    assertEquals(intTest, taxCodeId.get(agreement));
   }
 
   @Test
   public void isRestrictDownPayment () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("restrictDownPayment");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isRestrictDownPayment());
+    restrictDownPayment.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isRestrictDownPayment());
   }
 
   @Test
   public void setRestrictDownPayment () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("restrictDownPayment");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setRestrictDownPayment(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setRestrictDownPayment(booleanTest);
+    assertEquals(booleanTest, restrictDownPayment.get(agreement));
   }
 
   @Test
   public void getInvoiceDescription () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("invoiceDescription");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getInvoiceDescription());
+    invoiceDescription.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getInvoiceDescription());
   }
 
   @Test
   public void setInvoiceDescription () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("invoiceDescription");
-    final String    value     = "Test Value.";
-
-    prop.setAccessible(true);
-    agreement.setInvoiceDescription(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setInvoiceDescription(stringTest);
+    assertEquals(stringTest, invoiceDescription.get(agreement));
   }
 
   @Test
   public void isTopComment () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("topComment");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isTopComment());
+    topComment.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isTopComment());
   }
 
   @Test
   public void setTopComment () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("topComment");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setTopComment(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setTopComment(booleanTest);
+    assertEquals(booleanTest, topComment.get(agreement));
   }
 
   @Test
   public void isBottomComment () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("bottomComment");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isBottomComment());
+    bottomComment.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isBottomComment());
   }
 
   @Test
   public void setBottomComment () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("bottomComment");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setBottomComment(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBottomComment(booleanTest);
+    assertEquals(booleanTest, bottomComment.get(agreement));
   }
 
   @Test
   public void getWorkRoleId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("workRoleId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getWorkRoleId());
+    workRoleId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getWorkRoleId());
   }
 
   @Test
   public void setWorkRoleId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("workRoleId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setWorkRoleId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setWorkRoleId(intTest);
+    assertEquals(intTest, workRoleId.get(agreement));
   }
 
   @Test
   public void getWorkTypeId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("workTypeId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getWorkTypeId());
+    workTypeId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getWorkTypeId());
   }
 
   @Test
   public void setWorkTypeId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("workTypeId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setWorkTypeId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setWorkTypeId(intTest);
+    assertEquals(intTest, workTypeId.get(agreement));
   }
 
   @Test
   public void getProjectTypeId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("projectTypeId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getProjectTypeId());
+    projectTypeId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getProjectTypeId());
   }
 
   @Test
   public void setProjectTypeId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("projectTypeId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setProjectTypeId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setProjectTypeId(intTest);
+    assertEquals(intTest, projectTypeId.get(agreement));
   }
 
   @Test
   public void getInvoiceTemplateId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("invoiceTemplateId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getInvoiceTemplateId());
+    invoiceTemplateId.set(agreement, intTest);
+    assertEquals(intTest, agreement.getInvoiceTemplateId());
   }
 
   @Test
   public void setInvoiceTemplateId () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("invoiceTemplateId");
-    final int       value     = 123969;
-
-    prop.setAccessible(true);
-    agreement.setInvoiceTemplateId(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setInvoiceTemplateId(intTest);
+    assertEquals(intTest, invoiceTemplateId.get(agreement));
   }
 
   @Test
   public void getBillTime () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billTime");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getBillTime());
+    billTime.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getBillTime());
   }
 
   @Test
   public void setBillTime () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billTime");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    agreement.setBillTime(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillTime(stringTest);
+    assertEquals(stringTest, billTime.get(agreement));
   }
 
   @Test
   public void getBillExpenses () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billExpenses");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getBillExpenses());
+    billExpenses.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getBillExpenses());
   }
 
   @Test
   public void setBillExpenses () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billExpenses");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    agreement.setBillExpenses(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillExpenses(stringTest);
+    assertEquals(stringTest, billExpenses.get(agreement));
   }
 
   @Test
   public void getBillProducts () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billProducts");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.getBillProducts());
+    billProducts.set(agreement, stringTest);
+    assertEquals(stringTest, agreement.getBillProducts());
   }
 
   @Test
   public void setBillProducts () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billProducts");
-    final String    value     = "Test Value";
-
-    prop.setAccessible(true);
-    agreement.setBillProducts(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillProducts(stringTest);
+    assertEquals(stringTest, billProducts.get(agreement));
   }
 
   @Test
   public void isBillableTimeInvoice () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billableTimeInvoice");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isBillableTimeInvoice());
+    billableTimeInvoice.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isBillableTimeInvoice());
   }
 
   @Test
   public void setBillableTimeInvoice () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billableTimeInvoice");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setBillableTimeInvoice(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillableTimeInvoice(booleanTest);
+    assertEquals(booleanTest, billableTimeInvoice.get(agreement));
   }
 
   @Test
   public void isBillableExpenseInvoice () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billableExpenseInvoice");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isBillableExpenseInvoice());
+    billableExpenseInvoice.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isBillableExpenseInvoice());
   }
 
   @Test
   public void setBillableExpenseInvoice () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billableExpenseInvoice");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setBillableExpenseInvoice(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillableExpenseInvoice(booleanTest);
+    assertEquals(booleanTest, billableExpenseInvoice.get(agreement));
   }
 
   @Test
   public void isBillableProductInvoice () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billableProductInvoice");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    prop.set(agreement, value);
-
-    assertEquals(value, agreement.isBillableProductInvoice());
+    billableProductInvoice.set(agreement, booleanTest);
+    assertEquals(booleanTest, agreement.isBillableProductInvoice());
   }
 
   @Test
   public void setBillableProductInvoice () throws Exception
   {
-    final Agreement agreement = new Agreement();
-    final Field     prop      = agreement.getClass().getDeclaredField("billableProductInvoice");
-    final boolean   value     = true;
-
-    prop.setAccessible(true);
-    agreement.setBillableProductInvoice(value);
-
-    assertEquals(value, prop.get(agreement));
+    agreement.setBillableProductInvoice(booleanTest);
+    assertEquals(booleanTest, billableProductInvoice.get(agreement));
   }
 
 }
