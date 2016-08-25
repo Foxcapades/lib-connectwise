@@ -3,7 +3,7 @@ package io.vulpine.connectwise.type.company;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
-class _Common extends ConnectwiseCommon
+public class CompanyCommon extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "CompanyName" )
   protected String companyName;

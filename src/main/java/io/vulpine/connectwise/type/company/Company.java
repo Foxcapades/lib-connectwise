@@ -6,7 +6,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import java.util.List;
 
 @JsonFilter( "filter-empty" )
-public class Company extends _Common
+public class Company extends CompanyCommon
 {
 
   @JacksonXmlProperty( localName = "DefaultAddress" )
