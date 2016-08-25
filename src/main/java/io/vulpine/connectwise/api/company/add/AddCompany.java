@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.api.company.add;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
