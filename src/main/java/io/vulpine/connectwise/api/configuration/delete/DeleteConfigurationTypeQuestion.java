@@ -12,23 +12,30 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-package io.vulpine.connectwise.api;
+package io.vulpine.connectwise.api.configuration.delete;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
+import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
 import io.vulpine.connectwise.api.request.Credentials;
+import io.vulpine.connectwise.api.request.DeleteRequest;
 
-public class AccountingApi extends ConnectwiseSubApi
+import java.io.IOException;
+
+public class DeleteConfigurationTypeQuestion extends DeleteRequest
 {
-  public AccountingApi(
-    final ConnectwiseApi api,
-    final Credentials credentials,
-    final XmlMapper xmlMapper,
-    final String endpoint
+  public DeleteConfigurationTypeQuestion(
+    final Credentials c,
+    final XmlMapper x,
+    final ConnectwiseSubApiInterface i
   )
   {
-    super(api, credentials, xmlMapper, endpoint + "AccountingApi.asmx");
+    super(c, x, i);
+  }
+
+  @Override
+  public Void submit() throws IOException
+  {
+    return null;
   }
 }

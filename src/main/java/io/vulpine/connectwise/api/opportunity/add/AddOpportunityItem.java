@@ -12,23 +12,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-package io.vulpine.connectwise.api;
+package io.vulpine.connectwise.api.opportunity.add;
 
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
-import io.vulpine.connectwise.api.request.Credentials;
-
-public class AccountingApi extends ConnectwiseSubApi
+public class AddOpportunityItem
 {
-  public AccountingApi(
-    final ConnectwiseApi api,
-    final Credentials credentials,
-    final XmlMapper xmlMapper,
-    final String endpoint
-  )
-  {
-    super(api, credentials, xmlMapper, endpoint + "AccountingApi.asmx");
-  }
 }
