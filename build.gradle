@@ -15,9 +15,15 @@ version config.version
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
+apply plugin: 'jacoco'
 
 sourceCompatibility = config.jvm
 targetCompatibility = config.jvm
+
+jacoco {
+  toolVersion = "0.7.6.201602180812"
+  reportsDir = file("${buildDir}/reports/jacoco")
+}
 
 /*
  * BinTray Configuration
