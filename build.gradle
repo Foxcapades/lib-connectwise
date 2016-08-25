@@ -25,6 +25,12 @@ jacoco {
   reportsDir = file("${buildDir}/reports/jacoco")
 }
 
+jacocoTestReport {
+  reports {
+    xml.enabled true
+  }
+}
+
 /*
  * BinTray Configuration
  */
