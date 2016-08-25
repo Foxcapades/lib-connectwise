@@ -24,19 +24,25 @@ public enum InvoicingCycle
   CALENDAR_YEAR("CalendarYear"),
   CONTRACT_YEAR("ContractYear");
 
-  private final String v;
+  private final String value;
 
-  InvoicingCycle ( String v ) {this.v = v;}
+  InvoicingCycle ( String v ) {this.value = v;}
 
   @JsonCreator
   public static InvoicingCycle fromString( final String v )
   {
     for ( final InvoicingCycle i : values() ) {
-      if ( i.v.equals(v) ) {
+      if ( i.value.equals(v) ) {
         return i;
       }
     }
     return null;
   }
 
+
+  @Override
+  public String toString()
+  {
+    return value;
+  }
 }
