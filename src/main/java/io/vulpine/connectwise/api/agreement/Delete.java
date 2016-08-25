@@ -18,50 +18,50 @@
 package io.vulpine.connectwise.api.agreement;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.agreement.delete.*;
 import io.vulpine.connectwise.api.common.ApiDivision;
 import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
-import io.vulpine.connectwise.api.agreement.delete.*;
 import io.vulpine.connectwise.api.request.Credentials;
 
 public class Delete extends ApiDivision
 {
-  public Delete ( Credentials credentials, XmlMapper mapper, ConnectwiseSubApiInterface api )
+  public Delete( Credentials credentials, XmlMapper mapper, ConnectwiseSubApiInterface api )
   {
     super(credentials, mapper, api);
   }
 
-  public DeleteAgreementAdjustment adjustment()
+  public DeleteAgreementAdjustment adjustment( final int adjustmentId )
   {
-    return new DeleteAgreementAdjustment(credentials, mapper, api);
+    return new DeleteAgreementAdjustment(credentials, mapper, api, adjustmentId);
   }
 
-  public DeleteAgreementSite site()
+  public DeleteAgreementSite site( final int siteId )
   {
-    return new DeleteAgreementSite(credentials, mapper, api);
+    return new DeleteAgreementSite(credentials, mapper, api, siteId);
   }
 
-  public DeleteAgreementWorkRole workRole()
+  public DeleteAgreementWorkRole workRole( final int workRoleId )
   {
-    return new DeleteAgreementWorkRole(credentials, mapper, api);
+    return new DeleteAgreementWorkRole(credentials, mapper, api, workRoleId);
   }
 
-  public DeleteAgreementWorkType workType()
+  public DeleteAgreementWorkType workType( final int workTypeId )
   {
-    return new DeleteAgreementWorkType(credentials, mapper, api);
+    return new DeleteAgreementWorkType(credentials, mapper, api, workTypeId);
   }
 
-  public DeleteAgreement agreement()
+  public DeleteAgreement agreement( final int agreementId )
   {
-    return new DeleteAgreement(credentials, mapper, api);
+    return new DeleteAgreement(credentials, mapper, api, agreementId);
   }
 
-  public DeleteAgreementAddition addition()
+  public DeleteAgreementAddition addition( final int additionId )
   {
-    return new DeleteAgreementAddition(credentials, mapper, api);
+    return new DeleteAgreementAddition(credentials, mapper, api, additionId);
   }
 
-  public DeleteAgreementBoardDefault boardDefault()
+  public DeleteAgreementBoardDefault boardDefault( final int boardDefaultId )
   {
-    return new DeleteAgreementBoardDefault(credentials, mapper, api);
+    return new DeleteAgreementBoardDefault(credentials, mapper, api, boardDefaultId);
   }
 }

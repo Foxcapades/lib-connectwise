@@ -36,6 +36,7 @@ public class DeleteCompanyTeam extends DeleteRequest
   @Override
   public Void submit() throws IOException
   {
+    api.send(this);
     return null;
   }
 }

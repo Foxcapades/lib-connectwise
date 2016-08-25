@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.api.company.delete;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
