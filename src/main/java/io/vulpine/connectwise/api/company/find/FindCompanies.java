@@ -19,7 +19,7 @@ package io.vulpine.connectwise.api.company.find;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.FindRequest;
 import io.vulpine.connectwise.type.company.FoundCompany;
@@ -30,7 +30,7 @@ import java.util.List;
 @JacksonXmlRootElement ( localName = "FindCompanies" )
 public class FindCompanies extends FindRequest < List< FoundCompany > >
 {
-  public FindCompanies( Credentials credentials, XmlMapper xmlMapper, ConnectwiseSubApiInterface api )
+  public FindCompanies( Credentials credentials, XmlMapper xmlMapper, SubApiInterface api )
   {
     super(credentials, xmlMapper, api);
   }

@@ -15,6 +15,20 @@
  */
 package io.vulpine.connectwise.api.document.delete;
 
-public class DeleteDocument
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.request.Credentials;
+import io.vulpine.connectwise.api.request.DeleteRequest;
+
+public class DeleteDocument extends DeleteRequest
 {
+  public DeleteDocument(
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final SubApiInterface subApiInterface,
+    final int id
+  )
+  {
+    super(credentials, xmlMapper, subApiInterface, id);
+  }
 }

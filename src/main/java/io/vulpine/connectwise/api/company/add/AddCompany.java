@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.request.AddRequest;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.type.company.Address;
@@ -36,7 +36,7 @@ public class AddCompany extends AddRequest< Company >
   public AddCompany (
     final Credentials credentials,
     final XmlMapper xmlMapper,
-    final ConnectwiseSubApiInterface subApi
+    final SubApiInterface subApi
   )
   {
     super(credentials, xmlMapper, subApi, new Company());

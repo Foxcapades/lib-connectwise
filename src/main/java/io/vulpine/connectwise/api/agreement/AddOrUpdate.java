@@ -18,7 +18,7 @@ package io.vulpine.connectwise.api.agreement;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ApiDivision;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.agreement.addOrUpdate.*;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.type.agreement.Agreement;
@@ -26,7 +26,7 @@ import io.vulpine.connectwise.type.agreement.addition.Addition;
 
 public class AddOrUpdate extends ApiDivision
 {
-  public AddOrUpdate ( Credentials credentials, XmlMapper mapper, ConnectwiseSubApiInterface api )
+  public AddOrUpdate ( Credentials credentials, XmlMapper mapper, SubApiInterface api )
   {
     super(credentials, mapper, api);
   }

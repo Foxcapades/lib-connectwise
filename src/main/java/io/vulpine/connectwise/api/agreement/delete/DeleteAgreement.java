@@ -18,30 +18,20 @@ package io.vulpine.connectwise.api.agreement.delete;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.DeleteRequest;
-
-import java.io.IOException;
 
 @JacksonXmlRootElement( localName = "DeleteAgreement" )
 public class DeleteAgreement extends DeleteRequest
 {
   public DeleteAgreement(
-    final Credentials c,
-    final XmlMapper x,
-    final ConnectwiseSubApiInterface i,
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final SubApiInterface subApiInterface,
     final int agreementId
   )
   {
-    super(c, x, i);
-    setId(agreementId);
-  }
-
-  @Override
-  public Void submit() throws IOException
-  {
-    api.send(this);
-    return null;
+    super(credentials, xmlMapper, subApiInterface, agreementId);
   }
 }

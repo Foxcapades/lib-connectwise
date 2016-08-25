@@ -22,7 +22,7 @@ import io.vulpine.connectwise.api.request.CwRequest;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
-public interface ConnectwiseSubApiInterface
+public interface SubApiInterface
 {
   String send( final CwRequest r ) throws IOException;
 }

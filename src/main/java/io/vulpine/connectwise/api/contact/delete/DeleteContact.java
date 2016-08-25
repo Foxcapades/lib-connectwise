@@ -15,6 +15,20 @@
  */
 package io.vulpine.connectwise.api.contact.delete;
 
-public class DeleteContact
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.request.Credentials;
+import io.vulpine.connectwise.api.request.DeleteRequest;
+
+public class DeleteContact extends DeleteRequest
 {
+  public DeleteContact(
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final SubApiInterface subApiInterface,
+    final int id
+  )
+  {
+    super(credentials, xmlMapper, subApiInterface, id);
+  }
 }

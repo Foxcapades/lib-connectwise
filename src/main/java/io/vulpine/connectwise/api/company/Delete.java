@@ -19,7 +19,7 @@ package io.vulpine.connectwise.api.company;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ApiDivision;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.company.delete.DeleteCompany;
 import io.vulpine.connectwise.api.company.delete.DeleteCompanyNote;
 import io.vulpine.connectwise.api.company.delete.DeleteCompanyTeam;
@@ -27,7 +27,7 @@ import io.vulpine.connectwise.api.request.Credentials;
 
 public class Delete extends ApiDivision
 {
-  public Delete ( final Credentials credentials, final XmlMapper mapper, final ConnectwiseSubApiInterface api )
+  public Delete ( final Credentials credentials, final XmlMapper mapper, final SubApiInterface api )
   {
     super(credentials, mapper, api);
   }
@@ -41,17 +41,17 @@ public class Delete extends ApiDivision
    */
   public DeleteCompany company ( final int companyId )
   {
-    return (DeleteCompany) new DeleteCompany(credentials, mapper, api).setId(companyId);
+    return new DeleteCompany(credentials, mapper, api, companyId);
   }
 
-  public DeleteCompanyNote note()
+  public DeleteCompanyNote note( final int id )
   {
-    return new DeleteCompanyNote(credentials, mapper, api);
+    return new DeleteCompanyNote(credentials, mapper, api, id);
   }
 
-  public DeleteCompanyTeam team()
+  public DeleteCompanyTeam team( final int id )
   {
-    return new DeleteCompanyTeam(credentials, mapper, api);
+    return new DeleteCompanyTeam(credentials, mapper, api, id);
   }
 
 }

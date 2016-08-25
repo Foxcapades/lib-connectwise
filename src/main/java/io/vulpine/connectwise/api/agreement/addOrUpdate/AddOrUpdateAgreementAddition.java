@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.request.AddOrUpdateRequest;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.type.agreement.addition.Addition;
@@ -35,7 +35,7 @@ public class AddOrUpdateAgreementAddition extends AddOrUpdateRequest < Addition 
   public AddOrUpdateAgreementAddition(
     final Credentials credentials,
     final XmlMapper xmlMapper,
-    final ConnectwiseSubApiInterface api,
+    final SubApiInterface api,
     final Addition data
   )
   {

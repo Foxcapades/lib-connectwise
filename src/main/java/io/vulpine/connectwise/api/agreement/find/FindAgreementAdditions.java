@@ -21,7 +21,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.FindRequest;
 import io.vulpine.connectwise.type.agreement.addition.FoundAddition;
@@ -38,7 +38,7 @@ public class FindAgreementAdditions extends FindRequest < List < FoundAddition >
   public FindAgreementAdditions(
     final Credentials credentials,
     final XmlMapper x,
-    final ConnectwiseSubApiInterface i
+    final SubApiInterface i
   )
   {
     super(credentials, x, i);

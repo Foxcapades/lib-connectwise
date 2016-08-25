@@ -15,6 +15,9 @@
  */
 package io.vulpine.connectwise.api.opportunity.add;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
+@JacksonXmlRootElement( localName = "AddForecastAndRecurringRevenue" )
 public class AddForecastAndRecurringRevenue
 {
 }

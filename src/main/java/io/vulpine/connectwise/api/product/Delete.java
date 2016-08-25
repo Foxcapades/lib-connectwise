@@ -19,7 +19,7 @@ package io.vulpine.connectwise.api.product;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ApiDivision;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.product.delete.*;
 import io.vulpine.connectwise.api.request.Credentials;
 
@@ -28,34 +28,34 @@ public class Delete extends ApiDivision
   public Delete(
     final Credentials credentials,
     final XmlMapper mapper,
-    final ConnectwiseSubApiInterface api
+    final SubApiInterface api
   )
   {
     super(credentials, mapper, api);
   }
 
-  public DeletePriceBreak priceBreak()
+  public DeletePriceBreak priceBreak( final int id )
   {
-    return new DeletePriceBreak(credentials, mapper, api);
+    return new DeletePriceBreak(credentials, mapper, api, id);
   }
 
-  public DeletePricingDetail pricingDetail()
+  public DeletePricingDetail pricingDetail( final int id )
   {
-    return new DeletePricingDetail(credentials, mapper, api);
+    return new DeletePricingDetail(credentials, mapper, api, id);
   }
 
-  public DeletePricingSchedule pricingSchedule()
+  public DeletePricingSchedule pricingSchedule( final int id )
   {
-    return new DeletePricingSchedule(credentials, mapper, api);
+    return new DeletePricingSchedule(credentials, mapper, api, id);
   }
 
-  public DeleteProduct product()
+  public DeleteProduct product( final int id )
   {
-    return new DeleteProduct(credentials, mapper, api);
+    return new DeleteProduct(credentials, mapper, api, id);
   }
 
-  public DeleteProductPickedAndShipped productPickedAndShipped()
+  public DeleteProductPickedAndShipped productPickedAndShipped( final int id )
   {
-    return new DeleteProductPickedAndShipped(credentials, mapper, api);
+    return new DeleteProductPickedAndShipped(credentials, mapper, api, id);
   }
 }

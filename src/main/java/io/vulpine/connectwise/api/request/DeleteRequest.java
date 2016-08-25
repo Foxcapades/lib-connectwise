@@ -14,27 +14,30 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.api.request;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+
+import java.io.IOException;
 
 public abstract class DeleteRequest extends CwRequest < Void >
 {
   @JacksonXmlProperty(localName = "id")
-  protected int id;
+  protected final int id;
 
 
   public DeleteRequest (
-    final Credentials c,
-    final XmlMapper x,
-    final ConnectwiseSubApiInterface i
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final SubApiInterface subApiInterface,
+    final int id
   )
   {
-    super(c, x, i);
+    super(credentials, xmlMapper, subApiInterface);
+    this.id = id;
   }
 
   public int getId ()
@@ -42,9 +45,10 @@ public abstract class DeleteRequest extends CwRequest < Void >
     return id;
   }
 
-  public DeleteRequest setId ( final int id )
+  @Override
+  public Void submit() throws IOException
   {
-    this.id = id;
-    return this;
+    api.send(this);
+    return null;
   }
 }

@@ -17,7 +17,7 @@ package io.vulpine.connectwise.api.member;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ApiDivision;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.request.Credentials;
 
 public class Create extends ApiDivision
@@ -25,7 +25,7 @@ public class Create extends ApiDivision
   public Create(
     final Credentials credentials,
     final XmlMapper mapper,
-    final ConnectwiseSubApiInterface api
+    final SubApiInterface api
   )
   {
     super(credentials, mapper, api);

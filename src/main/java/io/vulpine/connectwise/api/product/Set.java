@@ -19,7 +19,7 @@ package io.vulpine.connectwise.api.product;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ApiDivision;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.product.set.SetCompanyPricingSchedule;
 import io.vulpine.connectwise.api.request.Credentials;
 
@@ -29,7 +29,7 @@ public class Set extends ApiDivision
   public Set(
     final Credentials credentials,
     final XmlMapper mapper,
-    final ConnectwiseSubApiInterface api
+    final SubApiInterface api
   )
   {
     super(credentials, mapper, api);

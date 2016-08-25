@@ -19,7 +19,7 @@ package io.vulpine.connectwise.api.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
@@ -31,7 +31,7 @@ public abstract class AddRequest < T extends ConnectwiseCommon > extends CwReque
   public AddRequest (
     Credentials credentials,
     XmlMapper xmlMapper,
-    ConnectwiseSubApiInterface api,
+    SubApiInterface api,
     T data
   )
   {

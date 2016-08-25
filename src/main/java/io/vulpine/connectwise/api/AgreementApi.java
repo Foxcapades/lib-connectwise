@@ -24,13 +24,13 @@ import io.vulpine.connectwise.api.agreement.Delete;
 import io.vulpine.connectwise.api.agreement.Find;
 import io.vulpine.connectwise.api.agreement.Get;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.request.Credentials;
 import io.vulpine.connectwise.api.request.CwRequest;
 
 import java.io.IOException;
 
-public class AgreementApi extends ConnectwiseSubApi implements ConnectwiseSubApiInterface
+public class AgreementApi extends ConnectwiseSubApi implements SubApiInterface
 {
   /**
    * "Add or Update" Endpoints Container

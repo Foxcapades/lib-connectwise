@@ -15,6 +15,22 @@
  */
 package io.vulpine.connectwise.api.opportunity.delete;
 
-public class DeleteRecurringRevenue
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.request.Credentials;
+import io.vulpine.connectwise.api.request.DeleteRequest;
+
+@JacksonXmlRootElement(localName = "DeleteRecurringRevenue")
+public class DeleteRecurringRevenue extends DeleteRequest
 {
+  public DeleteRecurringRevenue(
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final SubApiInterface subApiInterface,
+    final int id
+  )
+  {
+    super(credentials, xmlMapper, subApiInterface, id);
+  }
 }

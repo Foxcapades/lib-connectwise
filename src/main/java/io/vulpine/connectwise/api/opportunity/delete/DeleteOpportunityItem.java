@@ -15,6 +15,22 @@
  */
 package io.vulpine.connectwise.api.opportunity.delete;
 
-public class DeleteOpportunityItem
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.request.Credentials;
+import io.vulpine.connectwise.api.request.DeleteRequest;
+
+@JacksonXmlRootElement(localName = "DeleteOpportunityItem")
+public class DeleteOpportunityItem extends DeleteRequest
 {
+  public DeleteOpportunityItem(
+    final Credentials c,
+    final XmlMapper x,
+    final SubApiInterface i,
+    final int id
+  )
+  {
+    super(c, x, i, id);
+  }
 }

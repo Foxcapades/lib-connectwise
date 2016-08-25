@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 
 import java.util.List;
 
@@ -43,7 +43,7 @@ abstract public class FindRequest < T > extends CwRequest < T >
   @JacksonXmlProperty( localName = "returnFields" )
   protected List < String > returnFields;
 
-  public FindRequest ( final Credentials credentials, final XmlMapper xmlMapper, final ConnectwiseSubApiInterface api )
+  public FindRequest ( final Credentials credentials, final XmlMapper xmlMapper, final SubApiInterface api )
   {
     super(credentials, xmlMapper, api);
   }

@@ -19,7 +19,7 @@ package io.vulpine.connectwise.api.product;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ApiDivision;
-import io.vulpine.connectwise.api.def.ConnectwiseSubApiInterface;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.product.find.FindPriceBreaks;
 import io.vulpine.connectwise.api.product.find.FindPricingDetails;
 import io.vulpine.connectwise.api.product.find.FindPricingSchedules;
@@ -31,7 +31,7 @@ public class Find extends ApiDivision
   public Find(
     final Credentials credentials,
     final XmlMapper mapper,
-    final ConnectwiseSubApiInterface api
+    final SubApiInterface api
   )
   {
     super(credentials, mapper, api);
