@@ -17,11 +17,11 @@
 
 package io.vulpine.connectwise.api.def;
 
-import io.vulpine.connectwise.api.common.request.CwRequest;
+import io.vulpine.connectwise.api.common.request.ConnectwiseRequest;
 
 import java.io.IOException;
 
 public interface SubApiInterface
 {
-  String send( final CwRequest r ) throws IOException;
+  String send( final ConnectwiseRequest r ) throws IOException;
 }

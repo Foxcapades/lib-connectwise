@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.type.agreement.board;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
@@ -23,13 +22,13 @@ import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 public class BoardDefault extends AbstractSubAgreement
 {
   @JacksonXmlProperty( localName = "BoardId" )
-  protected int boardId;
+  private int boardId;
 
   @JacksonXmlProperty( localName = "ServiceTypeId" )
-  protected int serviceTypeId;
+  private int serviceTypeId;
 
   @JacksonXmlProperty( localName = "DefaultFlag" )
-  protected boolean Default;
+  private boolean isDefault;
 
   public int getBoardId ()
   {
@@ -53,11 +52,11 @@ public class BoardDefault extends AbstractSubAgreement
 
   public boolean isDefault ()
   {
-    return Default;
+    return isDefault;
   }
 
   public void setDefault ( boolean aDefault )
   {
-    Default = aDefault;
+    isDefault = aDefault;
   }
 }

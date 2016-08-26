@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.type.agreement.site;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
@@ -26,28 +25,28 @@ import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 public class Site extends AbstractSubAgreement
 {
   @JacksonXmlProperty( localName = "CompanyId" )
-  protected int CompanyId;
+  private int companyId;
 
   @JacksonXmlProperty( localName = "AddressId" )
-  protected int AddressId;
+  private int addressId;
 
-  public int getCompanyId ()
+  public int getCompanyId()
   {
-    return CompanyId;
+    return companyId;
   }
 
-  public void setCompanyId ( int companyId )
+  public void setCompanyId( int companyId )
   {
-    CompanyId = companyId;
+    this.companyId = companyId;
   }
 
-  public int getAddressId ()
+  public int getAddressId()
   {
-    return AddressId;
+    return addressId;
   }
 
-  public void setAddressId ( int addressId )
+  public void setAddressId( int addressId )
   {
-    AddressId = addressId;
+    this.addressId = addressId;
   }
 }

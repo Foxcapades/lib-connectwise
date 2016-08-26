@@ -19,12 +19,11 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.common.request.CwRequest;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 
 import java.io.IOException;
 
-public abstract class DeleteRequest extends CwRequest< Void >
+public abstract class DeleteRequest extends ConnectwiseRequest< Void >
 {
   @JacksonXmlProperty(localName = "id")
   protected final int id;
@@ -49,7 +48,7 @@ public abstract class DeleteRequest extends CwRequest< Void >
   @Override
   public Void submit() throws IOException
   {
-    api.send(this);
+    getApi().send(this);
     return null;
   }
 }

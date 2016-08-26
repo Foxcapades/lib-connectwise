@@ -17,35 +17,34 @@
 package io.vulpine.connectwise.type.purchasing;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 @SuppressWarnings( "unused" )
 public class ShipToCompany extends ConnectwiseCommon
 {
-  @JacksonXmlProperty(localName = "CompanyIdentifier")
-  protected String CompanyIdentifier;
+  @JacksonXmlProperty( localName = "CompanyIdentifier" )
+  protected String companyIdentifier;
 
-  @JacksonXmlProperty(localName = "Name")
-  protected String Name;
+  @JacksonXmlProperty( localName = "Name" )
+  protected String name;
 
-  public String getCompanyIdentifier ()
+  public String getCompanyIdentifier()
   {
-    return CompanyIdentifier;
+    return companyIdentifier;
   }
 
-  public void setCompanyIdentifier ( final String companyIdentifier )
+  public void setCompanyIdentifier( final String companyIdentifier )
   {
-    CompanyIdentifier = companyIdentifier;
+    this.companyIdentifier = companyIdentifier;
   }
 
-  public String getName ()
+  public String getName()
   {
-    return Name;
+    return name;
   }
 
-  public void setName ( final String name )
+  public void setName( final String name )
   {
-    Name = name;
+    this.name = name;
   }
 }

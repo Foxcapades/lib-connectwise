@@ -327,29 +327,29 @@ public class Agreement extends ConnectwiseCommon
     return restrictDepartment;
   }
 
-  public void setRestrictDepartment ( boolean restrictDepartment )
+  public void setRestrictDepartment ( final boolean restrictDepartment )
   {
     this.restrictDepartment = restrictDepartment;
   }
 
   public Date getStartDate ()
   {
-    return startDate;
+    return new Date(startDate.getTime());
   }
 
-  public void setStartDate ( Date startDate )
+  public void setStartDate ( final Date startDate )
   {
-    this.startDate = startDate;
+    this.startDate = new Date(startDate.getTime());
   }
 
   public Date getEndDate ()
   {
-    return endDate;
+    return new Date(endDate.getTime());
   }
 
-  public void setEndDate ( Date endDate )
+  public void setEndDate ( final Date endDate )
   {
-    this.endDate = endDate;
+    this.endDate = new Date(endDate.getTime());
   }
 
   public boolean isNoEndingDate ()
@@ -384,12 +384,12 @@ public class Agreement extends ConnectwiseCommon
 
   public Date getDateCancelled ()
   {
-    return dateCancelled;
+    return new Date(dateCancelled.getTime());
   }
 
-  public void setDateCancelled ( Date dateCancelled )
+  public void setDateCancelled ( final Date dateCancelled )
   {
-    this.dateCancelled = dateCancelled;
+    this.dateCancelled = new Date(dateCancelled.getTime());
   }
 
   public String getReasonCancelled ()
@@ -744,12 +744,12 @@ public class Agreement extends ConnectwiseCommon
 
   public Date getBillStartDate ()
   {
-    return billStartDate;
+    return new Date(billStartDate.getTime());
   }
 
-  public void setBillStartDate ( Date billStartDate )
+  public void setBillStartDate ( final Date billStartDate )
   {
-    this.billStartDate = billStartDate;
+    this.billStartDate = new Date(billStartDate.getTime());
   }
 
   public int getTaxCodeId ()

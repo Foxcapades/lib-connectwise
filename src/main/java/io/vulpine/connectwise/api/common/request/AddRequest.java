@@ -23,7 +23,7 @@ import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 
-public abstract class AddRequest < T extends ConnectwiseCommon > extends CwRequest< T >
+public abstract class AddRequest < T extends ConnectwiseCommon > extends ConnectwiseRequest< T >
 {
   protected T data;
 

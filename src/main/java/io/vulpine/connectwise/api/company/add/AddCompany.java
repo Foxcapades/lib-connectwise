@@ -200,7 +200,7 @@ public class AddCompany extends AddRequest< Company >
   @Override
   public Company submit () throws IOException
   {
-    final AddCompanyResponse company = xmlMapper.readerFor(AddCompanyResponse.class).readValue(api.send(this));
+    final AddCompanyResponse company = getXmlMapper().readerFor(AddCompanyResponse.class).readValue(getApi().send(this));
     return company.getResult();
   }
 
