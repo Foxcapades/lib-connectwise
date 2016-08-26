@@ -17,9 +17,26 @@
 
 package io.vulpine.connectwise.api.company.get;
 
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.request.GetRequest;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.type.company.Company;
+
+import java.io.IOException;
 
 @JacksonXmlRootElement( localName = "GetCompany" )
-public class GetCompany
+public class GetCompany extends GetRequest < Company >
 {
+  public GetCompany( final Credentials credentials, final XmlMapper xmlMapper, final SubApiInterface api, final int id )
+  {
+    super(credentials, xmlMapper, api, id);
+  }
+
+  @Override
+  public Company submit() throws IOException
+  {
+    return submit(GetCompanyResponse.class);
+  }
 }

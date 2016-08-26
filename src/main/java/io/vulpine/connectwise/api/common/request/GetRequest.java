@@ -12,20 +12,30 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-package io.vulpine.connectwise.api.company.get;
+package io.vulpine.connectwise.api.common.request;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.api.common.ResponseData;
-import io.vulpine.connectwise.type.company.Company;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 
-@JacksonXmlRootElement( localName = "GetCompanyResponse" )
-public class GetCompanyResponse extends ResponseData < Company >
+public abstract class GetRequest < T > extends CwRequest < T >
 {
-  public GetCompanyResponse( @JacksonXmlProperty( localName = "GetCompanyResult" ) final Company result )
+  private final int id;
+
+  public GetRequest(
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final SubApiInterface api,
+    final int id
+  )
   {
-    super(result);
+    super(credentials, xmlMapper, api);
+    this.id = id;
+  }
+
+  public int getId()
+  {
+    return id;
   }
 }

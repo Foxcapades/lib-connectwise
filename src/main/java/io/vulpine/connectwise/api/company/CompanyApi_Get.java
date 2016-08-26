@@ -42,7 +42,7 @@ public class CompanyApi_Get extends ApiDivision
    */
   public GetCompany company ( final int id )
   {
-     return new GetCompany();
+     return new GetCompany(credentials, mapper, api, id);
   }
 
   public GetCompanyProfile profile()

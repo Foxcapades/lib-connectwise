@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.List;
 
 @JacksonXmlRootElement ( localName = "FindCompanies" )
-public class FindCompanies extends FindRequest < List< FoundCompany > >
+public class FindCompanies extends FindRequest < List < FoundCompany > >
 {
   public FindCompanies( Credentials credentials, XmlMapper xmlMapper, SubApiInterface api )
   {
@@ -38,7 +38,6 @@ public class FindCompanies extends FindRequest < List< FoundCompany > >
   @Override
   public List < FoundCompany > submit () throws IOException
   {
-    final FindCompanyResponse r = xmlMapper.readerFor(FindCompanyResponse.class).readValue(api.send(this));
-    return r.getResults();
+    return submit(FindCompanyResponse.class);
   }
 }

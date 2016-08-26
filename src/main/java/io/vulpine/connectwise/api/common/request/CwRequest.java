@@ -21,6 +21,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.ResponseData;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 
 import java.io.IOException;
@@ -60,5 +61,11 @@ abstract public class CwRequest < R >
   public String getXmlns ()
   {
     return xmlns;
+  }
+
+  protected R submit( final Class < ? extends ResponseData < R > > type ) throws IOException
+  {
+    final ResponseData < R > res = xmlMapper.readerFor(type).readValue(api.send(this));
+    return res.getResult();
   }
 }
