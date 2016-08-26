@@ -1,36 +1,171 @@
+/*
+ * Copyright 2016 Elizabeth Harper
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
 package io.vulpine.connectwise.api;
 
-import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.EmptyFilter;
+import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.company.*;
-import io.vulpine.connectwise.api.request.Credentials;
+import io.vulpine.connectwise.api.common.Credentials;
 
 public class CompanyApi extends ConnectwiseSubApi
 {
-  public final Add         add;
-  public final AddOrUpdate addOrUpdate;
-  public final Delete      delete;
-  public final Find        find;
-  public final Get         get;
-  public final GetAll      getAll;
-  public final Load        load;
-  public final Set         set;
-  public final Update      update;
+  /**
+   * "Add" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private CompanyApi_Add add = null;
 
-  public CompanyApi ( final ConnectwiseApi api, final Credentials creds, final XmlMapper mapper )
+  /**
+   * "Add or Update" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private CompanyApi_AddOrUpdate addOrUpdate = null;
+
+  /**
+   * "Delete" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private CompanyApi_Delete delete = null;
+
+  /**
+   * "Find" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private CompanyApi_Find find = null;
+
+  /**
+   * "Get" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private CompanyApi_Get get = null;
+
+  /**
+   * "Get All" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private CompanyApi_GetAll getAll = null;
+
+  /**
+   * "Load" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private CompanyApi_Load load = null;
+
+  /**
+   * "Set" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private CompanyApi_Set set = null;
+
+  /**
+   * "Update" Endpoints Container
+   * <p>
+   * Instantiated On Demand
+   */
+  private CompanyApi_Update update = null;
+
+  public CompanyApi(
+    final ConnectwiseApi connectwiseApi,
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final String endpoint
+  )
   {
-    super(api, creds, mapper, "CompanyApi.asmx");
-    mapper.setFilterProvider(new SimpleFilterProvider().addFilter("filter-empty", new EmptyFilter()));
+    super(connectwiseApi, credentials, xmlMapper, endpoint + "CompanyApi.asmx");
+  }
 
-    delete      = new Delete(creds, mapper, this);
-    find        = new Find(creds, mapper, this);
-    add         = new Add(creds, mapper, this);
-    addOrUpdate = new AddOrUpdate(creds, mapper, this);
-    get         = new Get(creds, mapper, this);
-    getAll      = new GetAll(creds, mapper, this);
-    load        = new Load(creds, mapper, this);
-    set         = new Set(creds, mapper, this);
-    update      = new Update(creds, mapper, this);
+  public CompanyApi_Add add()
+  {
+    if (null == add)
+      add = new CompanyApi_Add(credentials, xmlMapper, this);
+
+    return add;
+  }
+
+  public CompanyApi_AddOrUpdate addOrUpdate()
+  {
+    if (null == addOrUpdate)
+      addOrUpdate = new CompanyApi_AddOrUpdate(credentials, xmlMapper, this);
+
+    return addOrUpdate;
+  }
+
+  public CompanyApi_Delete delete()
+  {
+    if (null == delete)
+      delete = new CompanyApi_Delete(credentials, xmlMapper, this);
+
+    return delete;
+  }
+
+  public CompanyApi_Find find()
+  {
+    if (null == find)
+      find = new CompanyApi_Find(credentials, xmlMapper, this);
+
+    return find;
+  }
+
+  public CompanyApi_Get get()
+  {
+    if (null == get)
+      get = new CompanyApi_Get(credentials, xmlMapper, this);
+
+    return get;
+  }
+
+  public CompanyApi_GetAll getAll()
+  {
+    if (null == getAll)
+      getAll = new CompanyApi_GetAll(credentials, xmlMapper, this);
+
+    return getAll;
+  }
+
+  public CompanyApi_Load load()
+  {
+    if (null == load)
+      load = new CompanyApi_Load(credentials, xmlMapper, this);
+
+    return load;
+  }
+
+  public CompanyApi_Set set()
+  {
+    if (null == set)
+      set = new CompanyApi_Set(credentials, xmlMapper, this);
+
+    return set;
+  }
+
+  public CompanyApi_Update update()
+  {
+    if (null == update)
+      update = new CompanyApi_Update(credentials, xmlMapper, this);
+
+    return update;
   }
 }

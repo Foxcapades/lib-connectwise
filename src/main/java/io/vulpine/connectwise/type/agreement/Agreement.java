@@ -1,13 +1,30 @@
+/*
+ * Copyright 2016 Elizabeth Harper
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
 package io.vulpine.connectwise.type.agreement;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 
 @SuppressWarnings( "unused" )
-public class Agreement extends CwObject
+public class Agreement extends ConnectwiseCommon
 {
   @JacksonXmlProperty ( localName = "AgreementTypeId" )
   protected int agreementTypeId;
@@ -40,9 +57,11 @@ public class Agreement extends CwObject
   @JacksonXmlProperty ( localName = "RestrictDepartmentFlag" )
   protected boolean restrictDepartment;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty ( localName = "StartDate" )
   protected Date startDate;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty ( localName = "EndDate" )
   protected Date endDate;
 
@@ -55,6 +74,7 @@ public class Agreement extends CwObject
   @JacksonXmlProperty ( localName = "CancelledFlag" )
   protected boolean cancelled;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty ( localName = "DateCancelled" )
   protected Date dateCancelled;
 
@@ -163,6 +183,7 @@ public class Agreement extends CwObject
   @JacksonXmlProperty ( localName = "ProrateFirstBill" )
   protected double prorateFirstBill;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty ( localName = "BillStartDate" )
   protected Date billStartDate;
 

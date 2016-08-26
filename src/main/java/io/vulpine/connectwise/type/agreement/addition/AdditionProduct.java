@@ -1,257 +1,273 @@
+/*
+ * Copyright 2016 Elizabeth Harper
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
 package io.vulpine.connectwise.type.agreement.addition;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 import io.vulpine.connectwise.type.PriceAttribute;
 import io.vulpine.connectwise.type.agreement.ProductClass;
 
-@SuppressWarnings( "unused" )
-public class AdditionProduct extends CwObject
+public class AdditionProduct extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "ItemIdentifier" )
-  protected String ItemIdentifier;
+  protected String itemIdentifier;
 
   @JacksonXmlProperty( localName = "ProductTypeId" )
-  protected int ProductTypeId;
+  protected int productTypeId;
 
   @JacksonXmlProperty( localName = "CategoryId" )
-  protected int CategoryId;
+  protected int categoryId;
 
   @JacksonXmlProperty( localName = "SubcategoryId" )
-  protected int SubcategoryId;
+  protected int subcategoryId;
 
   @JacksonXmlProperty( localName = "UomId" )
-  protected int UomId;
+  protected int uomId;
 
   @JacksonXmlProperty( localName = "Cost" )
-  protected double Cost;
+  protected double cost;
 
   @JacksonXmlProperty( localName = "Price" )
-  protected double Price;
+  protected double price;
 
   @JacksonXmlProperty( localName = "Taxable" )
-  protected boolean Taxable;
+  protected boolean taxable;
 
   @JacksonXmlProperty( localName = "LongDescription" )
-  protected String LongDescription;
+  protected String longDescription;
 
   @JacksonXmlProperty( localName = "Inactive" )
-  protected boolean Inactive;
+  protected boolean inactive;
 
   @JacksonXmlProperty( localName = "Serialized" )
-  protected boolean Serialized;
+  protected boolean serialized;
 
   @JacksonXmlProperty( localName = "ApplyCostBySerialNumber" )
-  protected boolean ApplyCostBySerialNumber;
+  protected boolean applyCostBySerialNumber;
 
   @JacksonXmlProperty( localName = "ManufacturerId" )
-  protected int ManufacturerId;
+  protected int manufacturerId;
 
   @JacksonXmlProperty( localName = "ManufacturerPartNumber" )
-  protected String ManufacturerPartNumber;
+  protected String manufacturerPartNumber;
 
   @JacksonXmlProperty( localName = "VendorId" )
-  protected int VendorId;
+  protected int vendorId;
 
   @JacksonXmlProperty( localName = "VendorSku" )
-  protected String VendorSku;
+  protected String vendorSku;
 
   @JacksonXmlProperty( localName = "ProductClass" )
-  protected ProductClass ProductClass;
+  protected ProductClass productClass;
 
   @JacksonXmlProperty( localName = "PriceAttribute" )
-  protected PriceAttribute PriceAttribute;
+  protected PriceAttribute priceAttribute;
 
   @JacksonXmlProperty( localName = "MinimumStock" )
-  protected int MinimumStock;
+  protected int minimumStock;
 
-  public String getItemIdentifier ()
+  public String getItemIdentifier()
   {
-    return ItemIdentifier;
+    return itemIdentifier;
   }
 
-  public void setItemIdentifier ( String itemIdentifier )
+  public void setItemIdentifier( final String itemIdentifier )
   {
-    ItemIdentifier = itemIdentifier;
+    this.itemIdentifier = itemIdentifier;
   }
 
-  public int getProductTypeId ()
+  public int getProductTypeId()
   {
-    return ProductTypeId;
+    return productTypeId;
   }
 
-  public void setProductTypeId ( int productTypeId )
+  public void setProductTypeId( final int productTypeId )
   {
-    ProductTypeId = productTypeId;
+    this.productTypeId = productTypeId;
   }
 
-  public int getCategoryId ()
+  public int getCategoryId()
   {
-    return CategoryId;
+    return categoryId;
   }
 
-  public void setCategoryId ( int categoryId )
+  public void setCategoryId( final int categoryId )
   {
-    CategoryId = categoryId;
+    this.categoryId = categoryId;
   }
 
-  public int getSubcategoryId ()
+  public int getSubcategoryId()
   {
-    return SubcategoryId;
+    return subcategoryId;
   }
 
-  public void setSubcategoryId ( int subcategoryId )
+  public void setSubcategoryId( final int subcategoryId )
   {
-    SubcategoryId = subcategoryId;
+    this.subcategoryId = subcategoryId;
   }
 
-  public int getUomId ()
+  public int getUomId()
   {
-    return UomId;
+    return uomId;
   }
 
-  public void setUomId ( int uomId )
+  public void setUomId( final int uomId )
   {
-    UomId = uomId;
+    this.uomId = uomId;
   }
 
-  public double getCost ()
+  public double getCost()
   {
-    return Cost;
+    return cost;
   }
 
-  public void setCost ( double cost )
+  public void setCost( final double cost )
   {
-    Cost = cost;
+    this.cost = cost;
   }
 
-  public double getPrice ()
+  public double getPrice()
   {
-    return Price;
+    return price;
   }
 
-  public void setPrice ( double price )
+  public void setPrice( final double price )
   {
-    Price = price;
+    this.price = price;
   }
 
-  public boolean isTaxable ()
+  public boolean isTaxable()
   {
-    return Taxable;
+    return taxable;
   }
 
-  public void setTaxable ( boolean taxable )
+  public void setTaxable( final boolean taxable )
   {
-    Taxable = taxable;
+    this.taxable = taxable;
   }
 
-  public String getLongDescription ()
+  public String getLongDescription()
   {
-    return LongDescription;
+    return longDescription;
   }
 
-  public void setLongDescription ( String longDescription )
+  public void setLongDescription( final String longDescription )
   {
-    LongDescription = longDescription;
+    this.longDescription = longDescription;
   }
 
-  public boolean isInactive ()
+  public boolean isInactive()
   {
-    return Inactive;
+    return inactive;
   }
 
-  public void setInactive ( boolean inactive )
+  public void setInactive( final boolean inactive )
   {
-    Inactive = inactive;
+    this.inactive = inactive;
   }
 
-  public boolean isSerialized ()
+  public boolean isSerialized()
   {
-    return Serialized;
+    return serialized;
   }
 
-  public void setSerialized ( boolean serialized )
+  public void setSerialized( final boolean serialized )
   {
-    Serialized = serialized;
+    this.serialized = serialized;
   }
 
-  public boolean isApplyCostBySerialNumber ()
+  public boolean isApplyCostBySerialNumber()
   {
-    return ApplyCostBySerialNumber;
+    return applyCostBySerialNumber;
   }
 
-  public void setApplyCostBySerialNumber ( boolean applyCostBySerialNumber )
+  public void setApplyCostBySerialNumber( final boolean applyCostBySerialNumber )
   {
-    ApplyCostBySerialNumber = applyCostBySerialNumber;
+    this.applyCostBySerialNumber = applyCostBySerialNumber;
   }
 
-  public int getManufacturerId ()
+  public int getManufacturerId()
   {
-    return ManufacturerId;
+    return manufacturerId;
   }
 
-  public void setManufacturerId ( int manufacturerId )
+  public void setManufacturerId( final int manufacturerId )
   {
-    ManufacturerId = manufacturerId;
+    this.manufacturerId = manufacturerId;
   }
 
-  public String getManufacturerPartNumber ()
+  public String getManufacturerPartNumber()
   {
-    return ManufacturerPartNumber;
+    return manufacturerPartNumber;
   }
 
-  public void setManufacturerPartNumber ( String manufacturerPartNumber )
+  public void setManufacturerPartNumber( final String manufacturerPartNumber )
   {
-    ManufacturerPartNumber = manufacturerPartNumber;
+    this.manufacturerPartNumber = manufacturerPartNumber;
   }
 
-  public int getVendorId ()
+  public int getVendorId()
   {
-    return VendorId;
+    return vendorId;
   }
 
-  public void setVendorId ( int vendorId )
+  public void setVendorId( final int vendorId )
   {
-    VendorId = vendorId;
+    this.vendorId = vendorId;
   }
 
-  public String getVendorSku ()
+  public String getVendorSku()
   {
-    return VendorSku;
+    return vendorSku;
   }
 
-  public void setVendorSku ( String vendorSku )
+  public void setVendorSku( final String vendorSku )
   {
-    VendorSku = vendorSku;
+    this.vendorSku = vendorSku;
   }
 
-  public ProductClass getProductClass ()
+  public ProductClass getProductClass()
   {
-    return ProductClass;
+    return productClass;
   }
 
-  public void setProductClass ( ProductClass productClass )
+  public void setProductClass( final ProductClass productClass )
   {
-    ProductClass = productClass;
+    this.productClass = productClass;
   }
 
-  public PriceAttribute getPriceAttribute ()
+  public PriceAttribute getPriceAttribute()
   {
-    return PriceAttribute;
+    return priceAttribute;
   }
 
-  public void setPriceAttribute ( PriceAttribute priceAttribute )
+  public void setPriceAttribute( final PriceAttribute priceAttribute )
   {
-    PriceAttribute = priceAttribute;
+    this.priceAttribute = priceAttribute;
   }
 
-  public int getMinimumStock ()
+  public int getMinimumStock()
   {
-    return MinimumStock;
+    return minimumStock;
   }
 
-  public void setMinimumStock ( int minimumStock )
+  public void setMinimumStock( final int minimumStock )
   {
-    MinimumStock = minimumStock;
+    this.minimumStock = minimumStock;
   }
 }

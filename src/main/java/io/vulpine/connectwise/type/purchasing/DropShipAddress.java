@@ -1,139 +1,156 @@
+/*
+ * Copyright 2016 Elizabeth Harper
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
 package io.vulpine.connectwise.type.purchasing;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import io.vulpine.connectwise.type.CwObject;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 @SuppressWarnings( "unused" )
-public class DropShipAddress extends CwObject
+public class DropShipAddress extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "ContactName" )
-  protected String ContactName;
+  protected String contactName;
 
   @JacksonXmlProperty( localName = "POPhone" )
-  protected String POPhone;
+  protected String poPhone;
 
   @JacksonXmlProperty( localName = "PhoneExt" )
-  protected String PhoneExt;
+  protected String phoneExt;
 
   @JacksonXmlProperty( localName = "SiteName" )
-  protected String SiteName;
+  protected String siteName;
 
   @JacksonXmlProperty( localName = "StreetLine1" )
-  protected String StreetLine1;
+  protected String streetLine1;
 
   @JacksonXmlProperty( localName = "StreetLine2" )
-  protected String StreetLine2;
+  protected String streetLine2;
 
   @JacksonXmlProperty( localName = "City" )
-  protected String City;
+  protected String city;
 
   @JacksonXmlProperty( localName = "Country" )
-  protected String Country;
+  protected String country;
 
   @JacksonXmlProperty( localName = "State" )
-  protected String State;
+  protected String state;
 
   @JacksonXmlProperty( localName = "Zip" )
-  protected String Zip;
+  protected String zip;
 
-  public String getContactName ()
+  public String getContactName()
   {
-    return ContactName;
+    return contactName;
   }
 
-  public void setContactName ( final String contactName )
+  public void setContactName( final String contactName )
   {
-    ContactName = contactName;
+    this.contactName = contactName;
   }
 
-  public String getPOPhone ()
+  public String getPoPhone()
   {
-    return POPhone;
+    return poPhone;
   }
 
-  public void setPOPhone ( final String POPhone )
+  public void setPoPhone( final String poPhone )
   {
-    this.POPhone = POPhone;
+    this.poPhone = poPhone;
   }
 
-  public String getPhoneExt ()
+  public String getPhoneExt()
   {
-    return PhoneExt;
+    return phoneExt;
   }
 
-  public void setPhoneExt ( final String phoneExt )
+  public void setPhoneExt( final String phoneExt )
   {
-    PhoneExt = phoneExt;
+    this.phoneExt = phoneExt;
   }
 
-  public String getSiteName ()
+  public String getSiteName()
   {
-    return SiteName;
+    return siteName;
   }
 
-  public void setSiteName ( final String siteName )
+  public void setSiteName( final String siteName )
   {
-    SiteName = siteName;
+    this.siteName = siteName;
   }
 
-  public String getStreetLine1 ()
+  public String getStreetLine1()
   {
-    return StreetLine1;
+    return streetLine1;
   }
 
-  public void setStreetLine1 ( final String streetLine1 )
+  public void setStreetLine1( final String streetLine1 )
   {
-    StreetLine1 = streetLine1;
+    this.streetLine1 = streetLine1;
   }
 
-  public String getStreetLine2 ()
+  public String getStreetLine2()
   {
-    return StreetLine2;
+    return streetLine2;
   }
 
-  public void setStreetLine2 ( final String streetLine2 )
+  public void setStreetLine2( final String streetLine2 )
   {
-    StreetLine2 = streetLine2;
+    this.streetLine2 = streetLine2;
   }
 
-  public String getCity ()
+  public String getCity()
   {
-    return City;
+    return city;
   }
 
-  public void setCity ( final String city )
+  public void setCity( final String city )
   {
-    City = city;
+    this.city = city;
   }
 
-  public String getCountry ()
+  public String getCountry()
   {
-    return Country;
+    return country;
   }
 
-  public void setCountry ( final String country )
+  public void setCountry( final String country )
   {
-    Country = country;
+    this.country = country;
   }
 
-  public String getState ()
+  public String getState()
   {
-    return State;
+    return state;
   }
 
-  public void setState ( final String state )
+  public void setState( final String state )
   {
-    State = state;
+    this.state = state;
   }
 
-  public String getZip ()
+  public String getZip()
   {
-    return Zip;
+    return zip;
   }
 
-  public void setZip ( final String zip )
+  public void setZip( final String zip )
   {
-    Zip = zip;
+    this.zip = zip;
   }
 }

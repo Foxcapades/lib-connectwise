@@ -1,12 +1,31 @@
+/*
+ * Copyright 2016 Elizabeth Harper
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
 package io.vulpine.connectwise.type.configuration;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.CwObject;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 
-@SuppressWarnings( "unused" )
-public class Configuration extends CwObject
+@JacksonXmlRootElement( localName = "Configuration" )
+public class Configuration extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "ConfigurationTypeId" )
   protected int configurationTypeId;
@@ -53,15 +72,18 @@ public class Configuration extends CwObject
   @JacksonXmlProperty( localName = "TagNumber" )
   protected String tagNumber;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "PurchaseDate" )
   protected Date purchaseDate;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "InstallationDate" )
   protected Date installationDate;
 
   @JacksonXmlProperty( localName = "InstalledBy" )
   protected String installedBy;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "WarrantyExpiration" )
   protected Date warrantyExpiration;
 
@@ -113,6 +135,7 @@ public class Configuration extends CwObject
   @JacksonXmlProperty( localName = "BackupRestores" )
   protected int backupRestores;
 
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "LastBackupDate" )
   protected Date lastBackupDate;
 
@@ -138,16 +161,16 @@ public class Configuration extends CwObject
   protected String defaultGateway;
 
   @JacksonXmlProperty( localName = "OSType" )
-  protected String oSType;
+  protected String osType;
 
   @JacksonXmlProperty( localName = "OSInfo" )
-  protected String oSInfo;
+  protected String osInfo;
 
   @JacksonXmlProperty( localName = "CPUSpeed" )
-  protected String cPUSpeed;
+  protected String cpuSpeed;
 
   @JacksonXmlProperty( localName = "RAM" )
-  protected String rAM;
+  protected String ram;
 
   @JacksonXmlProperty( localName = "LocalHardDrives" )
   protected String localHardDrives;
@@ -597,44 +620,44 @@ public class Configuration extends CwObject
     this.defaultGateway = defaultGateway;
   }
 
-  public String getoSType ()
+  public String getOsType()
   {
-    return oSType;
+    return osType;
   }
 
-  public void setoSType ( String oSType )
+  public void setOsType( String osType )
   {
-    this.oSType = oSType;
+    this.osType = osType;
   }
 
-  public String getoSInfo ()
+  public String getOsInfo()
   {
-    return oSInfo;
+    return osInfo;
   }
 
-  public void setoSInfo ( String oSInfo )
+  public void setOsInfo( String osInfo )
   {
-    this.oSInfo = oSInfo;
+    this.osInfo = osInfo;
   }
 
-  public String getcPUSpeed ()
+  public String getCpuSpeed()
   {
-    return cPUSpeed;
+    return cpuSpeed;
   }
 
-  public void setcPUSpeed ( String cPUSpeed )
+  public void setCpuSpeed( String cpuSpeed )
   {
-    this.cPUSpeed = cPUSpeed;
+    this.cpuSpeed = cpuSpeed;
   }
 
-  public String getrAM ()
+  public String getRam()
   {
-    return rAM;
+    return ram;
   }
 
-  public void setrAM ( String rAM )
+  public void setRam( String ram )
   {
-    this.rAM = rAM;
+    this.ram = ram;
   }
 
   public String getLocalHardDrives ()
