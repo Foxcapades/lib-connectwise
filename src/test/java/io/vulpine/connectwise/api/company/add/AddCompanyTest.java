@@ -17,7 +17,7 @@
 
 package io.vulpine.connectwise.api.company.add;
 
-import io.vulpine.connectwise.api.request.AddRequest;
+import io.vulpine.connectwise.api.common.request.AddRequest;
 import io.vulpine.connectwise.type.company.Address;
 import io.vulpine.connectwise.type.company.Company;
 import org.junit.Before;

@@ -17,10 +17,9 @@
 
 package io.vulpine.connectwise.api.def;
 
-import io.vulpine.connectwise.api.request.CwRequest;
+import io.vulpine.connectwise.api.common.request.CwRequest;
 
 import java.io.IOException;
-import java.util.regex.Pattern;
 
 public interface SubApiInterface
 {

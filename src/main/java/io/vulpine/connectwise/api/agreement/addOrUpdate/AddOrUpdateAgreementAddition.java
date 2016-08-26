@@ -22,8 +22,8 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.api.def.SubApiInterface;
-import io.vulpine.connectwise.api.request.AddOrUpdateRequest;
-import io.vulpine.connectwise.api.request.Credentials;
+import io.vulpine.connectwise.api.common.request.AddOrUpdateRequest;
+import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.type.agreement.addition.Addition;
 
 import java.io.IOException;

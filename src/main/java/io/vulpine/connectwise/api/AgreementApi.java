@@ -19,14 +19,14 @@ package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
-import io.vulpine.connectwise.api.agreement.AddOrUpdate;
-import io.vulpine.connectwise.api.agreement.Delete;
-import io.vulpine.connectwise.api.agreement.Find;
-import io.vulpine.connectwise.api.agreement.Get;
+import io.vulpine.connectwise.api.agreement.AgreementApi_AddOrUpdate;
+import io.vulpine.connectwise.api.agreement.AgreementApi_Delete;
+import io.vulpine.connectwise.api.agreement.AgreementApi_Find;
+import io.vulpine.connectwise.api.agreement.AgreementApi_Get;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.def.SubApiInterface;
-import io.vulpine.connectwise.api.request.Credentials;
-import io.vulpine.connectwise.api.request.CwRequest;
+import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.request.CwRequest;
 
 import java.io.IOException;
 
@@ -37,28 +37,28 @@ public class AgreementApi extends ConnectwiseSubApi implements SubApiInterface
    * <p>
    * Instantiated On Demand
    */
-  private AddOrUpdate addOrUpdate = null;
+  private AgreementApi_AddOrUpdate addOrUpdate = null;
 
   /**
    * "Delete" Endpoints Container
    * <p>
    * Instantiated On Demand
    */
-  private Delete delete = null;
+  private AgreementApi_Delete delete = null;
 
   /**
    * "Find" Endpoints Container
    * <p>
    * Instantiated On Demand
    */
-  private Find find = null;
+  private AgreementApi_Find find = null;
 
   /**
    * "Get" Endpoints Container
    * <p>
    * Instantiated On Demand
    */
-  private Get get = null;
+  private AgreementApi_Get get = null;
 
   public AgreementApi(
     final ConnectwiseApi connectwiseApi,
@@ -70,37 +70,37 @@ public class AgreementApi extends ConnectwiseSubApi implements SubApiInterface
     super(connectwiseApi, credentials, xmlMapper, endpoint + "AgreementApi.asmx");
   }
 
-  public AddOrUpdate addOrUpdate()
+  public AgreementApi_AddOrUpdate addOrUpdate()
   {
     if (null == addOrUpdate) {
-      addOrUpdate = new AddOrUpdate(credentials, xmlMapper, this);
+      addOrUpdate = new AgreementApi_AddOrUpdate(credentials, xmlMapper, this);
     }
 
     return addOrUpdate;
   }
 
-  public Delete delete()
+  public AgreementApi_Delete delete()
   {
     if (null == delete) {
-      delete = new Delete(credentials, xmlMapper, this);
+      delete = new AgreementApi_Delete(credentials, xmlMapper, this);
     }
 
     return delete;
   }
 
-  public Find find()
+  public AgreementApi_Find find()
   {
     if (null == find) {
-      find = new Find(credentials, xmlMapper, this);
+      find = new AgreementApi_Find(credentials, xmlMapper, this);
     }
 
     return find;
   }
 
-  public Get get()
+  public AgreementApi_Get get()
   {
     if (null == get) {
-      get = new Get(credentials, xmlMapper, this);
+      get = new AgreementApi_Get(credentials, xmlMapper, this);
     }
 
     return get;

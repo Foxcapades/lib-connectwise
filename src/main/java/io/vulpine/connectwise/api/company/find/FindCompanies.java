@@ -20,8 +20,8 @@ package io.vulpine.connectwise.api.company.find;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.api.def.SubApiInterface;
-import io.vulpine.connectwise.api.request.Credentials;
-import io.vulpine.connectwise.api.request.FindRequest;
+import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.request.FindRequest;
 import io.vulpine.connectwise.type.company.FoundCompany;
 
 import java.io.IOException;

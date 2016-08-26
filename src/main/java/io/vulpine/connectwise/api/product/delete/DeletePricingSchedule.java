@@ -19,8 +19,8 @@ package io.vulpine.connectwise.api.product.delete;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.api.def.SubApiInterface;
-import io.vulpine.connectwise.api.request.Credentials;
-import io.vulpine.connectwise.api.request.DeleteRequest;
+import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.request.DeleteRequest;
 
 @JacksonXmlRootElement( localName = "DeletePricingSchedule" )
 public class DeletePricingSchedule extends DeleteRequest

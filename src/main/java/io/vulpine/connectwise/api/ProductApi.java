@@ -20,7 +20,7 @@ package io.vulpine.connectwise.api;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.product.*;
-import io.vulpine.connectwise.api.request.Credentials;
+import io.vulpine.connectwise.api.common.Credentials;
 
 public class ProductApi extends ConnectwiseSubApi
 {
@@ -29,63 +29,63 @@ public class ProductApi extends ConnectwiseSubApi
    * <p>
    * Instantiated On Demand
    */
-  private Add add = null;
+  private ProductApi_Add add = null;
 
   /**
    * "Delete" Endpoints Container
    * <p>
    * Instantiated On Demand
    */
-  private Delete delete = null;
+  private ProductApi_Delete delete = null;
 
   /**
    * "Add or Update" Endpoints Container
    * <p>
    * Instantiated On Demand
    */
-  private AddOrUpdate addOrUpdate = null;
+  private ProductApi_AddOrUpdate addOrUpdate = null;
 
   /**
    * "Update" Endpoints Container
    * <p>
    * Instantiated On Demand
    */
-  private Update update = null;
+  private ProductApi_Update update = null;
 
   /**
    * "Set" Endpoints Container
    * <p>
    * Instantiated On Demand
    */
-  private Set set = null;
+  private ProductApi_Set set = null;
 
   /**
    * "Remove" Endpoints Container
    * <p>
    * Instantiated On Demand
    */
-  private Remove remove = null;
+  private ProductApi_Remove remove = null;
 
   /**
    * "Load" Endpoints Container
    * <p>
    * Instantiated On Demand
    */
-  private Load load = null;
+  private ProductApi_Load load = null;
 
   /**
    * "Get" Endpoints Container
    * <p>
    * Instantiated On Demand
    */
-  private Get get = null;
+  private ProductApi_Get get = null;
 
   /**
    * "Find" Endpoints Container
    * <p>
    * Instantiated On Demand
    */
-  private Find find = null;
+  private ProductApi_Find find = null;
 
   public ProductApi(
     final ConnectwiseApi connectwiseApi,
@@ -97,74 +97,74 @@ public class ProductApi extends ConnectwiseSubApi
     super(connectwiseApi, credentials, xmlMapper, endpoint + "ProductApi.asmx");
   }
 
-  public Add add()
+  public ProductApi_Add add()
   {
     if (null == add)
-      add = new Add(credentials, xmlMapper, this);
+      add = new ProductApi_Add(credentials, xmlMapper, this);
 
     return add;
   }
 
-  public AddOrUpdate addOrUpdate()
+  public ProductApi_AddOrUpdate addOrUpdate()
   {
     if (null == addOrUpdate)
-      addOrUpdate = new AddOrUpdate(credentials, xmlMapper, this);
+      addOrUpdate = new ProductApi_AddOrUpdate(credentials, xmlMapper, this);
 
     return addOrUpdate;
   }
 
-  public Delete delete()
+  public ProductApi_Delete delete()
   {
     if (null == delete)
-      delete = new Delete(credentials, xmlMapper, this);
+      delete = new ProductApi_Delete(credentials, xmlMapper, this);
 
     return delete;
   }
 
-  public Find find()
+  public ProductApi_Find find()
   {
     if (null == find)
-      find = new Find(credentials, xmlMapper, this);
+      find = new ProductApi_Find(credentials, xmlMapper, this);
 
     return find;
   }
 
-  public Get get()
+  public ProductApi_Get get()
   {
     if (null == get)
-      get = new Get(credentials, xmlMapper, this);
+      get = new ProductApi_Get(credentials, xmlMapper, this);
 
     return get;
   }
 
-  public Load load()
+  public ProductApi_Load load()
   {
     if (null == load)
-      load = new Load(credentials, xmlMapper, this);
+      load = new ProductApi_Load(credentials, xmlMapper, this);
 
     return load;
   }
 
-  public Remove remove()
+  public ProductApi_Remove remove()
   {
     if (null == remove)
-      remove = new Remove(credentials, xmlMapper, this);
+      remove = new ProductApi_Remove(credentials, xmlMapper, this);
 
     return remove;
   }
 
-  public Set set()
+  public ProductApi_Set set()
   {
     if (null == set)
-      set = new Set(credentials, xmlMapper, this);
+      set = new ProductApi_Set(credentials, xmlMapper, this);
 
     return set;
   }
 
-  public Update update()
+  public ProductApi_Update update()
   {
     if (null == update)
-      update = new Update(credentials, xmlMapper, this);
+      update = new ProductApi_Update(credentials, xmlMapper, this);
 
     return update;
   }

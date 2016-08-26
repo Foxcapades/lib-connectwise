@@ -20,9 +20,8 @@ package io.vulpine.connectwise.api.common;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.ConnectwiseApi;
 import io.vulpine.connectwise.api.def.SubApiInterface;
-import io.vulpine.connectwise.api.request.Credentials;
-import io.vulpine.connectwise.api.request.CwRequest;
-import io.vulpine.connectwise.api.request.SoapEnvelope;
+import io.vulpine.connectwise.api.common.request.CwRequest;
+import io.vulpine.connectwise.api.common.request.SoapEnvelope;
 
 import java.io.IOException;
 import java.util.regex.Pattern;
