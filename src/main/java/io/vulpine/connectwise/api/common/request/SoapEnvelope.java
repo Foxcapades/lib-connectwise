@@ -18,7 +18,6 @@ package io.vulpine.connectwise.api.common.request;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.api.common.request.CwRequest;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,11 +35,11 @@ public class SoapEnvelope
   public final String soap = "http://schemas.xmlsoap.org/soap/envelope/";
 
   @JacksonXmlProperty(localName = "soap:Body")
-  public final Map < String, CwRequest > e;
+  public final Map < String, ConnectwiseRequest > e;
 
-  public SoapEnvelope ( final CwRequest r )
+  public SoapEnvelope ( final ConnectwiseRequest r )
   {
-    e = new HashMap < String, CwRequest >(1);
+    e = new HashMap < String, ConnectwiseRequest >(1);
     e.put(r.getClass().getAnnotation(JacksonXmlRootElement.class).localName(), r);
   }
 }

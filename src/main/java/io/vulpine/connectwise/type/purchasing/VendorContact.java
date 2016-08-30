@@ -21,29 +21,29 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 @SuppressWarnings( "unused" )
 public class VendorContact
 {
-  @JacksonXmlProperty(localName = "FirstName")
-  protected String FirstName;
+  @JacksonXmlProperty( localName = "FirstName" )
+  protected String firstName;
 
-  @JacksonXmlProperty(localName = "LastName")
-  protected String LastName;
+  @JacksonXmlProperty( localName = "LastName" )
+  protected String lastName;
 
-  public String getFirstName ()
+  public String getFirstName()
   {
-    return FirstName;
+    return firstName;
   }
 
-  public void setFirstName ( final String firstName )
+  public void setFirstName( final String firstName )
   {
-    FirstName = firstName;
+    this.firstName = firstName;
   }
 
-  public String getLastName ()
+  public String getLastName()
   {
-    return LastName;
+    return lastName;
   }
 
-  public void setLastName ( final String lastName )
+  public void setLastName( final String lastName )
   {
-    LastName = lastName;
+    this.lastName = lastName;
   }
 }

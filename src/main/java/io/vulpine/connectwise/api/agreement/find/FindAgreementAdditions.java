@@ -47,7 +47,8 @@ public class FindAgreementAdditions extends FindRequest < List < FoundAddition >
   @Override
   public List < FoundAddition > submit() throws IOException
   {
-    final FindAgreementAdditionsResponse r = xmlMapper.readerFor(FindAgreementAdditionsResponse.class).readValue(api.send(this));
+    final FindAgreementAdditionsResponse r = getXmlMapper().readerFor(FindAgreementAdditionsResponse.class).readValue(
+      getApi().send(this));
     return r.getResults();
   }
 

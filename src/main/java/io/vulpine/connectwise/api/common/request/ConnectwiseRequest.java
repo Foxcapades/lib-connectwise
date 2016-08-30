@@ -19,28 +19,27 @@ package io.vulpine.connectwise.api.common.request;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.common.ResponseData;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 
 import java.io.IOException;
 
-abstract public class CwRequest < R >
+abstract public class ConnectwiseRequest< R >
 {
   @JacksonXmlProperty( localName = "xmlns", isAttribute = true )
-  protected final String xmlns = "http://connectwise.com";
+  private final static String XML_NAMESPACE = "http://connectwise.com";
 
   @JacksonXmlProperty( localName = "credentials" )
-  protected final Credentials credentials;
+  private final Credentials credentials;
 
   @JsonIgnore
-  protected final XmlMapper xmlMapper;
+  private final XmlMapper xmlMapper;
 
   @JsonIgnore
-  protected final SubApiInterface api;
+  private final SubApiInterface api;
 
-  public CwRequest (
+  public ConnectwiseRequest(
     final Credentials credentials,
     final XmlMapper xmlMapper,
     final SubApiInterface api
@@ -51,21 +50,31 @@ abstract public class CwRequest < R >
     this.api = api;
   }
 
-  public Credentials getCredentials ()
+  abstract public R submit() throws IOException;
+
+  protected SubApiInterface getApi()
+  {
+    return api;
+  }
+
+  public Credentials getCredentials()
   {
     return credentials;
   }
 
-  abstract public R submit () throws IOException;
-
-  public String getXmlns ()
+  protected XmlMapper getXmlMapper()
   {
-    return xmlns;
+    return xmlMapper;
+  }
+
+  public String getXmlns()
+  {
+    return XML_NAMESPACE;
   }
 
   protected R submit( final Class < ? extends ResponseData < R > > type ) throws IOException
   {
-    final ResponseData < R > res = xmlMapper.readerFor(type).readValue(api.send(this));
+    final ResponseData < R > res = getXmlMapper().readerFor(type).readValue(getApi().send(this));
     return res.getResult();
   }
 }

@@ -45,9 +45,9 @@ public class AddOrUpdateAgreementAddition extends AddOrUpdateRequest < Addition 
   @Override
   public Addition submit() throws IOException
   {
-    final AddOrUpdateAgreementAdditionResponse response = xmlMapper
+    final AddOrUpdateAgreementAdditionResponse response = getXmlMapper()
       .readerFor(AddOrUpdateAgreementAdditionResponse.class)
-      .readValue(api.send(this));
+      .readValue(getApi().send(this));
     return response.getUpdatedAddition();
   }
 

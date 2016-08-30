@@ -62,12 +62,12 @@ public class ConnectwiseCommon
 
   public Date getLastUpdate ()
   {
-    return lastUpdate;
+    return new Date(lastUpdate.getTime());
   }
 
-  public void setLastUpdate ( Date lastUpdate )
+  public void setLastUpdate ( final Date lastUpdate )
   {
-    this.lastUpdate = lastUpdate;
+    this.lastUpdate = new Date(lastUpdate.getTime());
   }
 
   public String getDescription ()
@@ -75,18 +75,18 @@ public class ConnectwiseCommon
     return description;
   }
 
-  public void setDescription ( String description )
+  public void setDescription ( final String description )
   {
     this.description = description;
   }
 
   public Date getLastUpdated ()
   {
-    return lastUpdated;
+    return new Date(lastUpdated.getTime());
   }
 
-  public void setLastUpdated ( Date lastUpdated )
+  public void setLastUpdated ( final Date lastUpdated )
   {
-    this.lastUpdated = lastUpdated;
+    this.lastUpdated = new Date(lastUpdated.getTime());
   }
 }

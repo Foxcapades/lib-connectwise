@@ -26,7 +26,7 @@ import io.vulpine.connectwise.api.def.SubApiInterface;
 import java.util.List;
 
 @JsonFilter("filter-empty")
-abstract public class FindRequest < T > extends CwRequest< T >
+abstract public class FindRequest < T > extends ConnectwiseRequest< T >
 {
   @JacksonXmlProperty( localName = "conditions" )
   protected String conditions;

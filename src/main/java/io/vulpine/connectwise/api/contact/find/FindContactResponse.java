@@ -12,16 +12,18 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
+package io.vulpine.connectwise.api.contact.find;
 
-package io.vulpine.connectwise.api.def;
+import io.vulpine.connectwise.api.common.ResponseData;
+import io.vulpine.connectwise.type.contact.FoundContact;
 
-import io.vulpine.connectwise.api.common.request.ConnectwiseRequest;
+import java.util.List;
 
-import java.io.IOException;
-
-public interface SubApiInterface
+public class FindContactResponse extends ResponseData < List< FoundContact > >
 {
-  String send( final ConnectwiseRequest r ) throws IOException;
+  public FindContactResponse( final List < FoundContact > result )
+  {
+    super(result);
+  }
 }

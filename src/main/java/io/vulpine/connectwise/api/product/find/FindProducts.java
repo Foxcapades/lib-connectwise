@@ -39,7 +39,7 @@ public class FindProducts extends FindRequest < List < FoundProduct > >
   @Override
   public List< FoundProduct > submit () throws IOException
   {
-    final FindProductsResponse r = xmlMapper.readerFor(FindProductsResponse.class).readValue(api.send(this));
+    final FindProductsResponse r = getXmlMapper().readerFor(FindProductsResponse.class).readValue(getApi().send(this));
     return r.getResults();
   }
 }

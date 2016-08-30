@@ -17,6 +17,7 @@ package io.vulpine.connectwise.api.contact;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ApiDivision;
+import io.vulpine.connectwise.api.contact.find.FindContacts;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.common.Credentials;
 
@@ -29,5 +30,10 @@ public class ContactApi_Find extends ApiDivision
   )
   {
     super(credentials, mapper, api);
+  }
+
+  public FindContacts contacts()
+  {
+    return new FindContacts(credentials, mapper, api);
   }
 }

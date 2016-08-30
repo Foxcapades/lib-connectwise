@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.type.agreement.workrole;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
@@ -25,28 +24,28 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 public class WorkRoleExclusion extends WorkRoleCommon
 {
   @JacksonXmlProperty( localName = "AddAllWorkRoles" )
-  protected boolean AddAllWorkRoles;
+  protected boolean addAllWorkRoles;
 
   @JacksonXmlProperty( localName = "RemoveAllWorkRoles" )
-  protected boolean RemoveAllWorkRoles;
+  protected boolean removeAllWorkRoles;
 
-  public boolean isAddAllWorkRoles ()
+  public boolean isAddAllWorkRoles()
   {
-    return AddAllWorkRoles;
+    return addAllWorkRoles;
   }
 
-  public void setAddAllWorkRoles ( boolean addAllWorkRoles )
+  public void setAddAllWorkRoles( boolean addAllWorkRoles )
   {
-    AddAllWorkRoles = addAllWorkRoles;
+    this.addAllWorkRoles = addAllWorkRoles;
   }
 
-  public boolean isRemoveAllWorkRoles ()
+  public boolean isRemoveAllWorkRoles()
   {
-    return RemoveAllWorkRoles;
+    return removeAllWorkRoles;
   }
 
-  public void setRemoveAllWorkRoles ( boolean removeAllWorkRoles )
+  public void setRemoveAllWorkRoles( boolean removeAllWorkRoles )
   {
-    RemoveAllWorkRoles = removeAllWorkRoles;
+    this.removeAllWorkRoles = removeAllWorkRoles;
   }
 }

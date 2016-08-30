@@ -19,7 +19,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 
-public abstract class GetRequest < T > extends CwRequest < T >
+public abstract class GetRequest < T > extends ConnectwiseRequest< T >
 {
   private final int id;
 

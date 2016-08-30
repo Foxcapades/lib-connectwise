@@ -52,7 +52,8 @@ public class AddOrUpdateAgreement extends AddOrUpdateRequest < Agreement >
   @Override
   public Agreement submit() throws IOException
   {
-    final AddOrUpdateAgreementResponse res = xmlMapper.readerFor(AddOrUpdateAgreementResponse.class).readValue(api.send(this));
+    final AddOrUpdateAgreementResponse res = getXmlMapper().readerFor(AddOrUpdateAgreementResponse.class).readValue(
+      getApi().send(this));
     return res.getUpdatedAgreement();
   }
 }
