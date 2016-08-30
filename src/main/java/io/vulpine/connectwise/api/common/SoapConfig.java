@@ -16,6 +16,7 @@
 
 package io.vulpine.connectwise.api.common;
 
+@Deprecated
 public class SoapConfig
 {
   final String company;

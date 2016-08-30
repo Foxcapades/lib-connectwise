@@ -190,14 +190,20 @@ public final class ConnectwiseApi implements ConnectwiseInterface
 
   private final XmlMapper xmlMapper;
 
+  @Deprecated
   public ConnectwiseApi( final SoapConfig config )
   {
-    this.apiPath = config.getApiPath();
+    this(config.getCompany(), config.getApiUsername(), config.getApiPassword(), config.getApiPath());
+  }
+
+  public ConnectwiseApi( final String company, final String username, final String password, final String apiPath )
+  {
+    this.apiPath = apiPath;
     this.xmlMapper = new XmlMapper();
     this.credentials = new Credentials()
-      .setCompanyId(config.getCompany())
-      .setIntegratorLoginId(config.getApiUsername())
-      .setIntegratorPassword(config.getApiPassword());
+      .setCompanyId(company)
+      .setIntegratorLoginId(username)
+      .setIntegratorPassword(password);
 
     xmlMapper.setFilterProvider(new SimpleFilterProvider().addFilter("filter-empty", new EmptyFilter()));
 
