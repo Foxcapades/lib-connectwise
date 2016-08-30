@@ -15,14 +15,19 @@
  */
 package io.vulpine.connectwise.api.contact.find;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.api.common.ResponseData;
 import io.vulpine.connectwise.type.contact.FoundContact;
 
 import java.util.List;
 
-public class FindContactResponse extends ResponseData < List< FoundContact > >
+@JacksonXmlRootElement( localName = "FindContactsResponse" )
+public class FindContactResponse extends ResponseData < List < FoundContact > >
 {
-  public FindContactResponse( final List < FoundContact > result )
+  public FindContactResponse(
+    @JacksonXmlProperty( localName = "FindContactsResult" ) final List < FoundContact > result
+  )
   {
     super(result);
   }

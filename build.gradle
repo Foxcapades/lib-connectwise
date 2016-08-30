@@ -3,8 +3,7 @@ plugins { id "com.jfrog.bintray" version "1.7.1" }
 def config = [
   group: 'io.vulpine.lib',
   groupKey: 'Vulpine-IO',
-  version: '0.0.7',
-  name: 'connectwise',
+  version: '0.0.999999999e: 'connectwise',
   repo: 'lib-connectwise',
   jvm: '1.8'
 ];

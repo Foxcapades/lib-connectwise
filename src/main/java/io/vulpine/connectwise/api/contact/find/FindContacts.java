@@ -16,6 +16,7 @@
 package io.vulpine.connectwise.api.contact.find;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.common.request.FindRequest;
 import io.vulpine.connectwise.api.def.SubApiInterface;
@@ -24,6 +25,7 @@ import io.vulpine.connectwise.type.contact.FoundContact;
 import java.io.IOException;
 import java.util.List;
 
+@JacksonXmlRootElement(localName = "FindContacts")
 public class FindContacts extends FindRequest < List < FoundContact > >
 {
   public FindContacts(
