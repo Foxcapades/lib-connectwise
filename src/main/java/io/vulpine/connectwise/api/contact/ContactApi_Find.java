@@ -34,6 +34,7 @@ public class ContactApi_Find extends ApiDivision
 
   public FindContacts contacts()
   {
+    this.logger.trace(this.getClass());
     return new FindContacts(credentials, mapper, api);
   }
 }

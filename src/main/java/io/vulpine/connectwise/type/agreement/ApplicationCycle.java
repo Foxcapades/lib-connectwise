@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.type.agreement;
 
 import com.fasterxml.jackson.annotation.JsonCreator;

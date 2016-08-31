@@ -47,6 +47,7 @@ public class FindAgreementAdditions extends FindRequest < List < FoundAddition >
   @Override
   public List < FoundAddition > submit() throws IOException
   {
+    this.logger.trace(this.getClass());
     final FindAgreementAdditionsResponse r = getXmlMapper().readerFor(FindAgreementAdditionsResponse.class).readValue(
       getApi().send(this));
     return r.getResults();
@@ -54,11 +55,13 @@ public class FindAgreementAdditions extends FindRequest < List < FoundAddition >
 
   public Boolean isOpen()
   {
+    this.logger.trace(this.getClass());
     return open;
   }
 
   public FindAgreementAdditions setOpen( final Boolean open )
   {
+    this.logger.trace(this.getClass(), open);
     this.open = open;
     return this;
   }

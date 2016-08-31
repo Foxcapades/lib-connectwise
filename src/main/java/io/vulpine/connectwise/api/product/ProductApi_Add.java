@@ -36,6 +36,7 @@ public class ProductApi_Add extends ApiDivision
 
   public AddProduct product()
   {
+    this.logger.trace(this.getClass());
     return new AddProduct();
   }
 }

@@ -38,6 +38,7 @@ public class CompanyApi_Update extends ApiDivision
    */
   public UpdateCompany company ()
   {
+    this.logger.trace(this.getClass());
     return new UpdateCompany();
   }
 
@@ -48,6 +49,7 @@ public class CompanyApi_Update extends ApiDivision
    */
   public UpdateCompanyProfile profile()
   {
+    this.logger.trace(this.getClass());
     return new UpdateCompanyProfile();
   }
 }

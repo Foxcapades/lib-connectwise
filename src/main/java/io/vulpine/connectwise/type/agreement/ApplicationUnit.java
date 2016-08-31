@@ -14,14 +14,14 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.type.agreement;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-
 public enum ApplicationUnit
 {
-  AMOUNT("Amount"), HOURS("Hours"), INCIDENTS("Incidents");
+  AMOUNT("Amount"),
+  HOURS("Hours"),
+  INCIDENTS("Incidents");
 
   private final String value;
 

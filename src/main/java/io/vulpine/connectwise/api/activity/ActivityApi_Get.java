@@ -30,6 +30,7 @@ public class ActivityApi_Get extends ApiDivision
 
   public GetActivity activity( final int id )
   {
+    this.logger.trace(this.getClass());
     return new GetActivity();
   }
 }

@@ -42,11 +42,13 @@ public abstract class AddRequest < T extends ConnectwiseCommon > extends Connect
   @JsonIgnore
   public int getId ()
   {
+    this.logger.trace(this.getClass());
     return data.getId();
   }
 
   public AddRequest setId ( final int id )
   {
+    this.logger.trace(this.getClass(), id);
     data.setId(id);
     return this;
   }
@@ -54,11 +56,13 @@ public abstract class AddRequest < T extends ConnectwiseCommon > extends Connect
   @JsonIgnore
   public String getUpdatedBy ()
   {
+    this.logger.trace(this.getClass());
     return data.getUpdatedBy();
   }
 
   public AddRequest setUpdatedBy ( String updatedBy )
   {
+    this.logger.trace(this.getClass(), updatedBy);
     data.setUpdatedBy(updatedBy);
     return this;
   }
@@ -66,11 +70,13 @@ public abstract class AddRequest < T extends ConnectwiseCommon > extends Connect
   @JsonIgnore
   public Date getLastUpdate ()
   {
+    this.logger.trace(this.getClass());
     return data.getLastUpdate();
   }
 
   public AddRequest setLastUpdate ( Date lastUpdate )
   {
+    this.logger.trace(this.getClass(), lastUpdate);
     data.setLastUpdate(lastUpdate);
     return this;
   }
@@ -78,11 +84,13 @@ public abstract class AddRequest < T extends ConnectwiseCommon > extends Connect
   @JsonIgnore
   public String getDescription ()
   {
+    this.logger.trace(this.getClass());
     return data.getDescription();
   }
 
   public AddRequest setDescription ( String description )
   {
+    this.logger.trace(this.getClass(), description);
     data.setDescription(description);
     return this;
   }
@@ -90,11 +98,13 @@ public abstract class AddRequest < T extends ConnectwiseCommon > extends Connect
   @JsonIgnore
   public Date getLastUpdated ()
   {
+    this.logger.trace(this.getClass());
     return data.getLastUpdated();
   }
 
   public AddRequest setLastUpdated ( Date lastUpdated )
   {
+    this.logger.trace(this.getClass(), lastUpdated);
     data.setLastUpdated(lastUpdated);
     return this;
   }

@@ -32,36 +32,43 @@ public class AgreementApi_Delete extends ApiDivision
 
   public DeleteAgreementAdjustment adjustment( final int adjustmentId )
   {
+    this.logger.trace(this.getClass(), adjustmentId);
     return new DeleteAgreementAdjustment(credentials, mapper, api, adjustmentId);
   }
 
   public DeleteAgreementSite site( final int siteId )
   {
+    this.logger.trace(this.getClass(), siteId);
     return new DeleteAgreementSite(credentials, mapper, api, siteId);
   }
 
   public DeleteAgreementWorkRole workRole( final int workRoleId )
   {
+    this.logger.trace(this.getClass(), workRoleId);
     return new DeleteAgreementWorkRole(credentials, mapper, api, workRoleId);
   }
 
   public DeleteAgreementWorkType workType( final int workTypeId )
   {
+    this.logger.trace(this.getClass(), workTypeId);
     return new DeleteAgreementWorkType(credentials, mapper, api, workTypeId);
   }
 
   public DeleteAgreement agreement( final int agreementId )
   {
+    this.logger.trace(this.getClass(), agreementId);
     return new DeleteAgreement(credentials, mapper, api, agreementId);
   }
 
   public DeleteAgreementAddition addition( final int additionId )
   {
+    this.logger.trace(this.getClass(), additionId);
     return new DeleteAgreementAddition(credentials, mapper, api, additionId);
   }
 
   public DeleteAgreementBoardDefault boardDefault( final int boardDefaultId )
   {
+    this.logger.trace(this.getClass(), boardDefaultId);
     return new DeleteAgreementBoardDefault(credentials, mapper, api, boardDefaultId);
   }
 }

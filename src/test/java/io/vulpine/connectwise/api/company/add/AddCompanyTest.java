@@ -100,7 +100,7 @@ public class AddCompanyTest
   @Test
   public void addresses_passes_value_to_company_instance() throws Exception
   {
-    final List< Address > list = new ArrayList<>();
+    final List< Address > list = new ArrayList< Address >();
     request.addresses(list);
     Mockito.verify(company, Mockito.times(1)).setAddresses(list);
   }

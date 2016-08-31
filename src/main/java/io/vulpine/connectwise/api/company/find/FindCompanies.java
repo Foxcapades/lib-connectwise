@@ -38,6 +38,7 @@ public class FindCompanies extends FindRequest < List < FoundCompany > >
   @Override
   public List < FoundCompany > submit () throws IOException
   {
+    this.logger.trace(this.getClass());
     return submit(FindCompanyResponse.class);
   }
 }

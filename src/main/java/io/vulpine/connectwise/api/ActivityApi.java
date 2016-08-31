@@ -24,54 +24,19 @@ import io.vulpine.connectwise.api.common.Credentials;
 
 public class ActivityApi extends ConnectwiseSubApi
 {
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ActivityApi_Add add;
+  public final ActivityApi_Add add;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ActivityApi_AddOrUpdate addOrUpdate;
+  public final ActivityApi_AddOrUpdate addOrUpdate;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ActivityApi_Delete delete;
+  public final ActivityApi_Delete delete;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ActivityApi_Find find;
+  public final ActivityApi_Find find;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ActivityApi_Get get;
+  public final ActivityApi_Get get;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ActivityApi_Load load;
+  public final ActivityApi_Load load;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ActivityApi_Update update;
+  public final ActivityApi_Update update;
 
   public ActivityApi(
     final ConnectwiseApi api,
@@ -81,110 +46,13 @@ public class ActivityApi extends ConnectwiseSubApi
   )
   {
     super(api, credentials, xmlMapper, endpoint + "ActivityApi.asmx");
-  }
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   *
-   * @return "Add" options on the Activity API.
-   */
-  public ActivityApi_Add add()
-  {
-    if (null == add) {
-      add = new ActivityApi_Add(credentials, xmlMapper, this);
-    }
-    return add;
-  }
-
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   *
-   * @return "AddOrUpdate" options on the Activity API.
-   */
-  public ActivityApi_AddOrUpdate addOrUpdate()
-  {
-    if (null == addOrUpdate) {
-      addOrUpdate = new ActivityApi_AddOrUpdate(credentials, xmlMapper, this);
-    }
-    return addOrUpdate;
-  }
-
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   *
-   * @return "Delete" options on the Activity API.
-   */
-  public ActivityApi_Delete delete()
-  {
-    if (null == delete) {
-      delete = new ActivityApi_Delete(credentials, xmlMapper, this);
-    }
-    return delete;
-  }
-
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   *
-   * @return "Find" options on the Activity API.
-   */
-  public ActivityApi_Find find()
-  {
-    if (null == find) {
-      find = new ActivityApi_Find(credentials, xmlMapper, this);
-    }
-    return find;
-  }
-
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   *
-   * @return "Get" options on the Activity API.
-   */
-  public ActivityApi_Get get()
-  {
-    if (null == get) {
-      get = new ActivityApi_Get(credentials, xmlMapper, this);
-    }
-    return get;
-  }
-
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   *
-   * @return "Load" options on the Activity API.
-   */
-  public ActivityApi_Load load()
-  {
-    if (null == load) {
-      load = new ActivityApi_Load(credentials, xmlMapper, this);
-    }
-    return load;
-  }
-
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   *
-   * @return "Update" options on the Activity API.
-   */
-  public ActivityApi_Update update()
-  {
-    if (null == update) {
-      update = new ActivityApi_Update(credentials, xmlMapper, this);
-    }
-    return update;
+    this.add = new ActivityApi_Add(credentials, xmlMapper, this);
+    this.addOrUpdate = new ActivityApi_AddOrUpdate(credentials, xmlMapper, this);
+    this.delete = new ActivityApi_Delete(credentials, xmlMapper, this);
+    this.find = new ActivityApi_Find(credentials, xmlMapper, this);
+    this.get = new ActivityApi_Get(credentials, xmlMapper, this);
+    this.load = new ActivityApi_Load(credentials, xmlMapper, this);
+    this.update = new ActivityApi_Update(credentials, xmlMapper, this);
   }
 }

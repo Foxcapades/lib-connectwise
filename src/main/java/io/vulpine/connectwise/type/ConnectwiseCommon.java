@@ -17,7 +17,10 @@
 package io.vulpine.connectwise.type;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import io.vulpine.connectwise.util.logging.LoggerInterface;
+import io.vulpine.connectwise.util.logging.LoggerManager;
 
 import java.util.Date;
 
@@ -40,53 +43,72 @@ public class ConnectwiseCommon
   @JacksonXmlProperty( localName = "Description" )
   protected String description;
 
+  @JsonIgnore
+  protected final LoggerInterface logger;
+
+  public ConnectwiseCommon()
+  {
+    logger = LoggerManager.getLogger("lib-connectwise");
+  }
+
+
   public int getId ()
   {
+    this.logger.trace(this.getClass());
     return id;
   }
 
   public void setId ( final int id )
   {
+    this.logger.trace(this.getClass(), id);
     this.id = id;
   }
 
   public String getUpdatedBy ()
   {
+    this.logger.trace(this.getClass());
     return updatedBy;
   }
 
   public void setUpdatedBy ( String updatedBy )
   {
+    this.logger.trace(this.getClass(), updatedBy);
     this.updatedBy = updatedBy;
   }
 
   public Date getLastUpdate ()
   {
+    this.logger.trace(this.getClass());
     return new Date(lastUpdate.getTime());
   }
 
   public void setLastUpdate ( final Date lastUpdate )
   {
+    this.logger.trace(this.getClass(), lastUpdate);
     this.lastUpdate = new Date(lastUpdate.getTime());
   }
 
   public String getDescription ()
   {
+    this.logger.trace(this.getClass());
     return description;
   }
 
   public void setDescription ( final String description )
   {
+    this.logger.trace(this.getClass(), description);
     this.description = description;
   }
 
   public Date getLastUpdated ()
   {
+    this.logger.trace(this.getClass());
     return new Date(lastUpdated.getTime());
   }
 
   public void setLastUpdated ( final Date lastUpdated )
   {
+    this.logger.trace(this.getClass(), lastUpdated);
     this.lastUpdated = new Date(lastUpdated.getTime());
   }
 }

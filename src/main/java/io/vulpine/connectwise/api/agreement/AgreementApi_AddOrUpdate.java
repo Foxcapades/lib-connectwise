@@ -33,41 +33,49 @@ public class AgreementApi_AddOrUpdate extends ApiDivision
 
   public AddOrUpdateAgreement agreement()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateAgreement(credentials, mapper, api, new Agreement());
   }
 
   public AddOrUpdateAgreement agreement( final Agreement agreement )
   {
+    this.logger.trace(this.getClass(), agreement);
     return new AddOrUpdateAgreement(credentials, mapper, api, agreement);
   }
 
   public AddOrUpdateAgreementAddition addition()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateAgreementAddition(credentials, mapper, api, new Addition());
   }
 
   public AddOrUpdateAgreementAddition addition( final Addition addition )
   {
+    this.logger.trace(this.getClass(), addition);
     return new AddOrUpdateAgreementAddition(credentials, mapper, api, addition);
   }
 
   public AddOrUpdateAgreementAdjustment adjustment()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateAgreementAdjustment();
   }
 
   public AddOrUpdateAgreementSite site()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateAgreementSite();
   }
 
   public AddOrUpdateAgreementWorkRole workRole()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateAgreementWorkRole();
   }
 
   public AddOrUpdateAgreementWorkType workType()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateAgreementWorkType();
   }
 }

@@ -36,31 +36,37 @@ public class ProductApi_Get extends ApiDivision
 
   public GetPriceBreak priceBreak()
   {
+    this.logger.trace(this.getClass());
     return new GetPriceBreak();
   }
 
   public GetPricingDetail pricingDetail()
   {
+    this.logger.trace(this.getClass());
     return new GetPricingDetail();
   }
 
   public GetPricingSchedule pricingSchedule()
   {
+    this.logger.trace(this.getClass());
     return new GetPricingSchedule();
   }
 
   public GetProduct product()
   {
+    this.logger.trace(this.getClass());
     return new GetProduct();
   }
 
   public GetProductPickedAndShipped productPickedAndShipped()
   {
+    this.logger.trace(this.getClass());
     return new GetProductPickedAndShipped();
   }
 
   public GetQuantityOnHand quantityOnHand()
   {
+    this.logger.trace(this.getClass());
     return new GetQuantityOnHand();
   }
 }

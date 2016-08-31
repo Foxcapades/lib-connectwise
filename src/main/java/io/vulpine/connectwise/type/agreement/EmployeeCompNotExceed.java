@@ -20,12 +20,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 
 public enum EmployeeCompNotExceed
 {
-  BILLING("Billing"), PERCENT("Percent"), AMOUNT("Amount");
+  BILLING("Billing"),
+  PERCENT("Percent"),
+  AMOUNT("Amount");
 
   private final String value;
 
   EmployeeCompNotExceed ( String value ) {this.value = value;}
-
 
   @Override
   public String toString () { return value; }

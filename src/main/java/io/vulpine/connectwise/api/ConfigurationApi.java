@@ -23,54 +23,19 @@ import io.vulpine.connectwise.api.configuration.*;
 
 public class ConfigurationApi extends ConnectwiseSubApi
 {
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ConfigurationApi_Add add = null;
+  public final ConfigurationApi_Add add;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ConfigurationApi_AddOrUpdate addOrUpdate = null;
+  public final ConfigurationApi_AddOrUpdate addOrUpdate;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ConfigurationApi_Delete delete = null;
+  public final ConfigurationApi_Delete delete;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ConfigurationApi_Find find = null;
+  public final ConfigurationApi_Find find;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ConfigurationApi_Get get = null;
+  public final ConfigurationApi_Get get;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ConfigurationApi_Load load = null;
+  public final ConfigurationApi_Load load;
 
-  /**
-   * API Container
-   * <p>
-   * Instantiated on demand.
-   */
-  private ConfigurationApi_Update update = null;
+  public final ConfigurationApi_Update update;
 
   public ConfigurationApi(
     final ConnectwiseApi api,
@@ -80,61 +45,12 @@ public class ConfigurationApi extends ConnectwiseSubApi
   )
   {
     super(api, credentials, xmlMapper, endpoint + "ConfigurationApi.asmx");
-  }
-
-  public ConfigurationApi_Add add()
-  {
-    if (null == add) {
-      add = new ConfigurationApi_Add(credentials, xmlMapper, this);
-    }
-    return add;
-  }
-
-  public ConfigurationApi_AddOrUpdate addOrUpdate()
-  {
-    if (null == addOrUpdate) {
-      addOrUpdate = new ConfigurationApi_AddOrUpdate(credentials, xmlMapper, this);
-    }
-    return addOrUpdate;
-  }
-
-  public ConfigurationApi_Delete delete()
-  {
-    if (null == delete) {
-      delete = new ConfigurationApi_Delete(credentials, xmlMapper, this);
-    }
-    return delete;
-  }
-
-  public ConfigurationApi_Find find()
-  {
-    if (null == find) {
-      find = new ConfigurationApi_Find(credentials, xmlMapper, this);
-    }
-    return find;
-  }
-
-  public ConfigurationApi_Get get()
-  {
-    if (null == get) {
-      get = new ConfigurationApi_Get(credentials, xmlMapper, this);
-    }
-    return get;
-  }
-
-  public ConfigurationApi_Load load()
-  {
-    if (null == load) {
-      load = new ConfigurationApi_Load(credentials, xmlMapper, this);
-    }
-    return load;
-  }
-
-  public ConfigurationApi_Update update()
-  {
-    if (null == update) {
-      update = new ConfigurationApi_Update(credentials, xmlMapper, this);
-    }
-    return update;
+    this.add = new ConfigurationApi_Add(credentials, xmlMapper, this);
+    this.addOrUpdate = new ConfigurationApi_AddOrUpdate(credentials, xmlMapper, this);
+    this.delete = new ConfigurationApi_Delete(credentials, xmlMapper, this);
+    this.find = new ConfigurationApi_Find(credentials, xmlMapper, this);
+    this.get = new ConfigurationApi_Get(credentials, xmlMapper, this);
+    this.load = new ConfigurationApi_Load(credentials, xmlMapper, this);
+    this.update = new ConfigurationApi_Update(credentials, xmlMapper, this);
   }
 }

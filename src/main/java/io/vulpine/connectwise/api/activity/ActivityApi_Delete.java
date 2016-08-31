@@ -30,6 +30,7 @@ public class ActivityApi_Delete extends ApiDivision
 
   public DeleteActivity activity( final int id )
   {
+    this.logger.trace(this.getClass());
     return new DeleteActivity(credentials, mapper, api, id);
   }
 }

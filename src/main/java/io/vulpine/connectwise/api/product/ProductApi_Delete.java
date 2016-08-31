@@ -36,26 +36,31 @@ public class ProductApi_Delete extends ApiDivision
 
   public DeletePriceBreak priceBreak( final int id )
   {
+    this.logger.trace(this.getClass(), id);
     return new DeletePriceBreak(credentials, mapper, api, id);
   }
 
   public DeletePricingDetail pricingDetail( final int id )
   {
+    this.logger.trace(this.getClass(), id);
     return new DeletePricingDetail(credentials, mapper, api, id);
   }
 
   public DeletePricingSchedule pricingSchedule( final int id )
   {
+    this.logger.trace(this.getClass(), id);
     return new DeletePricingSchedule(credentials, mapper, api, id);
   }
 
   public DeleteProduct product( final int id )
   {
+    this.logger.trace(this.getClass(), id);
     return new DeleteProduct(credentials, mapper, api, id);
   }
 
   public DeleteProductPickedAndShipped productPickedAndShipped( final int id )
   {
+    this.logger.trace(this.getClass(), id);
     return new DeleteProductPickedAndShipped(credentials, mapper, api, id);
   }
 }

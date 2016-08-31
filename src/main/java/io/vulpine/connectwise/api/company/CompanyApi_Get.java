@@ -42,21 +42,25 @@ public class CompanyApi_Get extends ApiDivision
    */
   public GetCompany company ( final int id )
   {
-     return new GetCompany(credentials, mapper, api, id);
+    this.logger.trace(this.getClass(), id);
+    return new GetCompany(credentials, mapper, api, id);
   }
 
   public GetCompanyProfile profile()
   {
+    this.logger.trace(this.getClass());
     return new GetCompanyProfile();
   }
 
   public GetCompanyNote note()
-    {
+  {
+    this.logger.trace(this.getClass());
     return new GetCompanyNote();
   }
 
   public GetCompanyTeam team()
   {
+    this.logger.trace(this.getClass());
     return new GetCompanyTeam();
   }
 }

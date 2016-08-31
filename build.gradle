@@ -6,7 +6,7 @@ def config = [
   version: '0.0.9',
   name: 'connectwise',
   repo: 'lib-connectwise',
-  jvm: '1.8'
+  jvm: '1.6'
 ];
 
 group config.group
@@ -62,12 +62,16 @@ repositories {
   maven { url "http://dl.bintray.com/vpx/maven" }
 }
 
+configurations {
+  runtime.exclude group: 'org.slf4j'
+}
+
 dependencies {
 
   compile(
-    [ group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.8.1' ],
-    [ group: 'org.codehaus.woodstox',            name: 'woodstox-core-asl',      version: '4.4.1' ],
-    [ group: 'io.vulpine.lib',                   name: 'http-requests',          version: '0.1.1' ]
+    [ group: 'org.slf4j',                        name: 'slf4j-api',              version: '1.7.21' ],
+    [ group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.8.1'  ],
+    [ group: 'org.codehaus.woodstox',            name: 'woodstox-core-asl',      version: '4.4.1'  ],
   )
 
   testCompile(

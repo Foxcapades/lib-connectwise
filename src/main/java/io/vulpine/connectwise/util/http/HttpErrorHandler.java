@@ -12,35 +12,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-package io.vulpine.connectwise.type.agreement;
+package io.vulpine.connectwise.util.http;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
+import java.io.IOException;
+import java.net.HttpURLConnection;
 
-public enum InvoicingCycle
+public interface HttpErrorHandler
 {
-  CALENDAR_YEAR("CalendarYear"),
-  CONTRACT_YEAR("ContractYear");
-
-  private final String value;
-
-  InvoicingCycle ( String v ) {this.value = v;}
-
-  @JsonCreator
-  public static InvoicingCycle fromString( final String v )
-  {
-    for ( final InvoicingCycle i : values() ) {
-      if ( i.value.equals(v) ) {
-        return i;
-      }
-    }
-    return null;
-  }
-
-  @Override
-  public String toString()
-  {
-    return value;
-  }
+  void handle( final HttpRequest request, final IOException exception );
 }

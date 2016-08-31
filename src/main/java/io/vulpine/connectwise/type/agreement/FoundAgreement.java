@@ -19,7 +19,6 @@ package io.vulpine.connectwise.type.agreement;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
-@SuppressWarnings( "unused" )
 @JacksonXmlRootElement( localName = "AgreementFindResult" )
 public class FoundAgreement extends Agreement
 {
@@ -34,31 +33,37 @@ public class FoundAgreement extends Agreement
 
   public int getBoardId ()
   {
+    this.logger.trace(this.getClass());
     return boardId;
   }
 
   public void setBoardId ( int boardId )
   {
+    this.logger.trace(this.getClass(), boardId);
     this.boardId = boardId;
   }
 
   public boolean isBoardDefault ()
   {
+    this.logger.trace(this.getClass());
     return boardDefault;
   }
 
   public void setBoardDefault ( boolean boardDefault )
   {
+    this.logger.trace(this.getClass(), boardDefault);
     this.boardDefault = boardDefault;
   }
 
   public int getServiceTypeId ()
   {
+    this.logger.trace(this.getClass());
     return serviceTypeId;
   }
 
   public void setServiceTypeId ( int serviceTypeId )
   {
+    this.logger.trace(this.getClass(), serviceTypeId);
     this.serviceTypeId = serviceTypeId;
   }
 }

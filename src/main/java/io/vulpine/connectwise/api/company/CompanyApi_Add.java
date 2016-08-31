@@ -40,6 +40,7 @@ public class CompanyApi_Add extends ApiDivision
    */
   public AddCompany company ( final String name, final String identifier )
   {
+    this.logger.trace(CompanyApi_Add.class, name, identifier);
     return new AddCompany(credentials, mapper, api).companyName(name).companyIdentifier(identifier);
   }
 }

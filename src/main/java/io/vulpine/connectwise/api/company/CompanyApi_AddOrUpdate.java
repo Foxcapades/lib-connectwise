@@ -40,6 +40,7 @@ public class CompanyApi_AddOrUpdate extends ApiDivision
    */
   public AddOrUpdateCompany company ()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateCompany();
   }
 
@@ -50,6 +51,7 @@ public class CompanyApi_AddOrUpdate extends ApiDivision
    */
   public AddOrUpdateCompanyNote note()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateCompanyNote();
   }
 
@@ -60,6 +62,7 @@ public class CompanyApi_AddOrUpdate extends ApiDivision
    */
   public AddOrUpdateCompanyCustomField customField()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateCompanyCustomField();
   }
 
@@ -70,6 +73,7 @@ public class CompanyApi_AddOrUpdate extends ApiDivision
    */
   public AddOrUpdateCompanyTeam team()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateCompanyTeam();
   }
 }

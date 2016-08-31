@@ -799,7 +799,7 @@ public class ContactTest
   {
     private final Field field;
 
-    private final List < ContactCommunicationItem > testList = new ArrayList <>();
+    private final List < ContactCommunicationItem > testList = new ArrayList < ContactCommunicationItem > ();
 
     public Phones() throws Exception
     {
@@ -829,7 +829,7 @@ public class ContactTest
   {
     private final Field field;
 
-    private final List < ContactCommunicationItem > testList = new ArrayList <>();
+    private final List < ContactCommunicationItem > testList = new ArrayList < ContactCommunicationItem >();
 
     public Emails() throws Exception
     {
@@ -859,7 +859,7 @@ public class ContactTest
   {
     private final Field field;
 
-    private final List < ContactCommunicationItem > testList = new ArrayList <>();
+    private final List < ContactCommunicationItem > testList = new ArrayList < ContactCommunicationItem >();
 
     public Faxes() throws Exception
     {

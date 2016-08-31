@@ -23,7 +23,6 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 @JacksonXmlRootElement( localName = "CompanyFindResult" )
 public class FoundCompany extends CompanyCommon
 {
-
   @JacksonXmlProperty( localName = "AddressLine1" )
   protected String addressLine1;
 

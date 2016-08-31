@@ -30,6 +30,7 @@ public class ActivityApi_Update extends ApiDivision
 
   public UpdateActivity activity()
   {
+    this.logger.trace(this.getClass());
     return new UpdateActivity();
   }
 }

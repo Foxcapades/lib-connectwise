@@ -32,7 +32,6 @@ public enum BillableOption
     this.value = value;
   }
 
-
   @Override
   public String toString ()
   {

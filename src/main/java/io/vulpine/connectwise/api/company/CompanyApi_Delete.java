@@ -41,16 +41,19 @@ public class CompanyApi_Delete extends ApiDivision
    */
   public DeleteCompany company ( final int companyId )
   {
+    this.logger.trace(this.getClass(), companyId);
     return new DeleteCompany(credentials, mapper, api, companyId);
   }
 
   public DeleteCompanyNote note( final int id )
   {
+    this.logger.trace(this.getClass(), id);
     return new DeleteCompanyNote(credentials, mapper, api, id);
   }
 
   public DeleteCompanyTeam team( final int id )
   {
+    this.logger.trace(this.getClass(), id);
     return new DeleteCompanyTeam(credentials, mapper, api, id);
   }
 

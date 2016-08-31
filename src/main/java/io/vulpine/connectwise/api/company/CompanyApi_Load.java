@@ -37,6 +37,7 @@ public class CompanyApi_Load extends ApiDivision
    */
   public LoadCompany company ()
   {
+    this.logger.trace(this.getClass());
     return new LoadCompany();
   }
 }

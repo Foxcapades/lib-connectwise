@@ -37,6 +37,7 @@ public class CompanyApi_Set extends ApiDivision
    */
   public SetCompanyDefaultContact defaultContact()
   {
+    this.logger.trace(this.getClass());
     return new SetCompanyDefaultContact();
   }
 }

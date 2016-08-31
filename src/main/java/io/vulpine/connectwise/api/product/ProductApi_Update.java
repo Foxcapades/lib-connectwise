@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.api.product;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
@@ -36,6 +35,7 @@ public class ProductApi_Update extends ApiDivision
 
   public UpdateProduct product()
   {
+    this.logger.trace(this.getClass());
     return new UpdateProduct();
   }
 }

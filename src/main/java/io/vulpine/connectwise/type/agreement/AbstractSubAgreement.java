@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.type.agreement;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
@@ -27,12 +26,13 @@ public abstract class AbstractSubAgreement extends ConnectwiseCommon
 
   public int getAgreementId ()
   {
+    this.logger.trace(this.getClass());
     return agreementId;
   }
 
   public void setAgreementId ( int agreementId )
   {
+    this.logger.trace(this.getClass(), agreementId);
     this.agreementId = agreementId;
   }
-
 }

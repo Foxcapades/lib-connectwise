@@ -19,73 +19,28 @@ package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
-import io.vulpine.connectwise.api.company.*;
 import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.company.*;
 
 public class CompanyApi extends ConnectwiseSubApi
 {
-  /**
-   * "Add" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private CompanyApi_Add add = null;
+  public final CompanyApi_Add add;
 
-  /**
-   * "Add or Update" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private CompanyApi_AddOrUpdate addOrUpdate = null;
+  public final CompanyApi_AddOrUpdate addOrUpdate;
 
-  /**
-   * "Delete" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private CompanyApi_Delete delete = null;
+  public final CompanyApi_Delete delete;
 
-  /**
-   * "Find" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private CompanyApi_Find find = null;
+  public final CompanyApi_Find find;
 
-  /**
-   * "Get" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private CompanyApi_Get get = null;
+  public final CompanyApi_Get get;
 
-  /**
-   * "Get All" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private CompanyApi_GetAll getAll = null;
+  public final CompanyApi_GetAll getAll;
 
-  /**
-   * "Load" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private CompanyApi_Load load = null;
+  public final CompanyApi_Load load;
 
-  /**
-   * "Set" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private CompanyApi_Set set = null;
+  public final CompanyApi_Set set;
 
-  /**
-   * "Update" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private CompanyApi_Update update = null;
+  public final CompanyApi_Update update;
 
   public CompanyApi(
     final ConnectwiseApi connectwiseApi,
@@ -95,77 +50,15 @@ public class CompanyApi extends ConnectwiseSubApi
   )
   {
     super(connectwiseApi, credentials, xmlMapper, endpoint + "CompanyApi.asmx");
-  }
 
-  public CompanyApi_Add add()
-  {
-    if (null == add)
-      add = new CompanyApi_Add(credentials, xmlMapper, this);
-
-    return add;
-  }
-
-  public CompanyApi_AddOrUpdate addOrUpdate()
-  {
-    if (null == addOrUpdate)
-      addOrUpdate = new CompanyApi_AddOrUpdate(credentials, xmlMapper, this);
-
-    return addOrUpdate;
-  }
-
-  public CompanyApi_Delete delete()
-  {
-    if (null == delete)
-      delete = new CompanyApi_Delete(credentials, xmlMapper, this);
-
-    return delete;
-  }
-
-  public CompanyApi_Find find()
-  {
-    if (null == find)
-      find = new CompanyApi_Find(credentials, xmlMapper, this);
-
-    return find;
-  }
-
-  public CompanyApi_Get get()
-  {
-    if (null == get)
-      get = new CompanyApi_Get(credentials, xmlMapper, this);
-
-    return get;
-  }
-
-  public CompanyApi_GetAll getAll()
-  {
-    if (null == getAll)
-      getAll = new CompanyApi_GetAll(credentials, xmlMapper, this);
-
-    return getAll;
-  }
-
-  public CompanyApi_Load load()
-  {
-    if (null == load)
-      load = new CompanyApi_Load(credentials, xmlMapper, this);
-
-    return load;
-  }
-
-  public CompanyApi_Set set()
-  {
-    if (null == set)
-      set = new CompanyApi_Set(credentials, xmlMapper, this);
-
-    return set;
-  }
-
-  public CompanyApi_Update update()
-  {
-    if (null == update)
-      update = new CompanyApi_Update(credentials, xmlMapper, this);
-
-    return update;
+    this.add = new CompanyApi_Add(credentials, xmlMapper, this);
+    this.addOrUpdate = new CompanyApi_AddOrUpdate(credentials, xmlMapper, this);
+    this.delete = new CompanyApi_Delete(credentials, xmlMapper, this);
+    this.find = new CompanyApi_Find(credentials, xmlMapper, this);
+    this.get = new CompanyApi_Get(credentials, xmlMapper, this);
+    this.getAll = new CompanyApi_GetAll(credentials, xmlMapper, this);
+    this.load = new CompanyApi_Load(credentials, xmlMapper, this);
+    this.set = new CompanyApi_Set(credentials, xmlMapper, this);
+    this.update = new CompanyApi_Update(credentials, xmlMapper, this);
   }
 }

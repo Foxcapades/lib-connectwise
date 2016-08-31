@@ -19,17 +19,22 @@ package io.vulpine.connectwise.api.common;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.util.logging.LoggerInterface;
+import io.vulpine.connectwise.util.logging.LoggerManager;
 
 public class ApiDivision
 {
   protected final Credentials     credentials;
   protected final XmlMapper       mapper;
   protected final SubApiInterface api;
+  protected final LoggerInterface logger;
 
   public ApiDivision ( Credentials credentials, XmlMapper mapper, SubApiInterface api )
   {
     this.credentials = credentials;
     this.mapper = mapper;
     this.api = api;
+
+    this.logger = LoggerManager.getLogger("lib-connectwise");
   }
 }

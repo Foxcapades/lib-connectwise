@@ -30,6 +30,7 @@ public class ActivityApi_Load extends ApiDivision
 
   public LoadActivity activity()
   {
+    this.logger.trace(this.getClass());
     return new LoadActivity();
   }
 }

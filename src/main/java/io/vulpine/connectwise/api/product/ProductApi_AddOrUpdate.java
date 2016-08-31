@@ -36,26 +36,31 @@ public class ProductApi_AddOrUpdate extends ApiDivision
 
   public AddOrUpdatePriceBreak priceBreak()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdatePriceBreak();
   }
 
   public AddOrUpdatePricingDetail pricingDetail()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdatePricingDetail();
   }
 
   public AddOrUpdatePricingSchedule pricingSchedule()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdatePricingSchedule();
   }
 
   public AddOrUpdateProduct product()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateProduct();
   }
 
   public AddOrUpdateProductPickedAndShipped productPickedAndShipped()
   {
+    this.logger.trace(this.getClass());
     return new AddOrUpdateProductPickedAndShipped();
   }
 }

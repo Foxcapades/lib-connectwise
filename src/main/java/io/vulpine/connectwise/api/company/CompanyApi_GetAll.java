@@ -32,6 +32,7 @@ public class CompanyApi_GetAll extends ApiDivision
 
   public GetAllCompanyNotes notes()
   {
+    this.logger.trace(this.getClass());
     return new GetAllCompanyNotes();
   }
 }

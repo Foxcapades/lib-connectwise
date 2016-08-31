@@ -37,6 +37,7 @@ public class CompanyApi_Find extends ApiDivision
    */
   public FindCompanies companies()
   {
+    this.logger.trace(this.getClass());
     return new FindCompanies(credentials, mapper, api);
   }
 }

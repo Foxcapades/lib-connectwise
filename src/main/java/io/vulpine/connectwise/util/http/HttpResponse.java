@@ -13,29 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.api;
+package io.vulpine.connectwise.util.http;
 
-import io.vulpine.connectwise.api.def.SubApiInterface;
-import org.junit.Assert;
-import org.junit.Test;
-
-import java.lang.reflect.Method;
-
-public abstract class SubApiMethodTest
+public class HttpResponse
 {
-  public abstract Method getMethod() throws NoSuchMethodException;
+  private final HttpResponseType type;
 
-  public abstract SubApiInterface getApi();
+  private final HttpRequest request;
 
-  @Test
-  public void does_not_return_null() throws Exception
+  private final String body;
+
+  public HttpResponse( final HttpResponseType type, final HttpRequest request, final String body )
   {
-    Assert.assertNotNull(getMethod().invoke(getApi()));
+    this.type = type;
+    this.request = request;
+    this.body = body;
   }
 
-  @Test
-  public void returns_only_one_instance() throws Exception
+  public HttpResponseType getType()
   {
-    Assert.assertSame(getMethod().invoke(getApi()), getMethod().invoke(getApi()));
+    return type;
+  }
+
+  public HttpRequest getRequest()
+  {
+    return request;
+  }
+
+  public String getBody()
+  {
+    return body;
   }
 }

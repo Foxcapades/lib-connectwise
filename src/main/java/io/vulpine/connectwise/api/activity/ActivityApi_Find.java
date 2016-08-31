@@ -30,6 +30,7 @@ public class ActivityApi_Find extends ApiDivision
 
   public FindActivities activities()
   {
+    this.logger.trace(this.getClass());
     return new FindActivities();
   }
 }

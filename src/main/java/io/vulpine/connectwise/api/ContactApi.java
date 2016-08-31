@@ -24,29 +24,29 @@ import io.vulpine.connectwise.api.contact.*;
 
 public class ContactApi extends ConnectwiseSubApi
 {
-  private ContactApi_Add add = null;
+  public final ContactApi_Add add;
 
-  private ContactApi_AddOrUpdate addOrUpdate = null;
+  public final ContactApi_AddOrUpdate addOrUpdate;
 
-  private ContactApi_Authenticate authenticate = null;
+  public final ContactApi_Authenticate authenticate;
 
-  private ContactApi_Delete delete = null;
+  public final ContactApi_Delete delete;
 
-  private ContactApi_Find find = null;
+  public final ContactApi_Find find;
 
-  private ContactApi_Get get = null;
+  public final ContactApi_Get get;
 
-  private ContactApi_GetAll getAll = null;
+  public final ContactApi_GetAll getAll;
 
-  private ContactApi_Load load = null;
+  public final ContactApi_Load load;
 
-  private ContactApi_Remove remove = null;
+  public final ContactApi_Remove remove;
 
-  private ContactApi_Request request = null;
+  public final ContactApi_Request request;
 
-  private ContactApi_Set set = null;
+  public final ContactApi_Set set;
 
-  private ContactApi_Update update = null;
+  public final ContactApi_Update update;
 
   public ContactApi(
     final ConnectwiseApi api,
@@ -56,101 +56,17 @@ public class ContactApi extends ConnectwiseSubApi
   )
   {
     super(api, credentials, xmlMapper, endpoint + "ContactApi.asmx");
-  }
-
-  public ContactApi_Add add()
-  {
-    if (null == add) {
-      add = new ContactApi_Add(credentials, xmlMapper, this);
-    }
-    return add;
-  }
-
-  public ContactApi_AddOrUpdate addOrUpdate()
-  {
-    if (null == addOrUpdate) {
-      addOrUpdate = new ContactApi_AddOrUpdate(credentials, xmlMapper, this);
-    }
-    return addOrUpdate;
-  }
-
-  public ContactApi_Authenticate authenticate()
-  {
-    if (null == authenticate) {
-      authenticate = new ContactApi_Authenticate(credentials, xmlMapper, this);
-    }
-    return authenticate;
-  }
-
-  public ContactApi_Delete delete()
-  {
-    if (null == delete) {
-      delete = new ContactApi_Delete(credentials, xmlMapper, this);
-    }
-    return delete;
-  }
-
-  public ContactApi_Find find()
-  {
-    if (null == find) {
-      find = new ContactApi_Find(credentials, xmlMapper, this);
-    }
-    return find;
-  }
-
-  public ContactApi_Get get()
-  {
-    if (null == get) {
-      get = new ContactApi_Get(credentials, xmlMapper, this);
-    }
-    return get;
-  }
-
-  public ContactApi_GetAll getAll()
-  {
-    if (null == getAll) {
-      getAll = new ContactApi_GetAll(credentials, xmlMapper, this);
-    }
-    return getAll;
-  }
-
-  public ContactApi_Load load()
-  {
-    if (null == load) {
-      load = new ContactApi_Load(credentials, xmlMapper, this);
-    }
-    return load;
-  }
-
-  public ContactApi_Remove remove()
-  {
-    if (null == remove) {
-      remove = new ContactApi_Remove(credentials, xmlMapper, this);
-    }
-    return remove;
-  }
-
-  public ContactApi_Request request()
-  {
-    if (null == request) {
-      request = new ContactApi_Request(credentials, xmlMapper, this);
-    }
-    return request;
-  }
-
-  public ContactApi_Set set()
-  {
-    if (null == set) {
-      set = new ContactApi_Set(credentials, xmlMapper, this);
-    }
-    return set;
-  }
-
-  public ContactApi_Update update()
-  {
-    if (null == update) {
-      update = new ContactApi_Update(credentials, xmlMapper, this);
-    }
-    return update;
+    this.add = new ContactApi_Add(credentials, xmlMapper, this);
+    this.addOrUpdate = new ContactApi_AddOrUpdate(credentials, xmlMapper, this);
+    this.authenticate = new ContactApi_Authenticate(credentials, xmlMapper, this);
+    this.delete = new ContactApi_Delete(credentials, xmlMapper, this);
+    this.find = new ContactApi_Find(credentials, xmlMapper, this);
+    this.get = new ContactApi_Get(credentials, xmlMapper, this);
+    this.getAll = new ContactApi_GetAll(credentials, xmlMapper, this);
+    this.load = new ContactApi_Load(credentials, xmlMapper, this);
+    this.remove = new ContactApi_Remove(credentials, xmlMapper, this);
+    this.request = new ContactApi_Request(credentials, xmlMapper, this);
+    this.set = new ContactApi_Set(credentials, xmlMapper, this);
+    this.update = new ContactApi_Update(credentials, xmlMapper, this);
   }
 }

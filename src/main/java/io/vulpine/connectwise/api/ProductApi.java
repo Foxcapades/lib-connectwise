@@ -24,68 +24,23 @@ import io.vulpine.connectwise.api.common.Credentials;
 
 public class ProductApi extends ConnectwiseSubApi
 {
-  /**
-   * "Add" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ProductApi_Add add = null;
+  public final ProductApi_Add add;
 
-  /**
-   * "Delete" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ProductApi_Delete delete = null;
+  public final ProductApi_Delete delete;
 
-  /**
-   * "Add or Update" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ProductApi_AddOrUpdate addOrUpdate = null;
+  public final ProductApi_AddOrUpdate addOrUpdate;
 
-  /**
-   * "Update" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ProductApi_Update update = null;
+  public final ProductApi_Update update;
 
-  /**
-   * "Set" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ProductApi_Set set = null;
+  public final ProductApi_Set set;
 
-  /**
-   * "Remove" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ProductApi_Remove remove = null;
+  public final ProductApi_Remove remove;
 
-  /**
-   * "Load" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ProductApi_Load load = null;
+  public final ProductApi_Load load;
 
-  /**
-   * "Get" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ProductApi_Get get = null;
+  public final ProductApi_Get get;
 
-  /**
-   * "Find" Endpoints Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ProductApi_Find find = null;
+  public final ProductApi_Find find;
 
   public ProductApi(
     final ConnectwiseApi connectwiseApi,
@@ -95,77 +50,14 @@ public class ProductApi extends ConnectwiseSubApi
   )
   {
     super(connectwiseApi, credentials, xmlMapper, endpoint + "ProductApi.asmx");
-  }
-
-  public ProductApi_Add add()
-  {
-    if (null == add)
-      add = new ProductApi_Add(credentials, xmlMapper, this);
-
-    return add;
-  }
-
-  public ProductApi_AddOrUpdate addOrUpdate()
-  {
-    if (null == addOrUpdate)
-      addOrUpdate = new ProductApi_AddOrUpdate(credentials, xmlMapper, this);
-
-    return addOrUpdate;
-  }
-
-  public ProductApi_Delete delete()
-  {
-    if (null == delete)
-      delete = new ProductApi_Delete(credentials, xmlMapper, this);
-
-    return delete;
-  }
-
-  public ProductApi_Find find()
-  {
-    if (null == find)
-      find = new ProductApi_Find(credentials, xmlMapper, this);
-
-    return find;
-  }
-
-  public ProductApi_Get get()
-  {
-    if (null == get)
-      get = new ProductApi_Get(credentials, xmlMapper, this);
-
-    return get;
-  }
-
-  public ProductApi_Load load()
-  {
-    if (null == load)
-      load = new ProductApi_Load(credentials, xmlMapper, this);
-
-    return load;
-  }
-
-  public ProductApi_Remove remove()
-  {
-    if (null == remove)
-      remove = new ProductApi_Remove(credentials, xmlMapper, this);
-
-    return remove;
-  }
-
-  public ProductApi_Set set()
-  {
-    if (null == set)
-      set = new ProductApi_Set(credentials, xmlMapper, this);
-
-    return set;
-  }
-
-  public ProductApi_Update update()
-  {
-    if (null == update)
-      update = new ProductApi_Update(credentials, xmlMapper, this);
-
-    return update;
+    this.add = new ProductApi_Add(credentials, xmlMapper, this);
+    this.addOrUpdate = new ProductApi_AddOrUpdate(credentials, xmlMapper, this);
+    this.delete = new ProductApi_Delete(credentials, xmlMapper, this);
+    this.find = new ProductApi_Find(credentials, xmlMapper, this);
+    this.get = new ProductApi_Get(credentials, xmlMapper, this);
+    this.load = new ProductApi_Load(credentials, xmlMapper, this);
+    this.remove = new ProductApi_Remove(credentials, xmlMapper, this);
+    this.set = new ProductApi_Set(credentials, xmlMapper, this);
+    this.update = new ProductApi_Update(credentials, xmlMapper, this);
   }
 }

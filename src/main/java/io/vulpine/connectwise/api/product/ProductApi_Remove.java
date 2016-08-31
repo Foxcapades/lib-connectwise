@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.api.product;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
@@ -36,6 +35,7 @@ public class ProductApi_Remove extends ApiDivision
 
   public RemoveCompanyPricingSchedule companyPricingSchedule()
   {
+    this.logger.trace(this.getClass());
     return new RemoveCompanyPricingSchedule();
   }
 }

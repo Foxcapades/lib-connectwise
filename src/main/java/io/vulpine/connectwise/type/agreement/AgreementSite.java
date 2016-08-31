@@ -31,21 +31,25 @@ public class AgreementSite extends AbstractSubAgreement
 
   public int getCompanyId ()
   {
+    this.logger.trace(this.getClass());
     return companyId;
   }
 
   public void setCompanyId ( int companyId )
   {
+    this.logger.trace(this.getClass(), companyId);
     this.companyId = companyId;
   }
 
   public int getAddressId ()
   {
+    this.logger.trace(this.getClass());
     return addressId;
   }
 
   public void setAddressId ( int addressId )
   {
+    this.logger.trace(this.getClass(), addressId);
     this.addressId = addressId;
   }
 }

@@ -39,21 +39,25 @@ public class ProductApi_Find extends ApiDivision
 
   public FindPriceBreaks priceBreaks()
   {
+    this.logger.trace(this.getClass());
     return new FindPriceBreaks();
   }
 
   public FindPricingDetails pricingDetails()
   {
+    this.logger.trace(this.getClass());
     return new FindPricingDetails();
   }
 
   public FindPricingSchedules pricingSchedules()
   {
+    this.logger.trace(this.getClass());
     return new FindPricingSchedules();
   }
 
   public FindProducts products()
   {
+    this.logger.trace(this.getClass());
     return new FindProducts(credentials, mapper, api);
   }
 }

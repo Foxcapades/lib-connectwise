@@ -31,7 +31,6 @@ public enum BillCustomer
     this.value = value;
   }
 
-
   @Override
   public String toString ()
   {

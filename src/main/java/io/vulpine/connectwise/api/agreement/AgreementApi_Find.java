@@ -35,11 +35,13 @@ public class AgreementApi_Find extends ApiDivision
 
   public FindAgreements agreements() throws IOException
   {
+    this.logger.trace(this.getClass());
     return new FindAgreements(credentials, mapper, api);
   }
 
   public FindAgreementAdditions additions() throws IOException
   {
+    this.logger.trace(this.getClass());
     return new FindAgreementAdditions(credentials, mapper, api);
   }
 }
