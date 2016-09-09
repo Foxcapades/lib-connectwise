@@ -16,10 +16,10 @@
 package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.endpoints.activity.get.GetActivity;
-import io.vulpine.connectwise.api.endpoints.agreement.get.*;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.endpoints.activity.get.GetActivity;
+import io.vulpine.connectwise.api.endpoints.agreement.get.*;
 import io.vulpine.connectwise.api.endpoints.company.get.GetCompany;
 import io.vulpine.connectwise.api.endpoints.company.get.GetCompanyNote;
 import io.vulpine.connectwise.api.endpoints.company.get.GetCompanyProfile;
@@ -41,6 +41,7 @@ import io.vulpine.connectwise.api.endpoints.member.get.GetMemberIdByRemoteSuppor
 import io.vulpine.connectwise.api.endpoints.opportunity.get.GetOpportunity;
 import io.vulpine.connectwise.api.endpoints.opportunity.get.GetOpportunityDocuments;
 import io.vulpine.connectwise.api.endpoints.product.get.*;
+import io.vulpine.connectwise.api.endpoints.time.get.TimeEntry;
 
 class GetImpl extends ConnectwiseSubApi implements Get
 {
@@ -111,6 +112,12 @@ class GetImpl extends ConnectwiseSubApi implements Get
   }
 
   @Override
+  public GetBoardDefault boardDefault( final int id )
+  {
+    return new GetBoardDefault(credentials, xmlMapper, this, id);
+  }
+
+  @Override
   public GetCompany company( final int id )
   {
     return new GetCompany(credentials, xmlMapper, this, id);
@@ -131,19 +138,22 @@ class GetImpl extends ConnectwiseSubApi implements Get
     return new GetCompanyTeam();
   }
 
-  public GetConfiguration configuration()
+  @Override
+  public GetConfiguration configuration( final int id )
   {
-    return new GetConfiguration();
+    return new GetConfiguration(credentials, xmlMapper, this, id);
   }
 
-  public GetConfigurationType configurationType()
+  @Override
+  public GetConfigurationType configurationType( final int id )
   {
-    return new GetConfigurationType();
+    return new GetConfigurationType(credentials, xmlMapper, this, id);
   }
 
-  public GetContact contact()
+  @Override
+  public Contact contact( final int id )
   {
-    return new GetContact();
+    return new Contact(credentials, xmlMapper, this, id);
   }
 
   public GetContactCommunicationItem contactCommunicationItem()
@@ -151,9 +161,10 @@ class GetImpl extends ConnectwiseSubApi implements Get
     return new GetContactCommunicationItem();
   }
 
-  public GetContactNote contactNote()
+  @Override
+  public ContactNote contactNote( final int id )
   {
-    return new GetContactNote();
+    return new ContactNote(credentials, xmlMapper, this, id);
   }
 
   public GetDocument document()
@@ -265,6 +276,12 @@ class GetImpl extends ConnectwiseSubApi implements Get
   public GetSpecialInvoiceByInvoiceNumber specialInvoiceByInvoiceNumber()
   {
     return new GetSpecialInvoiceByInvoiceNumber();
+  }
+
+  @Override
+  public TimeEntry timeEntry( final int id )
+  {
+    return new TimeEntry(credentials, xmlMapper, this, id);
   }
 
   public GetWorkRole workRole()

@@ -12,11 +12,21 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-
 package io.vulpine.connectwise.api.endpoints.agreement.get;
 
-public class GetAdjustmentResponse
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import io.vulpine.connectwise.api.common.ResponseData;
+import io.vulpine.connectwise.type.agreement.adjustment.Adjustment;
+
+@JsonRootName("GetAgreementAdjustmentResponse")
+public class GetAdjustmentResponse extends ResponseData < Adjustment >
 {
+  @JsonCreator
+  public GetAdjustmentResponse( @JsonProperty("GetAgreementAdjustmentResult") final Adjustment result )
+  {
+    super(result);
+  }
 }

@@ -24,7 +24,8 @@ public enum Endpoint
   CONTACT       ("ContactApi.asmx"),
   DOCUMENT      ("DocumentApi.asmx"),
   OPPORTUNITY   ("OpportunityApi.asmx"),
-  PRODUCT       ("ProductApi.asmx");
+  PRODUCT       ("ProductApi.asmx"),
+  TIME          ("TimeEntryApi.asmx");
 
   private final String endpoint;
 

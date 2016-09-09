@@ -15,6 +15,23 @@
  */
 package io.vulpine.connectwise.api.endpoints.configuration.get;
 
-public class GetConfiguration
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.request.SimpleGetRequest;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.Endpoint;
+import io.vulpine.connectwise.type.configuration.Configuration;
+
+public class GetConfiguration extends SimpleGetRequest < Configuration >
 {
+  public GetConfiguration( Credentials credentials, XmlMapper xmlMapper, SubApiInterface api, int id )
+  {
+    super(credentials, xmlMapper, api, Endpoint.CONFIGURATION, id, GetConfigurationResponse.class);
+  }
+
+  @Override
+  public String getRootName()
+  {
+    return "GetConfiguration";
+  }
 }

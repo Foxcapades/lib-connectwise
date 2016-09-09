@@ -12,11 +12,23 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-
 package io.vulpine.connectwise.api.endpoints.agreement.get;
 
-public class GetAdjustment
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.type.agreement.adjustment.Adjustment;
+
+public class GetAdjustment extends _Common < Adjustment >
 {
+  public GetAdjustment(
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final SubApiInterface api,
+    final int id
+  )
+  {
+    super(credentials, xmlMapper, api, id, GetAdjustmentResponse.class);
+  }
 }

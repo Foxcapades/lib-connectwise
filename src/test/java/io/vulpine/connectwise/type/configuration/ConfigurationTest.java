@@ -1073,7 +1073,7 @@ public class ConfigurationTest
 
     public IPAddress() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("iPAddress");
+      prop = Configuration.class.getDeclaredField("ipAddress");
       prop.setAccessible(true);
     }
 
@@ -1081,13 +1081,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getiPAddress());
+      assertEquals(TEST_STRING, configuration.getIpAddress());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setiPAddress(TEST_STRING);
+      configuration.setIpAddress(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }

@@ -12,164 +12,169 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 package io.vulpine.connectwise.type.company;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.List;
 
 @JsonFilter( "filter-empty" )
-@JacksonXmlRootElement( localName = "Address" )
+@JsonRootName( "Address" )
 public class Address extends ConnectwiseCommon
 {
-  @JacksonXmlProperty( localName = "DefaultFlag" )
-  protected boolean defaultFlag;
+  private Boolean defaultFlag = null;
+  private Boolean inactiveFlag = null;
+  private Boolean defaultBillFlag = null;
+  private Boolean defaultShipFlag = null;
 
-  @JacksonXmlProperty( localName = "CompanyId" )
-  protected int companyId;
+  private Integer companyId = null;
 
-  @JacksonXmlProperty( localName = "SiteName" )
-  protected String siteName;
+  private String siteName = null;
+  private String city = null;
+  private String state = null;
+  private String zip = null;
+  private String country = null;
 
-  @JacksonXmlProperty( localName = "InactiveFlag" )
-  protected boolean inactiveFlag;
+  private List < String > streetLines = null;
 
-  @JacksonXmlProperty( localName = "DefaultBillFlag" )
-  protected boolean defaultBillFlag;
-
-  @JacksonXmlProperty( localName = "DefaultShipFlag" )
-  protected boolean defaultShipFlag;
-
-  @JacksonXmlProperty( localName = "City" )
-  protected String city;
-
-  @JacksonXmlProperty( localName = "State" )
-  protected String state;
-
-  @JacksonXmlProperty( localName = "Zip" )
-  protected String zip;
-
-  @JacksonXmlProperty( localName = "Country" )
-  protected String country;
-
-  @JacksonXmlProperty( localName = "string" )
-  @JacksonXmlElementWrapper( localName = "StreetLines" )
-  protected List < String > streetLines;
-
-  public boolean isDefaultFlag()
-  {
-    return defaultFlag;
-  }
-
-  public void setDefaultFlag( final boolean defaultFlag )
-  {
-    this.defaultFlag = defaultFlag;
-  }
-
-  public int getCompanyId()
-  {
-    return companyId;
-  }
-
-  public void setCompanyId( final int companyId )
-  {
-    this.companyId = companyId;
-  }
-
-  public String getSiteName()
-  {
-    return siteName;
-  }
-
-  public void setSiteName( final String siteName )
-  {
-    this.siteName = siteName;
-  }
-
-  public boolean isInactiveFlag()
-  {
-    return inactiveFlag;
-  }
-
-  public void setInactiveFlag( final boolean inactiveFlag )
-  {
-    this.inactiveFlag = inactiveFlag;
-  }
-
-  public boolean isDefaultBillFlag()
-  {
-    return defaultBillFlag;
-  }
-
-  public void setDefaultBillFlag( final boolean defaultBillFlag )
-  {
-    this.defaultBillFlag = defaultBillFlag;
-  }
-
-  public boolean isDefaultShipFlag()
-  {
-    return defaultShipFlag;
-  }
-
-  public void setDefaultShipFlag( final boolean defaultShipFlag )
-  {
-    this.defaultShipFlag = defaultShipFlag;
-  }
-
-  public String getCity()
+  @JsonGetter( "City" )
+  public String city()
   {
     return city;
   }
 
-  public void setCity( final String city )
+  @JsonSetter( "City" )
+  public void city( final String city )
   {
     this.city = city;
   }
 
-  public String getState()
+  @JsonGetter( "CompanyId" )
+  public int companyId()
   {
-    return state;
+    return companyId;
   }
 
-  public void setState( final String state )
+   @JsonSetter( "CompanyId" )
+  public void companyId( final int companyId )
   {
-    this.state = state;
+    this.companyId = companyId;
   }
 
-  public String getZip()
-  {
-    return zip;
-  }
-
-  public void setZip( final String zip )
-  {
-    this.zip = zip;
-  }
-
-  public String getCountry()
+  @JsonGetter( "Country" )
+  public String country()
   {
     return country;
   }
 
-  public void setCountry( final String country )
+   @JsonSetter( "Country" )
+  public void country( final String country )
   {
     this.country = country;
   }
 
-  public List < String > getStreetLines()
+  @JsonGetter( "SiteName" )
+  public String siteName()
+  {
+    return siteName;
+  }
+
+   @JsonSetter( "SiteName" )
+  public void siteName( final String siteName )
+  {
+    this.siteName = siteName;
+  }
+
+  @JsonGetter( "State" )
+  public String state()
+  {
+    return state;
+  }
+
+  @JsonSetter( "State" )
+  public void state( final String state )
+  {
+    this.state = state;
+  }
+
+  @JsonGetter( "string" )
+  @JacksonXmlElementWrapper( localName = "StreetLines" )
+  public List < String > streetLines()
   {
     return streetLines;
   }
 
-  public void setStreetLines( final List < String > streetLines )
+  @JsonSetter( "string" )
+  @JacksonXmlElementWrapper( localName = "StreetLines" )
+  public void streetLines( final List < String > streetLines )
   {
     this.streetLines = streetLines;
+  }
+
+  @JsonGetter( "Zip" )
+  public String zip()
+  {
+    return zip;
+  }
+
+  @JsonSetter( "Zip" )
+  public void zip( final String zip )
+  {
+    this.zip = zip;
+  }
+
+  @JsonGetter( "DefaultBillFlag" )
+  public boolean defaultBillFlag()
+  {
+    return defaultBillFlag;
+  }
+
+  @JsonSetter( "DefaultBillFlag" )
+  public void defaultBillFlag( final boolean defaultBillFlag )
+  {
+    this.defaultBillFlag = defaultBillFlag;
+  }
+
+  @JsonGetter( "DefaultFlag" )
+  public boolean defaultFlag()
+  {
+    return defaultFlag;
+  }
+
+  @JsonSetter( "DefaultFlag" )
+  public void defaultFlag( final boolean defaultFlag )
+  {
+    this.defaultFlag = defaultFlag;
+  }
+
+  @JsonGetter( "DefaultShipFlag" )
+  public boolean defaultShipFlag()
+  {
+    return defaultShipFlag;
+  }
+
+  @JsonSetter( "DefaultShipFlag" )
+  public void defaultShipFlag( final boolean defaultShipFlag )
+  {
+    this.defaultShipFlag = defaultShipFlag;
+  }
+
+  @JsonGetter( "InactiveFlag" )
+  public boolean inactiveFlag()
+  {
+    return inactiveFlag;
+  }
+
+  @JsonSetter( "InactiveFlag" )
+  public void inactiveFlag( final boolean inactiveFlag )
+  {
+    this.inactiveFlag = inactiveFlag;
   }
 }

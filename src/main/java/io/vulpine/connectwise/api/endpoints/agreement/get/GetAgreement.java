@@ -12,9 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-
 package io.vulpine.connectwise.api.endpoints.agreement.get;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
@@ -22,29 +20,16 @@ import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.type.agreement.Agreement;
 
-import java.io.IOException;
-
 public class GetAgreement extends _Common < Agreement >
 {
-  public GetAgreement(
-    final Credentials credentials,
-    final XmlMapper xmlMapper,
-    final SubApiInterface api,
-    final int id
-  )
+  public GetAgreement( Credentials credentials, XmlMapper xmlMapper, SubApiInterface api, int id )
   {
-    super(credentials, xmlMapper, api, id);
+    super(credentials, xmlMapper, api, id, GetAgreementResponse.class);
   }
 
   @Override
   public String getRootName()
   {
     return "GetAgreement";
-  }
-
-  @Override
-  public Agreement submit() throws IOException
-  {
-    return submit(GetAgreementResponse.class);
   }
 }

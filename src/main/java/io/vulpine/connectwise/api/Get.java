@@ -17,9 +17,15 @@ package io.vulpine.connectwise.api;
 
 import io.vulpine.connectwise.api.endpoints.agreement.get.GetAddition;
 import io.vulpine.connectwise.api.endpoints.agreement.get.GetAgreement;
+import io.vulpine.connectwise.api.endpoints.agreement.get.GetBoardDefault;
 import io.vulpine.connectwise.api.endpoints.company.get.GetCompany;
 import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.configuration.get.GetConfiguration;
+import io.vulpine.connectwise.api.endpoints.configuration.get.GetConfigurationType;
+import io.vulpine.connectwise.api.endpoints.contact.get.Contact;
+import io.vulpine.connectwise.api.endpoints.contact.get.ContactNote;
 import io.vulpine.connectwise.api.endpoints.product.get.GetProduct;
+import io.vulpine.connectwise.api.endpoints.time.get.TimeEntry;
 
 public interface Get extends SubApiInterface
 {
@@ -42,6 +48,8 @@ public interface Get extends SubApiInterface
    */
   GetAgreement agreement( int id );
 
+  GetBoardDefault boardDefault( int id );
+
   /**
    * Instantiate a new Get Connectwise Company request.
    *
@@ -52,6 +60,42 @@ public interface Get extends SubApiInterface
   GetCompany company( int id );
 
   /**
+   * Instantiate a new Get Configuration request.
+   *
+   * @param id Configuration ID
+   *
+   * @return new request to alter or submit.
+   */
+  GetConfiguration configuration( int id );
+
+  /**
+   * Instantiate a new Get Configuration Type request.
+   *
+   * @param id Configuration Type ID
+   *
+   * @return new request to alter or submit.
+   */
+  GetConfigurationType configurationType( int id );
+
+  /**
+   * Instantiate a new Get Contact request.
+   *
+   * @param id Contact ID
+   *
+   * @return new request to alter or submit.
+   */
+  Contact contact( int id );
+
+  /**
+   * Instantiate a new Get Contact Note request.
+   *
+   * @param id Contact Note ID
+   *
+   * @return new request to alter or submit.
+   */
+  ContactNote contactNote( int id );
+
+  /**
    * Instantiate a new Get Product request.
    *
    * @param id Product ID
@@ -59,4 +103,13 @@ public interface Get extends SubApiInterface
    * @return new request to alter or submit.
    */
   GetProduct product( int id );
+
+  /**
+   * Instantiate a new Get Time Entry request.
+   *
+   * @param id Time Entry ID
+   *
+   * @return new request to alter or submit.
+   */
+  TimeEntry timeEntry( int id );
 }

@@ -12,7 +12,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 package io.vulpine.connectwise.api;
 
@@ -24,6 +23,7 @@ import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.common.request.ConnectwiseRequest;
 import io.vulpine.connectwise.api.common.request.SoapEnvelope;
 import io.vulpine.connectwise.api.def.ConnectwiseInterface;
+import io.vulpine.http.HttpErrorHandler;
 import io.vulpine.http.HttpRequest;
 import io.vulpine.http.HttpResponse;
 import io.vulpine.http.HttpResponseType;
@@ -82,13 +82,18 @@ public final class ConnectwiseApi implements ConnectwiseInterface
 
   private final String apiPath;
 
+  /**
+   * Connectwise API Constructor
+   *
+   * @param company  Connectwise Company Name
+   * @param username Integrator Username
+   * @param password Integrator Password
+   * @param apiPath  Path to a Connectwise instance (https://connectwise.mysite.com)
+   */
   public ConnectwiseApi( final String company, final String username, final String password, final String apiPath )
   {
     this.xmlMapper = new XmlMapper();
-    this.credentials = new Credentials()
-      .setCompanyId(company)
-      .setIntegratorLoginId(username)
-      .setIntegratorPassword(password);
+    this.credentials = new Credentials().setCompanyId(company).setIntegratorLoginId(username).setIntegratorPassword(password);
     this.apiPath = apiPath + (apiPath.endsWith("/") ? "v4_6_release/apis/2.0/" : "/v4_6_release/apis/2.0/");
 
     this.xmlMapper.setFilterProvider(new SimpleFilterProvider().addFilter("filter-empty", new EmptyFilter()));
@@ -96,20 +101,20 @@ public final class ConnectwiseApi implements ConnectwiseInterface
     this.logger = LoggerManager.getLogger("lib-connectwise");
 
 
-    this.add = new AddImpl(this, credentials, xmlMapper);
-    this.addOrUpdate = new AddOrUpdateImpl(this, credentials, xmlMapper);
+    this.add          = new AddImpl(this, credentials, xmlMapper);
+    this.addOrUpdate  = new AddOrUpdateImpl(this, credentials, xmlMapper);
     this.authenticate = new AuthenticateImpl(this, credentials, xmlMapper);
-    this.check = new CheckImpl(this, credentials, xmlMapper);
-    this.create = new CreateImpl(this, credentials, xmlMapper);
-    this.delete = new DeleteImpl(this, credentials, xmlMapper);
-    this.find = new FindImpl(this, credentials, xmlMapper);
-    this.get = new GetImpl(this, credentials, xmlMapper);
-    this.is = new IsImpl(this, credentials, xmlMapper);
-    this.load = new LoadImpl(this, credentials, xmlMapper);
-    this.record = new RecordImpl(this, credentials, xmlMapper);
-    this.remove = new RemoveImpl(this, credentials, xmlMapper);
-    this.set = new SetImpl(this, credentials, xmlMapper);
-    this.update = new UpdateImpl(this, credentials, xmlMapper);
+    this.check        = new CheckImpl(this, credentials, xmlMapper);
+    this.create       = new CreateImpl(this, credentials, xmlMapper);
+    this.delete       = new DeleteImpl(this, credentials, xmlMapper);
+    this.find         = new FindImpl(this, credentials, xmlMapper);
+    this.get          = new GetImpl(this, credentials, xmlMapper);
+    this.is           = new IsImpl(this, credentials, xmlMapper);
+    this.load         = new LoadImpl(this, credentials, xmlMapper);
+    this.record       = new RecordImpl(this, credentials, xmlMapper);
+    this.remove       = new RemoveImpl(this, credentials, xmlMapper);
+    this.set          = new SetImpl(this, credentials, xmlMapper);
+    this.update       = new UpdateImpl(this, credentials, xmlMapper);
   }
 
 
@@ -127,15 +132,19 @@ public final class ConnectwiseApi implements ConnectwiseInterface
         .setHeader("Content-Type", "text/xml", "charset=utf-8")
         .setHeader("Content-Length", String.valueOf(xml.getBytes("UTF-8").length))
         .appendToBody(xml)
-        .addErrorHandler(( request, exception ) -> {
-          final BufferedReader read = new BufferedReader(new InputStreamReader(request.getConnection().getErrorStream()));
-          String               line;
-          try {
-            while ( null != (line = read.readLine()) ) {
-              logger.warn(line);
+        .addErrorHandler(new HttpErrorHandler() {
+          @Override
+          public void handle( final HttpRequest request, final IOException exception )
+          {
+            final BufferedReader read = new BufferedReader(new InputStreamReader(request.getConnection().getErrorStream()));
+            String               line;
+            try {
+              while ( null != (line = read.readLine()) ) {
+                logger.warn(line);
+              }
+            } catch ( IOException e ) {
+              e.printStackTrace();
             }
-          } catch ( IOException e ) {
-            e.printStackTrace();
           }
         })
         .send();

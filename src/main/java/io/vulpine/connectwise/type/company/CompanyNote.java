@@ -12,7 +12,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 package io.vulpine.connectwise.type.company;
 
@@ -33,49 +32,49 @@ public class CompanyNote extends ConnectwiseCommon
   private String enteredBy = null;
 
   @JsonGetter( "NoteType" )
-  public String getNoteType()
+  public String noteType()
   {
     return noteType;
   }
 
   @JsonSetter( "NoteType" )
-  public void setNoteType( final String noteType )
+  public void noteType( final String noteType )
   {
     this.noteType = noteType;
   }
 
   @JsonGetter( "NoteText" )
-  public String getNoteText()
+  public String noteText()
   {
     return noteText;
   }
 
   @JsonSetter( "NoteText" )
-  public void setNoteText( final String noteText )
+  public void noteText( final String noteText )
   {
     this.noteText = noteText;
   }
 
   @JsonGetter( "IsFlagged" )
-  public Boolean isFlagged()
+  public Boolean flagged()
   {
     return flagged;
   }
 
   @JsonSetter( "IsFlagged" )
-  public void setFlagged( final Boolean flagged )
+  public void flagged( final Boolean flagged )
   {
     this.flagged = flagged;
   }
 
   @JsonGetter( "EnteredBy" )
-  public String getEnteredBy()
+  public String enteredBy()
   {
     return enteredBy;
   }
 
   @JsonSetter( "EnteredBy" )
-  public void setEnteredBy( final String enteredBy )
+  public void enteredBy( final String enteredBy )
   {
     this.enteredBy = enteredBy;
   }

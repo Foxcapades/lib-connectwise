@@ -68,6 +68,7 @@ abstract public class ConnectwiseRequest< R > implements Request < R >
   }
 
   @Override
+  @JsonIgnore
   public String getRootName()
   {
     return this.getClass().getAnnotation(JacksonXmlRootElement.class).localName();
