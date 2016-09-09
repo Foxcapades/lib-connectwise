@@ -15,20 +15,23 @@
  */
 package io.vulpine.connectwise.api.common.request;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import io.vulpine.connectwise.api.common.Request;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.common.ResponseData;
 import io.vulpine.connectwise.api.def.SubApiInterface;
-import io.vulpine.connectwise.util.logging.LoggerInterface;
-import io.vulpine.connectwise.util.logging.LoggerManager;
+import io.vulpine.connectwise.api.endpoints.Endpoint;
+import io.vulpine.logging.Logger;
+import io.vulpine.logging.LoggerManager;
 
 import java.io.IOException;
 
-abstract public class ConnectwiseRequest< R >
+abstract public class ConnectwiseRequest< R > implements Request < R >
 {
-  @JacksonXmlProperty( localName = "credentials" )
   private final Credentials credentials;
 
   @JsonIgnore
@@ -38,39 +41,43 @@ abstract public class ConnectwiseRequest< R >
   private final SubApiInterface api;
 
   @JsonIgnore
-  protected final LoggerInterface logger;
+  protected final Logger logger;
+
+  @JsonIgnore
+  private final Endpoint endpoint;
 
   public ConnectwiseRequest(
     final Credentials credentials,
     final XmlMapper xmlMapper,
-    final SubApiInterface api
+    final SubApiInterface api,
+    final Endpoint endpoint
   )
   {
-    this.credentials = credentials;
-    this.xmlMapper = xmlMapper;
     this.api = api;
+    this.endpoint = endpoint;
+    this.xmlMapper = xmlMapper;
+    this.credentials = credentials;
 
     this.logger = LoggerManager.getLogger("lib-connectwise");
   }
 
-  abstract public R submit() throws IOException;
-
-  protected SubApiInterface getApi()
+  @Override
+  public Endpoint getEndpoint()
   {
-    this.logger.trace(this.getClass());
-    return api;
+    return endpoint;
   }
 
+  @Override
+  public String getRootName()
+  {
+    return this.getClass().getAnnotation(JacksonXmlRootElement.class).localName();
+  }
+
+  @JsonGetter( "credentials" )
   public Credentials getCredentials()
   {
     this.logger.trace(this.getClass());
     return credentials;
-  }
-
-  protected XmlMapper getXmlMapper()
-  {
-    this.logger.trace(this.getClass());
-    return xmlMapper;
   }
 
   @JacksonXmlProperty( localName = "xmlns", isAttribute = true )
@@ -78,6 +85,18 @@ abstract public class ConnectwiseRequest< R >
   {
     this.logger.trace(this.getClass());
     return "http://connectwise.com";
+  }
+
+  protected SubApiInterface getApi()
+  {
+    this.logger.trace(this.getClass());
+    return api;
+  }
+
+  protected XmlMapper getXmlMapper()
+  {
+    this.logger.trace(this.getClass());
+    return xmlMapper;
   }
 
   protected R submit( final Class < ? extends ResponseData < R > > type ) throws IOException

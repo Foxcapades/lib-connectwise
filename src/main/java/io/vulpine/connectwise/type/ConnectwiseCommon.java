@@ -16,99 +16,99 @@
  */
 package io.vulpine.connectwise.type;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.util.logging.LoggerInterface;
-import io.vulpine.connectwise.util.logging.LoggerManager;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import java.util.Date;
 
+@JsonFilter( "filter-empty" )
 public class ConnectwiseCommon
 {
-  @JacksonXmlProperty ( localName = "Id" )
-  protected int id;
 
-  @JacksonXmlProperty ( localName = "UpdatedBy" )
-  protected String updatedBy;
+  private Date lastUpdate;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty ( localName = "LastUpdate" )
-  protected Date lastUpdate;
+  private Date lastUpdated;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty( localName = "LastUpdated" )
-  protected Date lastUpdated;
+  private int id;
 
-  @JacksonXmlProperty( localName = "Description" )
-  protected String description;
+  private String description;
 
-  @JsonIgnore
-  protected final LoggerInterface logger;
+  private String updatedBy;
 
-  public ConnectwiseCommon()
+
+  @JsonGetter( "Id" )
+  public int id()
   {
-    logger = LoggerManager.getLogger("lib-connectwise");
-  }
-
-
-  public int getId ()
-  {
-    this.logger.trace(this.getClass());
     return id;
   }
 
-  public void setId ( final int id )
+  @JsonSetter( "Id" )
+  public ConnectwiseCommon id( final int id )
   {
-    this.logger.trace(this.getClass(), id);
     this.id = id;
+
+    return this;
   }
 
-  public String getUpdatedBy ()
+  @JsonGetter( "UpdatedBy" )
+  public String updatedBy()
   {
-    this.logger.trace(this.getClass());
     return updatedBy;
   }
 
-  public void setUpdatedBy ( String updatedBy )
+  @JsonSetter( "UpdatedBy" )
+  public ConnectwiseCommon updatedBy( String updatedBy )
   {
-    this.logger.trace(this.getClass(), updatedBy);
     this.updatedBy = updatedBy;
+
+    return this;
   }
 
-  public Date getLastUpdate ()
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "LastUpdate" )
+  public Date lastUpdate()
   {
-    this.logger.trace(this.getClass());
-    return new Date(lastUpdate.getTime());
+    return null == this.lastUpdate ? null : new Date(this.lastUpdate.getTime());
   }
 
-  public void setLastUpdate ( final Date lastUpdate )
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "LastUpdate" )
+  public ConnectwiseCommon lastUpdate( final Date lastUpdate )
   {
-    this.logger.trace(this.getClass(), lastUpdate);
     this.lastUpdate = new Date(lastUpdate.getTime());
+
+    return this;
   }
 
-  public String getDescription ()
+  @JsonGetter( "Description" )
+  public String description()
   {
-    this.logger.trace(this.getClass());
     return description;
   }
 
-  public void setDescription ( final String description )
+  @JsonSetter( "Description" )
+  public ConnectwiseCommon description( final String description )
   {
-    this.logger.trace(this.getClass(), description);
     this.description = description;
+
+    return this;
   }
 
-  public Date getLastUpdated ()
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "LastUpdated" )
+  public Date lastUpdated()
   {
-    this.logger.trace(this.getClass());
-    return new Date(lastUpdated.getTime());
+    return null == this.lastUpdated ? null : new Date(this.lastUpdated.getTime());
   }
 
-  public void setLastUpdated ( final Date lastUpdated )
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "LastUpdated" )
+  public ConnectwiseCommon lastUpdated( final Date lastUpdated )
   {
-    this.logger.trace(this.getClass(), lastUpdated);
     this.lastUpdated = new Date(lastUpdated.getTime());
+
+    return this;
   }
 }

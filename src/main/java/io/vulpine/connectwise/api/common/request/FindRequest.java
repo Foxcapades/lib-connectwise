@@ -16,100 +16,103 @@
 package io.vulpine.connectwise.api.common.request;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.Endpoint;
 
 import java.util.List;
 
 @JsonFilter("filter-empty")
 abstract public class FindRequest < T > extends ConnectwiseRequest< T >
 {
-  @JacksonXmlProperty( localName = "conditions" )
   protected String conditions;
 
-  @JacksonXmlProperty( localName = "orderBy" )
   protected String orderBy;
 
-  @JacksonXmlProperty( localName = "limit" )
   protected int limit;
 
-  @JacksonXmlProperty( localName = "skip" )
   protected int skip;
 
-  @JacksonXmlProperty( localName = "string" )
-  @JacksonXmlElementWrapper(localName = "returnFields")
   protected List < String > returnFields;
 
-  public FindRequest ( final Credentials credentials, final XmlMapper xmlMapper, final SubApiInterface api )
+  public FindRequest (
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final SubApiInterface api,
+    final Endpoint endpoint
+  )
   {
-    super(credentials, xmlMapper, api);
+    super(credentials, xmlMapper, api, endpoint);
   }
 
+  @JsonGetter( "conditions" )
   public String getConditions ()
   {
-    this.logger.trace(this.getClass());
     return conditions;
   }
 
+  @JsonSetter( "conditions" )
   public FindRequest < T > setConditions ( final String conditions )
   {
-    this.logger.trace(this.getClass(), conditions);
     this.conditions = conditions;
     return this;
   }
 
+  @JsonGetter( "orderBy" )
   public String getOrderBy ()
   {
-    this.logger.trace(this.getClass());
     return orderBy;
   }
 
+  @JsonSetter( "orderBy" )
   public FindRequest < T > setOrderBy ( final String orderBy )
   {
-    this.logger.trace(this.getClass(), orderBy);
     this.orderBy = orderBy;
     return this;
   }
 
+  @JsonGetter( "limit" )
   public int getLimit ()
   {
-    this.logger.trace(this.getClass());
     return limit;
   }
 
+  @JsonSetter( "limit" )
   public FindRequest < T > setLimit ( final int limit )
   {
-    this.logger.trace(this.getClass(), limit);
     this.limit = limit;
     return this;
   }
 
+  @JsonGetter( "skip" )
   public int getSkip ()
   {
-    this.logger.trace(this.getClass());
     return skip;
   }
 
+  @JsonSetter( "skip" )
   public FindRequest < T >  setSkip ( final int skip )
   {
-    this.logger.trace(this.getClass(), skip);
     this.skip = skip;
     return this;
   }
 
+  @JsonGetter( "string" )
+  @JacksonXmlElementWrapper(localName = "returnFields")
   public List < String > getReturnFields ()
   {
-    this.logger.trace(this.getClass());
     return returnFields;
   }
 
+  @JsonSetter( "string" )
+  @JacksonXmlElementWrapper(localName = "returnFields")
   public FindRequest < T > setReturnFields ( final List < String > returnFields )
   {
-    this.logger.trace(this.getClass(), returnFields);
     this.returnFields = returnFields;
     return this;
   }

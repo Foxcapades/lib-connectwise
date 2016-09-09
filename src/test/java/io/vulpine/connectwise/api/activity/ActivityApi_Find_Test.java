@@ -21,12 +21,12 @@ import org.junit.Test;
 
 public class ActivityApi_Find_Test
 {
-  private ActivityApi_Find find;
+  private ActivityApiFind find;
 
   @Before
   public void setUp() throws Exception
   {
-    find = new ActivityApi_Find(null, null, null);
+    find = new ActivityApiFind(null, null, null);
   }
 
   @Test

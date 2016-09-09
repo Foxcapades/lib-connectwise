@@ -17,6 +17,7 @@
 package io.vulpine.connectwise.type.agreement;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum ApplicationCycle
 {
@@ -34,6 +35,7 @@ public enum ApplicationCycle
   ApplicationCycle ( String value ) { this.value = value; }
 
   @Override
+  @JsonValue
   public String toString () { return value; }
 
   @JsonCreator

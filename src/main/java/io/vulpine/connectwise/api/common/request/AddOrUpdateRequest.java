@@ -13,26 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package io.vulpine.connectwise.api.common.request;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.Endpoint;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
+import io.vulpine.connectwise.type.agreement.addition.Addition;
 
 public abstract class AddOrUpdateRequest < T extends ConnectwiseCommon > extends ConnectwiseRequest< T >
 {
   protected T data;
 
   public AddOrUpdateRequest(
-    Credentials credentials,
-    XmlMapper xmlMapper,
-    SubApiInterface api,
-    T data
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final SubApiInterface api,
+    final Endpoint endpoint,
+    final T data
   )
   {
-    super(credentials, xmlMapper, api);
+    super(credentials, xmlMapper, api, endpoint);
 
     this.data = data;
   }

@@ -18,6 +18,7 @@ package io.vulpine.connectwise.api.common.request;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.Endpoint;
 
 public abstract class GetRequest < T > extends ConnectwiseRequest< T >
 {
@@ -27,10 +28,11 @@ public abstract class GetRequest < T > extends ConnectwiseRequest< T >
     final Credentials credentials,
     final XmlMapper xmlMapper,
     final SubApiInterface api,
+    final Endpoint endpoint,
     final int id
   )
   {
-    super(credentials, xmlMapper, api);
+    super(credentials, xmlMapper, api, endpoint);
     this.id = id;
   }
 

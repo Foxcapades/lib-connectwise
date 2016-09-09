@@ -17,6 +17,8 @@
 package io.vulpine.connectwise.type.agreement;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 public enum ProductClass
 {
@@ -33,6 +35,7 @@ public enum ProductClass
   }
 
   @Override
+  @JsonValue
   public String toString ()
   {
     return this.value;

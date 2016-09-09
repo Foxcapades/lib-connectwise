@@ -14,65 +14,68 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.type.company;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
-@JacksonXmlRootElement( localName = "CompanyNote" )
+@JsonRootName( "CompanyNote" )
 public class CompanyNote extends ConnectwiseCommon
 {
-  @JacksonXmlProperty (localName = "NoteType")
-  protected String noteType;
+  private String noteType = null;
 
-  @JacksonXmlProperty (localName = "NoteText")
-  protected String noteText;
+  private String noteText = null;
 
-  @JacksonXmlProperty (localName = "IsFlagged")
-  protected boolean flagged;
+  private Boolean flagged = null;
 
-  @JacksonXmlProperty (localName = "EnteredBy")
-  protected String enteredBy;
+  private String enteredBy = null;
 
-  public String getNoteType ()
+  @JsonGetter( "NoteType" )
+  public String getNoteType()
   {
     return noteType;
   }
 
-  public void setNoteType ( final String noteType )
+  @JsonSetter( "NoteType" )
+  public void setNoteType( final String noteType )
   {
     this.noteType = noteType;
   }
 
-  public String getNoteText ()
+  @JsonGetter( "NoteText" )
+  public String getNoteText()
   {
     return noteText;
   }
 
-  public void setNoteText ( final String noteText )
+  @JsonSetter( "NoteText" )
+  public void setNoteText( final String noteText )
   {
     this.noteText = noteText;
   }
 
-  public boolean isFlagged ()
+  @JsonGetter( "IsFlagged" )
+  public Boolean isFlagged()
   {
     return flagged;
   }
 
-  public void setFlagged ( final boolean flagged )
+  @JsonSetter( "IsFlagged" )
+  public void setFlagged( final Boolean flagged )
   {
     this.flagged = flagged;
   }
 
-  public String getEnteredBy ()
+  @JsonGetter( "EnteredBy" )
+  public String getEnteredBy()
   {
     return enteredBy;
   }
 
-  public void setEnteredBy ( final String enteredBy )
+  @JsonSetter( "EnteredBy" )
+  public void setEnteredBy( final String enteredBy )
   {
     this.enteredBy = enteredBy;
   }

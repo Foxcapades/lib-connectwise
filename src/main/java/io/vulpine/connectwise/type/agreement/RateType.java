@@ -17,6 +17,7 @@
 package io.vulpine.connectwise.type.agreement;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum RateType
 {
@@ -24,24 +25,25 @@ public enum RateType
   CUSTOM("Custom"),
   MULTIPLIER("Multiplier");
 
-  private final String v;
+  private final String value;
 
   RateType ( String v )
   {
-    this.v = v;
+    this.value = v;
   }
 
   @Override
+  @JsonValue
   public String toString ()
   {
-    return v;
+    return value;
   }
 
   @JsonCreator
   public static RateType fromString( final String s )
   {
     for ( final RateType r : values() ) {
-      if ( r.v.equals(s) ) {
+      if ( r.value.equals(s) ) {
         return r;
       }
     }

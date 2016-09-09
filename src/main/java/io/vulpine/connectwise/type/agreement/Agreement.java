@@ -17,1022 +17,1091 @@
 package io.vulpine.connectwise.type.agreement;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 
-@SuppressWarnings( "unused" )
 public class Agreement extends ConnectwiseCommon
 {
-  @JacksonXmlProperty( localName = "AgreementTypeId" )
-  protected int agreementTypeId;
+  private boolean allowOverruns;
 
-  @JacksonXmlProperty( localName = "AgreementName" )
-  protected String agreementName;
+  private boolean applicationUnlimited;
 
-  @JacksonXmlProperty( localName = "ParentAgreementId" )
-  @JsonProperty( defaultValue = "-1" )
-  protected int parentAgreementId;
+  private boolean billableExpenseInvoice;
 
-  @JacksonXmlProperty( localName = "CompanyId" )
-  protected int companyId;
+  private boolean billableProductInvoice;
 
-  @JacksonXmlProperty( localName = "ContactId" )
-  protected int contactId;
+  private boolean billableTimeInvoice;
 
-  @JacksonXmlProperty( localName = "CustomerPO" )
-  protected String customerPo;
+  private boolean billOneTime;
 
-  @JacksonXmlProperty( localName = "LocationId" )
-  protected int locationId;
+  private boolean bottomComment;
 
-  @JacksonXmlProperty( localName = "DepartmentId" )
-  protected int departmentId;
+  private boolean cancelled;
 
-  @JacksonXmlProperty( localName = "RestrictLocationFlag" )
-  protected boolean restrictLocation;
+  private boolean carryOverUnused;
 
-  @JacksonXmlProperty( localName = "RestrictDepartmentFlag" )
-  protected boolean restrictDepartment;
+  private boolean chargeToFirm;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JacksonXmlProperty( localName = "StartDate" )
-  protected Date startDate;
+  private boolean coverAgreementExpense;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JacksonXmlProperty( localName = "EndDate" )
-  protected Date endDate;
+  private boolean coverAgreementProduct;
 
-  @JacksonXmlProperty( localName = "NoEndingDateFlag" )
-  protected boolean noEndingDate;
+  private boolean coverAgreementTime;
 
-  @JacksonXmlProperty( localName = "OpportunityId" )
-  protected int opportunityId;
+  private boolean coverSalesTax;
 
-  @JacksonXmlProperty( localName = "CancelledFlag" )
-  protected boolean cancelled;
+  private boolean expireWhenZero;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JacksonXmlProperty( localName = "DateCancelled" )
-  protected Date dateCancelled;
+  private boolean noEndingDate;
 
-  @JacksonXmlProperty( localName = "ReasonCancelled" )
-  protected String reasonCancelled;
+  private boolean oneTime;
 
-  @JacksonXmlProperty( localName = "SlaId" )
-  protected int slaId;
+  private boolean restrictDepartment;
 
-  @JacksonXmlProperty( localName = "SubContractCompanyId" )
-  protected int subContractCompanyId;
+  private boolean restrictDownPayment;
 
-  @JacksonXmlProperty( localName = "SubContractContactId" )
-  protected int subContractContactId;
+  private boolean restrictLocation;
 
-  @JacksonXmlProperty( localName = "WorkOrder" )
-  protected String workOrder;
+  private boolean taxable;
 
-  @JacksonXmlProperty( localName = "InternalNotes" )
-  protected String internalNotes;
+  private boolean topComment;
 
-  @JacksonXmlProperty( localName = "ApplicationUnits" )
-  protected String applicationUnits;
+  private Date billStartDate;
 
-  @JacksonXmlProperty( localName = "ApplicationLimit" )
-  protected double applicationLimit;
+  private Date dateCancelled;
 
-  @JacksonXmlProperty( localName = "ApplicationCycle" )
-  protected String applicationCycle;
+  private Date endDate;
 
-  @JacksonXmlProperty( localName = "PeriodType" )
-  protected String periodType;
+  private Date startDate;
 
-  @JacksonXmlProperty( localName = "ApplicationUnlimitedFlag" )
-  protected boolean applicationUnlimited;
+  private double applicationLimit;
 
-  @JacksonXmlProperty( localName = "OneTimeFlag" )
-  protected boolean oneTime;
+  private double billAmount;
 
-  @JacksonXmlProperty( localName = "CoverAgreementTime" )
-  protected boolean coverAgreementTime;
+  private double compHourlyRate;
 
-  @JacksonXmlProperty( localName = "CoverAgreementProduct" )
-  protected boolean coverAgreementProduct;
+  private double compLimitAmount;
 
-  @JacksonXmlProperty( localName = "CoverAgreementExpense" )
-  protected boolean coverAgreementExpense;
+  private double prorateFirstBill;
 
-  @JacksonXmlProperty( localName = "CoverSalesTax" )
-  protected boolean coverSalesTax;
+  private int agreementTypeId;
 
-  @JacksonXmlProperty( localName = "CarryOverUnused" )
-  protected boolean carryOverUnused;
+  private int billCycleId;
 
-  @JacksonXmlProperty( localName = "AllowOverruns" )
-  protected boolean allowOverruns;
+  private int billTermsId;
 
-  @JacksonXmlProperty( localName = "ExpiredDays" )
-  protected int expiredDays;
+  private int billToAddressId;
 
-  @JacksonXmlProperty( localName = "Limit" )
-  protected int limit;
+  private int billToCompanyId;
 
-  @JacksonXmlProperty( localName = "ExpireWhenZero" )
-  protected boolean expireWhenZero;
+  private int contactId;
 
-  @JacksonXmlProperty( localName = "ChargeToFirm" )
-  protected boolean chargeToFirm;
+  private int companyId;
 
-  @JacksonXmlProperty( localName = "EmployeeCompRate" )
-  protected String employeeCompRate;
+  private int departmentId;
 
-  @JacksonXmlProperty( localName = "EmployeeCompNotExceed" )
-  protected String employeeCompNotExceed;
+  private int expiredDays;
 
-  @JacksonXmlProperty( localName = "CompHourlyRate" )
-  protected double compHourlyRate;
+  private int invoiceTemplateId;
 
-  @JacksonXmlProperty( localName = "CompLimitAmount" )
-  protected double compLimitAmount;
+  private int limit;
 
-  @JacksonXmlProperty( localName = "BillCycleId" )
-  protected int billCycleId;
+  private int locationId;
 
-  @JacksonXmlProperty( localName = "BillOneTimeFlag" )
-  protected boolean billOneTime;
+  private int opportunityId;
 
-  @JacksonXmlProperty( localName = "BillTermsId" )
-  protected int billTermsId;
+  private int parentAgreementId;
 
-  @JacksonXmlProperty( localName = "InvoicingCycle" )
-  protected String invoicingCycle;
+  private int projectTypeId;
 
-  @JacksonXmlProperty( localName = "BillToCompanyId" )
-  protected int billToCompanyId;
+  private int slaId;
 
-  @JacksonXmlProperty( localName = "BillToAddressId" )
-  protected int billToAddressId;
+  private int subContractCompanyId;
 
-  @JacksonXmlProperty( localName = "BillAmount" )
-  protected double billAmount;
+  private int subContractContactId;
 
-  @JacksonXmlProperty( localName = "Taxable" )
-  protected boolean taxable;
+  private int taxCodeId;
 
-  @JacksonXmlProperty( localName = "ProrateFirstBill" )
-  protected double prorateFirstBill;
+  private int workRoleId;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JacksonXmlProperty( localName = "BillStartDate" )
-  protected Date billStartDate;
+  private int workTypeId;
 
-  @JacksonXmlProperty( localName = "TaxCodeId" )
-  protected int taxCodeId;
+  private String agreementName;
 
-  @JacksonXmlProperty( localName = "RestrictDownPayment" )
-  protected boolean restrictDownPayment;
+  private String applicationCycle;
 
-  @JacksonXmlProperty( localName = "InvoiceDescription" )
-  protected String invoiceDescription;
+  private String applicationUnits;
 
-  @JacksonXmlProperty( localName = "TopComment" )
-  protected boolean topComment;
+  private String billExpenses;
 
-  @JacksonXmlProperty( localName = "BottomComment" )
-  protected boolean bottomComment;
+  private String billProducts;
 
-  @JacksonXmlProperty( localName = "WorkRoleId" )
-  protected int workRoleId;
+  private String billTime;
 
-  @JacksonXmlProperty( localName = "WorkTypeId" )
-  protected int workTypeId;
+  private String customerPo;
 
-  @JacksonXmlProperty( localName = "ProjectTypeId" )
-  protected int projectTypeId;
+  private String employeeCompNotExceed;
 
-  @JacksonXmlProperty( localName = "InvoiceTemplateId" )
-  protected int invoiceTemplateId;
+  private String employeeCompRate;
 
-  @JacksonXmlProperty( localName = "BillTime" )
-  protected String billTime;
+  private String invoiceDescription;
 
-  @JacksonXmlProperty( localName = "BillExpenses" )
-  protected String billExpenses;
+  private String invoicingCycle;
 
-  @JacksonXmlProperty( localName = "BillProducts" )
-  protected String billProducts;
+  private String internalNotes;
 
-  @JacksonXmlProperty( localName = "BillableTimeInvoice" )
-  protected boolean billableTimeInvoice;
+  private String periodType;
 
-  @JacksonXmlProperty( localName = "BillableExpenseInvoice" )
-  protected boolean billableExpenseInvoice;
+  private String reasonCancelled;
 
-  @JacksonXmlProperty( localName = "BillableProductInvoice" )
-  protected boolean billableProductInvoice;
+  private String workOrder;
 
-  public int getAgreementTypeId()
+  @JsonGetter( "AgreementName" )
+  public String agreementName()
   {
-    this.logger.trace(this.getClass());
-    return agreementTypeId;
-  }
-
-  public void setAgreementTypeId( int agreementTypeId )
-  {
-    this.logger.trace(this.getClass(), agreementTypeId);
-    this.agreementTypeId = agreementTypeId;
-  }
-
-  public String getAgreementName()
-  {
-    this.logger.trace(this.getClass());
     return agreementName;
   }
 
-  public void setAgreementName( String agreementName )
+  @JsonSetter( "AgreementName" )
+  public Agreement agreementName( String agreementName )
   {
-    this.logger.trace(this.getClass(), agreementName);
     this.agreementName = agreementName;
+
+    return this;
   }
 
-  public int getParentAgreementId()
+  @JsonGetter( "AgreementTypeId" )
+  public int agreementTypeId()
   {
-    this.logger.trace(this.getClass());
-    return parentAgreementId;
+    return agreementTypeId;
   }
 
-  public void setParentAgreementId( int parentAgreementId )
+  @JsonSetter( "AgreementTypeId" )
+  public Agreement agreementTypeId( int agreementTypeId )
   {
-    this.logger.trace(this.getClass(), parentAgreementId);
-    this.parentAgreementId = parentAgreementId;
+    this.agreementTypeId = agreementTypeId;
+
+    return this;
   }
 
-  public int getCompanyId()
+  @JsonGetter( "ApplicationCycle" )
+  public String applicationCycle()
   {
-    this.logger.trace(this.getClass());
-    return companyId;
-  }
-
-  public void setCompanyId( int companyId )
-  {
-    this.logger.trace(this.getClass(), companyId);
-    this.companyId = companyId;
-  }
-
-  public int getContactId()
-  {
-    this.logger.trace(this.getClass());
-    return contactId;
-  }
-
-  public void setContactId( int contactId )
-  {
-    this.logger.trace(this.getClass(), contactId);
-    this.contactId = contactId;
-  }
-
-  public String getCustomerPo()
-  {
-    this.logger.trace(this.getClass());
-    return customerPo;
-  }
-
-  public void setCustomerPo( String customerPo )
-  {
-    this.logger.trace(this.getClass(), customerPo);
-    this.customerPo = customerPo;
-  }
-
-  public int getLocationId()
-  {
-    this.logger.trace(this.getClass());
-    return locationId;
-  }
-
-  public void setLocationId( int locationId )
-  {
-    this.logger.trace(this.getClass(), locationId);
-    this.locationId = locationId;
-  }
-
-  public int getDepartmentId()
-  {
-    this.logger.trace(this.getClass());
-    return departmentId;
-  }
-
-  public void setDepartmentId( int departmentId )
-  {
-    this.logger.trace(this.getClass(), departmentId);
-    this.departmentId = departmentId;
-  }
-
-  public boolean isRestrictLocation()
-  {
-    this.logger.trace(this.getClass());
-    return restrictLocation;
-  }
-
-  public void setRestrictLocation( boolean restrictLocation )
-  {
-    this.logger.trace(this.getClass(), restrictLocation);
-    this.restrictLocation = restrictLocation;
-  }
-
-  public boolean isRestrictDepartment()
-  {
-    this.logger.trace(this.getClass());
-    return restrictDepartment;
-  }
-
-  public void setRestrictDepartment( final boolean restrictDepartment )
-  {
-    this.logger.trace(this.getClass(), restrictDepartment);
-    this.restrictDepartment = restrictDepartment;
-  }
-
-  public Date getStartDate()
-  {
-    this.logger.trace(this.getClass());
-    return new Date(startDate.getTime());
-  }
-
-  public void setStartDate( final Date startDate )
-  {
-    this.logger.trace(this.getClass(), new Date(startDate.getTime()));
-    this.startDate = new Date(startDate.getTime());
-  }
-
-  public Date getEndDate()
-  {
-    this.logger.trace(this.getClass());
-    return new Date(endDate.getTime());
-  }
-
-  public void setEndDate( final Date endDate )
-  {
-    this.logger.trace(this.getClass(), new Date(endDate.getTime()));
-    this.endDate = new Date(endDate.getTime());
-  }
-
-  public boolean isNoEndingDate()
-  {
-    this.logger.trace(this.getClass());
-    return noEndingDate;
-  }
-
-  public void setNoEndingDate( boolean noEndingDate )
-  {
-    this.logger.trace(this.getClass(), noEndingDate);
-    this.noEndingDate = noEndingDate;
-  }
-
-  public int getOpportunityId()
-  {
-    this.logger.trace(this.getClass());
-    return opportunityId;
-  }
-
-  public void setOpportunityId( int opportunityId )
-  {
-    this.logger.trace(this.getClass(), opportunityId);
-    this.opportunityId = opportunityId;
-  }
-
-  public boolean isCancelled()
-  {
-    this.logger.trace(this.getClass());
-    return cancelled;
-  }
-
-  public void setCancelled( boolean cancelled )
-  {
-    this.logger.trace(this.getClass(), cancelled);
-    this.cancelled = cancelled;
-  }
-
-  public Date getDateCancelled()
-  {
-    this.logger.trace(this.getClass());
-    return new Date(dateCancelled.getTime());
-  }
-
-  public void setDateCancelled( final Date dateCancelled )
-  {
-    this.logger.trace(this.getClass(), new Date(dateCancelled.getTime()));
-    this.dateCancelled = new Date(dateCancelled.getTime());
-  }
-
-  public String getReasonCancelled()
-  {
-    this.logger.trace(this.getClass());
-    return reasonCancelled;
-  }
-
-  public void setReasonCancelled( String reasonCancelled )
-  {
-    this.logger.trace(this.getClass(), reasonCancelled);
-    this.reasonCancelled = reasonCancelled;
-  }
-
-  public int getSlaId()
-  {
-    this.logger.trace(this.getClass());
-    return slaId;
-  }
-
-  public void setSlaId( int slaId )
-  {
-    this.logger.trace(this.getClass(), slaId);
-    this.slaId = slaId;
-  }
-
-  public int getSubContractCompanyId()
-  {
-    this.logger.trace(this.getClass());
-    return subContractCompanyId;
-  }
-
-  public void setSubContractCompanyId( int subContractCompanyId )
-  {
-    this.logger.trace(this.getClass(), subContractCompanyId);
-    this.subContractCompanyId = subContractCompanyId;
-  }
-
-  public int getSubContractContactId()
-  {
-    this.logger.trace(this.getClass());
-    return subContractContactId;
-  }
-
-  public void setSubContractContactId( int subContractContactId )
-  {
-    this.logger.trace(this.getClass(), subContractContactId);
-    this.subContractContactId = subContractContactId;
-  }
-
-  public String getWorkOrder()
-  {
-    this.logger.trace(this.getClass());
-    return workOrder;
-  }
-
-  public void setWorkOrder( String workOrder )
-  {
-    this.logger.trace(this.getClass(), workOrder);
-    this.workOrder = workOrder;
-  }
-
-  public String getInternalNotes()
-  {
-    this.logger.trace(this.getClass());
-    return internalNotes;
-  }
-
-  public void setInternalNotes( String internalNotes )
-  {
-    this.logger.trace(this.getClass(), internalNotes);
-    this.internalNotes = internalNotes;
-  }
-
-  public String getApplicationUnits()
-  {
-    this.logger.trace(this.getClass());
-    return applicationUnits;
-  }
-
-  public void setApplicationUnits( String applicationUnits )
-  {
-    this.logger.trace(this.getClass(), applicationUnits);
-    this.applicationUnits = applicationUnits;
-  }
-
-  public double getApplicationLimit()
-  {
-    this.logger.trace(this.getClass());
-    return applicationLimit;
-  }
-
-  public void setApplicationLimit( double applicationLimit )
-  {
-    this.logger.trace(this.getClass(), applicationLimit);
-    this.applicationLimit = applicationLimit;
-  }
-
-  public String getApplicationCycle()
-  {
-    this.logger.trace(this.getClass());
     return applicationCycle;
   }
 
-  public void setApplicationCycle( String applicationCycle )
+  @JsonSetter( "ApplicationCycle" )
+  public Agreement applicationCycle( String applicationCycle )
   {
-    this.logger.trace(this.getClass(), applicationCycle);
     this.applicationCycle = applicationCycle;
+
+    return this;
   }
 
-  public String getPeriodType()
+  @JsonGetter( "ApplicationLimit" )
+  public double applicationLimit()
   {
-    this.logger.trace(this.getClass());
-    return periodType;
+    return applicationLimit;
   }
 
-  public void setPeriodType( String periodType )
+  @JsonSetter( "ApplicationLimit" )
+  public Agreement applicationLimit( double applicationLimit )
   {
-    this.logger.trace(this.getClass(), periodType);
-    this.periodType = periodType;
+    this.applicationLimit = applicationLimit;
+
+    return this;
   }
 
-  public boolean isApplicationUnlimited()
+  @JsonGetter( "ApplicationUnits" )
+  public String applicationUnits()
   {
-    this.logger.trace(this.getClass());
-    return applicationUnlimited;
+    return applicationUnits;
   }
 
-  public void setApplicationUnlimited( boolean applicationUnlimited )
+  @JsonSetter( "ApplicationUnits" )
+  public Agreement applicationUnits( String applicationUnits )
   {
-    this.logger.trace(this.getClass(), applicationUnlimited);
-    this.applicationUnlimited = applicationUnlimited;
+    this.applicationUnits = applicationUnits;
+
+    return this;
   }
 
-  public boolean isOneTime()
+  @JsonGetter( "BillAmount" )
+  public double billAmount()
   {
-    this.logger.trace(this.getClass());
-    return oneTime;
-  }
-
-  public void setOneTime( boolean oneTime )
-  {
-    this.logger.trace(this.getClass(), oneTime);
-    this.oneTime = oneTime;
-  }
-
-  public boolean isCoverAgreementTime()
-  {
-    this.logger.trace(this.getClass());
-    return coverAgreementTime;
-  }
-
-  public void setCoverAgreementTime( boolean coverAgreementTime )
-  {
-    this.logger.trace(this.getClass(), coverAgreementTime);
-    this.coverAgreementTime = coverAgreementTime;
-  }
-
-  public boolean isCoverAgreementProduct()
-  {
-    this.logger.trace(this.getClass());
-    return coverAgreementProduct;
-  }
-
-  public void setCoverAgreementProduct( boolean coverAgreementProduct )
-  {
-    this.logger.trace(this.getClass(), coverAgreementProduct);
-    this.coverAgreementProduct = coverAgreementProduct;
-  }
-
-  public boolean isCoverAgreementExpense()
-  {
-    this.logger.trace(this.getClass());
-    return coverAgreementExpense;
-  }
-
-  public void setCoverAgreementExpense( boolean coverAgreementExpense )
-  {
-    this.logger.trace(this.getClass(), coverAgreementExpense);
-    this.coverAgreementExpense = coverAgreementExpense;
-  }
-
-  public boolean isCoverSalesTax()
-  {
-    this.logger.trace(this.getClass());
-    return coverSalesTax;
-  }
-
-  public void setCoverSalesTax( boolean coverSalesTax )
-  {
-    this.logger.trace(this.getClass(), coverSalesTax);
-    this.coverSalesTax = coverSalesTax;
-  }
-
-  public boolean isCarryOverUnused()
-  {
-    this.logger.trace(this.getClass());
-    return carryOverUnused;
-  }
-
-  public void setCarryOverUnused( boolean carryOverUnused )
-  {
-    this.logger.trace(this.getClass(), carryOverUnused);
-    this.carryOverUnused = carryOverUnused;
-  }
-
-  public boolean isAllowOverruns()
-  {
-    this.logger.trace(this.getClass());
-    return allowOverruns;
-  }
-
-  public void setAllowOverruns( boolean allowOverruns )
-  {
-    this.logger.trace(this.getClass(), allowOverruns);
-    this.allowOverruns = allowOverruns;
-  }
-
-  public int getExpiredDays()
-  {
-    this.logger.trace(this.getClass());
-    return expiredDays;
-  }
-
-  public void setExpiredDays( int expiredDays )
-  {
-    this.logger.trace(this.getClass(), expiredDays);
-    this.expiredDays = expiredDays;
-  }
-
-  public int getLimit()
-  {
-    this.logger.trace(this.getClass());
-    return limit;
-  }
-
-  public void setLimit( int limit )
-  {
-    this.logger.trace(this.getClass(), limit);
-    this.limit = limit;
-  }
-
-  public boolean isExpireWhenZero()
-  {
-    this.logger.trace(this.getClass());
-    return expireWhenZero;
-  }
-
-  public void setExpireWhenZero( boolean expireWhenZero )
-  {
-    this.logger.trace(this.getClass(), expireWhenZero);
-    this.expireWhenZero = expireWhenZero;
-  }
-
-  public boolean isChargeToFirm()
-  {
-    this.logger.trace(this.getClass());
-    return chargeToFirm;
-  }
-
-  public void setChargeToFirm( boolean chargeToFirm )
-  {
-    this.logger.trace(this.getClass(), chargeToFirm);
-    this.chargeToFirm = chargeToFirm;
-  }
-
-  public String getEmployeeCompRate()
-  {
-    this.logger.trace(this.getClass());
-    return employeeCompRate;
-  }
-
-  public void setEmployeeCompRate( String employeeCompRate )
-  {
-    this.logger.trace(this.getClass(), employeeCompRate);
-    this.employeeCompRate = employeeCompRate;
-  }
-
-  public String getEmployeeCompNotExceed()
-  {
-    this.logger.trace(this.getClass());
-    return employeeCompNotExceed;
-  }
-
-  public void setEmployeeCompNotExceed( String employeeCompNotExceed )
-  {
-    this.logger.trace(this.getClass(), employeeCompNotExceed);
-    this.employeeCompNotExceed = employeeCompNotExceed;
-  }
-
-  public double getCompHourlyRate()
-  {
-    this.logger.trace(this.getClass());
-    return compHourlyRate;
-  }
-
-  public void setCompHourlyRate( double compHourlyRate )
-  {
-    this.logger.trace(this.getClass(), compHourlyRate);
-    this.compHourlyRate = compHourlyRate;
-  }
-
-  public double getCompLimitAmount()
-  {
-    this.logger.trace(this.getClass());
-    return compLimitAmount;
-  }
-
-  public void setCompLimitAmount( double compLimitAmount )
-  {
-    this.logger.trace(this.getClass(), compLimitAmount);
-    this.compLimitAmount = compLimitAmount;
-  }
-
-  public int getBillCycleId()
-  {
-    this.logger.trace(this.getClass());
-    return billCycleId;
-  }
-
-  public void setBillCycleId( int billCycleId )
-  {
-    this.logger.trace(this.getClass(), billCycleId);
-    this.billCycleId = billCycleId;
-  }
-
-  public boolean isBillOneTime()
-  {
-    this.logger.trace(this.getClass());
-    return billOneTime;
-  }
-
-  public void setBillOneTime( boolean billOneTime )
-  {
-    this.logger.trace(this.getClass(), billOneTime);
-    this.billOneTime = billOneTime;
-  }
-
-  public int getBillTermsId()
-  {
-    this.logger.trace(this.getClass());
-    return billTermsId;
-  }
-
-  public void setBillTermsId( int billTermsId )
-  {
-    this.logger.trace(this.getClass(), billTermsId);
-    this.billTermsId = billTermsId;
-  }
-
-  public String getInvoicingCycle()
-  {
-    this.logger.trace(this.getClass());
-    return invoicingCycle;
-  }
-
-  public void setInvoicingCycle( String invoicingCycle )
-  {
-    this.logger.trace(this.getClass(), invoicingCycle);
-    this.invoicingCycle = invoicingCycle;
-  }
-
-  public int getBillToCompanyId()
-  {
-    this.logger.trace(this.getClass());
-    return billToCompanyId;
-  }
-
-  public void setBillToCompanyId( int billToCompanyId )
-  {
-    this.logger.trace(this.getClass(), billToCompanyId);
-    this.billToCompanyId = billToCompanyId;
-  }
-
-  public int getBillToAddressId()
-  {
-    this.logger.trace(this.getClass());
-    return billToAddressId;
-  }
-
-  public void setBillToAddressId( int billToAddressId )
-  {
-    this.logger.trace(this.getClass(), billToAddressId);
-    this.billToAddressId = billToAddressId;
-  }
-
-  public double getBillAmount()
-  {
-    this.logger.trace(this.getClass());
     return billAmount;
   }
 
-  public void setBillAmount( double billAmount )
+  @JsonSetter( "BillAmount" )
+  public Agreement billAmount( double billAmount )
   {
-    this.logger.trace(this.getClass(), billAmount);
     this.billAmount = billAmount;
+
+    return this;
   }
 
-  public boolean isTaxable()
+  @JsonGetter( "BillCycleId" )
+  public int billCycleId()
   {
-    this.logger.trace(this.getClass());
-    return taxable;
+    return billCycleId;
   }
 
-  public void setTaxable( boolean taxable )
+  @JsonSetter( "BillCycleId" )
+  public Agreement billCycleId( int billCycleId )
   {
-    this.logger.trace(this.getClass(), taxable);
-    this.taxable = taxable;
+    this.billCycleId = billCycleId;
+
+    return this;
   }
 
-  public double getProrateFirstBill()
+  @JsonGetter( "BillExpenses" )
+  public String billExpenses()
   {
-    this.logger.trace(this.getClass());
-    return prorateFirstBill;
-  }
-
-  public void setProrateFirstBill( double prorateFirstBill )
-  {
-    this.logger.trace(this.getClass(), prorateFirstBill);
-    this.prorateFirstBill = prorateFirstBill;
-  }
-
-  public Date getBillStartDate()
-  {
-    this.logger.trace(this.getClass());
-    return new Date(billStartDate.getTime());
-  }
-
-  public void setBillStartDate( final Date billStartDate )
-  {
-    this.logger.trace(this.getClass(), new Date(billStartDate.getTime()));
-    this.billStartDate = new Date(billStartDate.getTime());
-  }
-
-  public int getTaxCodeId()
-  {
-    this.logger.trace(this.getClass());
-    return taxCodeId;
-  }
-
-  public void setTaxCodeId( int taxCodeId )
-  {
-    this.logger.trace(this.getClass(), taxCodeId);
-    this.taxCodeId = taxCodeId;
-  }
-
-  public boolean isRestrictDownPayment()
-  {
-    this.logger.trace(this.getClass());
-    return restrictDownPayment;
-  }
-
-  public void setRestrictDownPayment( boolean restrictDownPayment )
-  {
-    this.logger.trace(this.getClass(), restrictDownPayment);
-    this.restrictDownPayment = restrictDownPayment;
-  }
-
-  public String getInvoiceDescription()
-  {
-    this.logger.trace(this.getClass());
-    return invoiceDescription;
-  }
-
-  public void setInvoiceDescription( String invoiceDescription )
-  {
-    this.logger.trace(this.getClass(), invoiceDescription);
-    this.invoiceDescription = invoiceDescription;
-  }
-
-  public boolean isTopComment()
-  {
-    this.logger.trace(this.getClass());
-    return topComment;
-  }
-
-  public void setTopComment( boolean topComment )
-  {
-    this.logger.trace(this.getClass(), topComment);
-    this.topComment = topComment;
-  }
-
-  public boolean isBottomComment()
-  {
-    this.logger.trace(this.getClass());
-    return bottomComment;
-  }
-
-  public void setBottomComment( boolean bottomComment )
-  {
-    this.logger.trace(this.getClass(), bottomComment);
-    this.bottomComment = bottomComment;
-  }
-
-  public int getWorkRoleId()
-  {
-    this.logger.trace(this.getClass());
-    return workRoleId;
-  }
-
-  public void setWorkRoleId( int workRoleId )
-  {
-    this.logger.trace(this.getClass(), workRoleId);
-    this.workRoleId = workRoleId;
-  }
-
-  public int getWorkTypeId()
-  {
-    this.logger.trace(this.getClass());
-    return workTypeId;
-  }
-
-  public void setWorkTypeId( int workTypeId )
-  {
-    this.logger.trace(this.getClass(), workTypeId);
-    this.workTypeId = workTypeId;
-  }
-
-  public int getProjectTypeId()
-  {
-    this.logger.trace(this.getClass());
-    return projectTypeId;
-  }
-
-  public void setProjectTypeId( int projectTypeId )
-  {
-    this.logger.trace(this.getClass(), projectTypeId);
-    this.projectTypeId = projectTypeId;
-  }
-
-  public int getInvoiceTemplateId()
-  {
-    this.logger.trace(this.getClass());
-    return invoiceTemplateId;
-  }
-
-  public void setInvoiceTemplateId( int invoiceTemplateId )
-  {
-    this.logger.trace(this.getClass(), invoiceTemplateId);
-    this.invoiceTemplateId = invoiceTemplateId;
-  }
-
-  public String getBillTime()
-  {
-    this.logger.trace(this.getClass());
-    return billTime;
-  }
-
-  public void setBillTime( String billTime )
-  {
-    this.logger.trace(this.getClass(), billTime);
-    this.billTime = billTime;
-  }
-
-  public String getBillExpenses()
-  {
-    this.logger.trace(this.getClass());
     return billExpenses;
   }
 
-  public void setBillExpenses( String billExpenses )
+  @JsonSetter( "BillExpenses" )
+  public Agreement billExpenses( String billExpenses )
   {
-    this.logger.trace(this.getClass(), billExpenses);
     this.billExpenses = billExpenses;
+
+    return this;
   }
 
-  public String getBillProducts()
+  @JsonGetter( "BillProducts" )
+  public String billProducts()
   {
-    this.logger.trace(this.getClass());
     return billProducts;
   }
 
-  public void setBillProducts( String billProducts )
+  @JsonSetter( "BillProducts" )
+  public Agreement billProducts( String billProducts )
   {
-    this.logger.trace(this.getClass(), billProducts);
     this.billProducts = billProducts;
+
+    return this;
   }
 
-  public boolean isBillableTimeInvoice()
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "BillStartDate" )
+  public Date billStartDate()
   {
-    this.logger.trace(this.getClass());
-    return billableTimeInvoice;
+    return new Date(billStartDate.getTime());
   }
 
-  public void setBillableTimeInvoice( boolean billableTimeInvoice )
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "BillStartDate" )
+  public Agreement billStartDate( final Date billStartDate )
   {
-    this.logger.trace(this.getClass(), billableTimeInvoice);
-    this.billableTimeInvoice = billableTimeInvoice;
+    this.billStartDate = new Date(billStartDate.getTime());
+
+    return this;
   }
 
-  public boolean isBillableExpenseInvoice()
+  @JsonGetter( "BillTermsId" )
+  public int billTermsId()
   {
-    this.logger.trace(this.getClass());
+    return billTermsId;
+  }
+
+  @JsonSetter( "BillTermsId" )
+  public Agreement billTermsId( int billTermsId )
+  {
+    this.billTermsId = billTermsId;
+
+    return this;
+  }
+
+  @JsonGetter( "BillTime" )
+  public String billTime()
+  {
+    return billTime;
+  }
+
+  @JsonSetter( "BillTime" )
+  public Agreement billTime( String billTime )
+  {
+    this.billTime = billTime;
+
+    return this;
+  }
+
+  @JsonGetter( "BillToAddressId" )
+  public int billToAddressId()
+  {
+    return billToAddressId;
+  }
+
+  @JsonSetter( "BillToAddressId" )
+  public Agreement billToAddressId( int billToAddressId )
+  {
+    this.billToAddressId = billToAddressId;
+
+    return this;
+  }
+
+  @JsonGetter( "BillToCompanyId" )
+  public int billToCompanyId()
+  {
+    return billToCompanyId;
+  }
+
+  @JsonSetter( "BillToCompanyId" )
+  public Agreement billToCompanyId( int billToCompanyId )
+  {
+    this.billToCompanyId = billToCompanyId;
+
+    return this;
+  }
+
+  @JsonGetter( "CompHourlyRate" )
+  public double compHourlyRate()
+  {
+    return compHourlyRate;
+  }
+
+  @JsonSetter( "CompHourlyRate" )
+  public Agreement compHourlyRate( double compHourlyRate )
+  {
+    this.compHourlyRate = compHourlyRate;
+
+    return this;
+  }
+
+  @JsonGetter( "CompLimitAmount" )
+  public double compLimitAmount()
+  {
+    return compLimitAmount;
+  }
+
+  @JsonSetter( "CompLimitAmount" )
+  public Agreement compLimitAmount( double compLimitAmount )
+  {
+    this.compLimitAmount = compLimitAmount;
+
+    return this;
+  }
+
+  @JsonGetter( "CompanyId" )
+  public int companyId()
+  {
+    return companyId;
+  }
+
+  @JsonSetter( "CompanyId" )
+  public Agreement companyId( int companyId )
+  {
+    this.companyId = companyId;
+
+    return this;
+  }
+
+  @JsonGetter( "ContactId" )
+  public int contactId()
+  {
+    return contactId;
+  }
+
+  @JsonSetter( "ContactId" )
+  public Agreement contactId( int contactId )
+  {
+    this.contactId = contactId;
+
+    return this;
+  }
+
+  @JsonGetter( "CustomerPO" )
+  public String customerPo()
+  {
+    return customerPo;
+  }
+
+  @JsonSetter( "CustomerPO" )
+  public Agreement customerPo( String customerPo )
+  {
+    this.customerPo = customerPo;
+
+    return this;
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "DateCancelled" )
+  public Date dateCancelled()
+  {
+    return new Date(dateCancelled.getTime());
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "DateCancelled" )
+  public Agreement dateCancelled( final Date dateCancelled )
+  {
+    this.dateCancelled = new Date(dateCancelled.getTime());
+
+    return this;
+  }
+
+  @JsonGetter( "DepartmentId" )
+  public int departmentId()
+  {
+    return departmentId;
+  }
+
+  @JsonSetter( "DepartmentId" )
+  public Agreement departmentId( int departmentId )
+  {
+    this.departmentId = departmentId;
+
+    return this;
+  }
+
+  @JsonGetter( "EmployeeCompNotExceed" )
+  public String employeeCompNotExceed()
+  {
+    return employeeCompNotExceed;
+  }
+
+  @JsonSetter( "EmployeeCompNotExceed" )
+  public Agreement employeeCompNotExceed( String employeeCompNotExceed )
+  {
+    this.employeeCompNotExceed = employeeCompNotExceed;
+
+    return this;
+  }
+
+  @JsonGetter( "EmployeeCompRate" )
+  public String employeeCompRate()
+  {
+    return employeeCompRate;
+  }
+
+  @JsonSetter( "EmployeeCompRate" )
+  public Agreement employeeCompRate( String employeeCompRate )
+  {
+    this.employeeCompRate = employeeCompRate;
+
+    return this;
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "EndDate" )
+  public Date endDate()
+  {
+    return new Date(endDate.getTime());
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "EndDate" )
+  public Agreement endDate( final Date endDate )
+  {
+    this.endDate = new Date(endDate.getTime());
+
+    return this;
+  }
+
+  @JsonGetter( "ExpiredDays" )
+  public int expiredDays()
+  {
+    return expiredDays;
+  }
+
+  @JsonSetter( "ExpiredDays" )
+  public Agreement expiredDays( int expiredDays )
+  {
+    this.expiredDays = expiredDays;
+
+    return this;
+  }
+
+  @JsonGetter( "InternalNotes" )
+  public String internalNotes()
+  {
+    return internalNotes;
+  }
+
+  @JsonSetter( "InternalNotes" )
+  public Agreement internalNotes( String internalNotes )
+  {
+    this.internalNotes = internalNotes;
+
+    return this;
+  }
+
+  @JsonGetter( "InvoiceDescription" )
+  public String invoiceDescription()
+  {
+    return invoiceDescription;
+  }
+
+  @JsonSetter( "InvoiceDescription" )
+  public Agreement invoiceDescription( String invoiceDescription )
+  {
+    this.invoiceDescription = invoiceDescription;
+
+    return this;
+  }
+
+  @JsonGetter( "InvoiceTemplateId" )
+  public int invoiceTemplateId()
+  {
+    return invoiceTemplateId;
+  }
+
+  @JsonSetter( "InvoiceTemplateId" )
+  public Agreement invoiceTemplateId( int invoiceTemplateId )
+  {
+    this.invoiceTemplateId = invoiceTemplateId;
+
+    return this;
+  }
+
+  @JsonGetter( "InvoicingCycle" )
+  public String invoicingCycle()
+  {
+    return invoicingCycle;
+  }
+
+  @JsonSetter( "InvoicingCycle" )
+  public Agreement invoicingCycle( String invoicingCycle )
+  {
+    this.invoicingCycle = invoicingCycle;
+
+    return this;
+  }
+
+  @JsonGetter( "Limit" )
+  public int limit()
+  {
+    return limit;
+  }
+
+  @JsonSetter( "Limit" )
+  public Agreement limit( int limit )
+  {
+    this.limit = limit;
+
+    return this;
+  }
+
+  @JsonGetter( "LocationId" )
+  public int locationId()
+  {
+    return locationId;
+  }
+
+  @JsonSetter( "LocationId" )
+  public Agreement locationId( int locationId )
+  {
+    this.locationId = locationId;
+
+    return this;
+  }
+
+  @JsonGetter( "OpportunityId" )
+  public int opportunityId()
+  {
+    return opportunityId;
+  }
+
+  @JsonSetter( "OpportunityId" )
+  public Agreement opportunityId( int opportunityId )
+  {
+    this.opportunityId = opportunityId;
+
+    return this;
+  }
+
+  @JsonGetter( value = "ParentAgreementId" )
+  public int parentAgreementId()
+  {
+    return parentAgreementId;
+  }
+
+  @JsonGetter( value = "ParentAgreementId" )
+  public Agreement parentAgreementId( int parentAgreementId )
+  {
+    this.parentAgreementId = parentAgreementId;
+
+    return this;
+  }
+
+  @JsonGetter( "PeriodType" )
+  public String periodType()
+  {
+    return periodType;
+  }
+
+  @JsonSetter( "PeriodType" )
+  public Agreement periodType( String periodType )
+  {
+    this.periodType = periodType;
+
+    return this;
+  }
+
+  @JsonGetter( "ProjectTypeId" )
+  public int projectTypeId()
+  {
+    return projectTypeId;
+  }
+
+  @JsonSetter( "ProjectTypeId" )
+  public Agreement projectTypeId( int projectTypeId )
+  {
+    this.projectTypeId = projectTypeId;
+
+    return this;
+  }
+
+  @JsonGetter( "ProrateFirstBill" )
+  public double prorateFirstBill()
+  {
+    return prorateFirstBill;
+  }
+
+  @JsonSetter( "ProrateFirstBill" )
+  public Agreement prorateFirstBill( double prorateFirstBill )
+  {
+    this.prorateFirstBill = prorateFirstBill;
+
+    return this;
+  }
+
+  @JsonGetter( "ReasonCancelled" )
+  public String reasonCancelled()
+  {
+    return reasonCancelled;
+  }
+
+  @JsonSetter( "ReasonCancelled" )
+  public Agreement reasonCancelled( String reasonCancelled )
+  {
+    this.reasonCancelled = reasonCancelled;
+
+    return this;
+  }
+
+  @JsonGetter( "SlaId" )
+  public int slaId()
+  {
+    return slaId;
+  }
+
+  @JsonSetter( "SlaId" )
+  public Agreement slaId( int slaId )
+  {
+    this.slaId = slaId;
+
+    return this;
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "StartDate" )
+  public Date startDate()
+  {
+    return new Date(startDate.getTime());
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "StartDate" )
+  public Agreement startDate( final Date startDate )
+  {
+    this.startDate = new Date(startDate.getTime());
+
+    return this;
+  }
+
+  @JsonGetter( "SubContractCompanyId" )
+  public int subContractCompanyId()
+  {
+    return subContractCompanyId;
+  }
+
+  @JsonSetter( "SubContractCompanyId" )
+  public Agreement subContractCompanyId( int subContractCompanyId )
+  {
+    this.subContractCompanyId = subContractCompanyId;
+
+    return this;
+  }
+
+  @JsonGetter( "SubContractContactId" )
+  public int subContractContactId()
+  {
+    return subContractContactId;
+  }
+
+  @JsonSetter( "SubContractContactId" )
+  public Agreement subContractContactId( int subContractContactId )
+  {
+    this.subContractContactId = subContractContactId;
+
+    return this;
+  }
+
+  @JsonGetter( "TaxCodeId" )
+  public int taxCodeId()
+  {
+    return taxCodeId;
+  }
+
+  @JsonSetter( "TaxCodeId" )
+  public Agreement taxCodeId( int taxCodeId )
+  {
+    this.taxCodeId = taxCodeId;
+
+    return this;
+  }
+
+  @JsonGetter( "WorkOrder" )
+  public String workOrder()
+  {
+    return workOrder;
+  }
+
+  @JsonSetter( "WorkOrder" )
+  public Agreement workOrder( String workOrder )
+  {
+    this.workOrder = workOrder;
+
+    return this;
+  }
+
+  @JsonGetter( "WorkRoleId" )
+  public int workRoleId()
+  {
+    return workRoleId;
+  }
+
+  @JsonSetter( "WorkRoleId" )
+  public Agreement workRoleId( int workRoleId )
+  {
+    this.workRoleId = workRoleId;
+
+    return this;
+  }
+
+  @JsonGetter( "WorkTypeId" )
+  public int workTypeId()
+  {
+    return workTypeId;
+  }
+
+  @JsonSetter( "WorkTypeId" )
+  public Agreement workTypeId( int workTypeId )
+  {
+    this.workTypeId = workTypeId;
+
+    return this;
+  }
+
+  @JsonGetter( "AllowOverruns" )
+  public boolean allowOverruns()
+  {
+    return allowOverruns;
+  }
+
+  @JsonSetter( "AllowOverruns" )
+  public Agreement allowOverruns( boolean allowOverruns )
+  {
+    this.allowOverruns = allowOverruns;
+
+    return this;
+  }
+
+  @JsonGetter( "ApplicationUnlimitedFlag" )
+  public boolean applicationUnlimited()
+  {
+    return applicationUnlimited;
+  }
+
+  @JsonSetter( "ApplicationUnlimitedFlag" )
+  public Agreement applicationUnlimited( boolean applicationUnlimited )
+  {
+    this.applicationUnlimited = applicationUnlimited;
+
+    return this;
+  }
+
+  @JsonGetter( "BillOneTimeFlag" )
+  public boolean billOneTime()
+  {
+    return billOneTime;
+  }
+
+  @JsonSetter( "BillOneTimeFlag" )
+  public Agreement billOneTime( boolean billOneTime )
+  {
+    this.billOneTime = billOneTime;
+
+    return this;
+  }
+
+  @JsonGetter( "BillableExpenseInvoice" )
+  public boolean billableExpenseInvoice()
+  {
     return billableExpenseInvoice;
   }
 
-  public void setBillableExpenseInvoice( boolean billableExpenseInvoice )
+  @JsonSetter( "BillableExpenseInvoice" )
+  public Agreement billableExpenseInvoice( boolean billableExpenseInvoice )
   {
-    this.logger.trace(this.getClass(), billableExpenseInvoice);
     this.billableExpenseInvoice = billableExpenseInvoice;
+
+    return this;
   }
 
-  public boolean isBillableProductInvoice()
+  @JsonGetter( "BillableProductInvoice" )
+  public boolean billableProductInvoice()
   {
-    this.logger.trace(this.getClass());
     return billableProductInvoice;
   }
 
-  public void setBillableProductInvoice( boolean billableProductInvoice )
+  @JsonSetter( "BillableProductInvoice" )
+  public Agreement billableProductInvoice( boolean billableProductInvoice )
   {
-    this.logger.trace(this.getClass(), billableProductInvoice);
     this.billableProductInvoice = billableProductInvoice;
+
+    return this;
+  }
+
+  @JsonGetter( "BillableTimeInvoice" )
+  public boolean billableTimeInvoice()
+  {
+    return billableTimeInvoice;
+  }
+
+  @JsonSetter( "BillableTimeInvoice" )
+  public Agreement billableTimeInvoice( boolean billableTimeInvoice )
+  {
+    this.billableTimeInvoice = billableTimeInvoice;
+
+    return this;
+  }
+
+  @JsonGetter( "BottomComment" )
+  public boolean bottomComment()
+  {
+    return bottomComment;
+  }
+
+  @JsonSetter( "BottomComment" )
+  public Agreement bottomComment( boolean bottomComment )
+  {
+    this.bottomComment = bottomComment;
+
+    return this;
+  }
+
+  @JsonGetter( "CancelledFlag" )
+  public boolean cancelled()
+  {
+    return cancelled;
+  }
+
+  @JsonSetter( "CancelledFlag" )
+  public Agreement cancelled( boolean cancelled )
+  {
+    this.cancelled = cancelled;
+
+    return this;
+  }
+
+  @JsonGetter( "CarryOverUnused" )
+  public boolean carryOverUnused()
+  {
+    return carryOverUnused;
+  }
+
+  @JsonSetter( "CarryOverUnused" )
+  public Agreement carryOverUnused( boolean carryOverUnused )
+  {
+    this.carryOverUnused = carryOverUnused;
+
+    return this;
+  }
+
+  @JsonGetter( "ChargeToFirm" )
+  public boolean chargeToFirm()
+  {
+    return chargeToFirm;
+  }
+
+  @JsonSetter( "ChargeToFirm" )
+  public Agreement chargeToFirm( boolean chargeToFirm )
+  {
+    this.chargeToFirm = chargeToFirm;
+
+    return this;
+  }
+
+  @JsonGetter( "CoverAgreementExpense" )
+  public boolean coverAgreementExpense()
+  {
+    return coverAgreementExpense;
+  }
+
+  @JsonSetter( "CoverAgreementExpense" )
+  public Agreement coverAgreementExpense( boolean coverAgreementExpense )
+  {
+    this.coverAgreementExpense = coverAgreementExpense;
+
+    return this;
+  }
+
+  @JsonGetter( "CoverAgreementProduct" )
+  public boolean coverAgreementProduct()
+  {
+    return coverAgreementProduct;
+  }
+
+  @JsonSetter( "CoverAgreementProduct" )
+  public Agreement coverAgreementProduct( boolean coverAgreementProduct )
+  {
+    this.coverAgreementProduct = coverAgreementProduct;
+
+    return this;
+  }
+
+  @JsonGetter( "CoverAgreementTime" )
+  public boolean coverAgreementTime()
+  {
+    return coverAgreementTime;
+  }
+
+  @JsonSetter( "CoverAgreementTime" )
+  public Agreement coverAgreementTime( boolean coverAgreementTime )
+  {
+    this.coverAgreementTime = coverAgreementTime;
+
+    return this;
+  }
+
+  @JsonGetter( "CoverSalesTax" )
+  public boolean coverSalesTax()
+  {
+    return coverSalesTax;
+  }
+
+  @JsonSetter( "CoverSalesTax" )
+  public Agreement coverSalesTax( boolean coverSalesTax )
+  {
+    this.coverSalesTax = coverSalesTax;
+
+    return this;
+  }
+
+  @JsonGetter( "ExpireWhenZero" )
+  public boolean expireWhenZero()
+  {
+    return expireWhenZero;
+  }
+
+  @JsonSetter( "ExpireWhenZero" )
+  public Agreement expireWhenZero( boolean expireWhenZero )
+  {
+    this.expireWhenZero = expireWhenZero;
+
+    return this;
+  }
+
+  @JsonGetter( "NoEndingDateFlag" )
+  public boolean noEndingDate()
+  {
+    return noEndingDate;
+  }
+
+  @JsonSetter( "NoEndingDateFlag" )
+  public Agreement noEndingDate( boolean noEndingDate )
+  {
+    this.noEndingDate = noEndingDate;
+
+    return this;
+  }
+
+  @JsonGetter( "OneTimeFlag" )
+  public boolean oneTime()
+  {
+    return oneTime;
+  }
+
+  @JsonSetter( "OneTimeFlag" )
+  public Agreement oneTime( boolean oneTime )
+  {
+    this.oneTime = oneTime;
+
+    return this;
+  }
+
+  @JsonGetter( "RestrictDepartmentFlag" )
+  public boolean restrictDepartment()
+  {
+    return restrictDepartment;
+  }
+
+  @JsonSetter( "RestrictDepartmentFlag" )
+  public Agreement restrictDepartment( final boolean restrictDepartment )
+  {
+    this.restrictDepartment = restrictDepartment;
+
+    return this;
+  }
+
+  @JsonGetter( "RestrictDownPayment" )
+  public boolean restrictDownPayment()
+  {
+    return restrictDownPayment;
+  }
+
+  @JsonSetter( "RestrictDownPayment" )
+  public Agreement restrictDownPayment( boolean restrictDownPayment )
+  {
+    this.restrictDownPayment = restrictDownPayment;
+
+    return this;
+  }
+
+  @JsonGetter( "RestrictLocationFlag" )
+  public boolean restrictLocation()
+  {
+    return restrictLocation;
+  }
+
+  @JsonSetter( "RestrictLocationFlag" )
+  public Agreement restrictLocation( boolean restrictLocation )
+  {
+    this.restrictLocation = restrictLocation;
+
+    return this;
+  }
+
+  @JsonGetter( "Taxable" )
+  public boolean taxable()
+  {
+    return taxable;
+  }
+
+  @JsonSetter( "Taxable" )
+  public Agreement taxable( boolean taxable )
+  {
+    this.taxable = taxable;
+
+    return this;
+  }
+
+  @JsonGetter( "TopComment" )
+  public boolean topComment()
+  {
+    return topComment;
+  }
+
+  @JsonSetter( "TopComment" )
+  public Agreement topComment( boolean topComment )
+  {
+    this.topComment = topComment;
+
+    return this;
   }
 }

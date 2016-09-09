@@ -14,252 +14,325 @@
  * limitations under the License.
  *
  */
-
 package io.vulpine.connectwise.type.agreement.addition;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 import io.vulpine.connectwise.type.agreement.BillCustomer;
 
 import java.util.Date;
 
+@JsonRootName( "AgreementAddition" )
 public class Addition extends AbstractSubAgreement
 {
+  private AdditionProduct additionProduct;
 
-  @JacksonXmlProperty( localName = "AdditionsProduct" )
-  protected AdditionProduct additionProduct;
+  private BillCustomer billCustomer;
 
-  @JacksonXmlProperty( localName = "Quantity" )
-  protected double quantity;
+  private boolean purchaseItem;
 
-  @JacksonXmlProperty( localName = "LessIncluded" )
-  protected double lessIncluded;
+  private boolean specialOrder;
 
-  @JacksonXmlProperty( localName = "UnitPrice" )
-  protected double unitPrice;
+  private boolean taxable;
 
-  @JacksonXmlProperty( localName = "UnitCost" )
-  protected double unitCost;
+  private Date cancelledDate;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty( localName = "EffectiveDate" )
-  protected Date effectiveDate;
+  private Date effectiveDate;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty( localName = "CancelledDate" )
-  protected Date cancelledDate;
+  private double billedQuantity;
 
-  @JacksonXmlProperty( localName = "BillCustomer" )
-  protected BillCustomer billCustomer;
+  private double extPrice;
 
-  @JacksonXmlProperty( localName = "TaxableFlag" )
-  protected boolean taxable;
+  private double extCost;
 
-  @JacksonXmlProperty( localName = "SerialNumber" )
-  protected String serialNumber;
+  private double lessIncluded;
 
-  @JacksonXmlProperty( localName = "InvoiceDescription" )
-  protected String invoiceDescription;
+  private double margin;
 
-  @JacksonXmlProperty( localName = "PurchaseItemFlag" )
-  protected boolean purchaseItem;
+  private double quantity;
 
-  @JacksonXmlProperty( localName = "SpecialOrderFlag" )
-  protected boolean specialOrder;
+  private double unitCost;
 
-  @JacksonXmlProperty( localName = "BilledQuantity" )
-  protected double billedQuantity;
+  private double unitPrice;
 
-  @JacksonXmlProperty( localName = "UOM" )
-  protected String uom;
+  private int productId;
 
-  @JacksonXmlProperty( localName = "ExtPrice" )
-  protected double extPrice;
+  private String invoiceDescription;
 
-  @JacksonXmlProperty( localName = "ExtCost" )
-  protected double extCost;
+  private String serialNumber;
 
-  @JacksonXmlProperty( localName = "Margin" )
-  protected double margin;
+  private String uom;
 
-  public AdditionProduct getAdditionProduct()
+  @JsonGetter( "AdditionsProduct" )
+  public AdditionProduct additionProduct()
   {
     return additionProduct;
   }
 
-  public void setAdditionProduct( final AdditionProduct additionProduct )
+  @JsonSetter( "AdditionsProduct" )
+  public Addition additionProduct( final AdditionProduct additionProduct )
   {
     this.additionProduct = additionProduct;
+
+    return this;
   }
 
-  public double getQuantity()
-  {
-    return quantity;
-  }
-
-  public void setQuantity( final double quantity )
-  {
-    this.quantity = quantity;
-  }
-
-  public double getLessIncluded()
-  {
-    return lessIncluded;
-  }
-
-  public void setLessIncluded( final double lessIncluded )
-  {
-    this.lessIncluded = lessIncluded;
-  }
-
-  public double getUnitPrice()
-  {
-    return unitPrice;
-  }
-
-  public void setUnitPrice( final double unitPrice )
-  {
-    this.unitPrice = unitPrice;
-  }
-
-  public double getUnitCost()
-  {
-    return unitCost;
-  }
-
-  public void setUnitCost( final double unitCost )
-  {
-    this.unitCost = unitCost;
-  }
-
-  public Date getEffectiveDate()
-  {
-    return effectiveDate;
-  }
-
-  public void setEffectiveDate( final Date effectiveDate )
-  {
-    this.effectiveDate = effectiveDate;
-  }
-
-  public Date getCancelledDate()
-  {
-    return cancelledDate;
-  }
-
-  public void setCancelledDate( final Date cancelledDate )
-  {
-    this.cancelledDate = cancelledDate;
-  }
-
-  public BillCustomer getBillCustomer()
+  @JsonGetter( "BillCustomer" )
+  public BillCustomer billCustomer()
   {
     return billCustomer;
   }
 
-  public void setBillCustomer( final BillCustomer billCustomer )
+  @JsonSetter( "BillCustomer" )
+  public Addition billCustomer( final BillCustomer billCustomer )
   {
     this.billCustomer = billCustomer;
+
+    return this;
   }
 
-  public boolean isTaxable()
-  {
-    return taxable;
-  }
-
-  public void setTaxable( final boolean taxable )
-  {
-    this.taxable = taxable;
-  }
-
-  public String getSerialNumber()
-  {
-    return serialNumber;
-  }
-
-  public void setSerialNumber( final String serialNumber )
-  {
-    this.serialNumber = serialNumber;
-  }
-
-  public String getInvoiceDescription()
-  {
-    return invoiceDescription;
-  }
-
-  public void setInvoiceDescription( final String invoiceDescription )
-  {
-    this.invoiceDescription = invoiceDescription;
-  }
-
-  public boolean isPurchaseItem()
-  {
-    return purchaseItem;
-  }
-
-  public void setPurchaseItem( final boolean purchaseItem )
-  {
-    this.purchaseItem = purchaseItem;
-  }
-
-  public boolean isSpecialOrder()
-  {
-    return specialOrder;
-  }
-
-  public void setSpecialOrder( final boolean specialOrder )
-  {
-    this.specialOrder = specialOrder;
-  }
-
-  public double getBilledQuantity()
+  @JsonGetter( "BilledQuantity" )
+  public double billedQuantity()
   {
     return billedQuantity;
   }
 
-  public void setBilledQuantity( final double billedQuantity )
+  @JsonSetter( "BilledQuantity" )
+  public Addition billedQuantity( final double billedQuantity )
   {
     this.billedQuantity = billedQuantity;
+
+    return this;
   }
 
-  public String getUom()
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "CancelledDate" )
+  public Date cancelledDate()
   {
-    return uom;
+    return cancelledDate;
   }
 
-  public void setUom( final String uom )
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "CancelledDate" )
+  public Addition cancelledDate( final Date cancelledDate )
   {
-    this.uom = uom;
+    this.cancelledDate = cancelledDate;
+
+    return this;
   }
 
-  public double getExtPrice()
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "EffectiveDate" )
+  public Date effectiveDate()
   {
-    return extPrice;
+    return effectiveDate;
   }
 
-  public void setExtPrice( final double extPrice )
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "EffectiveDate" )
+  public Addition effectiveDate( final Date effectiveDate )
   {
-    this.extPrice = extPrice;
+    this.effectiveDate = effectiveDate;
+
+    return this;
   }
 
-  public double getExtCost()
+  @JsonGetter( "ExtCost" )
+  public double extCost()
   {
     return extCost;
   }
 
-  public void setExtCost( final double extCost )
+  @JsonSetter( "ExtCost" )
+  public Addition extCost( final double extCost )
   {
     this.extCost = extCost;
+
+    return this;
   }
 
-  public double getMargin()
+  @JsonGetter( "ExtPrice" )
+  public double extPrice()
+  {
+    return extPrice;
+  }
+
+  @JsonSetter( "ExtPrice" )
+  public Addition extPrice( final double extPrice )
+  {
+    this.extPrice = extPrice;
+
+    return this;
+  }
+
+  @JsonGetter( "InvoiceDescription" )
+  public String invoiceDescription()
+  {
+    return invoiceDescription;
+  }
+
+  @JsonSetter( "InvoiceDescription" )
+  public Addition invoiceDescription( final String invoiceDescription )
+  {
+    this.invoiceDescription = invoiceDescription;
+
+    return this;
+  }
+
+  @JsonGetter( "LessIncluded" )
+  public double lessIncluded()
+  {
+    return lessIncluded;
+  }
+
+  @JsonSetter( "LessIncluded" )
+  public Addition lessIncluded( final double lessIncluded )
+  {
+    this.lessIncluded = lessIncluded;
+
+    return this;
+  }
+
+  @JsonGetter( "Margin" )
+  public double margin()
   {
     return margin;
   }
 
-  public void setMargin( final double margin )
+  @JsonSetter( "Margin" )
+  public Addition margin( final double margin )
   {
     this.margin = margin;
+
+    return this;
+  }
+
+  @JsonGetter( "ProductId" )
+  public int productId()
+  {
+    return productId;
+  }
+
+  @JsonSetter( "ProductId" )
+  public Addition productId( int productId )
+  {
+    this.productId = productId;
+
+    return this;
+  }
+
+  @JsonGetter( "Quantity" )
+  public double quantity()
+  {
+    return quantity;
+  }
+
+  @JsonSetter( "Quantity" )
+  public Addition quantity( final double quantity )
+  {
+    this.quantity = quantity;
+
+    return this;
+  }
+
+  @JsonGetter( "SerialNumber" )
+  public String serialNumber()
+  {
+    return serialNumber;
+  }
+
+  @JsonSetter( "SerialNumber" )
+  public Addition serialNumber( final String serialNumber )
+  {
+    this.serialNumber = serialNumber;
+
+    return this;
+  }
+
+  @JsonGetter( "UnitCost" )
+  public double unitCost()
+  {
+    return unitCost;
+  }
+
+  @JsonSetter( "UnitCost" )
+  public Addition unitCost( final double unitCost )
+  {
+    this.unitCost = unitCost;
+
+    return this;
+  }
+
+  @JsonGetter( "UnitPrice" )
+  public double unitPrice()
+  {
+    return unitPrice;
+  }
+
+  @JsonSetter( "UnitPrice" )
+  public Addition unitPrice( final double unitPrice )
+  {
+    this.unitPrice = unitPrice;
+
+    return this;
+  }
+
+  @JsonGetter( "UOM" )
+  public String uom()
+  {
+    return uom;
+  }
+
+  @JsonSetter( "UOM" )
+  public Addition uom( final String uom )
+  {
+    this.uom = uom;
+
+    return this;
+  }
+
+  @JsonGetter( "PurchaseItemFlag" )
+  public boolean purchaseItem()
+  {
+    return purchaseItem;
+  }
+
+  @JsonSetter( "PurchaseItemFlag" )
+  public Addition purchaseItem( final boolean purchaseItem )
+  {
+    this.purchaseItem = purchaseItem;
+
+    return this;
+  }
+
+  @JsonGetter( "SpecialOrderFlag" )
+  public boolean specialOrder()
+  {
+    return specialOrder;
+  }
+
+  @JsonSetter( "SpecialOrderFlag" )
+  public Addition specialOrder( final boolean specialOrder )
+  {
+    this.specialOrder = specialOrder;
+
+    return this;
+  }
+
+  @JsonGetter( "TaxableFlag" )
+  public boolean taxable()
+  {
+    return taxable;
+  }
+
+  @JsonSetter( "TaxableFlag" )
+  public Addition taxable( final boolean taxable )
+  {
+    this.taxable = taxable;
+
+    return this;
   }
 }

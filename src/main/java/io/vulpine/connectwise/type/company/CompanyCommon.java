@@ -16,158 +16,149 @@
  */
 package io.vulpine.connectwise.type.company;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 public class CompanyCommon extends ConnectwiseCommon
 {
-  @JacksonXmlProperty( localName = "CompanyName" )
-  protected String companyName;
+  private String companyName;
 
-  @JacksonXmlProperty( localName = "CompanyIdentifier" )
-  protected String companyIdentifier;
+  private String companyIdentifier;
 
-  @JacksonXmlProperty( localName = "PhoneNumber" )
-  protected String phoneNumber;
+  private String phoneNumber;
 
-  @JacksonXmlProperty( localName = "FaxNumber" )
-  protected String faxNumber;
+  private String faxNumber;
 
-  @JacksonXmlProperty( localName = "Territory" )
-  protected String territory;
+  private String territory;
 
-  @JacksonXmlProperty( localName = "Market" )
-  protected String market;
+  private String market;
 
-  @JacksonXmlProperty( localName = "Type" )
-  protected String type;
+  private String type;
 
-  @JacksonXmlProperty( localName = "Status" )
-  protected String status;
+  private String status;
 
-  @JacksonXmlProperty( localName = "DefaultContactId" )
-  protected int defaultContactId;
+  private int defaultContactId;
 
-  @JacksonXmlProperty( localName = "DefaultBillingContactId" )
-  protected int defaultBillingContactId;
+  private int defaultBillingContactId;
 
+  @JsonGetter( "CompanyName" )
   public String getCompanyName()
   {
-    this.logger.trace(this.getClass());
     return companyName;
   }
 
+  @JsonSetter( "CompanyName" )
   public void setCompanyName( String companyName )
   {
-    this.logger.trace(this.getClass(), companyName);
     this.companyName = companyName;
   }
 
+  @JsonGetter( "CompanyIdentifier" )
   public String getCompanyIdentifier()
   {
-    this.logger.trace(this.getClass());
     return companyIdentifier;
   }
 
+  @JsonSetter( "CompanyIdentifier" )
   public void setCompanyIdentifier( String companyIdentifier )
   {
-    this.logger.trace(this.getClass(), companyIdentifier);
     this.companyIdentifier = companyIdentifier;
   }
 
+  @JsonGetter( "PhoneNumber" )
   public String getPhoneNumber()
   {
-    this.logger.trace(this.getClass());
     return phoneNumber;
   }
 
+  @JsonSetter( "PhoneNumber" )
   public void setPhoneNumber( String phoneNumber )
   {
-    this.logger.trace(this.getClass(), phoneNumber);
     this.phoneNumber = phoneNumber;
   }
 
+  @JsonGetter( "FaxNumber" )
   public String getFaxNumber()
   {
-    this.logger.trace(this.getClass());
     return faxNumber;
   }
 
+  @JsonSetter( "FaxNumber" )
   public void setFaxNumber( String faxNumber )
   {
-    this.logger.trace(this.getClass(), faxNumber);
     this.faxNumber = faxNumber;
   }
 
+  @JsonGetter( "Territory" )
   public String getTerritory()
   {
-    this.logger.trace(this.getClass());
     return territory;
   }
 
+  @JsonSetter( "Territory" )
   public void setTerritory( String territory )
   {
-    this.logger.trace(this.getClass(), territory);
     this.territory = territory;
   }
 
+  @JsonGetter( "Market" )
   public String getMarket()
   {
-    this.logger.trace(this.getClass());
     return market;
   }
 
+  @JsonSetter( "Market" )
   public void setMarket( String market )
   {
-    this.logger.trace(this.getClass(), market);
     this.market = market;
   }
 
+  @JsonGetter( "Type" )
   public String getType()
   {
-    this.logger.trace(this.getClass());
     return type;
   }
 
+  @JsonSetter( "Type" )
   public void setType( String type )
   {
-    this.logger.trace(this.getClass(), type);
     this.type = type;
   }
 
+  @JsonGetter( "Status" )
   public String getStatus()
   {
-    this.logger.trace(this.getClass());
     return status;
   }
 
+  @JsonSetter( "Status" )
   public void setStatus( String status )
   {
-    this.logger.trace(this.getClass(), status);
     this.status = status;
   }
 
+  @JsonGetter( "DefaultContactId" )
   public int getDefaultContactId()
   {
-    this.logger.trace(this.getClass());
     return defaultContactId;
   }
 
+  @JsonSetter( "DefaultContactId" )
   public void setDefaultContactId( int defaultContactId )
   {
-    this.logger.trace(this.getClass(), defaultContactId);
     this.defaultContactId = defaultContactId;
   }
 
+  @JsonGetter( "DefaultBillingContactId" )
   public int getDefaultBillingContactId()
   {
-    this.logger.trace(this.getClass());
     return defaultBillingContactId;
   }
 
+  @JsonSetter( "DefaultBillingContactId" )
   public void setDefaultBillingContactId( int defaultBillingContactId )
   {
-    this.logger.trace(this.getClass(), defaultBillingContactId);
     this.defaultBillingContactId = defaultBillingContactId;
   }
 }

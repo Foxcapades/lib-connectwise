@@ -16,16 +16,23 @@
  */
 package io.vulpine.connectwise.api;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.EmptyFilter;
 import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.request.ConnectwiseRequest;
+import io.vulpine.connectwise.api.common.request.SoapEnvelope;
 import io.vulpine.connectwise.api.def.ConnectwiseInterface;
-import io.vulpine.connectwise.util.http.HttpRequest;
-import io.vulpine.connectwise.util.logging.LoggerInterface;
-import io.vulpine.connectwise.util.logging.LoggerManager;
+import io.vulpine.http.HttpRequest;
+import io.vulpine.http.HttpResponse;
+import io.vulpine.http.HttpResponseType;
+import io.vulpine.logging.Logger;
+import io.vulpine.logging.LoggerManager;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 
 /**
@@ -33,57 +40,47 @@ import java.util.regex.Pattern;
  */
 public final class ConnectwiseApi implements ConnectwiseInterface
 {
+  public static int BAD_RESPONSE_RETRIES = 5;
+
+  public final Add add;
+
+  public final AddOrUpdate addOrUpdate;
+
+  public final Authenticate authenticate;
+
+  public final Check check;
+
+  public final Create create;
+
+  public final Delete delete;
+
+  public final Find find;
+
+  public final Get get;
+
+  public final Is is;
+
+  public final Load load;
+
+  public final Record record;
+
+  public final Remove remove;
+
+  public final Set set;
+
+  public final Update update;
+
   // Jackson-DataFormat-XML v2.7.5 has issues parsing xsi:nil on primitives.
   // This is to filter those elements out of the responses.
-  private final static Pattern nilFilter = Pattern.compile("<[\\w -]+xsi:nil=\"true\"[\\w -]+/>");
-
-  public final AccountingApi accountingApi;
-
-  public final ActivityApi activityApi;
-
-  public final AgreementApi agreementApi;
-
-  public final CompanyApi companyApi;
-
-  public final ConfigurationApi configurationApi;
-
-  public final ContactApi contactApi;
-
-  public final DocumentApi documentApi;
-
-  public final InvoiceApi invoiceApi;
-
-  public final ManagedDeviceApi managedDeviceApi;
-
-  public final MarketingApi marketingApi;
-
-  public final MemberApi memberApi;
-
-  public final OpportunityApi opportunityApi;
-
-  public final OpportunityConversionApi opportunityConversionApi;
-
-  public final ProductApi productApi;
-
-  public final ProjectApi projectApi;
-
-  public final PurchasingApi purchasingApi;
-
-  public final ReportingApi reportingApi;
-
-  public final SchedulingApi schedulingApi;
-
-  public final ServiceApi serviceApi;
-
-  public final SystemApi systemApi;
-
-  public final TimeApi timeApi;
+  private final static Pattern NIL_FILTER = Pattern.compile("<[\\w \\-]+xsi:nil=\"true\"[\\w \\-]+/>");
 
   private final Credentials credentials;
 
   private final XmlMapper xmlMapper;
 
-  private final LoggerInterface logger;
+  private final Logger logger;
+
+  private final String apiPath;
 
   public ConnectwiseApi( final String company, final String username, final String password, final String apiPath )
   {
@@ -92,52 +89,72 @@ public final class ConnectwiseApi implements ConnectwiseInterface
       .setCompanyId(company)
       .setIntegratorLoginId(username)
       .setIntegratorPassword(password);
+    this.apiPath = apiPath + (apiPath.endsWith("/") ? "v4_6_release/apis/2.0/" : "/v4_6_release/apis/2.0/");
 
     this.xmlMapper.setFilterProvider(new SimpleFilterProvider().addFilter("filter-empty", new EmptyFilter()));
 
     this.logger = LoggerManager.getLogger("lib-connectwise");
 
-    this.accountingApi = new AccountingApi(this, credentials, xmlMapper, apiPath);
-    this.activityApi = new ActivityApi(this, credentials, xmlMapper, apiPath);
-    this.agreementApi = new AgreementApi(this, credentials, xmlMapper, apiPath);
-    this.companyApi = new CompanyApi(this, credentials, xmlMapper, apiPath);
-    this.configurationApi = new ConfigurationApi(this, credentials, xmlMapper, apiPath);
-    this.contactApi = new ContactApi(this, credentials, xmlMapper, apiPath);
-    this.documentApi = new DocumentApi(this, credentials, xmlMapper, apiPath);
-    this.invoiceApi = new InvoiceApi(this, credentials, xmlMapper, apiPath);
-    this.managedDeviceApi = new ManagedDeviceApi(this, credentials, xmlMapper, apiPath);
-    this.marketingApi = new MarketingApi(this, credentials, xmlMapper, apiPath);
-    this.memberApi = new MemberApi(this, credentials, xmlMapper, apiPath);
-    this.opportunityApi = new OpportunityApi(this, credentials, xmlMapper, apiPath);
-    this.opportunityConversionApi = new OpportunityConversionApi(this, credentials, xmlMapper, apiPath);
-    this.productApi = new ProductApi(this, credentials, xmlMapper, apiPath);
-    this.projectApi = new ProjectApi(this, credentials, xmlMapper, apiPath);
-    this.purchasingApi = new PurchasingApi(this, credentials, xmlMapper, apiPath);
-    this.reportingApi = new ReportingApi(this, credentials, xmlMapper, apiPath);
-    this.schedulingApi = new SchedulingApi(this, credentials, xmlMapper, apiPath);
-    this.serviceApi = new ServiceApi(this, credentials, xmlMapper, apiPath);
-    this.systemApi = new SystemApi(this, credentials, xmlMapper, apiPath);
-    this.timeApi = new TimeApi(this, credentials, xmlMapper, apiPath);
+
+    this.add = new AddImpl(this, credentials, xmlMapper);
+    this.addOrUpdate = new AddOrUpdateImpl(this, credentials, xmlMapper);
+    this.authenticate = new AuthenticateImpl(this, credentials, xmlMapper);
+    this.check = new CheckImpl(this, credentials, xmlMapper);
+    this.create = new CreateImpl(this, credentials, xmlMapper);
+    this.delete = new DeleteImpl(this, credentials, xmlMapper);
+    this.find = new FindImpl(this, credentials, xmlMapper);
+    this.get = new GetImpl(this, credentials, xmlMapper);
+    this.is = new IsImpl(this, credentials, xmlMapper);
+    this.load = new LoadImpl(this, credentials, xmlMapper);
+    this.record = new RecordImpl(this, credentials, xmlMapper);
+    this.remove = new RemoveImpl(this, credentials, xmlMapper);
+    this.set = new SetImpl(this, credentials, xmlMapper);
+    this.update = new UpdateImpl(this, credentials, xmlMapper);
   }
+
 
   @Override
   public final String send( final String url, final String xml ) throws IOException
   {
-    final LoggerInterface log = this.logger;
-    final String response;
+    final Logger       log = this.logger;
+    final String       response;
 
     log.trace(ConnectwiseApi.class, url, xml);
-    log.debug("Connectwise Request: {}", xml);
+    log.debug(String.format("Connectwise Request: %s", xml));
 
-    response = HttpRequest.post(url)
-      .setHeader("Content-Type", "text/xml", "charset=utf-8")
-      .setHeader("Content-Length", String.valueOf(xml.getBytes("UTF-8").length))
-      .appendToBody(xml)
-      .send()
-      .getBody();
+    for ( int tries = 0; tries < BAD_RESPONSE_RETRIES; tries++ ) {
+      final HttpResponse res = HttpRequest.post(apiPath + url)
+        .setHeader("Content-Type", "text/xml", "charset=utf-8")
+        .setHeader("Content-Length", String.valueOf(xml.getBytes("UTF-8").length))
+        .appendToBody(xml)
+        .addErrorHandler(( request, exception ) -> {
+          final BufferedReader read = new BufferedReader(new InputStreamReader(request.getConnection().getErrorStream()));
+          String               line;
+          try {
+            while ( null != (line = read.readLine()) ) {
+              logger.warn(line);
+            }
+          } catch ( IOException e ) {
+            e.printStackTrace();
+          }
+        })
+        .send();
 
-    log.debug("Connectwise Response: {}", response);
+      if (res == null || res.getType() != HttpResponseType.OK) {
+        continue;
+      }
 
-    return nilFilter.matcher(response).replaceAll("");
+      response = res.getBody();
+      log.debug(String.format("Connectwise Response: %s", response));
+
+      return NIL_FILTER.matcher(response).replaceAll("");
+    }
+
+    throw new IOException("All retries failed, could not get valid response from Connectwise");
+  }
+
+  public String generateSoapXml( final ConnectwiseRequest request ) throws JsonProcessingException
+  {
+    return xmlMapper.writeValueAsString(new SoapEnvelope(request));
   }
 }

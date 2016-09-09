@@ -17,257 +17,315 @@
 
 package io.vulpine.connectwise.type.agreement.addition;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 import io.vulpine.connectwise.type.PriceAttribute;
 import io.vulpine.connectwise.type.agreement.ProductClass;
 
 public class AdditionProduct extends ConnectwiseCommon
 {
-  @JacksonXmlProperty( localName = "ItemIdentifier" )
-  protected String itemIdentifier;
+  private boolean applyCostBySerialNumber;
 
-  @JacksonXmlProperty( localName = "ProductTypeId" )
-  protected int productTypeId;
+  private boolean inactive;
 
-  @JacksonXmlProperty( localName = "CategoryId" )
-  protected int categoryId;
+  private boolean serialized;
 
-  @JacksonXmlProperty( localName = "SubcategoryId" )
-  protected int subcategoryId;
+  private boolean taxable;
 
-  @JacksonXmlProperty( localName = "UomId" )
-  protected int uomId;
+  private double cost;
 
-  @JacksonXmlProperty( localName = "Cost" )
-  protected double cost;
+  private double price;
 
-  @JacksonXmlProperty( localName = "Price" )
-  protected double price;
+  private int categoryId;
 
-  @JacksonXmlProperty( localName = "Taxable" )
-  protected boolean taxable;
+  private int manufacturerId;
 
-  @JacksonXmlProperty( localName = "LongDescription" )
-  protected String longDescription;
+  private int minimumStock;
 
-  @JacksonXmlProperty( localName = "Inactive" )
-  protected boolean inactive;
+  private int productTypeId;
 
-  @JacksonXmlProperty( localName = "Serialized" )
-  protected boolean serialized;
+  private int subcategoryId;
 
-  @JacksonXmlProperty( localName = "ApplyCostBySerialNumber" )
-  protected boolean applyCostBySerialNumber;
+  private int uomId;
 
-  @JacksonXmlProperty( localName = "ManufacturerId" )
-  protected int manufacturerId;
+  private int vendorId;
 
-  @JacksonXmlProperty( localName = "ManufacturerPartNumber" )
-  protected String manufacturerPartNumber;
+  private PriceAttribute priceAttribute;
 
-  @JacksonXmlProperty( localName = "VendorId" )
-  protected int vendorId;
+  private ProductClass productClass;
 
-  @JacksonXmlProperty( localName = "VendorSku" )
-  protected String vendorSku;
+  private String itemIdentifier;
 
-  @JacksonXmlProperty( localName = "ProductClass" )
-  protected ProductClass productClass;
+  private String longDescription;
 
-  @JacksonXmlProperty( localName = "PriceAttribute" )
-  protected PriceAttribute priceAttribute;
+  private String manufacturerPartNumber;
 
-  @JacksonXmlProperty( localName = "MinimumStock" )
-  protected int minimumStock;
+  private String vendorSku;
 
-  public String getItemIdentifier()
-  {
-    return itemIdentifier;
-  }
-
-  public void setItemIdentifier( final String itemIdentifier )
-  {
-    this.itemIdentifier = itemIdentifier;
-  }
-
-  public int getProductTypeId()
-  {
-    return productTypeId;
-  }
-
-  public void setProductTypeId( final int productTypeId )
-  {
-    this.productTypeId = productTypeId;
-  }
-
-  public int getCategoryId()
+  @JsonGetter( "CategoryId" )
+  public int categoryId()
   {
     return categoryId;
   }
 
-  public void setCategoryId( final int categoryId )
+  @JsonSetter( "CategoryId" )
+  public AdditionProduct categoryId( final int categoryId )
   {
     this.categoryId = categoryId;
+
+    return this;
   }
 
-  public int getSubcategoryId()
-  {
-    return subcategoryId;
-  }
-
-  public void setSubcategoryId( final int subcategoryId )
-  {
-    this.subcategoryId = subcategoryId;
-  }
-
-  public int getUomId()
-  {
-    return uomId;
-  }
-
-  public void setUomId( final int uomId )
-  {
-    this.uomId = uomId;
-  }
-
-  public double getCost()
+  @JsonGetter( "Cost" )
+  public double cost()
   {
     return cost;
   }
 
-  public void setCost( final double cost )
+  @JsonSetter( "Cost" )
+  public AdditionProduct cost( final double cost )
   {
     this.cost = cost;
+
+    return this;
   }
 
-  public double getPrice()
+  @JsonGetter( "ItemIdentifier" )
+  public String itemIdentifier()
   {
-    return price;
+    return itemIdentifier;
   }
 
-  public void setPrice( final double price )
+  @JsonSetter( "ItemIdentifier" )
+  public AdditionProduct itemIdentifier( final String itemIdentifier )
   {
-    this.price = price;
+    this.itemIdentifier = itemIdentifier;
+
+    return this;
   }
 
-  public boolean isTaxable()
-  {
-    return taxable;
-  }
-
-  public void setTaxable( final boolean taxable )
-  {
-    this.taxable = taxable;
-  }
-
-  public String getLongDescription()
+  @JsonGetter( "LongDescription" )
+  public String longDescription()
   {
     return longDescription;
   }
 
-  public void setLongDescription( final String longDescription )
+  @JsonSetter( "LongDescription" )
+  public AdditionProduct longDescription( final String longDescription )
   {
     this.longDescription = longDescription;
+
+    return this;
   }
 
-  public boolean isInactive()
-  {
-    return inactive;
-  }
-
-  public void setInactive( final boolean inactive )
-  {
-    this.inactive = inactive;
-  }
-
-  public boolean isSerialized()
-  {
-    return serialized;
-  }
-
-  public void setSerialized( final boolean serialized )
-  {
-    this.serialized = serialized;
-  }
-
-  public boolean isApplyCostBySerialNumber()
-  {
-    return applyCostBySerialNumber;
-  }
-
-  public void setApplyCostBySerialNumber( final boolean applyCostBySerialNumber )
-  {
-    this.applyCostBySerialNumber = applyCostBySerialNumber;
-  }
-
-  public int getManufacturerId()
+  @JsonGetter( "ManufacturerId" )
+  public int manufacturerId()
   {
     return manufacturerId;
   }
 
-  public void setManufacturerId( final int manufacturerId )
+  @JsonSetter( "ManufacturerId" )
+  public AdditionProduct manufacturerId( final int manufacturerId )
   {
     this.manufacturerId = manufacturerId;
+
+    return this;
   }
 
-  public String getManufacturerPartNumber()
+  @JsonGetter( "ManufacturerPartNumber" )
+  public String manufacturerPartNumber()
   {
     return manufacturerPartNumber;
   }
 
-  public void setManufacturerPartNumber( final String manufacturerPartNumber )
+  @JsonSetter( "ManufacturerPartNumber" )
+  public AdditionProduct manufacturerPartNumber( final String manufacturerPartNumber )
   {
     this.manufacturerPartNumber = manufacturerPartNumber;
+
+    return this;
   }
 
-  public int getVendorId()
-  {
-    return vendorId;
-  }
-
-  public void setVendorId( final int vendorId )
-  {
-    this.vendorId = vendorId;
-  }
-
-  public String getVendorSku()
-  {
-    return vendorSku;
-  }
-
-  public void setVendorSku( final String vendorSku )
-  {
-    this.vendorSku = vendorSku;
-  }
-
-  public ProductClass getProductClass()
-  {
-    return productClass;
-  }
-
-  public void setProductClass( final ProductClass productClass )
-  {
-    this.productClass = productClass;
-  }
-
-  public PriceAttribute getPriceAttribute()
-  {
-    return priceAttribute;
-  }
-
-  public void setPriceAttribute( final PriceAttribute priceAttribute )
-  {
-    this.priceAttribute = priceAttribute;
-  }
-
-  public int getMinimumStock()
+  @JsonGetter( "MinimumStock" )
+  public int minimumStock()
   {
     return minimumStock;
   }
 
-  public void setMinimumStock( final int minimumStock )
+  @JsonSetter( "MinimumStock" )
+  public AdditionProduct minimumStock( final int minimumStock )
   {
     this.minimumStock = minimumStock;
+
+    return this;
+  }
+
+  @JsonGetter( "Price" )
+  public double price()
+  {
+    return price;
+  }
+
+  @JsonSetter( "Price" )
+  public AdditionProduct price( final double price )
+  {
+    this.price = price;
+
+    return this;
+  }
+
+  @JsonGetter( "PriceAttribute" )
+  public PriceAttribute priceAttribute()
+  {
+    return priceAttribute;
+  }
+
+  @JsonSetter( "PriceAttribute" )
+  public AdditionProduct priceAttribute( final PriceAttribute priceAttribute )
+  {
+    this.priceAttribute = priceAttribute;
+
+    return this;
+  }
+
+  @JsonGetter( "ProductClass" )
+  public ProductClass productClass()
+  {
+    return productClass;
+  }
+
+  @JsonSetter( "ProductClass" )
+  public AdditionProduct productClass( final ProductClass productClass )
+  {
+    this.productClass = productClass;
+
+    return this;
+  }
+
+  @JsonGetter( "ProductTypeId" )
+  public int productTypeId()
+  {
+    return productTypeId;
+  }
+
+  @JsonSetter( "ProductTypeId" )
+  public AdditionProduct productTypeId( final int productTypeId )
+  {
+    this.productTypeId = productTypeId;
+
+    return this;
+  }
+
+  @JsonGetter( "SubcategoryId" )
+  public int subcategoryId()
+  {
+    return subcategoryId;
+  }
+
+  @JsonSetter( "SubcategoryId" )
+  public AdditionProduct subcategoryId( final int subcategoryId )
+  {
+    this.subcategoryId = subcategoryId;
+
+    return this;
+  }
+
+  @JsonGetter( "UomId" )
+  public int uomId()
+  {
+    return uomId;
+  }
+
+  @JsonSetter( "UomId" )
+  public AdditionProduct uomId( final int uomId )
+  {
+    this.uomId = uomId;
+
+    return this;
+  }
+
+  @JsonGetter( "VendorId" )
+  public int vendorId()
+  {
+    return vendorId;
+  }
+
+  @JsonSetter( "VendorId" )
+  public AdditionProduct vendorId( final int vendorId )
+  {
+    this.vendorId = vendorId;
+
+    return this;
+  }
+
+  @JsonGetter( "VendorSku" )
+  public String vendorSku()
+  {
+    return vendorSku;
+  }
+
+  @JsonSetter( "VendorSku" )
+  public AdditionProduct vendorSku( final String vendorSku )
+  {
+    this.vendorSku = vendorSku;
+
+    return this;
+  }
+
+  @JsonGetter( "ApplyCostBySerialNumber" )
+  public boolean applyCostBySerialNumber()
+  {
+    return applyCostBySerialNumber;
+  }
+
+  @JsonSetter( "ApplyCostBySerialNumber" )
+  public AdditionProduct applyCostBySerialNumber( final boolean applyCostBySerialNumber )
+  {
+    this.applyCostBySerialNumber = applyCostBySerialNumber;
+
+    return this;
+  }
+
+  @JsonGetter( "Inactive" )
+  public boolean inactive()
+  {
+    return inactive;
+  }
+
+  @JsonSetter( "Inactive" )
+  public AdditionProduct inactive( final boolean inactive )
+  {
+    this.inactive = inactive;
+
+    return this;
+  }
+
+  @JsonGetter( "Serialized" )
+  public boolean serialized()
+  {
+    return serialized;
+  }
+
+  @JsonSetter( "Serialized" )
+  public AdditionProduct serialized( final boolean serialized )
+  {
+    this.serialized = serialized;
+
+    return this;
+  }
+
+  @JsonGetter( "Taxable" )
+  public boolean taxable()
+  {
+    return taxable;
+  }
+
+  @JsonSetter( "Taxable" )
+  public AdditionProduct taxable( final boolean taxable )
+  {
+    this.taxable = taxable;
+
+    return this;
   }
 }

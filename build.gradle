@@ -69,9 +69,10 @@ configurations {
 dependencies {
 
   compile(
-    [ group: 'org.slf4j',                        name: 'slf4j-api',              version: '1.7.21' ],
-    [ group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.8.1'  ],
-    [ group: 'org.codehaus.woodstox',            name: 'woodstox-core-asl',      version: '4.4.1'  ],
+    [ group: 'io.vulpine.lib',                   name: 'http',                   version: '0.2.2' ],
+    [ group: 'io.vulpine.lib',                   name: 'logging',                version: '0.1.2' ],
+    [ group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.8.1' ],
+    [ group: 'org.codehaus.woodstox',            name: 'woodstox-core-asl',      version: '4.4.1' ],
   )
 
   testCompile(
@@ -133,7 +134,7 @@ publishing {
           ).up().up()
             .contained('issueManagement', [
             system: 'YouTrack',
-            url: "http://vulpine.myjetbrains.com/youtrack/issues?q=project%3A+${config.repo}"
+            url: "${ghu}/issues"
           ]
           )
             .up()

@@ -17,6 +17,7 @@
 package io.vulpine.connectwise.type.agreement;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum BillableOption
 {
@@ -33,6 +34,7 @@ public enum BillableOption
   }
 
   @Override
+  @JsonValue
   public String toString ()
   {
     return value;

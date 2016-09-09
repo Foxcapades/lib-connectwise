@@ -20,6 +20,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.Endpoint;
 
 import java.io.IOException;
 
@@ -33,10 +34,11 @@ public abstract class DeleteRequest extends ConnectwiseRequest< Void >
     final Credentials credentials,
     final XmlMapper xmlMapper,
     final SubApiInterface subApiInterface,
+    final Endpoint endpoint,
     final int id
   )
   {
-    super(credentials, xmlMapper, subApiInterface);
+    super(credentials, xmlMapper, subApiInterface, endpoint);
     this.id = id;
   }
 
