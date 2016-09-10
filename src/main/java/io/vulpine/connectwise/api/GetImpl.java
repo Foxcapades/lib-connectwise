@@ -65,9 +65,10 @@ class GetImpl extends ConnectwiseSubApi implements Get
     return new GetAddition(credentials, xmlMapper, this, id);
   }
 
-  public GetAdjustment adjustment()
+  @Override
+  public GetAdjustment adjustment( final int id )
   {
-    return new GetAdjustment();
+    return new GetAdjustment(credentials, xmlMapper, this, id);
   }
 
   @Override

@@ -35,7 +35,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getAdditionProduct());
+    assertEquals(value, addition.additionProduct());
   }
 
   @Test
@@ -46,7 +46,7 @@ public class AdditionTest
     final AdditionProduct value    = new AdditionProduct();
 
     field.setAccessible(true);
-    addition.setAdditionProduct(value);
+    addition.additionProduct(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -61,7 +61,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getQuantity(), 0);
+    assertEquals(value, addition.quantity(), 0);
   }
 
   @Test
@@ -72,7 +72,7 @@ public class AdditionTest
     final double   value    = 66.6;
 
     field.setAccessible(true);
-    addition.setQuantity(value);
+    addition.quantity(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -87,7 +87,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getLessIncluded(), 0);
+    assertEquals(value, addition.lessIncluded(), 0);
   }
 
   @Test
@@ -98,7 +98,7 @@ public class AdditionTest
     final double   value    = 6.66;
 
     field.setAccessible(true);
-    addition.setLessIncluded(value);
+    addition.lessIncluded(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -113,7 +113,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getUnitPrice(), 0);
+    assertEquals(value, addition.unitPrice(), 0);
   }
 
   @Test
@@ -124,7 +124,7 @@ public class AdditionTest
     final double   value    = 666.0;
 
     field.setAccessible(true);
-    addition.setUnitPrice(value);
+    addition.unitPrice(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -139,7 +139,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getUnitCost(), 0);
+    assertEquals(value, addition.unitCost(), 0);
   }
 
   @Test
@@ -150,7 +150,7 @@ public class AdditionTest
     final double   value    = 6.66;
 
     field.setAccessible(true);
-    addition.setUnitCost(value);
+    addition.unitCost(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -165,7 +165,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getEffectiveDate());
+    assertEquals(value, addition.effectiveDate());
   }
 
   @Test
@@ -176,7 +176,7 @@ public class AdditionTest
     final Date     value    = new Date();
 
     field.setAccessible(true);
-    addition.setEffectiveDate(value);
+    addition.effectiveDate(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -191,7 +191,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getCancelledDate());
+    assertEquals(value, addition.cancelledDate());
   }
 
   @Test
@@ -202,7 +202,7 @@ public class AdditionTest
     final Date     value    = new Date();
 
     field.setAccessible(true);
-    addition.setCancelledDate(value);
+    addition.cancelledDate(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -217,7 +217,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getBillCustomer());
+    assertEquals(value, addition.billCustomer());
   }
 
   @Test
@@ -228,7 +228,7 @@ public class AdditionTest
     final BillCustomer value    = BillCustomer.DO_NOT_BILL;
 
     field.setAccessible(true);
-    addition.setBillCustomer(value);
+    addition.billCustomer(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -243,7 +243,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.isTaxable());
+    assertEquals(value, addition.taxable());
   }
 
   @Test
@@ -254,7 +254,7 @@ public class AdditionTest
     final boolean  value    = true;
 
     field.setAccessible(true);
-    addition.setTaxable(value);
+    addition.taxable(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -269,7 +269,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getSerialNumber());
+    assertEquals(value, addition.serialNumber());
   }
 
   @Test
@@ -280,7 +280,7 @@ public class AdditionTest
     final String   value    = "Test Value";
 
     field.setAccessible(true);
-    addition.setSerialNumber(value);
+    addition.serialNumber(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -295,7 +295,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getInvoiceDescription());
+    assertEquals(value, addition.invoiceDescription());
   }
 
   @Test
@@ -306,7 +306,7 @@ public class AdditionTest
     final String   value    = "Test Value.";
 
     field.setAccessible(true);
-    addition.setInvoiceDescription(value);
+    addition.invoiceDescription(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -321,7 +321,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.isPurchaseItem());
+    assertEquals(value, addition.purchaseItem());
   }
 
   @Test
@@ -332,7 +332,7 @@ public class AdditionTest
     final boolean  value    = true;
 
     field.setAccessible(true);
-    addition.setPurchaseItem(value);
+    addition.purchaseItem(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -347,7 +347,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.isSpecialOrder());
+    assertEquals(value, addition.specialOrder());
   }
 
   @Test
@@ -358,7 +358,7 @@ public class AdditionTest
     final boolean  value    = true;
 
     field.setAccessible(true);
-    addition.setSpecialOrder(value);
+    addition.specialOrder(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -373,7 +373,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getBilledQuantity(), 0);
+    assertEquals(value, addition.billedQuantity(), 0);
   }
 
   @Test
@@ -384,7 +384,7 @@ public class AdditionTest
     final double   value    = 66.6;
 
     field.setAccessible(true);
-    addition.setBilledQuantity(value);
+    addition.billedQuantity(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -399,7 +399,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getUom());
+    assertEquals(value, addition.uom());
   }
 
   @Test
@@ -410,7 +410,7 @@ public class AdditionTest
     final String   value    = "Test Value.";
 
     field.setAccessible(true);
-    addition.setUom(value);
+    addition.uom(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -425,7 +425,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getExtPrice(), 0);
+    assertEquals(value, addition.extPrice(), 0);
   }
 
   @Test
@@ -436,7 +436,7 @@ public class AdditionTest
     final double   value    = 66.6;
 
     field.setAccessible(true);
-    addition.setExtPrice(value);
+    addition.extPrice(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -451,7 +451,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getExtCost(), 0);
+    assertEquals(value, addition.extCost(), 0);
   }
 
   @Test
@@ -462,7 +462,7 @@ public class AdditionTest
     final double   value    = 66.6;
 
     field.setAccessible(true);
-    addition.setExtCost(value);
+    addition.extCost(value);
 
     assertEquals(value, field.get(addition));
   }
@@ -477,7 +477,7 @@ public class AdditionTest
     field.setAccessible(true);
     field.set(addition, value);
 
-    assertEquals(value, addition.getMargin(), 0);
+    assertEquals(value, addition.margin(), 0);
   }
 
   @Test
@@ -488,7 +488,7 @@ public class AdditionTest
     final double   value    = 66.6;
 
     field.setAccessible(true);
-    addition.setMargin(value);
+    addition.margin(value);
 
     assertEquals(value, field.get(addition));
   }

@@ -16,6 +16,7 @@
 package io.vulpine.connectwise.api;
 
 import io.vulpine.connectwise.api.endpoints.agreement.GetAddition;
+import io.vulpine.connectwise.api.endpoints.agreement.GetAdjustment;
 import io.vulpine.connectwise.api.endpoints.agreement.GetAgreement;
 import io.vulpine.connectwise.api.endpoints.agreement.GetBoardDefault;
 import io.vulpine.connectwise.api.endpoints.company.GetCompany;
@@ -38,6 +39,8 @@ public interface Get extends SubApiInterface
    * @return new request to alter or submit.
    */
   GetAddition addition( int id );
+
+  GetAdjustment adjustment( int id );
 
   /**
    * Instantiate a new Get Agreement request.

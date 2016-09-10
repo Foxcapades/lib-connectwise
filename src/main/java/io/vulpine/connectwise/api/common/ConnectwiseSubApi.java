@@ -21,6 +21,7 @@ import io.vulpine.connectwise.api.ConnectwiseApi;
 import io.vulpine.connectwise.api.common.request.ConnectwiseRequest;
 import io.vulpine.connectwise.api.common.request.SoapEnvelope;
 import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.agreement.GetAdjustment;
 
 import java.io.IOException;
 import java.util.regex.Pattern;
@@ -45,6 +46,7 @@ public class ConnectwiseSubApi implements SubApiInterface
     this.credentials = credentials;
     this.xmlMapper = xmlMapper;
   }
+
 
   @Override
   public String send( final ConnectwiseRequest r ) throws IOException
