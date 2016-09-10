@@ -18,8 +18,8 @@ package io.vulpine.connectwise.api;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.endpoints.contact.remove.RemoveContactFromGroup;
-import io.vulpine.connectwise.api.endpoints.product.remove.RemoveCompanyPricingSchedule;
+import io.vulpine.connectwise.api.endpoints.contact.RemoveContactFromGroup;
+import io.vulpine.connectwise.api.endpoints.product.RemoveCompanyPricingSchedule;
 
 class RemoveImpl extends ConnectwiseSubApi implements Remove
 {

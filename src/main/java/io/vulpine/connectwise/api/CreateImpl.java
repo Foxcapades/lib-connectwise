@@ -18,7 +18,7 @@ package io.vulpine.connectwise.api;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.endpoints.member.create.CreateAuthenticatedMemberHashToken;
+import io.vulpine.connectwise.api.endpoints.member.CreateAuthenticatedMemberHashToken;
 
 class CreateImpl extends ConnectwiseSubApi implements Create
 {

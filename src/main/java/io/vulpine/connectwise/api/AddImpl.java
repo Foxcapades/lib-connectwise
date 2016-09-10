@@ -16,19 +16,19 @@
 package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.endpoints.activity.add.AddActivity;
+import io.vulpine.connectwise.api.endpoints.activity.AddActivity;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.endpoints.company.add.AddCompany;
-import io.vulpine.connectwise.api.endpoints.configuration.add.AddConfiguration;
-import io.vulpine.connectwise.api.endpoints.configuration.add.AddConfigurationType;
-import io.vulpine.connectwise.api.endpoints.contact.add.AddContactToGroup;
-import io.vulpine.connectwise.api.endpoints.document.add.AddDocuments;
-import io.vulpine.connectwise.api.endpoints.opportunity.add.AddForecastAndRecurringRevenue;
-import io.vulpine.connectwise.api.endpoints.opportunity.add.AddOpportunity;
-import io.vulpine.connectwise.api.endpoints.opportunity.add.AddOpportunityDocuments;
-import io.vulpine.connectwise.api.endpoints.opportunity.add.AddOpportunityItem;
-import io.vulpine.connectwise.api.endpoints.product.add.AddProduct;
+import io.vulpine.connectwise.api.endpoints.company.AddCompany;
+import io.vulpine.connectwise.api.endpoints.configuration.AddConfiguration;
+import io.vulpine.connectwise.api.endpoints.configuration.AddConfigurationType;
+import io.vulpine.connectwise.api.endpoints.contact.AddContactToGroup;
+import io.vulpine.connectwise.api.endpoints.document.AddDocuments;
+import io.vulpine.connectwise.api.endpoints.opportunity.AddForecastAndRecurringRevenue;
+import io.vulpine.connectwise.api.endpoints.opportunity.AddOpportunity;
+import io.vulpine.connectwise.api.endpoints.opportunity.AddOpportunityDocuments;
+import io.vulpine.connectwise.api.endpoints.opportunity.AddOpportunityItem;
+import io.vulpine.connectwise.api.endpoints.product.AddProduct;
 
 class AddImpl extends ConnectwiseSubApi implements Add
 {

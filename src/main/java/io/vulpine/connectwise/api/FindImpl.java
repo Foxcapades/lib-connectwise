@@ -16,27 +16,27 @@
 package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.endpoints.activity.find.FindActivities;
-import io.vulpine.connectwise.api.endpoints.agreement.find.*;
+import io.vulpine.connectwise.api.endpoints.activity.FindActivities;
+import io.vulpine.connectwise.api.endpoints.agreement.*;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.endpoints.company.find.FindCompanies;
-import io.vulpine.connectwise.api.endpoints.configuration.find.FindConfigurationCount;
-import io.vulpine.connectwise.api.endpoints.configuration.find.FindConfigurationTypes;
-import io.vulpine.connectwise.api.endpoints.configuration.find.FindConfigurations;
-import io.vulpine.connectwise.api.endpoints.contact.find.FindContactCount;
-import io.vulpine.connectwise.api.endpoints.contact.find.FindContacts;
-import io.vulpine.connectwise.api.endpoints.document.find.FindDocuments;
-import io.vulpine.connectwise.api.endpoints.invoice.find.FindInvoiceCount;
-import io.vulpine.connectwise.api.endpoints.invoice.find.FindInvoices;
-import io.vulpine.connectwise.api.endpoints.invoice.find.FindSpecialInvoices;
-import io.vulpine.connectwise.api.endpoints.member.find.FindMembers;
-import io.vulpine.connectwise.api.endpoints.opportunity.find.FindOpportunities;
-import io.vulpine.connectwise.api.endpoints.opportunity.find.FindOpportunityCount;
-import io.vulpine.connectwise.api.endpoints.product.find.FindPriceBreaks;
-import io.vulpine.connectwise.api.endpoints.product.find.FindPricingDetails;
-import io.vulpine.connectwise.api.endpoints.product.find.FindPricingSchedules;
-import io.vulpine.connectwise.api.endpoints.product.find.FindProducts;
+import io.vulpine.connectwise.api.endpoints.company.FindCompanies;
+import io.vulpine.connectwise.api.endpoints.configuration.FindConfigurationCount;
+import io.vulpine.connectwise.api.endpoints.configuration.FindConfigurationTypes;
+import io.vulpine.connectwise.api.endpoints.configuration.FindConfigurations;
+import io.vulpine.connectwise.api.endpoints.contact.FindContactCount;
+import io.vulpine.connectwise.api.endpoints.contact.FindContacts;
+import io.vulpine.connectwise.api.endpoints.document.FindDocuments;
+import io.vulpine.connectwise.api.endpoints.invoice.FindInvoiceCount;
+import io.vulpine.connectwise.api.endpoints.invoice.FindInvoices;
+import io.vulpine.connectwise.api.endpoints.invoice.FindSpecialInvoices;
+import io.vulpine.connectwise.api.endpoints.member.FindMembers;
+import io.vulpine.connectwise.api.endpoints.opportunity.FindOpportunities;
+import io.vulpine.connectwise.api.endpoints.opportunity.FindOpportunityCount;
+import io.vulpine.connectwise.api.endpoints.product.FindPriceBreaks;
+import io.vulpine.connectwise.api.endpoints.product.FindPricingDetails;
+import io.vulpine.connectwise.api.endpoints.product.FindPricingSchedules;
+import io.vulpine.connectwise.api.endpoints.product.FindProducts;
 
 class FindImpl extends ConnectwiseSubApi implements Find
 {

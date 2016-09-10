@@ -15,17 +15,17 @@
  */
 package io.vulpine.connectwise.api;
 
-import io.vulpine.connectwise.api.endpoints.agreement.get.GetAddition;
-import io.vulpine.connectwise.api.endpoints.agreement.get.GetAgreement;
-import io.vulpine.connectwise.api.endpoints.agreement.get.GetBoardDefault;
-import io.vulpine.connectwise.api.endpoints.company.get.GetCompany;
+import io.vulpine.connectwise.api.endpoints.agreement.GetAddition;
+import io.vulpine.connectwise.api.endpoints.agreement.GetAgreement;
+import io.vulpine.connectwise.api.endpoints.agreement.GetBoardDefault;
+import io.vulpine.connectwise.api.endpoints.company.GetCompany;
 import io.vulpine.connectwise.api.def.SubApiInterface;
-import io.vulpine.connectwise.api.endpoints.configuration.get.GetConfiguration;
-import io.vulpine.connectwise.api.endpoints.configuration.get.GetConfigurationType;
-import io.vulpine.connectwise.api.endpoints.contact.get.Contact;
-import io.vulpine.connectwise.api.endpoints.contact.get.ContactNote;
-import io.vulpine.connectwise.api.endpoints.product.get.GetProduct;
-import io.vulpine.connectwise.api.endpoints.time.get.TimeEntry;
+import io.vulpine.connectwise.api.endpoints.configuration.GetConfiguration;
+import io.vulpine.connectwise.api.endpoints.configuration.GetConfigurationType;
+import io.vulpine.connectwise.api.endpoints.contact.GetContact;
+import io.vulpine.connectwise.api.endpoints.contact.GetContactNote;
+import io.vulpine.connectwise.api.endpoints.product.GetProduct;
+import io.vulpine.connectwise.api.endpoints.time.GetTimeEntry;
 
 public interface Get extends SubApiInterface
 {
@@ -84,7 +84,7 @@ public interface Get extends SubApiInterface
    *
    * @return new request to alter or submit.
    */
-  Contact contact( int id );
+  GetContact contact( int id );
 
   /**
    * Instantiate a new Get Contact Note request.
@@ -93,7 +93,7 @@ public interface Get extends SubApiInterface
    *
    * @return new request to alter or submit.
    */
-  ContactNote contactNote( int id );
+  GetContactNote contactNote( int id );
 
   /**
    * Instantiate a new Get Product request.
@@ -111,5 +111,5 @@ public interface Get extends SubApiInterface
    *
    * @return new request to alter or submit.
    */
-  TimeEntry timeEntry( int id );
+  GetTimeEntry timeEntry( int id );
 }

@@ -18,30 +18,30 @@ package io.vulpine.connectwise.api;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.endpoints.activity.get.GetActivity;
-import io.vulpine.connectwise.api.endpoints.agreement.get.*;
-import io.vulpine.connectwise.api.endpoints.company.get.GetCompany;
-import io.vulpine.connectwise.api.endpoints.company.get.GetCompanyNote;
-import io.vulpine.connectwise.api.endpoints.company.get.GetCompanyProfile;
-import io.vulpine.connectwise.api.endpoints.company.get.GetCompanyTeam;
-import io.vulpine.connectwise.api.endpoints.company.getAll.GetAllCompanyNotes;
-import io.vulpine.connectwise.api.endpoints.configuration.get.GetConfiguration;
-import io.vulpine.connectwise.api.endpoints.configuration.get.GetConfigurationType;
-import io.vulpine.connectwise.api.endpoints.contact.get.*;
-import io.vulpine.connectwise.api.endpoints.contact.getAll.GetAllCommunicationTypesAndDescription;
-import io.vulpine.connectwise.api.endpoints.contact.getAll.GetAllContactCommunicationItems;
-import io.vulpine.connectwise.api.endpoints.contact.getAll.GetAllContactNotes;
-import io.vulpine.connectwise.api.endpoints.document.get.GetDocument;
-import io.vulpine.connectwise.api.endpoints.invoice.get.*;
-import io.vulpine.connectwise.api.endpoints.managedDevice.get.GetManagedGroup;
-import io.vulpine.connectwise.api.endpoints.managedDevice.get.GetManagedServer;
-import io.vulpine.connectwise.api.endpoints.managedDevice.get.GetManagedWorkstations;
-import io.vulpine.connectwise.api.endpoints.managedDevice.get.GetManagementItSetupsName;
-import io.vulpine.connectwise.api.endpoints.member.get.GetMemberIdByRemoteSupportPackageAuthenticationCredentials;
-import io.vulpine.connectwise.api.endpoints.opportunity.get.GetOpportunity;
-import io.vulpine.connectwise.api.endpoints.opportunity.get.GetOpportunityDocuments;
-import io.vulpine.connectwise.api.endpoints.product.get.*;
-import io.vulpine.connectwise.api.endpoints.time.get.TimeEntry;
+import io.vulpine.connectwise.api.endpoints.activity.GetActivity;
+import io.vulpine.connectwise.api.endpoints.agreement.*;
+import io.vulpine.connectwise.api.endpoints.company.GetCompany;
+import io.vulpine.connectwise.api.endpoints.company.GetCompanyNote;
+import io.vulpine.connectwise.api.endpoints.company.GetCompanyProfile;
+import io.vulpine.connectwise.api.endpoints.company.GetCompanyTeam;
+import io.vulpine.connectwise.api.endpoints.company.GetAllCompanyNotes;
+import io.vulpine.connectwise.api.endpoints.configuration.GetConfiguration;
+import io.vulpine.connectwise.api.endpoints.configuration.GetConfigurationType;
+import io.vulpine.connectwise.api.endpoints.contact.*;
+import io.vulpine.connectwise.api.endpoints.contact.GetAllCommunicationTypesAndDescription;
+import io.vulpine.connectwise.api.endpoints.contact.GetAllContactCommunicationItems;
+import io.vulpine.connectwise.api.endpoints.contact.GetAllContactNotes;
+import io.vulpine.connectwise.api.endpoints.document.GetDocument;
+import io.vulpine.connectwise.api.endpoints.invoice.*;
+import io.vulpine.connectwise.api.endpoints.managedDevice.GetManagedGroup;
+import io.vulpine.connectwise.api.endpoints.managedDevice.GetManagedServer;
+import io.vulpine.connectwise.api.endpoints.managedDevice.GetManagedWorkstations;
+import io.vulpine.connectwise.api.endpoints.managedDevice.GetManagementItSetupsName;
+import io.vulpine.connectwise.api.endpoints.member.GetMemberIdByRemoteSupportPackageAuthenticationCredentials;
+import io.vulpine.connectwise.api.endpoints.opportunity.GetOpportunity;
+import io.vulpine.connectwise.api.endpoints.opportunity.GetOpportunityDocuments;
+import io.vulpine.connectwise.api.endpoints.product.*;
+import io.vulpine.connectwise.api.endpoints.time.GetTimeEntry;
 
 class GetImpl extends ConnectwiseSubApi implements Get
 {
@@ -151,9 +151,9 @@ class GetImpl extends ConnectwiseSubApi implements Get
   }
 
   @Override
-  public Contact contact( final int id )
+  public GetContact contact( final int id )
   {
-    return new Contact(credentials, xmlMapper, this, id);
+    return new GetContact(credentials, xmlMapper, this, id);
   }
 
   public GetContactCommunicationItem contactCommunicationItem()
@@ -162,9 +162,9 @@ class GetImpl extends ConnectwiseSubApi implements Get
   }
 
   @Override
-  public ContactNote contactNote( final int id )
+  public GetContactNote contactNote( final int id )
   {
-    return new ContactNote(credentials, xmlMapper, this, id);
+    return new GetContactNote(credentials, xmlMapper, this, id);
   }
 
   public GetDocument document()
@@ -279,9 +279,9 @@ class GetImpl extends ConnectwiseSubApi implements Get
   }
 
   @Override
-  public TimeEntry timeEntry( final int id )
+  public GetTimeEntry timeEntry( final int id )
   {
-    return new TimeEntry(credentials, xmlMapper, this, id);
+    return new GetTimeEntry(credentials, xmlMapper, this, id);
   }
 
   public GetWorkRole workRole()

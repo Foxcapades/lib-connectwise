@@ -16,19 +16,19 @@
 package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.endpoints.activity.update.UpdateActivity;
+import io.vulpine.connectwise.api.endpoints.activity.UpdateActivity;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.endpoints.company.update.UpdateCompany;
-import io.vulpine.connectwise.api.endpoints.company.update.UpdateCompanyProfile;
-import io.vulpine.connectwise.api.endpoints.configuration.update.UpdateConfiguration;
-import io.vulpine.connectwise.api.endpoints.configuration.update.UpdateConfigurationType;
-import io.vulpine.connectwise.api.endpoints.contact.update.UpdatePresenceStatus;
-import io.vulpine.connectwise.api.endpoints.managedDevice.update.*;
-import io.vulpine.connectwise.api.endpoints.opportunity.update.UpdateForecastAndRecurringRevenue;
-import io.vulpine.connectwise.api.endpoints.opportunity.update.UpdateOpportunity;
-import io.vulpine.connectwise.api.endpoints.opportunity.update.UpdateOpportunityItem;
-import io.vulpine.connectwise.api.endpoints.product.update.UpdateProduct;
+import io.vulpine.connectwise.api.endpoints.company.UpdateCompany;
+import io.vulpine.connectwise.api.endpoints.company.UpdateCompanyProfile;
+import io.vulpine.connectwise.api.endpoints.configuration.UpdateConfiguration;
+import io.vulpine.connectwise.api.endpoints.configuration.UpdateConfigurationType;
+import io.vulpine.connectwise.api.endpoints.contact.UpdatePresenceStatus;
+import io.vulpine.connectwise.api.endpoints.managedDevice.*;
+import io.vulpine.connectwise.api.endpoints.opportunity.UpdateForecastAndRecurringRevenue;
+import io.vulpine.connectwise.api.endpoints.opportunity.UpdateOpportunity;
+import io.vulpine.connectwise.api.endpoints.opportunity.UpdateOpportunityItem;
+import io.vulpine.connectwise.api.endpoints.product.UpdateProduct;
 
 class UpdateImpl extends ConnectwiseSubApi implements Update
 {

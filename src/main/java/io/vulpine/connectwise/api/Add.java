@@ -15,7 +15,7 @@
  */
 package io.vulpine.connectwise.api;
 
-import io.vulpine.connectwise.api.endpoints.company.add.AddCompany;
+import io.vulpine.connectwise.api.endpoints.company.AddCompany;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 
 public interface Add extends SubApiInterface

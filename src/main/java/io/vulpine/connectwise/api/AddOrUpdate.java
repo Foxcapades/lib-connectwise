@@ -15,8 +15,8 @@
  */
 package io.vulpine.connectwise.api;
 
-import io.vulpine.connectwise.api.endpoints.agreement.addOrUpdate.AddOrUpdateAgreement;
-import io.vulpine.connectwise.api.endpoints.agreement.addOrUpdate.AddOrUpdateAddition;
+import io.vulpine.connectwise.api.endpoints.agreement.AddOrUpdateAgreement;
+import io.vulpine.connectwise.api.endpoints.agreement.AddOrUpdateAddition;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.type.agreement.Agreement;
 import io.vulpine.connectwise.type.agreement.addition.Addition;

@@ -18,8 +18,8 @@ package io.vulpine.connectwise.api;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.endpoints.contact.authenticate.AuthenticateContact;
-import io.vulpine.connectwise.api.endpoints.member.authenticate.AuthenticateSession;
+import io.vulpine.connectwise.api.endpoints.contact.AuthenticateContact;
+import io.vulpine.connectwise.api.endpoints.member.AuthenticateSession;
 
 class AuthenticateImpl extends ConnectwiseSubApi implements Authenticate
 {

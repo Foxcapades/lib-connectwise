@@ -16,17 +16,26 @@
 package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.endpoints.activity.delete.DeleteActivity;
-import io.vulpine.connectwise.api.endpoints.agreement.delete.*;
+import io.vulpine.connectwise.api.endpoints.activity.DeleteActivity;
+import io.vulpine.connectwise.api.endpoints.agreement.*;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.endpoints.company.delete.*;
-import io.vulpine.connectwise.api.endpoints.configuration.delete.*;
-import io.vulpine.connectwise.api.endpoints.contact.delete.*;
-import io.vulpine.connectwise.api.endpoints.document.delete.DeleteDocument;
-import io.vulpine.connectwise.api.endpoints.invoice.delete.*;
-import io.vulpine.connectwise.api.endpoints.opportunity.delete.*;
-import io.vulpine.connectwise.api.endpoints.product.delete.*;
+import io.vulpine.connectwise.api.endpoints.company.DeleteCompany;
+import io.vulpine.connectwise.api.endpoints.company.DeleteCompanyNote;
+import io.vulpine.connectwise.api.endpoints.company.DeleteCompanyTeam;
+import io.vulpine.connectwise.api.endpoints.configuration.DeleteConfiguration;
+import io.vulpine.connectwise.api.endpoints.configuration.DeleteConfigurationType;
+import io.vulpine.connectwise.api.endpoints.configuration.DeleteConfigurationTypeQuestion;
+import io.vulpine.connectwise.api.endpoints.configuration.DeletePossibleResponse;
+import io.vulpine.connectwise.api.endpoints.contact.DeleteContact;
+import io.vulpine.connectwise.api.endpoints.contact.DeleteContactCommunicationItem;
+import io.vulpine.connectwise.api.endpoints.contact.DeleteContactNote;
+import io.vulpine.connectwise.api.endpoints.document.DeleteDocument;
+import io.vulpine.connectwise.api.endpoints.invoice.DeleteSpecialInvoice;
+import io.vulpine.connectwise.api.endpoints.invoice.DeleteSpecialInvoiceByInvoiceNumber;
+import io.vulpine.connectwise.api.endpoints.invoice.DeleteSpecialInvoiceProduct;
+import io.vulpine.connectwise.api.endpoints.opportunity.*;
+import io.vulpine.connectwise.api.endpoints.product.*;
 
 class DeleteImpl extends ConnectwiseSubApi implements Delete
 {

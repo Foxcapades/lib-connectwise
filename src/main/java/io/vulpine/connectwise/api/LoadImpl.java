@@ -16,16 +16,16 @@
 package io.vulpine.connectwise.api;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import io.vulpine.connectwise.api.endpoints.activity.load.LoadActivity;
+import io.vulpine.connectwise.api.endpoints.activity.LoadActivity;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.endpoints.company.load.LoadCompany;
-import io.vulpine.connectwise.api.endpoints.configuration.load.LoadConfiguration;
-import io.vulpine.connectwise.api.endpoints.configuration.load.LoadConfigurationType;
-import io.vulpine.connectwise.api.endpoints.contact.load.LoadContact;
-import io.vulpine.connectwise.api.endpoints.invoice.load.LoadInvoice;
-import io.vulpine.connectwise.api.endpoints.opportunity.load.LoadOpportunity;
-import io.vulpine.connectwise.api.endpoints.product.load.LoadProduct;
+import io.vulpine.connectwise.api.endpoints.company.LoadCompany;
+import io.vulpine.connectwise.api.endpoints.configuration.LoadConfiguration;
+import io.vulpine.connectwise.api.endpoints.configuration.LoadConfigurationType;
+import io.vulpine.connectwise.api.endpoints.contact.LoadContact;
+import io.vulpine.connectwise.api.endpoints.invoice.LoadInvoice;
+import io.vulpine.connectwise.api.endpoints.opportunity.LoadOpportunity;
+import io.vulpine.connectwise.api.endpoints.product.LoadProduct;
 
 class LoadImpl extends ConnectwiseSubApi implements Load
 {

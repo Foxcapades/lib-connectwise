@@ -18,9 +18,9 @@ package io.vulpine.connectwise.api;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.ConnectwiseSubApi;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.endpoints.company.set.SetCompanyDefaultContact;
-import io.vulpine.connectwise.api.endpoints.contact.set.SetDefaultContactCommunicationItem;
-import io.vulpine.connectwise.api.endpoints.product.set.SetCompanyPricingSchedule;
+import io.vulpine.connectwise.api.endpoints.company.SetCompanyDefaultContact;
+import io.vulpine.connectwise.api.endpoints.contact.SetDefaultContactCommunicationItem;
+import io.vulpine.connectwise.api.endpoints.product.SetCompanyPricingSchedule;
 
 class SetImpl extends ConnectwiseSubApi implements Set
 {
