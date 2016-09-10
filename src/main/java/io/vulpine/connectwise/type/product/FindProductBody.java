@@ -12,7 +12,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 package io.vulpine.connectwise.type.product;
@@ -20,7 +19,7 @@ package io.vulpine.connectwise.type.product;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.api.product.find.FindProductsResponse;
+import io.vulpine.connectwise.api.endpoints.product.FindProductsResponse;
 
 @JacksonXmlRootElement( namespace = "soap", localName = "Body" )
 public class FindProductBody

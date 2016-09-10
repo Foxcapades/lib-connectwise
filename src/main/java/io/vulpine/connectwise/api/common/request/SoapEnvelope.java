@@ -40,6 +40,6 @@ public class SoapEnvelope
   public SoapEnvelope ( final ConnectwiseRequest r )
   {
     e = new HashMap < String, ConnectwiseRequest >(1);
-    e.put(r.getClass().getAnnotation(JacksonXmlRootElement.class).localName(), r);
+    e.put(r.getRootName(), r);
   }
 }

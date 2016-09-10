@@ -106,142 +106,142 @@ public class AgreementTest
   @BeforeClass
   public static void setUpClass () throws Exception
   {
-    final Class < Agreement > c = Agreement.class;
-    agreementTypeId = c.getDeclaredField("agreementTypeId");
+    final Class < Agreement > clazz = Agreement.class;
+    agreementTypeId = clazz.getDeclaredField("agreementTypeId");
     agreementTypeId.setAccessible(true);
-    agreementName = c.getDeclaredField("agreementName");
+    agreementName = clazz.getDeclaredField("agreementName");
     agreementName.setAccessible(true);
-    billableProductInvoice = c.getDeclaredField("billableProductInvoice");
+    billableProductInvoice = clazz.getDeclaredField("billableProductInvoice");
     billableProductInvoice.setAccessible(true);
-    billableExpenseInvoice = c.getDeclaredField("billableExpenseInvoice");
+    billableExpenseInvoice = clazz.getDeclaredField("billableExpenseInvoice");
     billableExpenseInvoice.setAccessible(true);
-    parentAgreementId = c.getDeclaredField("parentAgreementId");
+    parentAgreementId = clazz.getDeclaredField("parentAgreementId");
     parentAgreementId.setAccessible(true);
-    companyId = c.getDeclaredField("companyId");
+    companyId = clazz.getDeclaredField("companyId");
     companyId.setAccessible(true);
-    contactId = c.getDeclaredField("contactId");
+    contactId = clazz.getDeclaredField("contactId");
     contactId.setAccessible(true);
-    customerPo = c.getDeclaredField("customerPo");
+    customerPo = clazz.getDeclaredField("customerPo");
     customerPo.setAccessible(true);
-    locationId = c.getDeclaredField("locationId");
+    locationId = clazz.getDeclaredField("locationId");
     locationId.setAccessible(true);
-    departmentId = c.getDeclaredField("departmentId");
+    departmentId = clazz.getDeclaredField("departmentId");
     departmentId.setAccessible(true);
-    restrictLocation = c.getDeclaredField("restrictLocation");
+    restrictLocation = clazz.getDeclaredField("restrictLocation");
     restrictLocation.setAccessible(true);
-    restrictDepartment = c.getDeclaredField("restrictDepartment");
+    restrictDepartment = clazz.getDeclaredField("restrictDepartment");
     restrictDepartment.setAccessible(true);
-    startDate = c.getDeclaredField("startDate");
+    startDate = clazz.getDeclaredField("startDate");
     startDate.setAccessible(true);
-    endDate = c.getDeclaredField("endDate");
+    endDate = clazz.getDeclaredField("endDate");
     endDate.setAccessible(true);
-    noEndingDate = c.getDeclaredField("noEndingDate");
+    noEndingDate = clazz.getDeclaredField("noEndingDate");
     noEndingDate.setAccessible(true);
-    opportunityId = c.getDeclaredField("opportunityId");
+    opportunityId = clazz.getDeclaredField("opportunityId");
     opportunityId.setAccessible(true);
-    cancelled = c.getDeclaredField("cancelled");
+    cancelled = clazz.getDeclaredField("cancelled");
     cancelled.setAccessible(true);
-    dateCancelled = c.getDeclaredField("dateCancelled");
+    dateCancelled = clazz.getDeclaredField("dateCancelled");
     dateCancelled.setAccessible(true);
-    reasonCancelled = c.getDeclaredField("reasonCancelled");
+    reasonCancelled = clazz.getDeclaredField("reasonCancelled");
     reasonCancelled.setAccessible(true);
-    slaId = c.getDeclaredField("slaId");
+    slaId = clazz.getDeclaredField("slaId");
     slaId.setAccessible(true);
-    subContractCompanyId = c.getDeclaredField("subContractCompanyId");
+    subContractCompanyId = clazz.getDeclaredField("subContractCompanyId");
     subContractCompanyId.setAccessible(true);
-    subContractContactId = c.getDeclaredField("subContractContactId");
+    subContractContactId = clazz.getDeclaredField("subContractContactId");
     subContractContactId.setAccessible(true);
-    workOrder = c.getDeclaredField("workOrder");
+    workOrder = clazz.getDeclaredField("workOrder");
     workOrder.setAccessible(true);
-    internalNotes = c.getDeclaredField("internalNotes");
+    internalNotes = clazz.getDeclaredField("internalNotes");
     internalNotes.setAccessible(true);
-    applicationUnits = c.getDeclaredField("applicationUnits");
+    applicationUnits = clazz.getDeclaredField("applicationUnits");
     applicationUnits.setAccessible(true);
-    applicationLimit = c.getDeclaredField("applicationLimit");
+    applicationLimit = clazz.getDeclaredField("applicationLimit");
     applicationLimit.setAccessible(true);
-    applicationCycle = c.getDeclaredField("applicationCycle");
+    applicationCycle = clazz.getDeclaredField("applicationCycle");
     applicationCycle.setAccessible(true);
-    periodType = c.getDeclaredField("periodType");
+    periodType = clazz.getDeclaredField("periodType");
     periodType.setAccessible(true);
-    applicationUnlimited = c.getDeclaredField("applicationUnlimited");
+    applicationUnlimited = clazz.getDeclaredField("applicationUnlimited");
     applicationUnlimited.setAccessible(true);
-    oneTime = c.getDeclaredField("oneTime");
+    oneTime = clazz.getDeclaredField("oneTime");
     oneTime.setAccessible(true);
-    coverAgreementTime = c.getDeclaredField("coverAgreementTime");
+    coverAgreementTime = clazz.getDeclaredField("coverAgreementTime");
     coverAgreementTime.setAccessible(true);
-    coverAgreementProduct = c.getDeclaredField("coverAgreementProduct");
+    coverAgreementProduct = clazz.getDeclaredField("coverAgreementProduct");
     coverAgreementProduct.setAccessible(true);
-    coverAgreementExpense = c.getDeclaredField("coverAgreementExpense");
+    coverAgreementExpense = clazz.getDeclaredField("coverAgreementExpense");
     coverAgreementExpense.setAccessible(true);
-    coverSalesTax = c.getDeclaredField("coverSalesTax");
+    coverSalesTax = clazz.getDeclaredField("coverSalesTax");
     coverSalesTax.setAccessible(true);
-    carryOverUnused = c.getDeclaredField("carryOverUnused");
+    carryOverUnused = clazz.getDeclaredField("carryOverUnused");
     carryOverUnused.setAccessible(true);
-    allowOverruns = c.getDeclaredField("allowOverruns");
+    allowOverruns = clazz.getDeclaredField("allowOverruns");
     allowOverruns.setAccessible(true);
-    expiredDays = c.getDeclaredField("expiredDays");
+    expiredDays = clazz.getDeclaredField("expiredDays");
     expiredDays.setAccessible(true);
-    limit = c.getDeclaredField("limit");
+    limit = clazz.getDeclaredField("limit");
     limit.setAccessible(true);
-    expireWhenZero = c.getDeclaredField("expireWhenZero");
+    expireWhenZero = clazz.getDeclaredField("expireWhenZero");
     expireWhenZero.setAccessible(true);
-    chargeToFirm = c.getDeclaredField("chargeToFirm");
+    chargeToFirm = clazz.getDeclaredField("chargeToFirm");
     chargeToFirm.setAccessible(true);
-    employeeCompRate = c.getDeclaredField("employeeCompRate");
+    employeeCompRate = clazz.getDeclaredField("employeeCompRate");
     employeeCompRate.setAccessible(true);
-    employeeCompNotExceed = c.getDeclaredField("employeeCompNotExceed");
+    employeeCompNotExceed = clazz.getDeclaredField("employeeCompNotExceed");
     employeeCompNotExceed.setAccessible(true);
-    compHourlyRate = c.getDeclaredField("compHourlyRate");
+    compHourlyRate = clazz.getDeclaredField("compHourlyRate");
     compHourlyRate.setAccessible(true);
-    compLimitAmount = c.getDeclaredField("compLimitAmount");
+    compLimitAmount = clazz.getDeclaredField("compLimitAmount");
     compLimitAmount.setAccessible(true);
-    billCycleId = c.getDeclaredField("billCycleId");
+    billCycleId = clazz.getDeclaredField("billCycleId");
     billCycleId.setAccessible(true);
-    billOneTime = c.getDeclaredField("billOneTime");
+    billOneTime = clazz.getDeclaredField("billOneTime");
     billOneTime.setAccessible(true);
-    billTermsId = c.getDeclaredField("billTermsId");
+    billTermsId = clazz.getDeclaredField("billTermsId");
     billTermsId.setAccessible(true);
-    invoicingCycle = c.getDeclaredField("invoicingCycle");
+    invoicingCycle = clazz.getDeclaredField("invoicingCycle");
     invoicingCycle.setAccessible(true);
-    billToCompanyId = c.getDeclaredField("billToCompanyId");
+    billToCompanyId = clazz.getDeclaredField("billToCompanyId");
     billToCompanyId.setAccessible(true);
-    billToAddressId = c.getDeclaredField("billToAddressId");
+    billToAddressId = clazz.getDeclaredField("billToAddressId");
     billToAddressId.setAccessible(true);
-    billAmount = c.getDeclaredField("billAmount");
+    billAmount = clazz.getDeclaredField("billAmount");
     billAmount.setAccessible(true);
-    taxable = c.getDeclaredField("taxable");
+    taxable = clazz.getDeclaredField("taxable");
     taxable.setAccessible(true);
-    prorateFirstBill = c.getDeclaredField("prorateFirstBill");
+    prorateFirstBill = clazz.getDeclaredField("prorateFirstBill");
     prorateFirstBill.setAccessible(true);
-    billStartDate = c.getDeclaredField("billStartDate");
+    billStartDate = clazz.getDeclaredField("billStartDate");
     billStartDate.setAccessible(true);
-    taxCodeId = c.getDeclaredField("taxCodeId");
+    taxCodeId = clazz.getDeclaredField("taxCodeId");
     taxCodeId.setAccessible(true);
-    restrictDownPayment = c.getDeclaredField("restrictDownPayment");
+    restrictDownPayment = clazz.getDeclaredField("restrictDownPayment");
     restrictDownPayment.setAccessible(true);
-    invoiceDescription = c.getDeclaredField("invoiceDescription");
+    invoiceDescription = clazz.getDeclaredField("invoiceDescription");
     invoiceDescription.setAccessible(true);
-    topComment = c.getDeclaredField("topComment");
+    topComment = clazz.getDeclaredField("topComment");
     topComment.setAccessible(true);
-    bottomComment = c.getDeclaredField("bottomComment");
+    bottomComment = clazz.getDeclaredField("bottomComment");
     bottomComment.setAccessible(true);
-    workRoleId = c.getDeclaredField("workRoleId");
+    workRoleId = clazz.getDeclaredField("workRoleId");
     workRoleId.setAccessible(true);
-    workTypeId = c.getDeclaredField("workTypeId");
+    workTypeId = clazz.getDeclaredField("workTypeId");
     workTypeId.setAccessible(true);
-    projectTypeId = c.getDeclaredField("projectTypeId");
+    projectTypeId = clazz.getDeclaredField("projectTypeId");
     projectTypeId.setAccessible(true);
-    invoiceTemplateId = c.getDeclaredField("invoiceTemplateId");
+    invoiceTemplateId = clazz.getDeclaredField("invoiceTemplateId");
     invoiceTemplateId.setAccessible(true);
-    billTime = c.getDeclaredField("billTime");
+    billTime = clazz.getDeclaredField("billTime");
     billTime.setAccessible(true);
-    billExpenses = c.getDeclaredField("billExpenses");
+    billExpenses = clazz.getDeclaredField("billExpenses");
     billExpenses.setAccessible(true);
-    billProducts = c.getDeclaredField("billProducts");
+    billProducts = clazz.getDeclaredField("billProducts");
     billProducts.setAccessible(true);
-    billableTimeInvoice = c.getDeclaredField("billableTimeInvoice");
+    billableTimeInvoice = clazz.getDeclaredField("billableTimeInvoice");
     billableTimeInvoice.setAccessible(true);
-    billableExpenseInvoice = c.getDeclaredField("billableExpenseInvoice");
+    billableExpenseInvoice = clazz.getDeclaredField("billableExpenseInvoice");
     billableExpenseInvoice.setAccessible(true);
   }
 
@@ -255,13 +255,13 @@ public class AgreementTest
   public void getAgreementTypeId () throws Exception
   {
     agreementTypeId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getAgreementTypeId());
+    assertEquals(intTest, agreement.agreementTypeId());
   }
 
   @Test
   public void setAgreementTypeId () throws Exception
   {
-    agreement.setAgreementTypeId(intTest);
+    agreement.agreementTypeId(intTest);
     assertEquals(intTest, agreementTypeId.get(agreement));
   }
 
@@ -269,13 +269,13 @@ public class AgreementTest
   public void getAgreementName () throws Exception
   {
     agreementName.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getAgreementName());
+    assertEquals(stringTest, agreement.agreementName());
   }
 
   @Test
   public void setAgreementName () throws Exception
   {
-    agreement.setAgreementName(stringTest);
+    agreement.agreementName(stringTest);
     assertEquals(stringTest, agreementName.get(agreement));
   }
 
@@ -283,13 +283,13 @@ public class AgreementTest
   public void getParentAgreementId () throws Exception
   {
     parentAgreementId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getParentAgreementId());
+    assertEquals(intTest, agreement.parentAgreementId());
   }
 
   @Test
   public void setParentAgreementId () throws Exception
   {
-    agreement.setParentAgreementId(intTest);
+    agreement.parentAgreementId(intTest);
     assertEquals(intTest, parentAgreementId.get(agreement));
   }
 
@@ -297,13 +297,13 @@ public class AgreementTest
   public void getCompanyId () throws Exception
   {
     companyId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getCompanyId());
+    assertEquals(intTest, agreement.companyId());
   }
 
   @Test
   public void setCompanyId () throws Exception
   {
-    agreement.setCompanyId(intTest);
+    agreement.companyId(intTest);
     assertEquals(intTest, companyId.get(agreement));
   }
 
@@ -311,13 +311,13 @@ public class AgreementTest
   public void getContactId () throws Exception
   {
     contactId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getContactId());
+    assertEquals(intTest, agreement.contactId());
   }
 
   @Test
   public void setContactId () throws Exception
   {
-    agreement.setContactId(intTest);
+    agreement.contactId(intTest);
     assertEquals(intTest, contactId.get(agreement));
   }
 
@@ -325,13 +325,13 @@ public class AgreementTest
   public void getCustomerPo () throws Exception
   {
     customerPo.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getCustomerPo());
+    assertEquals(stringTest, agreement.customerPo());
   }
 
   @Test
   public void setCustomerPo () throws Exception
   {
-    agreement.setCustomerPo(stringTest);
+    agreement.customerPo(stringTest);
     assertEquals(stringTest, customerPo.get(agreement));
   }
 
@@ -339,13 +339,13 @@ public class AgreementTest
   public void getLocationId () throws Exception
   {
     locationId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getLocationId());
+    assertEquals(intTest, agreement.locationId());
   }
 
   @Test
   public void setLocationId () throws Exception
   {
-    agreement.setLocationId(intTest);
+    agreement.locationId(intTest);
     assertEquals(intTest, locationId.get(agreement));
   }
 
@@ -353,13 +353,13 @@ public class AgreementTest
   public void getDepartmentId () throws Exception
   {
     departmentId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getDepartmentId());
+    assertEquals(intTest, agreement.departmentId());
   }
 
   @Test
   public void setDepartmentId () throws Exception
   {
-    agreement.setDepartmentId(intTest);
+    agreement.departmentId(intTest);
     assertEquals(intTest, departmentId.get(agreement));
   }
 
@@ -367,13 +367,13 @@ public class AgreementTest
   public void isRestrictLocation () throws Exception
   {
     restrictLocation.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isRestrictLocation());
+    assertEquals(booleanTest, agreement.restrictLocation());
   }
 
   @Test
   public void setRestrictLocation () throws Exception
   {
-    agreement.setRestrictLocation(booleanTest);
+    agreement.restrictLocation(booleanTest);
     assertEquals(booleanTest, restrictLocation.get(agreement));
   }
 
@@ -381,13 +381,13 @@ public class AgreementTest
   public void isRestrictDepartment () throws Exception
   {
     restrictDepartment.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isRestrictDepartment());
+    assertEquals(booleanTest, agreement.restrictDepartment());
   }
 
   @Test
   public void setRestrictDepartment () throws Exception
   {
-    agreement.setRestrictDepartment(booleanTest);
+    agreement.restrictDepartment(booleanTest);
     assertEquals(booleanTest, restrictDepartment.get(agreement));
   }
 
@@ -395,13 +395,13 @@ public class AgreementTest
   public void getStartDate () throws Exception
   {
     startDate.set(agreement, dateTest);
-    assertEquals(dateTest, agreement.getStartDate());
+    assertEquals(dateTest, agreement.startDate());
   }
 
   @Test
   public void setStartDate () throws Exception
   {
-    agreement.setStartDate(dateTest);
+    agreement.startDate(dateTest);
     assertEquals(dateTest, startDate.get(agreement));
   }
 
@@ -409,13 +409,13 @@ public class AgreementTest
   public void getEndDate () throws Exception
   {
     endDate.set(agreement, dateTest);
-    assertEquals(dateTest, agreement.getEndDate());
+    assertEquals(dateTest, agreement.endDate());
   }
 
   @Test
   public void setEndDate () throws Exception
   {
-    agreement.setEndDate(dateTest);
+    agreement.endDate(dateTest);
     assertEquals(dateTest, endDate.get(agreement));
   }
 
@@ -423,13 +423,13 @@ public class AgreementTest
   public void isNoEndingDate () throws Exception
   {
     noEndingDate.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isNoEndingDate());
+    assertEquals(booleanTest, agreement.noEndingDate());
   }
 
   @Test
   public void setNoEndingDate () throws Exception
   {
-    agreement.setNoEndingDate(booleanTest);
+    agreement.noEndingDate(booleanTest);
     assertEquals(booleanTest, noEndingDate.get(agreement));
   }
 
@@ -437,13 +437,13 @@ public class AgreementTest
   public void getOpportunityId () throws Exception
   {
     opportunityId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getOpportunityId());
+    assertEquals(intTest, agreement.opportunityId());
   }
 
   @Test
   public void setOpportunityId () throws Exception
   {
-    agreement.setOpportunityId(intTest);
+    agreement.opportunityId(intTest);
     assertEquals(intTest, opportunityId.get(agreement));
   }
 
@@ -451,13 +451,13 @@ public class AgreementTest
   public void isCancelled () throws Exception
   {
     cancelled.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isCancelled());
+    assertEquals(booleanTest, agreement.cancelled());
   }
 
   @Test
   public void setCancelled () throws Exception
   {
-    agreement.setCancelled(booleanTest);
+    agreement.cancelled(booleanTest);
     assertEquals(booleanTest, cancelled.get(agreement));
   }
 
@@ -465,13 +465,13 @@ public class AgreementTest
   public void getDateCancelled () throws Exception
   {
     dateCancelled.set(agreement, dateTest);
-    assertEquals(dateTest, agreement.getDateCancelled());
+    assertEquals(dateTest, agreement.dateCancelled());
   }
 
   @Test
   public void setDateCancelled () throws Exception
   {
-    agreement.setDateCancelled(dateTest);
+    agreement.dateCancelled(dateTest);
     assertEquals(dateTest, dateCancelled.get(agreement));
   }
 
@@ -479,13 +479,13 @@ public class AgreementTest
   public void getReasonCancelled () throws Exception
   {
     reasonCancelled.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getReasonCancelled());
+    assertEquals(stringTest, agreement.reasonCancelled());
   }
 
   @Test
   public void setReasonCancelled () throws Exception
   {
-    agreement.setReasonCancelled(stringTest);
+    agreement.reasonCancelled(stringTest);
     assertEquals(stringTest, reasonCancelled.get(agreement));
   }
 
@@ -493,13 +493,13 @@ public class AgreementTest
   public void getSlaId () throws Exception
   {
     slaId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getSlaId());
+    assertEquals(intTest, agreement.slaId());
   }
 
   @Test
   public void setSlaId () throws Exception
   {
-    agreement.setSlaId(intTest);
+    agreement.slaId(intTest);
     assertEquals(intTest, slaId.get(agreement));
   }
 
@@ -507,13 +507,13 @@ public class AgreementTest
   public void getSubContractCompanyId () throws Exception
   {
     subContractCompanyId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getSubContractCompanyId());
+    assertEquals(intTest, agreement.subContractCompanyId());
   }
 
   @Test
   public void setSubContractCompanyId () throws Exception
   {
-    agreement.setSubContractCompanyId(intTest);
+    agreement.subContractCompanyId(intTest);
     assertEquals(intTest, subContractCompanyId.get(agreement));
   }
 
@@ -521,13 +521,13 @@ public class AgreementTest
   public void getSubContractContactId () throws Exception
   {
     subContractContactId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getSubContractContactId());
+    assertEquals(intTest, agreement.subContractContactId());
   }
 
   @Test
   public void setSubContractContactId () throws Exception
   {
-    agreement.setSubContractContactId(intTest);
+    agreement.subContractContactId(intTest);
     assertEquals(intTest, subContractContactId.get(agreement));
   }
 
@@ -535,13 +535,13 @@ public class AgreementTest
   public void getWorkOrder () throws Exception
   {
     workOrder.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getWorkOrder());
+    assertEquals(stringTest, agreement.workOrder());
   }
 
   @Test
   public void setWorkOrder () throws Exception
   {
-    agreement.setWorkOrder(stringTest);
+    agreement.workOrder(stringTest);
     assertEquals(stringTest, workOrder.get(agreement));
   }
 
@@ -549,13 +549,13 @@ public class AgreementTest
   public void getInternalNotes () throws Exception
   {
     internalNotes.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getInternalNotes());
+    assertEquals(stringTest, agreement.internalNotes());
   }
 
   @Test
   public void setInternalNotes () throws Exception
   {
-    agreement.setInternalNotes(stringTest);
+    agreement.internalNotes(stringTest);
     assertEquals(stringTest, internalNotes.get(agreement));
   }
 
@@ -563,13 +563,13 @@ public class AgreementTest
   public void getApplicationUnits () throws Exception
   {
     applicationUnits.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getApplicationUnits());
+    assertEquals(stringTest, agreement.applicationUnits());
   }
 
   @Test
   public void setApplicationUnits () throws Exception
   {
-    agreement.setApplicationUnits(stringTest);
+    agreement.applicationUnits(stringTest);
     assertEquals(stringTest, applicationUnits.get(agreement));
   }
 
@@ -577,13 +577,13 @@ public class AgreementTest
   public void getApplicationLimit () throws Exception
   {
     applicationLimit.set(agreement, doubleTest);
-    assertEquals(doubleTest, agreement.getApplicationLimit(), 0);
+    assertEquals(doubleTest, agreement.applicationLimit(), 0);
   }
 
   @Test
   public void setApplicationLimit () throws Exception
   {
-    agreement.setApplicationLimit(doubleTest);
+    agreement.applicationLimit(doubleTest);
     assertEquals(doubleTest, applicationLimit.get(agreement));
   }
 
@@ -591,13 +591,13 @@ public class AgreementTest
   public void getApplicationCycle () throws Exception
   {
     applicationCycle.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getApplicationCycle());
+    assertEquals(stringTest, agreement.applicationCycle());
   }
 
   @Test
   public void setApplicationCycle () throws Exception
   {
-    agreement.setApplicationCycle(stringTest);
+    agreement.applicationCycle(stringTest);
     assertEquals(stringTest, applicationCycle.get(agreement));
   }
 
@@ -605,13 +605,13 @@ public class AgreementTest
   public void getPeriodType () throws Exception
   {
     periodType.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getPeriodType());
+    assertEquals(stringTest, agreement.periodType());
   }
 
   @Test
   public void setPeriodType () throws Exception
   {
-    agreement.setPeriodType(stringTest);
+    agreement.periodType(stringTest);
     assertEquals(stringTest, periodType.get(agreement));
   }
 
@@ -619,13 +619,13 @@ public class AgreementTest
   public void isApplicationUnlimited () throws Exception
   {
     applicationUnlimited.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isApplicationUnlimited());
+    assertEquals(booleanTest, agreement.applicationUnlimited());
   }
 
   @Test
   public void setApplicationUnlimited () throws Exception
   {
-    agreement.setApplicationUnlimited(booleanTest);
+    agreement.applicationUnlimited(booleanTest);
     assertEquals(booleanTest, applicationUnlimited.get(agreement));
   }
 
@@ -633,13 +633,13 @@ public class AgreementTest
   public void isOneTime () throws Exception
   {
     oneTime.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isOneTime());
+    assertEquals(booleanTest, agreement.oneTime());
   }
 
   @Test
   public void setOneTime () throws Exception
   {
-    agreement.setOneTime(booleanTest);
+    agreement.oneTime(booleanTest);
     assertEquals(booleanTest, oneTime.get(agreement));
   }
 
@@ -647,13 +647,13 @@ public class AgreementTest
   public void isCoverAgreementTime () throws Exception
   {
     coverAgreementTime.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isCoverAgreementTime());
+    assertEquals(booleanTest, agreement.coverAgreementTime());
   }
 
   @Test
   public void setCoverAgreementTime () throws Exception
   {
-    agreement.setCoverAgreementTime(booleanTest);
+    agreement.coverAgreementTime(booleanTest);
     assertEquals(booleanTest, coverAgreementTime.get(agreement));
   }
 
@@ -661,13 +661,13 @@ public class AgreementTest
   public void isCoverAgreementProduct () throws Exception
   {
     coverAgreementProduct.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isCoverAgreementProduct());
+    assertEquals(booleanTest, agreement.coverAgreementProduct());
   }
 
   @Test
   public void setCoverAgreementProduct () throws Exception
   {
-    agreement.setCoverAgreementProduct(booleanTest);
+    agreement.coverAgreementProduct(booleanTest);
     assertEquals(booleanTest, coverAgreementProduct.get(agreement));
   }
 
@@ -675,13 +675,13 @@ public class AgreementTest
   public void isCoverAgreementExpense () throws Exception
   {
     coverAgreementExpense.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isCoverAgreementExpense());
+    assertEquals(booleanTest, agreement.coverAgreementExpense());
   }
 
   @Test
   public void setCoverAgreementExpense () throws Exception
   {
-    agreement.setCoverAgreementExpense(booleanTest);
+    agreement.coverAgreementExpense(booleanTest);
     assertEquals(booleanTest, coverAgreementExpense.get(agreement));
   }
 
@@ -689,13 +689,13 @@ public class AgreementTest
   public void isCoverSalesTax () throws Exception
   {
     coverSalesTax.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isCoverSalesTax());
+    assertEquals(booleanTest, agreement.coverSalesTax());
   }
 
   @Test
   public void setCoverSalesTax () throws Exception
   {
-    agreement.setCoverSalesTax(booleanTest);
+    agreement.coverSalesTax(booleanTest);
     assertEquals(booleanTest, coverSalesTax.get(agreement));
   }
 
@@ -703,13 +703,13 @@ public class AgreementTest
   public void isCarryOverUnused () throws Exception
   {
     carryOverUnused.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isCarryOverUnused());
+    assertEquals(booleanTest, agreement.carryOverUnused());
   }
 
   @Test
   public void setCarryOverUnused () throws Exception
   {
-    agreement.setCarryOverUnused(booleanTest);
+    agreement.carryOverUnused(booleanTest);
     assertEquals(booleanTest, carryOverUnused.get(agreement));
   }
 
@@ -717,13 +717,13 @@ public class AgreementTest
   public void isAllowOverruns () throws Exception
   {
     allowOverruns.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isAllowOverruns());
+    assertEquals(booleanTest, agreement.allowOverruns());
   }
 
   @Test
   public void setAllowOverruns () throws Exception
   {
-    agreement.setAllowOverruns(booleanTest);
+    agreement.allowOverruns(booleanTest);
     assertEquals(booleanTest, allowOverruns.get(agreement));
   }
 
@@ -731,13 +731,13 @@ public class AgreementTest
   public void getExpiredDays () throws Exception
   {
     expiredDays.set(agreement, intTest);
-    assertEquals(intTest, agreement.getExpiredDays());
+    assertEquals(intTest, agreement.expiredDays());
   }
 
   @Test
   public void setExpiredDays () throws Exception
   {
-    agreement.setExpiredDays(intTest);
+    agreement.expiredDays(intTest);
     assertEquals(intTest, expiredDays.get(agreement));
   }
 
@@ -745,13 +745,13 @@ public class AgreementTest
   public void getLimit () throws Exception
   {
     limit.set(agreement, intTest);
-    assertEquals(intTest, agreement.getLimit());
+    assertEquals(intTest, agreement.limit());
   }
 
   @Test
   public void setLimit () throws Exception
   {
-    agreement.setLimit(intTest);
+    agreement.limit(intTest);
     assertEquals(intTest, limit.get(agreement));
   }
 
@@ -759,13 +759,13 @@ public class AgreementTest
   public void isExpireWhenZero () throws Exception
   {
     expireWhenZero.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isExpireWhenZero());
+    assertEquals(booleanTest, agreement.expireWhenZero());
   }
 
   @Test
   public void setExpireWhenZero () throws Exception
   {
-    agreement.setExpireWhenZero(booleanTest);
+    agreement.expireWhenZero(booleanTest);
     assertEquals(booleanTest, expireWhenZero.get(agreement));
   }
 
@@ -773,13 +773,13 @@ public class AgreementTest
   public void isChargeToFirm () throws Exception
   {
     chargeToFirm.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isChargeToFirm());
+    assertEquals(booleanTest, agreement.chargeToFirm());
   }
 
   @Test
   public void setChargeToFirm () throws Exception
   {
-    agreement.setChargeToFirm(booleanTest);
+    agreement.chargeToFirm(booleanTest);
     assertEquals(booleanTest, chargeToFirm.get(agreement));
   }
 
@@ -787,13 +787,13 @@ public class AgreementTest
   public void getEmployeeCompRate () throws Exception
   {
     employeeCompRate.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getEmployeeCompRate());
+    assertEquals(stringTest, agreement.employeeCompRate());
   }
 
   @Test
   public void setEmployeeCompRate () throws Exception
   {
-    agreement.setEmployeeCompRate(stringTest);
+    agreement.employeeCompRate(stringTest);
     assertEquals(stringTest, employeeCompRate.get(agreement));
   }
 
@@ -801,13 +801,13 @@ public class AgreementTest
   public void getEmployeeCompNotExceed () throws Exception
   {
     employeeCompNotExceed.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getEmployeeCompNotExceed());
+    assertEquals(stringTest, agreement.employeeCompNotExceed());
   }
 
   @Test
   public void setEmployeeCompNotExceed () throws Exception
   {
-    agreement.setEmployeeCompNotExceed(stringTest);
+    agreement.employeeCompNotExceed(stringTest);
     assertEquals(stringTest, employeeCompNotExceed.get(agreement));
   }
 
@@ -815,13 +815,13 @@ public class AgreementTest
   public void getCompHourlyRate () throws Exception
   {
     compHourlyRate.set(agreement, doubleTest);
-    assertEquals(doubleTest, agreement.getCompHourlyRate(), 0);
+    assertEquals(doubleTest, agreement.compHourlyRate(), 0);
   }
 
   @Test
   public void setCompHourlyRate () throws Exception
   {
-    agreement.setCompHourlyRate(doubleTest);
+    agreement.compHourlyRate(doubleTest);
     assertEquals(doubleTest, compHourlyRate.get(agreement));
   }
 
@@ -829,13 +829,13 @@ public class AgreementTest
   public void getCompLimitAmount () throws Exception
   {
     compLimitAmount.set(agreement, doubleTest);
-    assertEquals(doubleTest, agreement.getCompLimitAmount(), 0);
+    assertEquals(doubleTest, agreement.compLimitAmount(), 0);
   }
 
   @Test
   public void setCompLimitAmount () throws Exception
   {
-    agreement.setCompLimitAmount(doubleTest);
+    agreement.compLimitAmount(doubleTest);
     assertEquals(doubleTest, compLimitAmount.get(agreement));
   }
 
@@ -843,13 +843,13 @@ public class AgreementTest
   public void getBillCycleId () throws Exception
   {
     billCycleId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getBillCycleId());
+    assertEquals(intTest, agreement.billCycleId());
   }
 
   @Test
   public void setBillCycleId () throws Exception
   {
-    agreement.setBillCycleId(intTest);
+    agreement.billCycleId(intTest);
     assertEquals(intTest, billCycleId.get(agreement));
   }
 
@@ -857,13 +857,13 @@ public class AgreementTest
   public void isBillOneTime () throws Exception
   {
     billOneTime.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isBillOneTime());
+    assertEquals(booleanTest, agreement.billOneTime());
   }
 
   @Test
   public void setBillOneTime () throws Exception
   {
-    agreement.setBillOneTime(booleanTest);
+    agreement.billOneTime(booleanTest);
     assertEquals(booleanTest, billOneTime.get(agreement));
   }
 
@@ -871,13 +871,13 @@ public class AgreementTest
   public void getBillTermsId () throws Exception
   {
     billTermsId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getBillTermsId());
+    assertEquals(intTest, agreement.billTermsId());
   }
 
   @Test
   public void setBillTermsId () throws Exception
   {
-    agreement.setBillTermsId(intTest);
+    agreement.billTermsId(intTest);
     assertEquals(intTest, billTermsId.get(agreement));
   }
 
@@ -885,13 +885,13 @@ public class AgreementTest
   public void getInvoicingCycle () throws Exception
   {
     invoicingCycle.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getInvoicingCycle());
+    assertEquals(stringTest, agreement.invoicingCycle());
   }
 
   @Test
   public void setInvoicingCycle () throws Exception
   {
-    agreement.setInvoicingCycle(stringTest);
+    agreement.invoicingCycle(stringTest);
     assertEquals(stringTest, invoicingCycle.get(agreement));
   }
 
@@ -899,13 +899,13 @@ public class AgreementTest
   public void getBillToCompanyId () throws Exception
   {
     billToCompanyId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getBillToCompanyId());
+    assertEquals(intTest, agreement.billToCompanyId());
   }
 
   @Test
   public void setBillToCompanyId () throws Exception
   {
-    agreement.setBillToCompanyId(intTest);
+    agreement.billToCompanyId(intTest);
     assertEquals(intTest, billToCompanyId.get(agreement));
   }
 
@@ -913,13 +913,13 @@ public class AgreementTest
   public void getBillToAddressId () throws Exception
   {
     billToAddressId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getBillToAddressId());
+    assertEquals(intTest, agreement.billToAddressId());
   }
 
   @Test
   public void setBillToAddressId () throws Exception
   {
-    agreement.setBillToAddressId(intTest);
+    agreement.billToAddressId(intTest);
     assertEquals(intTest, billToAddressId.get(agreement));
   }
 
@@ -927,13 +927,13 @@ public class AgreementTest
   public void getBillAmount () throws Exception
   {
     billAmount.set(agreement, doubleTest);
-    assertEquals(doubleTest, agreement.getBillAmount(), 0);
+    assertEquals(doubleTest, agreement.billAmount(), 0);
   }
 
   @Test
   public void setBillAmount () throws Exception
   {
-    agreement.setBillAmount(doubleTest);
+    agreement.billAmount(doubleTest);
     assertEquals(doubleTest, billAmount.get(agreement));
   }
 
@@ -941,13 +941,13 @@ public class AgreementTest
   public void isTaxable () throws Exception
   {
     taxable.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isTaxable());
+    assertEquals(booleanTest, agreement.taxable());
   }
 
   @Test
   public void setTaxable () throws Exception
   {
-    agreement.setTaxable(booleanTest);
+    agreement.taxable(booleanTest);
     assertEquals(booleanTest, taxable.get(agreement));
   }
 
@@ -955,13 +955,13 @@ public class AgreementTest
   public void getProrateFirstBill () throws Exception
   {
     prorateFirstBill.set(agreement, doubleTest);
-    assertEquals(doubleTest, agreement.getProrateFirstBill(), 0);
+    assertEquals(doubleTest, agreement.prorateFirstBill(), 0);
   }
 
   @Test
   public void setProrateFirstBill () throws Exception
   {
-    agreement.setProrateFirstBill(doubleTest);
+    agreement.prorateFirstBill(doubleTest);
     assertEquals(doubleTest, prorateFirstBill.get(agreement));
   }
 
@@ -969,13 +969,13 @@ public class AgreementTest
   public void getBillStartDate () throws Exception
   {
     billStartDate.set(agreement, dateTest);
-    assertEquals(dateTest, agreement.getBillStartDate());
+    assertEquals(dateTest, agreement.billStartDate());
   }
 
   @Test
   public void setBillStartDate () throws Exception
   {
-    agreement.setBillStartDate(dateTest);
+    agreement.billStartDate(dateTest);
     assertEquals(dateTest, billStartDate.get(agreement));
   }
 
@@ -983,13 +983,13 @@ public class AgreementTest
   public void getTaxCodeId () throws Exception
   {
     taxCodeId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getTaxCodeId());
+    assertEquals(intTest, agreement.taxCodeId());
   }
 
   @Test
   public void setTaxCodeId () throws Exception
   {
-    agreement.setTaxCodeId(intTest);
+    agreement.taxCodeId(intTest);
     assertEquals(intTest, taxCodeId.get(agreement));
   }
 
@@ -997,13 +997,13 @@ public class AgreementTest
   public void isRestrictDownPayment () throws Exception
   {
     restrictDownPayment.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isRestrictDownPayment());
+    assertEquals(booleanTest, agreement.restrictDownPayment());
   }
 
   @Test
   public void setRestrictDownPayment () throws Exception
   {
-    agreement.setRestrictDownPayment(booleanTest);
+    agreement.restrictDownPayment(booleanTest);
     assertEquals(booleanTest, restrictDownPayment.get(agreement));
   }
 
@@ -1011,13 +1011,13 @@ public class AgreementTest
   public void getInvoiceDescription () throws Exception
   {
     invoiceDescription.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getInvoiceDescription());
+    assertEquals(stringTest, agreement.invoiceDescription());
   }
 
   @Test
   public void setInvoiceDescription () throws Exception
   {
-    agreement.setInvoiceDescription(stringTest);
+    agreement.invoiceDescription(stringTest);
     assertEquals(stringTest, invoiceDescription.get(agreement));
   }
 
@@ -1025,13 +1025,13 @@ public class AgreementTest
   public void isTopComment () throws Exception
   {
     topComment.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isTopComment());
+    assertEquals(booleanTest, agreement.topComment());
   }
 
   @Test
   public void setTopComment () throws Exception
   {
-    agreement.setTopComment(booleanTest);
+    agreement.topComment(booleanTest);
     assertEquals(booleanTest, topComment.get(agreement));
   }
 
@@ -1039,13 +1039,13 @@ public class AgreementTest
   public void isBottomComment () throws Exception
   {
     bottomComment.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isBottomComment());
+    assertEquals(booleanTest, agreement.bottomComment());
   }
 
   @Test
   public void setBottomComment () throws Exception
   {
-    agreement.setBottomComment(booleanTest);
+    agreement.bottomComment(booleanTest);
     assertEquals(booleanTest, bottomComment.get(agreement));
   }
 
@@ -1053,13 +1053,13 @@ public class AgreementTest
   public void getWorkRoleId () throws Exception
   {
     workRoleId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getWorkRoleId());
+    assertEquals(intTest, agreement.workRoleId());
   }
 
   @Test
   public void setWorkRoleId () throws Exception
   {
-    agreement.setWorkRoleId(intTest);
+    agreement.workRoleId(intTest);
     assertEquals(intTest, workRoleId.get(agreement));
   }
 
@@ -1067,13 +1067,13 @@ public class AgreementTest
   public void getWorkTypeId () throws Exception
   {
     workTypeId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getWorkTypeId());
+    assertEquals(intTest, agreement.workTypeId());
   }
 
   @Test
   public void setWorkTypeId () throws Exception
   {
-    agreement.setWorkTypeId(intTest);
+    agreement.workTypeId(intTest);
     assertEquals(intTest, workTypeId.get(agreement));
   }
 
@@ -1081,13 +1081,13 @@ public class AgreementTest
   public void getProjectTypeId () throws Exception
   {
     projectTypeId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getProjectTypeId());
+    assertEquals(intTest, agreement.projectTypeId());
   }
 
   @Test
   public void setProjectTypeId () throws Exception
   {
-    agreement.setProjectTypeId(intTest);
+    agreement.projectTypeId(intTest);
     assertEquals(intTest, projectTypeId.get(agreement));
   }
 
@@ -1095,13 +1095,13 @@ public class AgreementTest
   public void getInvoiceTemplateId () throws Exception
   {
     invoiceTemplateId.set(agreement, intTest);
-    assertEquals(intTest, agreement.getInvoiceTemplateId());
+    assertEquals(intTest, agreement.invoiceTemplateId());
   }
 
   @Test
   public void setInvoiceTemplateId () throws Exception
   {
-    agreement.setInvoiceTemplateId(intTest);
+    agreement.invoiceTemplateId(intTest);
     assertEquals(intTest, invoiceTemplateId.get(agreement));
   }
 
@@ -1109,13 +1109,13 @@ public class AgreementTest
   public void getBillTime () throws Exception
   {
     billTime.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getBillTime());
+    assertEquals(stringTest, agreement.billTime());
   }
 
   @Test
   public void setBillTime () throws Exception
   {
-    agreement.setBillTime(stringTest);
+    agreement.billTime(stringTest);
     assertEquals(stringTest, billTime.get(agreement));
   }
 
@@ -1123,13 +1123,13 @@ public class AgreementTest
   public void getBillExpenses () throws Exception
   {
     billExpenses.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getBillExpenses());
+    assertEquals(stringTest, agreement.billExpenses());
   }
 
   @Test
   public void setBillExpenses () throws Exception
   {
-    agreement.setBillExpenses(stringTest);
+    agreement.billExpenses(stringTest);
     assertEquals(stringTest, billExpenses.get(agreement));
   }
 
@@ -1137,13 +1137,13 @@ public class AgreementTest
   public void getBillProducts () throws Exception
   {
     billProducts.set(agreement, stringTest);
-    assertEquals(stringTest, agreement.getBillProducts());
+    assertEquals(stringTest, agreement.billProducts());
   }
 
   @Test
   public void setBillProducts () throws Exception
   {
-    agreement.setBillProducts(stringTest);
+    agreement.billProducts(stringTest);
     assertEquals(stringTest, billProducts.get(agreement));
   }
 
@@ -1151,13 +1151,13 @@ public class AgreementTest
   public void isBillableTimeInvoice () throws Exception
   {
     billableTimeInvoice.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isBillableTimeInvoice());
+    assertEquals(booleanTest, agreement.billableTimeInvoice());
   }
 
   @Test
   public void setBillableTimeInvoice () throws Exception
   {
-    agreement.setBillableTimeInvoice(booleanTest);
+    agreement.billableTimeInvoice(booleanTest);
     assertEquals(booleanTest, billableTimeInvoice.get(agreement));
   }
 
@@ -1165,13 +1165,13 @@ public class AgreementTest
   public void isBillableExpenseInvoice () throws Exception
   {
     billableExpenseInvoice.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isBillableExpenseInvoice());
+    assertEquals(booleanTest, agreement.billableExpenseInvoice());
   }
 
   @Test
   public void setBillableExpenseInvoice () throws Exception
   {
-    agreement.setBillableExpenseInvoice(booleanTest);
+    agreement.billableExpenseInvoice(booleanTest);
     assertEquals(booleanTest, billableExpenseInvoice.get(agreement));
   }
 
@@ -1179,13 +1179,13 @@ public class AgreementTest
   public void isBillableProductInvoice () throws Exception
   {
     billableProductInvoice.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.isBillableProductInvoice());
+    assertEquals(booleanTest, agreement.billableProductInvoice());
   }
 
   @Test
   public void setBillableProductInvoice () throws Exception
   {
-    agreement.setBillableProductInvoice(booleanTest);
+    agreement.billableProductInvoice(booleanTest);
     assertEquals(booleanTest, billableProductInvoice.get(agreement));
   }
 

@@ -12,7 +12,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 package io.vulpine.connectwise;
 
@@ -37,19 +36,25 @@ public class EmptyFilter implements PropertyFilter
 
     final Method m = (Method) writer.getMember().getMember();
 
-    switch (writer.getType().getRawClass().getSimpleName()) {
-      case "String":
-        final String s = (String) m.invoke(pojo);
-        if (null == s || s.isEmpty()) return;
-        break;
-      case "int":
-        final int i = (int) m.invoke(pojo);
-        if (i < 1) return;
-        break;
-      default:
-        final Object o = m.invoke(pojo);
-        if (null == o) return;
+    String s1 = writer.getType().getRawClass().getSimpleName();
+
+    if (s1.equals("String")) {
+
+      final String s = (String) m.invoke(pojo);
+      if (null == s || s.isEmpty()) return;
+
+    } else if (s1.equals("int")) {
+
+      final int i = (Integer) m.invoke(pojo);
+      if (i < 1) return;
+
+    } else {
+
+      final Object o = m.invoke(pojo);
+      if (null == o) return;
+
     }
+
     writer.serializeAsField(pojo, jgen, prov);
   }
 

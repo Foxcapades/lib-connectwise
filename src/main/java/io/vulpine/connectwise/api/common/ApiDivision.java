@@ -12,24 +12,28 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 package io.vulpine.connectwise.api.common;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.logging.Logger;
+import io.vulpine.logging.LoggerManager;
 
 public class ApiDivision
 {
   protected final Credentials     credentials;
   protected final XmlMapper       mapper;
   protected final SubApiInterface api;
+  protected final Logger          logger;
 
   public ApiDivision ( Credentials credentials, XmlMapper mapper, SubApiInterface api )
   {
     this.credentials = credentials;
     this.mapper = mapper;
     this.api = api;
+
+    this.logger = LoggerManager.getLogger("lib-connectwise");
   }
 }

@@ -12,20 +12,27 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-
 package io.vulpine.connectwise.api;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.EmptyFilter;
-import io.vulpine.connectwise.api.def.ConnectwiseInterface;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.api.common.SoapConfig;
-import io.vulpine.http.Request;
+import io.vulpine.connectwise.api.common.request.ConnectwiseRequest;
+import io.vulpine.connectwise.api.common.request.SoapEnvelope;
+import io.vulpine.connectwise.api.def.ConnectwiseInterface;
+import io.vulpine.http.HttpErrorHandler;
+import io.vulpine.http.HttpRequest;
+import io.vulpine.http.HttpResponse;
+import io.vulpine.http.HttpResponseType;
+import io.vulpine.logging.Logger;
+import io.vulpine.logging.LoggerManager;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 
 /**
@@ -33,447 +40,130 @@ import java.util.regex.Pattern;
  */
 public final class ConnectwiseApi implements ConnectwiseInterface
 {
+  public static int BAD_RESPONSE_RETRIES = 5;
+
+  public final Add add;
+
+  public final AddOrUpdate addOrUpdate;
+
+  public final Authenticate authenticate;
+
+  public final Check check;
+
+  public final Create create;
+
+  public final Delete delete;
+
+  public final Find find;
+
+  public final Get get;
+
+  public final Is is;
+
+  public final Load load;
+
+  public final Record record;
+
+  public final Remove remove;
+
+  public final Set set;
+
+  public final Update update;
+
   // Jackson-DataFormat-XML v2.7.5 has issues parsing xsi:nil on primitives.
   // This is to filter those elements out of the responses.
-  private final static Pattern nilFilter = Pattern.compile("<[\\w -]+xsi:nil=\"true\"[\\w -]+/>");
-
-  /**
-   * Accounting API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private AccountingApi accountingApi = null;
-
-  /**
-   * Activity API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ActivityApi activityApi = null;
-
-  /**
-   * Agreement API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private AgreementApi agreementApi = null;
-
-  /**
-   * Company API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private CompanyApi companyApi = null;
-
-  /**
-   * Configuration API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ConfigurationApi configurationApi = null;
-
-  /**
-   * Contact API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ContactApi contactApi = null;
-
-  /**
-   * Document API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private DocumentApi documentApi = null;
-
-  /**
-   * Invoice API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private InvoiceApi invoiceApi = null;
-
-  /**
-   * Managed Device API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ManagedDeviceApi managedDeviceApi = null;
-
-  /**
-   * Marketing API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private MarketingApi marketingApi = null;
-
-  /**
-   * Member API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private MemberApi memberApi = null;
-
-  /**
-   * Opportunity API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private OpportunityApi opportunityApi = null;
-
-  /**
-   * Opportunity Conversion API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private OpportunityConversionApi opportunityConversionApi = null;
-
-  /**
-   * Product API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ProductApi productApi = null;
-
-  /**
-   * Project API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ProjectApi projectApi = null;
-
-  /**
-   * Purchasing API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private PurchasingApi purchasingApi = null;
-
-  /**
-   * Reporting API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ReportingApi reportingApi = null;
-
-  /**
-   * Scheduling API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private SchedulingApi schedulingApi = null;
-
-  /**
-   * Service API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private ServiceApi serviceApi = null;
-
-  /**
-   * System API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private SystemApi systemApi = null;
-
-  /**
-   * Time API Container
-   * <p>
-   * Instantiated On Demand
-   */
-  private TimeApi timeApi = null;
+  private final static Pattern NIL_FILTER = Pattern.compile("<[\\w \\-]+xsi:nil=\"true\"[\\w \\-]+/>");
 
   private final Credentials credentials;
 
-  private final String apiPath;
-
   private final XmlMapper xmlMapper;
 
-  @Deprecated
-  public ConnectwiseApi( final SoapConfig config )
-  {
-    this(config.getCompany(), config.getApiUsername(), config.getApiPassword(), config.getApiPath());
-  }
+  private final Logger logger;
 
+  private final String apiPath;
+
+  /**
+   * Connectwise API Constructor
+   *
+   * @param company  Connectwise Company Name
+   * @param username Integrator Username
+   * @param password Integrator Password
+   * @param apiPath  Path to a Connectwise instance (https://connectwise.mysite.com)
+   */
   public ConnectwiseApi( final String company, final String username, final String password, final String apiPath )
   {
-    this.apiPath = apiPath;
     this.xmlMapper = new XmlMapper();
-    this.credentials = new Credentials()
-      .setCompanyId(company)
-      .setIntegratorLoginId(username)
-      .setIntegratorPassword(password);
+    this.credentials = new Credentials().setCompanyId(company).setIntegratorLoginId(username).setIntegratorPassword(password);
+    this.apiPath = apiPath + (apiPath.endsWith("/") ? "v4_6_release/apis/2.0/" : "/v4_6_release/apis/2.0/");
 
-    xmlMapper.setFilterProvider(new SimpleFilterProvider().addFilter("filter-empty", new EmptyFilter()));
+    this.xmlMapper.setFilterProvider(new SimpleFilterProvider().addFilter("filter-empty", new EmptyFilter()));
 
+    this.logger = LoggerManager.getLogger("lib-connectwise");
+
+
+    this.add          = new AddImpl(this, credentials, xmlMapper);
+    this.addOrUpdate  = new AddOrUpdateImpl(this, credentials, xmlMapper);
+    this.authenticate = new AuthenticateImpl(this, credentials, xmlMapper);
+    this.check        = new CheckImpl(this, credentials, xmlMapper);
+    this.create       = new CreateImpl(this, credentials, xmlMapper);
+    this.delete       = new DeleteImpl(this, credentials, xmlMapper);
+    this.find         = new FindImpl(this, credentials, xmlMapper);
+    this.get          = new GetImpl(this, credentials, xmlMapper);
+    this.is           = new IsImpl(this, credentials, xmlMapper);
+    this.load         = new LoadImpl(this, credentials, xmlMapper);
+    this.record       = new RecordImpl(this, credentials, xmlMapper);
+    this.remove       = new RemoveImpl(this, credentials, xmlMapper);
+    this.set          = new SetImpl(this, credentials, xmlMapper);
+    this.update       = new UpdateImpl(this, credentials, xmlMapper);
   }
 
-  /**
-   * @return Accounting API Container
-   */
-  @Override
-  public final AccountingApi accounting()
-  {
-    if (null == accountingApi) {
-      accountingApi = new AccountingApi(this, credentials, xmlMapper, apiPath);
-    }
-    return accountingApi;
-  }
-
-  /**
-   * @return Activity API Container
-   */
-  @Override
-  public final ActivityApi activity()
-  {
-    if (null == activityApi) {
-      activityApi = new ActivityApi(this, credentials, xmlMapper, apiPath);
-    }
-    return activityApi;
-  }
-
-  /**
-   * @return Agreement API Container
-   */
-  @Override
-  public final AgreementApi agreement()
-  {
-    if (null == agreementApi) {
-      agreementApi = new AgreementApi(this, credentials, xmlMapper, apiPath);
-    }
-    return agreementApi;
-  }
-
-  /**
-   * @return Company API Container
-   */
-  @Override
-  public final CompanyApi company()
-  {
-    if (null == companyApi) {
-      companyApi = new CompanyApi(this, credentials, xmlMapper, apiPath);
-    }
-    return companyApi;
-  }
-
-  /**
-   * @return Configuration API Container
-   */
-  @Override
-  public final ConfigurationApi configuration()
-  {
-    if (null == configurationApi) {
-      configurationApi = new ConfigurationApi(this, credentials, xmlMapper, apiPath);
-    }
-    return configurationApi;
-  }
-
-  /**
-   * @return Contact API Container
-   */
-  @Override
-  public final ContactApi contact()
-  {
-    if (null == contactApi) {
-      contactApi = new ContactApi(this, credentials, xmlMapper, apiPath);
-    }
-    return contactApi;
-  }
-
-  /**
-   * @return Document API Container
-   */
-  @Override
-  public final DocumentApi document()
-  {
-    if (null == documentApi) {
-      documentApi = new DocumentApi(this, credentials, xmlMapper, apiPath);
-    }
-    return documentApi;
-  }
-
-  /**
-   * @return Invoice API Container
-   */
-  @Override
-  public final InvoiceApi invoice()
-  {
-    if (null == invoiceApi) {
-      invoiceApi = new InvoiceApi(this, credentials, xmlMapper, apiPath);
-    }
-    return invoiceApi;
-  }
-
-  /**
-   * @return ManagedDevice API Container
-   */
-  @Override
-  public final ManagedDeviceApi managedDevice()
-  {
-    if (null == managedDeviceApi) {
-      managedDeviceApi = new ManagedDeviceApi(this, credentials, xmlMapper, apiPath);
-    }
-    return managedDeviceApi;
-  }
-
-  /**
-   * @return Marketing API Container
-   */
-  @Override
-  public final MarketingApi marketing()
-  {
-    if (null == marketingApi) {
-      marketingApi = new MarketingApi(this, credentials, xmlMapper, apiPath);
-    }
-    return marketingApi;
-  }
-
-  /**
-   * @return Member API Container
-   */
-  @Override
-  public final MemberApi member()
-  {
-    if (null == memberApi) {
-      memberApi = new MemberApi(this, credentials, xmlMapper, apiPath);
-    }
-    return memberApi;
-  }
-
-  /**
-   * @return Opportunity API Container
-   */
-  @Override
-  public final OpportunityApi opportunity()
-  {
-    if (null == opportunityApi) {
-      opportunityApi = new OpportunityApi(this, credentials, xmlMapper, apiPath);
-    }
-    return opportunityApi;
-  }
-
-  /**
-   * @return OpportunityConversion API Container
-   */
-  @Override
-  public final OpportunityConversionApi opportunityConversion()
-  {
-    if (null == opportunityConversionApi) {
-      opportunityConversionApi = new OpportunityConversionApi(this, credentials, xmlMapper, apiPath);
-    }
-    return opportunityConversionApi;
-  }
-
-  /**
-   * @return Product API Container
-   */
-  @Override
-  public final ProductApi product()
-  {
-    if (null == productApi) {
-      productApi = new ProductApi(this, credentials, xmlMapper, apiPath);
-    }
-    return productApi;
-  }
-
-  /**
-   * @return Project API Container
-   */
-  @Override
-  public final ProjectApi project()
-  {
-    if (null == projectApi) {
-      projectApi = new ProjectApi(this, credentials, xmlMapper, apiPath);
-    }
-    return projectApi;
-  }
-
-  /**
-   * @return Purchasing API Container
-   */
-  @Override
-  public final PurchasingApi purchasing()
-  {
-    if (null == purchasingApi) {
-      purchasingApi = new PurchasingApi(this, credentials, xmlMapper, apiPath);
-    }
-    return purchasingApi;
-  }
-
-  /**
-   * @return Reporting API Container
-   */
-  @Override
-  public final ReportingApi reporting()
-  {
-    if (null == reportingApi) {
-      reportingApi = new ReportingApi(this, credentials, xmlMapper, apiPath);
-    }
-    return reportingApi;
-  }
-
-  /**
-   * @return Scheduling API Container
-   */
-  @Override
-  public final SchedulingApi scheduling()
-  {
-    if (null == schedulingApi) {
-      schedulingApi = new SchedulingApi(this, credentials, xmlMapper, apiPath);
-    }
-    return schedulingApi;
-  }
-
-  /**
-   * @return Service API Container
-   */
-  @Override
-  public final ServiceApi service()
-  {
-    if (null == serviceApi) {
-      serviceApi = new ServiceApi(this, credentials, xmlMapper, apiPath);
-    }
-    return serviceApi;
-  }
-
-  /**
-   * @return System API Container
-   */
-  @Override
-  public final SystemApi system()
-  {
-    if (null == systemApi) {
-      systemApi = new SystemApi(this, credentials, xmlMapper, apiPath);
-    }
-    return systemApi;
-  }
-
-  /**
-   * @return Time API Container
-   */
-  @Override
-  public final TimeApi time()
-  {
-    if (null == timeApi) {
-      timeApi = new TimeApi(this, credentials, xmlMapper, apiPath);
-    }
-    return timeApi;
-  }
 
   @Override
   public final String send( final String url, final String xml ) throws IOException
   {
-    return nilFilter.matcher(
-      new Request()
-        .url(url)
-        .post()
-        .setHeader("Content-Type", "text/xml; charset=utf-8")
+    final Logger       log = this.logger;
+    final String       response;
+
+    log.trace(ConnectwiseApi.class, url, xml);
+    log.debug(String.format("Connectwise Request: %s", xml));
+
+    for ( int tries = 0; tries < BAD_RESPONSE_RETRIES; tries++ ) {
+      final HttpResponse res = HttpRequest.post(apiPath + url)
+        .setHeader("Content-Type", "text/xml", "charset=utf-8")
         .setHeader("Content-Length", String.valueOf(xml.getBytes("UTF-8").length))
-        .addErrorHandler(( s, r ) -> System.out.println(s))
-        .requestBody(xml)
-        .submit()
-        .getBody()
-    ).replaceAll("");
+        .appendToBody(xml)
+        .addErrorHandler(new HttpErrorHandler() {
+          @Override
+          public void handle( final HttpRequest request, final IOException exception )
+          {
+            final BufferedReader read = new BufferedReader(new InputStreamReader(request.getConnection().getErrorStream()));
+            String               line;
+            try {
+              while ( null != (line = read.readLine()) ) {
+                logger.warn(line);
+              }
+            } catch ( IOException e ) {
+              e.printStackTrace();
+            }
+          }
+        })
+        .send();
+
+      if (res == null || res.getType() != HttpResponseType.OK) {
+        continue;
+      }
+
+      response = res.getBody();
+      log.debug(String.format("Connectwise Response: %s", response));
+
+      return NIL_FILTER.matcher(response).replaceAll("");
+    }
+
+    throw new IOException("All retries failed, could not get valid response from Connectwise");
+  }
+
+  public String generateSoapXml( final ConnectwiseRequest request ) throws JsonProcessingException
+  {
+    return xmlMapper.writeValueAsString(new SoapEnvelope(request));
   }
 }

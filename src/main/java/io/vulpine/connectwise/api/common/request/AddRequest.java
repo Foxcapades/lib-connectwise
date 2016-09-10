@@ -19,7 +19,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.Endpoint;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
+import io.vulpine.connectwise.type.company.Company;
 
 import java.util.Date;
 
@@ -31,10 +33,11 @@ public abstract class AddRequest < T extends ConnectwiseCommon > extends Connect
     Credentials credentials,
     XmlMapper xmlMapper,
     SubApiInterface api,
+    Endpoint endpoint,
     T data
   )
   {
-    super(credentials, xmlMapper, api);
+    super(credentials, xmlMapper, api, endpoint);
 
     this.data = data;
   }
@@ -42,60 +45,60 @@ public abstract class AddRequest < T extends ConnectwiseCommon > extends Connect
   @JsonIgnore
   public int getId ()
   {
-    return data.getId();
+    return data.id();
   }
 
   public AddRequest setId ( final int id )
   {
-    data.setId(id);
+    data.id(id);
     return this;
   }
 
   @JsonIgnore
   public String getUpdatedBy ()
   {
-    return data.getUpdatedBy();
+    return data.updatedBy();
   }
 
   public AddRequest setUpdatedBy ( String updatedBy )
   {
-    data.setUpdatedBy(updatedBy);
+    data.updatedBy(updatedBy);
     return this;
   }
 
   @JsonIgnore
   public Date getLastUpdate ()
   {
-    return data.getLastUpdate();
+    return data.lastUpdate();
   }
 
   public AddRequest setLastUpdate ( Date lastUpdate )
   {
-    data.setLastUpdate(lastUpdate);
+    data.lastUpdate(lastUpdate);
     return this;
   }
 
   @JsonIgnore
   public String getDescription ()
   {
-    return data.getDescription();
+    return data.description();
   }
 
   public AddRequest setDescription ( String description )
   {
-    data.setDescription(description);
+    data.description(description);
     return this;
   }
 
   @JsonIgnore
   public Date getLastUpdated ()
   {
-    return data.getLastUpdated();
+    return data.lastUpdated();
   }
 
   public AddRequest setLastUpdated ( Date lastUpdated )
   {
-    data.setLastUpdated(lastUpdated);
+    data.lastUpdated(lastUpdated);
     return this;
   }
 

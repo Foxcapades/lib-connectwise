@@ -12,15 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-
 package io.vulpine.connectwise.type.contact;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
-@SuppressWarnings( "unused" )
 public class ContactNote extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "NoteType" )

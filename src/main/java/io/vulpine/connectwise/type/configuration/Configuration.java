@@ -12,711 +12,1071 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-
 package io.vulpine.connectwise.type.configuration;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 
-@JacksonXmlRootElement( localName = "Configuration" )
+@JsonRootName( "Configuration" )
 public class Configuration extends ConnectwiseCommon
 {
-  @JacksonXmlProperty( localName = "ConfigurationTypeId" )
-  protected int configurationTypeId;
+  private Integer addressId = null;
 
-  @JacksonXmlProperty( localName = "ConfigurationType" )
-  protected String configurationType;
+  private Integer backupFailed = null;
 
-  @JacksonXmlProperty( localName = "StatusId" )
-  protected int statusId;
+  private Integer backupIncomplete = null;
 
-  @JacksonXmlProperty( localName = "Status" )
-  protected String status;
+  private Integer backupMonth = null;
 
-  @JacksonXmlProperty( localName = "ConfigurationName" )
-  protected String configurationName;
+  private Integer backupRestores = null;
 
-  @JacksonXmlProperty( localName = "ContactName" )
-  protected String contactName;
+  private Integer backupSuccesses = null;
 
-  @JacksonXmlProperty( localName = "CompanyName" )
-  protected String companyName;
+  private Integer businessUnitId = null;
 
-  @JacksonXmlProperty( localName = "CompanyId" )
-  protected int companyId;
+  private Integer backupYear = null;
 
-  @JacksonXmlProperty( localName = "ContactId" )
-  protected int contactId;
+  private Integer companyId = null;
 
-  @JacksonXmlProperty( localName = "LocationId" )
-  protected int locationId;
+  private Integer contactId = null;
 
-  @JacksonXmlProperty( localName = "BusinessUnitId" )
-  protected int businessUnitId;
+  private Integer configurationTypeId = null;
 
-  @JacksonXmlProperty( localName = "DeviceIdentifier" )
-  protected String deviceIdentifier;
+  private Integer locationId = null;
 
-  @JacksonXmlProperty( localName = "SerialNumber" )
-  protected String serialNumber;
+  private Integer parentConfigurationId = null;
 
-  @JacksonXmlProperty( localName = "ModelNumber" )
-  protected String modelNumber;
+  private Integer statusId = null;
 
-  @JacksonXmlProperty( localName = "TagNumber" )
-  protected String tagNumber;
+  private Boolean billFlag = null;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty( localName = "PurchaseDate" )
-  protected Date purchaseDate;
+  private Boolean isActive = null;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty( localName = "InstallationDate" )
-  protected Date installationDate;
+  private Double backupBillableSpaceGb = null;
 
-  @JacksonXmlProperty( localName = "InstalledBy" )
-  protected String installedBy;
+  private ConfigurationQuestion[] configurationQuestions = null;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty( localName = "WarrantyExpiration" )
-  protected Date warrantyExpiration;
+  private VendorCompany vendorCompany = null;
 
-  @JacksonXmlProperty( localName = "AddressId" )
-  protected int addressId;
+  private ManufacturerCompany manufacturerCompany = null;
 
-  @JacksonXmlProperty( localName = "AddressLine1" )
-  protected String addressLine1;
+  private Date installationDate = null;
 
-  @JacksonXmlProperty( localName = "AddressLine2" )
-  protected String addressLine2;
+  private Date lastBackupDate = null;
 
-  @JacksonXmlProperty( localName = "City" )
-  protected String city;
+  private Date purchaseDate = null;
 
-  @JacksonXmlProperty( localName = "State" )
-  protected String state;
+  private Date warrantyExpiration = null;
 
-  @JacksonXmlProperty( localName = "ZipCode" )
-  protected String zipCode;
+  private String addressLine1 = null;
 
-  @JacksonXmlProperty( localName = "Country" )
-  protected String country;
+  private String addressLine2 = null;
 
-  @JacksonXmlProperty( localName = "VendorNotes" )
-  protected String vendorNotes;
+  private String backupServerName = null;
 
-  @JacksonXmlProperty( localName = "Notes" )
-  protected String notes;
+  private String backupProtectedDeviceList = null;
 
-  @JacksonXmlProperty( localName = "MacAddress" )
-  protected String macAddress;
+  private String city = null;
 
-  @JacksonXmlProperty( localName = "LastLoginName" )
-  protected String lastLoginName;
+  private String companyName = null;
 
-  @JacksonXmlProperty( localName = "BillFlag" )
-  protected boolean billFlag;
+  private String configurationName = null;
 
-  @JacksonXmlProperty( localName = "BackupSuccesses" )
-  protected int backupSuccesses;
+  private String configurationType = null;
 
-  @JacksonXmlProperty( localName = "BackupIncomplete" )
-  protected int backupIncomplete;
+  private String contactName = null;
 
-  @JacksonXmlProperty( localName = "BackupFailed" )
-  protected int backupFailed;
+  private String country = null;
 
-  @JacksonXmlProperty( localName = "BackupRestores" )
-  protected int backupRestores;
+  private String cpuSpeed = null;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty( localName = "LastBackupDate" )
-  protected Date lastBackupDate;
+  private String defaultGateway = null;
 
-  @JacksonXmlProperty( localName = "BackupServerName" )
-  protected String backupServerName;
+  private String deviceIdentifier = null;
 
-  @JacksonXmlProperty( localName = "BackupBillableSpaceGb" )
-  protected double backupBillableSpaceGb;
+  private String installedBy = null;
 
-  @JacksonXmlProperty( localName = "BackupProtectedDeviceList" )
-  protected String backupProtectedDeviceList;
+  private String ipAddress = null;
 
-  @JacksonXmlProperty( localName = "BackupYear" )
-  protected int backupYear;
+  private String lastLoginName = null;
 
-  @JacksonXmlProperty( localName = "BackupMonth" )
-  protected int backupMonth;
+  private String localHardDrives = null;
 
-  @JacksonXmlProperty( localName = "IPAddress" )
-  protected String iPAddress;
+  private String macAddress = null;
 
-  @JacksonXmlProperty( localName = "DefaultGateway" )
-  protected String defaultGateway;
+  private String modelNumber = null;
 
-  @JacksonXmlProperty( localName = "OSType" )
-  protected String osType;
+  private String notes = null;
 
-  @JacksonXmlProperty( localName = "OSInfo" )
-  protected String osInfo;
+  private String osType = null;
 
-  @JacksonXmlProperty( localName = "CPUSpeed" )
-  protected String cpuSpeed;
+  private String osInfo = null;
 
-  @JacksonXmlProperty( localName = "RAM" )
-  protected String ram;
+  private String serialNumber = null;
 
-  @JacksonXmlProperty( localName = "LocalHardDrives" )
-  protected String localHardDrives;
+  private String state = null;
 
-  @JacksonXmlProperty( localName = "IsActive" )
-  protected boolean isActive;
+  private String status = null;
 
-  @JacksonXmlProperty( localName = "ParentConfigurationId" )
-  protected int parentConfigurationId;
+  private String ram = null;
 
-  @JacksonXmlProperty( localName = "ConfigurationQuestions" )
-  protected ConfigurationQuestion[] configurationQuestions;
+  private String tagNumber = null;
 
-  @JacksonXmlProperty( localName = "VendorCompany" )
-  protected VendorCompany vendorCompany;
+  private String vendorNotes = null;
 
-  @JacksonXmlProperty( localName = "ManufacturerCompany" )
-  protected ManufacturerCompany manufacturerCompany;
-
-  public int getConfigurationTypeId ()
-  {
-    return configurationTypeId;
-  }
-
-  public void setConfigurationTypeId ( int configurationTypeId )
-  {
-    this.configurationTypeId = configurationTypeId;
-  }
-
-  public String getConfigurationType ()
-  {
-    return configurationType;
-  }
-
-  public void setConfigurationType ( String configurationType )
-  {
-    this.configurationType = configurationType;
-  }
-
-  public int getStatusId ()
-  {
-    return statusId;
-  }
-
-  public void setStatusId ( int statusId )
-  {
-    this.statusId = statusId;
-  }
-
-  public String getStatus ()
-  {
-    return status;
-  }
-
-  public void setStatus ( String status )
-  {
-    this.status = status;
-  }
-
-  public String getConfigurationName ()
-  {
-    return configurationName;
-  }
-
-  public void setConfigurationName ( String configurationName )
-  {
-    this.configurationName = configurationName;
-  }
-
-  public String getContactName ()
-  {
-    return contactName;
-  }
-
-  public void setContactName ( String contactName )
-  {
-    this.contactName = contactName;
-  }
-
-  public String getCompanyName ()
-  {
-    return companyName;
-  }
-
-  public void setCompanyName ( String companyName )
-  {
-    this.companyName = companyName;
-  }
-
-  public int getCompanyId ()
-  {
-    return companyId;
-  }
-
-  public void setCompanyId ( int companyId )
-  {
-    this.companyId = companyId;
-  }
-
-  public int getContactId ()
-  {
-    return contactId;
-  }
-
-  public void setContactId ( int contactId )
-  {
-    this.contactId = contactId;
-  }
-
-  public int getLocationId ()
-  {
-    return locationId;
-  }
-
-  public void setLocationId ( int locationId )
-  {
-    this.locationId = locationId;
-  }
-
-  public int getBusinessUnitId ()
-  {
-    return businessUnitId;
-  }
-
-  public void setBusinessUnitId ( int businessUnitId )
-  {
-    this.businessUnitId = businessUnitId;
-  }
-
-  public String getDeviceIdentifier ()
-  {
-    return deviceIdentifier;
-  }
-
-  public void setDeviceIdentifier ( String deviceIdentifier )
-  {
-    this.deviceIdentifier = deviceIdentifier;
-  }
-
-  public String getSerialNumber ()
-  {
-    return serialNumber;
-  }
-
-  public void setSerialNumber ( String serialNumber )
-  {
-    this.serialNumber = serialNumber;
-  }
-
-  public String getModelNumber ()
-  {
-    return modelNumber;
-  }
-
-  public void setModelNumber ( String modelNumber )
-  {
-    this.modelNumber = modelNumber;
-  }
-
-  public String getTagNumber ()
-  {
-    return tagNumber;
-  }
-
-  public void setTagNumber ( String tagNumber )
-  {
-    this.tagNumber = tagNumber;
-  }
-
-  public Date getPurchaseDate ()
-  {
-    return purchaseDate;
-  }
-
-  public void setPurchaseDate ( Date purchaseDate )
-  {
-    this.purchaseDate = purchaseDate;
-  }
-
-  public Date getInstallationDate ()
-  {
-    return installationDate;
-  }
-
-  public void setInstallationDate ( Date installationDate )
-  {
-    this.installationDate = installationDate;
-  }
-
-  public String getInstalledBy ()
-  {
-    return installedBy;
-  }
-
-  public void setInstalledBy ( String installedBy )
-  {
-    this.installedBy = installedBy;
-  }
-
-  public Date getWarrantyExpiration ()
-  {
-    return warrantyExpiration;
-  }
-
-  public void setWarrantyExpiration ( Date warrantyExpiration )
-  {
-    this.warrantyExpiration = warrantyExpiration;
-  }
-
-  public int getAddressId ()
-  {
-    return addressId;
-  }
-
-  public void setAddressId ( int addressId )
-  {
-    this.addressId = addressId;
-  }
-
-  public String getAddressLine1 ()
-  {
-    return addressLine1;
-  }
-
-  public void setAddressLine1 ( String addressLine1 )
-  {
-    this.addressLine1 = addressLine1;
-  }
-
-  public String getAddressLine2 ()
-  {
-    return addressLine2;
-  }
-
-  public void setAddressLine2 ( String addressLine2 )
-  {
-    this.addressLine2 = addressLine2;
-  }
-
-  public String getCity ()
-  {
-    return city;
-  }
-
-  public void setCity ( String city )
-  {
-    this.city = city;
-  }
-
-  public String getState ()
-  {
-    return state;
-  }
-
-  public void setState ( String state )
-  {
-    this.state = state;
-  }
-
-  public String getZipCode ()
-  {
-    return zipCode;
-  }
-
-  public void setZipCode ( String zipCode )
-  {
-    this.zipCode = zipCode;
-  }
-
-  public String getCountry ()
-  {
-    return country;
-  }
-
-  public void setCountry ( String country )
-  {
-    this.country = country;
-  }
-
-  public String getVendorNotes ()
-  {
-    return vendorNotes;
-  }
-
-  public void setVendorNotes ( String vendorNotes )
-  {
-    this.vendorNotes = vendorNotes;
-  }
-
-  public String getNotes ()
-  {
-    return notes;
-  }
-
-  public void setNotes ( String notes )
-  {
-    this.notes = notes;
-  }
-
-  public String getMacAddress ()
-  {
-    return macAddress;
-  }
-
-  public void setMacAddress ( String macAddress )
-  {
-    this.macAddress = macAddress;
-  }
-
-  public String getLastLoginName ()
-  {
-    return lastLoginName;
-  }
-
-  public void setLastLoginName ( String lastLoginName )
-  {
-    this.lastLoginName = lastLoginName;
-  }
-
-  public boolean isBillFlag ()
-  {
-    return billFlag;
-  }
-
-  public void setBillFlag ( boolean billFlag )
-  {
-    this.billFlag = billFlag;
-  }
-
-  public int getBackupSuccesses ()
-  {
-    return backupSuccesses;
-  }
-
-  public void setBackupSuccesses ( int backupSuccesses )
-  {
-    this.backupSuccesses = backupSuccesses;
-  }
-
-  public int getBackupIncomplete ()
-  {
-    return backupIncomplete;
-  }
-
-  public void setBackupIncomplete ( int backupIncomplete )
-  {
-    this.backupIncomplete = backupIncomplete;
-  }
-
-  public int getBackupFailed ()
-  {
-    return backupFailed;
-  }
-
-  public void setBackupFailed ( int backupFailed )
-  {
-    this.backupFailed = backupFailed;
-  }
-
-  public int getBackupRestores ()
-  {
-    return backupRestores;
-  }
-
-  public void setBackupRestores ( int backupRestores )
-  {
-    this.backupRestores = backupRestores;
-  }
-
-  public Date getLastBackupDate ()
-  {
-    return lastBackupDate;
-  }
-
-  public void setLastBackupDate ( Date lastBackupDate )
-  {
-    this.lastBackupDate = lastBackupDate;
-  }
-
-  public String getBackupServerName ()
-  {
-    return backupServerName;
-  }
-
-  public void setBackupServerName ( String backupServerName )
-  {
-    this.backupServerName = backupServerName;
-  }
-
-  public double getBackupBillableSpaceGb ()
-  {
-    return backupBillableSpaceGb;
-  }
-
-  public void setBackupBillableSpaceGb ( double backupBillableSpaceGb )
-  {
-    this.backupBillableSpaceGb = backupBillableSpaceGb;
-  }
-
-  public String getBackupProtectedDeviceList ()
-  {
-    return backupProtectedDeviceList;
-  }
-
-  public void setBackupProtectedDeviceList ( String backupProtectedDeviceList )
-  {
-    this.backupProtectedDeviceList = backupProtectedDeviceList;
-  }
-
-  public int getBackupYear ()
-  {
-    return backupYear;
-  }
-
-  public void setBackupYear ( int backupYear )
-  {
-    this.backupYear = backupYear;
-  }
-
-  public int getBackupMonth ()
-  {
-    return backupMonth;
-  }
-
-  public void setBackupMonth ( int backupMonth )
-  {
-    this.backupMonth = backupMonth;
-  }
-
-  public String getiPAddress ()
-  {
-    return iPAddress;
-  }
-
-  public void setiPAddress ( String iPAddress )
-  {
-    this.iPAddress = iPAddress;
-  }
-
-  public String getDefaultGateway ()
-  {
-    return defaultGateway;
-  }
-
-  public void setDefaultGateway ( String defaultGateway )
-  {
-    this.defaultGateway = defaultGateway;
-  }
-
-  public String getOsType()
-  {
-    return osType;
-  }
-
-  public void setOsType( String osType )
-  {
-    this.osType = osType;
-  }
-
-  public String getOsInfo()
-  {
-    return osInfo;
-  }
-
-  public void setOsInfo( String osInfo )
-  {
-    this.osInfo = osInfo;
-  }
-
-  public String getCpuSpeed()
-  {
-    return cpuSpeed;
-  }
-
-  public void setCpuSpeed( String cpuSpeed )
-  {
-    this.cpuSpeed = cpuSpeed;
-  }
-
-  public String getRam()
-  {
-    return ram;
-  }
-
-  public void setRam( String ram )
-  {
-    this.ram = ram;
-  }
-
-  public String getLocalHardDrives ()
-  {
-    return localHardDrives;
-  }
-
-  public void setLocalHardDrives ( String localHardDrives )
-  {
-    this.localHardDrives = localHardDrives;
-  }
-
-  public boolean isActive ()
+  private String zipCode = null;
+
+  @JsonGetter( "IsActive" )
+  public Boolean active()
   {
     return isActive;
   }
 
-  public void setActive ( boolean active )
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "IsActive" )
+  public Configuration active( boolean active )
   {
     isActive = active;
+
+    return this;
   }
 
-  public int getParentConfigurationId ()
+  @JsonGetter( "AddressId" )
+  public Integer addressId()
   {
-    return parentConfigurationId;
+    return addressId;
   }
 
-  public void setParentConfigurationId ( int parentConfigurationId )
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "AddressId" )
+  public Configuration addressId( final int addressId )
   {
-    this.parentConfigurationId = parentConfigurationId;
+    this.addressId = addressId;
+
+    return this;
   }
 
-  public ConfigurationQuestion[] getConfigurationQuestions ()
+  @JsonGetter( "AddressLine1" )
+  public String addressLine1()
+  {
+    return addressLine1;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "AddressLine1" )
+  public Configuration addressLine1( final String addressLine1 )
+  {
+    this.addressLine1 = addressLine1;
+
+    return this;
+  }
+
+  @JsonGetter( "AddressLine2" )
+  public String addressLine2()
+  {
+    return addressLine2;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "AddressLine2" )
+  public Configuration addressLine2( final String addressLine2 )
+  {
+    this.addressLine2 = addressLine2;
+
+    return this;
+  }
+
+  @JsonGetter( "BackupBillableSpaceGb" )
+  public Double backupBillableSpaceGb()
+  {
+    return backupBillableSpaceGb;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "BackupBillableSpaceGb" )
+  public Configuration backupBillableSpaceGb( double backupBillableSpaceGb )
+  {
+    this.backupBillableSpaceGb = backupBillableSpaceGb;
+
+    return this;
+  }
+
+  @JsonGetter( "BackupFailed" )
+  public Integer backupFailed()
+  {
+    return backupFailed;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "BackupFailed" )
+  public Configuration backupFailed( final int backupFailed )
+  {
+    this.backupFailed = backupFailed;
+
+    return this;
+  }
+
+  @JsonGetter( "BackupIncomplete" )
+  public Integer backupIncomplete()
+  {
+    return backupIncomplete;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "BackupIncomplete" )
+  public Configuration backupIncomplete( final int backupIncomplete )
+  {
+    this.backupIncomplete = backupIncomplete;
+
+    return this;
+  }
+
+  @JsonGetter( "BackupMonth" )
+  public Integer backupMonth()
+  {
+    return backupMonth;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "BackupMonth" )
+  public Configuration backupMonth( final int backupMonth )
+  {
+    this.backupMonth = backupMonth;
+
+    return this;
+  }
+
+  @JsonGetter( "BackupProtectedDeviceList" )
+  public String backupProtectedDeviceList()
+  {
+    return backupProtectedDeviceList;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "BackupProtectedDeviceList" )
+  public Configuration backupProtectedDeviceList( final String backupProtectedDeviceList )
+  {
+    this.backupProtectedDeviceList = backupProtectedDeviceList;
+
+    return this;
+  }
+
+  @JsonGetter( "BackupRestores" )
+  public Integer backupRestores()
+  {
+    return backupRestores;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "BackupRestores" )
+  public Configuration backupRestores( final int backupRestores )
+  {
+    this.backupRestores = backupRestores;
+
+    return this;
+  }
+
+  @JsonGetter( "BackupServerName" )
+  public String backupServerName()
+  {
+    return backupServerName;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "BackupServerName" )
+  public Configuration backupServerName( final String backupServerName )
+  {
+    this.backupServerName = backupServerName;
+
+    return this;
+  }
+
+  @JsonGetter( "BackupSuccesses" )
+  public Integer backupSuccesses()
+  {
+    return backupSuccesses;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "BackupSuccesses" )
+  public Configuration backupSuccesses( final int backupSuccesses )
+  {
+    this.backupSuccesses = backupSuccesses;
+
+    return this;
+  }
+
+  @JsonGetter( "BackupYear" )
+  public Integer backupYear()
+  {
+    return backupYear;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "BackupYear" )
+  public Configuration backupYear( final int backupYear )
+  {
+    this.backupYear = backupYear;
+
+    return this;
+  }
+
+  @JsonGetter( "BillFlag" )
+  public Boolean billFlag()
+  {
+    return billFlag;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "BillFlag" )
+  public Configuration billFlag( boolean billFlag )
+  {
+    this.billFlag = billFlag;
+
+    return this;
+  }
+
+  @JsonGetter( "BusinessUnitId" )
+  public Integer businessUnitId()
+  {
+    return businessUnitId;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "BusinessUnitId" )
+  public Configuration businessUnitId( final int businessUnitId )
+  {
+    this.businessUnitId = businessUnitId;
+
+    return this;
+  }
+
+  @JsonGetter( "City" )
+  public String city()
+  {
+    return city;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "City" )
+  public Configuration city( final String city )
+  {
+    this.city = city;
+
+    return this;
+  }
+
+  @JsonGetter( "CompanyId" )
+  public Integer companyId()
+  {
+    return companyId;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "CompanyId" )
+  public Configuration companyId( final int companyId )
+  {
+    this.companyId = companyId;
+
+    return this;
+  }
+
+  @JsonGetter( "CompanyName" )
+  public String companyName()
+  {
+    return companyName;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "CompanyName" )
+  public Configuration companyName( final String companyName )
+  {
+    this.companyName = companyName;
+
+    return this;
+  }
+
+  @JsonGetter( "ConfigurationName" )
+  public String configurationName()
+  {
+    return configurationName;
+  }
+
+  /**
+   * Sets this configurations Name
+   *
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "ConfigurationName" )
+  public Configuration configurationName( final String configurationName )
+  {
+    this.configurationName = configurationName;
+
+    return this;
+  }
+
+  @JsonGetter( "ConfigurationQuestions" )
+  public ConfigurationQuestion[] configurationQuestions()
   {
     return configurationQuestions;
   }
 
-  public void setConfigurationQuestions ( ConfigurationQuestion[] configurationQuestions )
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "ConfigurationQuestions" )
+  public Configuration configurationQuestions( final ConfigurationQuestion[] configurationQuestions )
   {
     this.configurationQuestions = configurationQuestions;
+
+    return this;
   }
 
-  public VendorCompany getVendorCompany ()
+  @JsonGetter( "ConfigurationType" )
+  public String configurationType()
   {
-    return vendorCompany;
+    return configurationType;
   }
 
-  public void setVendorCompany ( VendorCompany vendorCompany )
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "ConfigurationType" )
+  public Configuration configurationType( final String configurationType )
   {
-    this.vendorCompany = vendorCompany;
+    this.configurationType = configurationType;
+
+    return this;
   }
 
-  public ManufacturerCompany getManufacturerCompany ()
+  @JsonGetter( "ConfigurationTypeId" )
+  public Integer configurationTypeId()
+  {
+    return configurationTypeId;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "ConfigurationTypeId" )
+  public Configuration configurationTypeId( final int configurationTypeId )
+  {
+    this.configurationTypeId = configurationTypeId;
+
+    return this;
+  }
+
+  @JsonGetter( "ContactId" )
+  public Integer contactId()
+  {
+    return contactId;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "ContactId" )
+  public Configuration contactId( final int contactId )
+  {
+    this.contactId = contactId;
+
+    return this;
+  }
+
+  @JsonGetter( "ContactName" )
+  public String contactName()
+  {
+    return contactName;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "ContactName" )
+  public Configuration contactName( final String contactName )
+  {
+    this.contactName = contactName;
+
+    return this;
+  }
+
+  @JsonGetter( "Country" )
+  public String country()
+  {
+    return country;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "Country" )
+  public Configuration country( final String country )
+  {
+    this.country = country;
+
+    return this;
+  }
+
+  @JsonGetter( "CPUSpeed" )
+  public String cpuSpeed()
+  {
+    return cpuSpeed;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "CPUSpeed" )
+  public Configuration cpuSpeed( final String cpuSpeed )
+  {
+    this.cpuSpeed = cpuSpeed;
+
+    return this;
+  }
+
+  @JsonGetter( "DefaultGateway" )
+  public String defaultGateway()
+  {
+    return defaultGateway;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "DefaultGateway" )
+  public Configuration defaultGateway( final String defaultGateway )
+  {
+    this.defaultGateway = defaultGateway;
+
+    return this;
+  }
+
+  @JsonGetter( "DeviceIdentifier" )
+  public String deviceIdentifier()
+  {
+    return deviceIdentifier;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "DeviceIdentifier" )
+  public Configuration deviceIdentifier( final String deviceIdentifier )
+  {
+    this.deviceIdentifier = deviceIdentifier;
+
+    return this;
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "InstallationDate" )
+  public Date installationDate()
+  {
+    return installationDate;
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "InstallationDate" )
+  public Configuration installationDate( final Date installationDate )
+  {
+    this.installationDate = installationDate;
+
+    return this;
+  }
+
+  @JsonGetter( "InstalledBy" )
+  public String installedBy()
+  {
+    return installedBy;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "InstalledBy" )
+  public Configuration installedBy( final String installedBy )
+  {
+    this.installedBy = installedBy;
+
+    return this;
+  }
+
+  @JsonGetter( "IPAddress" )
+  public String ipAddress()
+  {
+    return ipAddress;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "IPAddress" )
+  public Configuration ipAddress( final String ipAddress )
+  {
+    this.ipAddress = ipAddress;
+
+    return this;
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "LastBackupDate" )
+  public Date lastBackupDate()
+  {
+    return lastBackupDate;
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "LastBackupDate" )
+  public Configuration lastBackupDate( final Date lastBackupDate )
+  {
+    this.lastBackupDate = lastBackupDate;
+
+    return this;
+  }
+
+  @JsonGetter( "LastLoginName" )
+  public String lastLoginName()
+  {
+    return lastLoginName;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "LastLoginName" )
+  public Configuration lastLoginName( final String lastLoginName )
+  {
+    this.lastLoginName = lastLoginName;
+
+    return this;
+  }
+
+  @JsonGetter( "LocalHardDrives" )
+  public String localHardDrives()
+  {
+    return localHardDrives;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "LocalHardDrives" )
+  public Configuration localHardDrives( final String localHardDrives )
+  {
+    this.localHardDrives = localHardDrives;
+
+    return this;
+  }
+
+  @JsonGetter( "LocationId" )
+  public Integer locationId()
+  {
+    return locationId;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "LocationId" )
+  public Configuration locationId( final int locationId )
+  {
+    this.locationId = locationId;
+
+    return this;
+  }
+
+  @JsonGetter( "MacAddress" )
+  public String macAddress()
+  {
+    return macAddress;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "MacAddress" )
+  public Configuration macAddress( final String macAddress )
+  {
+    this.macAddress = macAddress;
+
+    return this;
+  }
+
+  @JsonGetter( "ManufacturerCompany" )
+  public ManufacturerCompany manufacturerCompany()
   {
     return manufacturerCompany;
   }
 
-  public void setManufacturerCompany ( ManufacturerCompany manufacturerCompany )
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "ManufacturerCompany" )
+  public Configuration manufacturerCompany( ManufacturerCompany manufacturerCompany )
   {
     this.manufacturerCompany = manufacturerCompany;
+
+    return this;
+  }
+
+  @JsonGetter( "ModelNumber" )
+  public String modelNumber()
+  {
+    return modelNumber;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "ModelNumber" )
+  public Configuration modelNumber( final String modelNumber )
+  {
+    this.modelNumber = modelNumber;
+
+    return this;
+  }
+
+  @JsonGetter( "Notes" )
+  public String notes()
+  {
+    return notes;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "Notes" )
+  public Configuration notes( final String notes )
+  {
+    this.notes = notes;
+
+    return this;
+  }
+
+  @JsonGetter( "OSInfo" )
+  public String osInfo()
+  {
+    return osInfo;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "OSInfo" )
+  public Configuration osInfo( final String osInfo )
+  {
+    this.osInfo = osInfo;
+
+    return this;
+  }
+
+  @JsonGetter( "OSType" )
+  public String osType()
+  {
+    return osType;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "OSType" )
+  public Configuration osType( final String osType )
+  {
+    this.osType = osType;
+
+    return this;
+  }
+
+  @JsonGetter( "ParentConfigurationId" )
+  public Integer parentConfigurationId()
+  {
+    return parentConfigurationId;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "ParentConfigurationId" )
+  public Configuration parentConfigurationId( final int parentConfigurationId )
+  {
+    this.parentConfigurationId = parentConfigurationId;
+
+    return this;
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "PurchaseDate" )
+  public Date purchaseDate()
+  {
+    return purchaseDate;
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "PurchaseDate" )
+  public Configuration purchaseDate( final Date purchaseDate )
+  {
+    this.purchaseDate = purchaseDate;
+
+    return this;
+  }
+
+  @JsonGetter( "RAM" )
+  public String ram()
+  {
+    return ram;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "RAM" )
+  public Configuration ram( final String ram )
+  {
+    this.ram = ram;
+
+    return this;
+  }
+
+  @JsonGetter( "SerialNumber" )
+  public String serialNumber()
+  {
+    return serialNumber;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "SerialNumber" )
+  public Configuration serialNumber( final String serialNumber )
+  {
+    this.serialNumber = serialNumber;
+
+    return this;
+  }
+
+  @JsonGetter( "State" )
+  public String state()
+  {
+    return state;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "State" )
+  public Configuration state( final String state )
+  {
+    this.state = state;
+
+    return this;
+  }
+
+  @JsonGetter( "Status" )
+  public String status()
+  {
+    return status;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "Status" )
+  public Configuration status( final String status )
+  {
+    this.status = status;
+
+    return this;
+  }
+
+  @JsonGetter( "StatusId" )
+  public Integer statusId()
+  {
+    return statusId;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "StatusId" )
+  public Configuration statusId( final int statusId )
+  {
+    this.statusId = statusId;
+
+    return this;
+  }
+
+  @JsonGetter( "TagNumber" )
+  public String tagNumber()
+  {
+    return tagNumber;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "TagNumber" )
+  public Configuration tagNumber( final String tagNumber )
+  {
+    this.tagNumber = tagNumber;
+
+    return this;
+  }
+
+  @JsonGetter( "VendorCompany" )
+  public VendorCompany vendorCompany()
+  {
+    return vendorCompany;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "VendorCompany" )
+  public Configuration vendorCompany( VendorCompany vendorCompany )
+  {
+    this.vendorCompany = vendorCompany;
+
+    return this;
+  }
+
+  @JsonGetter( "VendorNotes" )
+  public String vendorNotes()
+  {
+    return vendorNotes;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "VendorNotes" )
+  public Configuration vendorNotes( final String vendorNotes )
+  {
+    this.vendorNotes = vendorNotes;
+
+    return this;
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "WarrantyExpiration" )
+  public Date warrantyExpiration()
+  {
+    return warrantyExpiration;
+  }
+
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "WarrantyExpiration" )
+  public Configuration warrantyExpiration( final Date warrantyExpiration )
+  {
+    this.warrantyExpiration = warrantyExpiration;
+
+    return this;
+  }
+
+  @JsonGetter( "ZipCode" )
+  public String zipCode()
+  {
+    return zipCode;
+  }
+
+  /**
+   * @chainable
+   * @return This Configuration
+   */
+  @JsonSetter( "ZipCode" )
+  public Configuration zipCode( final String zipCode )
+  {
+    this.zipCode = zipCode;
+
+    return this;
   }
 }

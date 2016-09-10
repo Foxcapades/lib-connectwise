@@ -342,7 +342,7 @@ public class ProductTest
   {
     final Product            product = new Product();
     final Field              field   = product.getClass().getDeclaredField("components");
-    final List < Component > value   = new ArrayList <>();
+    final List < Component > value   = new ArrayList < Component >();
     value.add(new Component());
     value.add(new Component());
     value.add(new Component());
@@ -358,7 +358,7 @@ public class ProductTest
   {
     final Product            product = new Product();
     final Field              field   = product.getClass().getDeclaredField("components");
-    final List < Component > value   = new ArrayList <>();
+    final List < Component > value   = new ArrayList < Component >();
     value.add(new Component());
     value.add(new Component());
     value.add(new Component());

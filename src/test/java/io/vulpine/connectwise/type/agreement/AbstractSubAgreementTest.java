@@ -53,14 +53,14 @@ public class AbstractSubAgreementTest
   {
     final int test = 136546;
     prop.set(agreement, test);
-    assertEquals(test, agreement.getAgreementId());
+    assertEquals(test, agreement.agreementId());
   }
 
   @Test
   public void setAgreementId () throws Exception
   {
     final int test = 666666;
-    agreement.setAgreementId(test);
+    agreement.agreementId(test);
     assertEquals(test, prop.get(agreement));
   }
 }

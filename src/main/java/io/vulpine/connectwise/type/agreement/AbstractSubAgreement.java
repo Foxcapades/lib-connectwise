@@ -12,27 +12,26 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-
 package io.vulpine.connectwise.type.agreement;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 public abstract class AbstractSubAgreement extends ConnectwiseCommon
 {
-  @JacksonXmlProperty( localName = "AgreementId" )
   protected int agreementId;
 
-  public int getAgreementId ()
+  @JsonGetter( "AgreementId" )
+  public int agreementId ()
   {
     return agreementId;
   }
 
-  public void setAgreementId ( int agreementId )
+  @JsonSetter( "AgreementId" )
+  public void agreementId ( int agreementId )
   {
     this.agreementId = agreementId;
   }
-
 }

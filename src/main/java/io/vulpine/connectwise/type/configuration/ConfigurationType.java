@@ -12,7 +12,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 package io.vulpine.connectwise.type.configuration;
@@ -20,7 +19,6 @@ package io.vulpine.connectwise.type.configuration;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
-@SuppressWarnings( "unused" )
 public class ConfigurationType extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "Name")

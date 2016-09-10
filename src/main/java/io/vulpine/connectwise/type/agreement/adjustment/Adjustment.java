@@ -12,41 +12,46 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-
 package io.vulpine.connectwise.type.agreement.adjustment;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 
 import java.util.Date;
 
 public class Adjustment extends AbstractSubAgreement
 {
-  @JacksonXmlProperty( localName = "AdjustmentAmount" )
-  protected double adjustmentAmount;
+  private Date effectiveDate;
 
-  @JacksonXmlProperty( localName = "EffectiveDate" )
-  protected Date effectiveDate;
+  private double adjustmentAmount;
 
-  public double getAdjustmentAmount ()
+  @JsonGetter( "AdjustmentAmount" )
+  public double adjustmentAmount()
   {
     return adjustmentAmount;
   }
 
-  public void setAdjustmentAmount ( double adjustmentAmount )
+  @JsonSetter( "AdjustmentAmount" )
+  public Adjustment adjustmentAmount( double adjustmentAmount )
   {
     this.adjustmentAmount = adjustmentAmount;
+
+    return this;
   }
 
-  public Date getEffectiveDate ()
+  @JsonGetter( "EffectiveDate" )
+  public Date effectiveDate()
   {
     return effectiveDate;
   }
 
-  public void setEffectiveDate ( Date effectiveDate )
+  @JsonSetter( "EffectiveDate" )
+  public Adjustment effectiveDate( Date effectiveDate )
   {
     this.effectiveDate = effectiveDate;
+
+    return this;
   }
 }

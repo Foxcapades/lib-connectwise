@@ -12,51 +12,60 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 package io.vulpine.connectwise.type.agreement.board;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 
 public class BoardDefault extends AbstractSubAgreement
 {
-  @JacksonXmlProperty( localName = "BoardId" )
-  private int boardId;
-
-  @JacksonXmlProperty( localName = "ServiceTypeId" )
-  private int serviceTypeId;
-
-  @JacksonXmlProperty( localName = "DefaultFlag" )
   private boolean isDefault;
 
-  public int getBoardId ()
+  private int boardId;
+
+  private int serviceTypeId;
+
+  @JsonGetter( "BoardId" )
+  public int boardId ()
   {
     return boardId;
   }
 
-  public void setBoardId ( int boardId )
+  @JsonSetter( "BoardId" )
+  public BoardDefault boardId ( int boardId )
   {
     this.boardId = boardId;
+
+    return this;
   }
 
-  public int getServiceTypeId ()
+  @JsonGetter( "ServiceTypeId" )
+  public int serviceTypeId ()
   {
     return serviceTypeId;
   }
 
-  public void setServiceTypeId ( int serviceTypeId )
+  @JsonSetter( "ServiceTypeId" )
+  public BoardDefault serviceTypeId ( int serviceTypeId )
   {
     this.serviceTypeId = serviceTypeId;
+
+    return this;
   }
 
-  public boolean isDefault ()
+  @JsonGetter( "DefaultFlag" )
+  public boolean defaultFlag ()
   {
     return isDefault;
   }
 
-  public void setDefault ( boolean aDefault )
+  @JsonSetter( "DefaultFlag" )
+  public BoardDefault defaultFlag ( boolean aDefault )
   {
     isDefault = aDefault;
+
+    return this;
   }
 }

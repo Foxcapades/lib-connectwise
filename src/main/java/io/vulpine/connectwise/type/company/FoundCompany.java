@@ -12,105 +12,105 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-
 package io.vulpine.connectwise.type.company;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
-@JacksonXmlRootElement( localName = "CompanyFindResult" )
+@JsonRootName( "CompanyFindResult" )
 public class FoundCompany extends CompanyCommon
 {
+  private String
+    addressLine1,
+    addressLine2,
+    city,
+    state,
+    zip,
+    country,
+    website;
 
-  @JacksonXmlProperty( localName = "AddressLine1" )
-  protected String addressLine1;
-
-  @JacksonXmlProperty( localName = "AddressLine2" )
-  protected String addressLine2;
-
-  @JacksonXmlProperty( localName = "City" )
-  protected String city;
-
-  @JacksonXmlProperty( localName = "State" )
-  protected String state;
-
-  @JacksonXmlProperty( localName = "Zip" )
-  protected String zip;
-
-  @JacksonXmlProperty( localName = "Country" )
-  protected String country;
-
-  @JacksonXmlProperty( localName = "Website" )
-  protected String website;
-
-  public String getAddressLine1 ()
+  @JsonGetter( "AddressLine1" )
+  public String addressLine1 ()
   {
     return addressLine1;
   }
 
-  public void setAddressLine1 ( String addressLine1 )
+  @JsonSetter( "AddressLine1" )
+  public void addressLine1 ( String addressLine1 )
   {
     this.addressLine1 = addressLine1;
   }
 
-  public String getAddressLine2 ()
+  @JsonGetter( "AddressLine2" )
+  public String addressLine2 ()
   {
     return addressLine2;
   }
 
-  public void setAddressLine2 ( String addressLine2 )
+  @JsonSetter( "AddressLine2" )
+  public void addressLine2 ( String addressLine2 )
   {
     this.addressLine2 = addressLine2;
   }
 
-  public String getCity ()
+  @JsonGetter( "City" )
+  public String city ()
   {
     return city;
   }
 
-  public void setCity ( String city )
+  @JsonSetter( "City" )
+  public void city ( String city )
   {
     this.city = city;
   }
 
-  public String getState ()
+  @JsonGetter( "State" )
+  public String state ()
   {
     return state;
   }
 
-  public void setState ( String state )
+  @JsonSetter( "State" )
+  public void state ( String state )
   {
     this.state = state;
   }
 
-  public String getZip ()
+  @JsonGetter( "Zip" )
+  public String zip ()
   {
     return zip;
   }
 
-  public void setZip ( String zip )
+  @JsonSetter( "Zip" )
+  public void zip ( String zip )
   {
     this.zip = zip;
   }
 
-  public String getCountry ()
+  @JsonGetter( "Country" )
+  public String country ()
   {
     return country;
   }
 
-  public void setCountry ( String country )
+  @JsonSetter( "Country" )
+  public void country ( String country )
   {
     this.country = country;
   }
 
-  public String getWebsite ()
+  @JsonGetter( "Website" )
+  public String website ()
   {
     return website;
   }
 
-  public void setWebsite ( String website )
+  @JsonSetter( "Website" )
+  public void website ( String website )
   {
     this.website = website;
   }

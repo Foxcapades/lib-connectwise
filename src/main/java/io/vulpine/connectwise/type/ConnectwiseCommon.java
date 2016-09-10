@@ -12,81 +12,102 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 package io.vulpine.connectwise.type;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import java.util.Date;
 
+@JsonFilter( "filter-empty" )
 public class ConnectwiseCommon
 {
-  @JacksonXmlProperty ( localName = "Id" )
-  protected int id;
 
-  @JacksonXmlProperty ( localName = "UpdatedBy" )
-  protected String updatedBy;
+  private Date lastUpdate;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty ( localName = "LastUpdate" )
-  protected Date lastUpdate;
+  private Date lastUpdated;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty( localName = "LastUpdated" )
-  protected Date lastUpdated;
+  private int id;
 
-  @JacksonXmlProperty( localName = "Description" )
-  protected String description;
+  private String description;
 
-  public int getId ()
+  private String updatedBy;
+
+
+  @JsonGetter( "Id" )
+  public int id()
   {
     return id;
   }
 
-  public void setId ( final int id )
+  @JsonSetter( "Id" )
+  public ConnectwiseCommon id( final int id )
   {
     this.id = id;
+
+    return this;
   }
 
-  public String getUpdatedBy ()
+  @JsonGetter( "UpdatedBy" )
+  public String updatedBy()
   {
     return updatedBy;
   }
 
-  public void setUpdatedBy ( String updatedBy )
+  @JsonSetter( "UpdatedBy" )
+  public ConnectwiseCommon updatedBy( String updatedBy )
   {
     this.updatedBy = updatedBy;
+
+    return this;
   }
 
-  public Date getLastUpdate ()
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "LastUpdate" )
+  public Date lastUpdate()
   {
-    return new Date(lastUpdate.getTime());
+    return null == this.lastUpdate ? null : new Date(this.lastUpdate.getTime());
   }
 
-  public void setLastUpdate ( final Date lastUpdate )
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "LastUpdate" )
+  public ConnectwiseCommon lastUpdate( final Date lastUpdate )
   {
     this.lastUpdate = new Date(lastUpdate.getTime());
+
+    return this;
   }
 
-  public String getDescription ()
+  @JsonGetter( "Description" )
+  public String description()
   {
     return description;
   }
 
-  public void setDescription ( final String description )
+  @JsonSetter( "Description" )
+  public ConnectwiseCommon description( final String description )
   {
     this.description = description;
+
+    return this;
   }
 
-  public Date getLastUpdated ()
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonGetter( "LastUpdated" )
+  public Date lastUpdated()
   {
-    return new Date(lastUpdated.getTime());
+    return null == this.lastUpdated ? null : new Date(this.lastUpdated.getTime());
   }
 
-  public void setLastUpdated ( final Date lastUpdated )
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  @JsonSetter( "LastUpdated" )
+  public ConnectwiseCommon lastUpdated( final Date lastUpdated )
   {
     this.lastUpdated = new Date(lastUpdated.getTime());
+
+    return this;
   }
 }

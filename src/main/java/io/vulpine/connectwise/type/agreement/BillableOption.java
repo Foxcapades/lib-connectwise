@@ -12,11 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 package io.vulpine.connectwise.type.agreement;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum BillableOption
 {
@@ -32,8 +32,8 @@ public enum BillableOption
     this.value = value;
   }
 
-
   @Override
+  @JsonValue
   public String toString ()
   {
     return value;

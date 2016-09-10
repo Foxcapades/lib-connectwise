@@ -12,7 +12,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 package io.vulpine.connectwise.type.product;
@@ -21,7 +20,6 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.util.ArrayList;
 
-@SuppressWarnings( value = "unused" )
 @JacksonXmlRootElement ( localName = "ProductFindResult" )
 public class FoundProduct extends Product
 {

@@ -12,141 +12,150 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-
 package io.vulpine.connectwise.type.company;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 public class CompanyCommon extends ConnectwiseCommon
 {
-  @JacksonXmlProperty( localName = "CompanyName" )
-  protected String companyName;
+  private String companyName;
 
-  @JacksonXmlProperty( localName = "CompanyIdentifier" )
-  protected String companyIdentifier;
+  private String companyIdentifier;
 
-  @JacksonXmlProperty( localName = "PhoneNumber" )
-  protected String phoneNumber;
+  private String phoneNumber;
 
-  @JacksonXmlProperty( localName = "FaxNumber" )
-  protected String faxNumber;
+  private String faxNumber;
 
-  @JacksonXmlProperty( localName = "Territory" )
-  protected String territory;
+  private String territory;
 
-  @JacksonXmlProperty( localName = "Market" )
-  protected String market;
+  private String market;
 
-  @JacksonXmlProperty( localName = "Type" )
-  protected String type;
+  private String type;
 
-  @JacksonXmlProperty( localName = "Status" )
-  protected String status;
+  private String status;
 
-  @JacksonXmlProperty( localName = "DefaultContactId" )
-  protected int defaultContactId;
+  private int defaultContactId;
 
-  @JacksonXmlProperty( localName = "DefaultBillingContactId" )
-  protected int defaultBillingContactId;
+  private int defaultBillingContactId;
 
+  @JsonGetter( "CompanyName" )
   public String getCompanyName()
   {
     return companyName;
   }
 
+  @JsonSetter( "CompanyName" )
   public void setCompanyName( String companyName )
   {
     this.companyName = companyName;
   }
 
+  @JsonGetter( "CompanyIdentifier" )
   public String getCompanyIdentifier()
   {
     return companyIdentifier;
   }
 
+  @JsonSetter( "CompanyIdentifier" )
   public void setCompanyIdentifier( String companyIdentifier )
   {
     this.companyIdentifier = companyIdentifier;
   }
 
+  @JsonGetter( "PhoneNumber" )
   public String getPhoneNumber()
   {
     return phoneNumber;
   }
 
+  @JsonSetter( "PhoneNumber" )
   public void setPhoneNumber( String phoneNumber )
   {
     this.phoneNumber = phoneNumber;
   }
 
+  @JsonGetter( "FaxNumber" )
   public String getFaxNumber()
   {
     return faxNumber;
   }
 
+  @JsonSetter( "FaxNumber" )
   public void setFaxNumber( String faxNumber )
   {
     this.faxNumber = faxNumber;
   }
 
+  @JsonGetter( "Territory" )
   public String getTerritory()
   {
     return territory;
   }
 
+  @JsonSetter( "Territory" )
   public void setTerritory( String territory )
   {
     this.territory = territory;
   }
 
+  @JsonGetter( "Market" )
   public String getMarket()
   {
     return market;
   }
 
+  @JsonSetter( "Market" )
   public void setMarket( String market )
   {
     this.market = market;
   }
 
+  @JsonGetter( "Type" )
   public String getType()
   {
     return type;
   }
 
+  @JsonSetter( "Type" )
   public void setType( String type )
   {
     this.type = type;
   }
 
+  @JsonGetter( "Status" )
   public String getStatus()
   {
     return status;
   }
 
+  @JsonSetter( "Status" )
   public void setStatus( String status )
   {
     this.status = status;
   }
 
+  @JsonGetter( "DefaultContactId" )
   public int getDefaultContactId()
   {
     return defaultContactId;
   }
 
+  @JsonSetter( "DefaultContactId" )
   public void setDefaultContactId( int defaultContactId )
   {
     this.defaultContactId = defaultContactId;
   }
 
+  @JsonGetter( "DefaultBillingContactId" )
   public int getDefaultBillingContactId()
   {
     return defaultBillingContactId;
   }
 
+  @JsonSetter( "DefaultBillingContactId" )
   public void setDefaultBillingContactId( int defaultBillingContactId )
   {
     this.defaultBillingContactId = defaultBillingContactId;

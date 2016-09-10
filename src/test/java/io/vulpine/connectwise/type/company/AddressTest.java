@@ -12,7 +12,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 package io.vulpine.connectwise.type.company;
 
@@ -34,8 +33,6 @@ public class AddressTest
   private static final boolean TEST_BOOLEAN = true;
 
   private static final int TEST_INT = 666;
-
-  private static final double TEST_DOUBLE = 6.66;
 
   private static final String TEST_STRING = "Test String Value.";
 
@@ -61,13 +58,13 @@ public class AddressTest
     public void isDefaultFlag() throws Exception
     {
       field.set(address, TEST_BOOLEAN);
-      assertEquals(TEST_BOOLEAN, address.isDefaultFlag());
+      assertEquals(TEST_BOOLEAN, address.defaultFlag());
     }
 
     @Test
     public void setDefaultFlag() throws Exception
     {
-      address.setDefaultFlag(TEST_BOOLEAN);
+      address.defaultFlag(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(address));
     }
   }
@@ -86,13 +83,13 @@ public class AddressTest
     public void getCompanyId() throws Exception
     {
       field.set(address, TEST_INT);
-      assertEquals(TEST_INT, address.getCompanyId());
+      assertEquals(TEST_INT, address.companyId());
     }
 
     @Test
     public void setCompanyId() throws Exception
     {
-      address.setCompanyId(TEST_INT);
+      address.companyId(TEST_INT);
       assertEquals(TEST_INT, field.get(address));
     }
   }
@@ -111,13 +108,13 @@ public class AddressTest
     public void getSiteName() throws Exception
     {
       field.set(address, TEST_STRING);
-      assertEquals(TEST_STRING, address.getSiteName());
+      assertEquals(TEST_STRING, address.siteName());
     }
 
     @Test
     public void setSiteName() throws Exception
     {
-      address.setSiteName(TEST_STRING);
+      address.siteName(TEST_STRING);
       assertEquals(TEST_STRING, field.get(address));
     }
   }
@@ -136,13 +133,13 @@ public class AddressTest
     public void isInactiveFlag() throws Exception
     {
       field.set(address, TEST_BOOLEAN);
-      assertEquals(TEST_BOOLEAN, address.isInactiveFlag());
+      assertEquals(TEST_BOOLEAN, address.inactiveFlag());
     }
 
     @Test
     public void setInactiveFlag() throws Exception
     {
-      address.setInactiveFlag(TEST_BOOLEAN);
+      address.inactiveFlag(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(address));
     }
   }
@@ -161,13 +158,13 @@ public class AddressTest
     public void isDefaultBillFlag() throws Exception
     {
       field.set(address, TEST_BOOLEAN);
-      assertEquals(TEST_BOOLEAN, address.isDefaultBillFlag());
+      assertEquals(TEST_BOOLEAN, address.defaultBillFlag());
     }
 
     @Test
     public void setDefaultBillFlag() throws Exception
     {
-      address.setDefaultBillFlag(TEST_BOOLEAN);
+      address.defaultBillFlag(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(address));
     }
   }
@@ -186,13 +183,13 @@ public class AddressTest
     public void isDefaultShipFlag() throws Exception
     {
       field.set(address, TEST_BOOLEAN);
-      assertEquals(TEST_BOOLEAN, address.isDefaultShipFlag());
+      assertEquals(TEST_BOOLEAN, address.defaultShipFlag());
     }
 
     @Test
     public void setDefaultShipFlag() throws Exception
     {
-      address.setDefaultShipFlag(TEST_BOOLEAN);
+      address.defaultShipFlag(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(address));
     }
   }
@@ -211,13 +208,13 @@ public class AddressTest
     public void getCity() throws Exception
     {
       field.set(address, TEST_STRING);
-      assertEquals(TEST_STRING, address.getCity());
+      assertEquals(TEST_STRING, address.city());
     }
 
     @Test
     public void setCity() throws Exception
     {
-      address.setCity(TEST_STRING);
+      address.city(TEST_STRING);
       assertEquals(TEST_STRING, field.get(address));
     }
   }
@@ -236,13 +233,13 @@ public class AddressTest
     public void getState() throws Exception
     {
       field.set(address, TEST_STRING);
-      assertEquals(TEST_STRING, address.getState());
+      assertEquals(TEST_STRING, address.state());
     }
 
     @Test
     public void setState() throws Exception
     {
-      address.setState(TEST_STRING);
+      address.state(TEST_STRING);
       assertEquals(TEST_STRING, field.get(address));
     }
   }
@@ -261,13 +258,13 @@ public class AddressTest
     public void getZip() throws Exception
     {
       field.set(address, TEST_STRING);
-      assertEquals(TEST_STRING, address.getZip());
+      assertEquals(TEST_STRING, address.zip());
     }
 
     @Test
     public void setZip() throws Exception
     {
-      address.setZip(TEST_STRING);
+      address.zip(TEST_STRING);
       assertEquals(TEST_STRING, field.get(address));
     }
   }
@@ -286,20 +283,20 @@ public class AddressTest
     public void getCountry() throws Exception
     {
       field.set(address, TEST_STRING);
-      assertEquals(TEST_STRING, address.getCountry());
+      assertEquals(TEST_STRING, address.country());
     }
 
     @Test
     public void setCountry() throws Exception
     {
-      address.setCountry(TEST_STRING);
+      address.country(TEST_STRING);
       assertEquals(TEST_STRING, field.get(address));
     }
   }
 
   public class streetLines
   {
-    final List < String > lines = new ArrayList <>();
+    final List < String > lines = new ArrayList < String >();
 
     private final Field field;
 
@@ -317,13 +314,13 @@ public class AddressTest
     public void getStreetLines() throws Exception
     {
       field.set(address, lines);
-      assertSame(lines, address.getStreetLines());
+      assertSame(lines, address.streetLines());
     }
 
     @Test
     public void setStreetLines() throws Exception
     {
-      address.setStreetLines(lines);
+      address.streetLines(lines);
       assertSame(lines, field.get(address));
     }
   }

@@ -56,13 +56,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getConfigurationTypeId());
+      assertEquals(TEST_INT, (int) configuration.configurationTypeId());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setConfigurationTypeId(TEST_INT);
+      configuration.configurationTypeId(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -81,13 +81,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getConfigurationType());
+      assertEquals(TEST_STRING, configuration.configurationType());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setConfigurationType(TEST_STRING);
+      configuration.configurationType(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -106,13 +106,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getStatusId());
+      assertEquals(TEST_INT, (int) configuration.statusId());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setStatusId(TEST_INT);
+      configuration.statusId(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -131,13 +131,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getStatus());
+      assertEquals(TEST_STRING, configuration.status());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setStatus(TEST_STRING);
+      configuration.status(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -156,13 +156,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getConfigurationName());
+      assertEquals(TEST_STRING, configuration.configurationName());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setConfigurationName(TEST_STRING);
+      configuration.configurationName(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -181,13 +181,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getContactName());
+      assertEquals(TEST_STRING, configuration.contactName());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setContactName(TEST_STRING);
+      configuration.contactName(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -206,13 +206,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getCompanyName());
+      assertEquals(TEST_STRING, configuration.companyName());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setCompanyName(TEST_STRING);
+      configuration.companyName(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -231,13 +231,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getCompanyId());
+      assertEquals(TEST_INT, (int) configuration.companyId());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setCompanyId(TEST_INT);
+      configuration.companyId(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -256,13 +256,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getContactId());
+      assertEquals(TEST_INT, (int) configuration.contactId());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setContactId(TEST_INT);
+      configuration.contactId(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -281,13 +281,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getLocationId());
+      assertEquals(TEST_INT, (int) configuration.locationId());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setLocationId(TEST_INT);
+      configuration.locationId(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -306,13 +306,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getBusinessUnitId());
+      assertEquals(TEST_INT, (int) configuration.businessUnitId());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setBusinessUnitId(TEST_INT);
+      configuration.businessUnitId(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -331,13 +331,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getDeviceIdentifier());
+      assertEquals(TEST_STRING, configuration.deviceIdentifier());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setDeviceIdentifier(TEST_STRING);
+      configuration.deviceIdentifier(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -356,13 +356,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getSerialNumber());
+      assertEquals(TEST_STRING, configuration.serialNumber());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setSerialNumber(TEST_STRING);
+      configuration.serialNumber(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -381,13 +381,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getModelNumber());
+      assertEquals(TEST_STRING, configuration.modelNumber());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setModelNumber(TEST_STRING);
+      configuration.modelNumber(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -406,13 +406,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getTagNumber());
+      assertEquals(TEST_STRING, configuration.tagNumber());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setTagNumber(TEST_STRING);
+      configuration.tagNumber(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -431,13 +431,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_DATE);
-      assertSame(TEST_DATE, configuration.getPurchaseDate());
+      assertSame(TEST_DATE, configuration.purchaseDate());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setPurchaseDate(TEST_DATE);
+      configuration.purchaseDate(TEST_DATE);
       assertSame(TEST_DATE, prop.get(configuration));
     }
   }
@@ -456,13 +456,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_DATE);
-      assertSame(TEST_DATE, configuration.getInstallationDate());
+      assertSame(TEST_DATE, configuration.installationDate());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setInstallationDate(TEST_DATE);
+      configuration.installationDate(TEST_DATE);
       assertSame(TEST_DATE, prop.get(configuration));
     }
   }
@@ -481,13 +481,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getInstalledBy());
+      assertEquals(TEST_STRING, configuration.installedBy());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setInstalledBy(TEST_STRING);
+      configuration.installedBy(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -506,13 +506,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_DATE);
-      assertSame(TEST_DATE, configuration.getWarrantyExpiration());
+      assertSame(TEST_DATE, configuration.warrantyExpiration());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setWarrantyExpiration(TEST_DATE);
+      configuration.warrantyExpiration(TEST_DATE);
       assertSame(TEST_DATE, prop.get(configuration));
     }
   }
@@ -531,13 +531,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getAddressId());
+      assertEquals(TEST_INT, (int) configuration.addressId());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setAddressId(TEST_INT);
+      configuration.addressId(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -556,13 +556,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getAddressLine1());
+      assertEquals(TEST_STRING, configuration.addressLine1());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setAddressLine1(TEST_STRING);
+      configuration.addressLine1(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -581,13 +581,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getAddressLine2());
+      assertEquals(TEST_STRING, configuration.addressLine2());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setAddressLine2(TEST_STRING);
+      configuration.addressLine2(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -606,13 +606,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getCity());
+      assertEquals(TEST_STRING, configuration.city());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setCity(TEST_STRING);
+      configuration.city(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -631,13 +631,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getState());
+      assertEquals(TEST_STRING, configuration.state());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setState(TEST_STRING);
+      configuration.state(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -656,13 +656,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getZipCode());
+      assertEquals(TEST_STRING, configuration.zipCode());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setZipCode(TEST_STRING);
+      configuration.zipCode(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -681,13 +681,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getCountry());
+      assertEquals(TEST_STRING, configuration.country());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setCountry(TEST_STRING);
+      configuration.country(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -706,13 +706,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getVendorNotes());
+      assertEquals(TEST_STRING, configuration.vendorNotes());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setVendorNotes(TEST_STRING);
+      configuration.vendorNotes(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -731,13 +731,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getNotes());
+      assertEquals(TEST_STRING, configuration.notes());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setNotes(TEST_STRING);
+      configuration.notes(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -756,13 +756,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getMacAddress());
+      assertEquals(TEST_STRING, configuration.macAddress());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setMacAddress(TEST_STRING);
+      configuration.macAddress(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -781,13 +781,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getLastLoginName());
+      assertEquals(TEST_STRING, configuration.lastLoginName());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setLastLoginName(TEST_STRING);
+      configuration.lastLoginName(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -806,13 +806,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_BOOLEAN);
-      assertEquals(TEST_BOOLEAN, configuration.isBillFlag());
+      assertEquals(TEST_BOOLEAN, configuration.billFlag());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setBillFlag(TEST_BOOLEAN);
+      configuration.billFlag(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, prop.get(configuration));
     }
   }
@@ -831,13 +831,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getBackupSuccesses());
+      assertEquals(TEST_INT, (int) configuration.backupSuccesses());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setBackupSuccesses(TEST_INT);
+      configuration.backupSuccesses(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -856,13 +856,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getBackupIncomplete());
+      assertEquals(TEST_INT, (int) configuration.backupIncomplete());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setBackupIncomplete(TEST_INT);
+      configuration.backupIncomplete(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -881,13 +881,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getBackupFailed());
+      assertEquals(TEST_INT, (int) configuration.backupFailed());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setBackupFailed(TEST_INT);
+      configuration.backupFailed(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -906,13 +906,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getBackupRestores());
+      assertEquals(TEST_INT, (int) configuration.backupRestores());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setBackupRestores(TEST_INT);
+      configuration.backupRestores(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -931,13 +931,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_DATE);
-      assertSame(TEST_DATE, configuration.getLastBackupDate());
+      assertSame(TEST_DATE, configuration.lastBackupDate());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setLastBackupDate(TEST_DATE);
+      configuration.lastBackupDate(TEST_DATE);
       assertSame(TEST_DATE, prop.get(configuration));
     }
   }
@@ -956,13 +956,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getBackupServerName());
+      assertEquals(TEST_STRING, configuration.backupServerName());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setBackupServerName(TEST_STRING);
+      configuration.backupServerName(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -981,13 +981,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_DOUBLE);
-      assertEquals(TEST_DOUBLE, configuration.getBackupBillableSpaceGb(), 0);
+      assertEquals(TEST_DOUBLE, configuration.backupBillableSpaceGb(), 0);
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setBackupBillableSpaceGb(TEST_DOUBLE);
+      configuration.backupBillableSpaceGb(TEST_DOUBLE);
       assertEquals(TEST_DOUBLE, prop.get(configuration));
     }
   }
@@ -1006,13 +1006,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getBackupProtectedDeviceList());
+      assertEquals(TEST_STRING, configuration.backupProtectedDeviceList());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setBackupProtectedDeviceList(TEST_STRING);
+      configuration.backupProtectedDeviceList(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -1031,13 +1031,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getBackupYear());
+      assertEquals(TEST_INT, (int) configuration.backupYear());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setBackupYear(TEST_INT);
+      configuration.backupYear(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -1056,13 +1056,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getBackupMonth());
+      assertEquals(TEST_INT, (int) configuration.backupMonth());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setBackupMonth(TEST_INT);
+      configuration.backupMonth(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -1073,7 +1073,7 @@ public class ConfigurationTest
 
     public IPAddress() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("iPAddress");
+      prop = Configuration.class.getDeclaredField("ipAddress");
       prop.setAccessible(true);
     }
 
@@ -1081,13 +1081,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getiPAddress());
+      assertEquals(TEST_STRING, configuration.ipAddress());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setiPAddress(TEST_STRING);
+      configuration.ipAddress(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -1106,13 +1106,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getDefaultGateway());
+      assertEquals(TEST_STRING, configuration.defaultGateway());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setDefaultGateway(TEST_STRING);
+      configuration.defaultGateway(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -1131,13 +1131,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getOsType());
+      assertEquals(TEST_STRING, configuration.osType());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setOsType(TEST_STRING);
+      configuration.osType(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
 
@@ -1157,13 +1157,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getOsInfo());
+      assertEquals(TEST_STRING, configuration.osInfo());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setOsInfo(TEST_STRING);
+      configuration.osInfo(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -1182,13 +1182,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getCpuSpeed());
+      assertEquals(TEST_STRING, configuration.cpuSpeed());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setCpuSpeed(TEST_STRING);
+      configuration.cpuSpeed(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -1207,13 +1207,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getRam());
+      assertEquals(TEST_STRING, configuration.ram());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setRam(TEST_STRING);
+      configuration.ram(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -1232,13 +1232,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_STRING);
-      assertEquals(TEST_STRING, configuration.getLocalHardDrives());
+      assertEquals(TEST_STRING, configuration.localHardDrives());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setLocalHardDrives(TEST_STRING);
+      configuration.localHardDrives(TEST_STRING);
       assertEquals(TEST_STRING, prop.get(configuration));
     }
   }
@@ -1257,13 +1257,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_BOOLEAN);
-      assertEquals(TEST_BOOLEAN, configuration.isActive());
+      assertEquals(TEST_BOOLEAN, configuration.active());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setActive(TEST_BOOLEAN);
+      configuration.active(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, prop.get(configuration));
     }
   }
@@ -1282,13 +1282,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, TEST_INT);
-      assertEquals(TEST_INT, configuration.getParentConfigurationId());
+      assertEquals(TEST_INT, (int) configuration.parentConfigurationId());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setParentConfigurationId(TEST_INT);
+      configuration.parentConfigurationId(TEST_INT);
       assertEquals(TEST_INT, prop.get(configuration));
     }
   }
@@ -1309,13 +1309,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, test);
-      assertSame(test, configuration.getConfigurationQuestions());
+      assertSame(test, configuration.configurationQuestions());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setConfigurationQuestions(test);
+      configuration.configurationQuestions(test);
       assertSame(test, prop.get(configuration));
     }
   }
@@ -1336,13 +1336,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, test);
-      assertSame(test, configuration.getVendorCompany());
+      assertSame(test, configuration.vendorCompany());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setVendorCompany(test);
+      configuration.vendorCompany(test);
       assertSame(test, prop.get(configuration));
     }
   }
@@ -1363,13 +1363,13 @@ public class ConfigurationTest
     public void get() throws Exception
     {
       prop.set(configuration, test);
-      assertSame(test, configuration.getManufacturerCompany());
+      assertSame(test, configuration.manufacturerCompany());
     }
 
     @Test
     public void set() throws Exception
     {
-      configuration.setManufacturerCompany(test);
+      configuration.manufacturerCompany(test);
       assertSame(test, prop.get(configuration));
     }
   }
