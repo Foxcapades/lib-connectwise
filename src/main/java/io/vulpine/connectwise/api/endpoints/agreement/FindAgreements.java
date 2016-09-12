@@ -59,7 +59,7 @@ public class FindAgreements extends _FindCommon< List < FoundAgreement > >
   public List < FoundAgreement > submit () throws IOException
   {
     this.logger.trace(this.getClass());
-    final FindAgreementsResponse r = getXmlMapper().readerFor(FindAgreementsResponse.class).readValue(getApi().send(this));
+    final FindAgreementsResponse r = getXmlMapper().readerFor(FindAgreementsResponse.class).readValue(getApi().send(this).replaceAll("Overrruns", "Overruns"));
     return r.getResults();
   }
 }
