@@ -296,7 +296,7 @@ public class AddressTest
 
   public class streetLines
   {
-    final List < String > lines = new ArrayList < String >();
+    private final List < String > lines = new ArrayList < String >();
 
     private final Field field;
 
