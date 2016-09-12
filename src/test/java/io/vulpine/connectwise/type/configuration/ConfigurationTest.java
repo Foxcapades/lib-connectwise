@@ -1295,7 +1295,7 @@ public class ConfigurationTest
 
   public class ConfigurationQuestions
   {
-    final io.vulpine.connectwise.type.configuration.ConfigurationQuestion[] test;
+    private final io.vulpine.connectwise.type.configuration.ConfigurationQuestion[] test;
     private final Field prop;
 
     public ConfigurationQuestions() throws Exception
