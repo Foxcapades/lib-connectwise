@@ -38,7 +38,7 @@ public class EmptyFilter implements PropertyFilter
 
     String s1 = writer.getType().getRawClass().getSimpleName();
 
-    if (s1.equals("String")) {
+    if ( "String".equals(s1) ) {
 
       final String s = (String) m.invoke(pojo);
       if (null == s || s.isEmpty()) return;
