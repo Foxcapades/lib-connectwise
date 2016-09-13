@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.api.endpoints.managedDevice;
+package io.vulpine.connectwise.api.endpoints.manageddevice;
 
 public class UpdateManagedWorkstations
 {
