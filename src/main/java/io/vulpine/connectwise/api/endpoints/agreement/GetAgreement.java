@@ -49,7 +49,7 @@ public class GetAgreement extends _GetCommon< Agreement >
     final ResponseData< Agreement > res;
 
     res = getXmlMapper()
-      .readerFor(Agreement.class)
+      .readerFor(GetAgreementResponse.class)
       .readValue(getApi().send(this).replaceAll("AllowOverrruns", "AllowOverruns"));
 
     return res.getResult();
