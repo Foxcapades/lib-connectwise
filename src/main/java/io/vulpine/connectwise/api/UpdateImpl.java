@@ -24,7 +24,7 @@ import io.vulpine.connectwise.api.endpoints.company.UpdateCompanyProfile;
 import io.vulpine.connectwise.api.endpoints.configuration.UpdateConfiguration;
 import io.vulpine.connectwise.api.endpoints.configuration.UpdateConfigurationType;
 import io.vulpine.connectwise.api.endpoints.contact.UpdatePresenceStatus;
-import io.vulpine.connectwise.api.endpoints.managedDevice.*;
+import io.vulpine.connectwise.api.endpoints.manageddevice.*;
 import io.vulpine.connectwise.api.endpoints.opportunity.UpdateForecastAndRecurringRevenue;
 import io.vulpine.connectwise.api.endpoints.opportunity.UpdateOpportunity;
 import io.vulpine.connectwise.api.endpoints.opportunity.UpdateOpportunityItem;

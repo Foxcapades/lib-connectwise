@@ -67,8 +67,6 @@ public class Entry extends ConnectwiseCommon
 
   private String responseMessage;
 
-  private String updatedBy;
-
   private String workType;
 
   private String workRole;
@@ -94,7 +92,7 @@ public class Entry extends ConnectwiseCommon
   }
 
   @JsonSetter( "ActualHours" )
-  public Entry actualHours( final int actualHours )
+  public Entry actualHours( final double actualHours )
   {
     this.actualHours = actualHours;
 
@@ -349,20 +347,6 @@ public class Entry extends ConnectwiseCommon
   public Entry timeStart( final Date timeStart )
   {
     this.timeStart = timeStart;
-
-    return this;
-  }
-
-  @JsonGetter( "UpdatedBy" )
-  public String updatedBy()
-  {
-    return this.updatedBy;
-  }
-
-  @JsonSetter( "UpdatedBy" )
-  public Entry updatedBy( final String updatedBy )
-  {
-    this.updatedBy = updatedBy;
 
     return this;
   }

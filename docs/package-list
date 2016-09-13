@@ -11,7 +11,7 @@ io.vulpine.connectwise.api.endpoints.configuration
 io.vulpine.connectwise.api.endpoints.contact
 io.vulpine.connectwise.api.endpoints.document
 io.vulpine.connectwise.api.endpoints.invoice
-io.vulpine.connectwise.api.endpoints.managedDevice
+io.vulpine.connectwise.api.endpoints.manageddevice
 io.vulpine.connectwise.api.endpoints.marketing.record
 io.vulpine.connectwise.api.endpoints.member
 io.vulpine.connectwise.api.endpoints.opportunity
