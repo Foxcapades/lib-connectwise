@@ -33,10 +33,10 @@ import io.vulpine.connectwise.api.endpoints.contact.GetAllContactCommunicationIt
 import io.vulpine.connectwise.api.endpoints.contact.GetAllContactNotes;
 import io.vulpine.connectwise.api.endpoints.document.GetDocument;
 import io.vulpine.connectwise.api.endpoints.invoice.*;
-import io.vulpine.connectwise.api.endpoints.managedDevice.GetManagedGroup;
-import io.vulpine.connectwise.api.endpoints.managedDevice.GetManagedServer;
-import io.vulpine.connectwise.api.endpoints.managedDevice.GetManagedWorkstations;
-import io.vulpine.connectwise.api.endpoints.managedDevice.GetManagementItSetupsName;
+import io.vulpine.connectwise.api.endpoints.manageddevice.GetManagedGroup;
+import io.vulpine.connectwise.api.endpoints.manageddevice.GetManagedServer;
+import io.vulpine.connectwise.api.endpoints.manageddevice.GetManagedWorkstations;
+import io.vulpine.connectwise.api.endpoints.manageddevice.GetManagementItSetupsName;
 import io.vulpine.connectwise.api.endpoints.member.GetMemberIdByRemoteSupportPackageAuthenticationCredentials;
 import io.vulpine.connectwise.api.endpoints.opportunity.GetOpportunity;
 import io.vulpine.connectwise.api.endpoints.opportunity.GetOpportunityDocuments;
