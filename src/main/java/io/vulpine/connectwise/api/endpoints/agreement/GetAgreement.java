@@ -17,8 +17,11 @@ package io.vulpine.connectwise.api.endpoints.agreement;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.ResponseData;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.type.agreement.Agreement;
+
+import java.io.IOException;
 
 public class GetAgreement extends _GetCommon< Agreement >
 {
@@ -31,5 +34,24 @@ public class GetAgreement extends _GetCommon< Agreement >
   public String getRootName()
   {
     return "GetAgreement";
+  }
+
+  /**
+   * Overriden to handle "AllowOverrruns" typo.
+   *
+   * @return
+   * @throws IOException
+   */
+  @Override
+  public Agreement submit() throws IOException
+  {
+    this.logger.trace(this.getClass(), Agreement.class);
+    final ResponseData< Agreement > res;
+
+    res = getXmlMapper()
+      .readerFor(Agreement.class)
+      .readValue(getApi().send(this).replaceAll("AllowOverrruns", "AllowOverruns"));
+
+    return res.getResult();
   }
 }

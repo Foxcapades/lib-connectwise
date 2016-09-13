@@ -21,7 +21,6 @@ import io.vulpine.connectwise.api.ConnectwiseApi;
 import io.vulpine.connectwise.api.common.request.ConnectwiseRequest;
 import io.vulpine.connectwise.api.common.request.SoapEnvelope;
 import io.vulpine.connectwise.api.def.SubApiInterface;
-import io.vulpine.connectwise.api.endpoints.agreement.GetAdjustment;
 
 import java.io.IOException;
 import java.util.regex.Pattern;
