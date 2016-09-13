@@ -21,7 +21,6 @@ import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.endpoints.Endpoint;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
-import io.vulpine.connectwise.type.company.Company;
 
 import java.util.Date;
 
