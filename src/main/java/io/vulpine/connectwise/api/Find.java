@@ -18,6 +18,8 @@ package io.vulpine.connectwise.api;
 import io.vulpine.connectwise.api.endpoints.agreement.FindAdditions;
 import io.vulpine.connectwise.api.endpoints.agreement.FindAgreements;
 import io.vulpine.connectwise.api.endpoints.company.FindCompanies;
+import io.vulpine.connectwise.api.endpoints.configuration.FindConfigurationTypes;
+import io.vulpine.connectwise.api.endpoints.configuration.FindConfigurations;
 import io.vulpine.connectwise.api.endpoints.contact.FindContacts;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.endpoints.product.FindProducts;
@@ -29,6 +31,10 @@ public interface Find extends SubApiInterface
   FindAgreements agreements();
 
   FindCompanies companies();
+
+  FindConfigurations configurations();
+
+  FindConfigurationTypes configurationTypes();
 
   FindContacts contacts();
 

@@ -430,7 +430,7 @@ public class Agreement extends ConnectwiseCommon
   @JsonGetter( "DateCancelled" )
   public Date dateCancelled()
   {
-    return new Date(dateCancelled.getTime());
+    return dateCancelled;
   }
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
