@@ -25,6 +25,8 @@ import io.vulpine.connectwise.api.endpoints.configuration.GetConfiguration;
 import io.vulpine.connectwise.api.endpoints.configuration.GetConfigurationType;
 import io.vulpine.connectwise.api.endpoints.contact.GetContact;
 import io.vulpine.connectwise.api.endpoints.contact.GetContactNote;
+import io.vulpine.connectwise.api.endpoints.invoice.GetInvoice;
+import io.vulpine.connectwise.api.endpoints.invoice.GetSpecialInvoice;
 import io.vulpine.connectwise.api.endpoints.product.GetProduct;
 import io.vulpine.connectwise.api.endpoints.time.GetTimeEntry;
 
@@ -98,6 +100,8 @@ public interface Get extends SubApiInterface
    */
   GetContactNote contactNote( int id );
 
+  GetInvoice invoice( int id );
+
   /**
    * Instantiate a new Get Product request.
    *
@@ -106,6 +110,8 @@ public interface Get extends SubApiInterface
    * @return new request to alter or submit.
    */
   GetProduct product( int id );
+
+  GetSpecialInvoice specialInvoice( int id );
 
   /**
    * Instantiate a new Get Time Entry request.

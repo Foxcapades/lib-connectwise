@@ -13,641 +13,688 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package io.vulpine.connectwise.type.invoice;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 
-@SuppressWarnings( "unused" )
 public class Invoice extends ConnectwiseCommon
 {
-  @JacksonXmlProperty ( localName = "IsClientLocation" )
-  protected boolean isClientLocation;
+  private boolean isClientLocation;
 
-  @JacksonXmlProperty ( localName = "Taxable" )
-  protected boolean taxable;
+  private boolean taxable;
 
-  @JacksonXmlProperty ( localName = "Email" )
-  protected boolean email;
+  private boolean email;
 
-  @JacksonXmlProperty ( localName = "Closed" )
-  protected boolean closed;
+  private boolean closed;
 
-  @JacksonXmlProperty ( localName = "Sent" )
-  protected boolean sent;
+  private boolean sent;
 
-  @JacksonXmlProperty( localName = "GlPosted" )
-  protected boolean glPosted;
+  private boolean glPosted;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty ( localName = "DueDate" )
-  protected Date dueDate;
+  private Date dueDate;
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @JacksonXmlProperty ( localName = "InvoiceDate" )
-  protected Date invoiceDate;
+  private Date invoiceDate;
 
-  @JacksonXmlProperty ( localName = "InvoiceType" )
-  protected String invoiceType;
+  private String invoiceType;
 
-  @JacksonXmlProperty ( localName = "DownpaymentAmount" )
-  protected double downpaymentAmount;
+  private double downpaymentAmount;
 
-  @JacksonXmlProperty ( localName = "InvoiceAmount" )
-  protected double invoiceAmount;
+  private double invoiceAmount;
 
-  @JacksonXmlProperty ( localName = "ProjectBillingAmount" )
-  protected double projectBillingAmount;
+  private double projectBillingAmount;
 
-  @JacksonXmlProperty ( localName = "ProjectBillingRate" )
-  protected double projectBillingRate;
+  private double projectBillingRate;
 
-  @JacksonXmlProperty ( localName = "SalesTaxAmount" )
-  protected double salesTaxAmount;
+  private double salesTaxAmount;
 
-  @JacksonXmlProperty ( localName = "TaxableAmount" )
-  protected double taxableAmount;
+  private double taxableAmount;
 
-  @JacksonXmlProperty ( localName = "TaxRate" )
-  protected double taxRate;
+  private double taxRate;
 
-  @JacksonXmlProperty ( localName = "TicketBillingAmount" )
-  protected double ticketBillingAmount;
+  private double ticketBillingAmount;
 
-  @JacksonXmlProperty ( localName = "DueDays" )
-  protected int dueDays;
+  private int dueDays;
 
-  @JacksonXmlProperty ( localName = "AgreementName" )
-  protected String agreementName;
+  private String agreementName;
 
-  @JacksonXmlProperty ( localName = "AgreementType" )
-  protected String agreementType;
+  private String agreementType;
 
-  @JacksonXmlProperty ( localName = "BillingDelivery" )
-  protected String billingDelivery;
+  private String billingDelivery;
 
-  @JacksonXmlProperty ( localName = "BillingMethod" )
-  protected String billingMethod;
+  private String billingMethod;
 
-  @JacksonXmlProperty ( localName = "BillingTerms" )
-  protected String billingTerms;
+  private String billingTerms;
 
-  @JacksonXmlProperty ( localName = "BillingTermsXref" )
-  protected String billingTermsXref;
+  private String billingTermsXref;
 
-  @JacksonXmlProperty ( localName = "BusinessUnit" )
-  protected String businessUnit;
+  private String businessUnit;
 
-  @JacksonXmlProperty ( localName = "CurrencyName" )
-  protected String currencyName;
+  private String currencyName;
 
-  @JacksonXmlProperty ( localName = "CurrencySymbol" )
-  protected String currencySymbol;
+  private String currencySymbol;
 
-  @JacksonXmlProperty ( localName = "GlBatchId" )
-  protected String glBatchId;
+  private String glBatchId;
 
-  @JacksonXmlProperty ( localName = "TopComment" )
-  protected String topComment;
+  private String topComment;
 
-  @JacksonXmlProperty ( localName = "BottomComment" )
-  protected String bottomComment;
+  private String bottomComment;
 
-  @JacksonXmlProperty ( localName = "InvoiceNumber" )
-  protected String invoiceNumber;
+  private String invoiceNumber;
 
-  @JacksonXmlProperty ( localName = "Location" )
-  protected String location;
+  private String location;
 
-  @JacksonXmlProperty ( localName = "PoNumber" )
-  protected String poNumber;
+  private String poNumber;
 
-  @JacksonXmlProperty ( localName = "ProjectName" )
-  protected String projectName;
+  private String projectName;
 
-  @JacksonXmlProperty ( localName = "ProjectNumber" )
-  protected int projectNumber;
+  private int projectNumber;
 
-  @JacksonXmlProperty ( localName = "PhaseName" )
-  protected String phaseName;
+  private String phaseName;
 
-  @JacksonXmlProperty ( localName = "RoutedMemberIdentifier" )
-  protected String routedMemberIdentifier;
+  private String routedMemberIdentifier;
 
-  @JacksonXmlProperty ( localName = "RoutedMemberName" )
-  protected String routedMemberName;
+  private String routedMemberName;
 
-  @JacksonXmlProperty ( localName = "RemitName" )
-  protected String remitName;
+  private String remitName;
 
-  @JacksonXmlProperty ( localName = "RemitPhone" )
-  protected String remitPhone;
+  private String remitPhone;
 
-  @JacksonXmlProperty ( localName = "SalesRepIdentifier" )
-  protected String salesRepIdentifier;
+  private String salesRepIdentifier;
 
-  @JacksonXmlProperty ( localName = "Status" )
-  protected String status;
+  private String status;
 
-  @JacksonXmlProperty ( localName = "TaxCodeDescription" )
-  protected String taxCodeDescription;
+  private String taxCodeDescription;
 
-  @JacksonXmlProperty ( localName = "TaxCode" )
-  protected String taxCode;
+  private String taxCode;
 
-  @JacksonXmlProperty ( localName = "Territory" )
-  protected String territory;
+  private String territory;
 
-  @JacksonXmlProperty ( localName = "TicketNumber" )
-  protected int ticketNumber;
+  private int ticketNumber;
 
-  @JacksonXmlProperty ( localName = "TicketResolution" )
-  protected String ticketResolution;
+  private String ticketResolution;
 
-  @JacksonXmlProperty ( localName = "TicketSummary" )
-  protected String ticketSummary;
+  private String ticketSummary;
 
-  public boolean isClientLocation ()
+  @JsonGetter( "AgreementName" )
+  public String agreementName()
   {
-    return isClientLocation;
+    return this.agreementName;
   }
 
-  public void setClientLocation ( final boolean clientLocation )
-  {
-    isClientLocation = clientLocation;
-  }
-
-  public boolean isTaxable ()
-  {
-    return taxable;
-  }
-
-  public void setTaxable ( final boolean taxable )
-  {
-    this.taxable = taxable;
-  }
-
-  public boolean isEmail ()
-  {
-    return email;
-  }
-
-  public void setEmail ( final boolean email )
-  {
-    this.email = email;
-  }
-
-  public boolean isClosed ()
-  {
-    return closed;
-  }
-
-  public void setClosed ( final boolean closed )
-  {
-    this.closed = closed;
-  }
-
-  public boolean isSent ()
-  {
-    return sent;
-  }
-
-  public void setSent ( final boolean sent )
-  {
-    this.sent = sent;
-  }
-
-  public boolean isGlPosted ()
-  {
-    return glPosted;
-  }
-
-  public void setGlPosted ( final boolean glPosted )
-  {
-    this.glPosted = glPosted;
-  }
-
-  public Date getDueDate ()
-  {
-    return dueDate;
-  }
-
-  public void setDueDate ( final Date dueDate )
-  {
-    this.dueDate = dueDate;
-  }
-
-  public Date getInvoiceDate ()
-  {
-    return invoiceDate;
-  }
-
-  public void setInvoiceDate ( final Date invoiceDate )
-  {
-    this.invoiceDate = invoiceDate;
-  }
-
-  public String getInvoiceType ()
-  {
-    return invoiceType;
-  }
-
-  public void setInvoiceType ( final String invoiceType )
-  {
-    this.invoiceType = invoiceType;
-  }
-
-  public double getDownpaymentAmount ()
-  {
-    return downpaymentAmount;
-  }
-
-  public void setDownpaymentAmount ( final double downpaymentAmount )
-  {
-    this.downpaymentAmount = downpaymentAmount;
-  }
-
-  public double getInvoiceAmount ()
-  {
-    return invoiceAmount;
-  }
-
-  public void setInvoiceAmount ( final double invoiceAmount )
-  {
-    this.invoiceAmount = invoiceAmount;
-  }
-
-  public double getProjectBillingAmount ()
-  {
-    return projectBillingAmount;
-  }
-
-  public void setProjectBillingAmount ( final double projectBillingAmount )
-  {
-    this.projectBillingAmount = projectBillingAmount;
-  }
-
-  public double getProjectBillingRate ()
-  {
-    return projectBillingRate;
-  }
-
-  public void setProjectBillingRate ( final double projectBillingRate )
-  {
-    this.projectBillingRate = projectBillingRate;
-  }
-
-  public double getSalesTaxAmount ()
-  {
-    return salesTaxAmount;
-  }
-
-  public void setSalesTaxAmount ( final double salesTaxAmount )
-  {
-    this.salesTaxAmount = salesTaxAmount;
-  }
-
-  public double getTaxableAmount ()
-  {
-    return taxableAmount;
-  }
-
-  public void setTaxableAmount ( final double taxableAmount )
-  {
-    this.taxableAmount = taxableAmount;
-  }
-
-  public double getTaxRate ()
-  {
-    return taxRate;
-  }
-
-  public void setTaxRate ( final double taxRate )
-  {
-    this.taxRate = taxRate;
-  }
-
-  public double getTicketBillingAmount ()
-  {
-    return ticketBillingAmount;
-  }
-
-  public void setTicketBillingAmount ( final double ticketBillingAmount )
-  {
-    this.ticketBillingAmount = ticketBillingAmount;
-  }
-
-  public int getDueDays ()
-  {
-    return dueDays;
-  }
-
-  public void setDueDays ( final int dueDays )
-  {
-    this.dueDays = dueDays;
-  }
-
-  public String getAgreementName ()
-  {
-    return agreementName;
-  }
-
-  public void setAgreementName ( final String agreementName )
+  @JsonSetter( "AgreementName" )
+  public void agreementName( final String agreementName )
   {
     this.agreementName = agreementName;
   }
 
-  public String getAgreementType ()
+  @JsonGetter( "AgreementType" )
+  public String agreementType()
   {
-    return agreementType;
+    return this.agreementType;
   }
 
-  public void setAgreementType ( final String agreementType )
+  @JsonSetter( "AgreementType" )
+  public void agreementType( final String agreementType )
   {
     this.agreementType = agreementType;
   }
 
-  public String getBillingDelivery ()
+  @JsonGetter( "BillingDelivery" )
+  public String billingDelivery()
   {
-    return billingDelivery;
+    return this.billingDelivery;
   }
 
-  public void setBillingDelivery ( final String billingDelivery )
+  @JsonSetter( "BillingDelivery" )
+  public void billingDelivery( final String billingDelivery )
   {
     this.billingDelivery = billingDelivery;
   }
 
-  public String getBillingMethod ()
+  @JsonGetter( "BillingMethod" )
+  public String billingMethod()
   {
-    return billingMethod;
+    return this.billingMethod;
   }
 
-  public void setBillingMethod ( final String billingMethod )
+  @JsonSetter( "BillingMethod" )
+  public void billingMethod( final String billingMethod )
   {
     this.billingMethod = billingMethod;
   }
 
-  public String getBillingTerms ()
+  @JsonGetter( "BillingTerms" )
+  public String billingTerms()
   {
-    return billingTerms;
+    return this.billingTerms;
   }
 
-  public void setBillingTerms ( final String billingTerms )
+  @JsonSetter( "BillingTerms" )
+  public void billingTerms( final String billingTerms )
   {
     this.billingTerms = billingTerms;
   }
 
-  public String getBillingTermsXref ()
+  @JsonGetter( "BillingTermsXref" )
+  public String billingTermsXref()
   {
-    return billingTermsXref;
+    return this.billingTermsXref;
   }
 
-  public void setBillingTermsXref ( final String billingTermsXref )
+  @JsonSetter( "BillingTermsXref" )
+  public void billingTermsXref( final String billingTermsXref )
   {
     this.billingTermsXref = billingTermsXref;
   }
 
-  public String getBusinessUnit ()
+  @JsonGetter( "BottomComment" )
+  public String bottomComment()
   {
-    return businessUnit;
+    return this.bottomComment;
   }
 
-  public void setBusinessUnit ( final String businessUnit )
-  {
-    this.businessUnit = businessUnit;
-  }
-
-  public String getCurrencyName ()
-  {
-    return currencyName;
-  }
-
-  public void setCurrencyName ( final String currencyName )
-  {
-    this.currencyName = currencyName;
-  }
-
-  public String getCurrencySymbol ()
-  {
-    return currencySymbol;
-  }
-
-  public void setCurrencySymbol ( final String currencySymbol )
-  {
-    this.currencySymbol = currencySymbol;
-  }
-
-  public String getGlBatchId ()
-  {
-    return glBatchId;
-  }
-
-  public void setGlBatchId ( final String glBatchId )
-  {
-    this.glBatchId = glBatchId;
-  }
-
-  public String getTopComment ()
-  {
-    return topComment;
-  }
-
-  public void setTopComment ( final String topComment )
-  {
-    this.topComment = topComment;
-  }
-
-  public String getBottomComment ()
-  {
-    return bottomComment;
-  }
-
-  public void setBottomComment ( final String bottomComment )
+  @JsonSetter( "BottomComment" )
+  public void bottomComment( final String bottomComment )
   {
     this.bottomComment = bottomComment;
   }
 
-  public String getInvoiceNumber ()
+  @JsonGetter( "BusinessUnit" )
+  public String businessUnit()
   {
-    return invoiceNumber;
+    return this.businessUnit;
   }
 
-  public void setInvoiceNumber ( final String invoiceNumber )
+  @JsonSetter( "BusinessUnit" )
+  public void businessUnit( final String businessUnit )
+  {
+    this.businessUnit = businessUnit;
+  }
+
+  @JsonGetter( "Closed" )
+  public boolean closed()
+  {
+    return this.closed;
+  }
+
+  @JsonSetter( "Closed" )
+  public void closed( final boolean closed )
+  {
+    this.closed = closed;
+  }
+
+  @JsonGetter( "CurrencyName" )
+  public String currencyName()
+  {
+    return this.currencyName;
+  }
+
+  @JsonSetter( "CurrencyName" )
+  public void currencyName( final String currencyName )
+  {
+    this.currencyName = currencyName;
+  }
+
+  @JsonGetter( "CurrencySymbol" )
+  public String currencySymbol()
+  {
+    return this.currencySymbol;
+  }
+
+  @JsonSetter( "CurrencySymbol" )
+  public void currencySymbol( final String currencySymbol )
+  {
+    this.currencySymbol = currencySymbol;
+  }
+
+  @JsonGetter( "DownpaymentAmount" )
+  public double downpaymentAmount()
+  {
+    return this.downpaymentAmount;
+  }
+
+  @JsonSetter( "DownpaymentAmount" )
+  public void downpaymentAmount( final double downpaymentAmount )
+  {
+    this.downpaymentAmount = downpaymentAmount;
+  }
+
+  @JsonGetter( "DueDate" )
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  public Date dueDate()
+  {
+    return this.dueDate;
+  }
+
+  @JsonSetter( "DueDate" )
+  public void dueDate( final Date dueDate )
+  {
+    this.dueDate = dueDate;
+  }
+
+  @JsonGetter( "DueDays" )
+  public int dueDays()
+  {
+    return this.dueDays;
+  }
+
+  @JsonSetter( "DueDays" )
+  public void dueDays( final int dueDays )
+  {
+    this.dueDays = dueDays;
+  }
+
+  @JsonGetter( "Email" )
+  public boolean email()
+  {
+    return this.email;
+  }
+
+  @JsonSetter( "Email" )
+  public void email( final boolean email )
+  {
+    this.email = email;
+  }
+
+  @JsonGetter( "GlBatchId" )
+  public String glBatchId()
+  {
+    return this.glBatchId;
+  }
+
+  @JsonSetter( "GlBatchId" )
+  public void glBatchId( final String glBatchId )
+  {
+    this.glBatchId = glBatchId;
+  }
+
+  @JsonGetter( "GlPosted" )
+  public boolean glPosted()
+  {
+    return this.glPosted;
+  }
+
+  @JsonSetter( "GlPosted" )
+  public void glPosted( final boolean glPosted )
+  {
+    this.glPosted = glPosted;
+  }
+
+  @JsonGetter( "InvoiceAmount" )
+  public double invoiceAmount()
+  {
+    return this.invoiceAmount;
+  }
+
+  @JsonSetter( "InvoiceAmount" )
+  public void invoiceAmount( final double invoiceAmount )
+  {
+    this.invoiceAmount = invoiceAmount;
+  }
+
+  @JsonGetter( "InvoiceDate" )
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
+  public Date invoiceDate()
+  {
+    return this.invoiceDate;
+  }
+
+  @JsonSetter( "InvoiceDate" )
+  public void invoiceDate( final Date invoiceDate )
+  {
+    this.invoiceDate = invoiceDate;
+  }
+
+  @JsonGetter( "InvoiceNumber" )
+  public String invoiceNumber()
+  {
+    return this.invoiceNumber;
+  }
+
+  @JsonSetter( "InvoiceNumber" )
+  public void invoiceNumber( final String invoiceNumber )
   {
     this.invoiceNumber = invoiceNumber;
   }
 
-  public String getLocation ()
+  @JsonGetter( "InvoiceType" )
+  public String invoiceType()
   {
-    return location;
+    return this.invoiceType;
   }
 
-  public void setLocation ( final String location )
+  @JsonSetter( "InvoiceType" )
+  public void invoiceType( final String invoiceType )
+  {
+    this.invoiceType = invoiceType;
+  }
+
+  @JsonGetter( "IsClientLocation" )
+  public boolean isClientLocation()
+  {
+    return this.isClientLocation;
+  }
+
+  @JsonSetter( "IsClientLocation" )
+  public void isClientLocation( final boolean isClientLocation )
+  {
+    this.isClientLocation = isClientLocation;
+  }
+
+  @JsonGetter( "Location" )
+  public String location()
+  {
+    return this.location;
+  }
+
+  @JsonSetter( "Location" )
+  public void location( final String location )
   {
     this.location = location;
   }
 
-  public String getPoNumber ()
+  @JsonGetter( "PhaseName" )
+  public String phaseName()
   {
-    return poNumber;
+    return this.phaseName;
   }
 
-  public void setPoNumber ( final String poNumber )
-  {
-    this.poNumber = poNumber;
-  }
-
-  public String getProjectName ()
-  {
-    return projectName;
-  }
-
-  public void setProjectName ( final String projectName )
-  {
-    this.projectName = projectName;
-  }
-
-  public int getProjectNumber ()
-  {
-    return projectNumber;
-  }
-
-  public void setProjectNumber ( final int projectNumber )
-  {
-    this.projectNumber = projectNumber;
-  }
-
-  public String getPhaseName ()
-  {
-    return phaseName;
-  }
-
-  public void setPhaseName ( final String phaseName )
+  @JsonSetter( "PhaseName" )
+  public void phaseName( final String phaseName )
   {
     this.phaseName = phaseName;
   }
 
-  public String getRoutedMemberIdentifier ()
+  @JsonGetter( "PoNumber" )
+  public String poNumber()
   {
-    return routedMemberIdentifier;
+    return this.poNumber;
   }
 
-  public void setRoutedMemberIdentifier ( final String routedMemberIdentifier )
+  @JsonSetter( "PoNumber" )
+  public void poNumber( final String poNumber )
   {
-    this.routedMemberIdentifier = routedMemberIdentifier;
+    this.poNumber = poNumber;
   }
 
-  public String getRoutedMemberName ()
+  @JsonGetter( "ProjectBillingAmount" )
+  public double projectBillingAmount()
   {
-    return routedMemberName;
+    return this.projectBillingAmount;
   }
 
-  public void setRoutedMemberName ( final String routedMemberName )
+  @JsonSetter( "ProjectBillingAmount" )
+  public void projectBillingAmount( final double projectBillingAmount )
   {
-    this.routedMemberName = routedMemberName;
+    this.projectBillingAmount = projectBillingAmount;
   }
 
-  public String getRemitName ()
+  @JsonGetter( "ProjectBillingRate" )
+  public double projectBillingRate()
   {
-    return remitName;
+    return this.projectBillingRate;
   }
 
-  public void setRemitName ( final String remitName )
+  @JsonSetter( "ProjectBillingRate" )
+  public void projectBillingRate( final double projectBillingRate )
+  {
+    this.projectBillingRate = projectBillingRate;
+  }
+
+  @JsonGetter( "ProjectName" )
+  public String projectName()
+  {
+    return this.projectName;
+  }
+
+  @JsonSetter( "ProjectName" )
+  public void projectName( final String projectName )
+  {
+    this.projectName = projectName;
+  }
+
+  @JsonGetter( "ProjectNumber" )
+  public int projectNumber()
+  {
+    return this.projectNumber;
+  }
+
+  @JsonSetter( "ProjectNumber" )
+  public void projectNumber( final int projectNumber )
+  {
+    this.projectNumber = projectNumber;
+  }
+
+  @JsonGetter( "RemitName" )
+  public String remitName()
+  {
+    return this.remitName;
+  }
+
+  @JsonSetter( "RemitName" )
+  public void remitName( final String remitName )
   {
     this.remitName = remitName;
   }
 
-  public String getRemitPhone ()
+  @JsonGetter( "RemitPhone" )
+  public String remitPhone()
   {
-    return remitPhone;
+    return this.remitPhone;
   }
 
-  public void setRemitPhone ( final String remitPhone )
+  @JsonSetter( "RemitPhone" )
+  public void remitPhone( final String remitPhone )
   {
     this.remitPhone = remitPhone;
   }
 
-  public String getSalesRepIdentifier ()
+  @JsonGetter( "RoutedMemberIdentifier" )
+  public String routedMemberIdentifier()
   {
-    return salesRepIdentifier;
+    return this.routedMemberIdentifier;
   }
 
-  public void setSalesRepIdentifier ( final String salesRepIdentifier )
+  @JsonSetter( "RoutedMemberIdentifier" )
+  public void routedMemberIdentifier( final String routedMemberIdentifier )
+  {
+    this.routedMemberIdentifier = routedMemberIdentifier;
+  }
+
+  @JsonGetter( "RoutedMemberName" )
+  public String routedMemberName()
+  {
+    return this.routedMemberName;
+  }
+
+  @JsonSetter( "RoutedMemberName" )
+  public void routedMemberName( final String routedMemberName )
+  {
+    this.routedMemberName = routedMemberName;
+  }
+
+  @JsonGetter( "SalesRepIdentifier" )
+  public String salesRepIdentifier()
+  {
+    return this.salesRepIdentifier;
+  }
+
+  @JsonSetter( "SalesRepIdentifier" )
+  public void salesRepIdentifier( final String salesRepIdentifier )
   {
     this.salesRepIdentifier = salesRepIdentifier;
   }
 
-  public String getStatus ()
+  @JsonGetter( "SalesTaxAmount" )
+  public double salesTaxAmount()
   {
-    return status;
+    return this.salesTaxAmount;
   }
 
-  public void setStatus ( final String status )
+  @JsonSetter( "SalesTaxAmount" )
+  public void salesTaxAmount( final double salesTaxAmount )
+  {
+    this.salesTaxAmount = salesTaxAmount;
+  }
+
+  @JsonGetter( "Sent" )
+  public boolean sent()
+  {
+    return this.sent;
+  }
+
+  @JsonSetter( "Sent" )
+  public void sent( final boolean sent )
+  {
+    this.sent = sent;
+  }
+
+  @JsonGetter( "Status" )
+  public String status()
+  {
+    return this.status;
+  }
+
+  @JsonSetter( "Status" )
+  public void status( final String status )
   {
     this.status = status;
   }
 
-  public String getTaxCodeDescription ()
+  @JsonGetter( "TaxCode" )
+  public String taxCode()
   {
-    return taxCodeDescription;
+    return this.taxCode;
   }
 
-  public void setTaxCodeDescription ( final String taxCodeDescription )
-  {
-    this.taxCodeDescription = taxCodeDescription;
-  }
-
-  public String getTaxCode ()
-  {
-    return taxCode;
-  }
-
-  public void setTaxCode ( final String taxCode )
+  @JsonSetter( "TaxCode" )
+  public void taxCode( final String taxCode )
   {
     this.taxCode = taxCode;
   }
 
-  public String getTerritory ()
+  @JsonGetter( "TaxCodeDescription" )
+  public String taxCodeDescription()
   {
-    return territory;
+    return this.taxCodeDescription;
   }
 
-  public void setTerritory ( final String territory )
+  @JsonSetter( "TaxCodeDescription" )
+  public void taxCodeDescription( final String taxCodeDescription )
+  {
+    this.taxCodeDescription = taxCodeDescription;
+  }
+
+  @JsonGetter( "TaxRate" )
+  public double taxRate()
+  {
+    return this.taxRate;
+  }
+
+  @JsonSetter( "TaxRate" )
+  public void taxRate( final double taxRate )
+  {
+    this.taxRate = taxRate;
+  }
+
+  @JsonGetter( "Taxable" )
+  public boolean taxable()
+  {
+    return this.taxable;
+  }
+
+  @JsonSetter( "Taxable" )
+  public void taxable( final boolean taxable )
+  {
+    this.taxable = taxable;
+  }
+
+  @JsonGetter( "TaxableAmount" )
+  public double taxableAmount()
+  {
+    return this.taxableAmount;
+  }
+
+  @JsonSetter( "TaxableAmount" )
+  public void taxableAmount( final double taxableAmount )
+  {
+    this.taxableAmount = taxableAmount;
+  }
+
+  @JsonGetter( "Territory" )
+  public String territory()
+  {
+    return this.territory;
+  }
+
+  @JsonSetter( "Territory" )
+  public void territory( final String territory )
   {
     this.territory = territory;
   }
 
-  public int getTicketNumber ()
+  @JsonGetter( "TicketBillingAmount" )
+  public double ticketBillingAmount()
   {
-    return ticketNumber;
+    return this.ticketBillingAmount;
   }
 
-  public void setTicketNumber ( final int ticketNumber )
+  @JsonSetter( "TicketBillingAmount" )
+  public void ticketBillingAmount( final double ticketBillingAmount )
+  {
+    this.ticketBillingAmount = ticketBillingAmount;
+  }
+
+  @JsonGetter( "TicketNumber" )
+  public int ticketNumber()
+  {
+    return this.ticketNumber;
+  }
+
+  @JsonSetter( "TicketNumber" )
+  public void ticketNumber( final int ticketNumber )
   {
     this.ticketNumber = ticketNumber;
   }
 
-  public String getTicketResolution ()
+  @JsonGetter( "TicketResolution" )
+  public String ticketResolution()
   {
-    return ticketResolution;
+    return this.ticketResolution;
   }
 
-  public void setTicketResolution ( final String ticketResolution )
+  @JsonSetter( "TicketResolution" )
+  public void ticketResolution( final String ticketResolution )
   {
     this.ticketResolution = ticketResolution;
   }
 
-  public String getTicketSummary ()
+  @JsonGetter( "TicketSummary" )
+  public String ticketSummary()
   {
-    return ticketSummary;
+    return this.ticketSummary;
   }
 
-  public void setTicketSummary ( final String ticketSummary )
+  @JsonSetter( "TicketSummary" )
+  public void ticketSummary( final String ticketSummary )
   {
     this.ticketSummary = ticketSummary;
+  }
+
+  @JsonGetter( "TopComment" )
+  public String topComment()
+  {
+    return this.topComment;
+  }
+
+  @JsonSetter( "TopComment" )
+  public void topComment( final String topComment )
+  {
+    this.topComment = topComment;
   }
 }

@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
+import java.util.List;
 
 @JsonRootName( "Configuration" )
 public class Configuration extends ConnectwiseCommon
@@ -60,7 +61,7 @@ public class Configuration extends ConnectwiseCommon
 
   private Double backupBillableSpaceGb = null;
 
-  private ConfigurationQuestion[] configurationQuestions = null;
+  private List < ConfigurationQuestion > configurationQuestions = null;
 
   private VendorCompany vendorCompany = null;
 
@@ -477,7 +478,7 @@ public class Configuration extends ConnectwiseCommon
   }
 
   @JsonGetter( "ConfigurationQuestions" )
-  public ConfigurationQuestion[] configurationQuestions()
+  public List < ConfigurationQuestion > configurationQuestions()
   {
     return configurationQuestions;
   }
@@ -487,7 +488,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ConfigurationQuestions" )
-  public Configuration configurationQuestions( final ConfigurationQuestion[] configurationQuestions )
+  public Configuration configurationQuestions( final List < ConfigurationQuestion > configurationQuestions )
   {
     this.configurationQuestions = configurationQuestions;
 

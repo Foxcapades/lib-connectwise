@@ -173,9 +173,10 @@ class GetImpl extends ConnectwiseSubApi implements Get
     return new GetDocument();
   }
 
-  public GetInvoice invoice()
+  @Override
+  public GetInvoice invoice( final int id )
   {
-    return new GetInvoice();
+    return new GetInvoice(credentials, xmlMapper, this, id);
   }
 
   public GetInvoiceByInvoiceNumber invoiceByInvoiceNumber()
@@ -269,9 +270,10 @@ class GetImpl extends ConnectwiseSubApi implements Get
     return new GetQuantityOnHand();
   }
 
-  public GetSpecialInvoice specialInvoice()
+  @Override
+  public GetSpecialInvoice specialInvoice( final int id )
   {
-    return new GetSpecialInvoice();
+    return new GetSpecialInvoice(credentials, xmlMapper, this, id);
   }
 
   public GetSpecialInvoiceByInvoiceNumber specialInvoiceByInvoiceNumber()

@@ -15,6 +15,31 @@
  */
 package io.vulpine.connectwise.api.endpoints.configuration;
 
-public class FindConfigurations
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.request.FindRequest;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.Endpoint;
+import io.vulpine.connectwise.type.configuration.Configuration;
+import io.vulpine.connectwise.type.configuration.FoundConfiguration;
+
+import java.io.IOException;
+import java.util.List;
+
+public class FindConfigurations extends FindRequest < List < FoundConfiguration > >
 {
+  public FindConfigurations(
+    final Credentials credentials,
+    final XmlMapper xmlMapper,
+    final SubApiInterface api
+  )
+  {
+    super(credentials, xmlMapper, api, Endpoint.CONFIGURATION);
+  }
+
+  @Override
+  public List< FoundConfiguration > submit() throws IOException
+  {
+    return submit(FindConfigurationsResponse.class);
+  }
 }

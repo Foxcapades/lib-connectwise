@@ -17,11 +17,12 @@ package io.vulpine.connectwise.api.common.request;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.api.common.Request;
 import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.Request;
 import io.vulpine.connectwise.api.common.ResponseData;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.endpoints.Endpoint;
@@ -71,7 +72,19 @@ abstract public class ConnectwiseRequest< R > implements Request < R >
   @JsonIgnore
   public String getRootName()
   {
-    return this.getClass().getAnnotation(JacksonXmlRootElement.class).localName();
+    final Class < ? extends ConnectwiseRequest > clazz = this.getClass();
+
+    final JsonRootName a1 = clazz.getAnnotation(JsonRootName.class);
+    if (a1 != null) {
+      return a1.value();
+    }
+
+    final JacksonXmlRootElement a2 = clazz.getAnnotation(JacksonXmlRootElement.class);
+    if (a2 != null) {
+      return a2.localName();
+    }
+
+    return clazz.getSimpleName();
   }
 
   @JsonGetter( "credentials" )

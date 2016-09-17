@@ -97,14 +97,16 @@ class FindImpl extends ConnectwiseSubApi implements Find
     return new FindConfigurationCount();
   }
 
+  @Override
   public FindConfigurations configurations()
   {
-    return new FindConfigurations();
+    return new FindConfigurations(credentials, xmlMapper, this);
   }
 
+  @Override
   public FindConfigurationTypes configurationTypes()
   {
-    return new FindConfigurationTypes();
+    return new FindConfigurationTypes(credentials, xmlMapper, this);
   }
 
   public FindContactCount contactCount()
@@ -126,16 +128,6 @@ class FindImpl extends ConnectwiseSubApi implements Find
   public FindInvoiceCount invoiceCount()
   {
     return new FindInvoiceCount();
-  }
-
-  public FindInvoices invoices()
-  {
-    return new FindInvoices();
-  }
-
-  public FindSpecialInvoices specialInvoices()
-  {
-    return new FindSpecialInvoices();
   }
 
   public FindMembers members()

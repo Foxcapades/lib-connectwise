@@ -15,6 +15,22 @@
  */
 package io.vulpine.connectwise.api.endpoints.configuration;
 
-public class FindConfigurationTypesResponse
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import io.vulpine.connectwise.api.common.ResponseData;
+import io.vulpine.connectwise.type.configuration.ConfigurationType;
+
+import java.util.List;
+
+@JsonRootName( "FindConfigurationTypesResponse" )
+public class FindConfigurationTypesResponse extends ResponseData < List< ConfigurationType > >
 {
+  @JsonCreator
+  public FindConfigurationTypesResponse(
+    @JsonProperty("FindConfigurationTypesResult") final List < ConfigurationType > result
+  )
+  {
+    super(result);
+  }
 }
