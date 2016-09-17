@@ -17,14 +17,12 @@ package io.vulpine.connectwise.api.endpoints.configuration;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
 import io.vulpine.connectwise.api.common.ResponseData;
 import io.vulpine.connectwise.type.configuration.FoundConfiguration;
 
 import java.util.List;
 
-@JsonRootName( "FindConfigurationsResponse" )
-public class FindConfigurationsResponse extends ResponseData < List < FoundConfiguration > >
+public class FindConfigurationsResponse extends ResponseData< List < FoundConfiguration > >
 {
   @JsonCreator
   public FindConfigurationsResponse( @JsonProperty( "FindConfigurationsResult" ) final List < FoundConfiguration > result )

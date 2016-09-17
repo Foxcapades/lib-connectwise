@@ -15,6 +15,30 @@
  */
 package io.vulpine.connectwise.api.endpoints.invoice;
 
-public class GetSpecialInvoice
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.request.GetRequest;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.Endpoint;
+import io.vulpine.connectwise.type.invoice.SpecialInvoice;
+
+import java.io.IOException;
+
+public class GetSpecialInvoice extends GetRequest < SpecialInvoice >
 {
+  public GetSpecialInvoice(
+    Credentials credentials,
+    XmlMapper xmlMapper,
+    SubApiInterface api,
+    int id
+  )
+  {
+    super(credentials, xmlMapper, api, Endpoint.INVOICE, id);
+  }
+
+  @Override
+  public SpecialInvoice submit() throws IOException
+  {
+    return submit(GetSpecialInvoiceResponse.class);
+  }
 }

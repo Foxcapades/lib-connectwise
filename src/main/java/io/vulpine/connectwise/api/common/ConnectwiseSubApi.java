@@ -21,6 +21,8 @@ import io.vulpine.connectwise.api.ConnectwiseApi;
 import io.vulpine.connectwise.api.common.request.ConnectwiseRequest;
 import io.vulpine.connectwise.api.common.request.SoapEnvelope;
 import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.invoice.FindInvoices;
+import io.vulpine.connectwise.api.endpoints.invoice.FindSpecialInvoices;
 
 import java.io.IOException;
 import java.util.regex.Pattern;
@@ -46,6 +48,11 @@ public class ConnectwiseSubApi implements SubApiInterface
     this.xmlMapper = xmlMapper;
   }
 
+  public FindInvoices invoices()
+  {
+    return new FindInvoices(credentials, xmlMapper, this);
+  }
+
 
   @Override
   public String send( final ConnectwiseRequest r ) throws IOException
@@ -55,5 +62,10 @@ public class ConnectwiseSubApi implements SubApiInterface
       System.out.println(out);
     }
     return soap.matcher(api.send(r.getEndpoint().toString(), out)).replaceAll("");
+  }
+
+  public FindSpecialInvoices specialInvoices()
+  {
+    return new FindSpecialInvoices(credentials, xmlMapper, this);
   }
 }

@@ -23,8 +23,10 @@ public enum Endpoint
   CONFIGURATION ("ConfigurationApi.asmx"),
   CONTACT       ("ContactApi.asmx"),
   DOCUMENT      ("DocumentApi.asmx"),
+  INVOICE       ("InvoiceApi.asmx"),
   OPPORTUNITY   ("OpportunityApi.asmx"),
   PRODUCT       ("ProductApi.asmx"),
+  REPORTING     ("ReportingApi.asmx"),
   TIME          ("TimeEntryApi.asmx");
 
   private final String endpoint;

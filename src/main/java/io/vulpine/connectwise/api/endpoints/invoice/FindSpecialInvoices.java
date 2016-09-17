@@ -15,6 +15,30 @@
  */
 package io.vulpine.connectwise.api.endpoints.invoice;
 
-public class FindSpecialInvoices
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.request.FindRequest;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.api.endpoints.Endpoint;
+import io.vulpine.connectwise.type.invoice.FoundSpecialInvoice;
+
+import java.io.IOException;
+import java.util.List;
+
+public class FindSpecialInvoices extends FindRequest < List < FoundSpecialInvoice > >
 {
+  public FindSpecialInvoices(
+    Credentials credentials,
+    XmlMapper xmlMapper,
+    SubApiInterface api
+  )
+  {
+    super(credentials, xmlMapper, api, Endpoint.INVOICE);
+  }
+
+  @Override
+  public List < FoundSpecialInvoice > submit() throws IOException
+  {
+    return submit(FindSpecialInvoicesResponse.class);
+  }
 }

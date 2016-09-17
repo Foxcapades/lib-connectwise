@@ -130,16 +130,6 @@ class FindImpl extends ConnectwiseSubApi implements Find
     return new FindInvoiceCount();
   }
 
-  public FindInvoices invoices()
-  {
-    return new FindInvoices();
-  }
-
-  public FindSpecialInvoices specialInvoices()
-  {
-    return new FindSpecialInvoices();
-  }
-
   public FindMembers members()
   {
     return new FindMembers();

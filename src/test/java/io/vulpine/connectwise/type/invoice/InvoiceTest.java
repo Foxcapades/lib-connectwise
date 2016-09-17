@@ -58,16 +58,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void isClientLocation() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, invoice.isClientLocation());
     }
 
     @Test
-    public void setClientLocation() throws Exception
+    public void clientLocation() throws Exception
     {
-      invoice.setClientLocation(TEST_BOOLEAN);
+      invoice.isClientLocation(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(invoice));
     }
   }
@@ -82,16 +82,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void isTaxable() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_BOOLEAN);
-      assertEquals(TEST_BOOLEAN, invoice.isTaxable());
+      assertEquals(TEST_BOOLEAN, invoice.taxable());
     }
 
     @Test
-    public void setTaxable() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setTaxable(TEST_BOOLEAN);
+      invoice.taxable(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(invoice));
     }
   }
@@ -106,16 +106,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void isEmail() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_BOOLEAN);
-      assertEquals(TEST_BOOLEAN, invoice.isEmail());
+      assertEquals(TEST_BOOLEAN, invoice.email());
     }
 
     @Test
-    public void setEmail() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setEmail(TEST_BOOLEAN);
+      invoice.email(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(invoice));
     }
   }
@@ -130,16 +130,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void isClosed() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_BOOLEAN);
-      assertEquals(TEST_BOOLEAN, invoice.isClosed());
+      assertEquals(TEST_BOOLEAN, invoice.closed());
     }
 
     @Test
-    public void setClosed() throws Exception
+    public void closed() throws Exception
     {
-      invoice.setClosed(TEST_BOOLEAN);
+      invoice.closed(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(invoice));
     }
   }
@@ -154,16 +154,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void isSent() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_BOOLEAN);
-      assertEquals(TEST_BOOLEAN, invoice.isSent());
+      assertEquals(TEST_BOOLEAN, invoice.sent());
     }
 
     @Test
-    public void setSent() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setSent(TEST_BOOLEAN);
+      invoice.sent(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(invoice));
     }
   }
@@ -178,16 +178,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void isGlPosted() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_BOOLEAN);
-      assertEquals(TEST_BOOLEAN, invoice.isGlPosted());
+      assertEquals(TEST_BOOLEAN, invoice.glPosted());
     }
 
     @Test
-    public void setGlPosted() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setGlPosted(TEST_BOOLEAN);
+      invoice.glPosted(TEST_BOOLEAN);
       assertEquals(TEST_BOOLEAN, field.get(invoice));
     }
   }
@@ -202,16 +202,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getDueDate() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_DATE);
-      assertSame(TEST_DATE, invoice.getDueDate());
+      assertSame(TEST_DATE, invoice.dueDate());
     }
 
     @Test
-    public void setDueDate() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setDueDate(TEST_DATE);
+      invoice.dueDate(TEST_DATE);
       assertSame(TEST_DATE, field.get(invoice));
     }
   }
@@ -226,16 +226,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getInvoiceDate() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_DATE);
-      assertSame(TEST_DATE, invoice.getInvoiceDate());
+      assertSame(TEST_DATE, invoice.invoiceDate());
     }
 
     @Test
-    public void setInvoiceDate() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setInvoiceDate(TEST_DATE);
+      invoice.invoiceDate(TEST_DATE);
       assertSame(TEST_DATE, field.get(invoice));
     }
   }
@@ -250,16 +250,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getInvoiceType() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getInvoiceType());
+      assertEquals(TEST_STRING, invoice.invoiceType());
     }
 
     @Test
-    public void setInvoiceType() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setInvoiceType(TEST_STRING);
+      invoice.invoiceType(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -274,16 +274,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getDownpaymentAmount() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_DOUBLE);
-      assertEquals(TEST_DOUBLE, invoice.getDownpaymentAmount(), 0);
+      assertEquals(TEST_DOUBLE, invoice.downpaymentAmount(), 0);
     }
 
     @Test
-    public void setDownpaymentAmount() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setDownpaymentAmount(TEST_DOUBLE);
+      invoice.downpaymentAmount(TEST_DOUBLE);
       assertEquals(TEST_DOUBLE, field.get(invoice));
     }
   }
@@ -298,16 +298,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getInvoiceAmount() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_DOUBLE);
-      assertEquals(TEST_DOUBLE, invoice.getInvoiceAmount(), 0);
+      assertEquals(TEST_DOUBLE, invoice.invoiceAmount(), 0);
     }
 
     @Test
-    public void setInvoiceAmount() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setInvoiceAmount(TEST_DOUBLE);
+      invoice.invoiceAmount(TEST_DOUBLE);
       assertEquals(TEST_DOUBLE, field.get(invoice));
     }
   }
@@ -322,16 +322,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getProjectBillingAmount() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_DOUBLE);
-      assertEquals(TEST_DOUBLE, invoice.getProjectBillingAmount(), 0);
+      assertEquals(TEST_DOUBLE, invoice.projectBillingAmount(), 0);
     }
 
     @Test
-    public void setProjectBillingAmount() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setProjectBillingAmount(TEST_DOUBLE);
+      invoice.projectBillingAmount(TEST_DOUBLE);
       assertEquals(TEST_DOUBLE, field.get(invoice));
     }
   }
@@ -346,16 +346,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getProjectBillingRate() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_DOUBLE);
-      assertEquals(TEST_DOUBLE, invoice.getProjectBillingRate(), 0);
+      assertEquals(TEST_DOUBLE, invoice.projectBillingRate(), 0);
     }
 
     @Test
-    public void setProjectBillingRate() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setProjectBillingRate(TEST_DOUBLE);
+      invoice.projectBillingRate(TEST_DOUBLE);
       assertEquals(TEST_DOUBLE, field.get(invoice));
     }
   }
@@ -370,16 +370,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getSalesTaxAmount() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_DOUBLE);
-      assertEquals(TEST_DOUBLE, invoice.getSalesTaxAmount(), 0);
+      assertEquals(TEST_DOUBLE, invoice.salesTaxAmount(), 0);
     }
 
     @Test
-    public void setSalesTaxAmount() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setSalesTaxAmount(TEST_DOUBLE);
+      invoice.salesTaxAmount(TEST_DOUBLE);
       assertEquals(TEST_DOUBLE, field.get(invoice));
     }
   }
@@ -394,16 +394,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getTaxableAmount() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_DOUBLE);
-      assertEquals(TEST_DOUBLE, invoice.getTaxableAmount(), 0);
+      assertEquals(TEST_DOUBLE, invoice.taxableAmount(), 0);
     }
 
     @Test
-    public void setTaxableAmount() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setTaxableAmount(TEST_DOUBLE);
+      invoice.taxableAmount(TEST_DOUBLE);
       assertEquals(TEST_DOUBLE, field.get(invoice));
     }
   }
@@ -418,16 +418,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getTaxRate() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_DOUBLE);
-      assertEquals(TEST_DOUBLE, invoice.getTaxRate(), 0);
+      assertEquals(TEST_DOUBLE, invoice.taxRate(), 0);
     }
 
     @Test
-    public void setTaxRate() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setTaxRate(TEST_DOUBLE);
+      invoice.taxRate(TEST_DOUBLE);
       assertEquals(TEST_DOUBLE, field.get(invoice));
     }
   }
@@ -442,16 +442,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getTicketBillingAmount() throws Exception
+    public void has_valid_getterAmount() throws Exception
     {
       field.set(invoice, TEST_DOUBLE);
-      assertEquals(TEST_DOUBLE, invoice.getTicketBillingAmount(), 0);
+      assertEquals(TEST_DOUBLE, invoice.ticketBillingAmount(), 0);
     }
 
     @Test
-    public void setTicketBillingAmount() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setTicketBillingAmount(TEST_DOUBLE);
+      invoice.ticketBillingAmount(TEST_DOUBLE);
       assertEquals(TEST_DOUBLE, field.get(invoice));
     }
   }
@@ -466,16 +466,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getDueDays() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_INT);
-      assertEquals(TEST_INT, invoice.getDueDays());
+      assertEquals(TEST_INT, invoice.dueDays());
     }
 
     @Test
-    public void setDueDays() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setDueDays(TEST_INT);
+      invoice.dueDays(TEST_INT);
       assertEquals(TEST_INT, field.get(invoice));
     }
   }
@@ -490,16 +490,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getAgreementName() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getAgreementName());
+      assertEquals(TEST_STRING, invoice.agreementName());
     }
 
     @Test
-    public void setAgreementName() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setAgreementName(TEST_STRING);
+      invoice.agreementName(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -514,16 +514,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getAgreementType() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getAgreementType());
+      assertEquals(TEST_STRING, invoice.agreementType());
     }
 
     @Test
-    public void setAgreementType() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setAgreementType(TEST_STRING);
+      invoice.agreementType(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -538,16 +538,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getBillingDelivery() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getBillingDelivery());
+      assertEquals(TEST_STRING, invoice.billingDelivery());
     }
 
     @Test
-    public void setBillingDelivery() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setBillingDelivery(TEST_STRING);
+      invoice.billingDelivery(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -562,16 +562,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getBillingMethod() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getBillingMethod());
+      assertEquals(TEST_STRING, invoice.billingMethod());
     }
 
     @Test
-    public void setBillingMethod() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setBillingMethod(TEST_STRING);
+      invoice.billingMethod(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -586,16 +586,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getBillingTerms() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getBillingTerms());
+      assertEquals(TEST_STRING, invoice.billingTerms());
     }
 
     @Test
-    public void setBillingTerms() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setBillingTerms(TEST_STRING);
+      invoice.billingTerms(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -610,16 +610,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getBillingTermsXref() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getBillingTermsXref());
+      assertEquals(TEST_STRING, invoice.billingTermsXref());
     }
 
     @Test
-    public void setBillingTermsXref() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setBillingTermsXref(TEST_STRING);
+      invoice.billingTermsXref(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -634,16 +634,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getBusinessUnit() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getBusinessUnit());
+      assertEquals(TEST_STRING, invoice.businessUnit());
     }
 
     @Test
-    public void setBusinessUnit() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setBusinessUnit(TEST_STRING);
+      invoice.businessUnit(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -658,16 +658,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getCurrencyName() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getCurrencyName());
+      assertEquals(TEST_STRING, invoice.currencyName());
     }
 
     @Test
-    public void setCurrencyName() throws Exception
+    public void currencyName() throws Exception
     {
-      invoice.setCurrencyName(TEST_STRING);
+      invoice.currencyName(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -682,16 +682,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getCurrencySymbol() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getCurrencySymbol());
+      assertEquals(TEST_STRING, invoice.currencySymbol());
     }
 
     @Test
-    public void setCurrencySymbol() throws Exception
+    public void currencySymbol() throws Exception
     {
-      invoice.setCurrencySymbol(TEST_STRING);
+      invoice.currencySymbol(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -706,16 +706,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getGlBatchId() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getGlBatchId());
+      assertEquals(TEST_STRING, invoice.glBatchId());
     }
 
     @Test
-    public void setGlBatchId() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setGlBatchId(TEST_STRING);
+      invoice.glBatchId(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -730,16 +730,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getTopComment() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getTopComment());
+      assertEquals(TEST_STRING, invoice.topComment());
     }
 
     @Test
-    public void setTopComment() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setTopComment(TEST_STRING);
+      invoice.topComment(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -754,16 +754,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getBottomComment() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getBottomComment());
+      assertEquals(TEST_STRING, invoice.bottomComment());
     }
 
     @Test
-    public void setBottomComment() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setBottomComment(TEST_STRING);
+      invoice.bottomComment(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -778,16 +778,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getInvoiceNumber() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getInvoiceNumber());
+      assertEquals(TEST_STRING, invoice.invoiceNumber());
     }
 
     @Test
-    public void setInvoiceNumber() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setInvoiceNumber(TEST_STRING);
+      invoice.invoiceNumber(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -802,16 +802,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getLocation() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getLocation());
+      assertEquals(TEST_STRING, invoice.location());
     }
 
     @Test
-    public void setLocation() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setLocation(TEST_STRING);
+      invoice.location(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -826,16 +826,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getPoNumber() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getPoNumber());
+      assertEquals(TEST_STRING, invoice.poNumber());
     }
 
     @Test
-    public void setPoNumber() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setPoNumber(TEST_STRING);
+      invoice.poNumber(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -850,16 +850,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getProjectName() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getProjectName());
+      assertEquals(TEST_STRING, invoice.projectName());
     }
 
     @Test
-    public void setProjectName() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setProjectName(TEST_STRING);
+      invoice.projectName(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -874,16 +874,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getProjectNumber() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_INT);
-      assertEquals(TEST_INT, invoice.getProjectNumber());
+      assertEquals(TEST_INT, invoice.projectNumber());
     }
 
     @Test
-    public void setProjectNumber() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setProjectNumber(TEST_INT);
+      invoice.projectNumber(TEST_INT);
       assertEquals(TEST_INT, field.get(invoice));
     }
   }
@@ -898,16 +898,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getPhaseName() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getPhaseName());
+      assertEquals(TEST_STRING, invoice.phaseName());
     }
 
     @Test
-    public void setPhaseName() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setPhaseName(TEST_STRING);
+      invoice.phaseName(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -922,16 +922,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getRoutedMemberIdentifier() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getRoutedMemberIdentifier());
+      assertEquals(TEST_STRING, invoice.routedMemberIdentifier());
     }
 
     @Test
-    public void setRoutedMemberIdentifier() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setRoutedMemberIdentifier(TEST_STRING);
+      invoice.routedMemberIdentifier(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -946,16 +946,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getRoutedMemberName() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getRoutedMemberName());
+      assertEquals(TEST_STRING, invoice.routedMemberName());
     }
 
     @Test
-    public void setRoutedMemberName() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setRoutedMemberName(TEST_STRING);
+      invoice.routedMemberName(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -970,16 +970,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getRemitName() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getRemitName());
+      assertEquals(TEST_STRING, invoice.remitName());
     }
 
     @Test
-    public void setRemitName() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setRemitName(TEST_STRING);
+      invoice.remitName(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -994,16 +994,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getRemitPhone() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getRemitPhone());
+      assertEquals(TEST_STRING, invoice.remitPhone());
     }
 
     @Test
-    public void setRemitPhone() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setRemitPhone(TEST_STRING);
+      invoice.remitPhone(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -1018,16 +1018,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getSalesRepIdentifier() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getSalesRepIdentifier());
+      assertEquals(TEST_STRING, invoice.salesRepIdentifier());
     }
 
     @Test
-    public void setSalesRepIdentifier() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setSalesRepIdentifier(TEST_STRING);
+      invoice.salesRepIdentifier(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -1042,16 +1042,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getStatus() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getStatus());
+      assertEquals(TEST_STRING, invoice.status());
     }
 
     @Test
-    public void setStatus() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setStatus(TEST_STRING);
+      invoice.status(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -1066,16 +1066,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getTaxCodeDescription() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getTaxCodeDescription());
+      assertEquals(TEST_STRING, invoice.taxCodeDescription());
     }
 
     @Test
-    public void setTaxCodeDescription() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setTaxCodeDescription(TEST_STRING);
+      invoice.taxCodeDescription(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -1090,16 +1090,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getTaxCode() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getTaxCode());
+      assertEquals(TEST_STRING, invoice.taxCode());
     }
 
     @Test
-    public void setTaxCode() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setTaxCode(TEST_STRING);
+      invoice.taxCode(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -1114,16 +1114,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getTerritory() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getTerritory());
+      assertEquals(TEST_STRING, invoice.territory());
     }
 
     @Test
-    public void setTerritory() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setTerritory(TEST_STRING);
+      invoice.territory(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -1138,16 +1138,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getTicketNumber() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_INT);
-      assertEquals(TEST_INT, invoice.getTicketNumber());
+      assertEquals(TEST_INT, invoice.ticketNumber());
     }
 
     @Test
-    public void setTicketNumber() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setTicketNumber(TEST_INT);
+      invoice.ticketNumber(TEST_INT);
       assertEquals(TEST_INT, field.get(invoice));
     }
   }
@@ -1162,16 +1162,16 @@ public class InvoiceTest
     }
 
     @Test
-    public void getTicketResolution() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getTicketResolution());
+      assertEquals(TEST_STRING, invoice.ticketResolution());
     }
 
     @Test
-    public void setTicketResolution() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setTicketResolution(TEST_STRING);
+      invoice.ticketResolution(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }
@@ -1187,16 +1187,16 @@ public class InvoiceTest
 
 
     @Test
-    public void getTicketSummary() throws Exception
+    public void has_valid_getter() throws Exception
     {
       field.set(invoice, TEST_STRING);
-      assertEquals(TEST_STRING, invoice.getTicketSummary());
+      assertEquals(TEST_STRING, invoice.ticketSummary());
     }
 
     @Test
-    public void setTicketSummary() throws Exception
+    public void has_valid_setter() throws Exception
     {
-      invoice.setTicketSummary(TEST_STRING);
+      invoice.ticketSummary(TEST_STRING);
       assertEquals(TEST_STRING, field.get(invoice));
     }
   }

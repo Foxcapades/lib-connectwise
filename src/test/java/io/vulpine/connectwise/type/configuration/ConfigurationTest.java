@@ -22,6 +22,8 @@ import org.junit.runner.RunWith;
 
 import java.lang.reflect.Field;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -1295,13 +1297,13 @@ public class ConfigurationTest
 
   public class ConfigurationQuestions
   {
-    private final io.vulpine.connectwise.type.configuration.ConfigurationQuestion[] test;
-    private final Field prop;
+    private final List< ConfigurationQuestion > test;
+    private final Field                         prop;
 
     public ConfigurationQuestions() throws Exception
     {
       prop = Configuration.class.getDeclaredField("configurationQuestions");
-      test = new ConfigurationQuestion[] { new ConfigurationQuestion() };
+      test = new LinkedList < ConfigurationQuestion >();
       prop.setAccessible(true);
     }
 
