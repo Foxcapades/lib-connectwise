@@ -26,19 +26,19 @@ public class ProductCommon extends ConnectwiseCommon
   protected String itemIdentifier;
 
   @JacksonXmlProperty( localName = "Cost" )
-  protected double cost;
+  protected Double cost;
 
   @JacksonXmlProperty( localName = "Price" )
-  protected double price;
+  protected Double price;
 
   @JacksonXmlProperty( localName = "Taxable" )
-  protected boolean taxable;
+  protected Boolean taxable;
 
   @JacksonXmlProperty( localName = "Inactive" )
-  protected boolean inactive;
+  protected Boolean inactive;
 
   @JacksonXmlProperty( localName = "Serialized" )
-  protected boolean serialized;
+  protected Boolean serialized;
 
   public String getItemIdentifier ()
   {
@@ -50,52 +50,52 @@ public class ProductCommon extends ConnectwiseCommon
     this.itemIdentifier = itemIdentifier;
   }
 
-  public double getCost ()
+  public Double getCost ()
   {
     return cost;
   }
 
-  public void setCost ( final double cost )
+  public void setCost ( final Double cost )
   {
     this.cost = cost;
   }
 
-  public double getPrice ()
+  public Double getPrice ()
   {
     return price;
   }
 
-  public void setPrice ( final double price )
+  public void setPrice ( final Double price )
   {
     this.price = price;
   }
 
-  public boolean isTaxable ()
+  public Boolean isTaxable ()
   {
     return taxable;
   }
 
-  public void setTaxable ( final boolean taxable )
+  public void setTaxable ( final Boolean taxable )
   {
     this.taxable = taxable;
   }
 
-  public boolean isInactive ()
+  public Boolean isInactive ()
   {
     return inactive;
   }
 
-  public void setInactive ( final boolean inactive )
+  public void setInactive ( final Boolean inactive )
   {
     this.inactive = inactive;
   }
 
-  public boolean isSerialized ()
+  public Boolean isSerialized ()
   {
     return serialized;
   }
 
-  public void setSerialized ( final boolean serialized )
+  public void setSerialized ( final Boolean serialized )
   {
     this.serialized = serialized;
   }

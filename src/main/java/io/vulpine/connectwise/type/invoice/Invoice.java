@@ -24,17 +24,17 @@ import java.util.Date;
 
 public class Invoice extends ConnectwiseCommon
 {
-  private boolean isClientLocation;
+  private Boolean isClientLocation;
 
-  private boolean taxable;
+  private Boolean taxable;
 
-  private boolean email;
+  private Boolean email;
 
-  private boolean closed;
+  private Boolean closed;
 
-  private boolean sent;
+  private Boolean sent;
 
-  private boolean glPosted;
+  private Boolean glPosted;
 
   private Date dueDate;
 
@@ -42,23 +42,23 @@ public class Invoice extends ConnectwiseCommon
 
   private String invoiceType;
 
-  private double downpaymentAmount;
+  private Double downpaymentAmount;
 
-  private double invoiceAmount;
+  private Double invoiceAmount;
 
-  private double projectBillingAmount;
+  private Double projectBillingAmount;
 
-  private double projectBillingRate;
+  private Double projectBillingRate;
 
-  private double salesTaxAmount;
+  private Double salesTaxAmount;
 
-  private double taxableAmount;
+  private Double taxableAmount;
 
-  private double taxRate;
+  private Double taxRate;
 
-  private double ticketBillingAmount;
+  private Double ticketBillingAmount;
 
-  private int dueDays;
+  private Integer dueDays;
 
   private String agreementName;
 
@@ -92,7 +92,7 @@ public class Invoice extends ConnectwiseCommon
 
   private String projectName;
 
-  private int projectNumber;
+  private Integer projectNumber;
 
   private String phaseName;
 
@@ -114,7 +114,7 @@ public class Invoice extends ConnectwiseCommon
 
   private String territory;
 
-  private int ticketNumber;
+  private Integer ticketNumber;
 
   private String ticketResolution;
 
@@ -217,13 +217,13 @@ public class Invoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "Closed" )
-  public boolean closed()
+  public Boolean closed()
   {
     return this.closed;
   }
 
   @JsonSetter( "Closed" )
-  public void closed( final boolean closed )
+  public void closed( final Boolean closed )
   {
     this.closed = closed;
   }
@@ -253,13 +253,13 @@ public class Invoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "DownpaymentAmount" )
-  public double downpaymentAmount()
+  public Double downpaymentAmount()
   {
     return this.downpaymentAmount;
   }
 
   @JsonSetter( "DownpaymentAmount" )
-  public void downpaymentAmount( final double downpaymentAmount )
+  public void downpaymentAmount( final Double downpaymentAmount )
   {
     this.downpaymentAmount = downpaymentAmount;
   }
@@ -278,25 +278,25 @@ public class Invoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "DueDays" )
-  public int dueDays()
+  public Integer dueDays()
   {
     return this.dueDays;
   }
 
   @JsonSetter( "DueDays" )
-  public void dueDays( final int dueDays )
+  public void dueDays( final Integer dueDays )
   {
     this.dueDays = dueDays;
   }
 
   @JsonGetter( "Email" )
-  public boolean email()
+  public Boolean email()
   {
     return this.email;
   }
 
   @JsonSetter( "Email" )
-  public void email( final boolean email )
+  public void email( final Boolean email )
   {
     this.email = email;
   }
@@ -314,25 +314,25 @@ public class Invoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "GlPosted" )
-  public boolean glPosted()
+  public Boolean glPosted()
   {
     return this.glPosted;
   }
 
   @JsonSetter( "GlPosted" )
-  public void glPosted( final boolean glPosted )
+  public void glPosted( final Boolean glPosted )
   {
     this.glPosted = glPosted;
   }
 
   @JsonGetter( "InvoiceAmount" )
-  public double invoiceAmount()
+  public Double invoiceAmount()
   {
     return this.invoiceAmount;
   }
 
   @JsonSetter( "InvoiceAmount" )
-  public void invoiceAmount( final double invoiceAmount )
+  public void invoiceAmount( final Double invoiceAmount )
   {
     this.invoiceAmount = invoiceAmount;
   }
@@ -375,13 +375,13 @@ public class Invoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "IsClientLocation" )
-  public boolean isClientLocation()
+  public Boolean isClientLocation()
   {
     return this.isClientLocation;
   }
 
   @JsonSetter( "IsClientLocation" )
-  public void isClientLocation( final boolean isClientLocation )
+  public void isClientLocation( final Boolean isClientLocation )
   {
     this.isClientLocation = isClientLocation;
   }
@@ -423,25 +423,25 @@ public class Invoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "ProjectBillingAmount" )
-  public double projectBillingAmount()
+  public Double projectBillingAmount()
   {
     return this.projectBillingAmount;
   }
 
   @JsonSetter( "ProjectBillingAmount" )
-  public void projectBillingAmount( final double projectBillingAmount )
+  public void projectBillingAmount( final Double projectBillingAmount )
   {
     this.projectBillingAmount = projectBillingAmount;
   }
 
   @JsonGetter( "ProjectBillingRate" )
-  public double projectBillingRate()
+  public Double projectBillingRate()
   {
     return this.projectBillingRate;
   }
 
   @JsonSetter( "ProjectBillingRate" )
-  public void projectBillingRate( final double projectBillingRate )
+  public void projectBillingRate( final Double projectBillingRate )
   {
     this.projectBillingRate = projectBillingRate;
   }
@@ -459,13 +459,13 @@ public class Invoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "ProjectNumber" )
-  public int projectNumber()
+  public Integer projectNumber()
   {
     return this.projectNumber;
   }
 
   @JsonSetter( "ProjectNumber" )
-  public void projectNumber( final int projectNumber )
+  public void projectNumber( final Integer projectNumber )
   {
     this.projectNumber = projectNumber;
   }
@@ -531,25 +531,25 @@ public class Invoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "SalesTaxAmount" )
-  public double salesTaxAmount()
+  public Double salesTaxAmount()
   {
     return this.salesTaxAmount;
   }
 
   @JsonSetter( "SalesTaxAmount" )
-  public void salesTaxAmount( final double salesTaxAmount )
+  public void salesTaxAmount( final Double salesTaxAmount )
   {
     this.salesTaxAmount = salesTaxAmount;
   }
 
   @JsonGetter( "Sent" )
-  public boolean sent()
+  public Boolean sent()
   {
     return this.sent;
   }
 
   @JsonSetter( "Sent" )
-  public void sent( final boolean sent )
+  public void sent( final Boolean sent )
   {
     this.sent = sent;
   }
@@ -591,37 +591,37 @@ public class Invoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "TaxRate" )
-  public double taxRate()
+  public Double taxRate()
   {
     return this.taxRate;
   }
 
   @JsonSetter( "TaxRate" )
-  public void taxRate( final double taxRate )
+  public void taxRate( final Double taxRate )
   {
     this.taxRate = taxRate;
   }
 
   @JsonGetter( "Taxable" )
-  public boolean taxable()
+  public Boolean taxable()
   {
     return this.taxable;
   }
 
   @JsonSetter( "Taxable" )
-  public void taxable( final boolean taxable )
+  public void taxable( final Boolean taxable )
   {
     this.taxable = taxable;
   }
 
   @JsonGetter( "TaxableAmount" )
-  public double taxableAmount()
+  public Double taxableAmount()
   {
     return this.taxableAmount;
   }
 
   @JsonSetter( "TaxableAmount" )
-  public void taxableAmount( final double taxableAmount )
+  public void taxableAmount( final Double taxableAmount )
   {
     this.taxableAmount = taxableAmount;
   }
@@ -639,25 +639,25 @@ public class Invoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "TicketBillingAmount" )
-  public double ticketBillingAmount()
+  public Double ticketBillingAmount()
   {
     return this.ticketBillingAmount;
   }
 
   @JsonSetter( "TicketBillingAmount" )
-  public void ticketBillingAmount( final double ticketBillingAmount )
+  public void ticketBillingAmount( final Double ticketBillingAmount )
   {
     this.ticketBillingAmount = ticketBillingAmount;
   }
 
   @JsonGetter( "TicketNumber" )
-  public int ticketNumber()
+  public Integer ticketNumber()
   {
     return this.ticketNumber;
   }
 
   @JsonSetter( "TicketNumber" )
-  public void ticketNumber( final int ticketNumber )
+  public void ticketNumber( final Integer ticketNumber )
   {
     this.ticketNumber = ticketNumber;
   }

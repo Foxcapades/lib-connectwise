@@ -33,7 +33,7 @@ public class Company extends CompanyCommon
 
   private String webSite;
 
-  private boolean isInactive;
+  private Boolean isInactive;
 
   @JsonGetter( "DefaultAddress" )
   public Address getDefaultAddress ()
@@ -84,13 +84,13 @@ public class Company extends CompanyCommon
   }
 
   @JsonGetter("InactiveFlag")
-  public boolean isInactive()
+  public Boolean isInactive()
   {
     return isInactive;
   }
 
   @JsonSetter("InactiveFlag")
-  public void inactive( final boolean inactive )
+  public void inactive( final Boolean inactive )
   {
     this.isInactive = inactive;
   }

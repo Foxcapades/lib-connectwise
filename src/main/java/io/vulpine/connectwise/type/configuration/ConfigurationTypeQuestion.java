@@ -29,10 +29,10 @@ public class ConfigurationTypeQuestion extends ConnectwiseCommon
   protected String entryType;
 
   @JacksonXmlProperty( localName = "ConfigurationTypeId" )
-  protected int configurationTypeId;
+  protected Integer configurationTypeId;
 
   @JacksonXmlProperty( localName = "SequenceNumber" )
-  protected double sequenceNumber;
+  protected Double sequenceNumber;
 
   @JacksonXmlProperty( localName = "Question" )
   protected String question;
@@ -41,10 +41,10 @@ public class ConfigurationTypeQuestion extends ConnectwiseCommon
   protected short numberOfDecimals;
 
   @JacksonXmlProperty( localName = "RequiredFlag" )
-  protected boolean requiredFlag;
+  protected Boolean requiredFlag;
 
   @JacksonXmlProperty( localName = "InactiveFlag" )
-  protected boolean inactiveFlag;
+  protected Boolean inactiveFlag;
 
   @JacksonXmlProperty( localName = "PossibleResponses" )
   protected String possibleResponses;
@@ -69,22 +69,22 @@ public class ConfigurationTypeQuestion extends ConnectwiseCommon
     this.entryType = entryType;
   }
 
-  public int getConfigurationTypeId ()
+  public Integer getConfigurationTypeId ()
   {
     return configurationTypeId;
   }
 
-  public void setConfigurationTypeId ( int configurationTypeId )
+  public void setConfigurationTypeId ( Integer configurationTypeId )
   {
     this.configurationTypeId = configurationTypeId;
   }
 
-  public double getSequenceNumber ()
+  public Double getSequenceNumber ()
   {
     return sequenceNumber;
   }
 
-  public void setSequenceNumber ( double sequenceNumber )
+  public void setSequenceNumber ( Double sequenceNumber )
   {
     this.sequenceNumber = sequenceNumber;
   }
@@ -109,22 +109,22 @@ public class ConfigurationTypeQuestion extends ConnectwiseCommon
     this.numberOfDecimals = numberOfDecimals;
   }
 
-  public boolean isRequiredFlag ()
+  public Boolean isRequiredFlag ()
   {
     return requiredFlag;
   }
 
-  public void setRequiredFlag ( boolean requiredFlag )
+  public void setRequiredFlag ( Boolean requiredFlag )
   {
     this.requiredFlag = requiredFlag;
   }
 
-  public boolean isInactiveFlag ()
+  public Boolean isInactiveFlag ()
   {
     return inactiveFlag;
   }
 
-  public void setInactiveFlag ( boolean inactiveFlag )
+  public void setInactiveFlag ( Boolean inactiveFlag )
   {
     this.inactiveFlag = inactiveFlag;
   }

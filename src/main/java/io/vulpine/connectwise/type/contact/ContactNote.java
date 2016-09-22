@@ -27,7 +27,7 @@ public class ContactNote extends ConnectwiseCommon
   protected String noteText;
 
   @JacksonXmlProperty( localName = "IsFlagged" )
-  protected boolean isFlagged;
+  protected Boolean isFlagged;
 
   @JacksonXmlProperty( localName = "EnteredBy" )
   protected String enteredBy;
@@ -52,12 +52,12 @@ public class ContactNote extends ConnectwiseCommon
     this.noteText = noteText;
   }
 
-  public boolean isFlagged ()
+  public Boolean isFlagged ()
   {
     return isFlagged;
   }
 
-  public void setFlagged ( boolean flagged )
+  public void setFlagged ( Boolean flagged )
   {
     isFlagged = flagged;
   }

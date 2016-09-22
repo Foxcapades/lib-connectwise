@@ -25,19 +25,19 @@ public class ForecastItem
   protected String  forecastType;
 
   @JacksonXmlProperty( localName = "Cost" )
-  protected double  cost;
+  protected Double  cost;
 
   @JacksonXmlProperty( localName = "Revenue" )
-  protected double  revenue;
+  protected Double  revenue;
 
   @JacksonXmlProperty( localName = "Included" )
-  protected boolean included;
+  protected Boolean included;
 
   @JacksonXmlProperty( localName = "Description" )
   protected String  description;
 
   @JacksonXmlProperty( localName = "Linked" )
-  protected boolean linked;
+  protected Boolean linked;
 
   @JacksonXmlProperty( localName = "QuoteNumber" )
   protected String  quoteNumber;
@@ -58,32 +58,32 @@ public class ForecastItem
     this.forecastType = forecastType;
   }
 
-  public double getCost()
+  public Double getCost()
   {
     return cost;
   }
 
-  public void setCost( final double cost )
+  public void setCost( final Double cost )
   {
     this.cost = cost;
   }
 
-  public double getRevenue()
+  public Double getRevenue()
   {
     return revenue;
   }
 
-  public void setRevenue( final double revenue )
+  public void setRevenue( final Double revenue )
   {
     this.revenue = revenue;
   }
 
-  public boolean isIncluded()
+  public Boolean isIncluded()
   {
     return included;
   }
 
-  public void setIncluded( final boolean included )
+  public void setIncluded( final Boolean included )
   {
     this.included = included;
   }
@@ -98,12 +98,12 @@ public class ForecastItem
     this.description = description;
   }
 
-  public boolean isLinked()
+  public Boolean isLinked()
   {
     return linked;
   }
 
-  public void setLinked( final boolean linked )
+  public void setLinked( final Boolean linked )
   {
     this.linked = linked;
   }

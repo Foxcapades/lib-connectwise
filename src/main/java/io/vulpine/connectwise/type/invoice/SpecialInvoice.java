@@ -11,110 +11,110 @@ import java.util.List;
 @JsonIgnoreProperties( { "LastUpdate", "LastUpdated", "UpdatedBy", "Description" } )
 public class SpecialInvoice extends ConnectwiseCommon
 {
-  private int companyId;
+  private Integer companyId;
 
-  private int billToCompanyId;
+  private Integer billToCompanyId;
 
   private ApplyTo applyTo;
 
-  private int attention;
+  private Integer attention;
 
-  private int addressId;
+  private Integer addressId;
 
-  private int billingTermsId;
+  private Integer billingTermsId;
 
-  private int reference;
+  private Integer reference;
 
-  private int customerPO;
+  private Integer customerPO;
 
-  private int invoiceTemplateId;
+  private Integer invoiceTemplateId;
 
-  private int invoiceEmailTemplateId;
+  private Integer invoiceEmailTemplateId;
 
-  private boolean addToBatchEmailList;
+  private Boolean addToBatchEmailList;
 
-  private int invoiceNumber;
+  private Integer invoiceNumber;
 
   private Date invoiceDate;
 
-  private int invoiceTypeIdentifier;
+  private Integer invoiceTypeIdentifier;
 
-  private int invoiceType;
+  private Integer invoiceType;
 
-  private boolean restrictDownpayment;
+  private Boolean restrictDownpayment;
 
-  private int billingStatusId;
+  private Integer billingStatusId;
 
-  private int billingStatus;
+  private Integer billingStatus;
 
-  private int locationId;
+  private Integer locationId;
 
-  private int departmentId;
+  private Integer departmentId;
 
-  private int territoryId;
+  private Integer territoryId;
 
-  private int topComment;
+  private Integer topComment;
 
-  private int bottomComment;
+  private Integer bottomComment;
 
-  private double total;
+  private Double total;
 
-  private boolean taxable;
+  private Boolean taxable;
 
-  private int taxCodeId;
+  private Integer taxCodeId;
 
-  private int internalNotes;
+  private Integer internalNotes;
 
-  private boolean downpaymentPreviouslyTaxed;
+  private Boolean downpaymentPreviouslyTaxed;
 
   private List < SpecialInvoiceProduct > specialInvoiceProducts;
 
   private Date dueDate;
 
-  private double expenseTotal;
+  private Double expenseTotal;
 
-  private double productTotal;
+  private Double productTotal;
 
-  private double previousProgressApplied;
+  private Double previousProgressApplied;
 
-  private double serviceAdjustmentAmount;
+  private Double serviceAdjustmentAmount;
 
-  private double agreementAmount;
+  private Double agreementAmount;
 
-  private double downpaymentApplied;
+  private Double downpaymentApplied;
 
-  private double invoiceSubtotal;
+  private Double invoiceSubtotal;
 
-  private double remainingDownpayment;
+  private Double remainingDownpayment;
 
-  private double salesTax;
+  private Double salesTax;
 
-  private double invoiceTotal;
+  private Double invoiceTotal;
 
-  private int adjustmentReason;
+  private Integer adjustmentReason;
 
-  private int by;
+  private Integer by;
 
-  private double payments;
+  private Double payments;
 
-  private double credits;
+  private Double credits;
 
-  private double invoiceBalance;
+  private Double invoiceBalance;
 
-  private int shipToCompanyId;
+  private Integer shipToCompanyId;
 
-  private int shipToAddressId;
+  private Integer shipToAddressId;
 
-  private int shipToAttention;
+  private Integer shipToAttention;
 
   @JsonGetter( "AddToBatchEmailList" )
-  public boolean addToBatchEmailList()
+  public Boolean addToBatchEmailList()
   {
     return this.addToBatchEmailList;
   }
 
   @JsonSetter( "AddToBatchEmailList" )
-  public SpecialInvoice addToBatchEmailList( final boolean addToBatchEmailList )
+  public SpecialInvoice addToBatchEmailList( final Boolean addToBatchEmailList )
   {
     this.addToBatchEmailList = addToBatchEmailList;
 
@@ -122,13 +122,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "AddressId" )
-  public int addressId()
+  public Integer addressId()
   {
     return this.addressId;
   }
 
   @JsonSetter( "AddressId" )
-  public SpecialInvoice addressId( final int addressId )
+  public SpecialInvoice addressId( final Integer addressId )
   {
     this.addressId = addressId;
 
@@ -136,13 +136,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "AdjustmentReason" )
-  public int adjustmentReason()
+  public Integer adjustmentReason()
   {
     return this.adjustmentReason;
   }
 
   @JsonSetter( "AdjustmentReason" )
-  public SpecialInvoice adjustmentReason( final int adjustmentReason )
+  public SpecialInvoice adjustmentReason( final Integer adjustmentReason )
   {
     this.adjustmentReason = adjustmentReason;
 
@@ -150,13 +150,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "AgreementAmount" )
-  public double agreementAmount()
+  public Double agreementAmount()
   {
     return this.agreementAmount;
   }
 
   @JsonSetter( "AgreementAmount" )
-  public SpecialInvoice agreementAmount( final double agreementAmount )
+  public SpecialInvoice agreementAmount( final Double agreementAmount )
   {
     this.agreementAmount = agreementAmount;
 
@@ -178,13 +178,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "Attention" )
-  public int attention()
+  public Integer attention()
   {
     return this.attention;
   }
 
   @JsonSetter( "Attention" )
-  public SpecialInvoice attention( final int attention )
+  public SpecialInvoice attention( final Integer attention )
   {
     this.attention = attention;
 
@@ -192,13 +192,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillToCompanyId" )
-  public int billToCompanyId()
+  public Integer billToCompanyId()
   {
     return this.billToCompanyId;
   }
 
   @JsonSetter( "BillToCompanyId" )
-  public SpecialInvoice billToCompanyId( final int billToCompanyId )
+  public SpecialInvoice billToCompanyId( final Integer billToCompanyId )
   {
     this.billToCompanyId = billToCompanyId;
 
@@ -206,13 +206,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillingStatus" )
-  public int billingStatus()
+  public Integer billingStatus()
   {
     return this.billingStatus;
   }
 
   @JsonSetter( "BillingStatus" )
-  public SpecialInvoice billingStatus( final int billingStatus )
+  public SpecialInvoice billingStatus( final Integer billingStatus )
   {
     this.billingStatus = billingStatus;
 
@@ -220,13 +220,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillingStatusId" )
-  public int billingStatusId()
+  public Integer billingStatusId()
   {
     return this.billingStatusId;
   }
 
   @JsonSetter( "BillingStatusId" )
-  public SpecialInvoice billingStatusId( final int billingStatusId )
+  public SpecialInvoice billingStatusId( final Integer billingStatusId )
   {
     this.billingStatusId = billingStatusId;
 
@@ -234,13 +234,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillingTermsId" )
-  public int billingTermsId()
+  public Integer billingTermsId()
   {
     return this.billingTermsId;
   }
 
   @JsonSetter( "BillingTermsId" )
-  public SpecialInvoice billingTermsId( final int billingTermsId )
+  public SpecialInvoice billingTermsId( final Integer billingTermsId )
   {
     this.billingTermsId = billingTermsId;
 
@@ -248,13 +248,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "BottomComment" )
-  public int bottomComment()
+  public Integer bottomComment()
   {
     return this.bottomComment;
   }
 
   @JsonSetter( "BottomComment" )
-  public SpecialInvoice bottomComment( final int bottomComment )
+  public SpecialInvoice bottomComment( final Integer bottomComment )
   {
     this.bottomComment = bottomComment;
 
@@ -262,13 +262,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "By" )
-  public int by()
+  public Integer by()
   {
     return this.by;
   }
 
   @JsonSetter( "By" )
-  public SpecialInvoice by( final int by )
+  public SpecialInvoice by( final Integer by )
   {
     this.by = by;
 
@@ -276,13 +276,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "CompanyId" )
-  public int companyId()
+  public Integer companyId()
   {
     return this.companyId;
   }
 
   @JsonSetter( "CompanyId" )
-  public SpecialInvoice companyId( final int companyId )
+  public SpecialInvoice companyId( final Integer companyId )
   {
     this.companyId = companyId;
 
@@ -290,13 +290,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "Credits" )
-  public double credits()
+  public Double credits()
   {
     return this.credits;
   }
 
   @JsonSetter( "Credits" )
-  public SpecialInvoice credits( final double credits )
+  public SpecialInvoice credits( final Double credits )
   {
     this.credits = credits;
 
@@ -304,13 +304,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "CustomerPO" )
-  public int customerPO()
+  public Integer customerPO()
   {
     return this.customerPO;
   }
 
   @JsonSetter( "CustomerPO" )
-  public SpecialInvoice customerPO( final int customerPO )
+  public SpecialInvoice customerPO( final Integer customerPO )
   {
     this.customerPO = customerPO;
 
@@ -318,13 +318,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "DepartmentId" )
-  public int departmentId()
+  public Integer departmentId()
   {
     return this.departmentId;
   }
 
   @JsonSetter( "DepartmentId" )
-  public SpecialInvoice departmentId( final int departmentId )
+  public SpecialInvoice departmentId( final Integer departmentId )
   {
     this.departmentId = departmentId;
 
@@ -332,13 +332,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "DownpaymentApplied" )
-  public double downpaymentApplied()
+  public Double downpaymentApplied()
   {
     return this.downpaymentApplied;
   }
 
   @JsonSetter( "DownpaymentApplied" )
-  public SpecialInvoice downpaymentApplied( final double downpaymentApplied )
+  public SpecialInvoice downpaymentApplied( final Double downpaymentApplied )
   {
     this.downpaymentApplied = downpaymentApplied;
 
@@ -346,13 +346,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "DownpaymentPreviouslyTaxed" )
-  public boolean downpaymentPreviouslyTaxed()
+  public Boolean downpaymentPreviouslyTaxed()
   {
     return this.downpaymentPreviouslyTaxed;
   }
 
   @JsonSetter( "DownpaymentPreviouslyTaxed" )
-  public SpecialInvoice downpaymentPreviouslyTaxed( final boolean downpaymentPreviouslyTaxed )
+  public SpecialInvoice downpaymentPreviouslyTaxed( final Boolean downpaymentPreviouslyTaxed )
   {
     this.downpaymentPreviouslyTaxed = downpaymentPreviouslyTaxed;
 
@@ -374,13 +374,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "ExpenseTotal" )
-  public double expenseTotal()
+  public Double expenseTotal()
   {
     return this.expenseTotal;
   }
 
   @JsonSetter( "ExpenseTotal" )
-  public SpecialInvoice expenseTotal( final double expenseTotal )
+  public SpecialInvoice expenseTotal( final Double expenseTotal )
   {
     this.expenseTotal = expenseTotal;
 
@@ -388,13 +388,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "InternalNotes" )
-  public int internalNotes()
+  public Integer internalNotes()
   {
     return this.internalNotes;
   }
 
   @JsonSetter( "InternalNotes" )
-  public SpecialInvoice internalNotes( final int internalNotes )
+  public SpecialInvoice internalNotes( final Integer internalNotes )
   {
     this.internalNotes = internalNotes;
 
@@ -402,13 +402,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "InvoiceBalance" )
-  public double invoiceBalance()
+  public Double invoiceBalance()
   {
     return this.invoiceBalance;
   }
 
   @JsonSetter( "InvoiceBalance" )
-  public SpecialInvoice invoiceBalance( final double invoiceBalance )
+  public SpecialInvoice invoiceBalance( final Double invoiceBalance )
   {
     this.invoiceBalance = invoiceBalance;
 
@@ -430,13 +430,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "InvoiceEmailTemplateId" )
-  public int invoiceEmailTemplateId()
+  public Integer invoiceEmailTemplateId()
   {
     return this.invoiceEmailTemplateId;
   }
 
   @JsonSetter( "InvoiceEmailTemplateId" )
-  public SpecialInvoice invoiceEmailTemplateId( final int invoiceEmailTemplateId )
+  public SpecialInvoice invoiceEmailTemplateId( final Integer invoiceEmailTemplateId )
   {
     this.invoiceEmailTemplateId = invoiceEmailTemplateId;
 
@@ -444,13 +444,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "InvoiceNumber" )
-  public int invoiceNumber()
+  public Integer invoiceNumber()
   {
     return this.invoiceNumber;
   }
 
   @JsonSetter( "InvoiceNumber" )
-  public SpecialInvoice invoiceNumber( final int invoiceNumber )
+  public SpecialInvoice invoiceNumber( final Integer invoiceNumber )
   {
     this.invoiceNumber = invoiceNumber;
 
@@ -458,13 +458,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "InvoiceSubtotal" )
-  public double invoiceSubtotal()
+  public Double invoiceSubtotal()
   {
     return this.invoiceSubtotal;
   }
 
   @JsonSetter( "InvoiceSubtotal" )
-  public SpecialInvoice invoiceSubtotal( final double invoiceSubtotal )
+  public SpecialInvoice invoiceSubtotal( final Double invoiceSubtotal )
   {
     this.invoiceSubtotal = invoiceSubtotal;
 
@@ -472,13 +472,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "InvoiceTemplateId" )
-  public int invoiceTemplateId()
+  public Integer invoiceTemplateId()
   {
     return this.invoiceTemplateId;
   }
 
   @JsonSetter( "InvoiceTemplateId" )
-  public SpecialInvoice invoiceTemplateId( final int invoiceTemplateId )
+  public SpecialInvoice invoiceTemplateId( final Integer invoiceTemplateId )
   {
     this.invoiceTemplateId = invoiceTemplateId;
 
@@ -486,13 +486,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "InvoiceTotal" )
-  public double invoiceTotal()
+  public Double invoiceTotal()
   {
     return this.invoiceTotal;
   }
 
   @JsonSetter( "InvoiceTotal" )
-  public SpecialInvoice invoiceTotal( final double invoiceTotal )
+  public SpecialInvoice invoiceTotal( final Double invoiceTotal )
   {
     this.invoiceTotal = invoiceTotal;
 
@@ -500,13 +500,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "InvoiceType" )
-  public int invoiceType()
+  public Integer invoiceType()
   {
     return this.invoiceType;
   }
 
   @JsonSetter( "InvoiceType" )
-  public SpecialInvoice invoiceType( final int invoiceType )
+  public SpecialInvoice invoiceType( final Integer invoiceType )
   {
     this.invoiceType = invoiceType;
 
@@ -514,13 +514,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "InvoiceTypeIdentifier" )
-  public int invoiceTypeIdentifier()
+  public Integer invoiceTypeIdentifier()
   {
     return this.invoiceTypeIdentifier;
   }
 
   @JsonSetter( "InvoiceTypeIdentifier" )
-  public SpecialInvoice invoiceTypeIdentifier( final int invoiceTypeIdentifier )
+  public SpecialInvoice invoiceTypeIdentifier( final Integer invoiceTypeIdentifier )
   {
     this.invoiceTypeIdentifier = invoiceTypeIdentifier;
 
@@ -528,13 +528,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "LocationId" )
-  public int locationId()
+  public Integer locationId()
   {
     return this.locationId;
   }
 
   @JsonSetter( "LocationId" )
-  public SpecialInvoice locationId( final int locationId )
+  public SpecialInvoice locationId( final Integer locationId )
   {
     this.locationId = locationId;
 
@@ -542,13 +542,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "Payments" )
-  public double payments()
+  public Double payments()
   {
     return this.payments;
   }
 
   @JsonSetter( "Payments" )
-  public SpecialInvoice payments( final double payments )
+  public SpecialInvoice payments( final Double payments )
   {
     this.payments = payments;
 
@@ -556,13 +556,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "PreviousProgressApplied" )
-  public double previousProgressApplied()
+  public Double previousProgressApplied()
   {
     return this.previousProgressApplied;
   }
 
   @JsonSetter( "PreviousProgressApplied" )
-  public SpecialInvoice previousProgressApplied( final double previousProgressApplied )
+  public SpecialInvoice previousProgressApplied( final Double previousProgressApplied )
   {
     this.previousProgressApplied = previousProgressApplied;
 
@@ -570,13 +570,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "ProductTotal" )
-  public double productTotal()
+  public Double productTotal()
   {
     return this.productTotal;
   }
 
   @JsonSetter( "ProductTotal" )
-  public SpecialInvoice productTotal( final double productTotal )
+  public SpecialInvoice productTotal( final Double productTotal )
   {
     this.productTotal = productTotal;
 
@@ -584,13 +584,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "Reference" )
-  public int reference()
+  public Integer reference()
   {
     return this.reference;
   }
 
   @JsonSetter( "Reference" )
-  public SpecialInvoice reference( final int reference )
+  public SpecialInvoice reference( final Integer reference )
   {
     this.reference = reference;
 
@@ -598,13 +598,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "RemainingDownpayment" )
-  public double remainingDownpayment()
+  public Double remainingDownpayment()
   {
     return this.remainingDownpayment;
   }
 
   @JsonSetter( "RemainingDownpayment" )
-  public SpecialInvoice remainingDownpayment( final double remainingDownpayment )
+  public SpecialInvoice remainingDownpayment( final Double remainingDownpayment )
   {
     this.remainingDownpayment = remainingDownpayment;
 
@@ -612,13 +612,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "RestrictDownpayment" )
-  public boolean restrictDownpayment()
+  public Boolean restrictDownpayment()
   {
     return this.restrictDownpayment;
   }
 
   @JsonSetter( "RestrictDownpayment" )
-  public SpecialInvoice restrictDownpayment( final boolean restrictDownpayment )
+  public SpecialInvoice restrictDownpayment( final Boolean restrictDownpayment )
   {
     this.restrictDownpayment = restrictDownpayment;
 
@@ -626,13 +626,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "SalesTax" )
-  public double salesTax()
+  public Double salesTax()
   {
     return this.salesTax;
   }
 
   @JsonSetter( "SalesTax" )
-  public SpecialInvoice salesTax( final double salesTax )
+  public SpecialInvoice salesTax( final Double salesTax )
   {
     this.salesTax = salesTax;
 
@@ -640,13 +640,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "ServiceAdjustmentAmount" )
-  public double serviceAdjustmentAmount()
+  public Double serviceAdjustmentAmount()
   {
     return this.serviceAdjustmentAmount;
   }
 
   @JsonSetter( "ServiceAdjustmentAmount" )
-  public SpecialInvoice serviceAdjustmentAmount( final double serviceAdjustmentAmount )
+  public SpecialInvoice serviceAdjustmentAmount( final Double serviceAdjustmentAmount )
   {
     this.serviceAdjustmentAmount = serviceAdjustmentAmount;
 
@@ -654,13 +654,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "ShipToAddressId" )
-  public int shipToAddressId()
+  public Integer shipToAddressId()
   {
     return this.shipToAddressId;
   }
 
   @JsonSetter( "ShipToAddressId" )
-  public SpecialInvoice shipToAddressId( final int shipToAddressId )
+  public SpecialInvoice shipToAddressId( final Integer shipToAddressId )
   {
     this.shipToAddressId = shipToAddressId;
 
@@ -668,13 +668,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "ShipToAttention" )
-  public int shipToAttention()
+  public Integer shipToAttention()
   {
     return this.shipToAttention;
   }
 
   @JsonSetter( "ShipToAttention" )
-  public SpecialInvoice shipToAttention( final int shipToAttention )
+  public SpecialInvoice shipToAttention( final Integer shipToAttention )
   {
     this.shipToAttention = shipToAttention;
 
@@ -682,13 +682,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "ShipToCompanyId" )
-  public int shipToCompanyId()
+  public Integer shipToCompanyId()
   {
     return this.shipToCompanyId;
   }
 
   @JsonSetter( "ShipToCompanyId" )
-  public SpecialInvoice shipToCompanyId( final int shipToCompanyId )
+  public SpecialInvoice shipToCompanyId( final Integer shipToCompanyId )
   {
     this.shipToCompanyId = shipToCompanyId;
 
@@ -710,13 +710,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "TaxCodeId" )
-  public int taxCodeId()
+  public Integer taxCodeId()
   {
     return this.taxCodeId;
   }
 
   @JsonSetter( "TaxCodeId" )
-  public SpecialInvoice taxCodeId( final int taxCodeId )
+  public SpecialInvoice taxCodeId( final Integer taxCodeId )
   {
     this.taxCodeId = taxCodeId;
 
@@ -724,13 +724,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "Taxable" )
-  public boolean taxable()
+  public Boolean taxable()
   {
     return this.taxable;
   }
 
   @JsonSetter( "Taxable" )
-  public SpecialInvoice taxable( final boolean taxable )
+  public SpecialInvoice taxable( final Boolean taxable )
   {
     this.taxable = taxable;
 
@@ -738,13 +738,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "TerritoryId" )
-  public int territoryId()
+  public Integer territoryId()
   {
     return this.territoryId;
   }
 
   @JsonSetter( "TerritoryId" )
-  public SpecialInvoice territoryId( final int territoryId )
+  public SpecialInvoice territoryId( final Integer territoryId )
   {
     this.territoryId = territoryId;
 
@@ -752,13 +752,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "TopComment" )
-  public int topComment()
+  public Integer topComment()
   {
     return this.topComment;
   }
 
   @JsonSetter( "TopComment" )
-  public SpecialInvoice topComment( final int topComment )
+  public SpecialInvoice topComment( final Integer topComment )
   {
     this.topComment = topComment;
 
@@ -766,13 +766,13 @@ public class SpecialInvoice extends ConnectwiseCommon
   }
 
   @JsonGetter( "Total" )
-  public double total()
+  public Double total()
   {
     return this.total;
   }
 
   @JsonSetter( "Total" )
-  public SpecialInvoice total( final double total )
+  public SpecialInvoice total( final Double total )
   {
     this.total = total;
 

@@ -24,13 +24,13 @@ public class Profile
 
   protected String sicDescription;
 
-  protected int revenueYear;
+  protected Integer revenueYear;
 
-  protected double annualRevenue;
+  protected Double annualRevenue;
 
-  protected int numberOfEmployees;
+  protected Integer numberOfEmployees;
 
-  protected int parentCompanyId;
+  protected Integer parentCompanyId;
 
   protected String ownershipType;
 
@@ -38,9 +38,9 @@ public class Profile
 
   protected String leadSource;
 
-  protected boolean isLead;
+  protected Boolean isLead;
 
-  protected boolean isUnsubscribedFromEmail;
+  protected Boolean isUnsubscribedFromEmail;
 
   protected String userField1;
 
@@ -62,16 +62,16 @@ public class Profile
 
   protected String userField10;
 
-  protected int calendarId;
+  protected Integer calendarId;
 
   @JsonGetter( "AnnualRevenue" )
-  public double annualRevenue()
+  public Double annualRevenue()
   {
     return annualRevenue;
   }
 
   @JsonSetter( "AnnualRevenue" )
-  public Profile annualRevenue( final double annualRevenue )
+  public Profile annualRevenue( final Double annualRevenue )
   {
     this.annualRevenue = annualRevenue;
 
@@ -79,13 +79,13 @@ public class Profile
   }
 
   @JsonGetter( "CalendarId" )
-  public int calendarId()
+  public Integer calendarId()
   {
     return calendarId;
   }
 
   @JsonSetter( "CalendarId" )
-  public Profile calendarId( final int calendarId )
+  public Profile calendarId( final Integer calendarId )
   {
     this.calendarId = calendarId;
 
@@ -107,13 +107,13 @@ public class Profile
   }
 
   @JsonGetter( "NumberOfEmployees" )
-  public int numberOfEmployees()
+  public Integer numberOfEmployees()
   {
     return numberOfEmployees;
   }
 
   @JsonSetter( "NumberOfEmployees" )
-  public Profile numberOfEmployees( final int numberOfEmployees )
+  public Profile numberOfEmployees( final Integer numberOfEmployees )
   {
     this.numberOfEmployees = numberOfEmployees;
 
@@ -135,13 +135,13 @@ public class Profile
   }
 
   @JsonGetter( "ParentCompanyId" )
-  public int parentCompanyId()
+  public Integer parentCompanyId()
   {
     return parentCompanyId;
   }
 
   @JsonSetter( "ParentCompanyId" )
-  public Profile parentCompanyId( final int parentCompanyId )
+  public Profile parentCompanyId( final Integer parentCompanyId )
   {
     this.parentCompanyId = parentCompanyId;
 
@@ -149,13 +149,13 @@ public class Profile
   }
 
   @JsonGetter( "RevenueYear" )
-  public int revenueYear()
+  public Integer revenueYear()
   {
     return revenueYear;
   }
 
   @JsonSetter( "RevenueYear" )
-  public Profile revenueYear( final int revenueYear )
+  public Profile revenueYear( final Integer revenueYear )
   {
     this.revenueYear = revenueYear;
 
@@ -345,13 +345,13 @@ public class Profile
   }
 
   @JsonGetter( "IsLead" )
-  public boolean lead()
+  public Boolean lead()
   {
     return isLead;
   }
 
   @JsonSetter( "IsLead" )
-  public Profile lead( final boolean lead )
+  public Profile lead( final Boolean lead )
   {
     isLead = lead;
 
@@ -359,13 +359,13 @@ public class Profile
   }
 
   @JsonGetter( "IsUnsubscribedFromEmail" )
-  public boolean unsubscribedFromEmail()
+  public Boolean unsubscribedFromEmail()
   {
     return isUnsubscribedFromEmail;
   }
 
   @JsonSetter( "IsUnsubscribedFromEmail" )
-  public Profile unsubscribedFromEmail( final boolean unsubscribedFromEmail )
+  public Profile unsubscribedFromEmail( final Boolean unsubscribedFromEmail )
   {
     isUnsubscribedFromEmail = unsubscribedFromEmail;
 

@@ -23,27 +23,27 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 public class AgreementSite extends AbstractSubAgreement
 {
   @JacksonXmlProperty ( localName = "CompanyId" )
-  protected int companyId;
+  protected Integer companyId;
 
   @JacksonXmlProperty ( localName = "AddressId" )
-  protected int addressId;
+  protected Integer addressId;
 
-  public int getCompanyId ()
+  public Integer getCompanyId ()
   {
     return companyId;
   }
 
-  public void setCompanyId ( int companyId )
+  public void setCompanyId ( Integer companyId )
   {
     this.companyId = companyId;
   }
 
-  public int getAddressId ()
+  public Integer getAddressId ()
   {
     return addressId;
   }
 
-  public void setAddressId ( int addressId )
+  public void setAddressId ( Integer addressId )
   {
     this.addressId = addressId;
   }

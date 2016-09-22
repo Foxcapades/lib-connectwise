@@ -8,23 +8,23 @@ import io.vulpine.connectwise.type.ConnectwiseCommon;
 @JsonIgnoreProperties( { "LastUpdate", "LastUpdated", "UpdatedBy" } )
 public class BundleComponent extends ConnectwiseCommon
 {
-  private int sequenceNumber;
+  private Integer sequenceNumber;
 
-  private int parentId;
+  private Integer parentId;
 
-  private int quantity;
+  private Integer quantity;
 
-  private int productId;
+  private Integer productId;
 
-  private int itemId;
+  private Integer itemId;
 
-  private boolean hidePrice;
+  private Boolean hidePrice;
 
-  private boolean hideItemId;
+  private Boolean hideItemId;
 
-  private boolean hideDescription;
+  private Boolean hideDescription;
 
-  private boolean hideQuantity;
+  private Boolean hideQuantity;
 
   private String warehouse;
 
@@ -32,15 +32,15 @@ public class BundleComponent extends ConnectwiseCommon
 
   private String itemIdentifier;
 
-  private double cost;
+  private Double cost;
 
-  private double price;
+  private Double price;
 
-  private boolean taxable;
+  private Boolean taxable;
 
-  private boolean inactive;
+  private Boolean inactive;
 
-  private boolean serialized;
+  private Boolean serialized;
 
   @JsonGetter( "Bin" )
   public String bin()
@@ -55,85 +55,85 @@ public class BundleComponent extends ConnectwiseCommon
   }
 
   @JsonGetter( "Cost" )
-  public double cost()
+  public Double cost()
   {
     return this.cost;
   }
 
   @JsonSetter( "Cost" )
-  public void cost( final double cost )
+  public void cost( final Double cost )
   {
     this.cost = cost;
   }
 
   @JsonGetter( "HideDescription" )
-  public boolean hideDescription()
+  public Boolean hideDescription()
   {
     return this.hideDescription;
   }
 
   @JsonSetter( "HideDescription" )
-  public void hideDescription( final boolean hideDescription )
+  public void hideDescription( final Boolean hideDescription )
   {
     this.hideDescription = hideDescription;
   }
 
   @JsonGetter( "HideItemId" )
-  public boolean hideItemId()
+  public Boolean hideItemId()
   {
     return this.hideItemId;
   }
 
   @JsonSetter( "HideItemId" )
-  public void hideItemId( final boolean hideItemId )
+  public void hideItemId( final Boolean hideItemId )
   {
     this.hideItemId = hideItemId;
   }
 
   @JsonGetter( "HidePrice" )
-  public boolean hidePrice()
+  public Boolean hidePrice()
   {
     return this.hidePrice;
   }
 
   @JsonSetter( "HidePrice" )
-  public void hidePrice( final boolean hidePrice )
+  public void hidePrice( final Boolean hidePrice )
   {
     this.hidePrice = hidePrice;
   }
 
   @JsonGetter( "HideQuantity" )
-  public boolean hideQuantity()
+  public Boolean hideQuantity()
   {
     return this.hideQuantity;
   }
 
   @JsonSetter( "HideQuantity" )
-  public void hideQuantity( final boolean hideQuantity )
+  public void hideQuantity( final Boolean hideQuantity )
   {
     this.hideQuantity = hideQuantity;
   }
 
   @JsonGetter( "Inactive" )
-  public boolean inactive()
+  public Boolean inactive()
   {
     return this.inactive;
   }
 
   @JsonSetter( "Inactive" )
-  public void inactive( final boolean inactive )
+  public void inactive( final Boolean inactive )
   {
     this.inactive = inactive;
   }
 
   @JsonGetter( "ItemId" )
-  public int itemId()
+  public Integer itemId()
   {
     return this.itemId;
   }
 
   @JsonSetter( "ItemId" )
-  public void itemId( final int itemId )
+  public void itemId( final Integer itemId )
   {
     this.itemId = itemId;
   }
@@ -151,85 +151,85 @@ public class BundleComponent extends ConnectwiseCommon
   }
 
   @JsonGetter( "ParentId" )
-  public int parentId()
+  public Integer parentId()
   {
     return this.parentId;
   }
 
   @JsonSetter( "ParentId" )
-  public void parentId( final int parentId )
+  public void parentId( final Integer parentId )
   {
     this.parentId = parentId;
   }
 
   @JsonGetter( "Price" )
-  public double price()
+  public Double price()
   {
     return this.price;
   }
 
   @JsonSetter( "Price" )
-  public void price( final double price )
+  public void price( final Double price )
   {
     this.price = price;
   }
 
   @JsonGetter( "ProductId" )
-  public int productId()
+  public Integer productId()
   {
     return this.productId;
   }
 
   @JsonSetter( "ProductId" )
-  public void productId( final int productId )
+  public void productId( final Integer productId )
   {
     this.productId = productId;
   }
 
   @JsonGetter( "Quantity" )
-  public int quantity()
+  public Integer quantity()
   {
     return this.quantity;
   }
 
   @JsonSetter( "Quantity" )
-  public void quantity( final int quantity )
+  public void quantity( final Integer quantity )
   {
     this.quantity = quantity;
   }
 
   @JsonGetter( "SequenceNumber" )
-  public int sequenceNumber()
+  public Integer sequenceNumber()
   {
     return this.sequenceNumber;
   }
 
   @JsonSetter( "SequenceNumber" )
-  public void sequenceNumber( final int sequenceNumber )
+  public void sequenceNumber( final Integer sequenceNumber )
   {
     this.sequenceNumber = sequenceNumber;
   }
 
   @JsonGetter( "Serialized" )
-  public boolean serialized()
+  public Boolean serialized()
   {
     return this.serialized;
   }
 
   @JsonSetter( "Serialized" )
-  public void serialized( final boolean serialized )
+  public void serialized( final Boolean serialized )
   {
     this.serialized = serialized;
   }
 
   @JsonGetter( "Taxable" )
-  public boolean taxable()
+  public Boolean taxable()
   {
     return this.taxable;
   }
 
   @JsonSetter( "Taxable" )
-  public void taxable( final boolean taxable )
+  public void taxable( final Boolean taxable )
   {
     this.taxable = taxable;
   }

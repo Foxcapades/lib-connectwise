@@ -29,16 +29,16 @@ public class PurchaseOrderLineItem extends ConnectwiseCommon
   protected String itemIdentifier;
 
   @JacksonXmlProperty(localName = "LineNumber")
-  protected int lineNumber;
+  protected Integer lineNumber;
 
   @JacksonXmlProperty(localName = "Quantity")
-  protected int quantity;
+  protected Integer quantity;
 
   @JacksonXmlProperty(localName = "UnitOfMeasure")
   protected String unitOfMeasure;
 
   @JacksonXmlProperty(localName = "UnitCost")
-  protected double unitCost;
+  protected Double unitCost;
 
   @JacksonXmlProperty(localName = "ShipmentMethod")
   protected String shipmentMethod;
@@ -54,14 +54,14 @@ public class PurchaseOrderLineItem extends ConnectwiseCommon
   protected String vendorOrderNumber;
 
   @JacksonXmlProperty(localName = "IsBackordered")
-  protected boolean isBackordered;
+  protected Boolean isBackordered;
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "ExpectedShipDate")
   protected Date expectedShipDate;
 
   @JacksonXmlProperty(localName = "ReceivedQuantity")
-  protected int receivedQuantity;
+  protected Integer receivedQuantity;
 
   @JacksonXmlProperty(localName = "GenericSerialNumber")
   protected String genericSerialNumber;
@@ -79,13 +79,13 @@ public class PurchaseOrderLineItem extends ConnectwiseCommon
   protected String packingSlip;
 
   @JacksonXmlProperty(localName = "IsCanceled")
-  protected boolean isCanceled;
+  protected Boolean isCanceled;
 
   @JacksonXmlProperty(localName = "CancelReason")
   protected String cancelReason;
 
   @JacksonXmlProperty(localName = "IsClosed")
-  protected boolean isClosed;
+  protected Boolean isClosed;
 
   public String getItemIdentifier ()
   {
@@ -97,22 +97,22 @@ public class PurchaseOrderLineItem extends ConnectwiseCommon
     this.itemIdentifier = itemIdentifier;
   }
 
-  public int getLineNumber ()
+  public Integer getLineNumber ()
   {
     return lineNumber;
   }
 
-  public void setLineNumber ( final int lineNumber )
+  public void setLineNumber ( final Integer lineNumber )
   {
     this.lineNumber = lineNumber;
   }
 
-  public int getQuantity ()
+  public Integer getQuantity ()
   {
     return quantity;
   }
 
-  public void setQuantity ( final int quantity )
+  public void setQuantity ( final Integer quantity )
   {
     this.quantity = quantity;
   }
@@ -127,12 +127,12 @@ public class PurchaseOrderLineItem extends ConnectwiseCommon
     this.unitOfMeasure = unitOfMeasure;
   }
 
-  public double getUnitCost ()
+  public Double getUnitCost ()
   {
     return unitCost;
   }
 
-  public void setUnitCost ( final double unitCost )
+  public void setUnitCost ( final Double unitCost )
   {
     this.unitCost = unitCost;
   }
@@ -177,12 +177,12 @@ public class PurchaseOrderLineItem extends ConnectwiseCommon
     this.vendorOrderNumber = vendorOrderNumber;
   }
 
-  public boolean isBackordered ()
+  public Boolean isBackordered ()
   {
     return isBackordered;
   }
 
-  public void setBackordered ( final boolean backordered )
+  public void setBackordered ( final Boolean backordered )
   {
     isBackordered = backordered;
   }
@@ -197,12 +197,12 @@ public class PurchaseOrderLineItem extends ConnectwiseCommon
     this.expectedShipDate = expectedShipDate;
   }
 
-  public int getReceivedQuantity ()
+  public Integer getReceivedQuantity ()
   {
     return receivedQuantity;
   }
 
-  public void setReceivedQuantity ( final int receivedQuantity )
+  public void setReceivedQuantity ( final Integer receivedQuantity )
   {
     this.receivedQuantity = receivedQuantity;
   }
@@ -257,12 +257,12 @@ public class PurchaseOrderLineItem extends ConnectwiseCommon
     this.packingSlip = packingSlip;
   }
 
-  public boolean isCanceled ()
+  public Boolean isCanceled ()
   {
     return isCanceled;
   }
 
-  public void setCanceled ( final boolean canceled )
+  public void setCanceled ( final Boolean canceled )
   {
     isCanceled = canceled;
   }
@@ -277,12 +277,12 @@ public class PurchaseOrderLineItem extends ConnectwiseCommon
     this.cancelReason = cancelReason;
   }
 
-  public boolean isClosed ()
+  public Boolean isClosed ()
   {
     return isClosed;
   }
 
-  public void setClosed ( final boolean closed )
+  public void setClosed ( final Boolean closed )
   {
     isClosed = closed;
   }

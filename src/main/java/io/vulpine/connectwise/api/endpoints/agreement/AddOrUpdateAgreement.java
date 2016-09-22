@@ -52,7 +52,7 @@ public class AddOrUpdateAgreement extends AddOrUpdateRequest < Agreement >
   public Agreement submit() throws IOException
   {
     final AddOrUpdateAgreementResponse res = getXmlMapper().readerFor(AddOrUpdateAgreementResponse.class).readValue(
-      getApi().send(this));
+      getApi().send(this).replaceAll("AllowOverrruns", "AllowOverruns"));
     return res.getUpdatedAgreement();
   }
 }

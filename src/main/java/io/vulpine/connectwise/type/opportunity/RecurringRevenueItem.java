@@ -24,10 +24,10 @@ import java.util.Date;
 public class RecurringRevenueItem
 {
   @JacksonXmlProperty( localName = "RecurringRevenue" )
-  protected double recurringRevenue;
+  protected Double recurringRevenue;
 
   @JacksonXmlProperty( localName = "RecurringCost" )
-  protected double recurringCost;
+  protected Double recurringCost;
 
   @JacksonXmlProperty( localName = "CycleBasis" )
   protected String cycleBasis;
@@ -41,22 +41,22 @@ public class RecurringRevenueItem
   @JacksonXmlProperty( localName = "RecurringStartDate" )
   protected Date recurringStartDate;
 
-  public double getRecurringRevenue()
+  public Double getRecurringRevenue()
   {
     return recurringRevenue;
   }
 
-  public void setRecurringRevenue( final double recurringRevenue )
+  public void setRecurringRevenue( final Double recurringRevenue )
   {
     this.recurringRevenue = recurringRevenue;
   }
 
-  public double getRecurringCost()
+  public Double getRecurringCost()
   {
     return recurringCost;
   }
 
-  public void setRecurringCost( final double recurringCost )
+  public void setRecurringCost( final Double recurringCost )
   {
     this.recurringCost = recurringCost;
   }

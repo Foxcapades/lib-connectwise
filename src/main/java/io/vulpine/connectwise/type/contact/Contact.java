@@ -43,16 +43,16 @@ public class Contact extends ConnectwiseCommon
   protected String companyIdentifier;
 
   @JacksonXmlProperty( localName = "Inactive" )
-  protected boolean inactive;
+  protected Boolean inactive;
 
   @JacksonXmlProperty( localName = "SID" )
   protected String sID;
 
   @JacksonXmlProperty( localName = "ManagerId" )
-  protected int managerId;
+  protected Integer managerId;
 
   @JacksonXmlProperty( localName = "AssistantId" )
-  protected int assistantId;
+  protected Integer assistantId;
 
   @JacksonXmlProperty( localName = "Relationship" )
   protected String relationship;
@@ -82,10 +82,10 @@ public class Contact extends ConnectwiseCommon
   protected String nickName;
 
   @JacksonXmlProperty( localName = "Married" )
-  protected boolean married;
+  protected Boolean married;
 
   @JacksonXmlProperty( localName = "Children" )
-  protected boolean children;
+  protected Boolean children;
 
   @JacksonXmlProperty( localName = "SignificantOther" )
   protected String significantOther;
@@ -94,13 +94,13 @@ public class Contact extends ConnectwiseCommon
   protected short portalSecurityLevel;
 
   @JacksonXmlProperty( localName = "DisablePortalLogin" )
-  protected boolean disablePortalLogin;
+  protected Boolean disablePortalLogin;
 
   @JacksonXmlProperty( localName = "UnsubscribeFlag" )
-  protected boolean unsubscribeFlag;
+  protected Boolean unsubscribeFlag;
 
   @JacksonXmlProperty( localName = "PersonalAddressFlag" )
-  protected boolean personalAddressFlag;
+  protected Boolean personalAddressFlag;
 
   @JacksonXmlProperty( localName = "Gender" )
   protected Gender gender;
@@ -114,7 +114,7 @@ public class Contact extends ConnectwiseCommon
   protected Date anniversary;
 
   @JacksonXmlProperty( localName = "AddressId" )
-  protected int addressId;
+  protected Integer addressId;
 
   @JacksonXmlProperty( localName = "SiteName" )
   protected String siteName;
@@ -171,12 +171,12 @@ public class Contact extends ConnectwiseCommon
     this.companyIdentifier = companyIdentifier;
   }
 
-  public boolean isInactive ()
+  public Boolean isInactive ()
   {
     return inactive;
   }
 
-  public void setInactive ( boolean inactive )
+  public void setInactive ( Boolean inactive )
   {
     this.inactive = inactive;
   }
@@ -191,22 +191,22 @@ public class Contact extends ConnectwiseCommon
     this.sID = sID;
   }
 
-  public int getManagerId ()
+  public Integer getManagerId ()
   {
     return managerId;
   }
 
-  public void setManagerId ( int managerId )
+  public void setManagerId ( Integer managerId )
   {
     this.managerId = managerId;
   }
 
-  public int getAssistantId ()
+  public Integer getAssistantId ()
   {
     return assistantId;
   }
 
-  public void setAssistantId ( int assistantId )
+  public void setAssistantId ( Integer assistantId )
   {
     this.assistantId = assistantId;
   }
@@ -301,22 +301,22 @@ public class Contact extends ConnectwiseCommon
     this.nickName = nickName;
   }
 
-  public boolean isMarried ()
+  public Boolean isMarried ()
   {
     return married;
   }
 
-  public void setMarried ( boolean married )
+  public void setMarried ( Boolean married )
   {
     this.married = married;
   }
 
-  public boolean isChildren ()
+  public Boolean isChildren ()
   {
     return children;
   }
 
-  public void setChildren ( boolean children )
+  public void setChildren ( Boolean children )
   {
     this.children = children;
   }
@@ -341,32 +341,32 @@ public class Contact extends ConnectwiseCommon
     this.portalSecurityLevel = portalSecurityLevel;
   }
 
-  public boolean isDisablePortalLogin ()
+  public Boolean isDisablePortalLogin ()
   {
     return disablePortalLogin;
   }
 
-  public void setDisablePortalLogin ( boolean disablePortalLogin )
+  public void setDisablePortalLogin ( Boolean disablePortalLogin )
   {
     this.disablePortalLogin = disablePortalLogin;
   }
 
-  public boolean isUnsubscribeFlag ()
+  public Boolean isUnsubscribeFlag ()
   {
     return unsubscribeFlag;
   }
 
-  public void setUnsubscribeFlag ( boolean unsubscribeFlag )
+  public void setUnsubscribeFlag ( Boolean unsubscribeFlag )
   {
     this.unsubscribeFlag = unsubscribeFlag;
   }
 
-  public boolean isPersonalAddressFlag ()
+  public Boolean isPersonalAddressFlag ()
   {
     return personalAddressFlag;
   }
 
-  public void setPersonalAddressFlag ( boolean personalAddressFlag )
+  public void setPersonalAddressFlag ( Boolean personalAddressFlag )
   {
     this.personalAddressFlag = personalAddressFlag;
   }
@@ -401,12 +401,12 @@ public class Contact extends ConnectwiseCommon
     this.anniversary = anniversary;
   }
 
-  public int getAddressId ()
+  public Integer getAddressId ()
   {
     return addressId;
   }
 
-  public void setAddressId ( int addressId )
+  public void setAddressId ( Integer addressId )
   {
     this.addressId = addressId;
   }

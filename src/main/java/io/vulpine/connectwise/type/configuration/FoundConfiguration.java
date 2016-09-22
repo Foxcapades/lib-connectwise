@@ -12,15 +12,15 @@ public class FoundConfiguration extends ConnectwiseCommon
 {
   private String configurationName;
 
-  private int configurationTypeId;
+  private Integer configurationTypeId;
 
   private String configurationType;
 
-  private int companyId;
+  private Integer companyId;
 
   private String companyIdentifier;
 
-  private int statusId;
+  private Integer statusId;
 
   private String status;
 
@@ -36,28 +36,28 @@ public class FoundConfiguration extends ConnectwiseCommon
 
   private String installedBy;
 
-  private boolean closedFlag;
+  private Boolean closedFlag;
 
   @JsonGetter( "ClosedFlag" )
-  public boolean closedFlag()
+  public Boolean closedFlag()
   {
     return this.closedFlag;
   }
 
   @JsonSetter( "ClosedFlag" )
-  public void closedFlag( final boolean closedFlag )
+  public void closedFlag( final Boolean closedFlag )
   {
     this.closedFlag = closedFlag;
   }
 
   @JsonGetter( "CompanyId" )
-  public int companyId()
+  public Integer companyId()
   {
     return this.companyId;
   }
 
   @JsonSetter( "CompanyId" )
-  public void companyId( final int companyId )
+  public void companyId( final Integer companyId )
   {
     this.companyId = companyId;
   }
@@ -99,13 +99,13 @@ public class FoundConfiguration extends ConnectwiseCommon
   }
 
   @JsonGetter( "ConfigurationTypeId" )
-  public int configurationTypeId()
+  public Integer configurationTypeId()
   {
     return this.configurationTypeId;
   }
 
   @JsonSetter( "ConfigurationTypeId" )
-  public void configurationTypeId( final int configurationTypeId )
+  public void configurationTypeId( final Integer configurationTypeId )
   {
     this.configurationTypeId = configurationTypeId;
   }
@@ -171,13 +171,13 @@ public class FoundConfiguration extends ConnectwiseCommon
   }
 
   @JsonGetter( "StatusId" )
-  public int statusId()
+  public Integer statusId()
   {
     return this.statusId;
   }
 
   @JsonSetter( "StatusId" )
-  public void statusId( final int statusId )
+  public void statusId( final Integer statusId )
   {
     this.statusId = statusId;
   }

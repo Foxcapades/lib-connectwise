@@ -33,7 +33,7 @@ public class PurchaseOrder extends ConnectwiseCommon
   protected VendorContact vendorContact;
 
   @JacksonXmlProperty(localName = "IsDropShipped")
-  protected boolean isDropShipped;
+  protected Boolean isDropShipped;
 
   @JacksonXmlProperty(localName = "ShipToWarehouse")
   protected String shipToWarehouse;
@@ -61,13 +61,13 @@ public class PurchaseOrder extends ConnectwiseCommon
   protected String billingTerms;
 
   @JacksonXmlProperty(localName = "SubTotal")
-  protected double subTotal;
+  protected Double subTotal;
 
   @JacksonXmlProperty(localName = "FreightCost")
-  protected double freightCost;
+  protected Double freightCost;
 
   @JacksonXmlProperty(localName = "Total")
-  protected double total;
+  protected Double total;
 
   @JacksonXmlProperty(localName = "Location")
   protected String location;
@@ -92,7 +92,7 @@ public class PurchaseOrder extends ConnectwiseCommon
   protected String shippingInstructions;
 
   @JacksonXmlProperty(localName = "IsClosed")
-  protected boolean isClosed;
+  protected Boolean isClosed;
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "DateClosed")
@@ -121,12 +121,12 @@ public class PurchaseOrder extends ConnectwiseCommon
     this.vendorContact = vendorContact;
   }
 
-  public boolean isDropShipped ()
+  public Boolean isDropShipped ()
   {
     return isDropShipped;
   }
 
-  public void setDropShipped ( final boolean dropShipped )
+  public void setDropShipped ( final Boolean dropShipped )
   {
     isDropShipped = dropShipped;
   }
@@ -211,32 +211,32 @@ public class PurchaseOrder extends ConnectwiseCommon
     this.billingTerms = billingTerms;
   }
 
-  public double getSubTotal ()
+  public Double getSubTotal ()
   {
     return subTotal;
   }
 
-  public void setSubTotal ( final double subTotal )
+  public void setSubTotal ( final Double subTotal )
   {
     this.subTotal = subTotal;
   }
 
-  public double getFreightCost ()
+  public Double getFreightCost ()
   {
     return freightCost;
   }
 
-  public void setFreightCost ( final double freightCost )
+  public void setFreightCost ( final Double freightCost )
   {
     this.freightCost = freightCost;
   }
 
-  public double getTotal ()
+  public Double getTotal ()
   {
     return total;
   }
 
-  public void setTotal ( final double total )
+  public void setTotal ( final Double total )
   {
     this.total = total;
   }
@@ -311,12 +311,12 @@ public class PurchaseOrder extends ConnectwiseCommon
     this.shippingInstructions = shippingInstructions;
   }
 
-  public boolean isClosed ()
+  public Boolean isClosed ()
   {
     return isClosed;
   }
 
-  public void setClosed ( final boolean closed )
+  public void setClosed ( final Boolean closed )
   {
     isClosed = closed;
   }

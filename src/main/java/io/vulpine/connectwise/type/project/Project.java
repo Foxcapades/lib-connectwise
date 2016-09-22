@@ -30,28 +30,28 @@ public class Project extends ConnectwiseCommon
   protected String projectName;
 
   @JacksonXmlProperty(localName = "CompanyId")
-  protected int companyId;
+  protected Integer companyId;
 
   @JacksonXmlProperty(localName = "AddressId")
-  protected int addressId;
+  protected Integer addressId;
 
   @JacksonXmlProperty(localName = "OpportunityId")
-  protected int opportunityId;
+  protected Integer opportunityId;
 
   @JacksonXmlProperty(localName = "ContactId")
-  protected int contactId;
+  protected Integer contactId;
 
   @JacksonXmlProperty(localName = "ProjectManagerId")
-  protected int projectManagerId;
+  protected Integer projectManagerId;
 
   @JacksonXmlProperty(localName = "ProjectTypeId")
-  protected int projectTypeId;
+  protected Integer projectTypeId;
 
   @JacksonXmlProperty(localName = "BillingMethodIdentifier")
   protected BillMethod billingMethodIdentifier;
 
   @JacksonXmlProperty(localName = "EstimatedRevenue")
-  protected double estimatedRevenue;
+  protected Double estimatedRevenue;
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "EstimatedStart")
@@ -62,28 +62,28 @@ public class Project extends ConnectwiseCommon
   protected Date estimatedEnd;
 
   @JacksonXmlProperty(localName = "EstimatedHours")
-  protected double estimatedHours;
+  protected Double estimatedHours;
 
   @JacksonXmlProperty(localName = "Status")
   protected String status;
 
   @JacksonXmlProperty(localName = "TimeApproverId")
-  protected int timeApproverId;
+  protected Integer timeApproverId;
 
   @JacksonXmlProperty(localName = "ExpenseApproverId")
-  protected int expenseApproverId;
+  protected Integer expenseApproverId;
 
   @JacksonXmlProperty(localName = "BudgetFlag")
-  protected boolean budgetFlag;
+  protected Boolean budgetFlag;
 
   @JacksonXmlProperty(localName = "BillingRateOption")
   protected String billingRateOption;
 
   @JacksonXmlProperty(localName = "HourlyRate")
-  protected double hourlyRate;
+  protected Double hourlyRate;
 
   @JacksonXmlProperty(localName = "BillingAmount")
-  protected double billingAmount;
+  protected Double billingAmount;
 
   @JacksonXmlProperty(localName = "BillTime")
   protected BillFlag billTime;
@@ -95,40 +95,40 @@ public class Project extends ConnectwiseCommon
   protected BillFlag billProducts;
 
   @JacksonXmlProperty(localName = "BillableTimeInvoice")
-  protected boolean billableTimeInvoice;
+  protected Boolean billableTimeInvoice;
 
   @JacksonXmlProperty(localName = "BillableExpenseInvoice")
-  protected boolean billableExpenseInvoice;
+  protected Boolean billableExpenseInvoice;
 
   @JacksonXmlProperty(localName = "BillableProductInvoice")
-  protected boolean billableProductInvoice;
+  protected Boolean billableProductInvoice;
 
   @JacksonXmlProperty(localName = "Downpayment")
-  protected double downpayment;
+  protected Double downpayment;
 
   @JacksonXmlProperty(localName = "AgreementId")
-  protected int agreementId;
+  protected Integer agreementId;
 
   @JacksonXmlProperty(localName = "BillingAttention")
   protected String billingAttention;
 
   @JacksonXmlProperty(localName = "ProjectBoardId")
-  protected int projectBoardId;
+  protected Integer projectBoardId;
 
   @JacksonXmlProperty(localName = "CustomerPO")
   protected String customerPO;
 
   @JacksonXmlProperty(localName = "RestrictDownPayment")
-  protected boolean restrictDownPayment;
+  protected Boolean restrictDownPayment;
 
   @JacksonXmlProperty(localName = "BillProjectAfterClosed")
-  protected boolean billProjectAfterClosed;
+  protected Boolean billProjectAfterClosed;
 
   @JacksonXmlProperty(localName = "BillUnapprovedTimeAndExpense")
-  protected boolean billUnapprovedTimeAndExpense;
+  protected Boolean billUnapprovedTimeAndExpense;
 
   @JacksonXmlProperty(localName = "ProjectTemplateId")
-  protected int projectTemplateId;
+  protected Integer projectTemplateId;
 
   public String getProjectName ()
   {
@@ -140,62 +140,62 @@ public class Project extends ConnectwiseCommon
     this.projectName = projectName;
   }
 
-  public int getCompanyId ()
+  public Integer getCompanyId ()
   {
     return companyId;
   }
 
-  public void setCompanyId ( final int companyId )
+  public void setCompanyId ( final Integer companyId )
   {
     this.companyId = companyId;
   }
 
-  public int getAddressId ()
+  public Integer getAddressId ()
   {
     return addressId;
   }
 
-  public void setAddressId ( final int addressId )
+  public void setAddressId ( final Integer addressId )
   {
     this.addressId = addressId;
   }
 
-  public int getOpportunityId ()
+  public Integer getOpportunityId ()
   {
     return opportunityId;
   }
 
-  public void setOpportunityId ( final int opportunityId )
+  public void setOpportunityId ( final Integer opportunityId )
   {
     this.opportunityId = opportunityId;
   }
 
-  public int getContactId ()
+  public Integer getContactId ()
   {
     return contactId;
   }
 
-  public void setContactId ( final int contactId )
+  public void setContactId ( final Integer contactId )
   {
     this.contactId = contactId;
   }
 
-  public int getProjectManagerId ()
+  public Integer getProjectManagerId ()
   {
     return projectManagerId;
   }
 
-  public void setProjectManagerId ( final int projectManagerId )
+  public void setProjectManagerId ( final Integer projectManagerId )
   {
     this.projectManagerId = projectManagerId;
   }
 
-  public int getProjectTypeId ()
+  public Integer getProjectTypeId ()
   {
     return projectTypeId;
   }
 
-  public void setProjectTypeId ( final int projectTypeId )
+  public void setProjectTypeId ( final Integer projectTypeId )
   {
     this.projectTypeId = projectTypeId;
   }
@@ -210,12 +210,12 @@ public class Project extends ConnectwiseCommon
     this.billingMethodIdentifier = billingMethodIdentifier;
   }
 
-  public double getEstimatedRevenue ()
+  public Double getEstimatedRevenue ()
   {
     return estimatedRevenue;
   }
 
-  public void setEstimatedRevenue ( final double estimatedRevenue )
+  public void setEstimatedRevenue ( final Double estimatedRevenue )
   {
     this.estimatedRevenue = estimatedRevenue;
   }
@@ -240,12 +240,12 @@ public class Project extends ConnectwiseCommon
     this.estimatedEnd = estimatedEnd;
   }
 
-  public double getEstimatedHours ()
+  public Double getEstimatedHours ()
   {
     return estimatedHours;
   }
 
-  public void setEstimatedHours ( final double estimatedHours )
+  public void setEstimatedHours ( final Double estimatedHours )
   {
     this.estimatedHours = estimatedHours;
   }
@@ -260,32 +260,32 @@ public class Project extends ConnectwiseCommon
     this.status = status;
   }
 
-  public int getTimeApproverId ()
+  public Integer getTimeApproverId ()
   {
     return timeApproverId;
   }
 
-  public void setTimeApproverId ( final int timeApproverId )
+  public void setTimeApproverId ( final Integer timeApproverId )
   {
     this.timeApproverId = timeApproverId;
   }
 
-  public int getExpenseApproverId ()
+  public Integer getExpenseApproverId ()
   {
     return expenseApproverId;
   }
 
-  public void setExpenseApproverId ( final int expenseApproverId )
+  public void setExpenseApproverId ( final Integer expenseApproverId )
   {
     this.expenseApproverId = expenseApproverId;
   }
 
-  public boolean isBudgetFlag ()
+  public Boolean isBudgetFlag ()
   {
     return budgetFlag;
   }
 
-  public void setBudgetFlag ( final boolean budgetFlag )
+  public void setBudgetFlag ( final Boolean budgetFlag )
   {
     this.budgetFlag = budgetFlag;
   }
@@ -300,22 +300,22 @@ public class Project extends ConnectwiseCommon
     this.billingRateOption = billingRateOption;
   }
 
-  public double getHourlyRate ()
+  public Double getHourlyRate ()
   {
     return hourlyRate;
   }
 
-  public void setHourlyRate ( final double hourlyRate )
+  public void setHourlyRate ( final Double hourlyRate )
   {
     this.hourlyRate = hourlyRate;
   }
 
-  public double getBillingAmount ()
+  public Double getBillingAmount ()
   {
     return billingAmount;
   }
 
-  public void setBillingAmount ( final double billingAmount )
+  public void setBillingAmount ( final Double billingAmount )
   {
     this.billingAmount = billingAmount;
   }
@@ -350,52 +350,52 @@ public class Project extends ConnectwiseCommon
     this.billProducts = billProducts;
   }
 
-  public boolean isBillableTimeInvoice ()
+  public Boolean isBillableTimeInvoice ()
   {
     return billableTimeInvoice;
   }
 
-  public void setBillableTimeInvoice ( final boolean billableTimeInvoice )
+  public void setBillableTimeInvoice ( final Boolean billableTimeInvoice )
   {
     this.billableTimeInvoice = billableTimeInvoice;
   }
 
-  public boolean isBillableExpenseInvoice ()
+  public Boolean isBillableExpenseInvoice ()
   {
     return billableExpenseInvoice;
   }
 
-  public void setBillableExpenseInvoice ( final boolean billableExpenseInvoice )
+  public void setBillableExpenseInvoice ( final Boolean billableExpenseInvoice )
   {
     this.billableExpenseInvoice = billableExpenseInvoice;
   }
 
-  public boolean isBillableProductInvoice ()
+  public Boolean isBillableProductInvoice ()
   {
     return billableProductInvoice;
   }
 
-  public void setBillableProductInvoice ( final boolean billableProductInvoice )
+  public void setBillableProductInvoice ( final Boolean billableProductInvoice )
   {
     this.billableProductInvoice = billableProductInvoice;
   }
 
-  public double getDownpayment ()
+  public Double getDownpayment ()
   {
     return downpayment;
   }
 
-  public void setDownpayment ( final double downpayment )
+  public void setDownpayment ( final Double downpayment )
   {
     this.downpayment = downpayment;
   }
 
-  public int getAgreementId ()
+  public Integer getAgreementId ()
   {
     return agreementId;
   }
 
-  public void setAgreementId ( final int agreementId )
+  public void setAgreementId ( final Integer agreementId )
   {
     this.agreementId = agreementId;
   }
@@ -410,12 +410,12 @@ public class Project extends ConnectwiseCommon
     this.billingAttention = billingAttention;
   }
 
-  public int getProjectBoardId ()
+  public Integer getProjectBoardId ()
   {
     return projectBoardId;
   }
 
-  public void setProjectBoardId ( final int projectBoardId )
+  public void setProjectBoardId ( final Integer projectBoardId )
   {
     this.projectBoardId = projectBoardId;
   }
@@ -430,42 +430,42 @@ public class Project extends ConnectwiseCommon
     this.customerPO = customerPO;
   }
 
-  public boolean isRestrictDownPayment ()
+  public Boolean isRestrictDownPayment ()
   {
     return restrictDownPayment;
   }
 
-  public void setRestrictDownPayment ( final boolean restrictDownPayment )
+  public void setRestrictDownPayment ( final Boolean restrictDownPayment )
   {
     this.restrictDownPayment = restrictDownPayment;
   }
 
-  public boolean isBillProjectAfterClosed ()
+  public Boolean isBillProjectAfterClosed ()
   {
     return billProjectAfterClosed;
   }
 
-  public void setBillProjectAfterClosed ( final boolean billProjectAfterClosed )
+  public void setBillProjectAfterClosed ( final Boolean billProjectAfterClosed )
   {
     this.billProjectAfterClosed = billProjectAfterClosed;
   }
 
-  public boolean isBillUnapprovedTimeAndExpense ()
+  public Boolean isBillUnapprovedTimeAndExpense ()
   {
     return billUnapprovedTimeAndExpense;
   }
 
-  public void setBillUnapprovedTimeAndExpense ( final boolean billUnapprovedTimeAndExpense )
+  public void setBillUnapprovedTimeAndExpense ( final Boolean billUnapprovedTimeAndExpense )
   {
     this.billUnapprovedTimeAndExpense = billUnapprovedTimeAndExpense;
   }
 
-  public int getProjectTemplateId ()
+  public Integer getProjectTemplateId ()
   {
     return projectTemplateId;
   }
 
-  public void setProjectTemplateId ( final int projectTemplateId )
+  public void setProjectTemplateId ( final Integer projectTemplateId )
   {
     this.projectTemplateId = projectTemplateId;
   }

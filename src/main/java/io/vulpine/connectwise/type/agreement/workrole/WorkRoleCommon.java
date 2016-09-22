@@ -22,14 +22,14 @@ import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 class WorkRoleCommon extends AbstractSubAgreement
 {
   @JacksonXmlProperty( localName = "WorkRoleId" )
-  private int WorkRoleId;
+  private Integer WorkRoleId;
 
-  public int getWorkRoleId ()
+  public Integer getWorkRoleId ()
   {
     return WorkRoleId;
   }
 
-  public void setWorkRoleId ( int workRoleId )
+  public void setWorkRoleId ( Integer workRoleId )
   {
     WorkRoleId = workRoleId;
   }

@@ -31,33 +31,33 @@ public class Addition extends AbstractSubAgreement
 
   private BillCustomer billCustomer;
 
-  private boolean purchaseItem;
+  private Boolean purchaseItem;
 
-  private boolean specialOrder;
+  private Boolean specialOrder;
 
-  private boolean taxable;
+  private Boolean taxable;
 
   private Date cancelledDate;
 
   private Date effectiveDate;
 
-  private double billedQuantity;
+  private Double billedQuantity;
 
-  private double extPrice;
+  private Double extPrice;
 
-  private double extCost;
+  private Double extCost;
 
-  private double lessIncluded;
+  private Double lessIncluded;
 
-  private double margin;
+  private Double margin;
 
-  private double quantity;
+  private Double quantity;
 
-  private double unitCost;
+  private Double unitCost;
 
-  private double unitPrice;
+  private Double unitPrice;
 
-  private int productId;
+  private Integer productId;
 
   private String invoiceDescription;
 
@@ -94,13 +94,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "BilledQuantity" )
-  public double billedQuantity()
+  public Double billedQuantity()
   {
     return billedQuantity;
   }
 
   @JsonSetter( "BilledQuantity" )
-  public Addition billedQuantity( final double billedQuantity )
+  public Addition billedQuantity( final Double billedQuantity )
   {
     this.billedQuantity = billedQuantity;
 
@@ -140,13 +140,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "ExtCost" )
-  public double extCost()
+  public Double extCost()
   {
     return extCost;
   }
 
   @JsonSetter( "ExtCost" )
-  public Addition extCost( final double extCost )
+  public Addition extCost( final Double extCost )
   {
     this.extCost = extCost;
 
@@ -154,13 +154,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "ExtPrice" )
-  public double extPrice()
+  public Double extPrice()
   {
     return extPrice;
   }
 
   @JsonSetter( "ExtPrice" )
-  public Addition extPrice( final double extPrice )
+  public Addition extPrice( final Double extPrice )
   {
     this.extPrice = extPrice;
 
@@ -182,13 +182,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "LessIncluded" )
-  public double lessIncluded()
+  public Double lessIncluded()
   {
     return lessIncluded;
   }
 
   @JsonSetter( "LessIncluded" )
-  public Addition lessIncluded( final double lessIncluded )
+  public Addition lessIncluded( final Double lessIncluded )
   {
     this.lessIncluded = lessIncluded;
 
@@ -196,13 +196,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "Margin" )
-  public double margin()
+  public Double margin()
   {
     return margin;
   }
 
   @JsonSetter( "Margin" )
-  public Addition margin( final double margin )
+  public Addition margin( final Double margin )
   {
     this.margin = margin;
 
@@ -210,13 +210,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "ProductId" )
-  public int productId()
+  public Integer productId()
   {
     return productId;
   }
 
   @JsonSetter( "ProductId" )
-  public Addition productId( int productId )
+  public Addition productId( Integer productId )
   {
     this.productId = productId;
 
@@ -224,13 +224,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "Quantity" )
-  public double quantity()
+  public Double quantity()
   {
     return quantity;
   }
 
   @JsonSetter( "Quantity" )
-  public Addition quantity( final double quantity )
+  public Addition quantity( final Double quantity )
   {
     this.quantity = quantity;
 
@@ -252,13 +252,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "UnitCost" )
-  public double unitCost()
+  public Double unitCost()
   {
     return unitCost;
   }
 
   @JsonSetter( "UnitCost" )
-  public Addition unitCost( final double unitCost )
+  public Addition unitCost( final Double unitCost )
   {
     this.unitCost = unitCost;
 
@@ -266,13 +266,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "UnitPrice" )
-  public double unitPrice()
+  public Double unitPrice()
   {
     return unitPrice;
   }
 
   @JsonSetter( "UnitPrice" )
-  public Addition unitPrice( final double unitPrice )
+  public Addition unitPrice( final Double unitPrice )
   {
     this.unitPrice = unitPrice;
 
@@ -294,13 +294,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "PurchaseItemFlag" )
-  public boolean purchaseItem()
+  public Boolean purchaseItem()
   {
     return purchaseItem;
   }
 
   @JsonSetter( "PurchaseItemFlag" )
-  public Addition purchaseItem( final boolean purchaseItem )
+  public Addition purchaseItem( final Boolean purchaseItem )
   {
     this.purchaseItem = purchaseItem;
 
@@ -308,13 +308,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "SpecialOrderFlag" )
-  public boolean specialOrder()
+  public Boolean specialOrder()
   {
     return specialOrder;
   }
 
   @JsonSetter( "SpecialOrderFlag" )
-  public Addition specialOrder( final boolean specialOrder )
+  public Addition specialOrder( final Boolean specialOrder )
   {
     this.specialOrder = specialOrder;
 
@@ -322,13 +322,13 @@ public class Addition extends AbstractSubAgreement
   }
 
   @JsonGetter( "TaxableFlag" )
-  public boolean taxable()
+  public Boolean taxable()
   {
     return taxable;
   }
 
   @JsonSetter( "TaxableFlag" )
-  public Addition taxable( final boolean taxable )
+  public Addition taxable( final Boolean taxable )
   {
     this.taxable = taxable;
 

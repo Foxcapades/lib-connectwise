@@ -23,7 +23,7 @@ import io.vulpine.connectwise.type.ConnectwiseCommon;
 public class ForecastRevenueInfo extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "OpportunityId" )
-  protected int opportunityId;
+  protected Integer opportunityId;
 
   @JacksonXmlProperty( localName = "ForecastItem" )
   protected ForecastItem forecastItem;
@@ -31,12 +31,12 @@ public class ForecastRevenueInfo extends ConnectwiseCommon
   @JacksonXmlProperty( localName = "RecurringRevenueItem" )
   protected RecurringRevenueItem recurringRevenueItem;
 
-  public int getOpportunityId()
+  public Integer getOpportunityId()
   {
     return opportunityId;
   }
 
-  public void setOpportunityId( final int opportunityId )
+  public void setOpportunityId( final Integer opportunityId )
   {
     this.opportunityId = opportunityId;
   }

@@ -23,13 +23,13 @@ import io.vulpine.connectwise.type.ConnectwiseCommon;
 public class ConfigurationQuestion extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "QuestionId" )
-  protected int questionId;
+  protected Integer questionId;
 
   @JacksonXmlProperty( localName = "Question" )
   protected String question;
 
   @JacksonXmlProperty( localName = "SequenceNumber" )
-  protected double sequenceNumber;
+  protected Double sequenceNumber;
 
   @JacksonXmlProperty( localName = "FieldType" )
   protected String fieldType;
@@ -40,12 +40,12 @@ public class ConfigurationQuestion extends ConnectwiseCommon
   @JacksonXmlProperty( localName = "Answer" )
   protected String answer;
 
-  public int getQuestionId ()
+  public Integer getQuestionId ()
   {
     return questionId;
   }
 
-  public void setQuestionId ( int questionId )
+  public void setQuestionId ( Integer questionId )
   {
     this.questionId = questionId;
   }
@@ -60,12 +60,12 @@ public class ConfigurationQuestion extends ConnectwiseCommon
     this.question = question;
   }
 
-  public double getSequenceNumber ()
+  public Double getSequenceNumber ()
   {
     return sequenceNumber;
   }
 
-  public void setSequenceNumber ( double sequenceNumber )
+  public void setSequenceNumber ( Double sequenceNumber )
   {
     this.sequenceNumber = sequenceNumber;
   }

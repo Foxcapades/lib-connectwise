@@ -28,13 +28,13 @@ public class ProjectPhase extends ProjectCommon
   protected String description;
 
   @JacksonXmlProperty(localName = "ProjectBoardId")
-  protected int projectBoardId;
+  protected Integer projectBoardId;
 
   @JacksonXmlProperty(localName = "AgreementId")
-  protected int agreementId;
+  protected Integer agreementId;
 
   @JacksonXmlProperty(localName = "ParentPhaseId")
-  protected int parentPhaseId;
+  protected Integer parentPhaseId;
 
   @JacksonXmlProperty(localName = "WbsCode")
   protected String wbsCode;
@@ -49,16 +49,16 @@ public class ProjectPhase extends ProjectCommon
   protected BillFlag phaseBillExpenses;
 
   @JacksonXmlProperty(localName = "BillableTimeInvoice")
-  protected boolean billableTimeInvoice;
+  protected Boolean billableTimeInvoice;
 
   @JacksonXmlProperty(localName = "BillableExpenseInvoice")
-  protected boolean billableExpenseInvoice;
+  protected Boolean billableExpenseInvoice;
 
   @JacksonXmlProperty(localName = "MarkAsMilestone")
-  protected boolean markAsMilestone;
+  protected Boolean markAsMilestone;
 
   @JacksonXmlProperty(localName = "BillSeparately")
-  protected boolean billSeparately;
+  protected Boolean billSeparately;
 
   @JacksonXmlProperty(localName = "Notes")
   protected String notes;

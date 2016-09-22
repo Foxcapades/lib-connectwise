@@ -28,13 +28,13 @@ import java.util.Date;
 public class WorkType extends WorkTypeCommon
 {
   @JacksonXmlProperty( localName = "LocationId" )
-  protected int LocationId;
+  protected Integer LocationId;
 
   @JacksonXmlProperty( localName = "RateType" )
   protected RateType RateType;
 
   @JacksonXmlProperty( localName = "Rate" )
-  protected double Rate;
+  protected Double Rate;
 
   @JacksonXmlProperty( localName = "EffectiveDate" )
   protected Date EffectiveDate;
@@ -46,30 +46,30 @@ public class WorkType extends WorkTypeCommon
   protected BillableOption BillTime;
 
   @JacksonXmlProperty( localName = "HoursMin" )
-  protected double HoursMin;
+  protected Double HoursMin;
 
   @JacksonXmlProperty( localName = "HoursMax" )
-  protected double HoursMax;
+  protected Double HoursMax;
 
   @JacksonXmlProperty( localName = "AddressId" )
-  protected int AddressId;
+  protected Integer AddressId;
 
-  public int getLocationId ()
+  public Integer getLocationId ()
   {
     return LocationId;
   }
 
-  public void setLocationId ( int locationId )
+  public void setLocationId ( Integer locationId )
   {
     LocationId = locationId;
   }
 
-  public double getRate ()
+  public Double getRate ()
   {
     return Rate;
   }
 
-  public void setRate ( double rate )
+  public void setRate ( Double rate )
   {
     Rate = rate;
   }
@@ -94,32 +94,32 @@ public class WorkType extends WorkTypeCommon
     EndingDate = endingDate;
   }
 
-  public double getHoursMin ()
+  public Double getHoursMin ()
   {
     return HoursMin;
   }
 
-  public void setHoursMin ( double hoursMin )
+  public void setHoursMin ( Double hoursMin )
   {
     HoursMin = hoursMin;
   }
 
-  public double getHoursMax ()
+  public Double getHoursMax ()
   {
     return HoursMax;
   }
 
-  public void setHoursMax ( double hoursMax )
+  public void setHoursMax ( Double hoursMax )
   {
     HoursMax = hoursMax;
   }
 
-  public int getAddressId ()
+  public Integer getAddressId ()
   {
     return AddressId;
   }
 
-  public void setAddressId ( int addressId )
+  public void setAddressId ( Integer addressId )
   {
     AddressId = addressId;
   }

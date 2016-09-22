@@ -24,27 +24,27 @@ import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 public class Site extends AbstractSubAgreement
 {
   @JacksonXmlProperty( localName = "CompanyId" )
-  private int companyId;
+  private Integer companyId;
 
   @JacksonXmlProperty( localName = "AddressId" )
-  private int addressId;
+  private Integer addressId;
 
-  public int getCompanyId()
+  public Integer getCompanyId()
   {
     return companyId;
   }
 
-  public void setCompanyId( int companyId )
+  public void setCompanyId( Integer companyId )
   {
     this.companyId = companyId;
   }
 
-  public int getAddressId()
+  public Integer getAddressId()
   {
     return addressId;
   }
 
-  public void setAddressId( int addressId )
+  public void setAddressId( Integer addressId )
   {
     this.addressId = addressId;
   }

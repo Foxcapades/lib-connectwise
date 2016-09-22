@@ -30,40 +30,40 @@ public class ProjectTicket extends ProjectCommon
   protected String detailDescription;
 
   @JacksonXmlProperty( localName = "PhaseId" )
-  protected int phaseId;
+  protected Integer phaseId;
 
   @JacksonXmlProperty( localName = "ContactId" )
-  protected int contactId;
+  protected Integer contactId;
 
   @JacksonXmlProperty( localName = "AddressId" )
-  protected int addressId;
+  protected Integer addressId;
 
   @JacksonXmlProperty( localName = "SiteNameIdentifier" )
   protected String siteNameIdentifier;
 
   @JacksonXmlProperty( localName = "AgreementId" )
-  protected int agreementId;
+  protected Integer agreementId;
 
   @JacksonXmlProperty( localName = "OpportunityId" )
-  protected int opportunityId;
+  protected Integer opportunityId;
 
   @JacksonXmlProperty( localName = "Status" )
   protected String status;
 
   @JacksonXmlProperty( localName = "ServiceTypeId" )
-  protected int serviceTypeId;
+  protected Integer serviceTypeId;
 
   @JacksonXmlProperty( localName = "ServiceSubTypeId" )
-  protected int serviceSubTypeId;
+  protected Integer serviceSubTypeId;
 
   @JacksonXmlProperty( localName = "ServiceItemId" )
-  protected int serviceItemId;
+  protected Integer serviceItemId;
 
   @JacksonXmlProperty( localName = "SourceId" )
-  protected int sourceId;
+  protected Integer sourceId;
 
   @JacksonXmlProperty( localName = "ServiceLocationId" )
-  protected int serviceLocationId;
+  protected Integer serviceLocationId;
 
   @JacksonXmlProperty( localName = "Severity" )
   protected TicketFlag severity;
@@ -72,7 +72,7 @@ public class ProjectTicket extends ProjectCommon
   protected TicketFlag impact;
 
   @JacksonXmlProperty( localName = "PriorityId" )
-  protected int priorityId;
+  protected Integer priorityId;
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "RequiredDate" )
@@ -85,7 +85,7 @@ public class ProjectTicket extends ProjectCommon
   protected String assignedResources;
 
   @JacksonXmlProperty( localName = "ParentPhaseId" )
-  protected int parentPhaseId;
+  protected Integer parentPhaseId;
 
   @JacksonXmlProperty( localName = "RecType" )
   protected String recType;
@@ -97,7 +97,7 @@ public class ProjectTicket extends ProjectCommon
   protected String wbsCode;
 
   @JacksonXmlProperty( localName = "BudgetHours" )
-  protected double budgetHours;
+  protected Double budgetHours;
 
   @JacksonXmlProperty( localName = "ProjectTicketSummaryInfo" )
   protected String projectTicketSummaryInfo;
@@ -122,32 +122,32 @@ public class ProjectTicket extends ProjectCommon
     this.detailDescription = detailDescription;
   }
 
-  public int getPhaseId()
+  public Integer getPhaseId()
   {
     return phaseId;
   }
 
-  public void setPhaseId( final int phaseId )
+  public void setPhaseId( final Integer phaseId )
   {
     this.phaseId = phaseId;
   }
 
-  public int getContactId()
+  public Integer getContactId()
   {
     return contactId;
   }
 
-  public void setContactId( final int contactId )
+  public void setContactId( final Integer contactId )
   {
     this.contactId = contactId;
   }
 
-  public int getAddressId()
+  public Integer getAddressId()
   {
     return addressId;
   }
 
-  public void setAddressId( final int addressId )
+  public void setAddressId( final Integer addressId )
   {
     this.addressId = addressId;
   }
@@ -162,22 +162,22 @@ public class ProjectTicket extends ProjectCommon
     this.siteNameIdentifier = siteNameIdentifier;
   }
 
-  public int getAgreementId()
+  public Integer getAgreementId()
   {
     return agreementId;
   }
 
-  public void setAgreementId( final int agreementId )
+  public void setAgreementId( final Integer agreementId )
   {
     this.agreementId = agreementId;
   }
 
-  public int getOpportunityId()
+  public Integer getOpportunityId()
   {
     return opportunityId;
   }
 
-  public void setOpportunityId( final int opportunityId )
+  public void setOpportunityId( final Integer opportunityId )
   {
     this.opportunityId = opportunityId;
   }
@@ -192,52 +192,52 @@ public class ProjectTicket extends ProjectCommon
     this.status = status;
   }
 
-  public int getServiceTypeId()
+  public Integer getServiceTypeId()
   {
     return serviceTypeId;
   }
 
-  public void setServiceTypeId( final int serviceTypeId )
+  public void setServiceTypeId( final Integer serviceTypeId )
   {
     this.serviceTypeId = serviceTypeId;
   }
 
-  public int getServiceSubTypeId()
+  public Integer getServiceSubTypeId()
   {
     return serviceSubTypeId;
   }
 
-  public void setServiceSubTypeId( final int serviceSubTypeId )
+  public void setServiceSubTypeId( final Integer serviceSubTypeId )
   {
     this.serviceSubTypeId = serviceSubTypeId;
   }
 
-  public int getServiceItemId()
+  public Integer getServiceItemId()
   {
     return serviceItemId;
   }
 
-  public void setServiceItemId( final int serviceItemId )
+  public void setServiceItemId( final Integer serviceItemId )
   {
     this.serviceItemId = serviceItemId;
   }
 
-  public int getSourceId()
+  public Integer getSourceId()
   {
     return sourceId;
   }
 
-  public void setSourceId( final int sourceId )
+  public void setSourceId( final Integer sourceId )
   {
     this.sourceId = sourceId;
   }
 
-  public int getServiceLocationId()
+  public Integer getServiceLocationId()
   {
     return serviceLocationId;
   }
 
-  public void setServiceLocationId( final int serviceLocationId )
+  public void setServiceLocationId( final Integer serviceLocationId )
   {
     this.serviceLocationId = serviceLocationId;
   }
@@ -262,12 +262,12 @@ public class ProjectTicket extends ProjectCommon
     this.impact = impact;
   }
 
-  public int getPriorityId()
+  public Integer getPriorityId()
   {
     return priorityId;
   }
 
-  public void setPriorityId( final int priorityId )
+  public void setPriorityId( final Integer priorityId )
   {
     this.priorityId = priorityId;
   }
@@ -302,12 +302,12 @@ public class ProjectTicket extends ProjectCommon
     this.assignedResources = assignedResources;
   }
 
-  public int getParentPhaseId()
+  public Integer getParentPhaseId()
   {
     return parentPhaseId;
   }
 
-  public void setParentPhaseId( final int parentPhaseId )
+  public void setParentPhaseId( final Integer parentPhaseId )
   {
     this.parentPhaseId = parentPhaseId;
   }
@@ -342,12 +342,12 @@ public class ProjectTicket extends ProjectCommon
     this.wbsCode = wbsCode;
   }
 
-  public double getBudgetHours()
+  public Double getBudgetHours()
   {
     return budgetHours;
   }
 
-  public void setBudgetHours( final double budgetHours )
+  public void setBudgetHours( final Double budgetHours )
   {
     this.budgetHours = budgetHours;
   }

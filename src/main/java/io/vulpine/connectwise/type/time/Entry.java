@@ -27,13 +27,13 @@ import java.util.Date;
 @JsonIgnoreProperties( { "Description", "LastUpdate" } )
 public class Entry extends ConnectwiseCommon
 {
-  private boolean addNotesToDetailDescription;
+  private Boolean addNotesToDetailDescription;
 
-  private boolean addNotesToInternalAnalysis;
+  private Boolean addNotesToInternalAnalysis;
 
-  private boolean addNotesToResolution;
+  private Boolean addNotesToResolution;
 
-  private boolean overnight;
+  private Boolean overnight;
 
   private Date dateStart;
 
@@ -41,17 +41,17 @@ public class Entry extends ConnectwiseCommon
 
   private Date timeEnd;
 
-  private double actualHours;
+  private Double actualHours;
 
-  private double hoursBilled;
+  private Double hoursBilled;
 
-  private double hoursDeduct;
+  private Double hoursDeduct;
 
-  private int activityId;
+  private Integer activityId;
 
-  private int agreementId;
+  private Integer agreementId;
 
-  private int ticketId;
+  private Integer ticketId;
 
   private String chargeCode;
 
@@ -72,13 +72,13 @@ public class Entry extends ConnectwiseCommon
   private String workRole;
 
   @JsonGetter( "ActivityId" )
-  public int activityId()
+  public Integer activityId()
   {
     return this.activityId;
   }
 
   @JsonSetter( "ActivityId" )
-  public Entry activityId( final int activityId )
+  public Entry activityId( final Integer activityId )
   {
     this.activityId = activityId;
 
@@ -86,13 +86,13 @@ public class Entry extends ConnectwiseCommon
   }
 
   @JsonGetter( "ActualHours" )
-  public double actualHours()
+  public Double actualHours()
   {
     return this.actualHours;
   }
 
   @JsonSetter( "ActualHours" )
-  public Entry actualHours( final double actualHours )
+  public Entry actualHours( final Double actualHours )
   {
     this.actualHours = actualHours;
 
@@ -100,13 +100,13 @@ public class Entry extends ConnectwiseCommon
   }
 
   @JsonGetter( "AddNotesToDetailDescription" )
-  public boolean addNotesToDetailDescription()
+  public Boolean addNotesToDetailDescription()
   {
     return this.addNotesToDetailDescription;
   }
 
   @JsonSetter( "AddNotesToDetailDescription" )
-  public Entry addNotesToDetailDescription( final boolean addNotesToDetailDescription )
+  public Entry addNotesToDetailDescription( final Boolean addNotesToDetailDescription )
   {
     this.addNotesToDetailDescription = addNotesToDetailDescription;
 
@@ -114,13 +114,13 @@ public class Entry extends ConnectwiseCommon
   }
 
   @JsonGetter( "AddNotesToInternalAnalysis" )
-  public boolean addNotesToInternalAnalysis()
+  public Boolean addNotesToInternalAnalysis()
   {
     return this.addNotesToInternalAnalysis;
   }
 
   @JsonSetter( "AddNotesToInternalAnalysis" )
-  public Entry addNotesToInternalAnalysis( final boolean addNotesToInternalAnalysis )
+  public Entry addNotesToInternalAnalysis( final Boolean addNotesToInternalAnalysis )
   {
     this.addNotesToInternalAnalysis = addNotesToInternalAnalysis;
 
@@ -128,13 +128,13 @@ public class Entry extends ConnectwiseCommon
   }
 
   @JsonGetter( "AddNotesToResolution" )
-  public boolean addNotesToResolution()
+  public Boolean addNotesToResolution()
   {
     return this.addNotesToResolution;
   }
 
   @JsonSetter( "AddNotesToResolution" )
-  public Entry addNotesToResolution( final boolean addNotesToResolution )
+  public Entry addNotesToResolution( final Boolean addNotesToResolution )
   {
     this.addNotesToResolution = addNotesToResolution;
 
@@ -142,13 +142,13 @@ public class Entry extends ConnectwiseCommon
   }
 
   @JsonGetter( "AgreementId" )
-  public int agreementId()
+  public Integer agreementId()
   {
     return this.agreementId;
   }
 
   @JsonSetter( "AgreementId" )
-  public Entry agreementId( final int agreementId )
+  public Entry agreementId( final Integer agreementId )
   {
     this.agreementId = agreementId;
 
@@ -184,13 +184,13 @@ public class Entry extends ConnectwiseCommon
   }
 
   @JsonGetter( "HoursBilled" )
-  public double hoursBilled()
+  public Double hoursBilled()
   {
     return this.hoursBilled;
   }
 
   @JsonSetter( "HoursBilled" )
-  public Entry hoursBilled( final int hoursBilled )
+  public Entry hoursBilled( final Double hoursBilled )
   {
     this.hoursBilled = hoursBilled;
 
@@ -198,13 +198,13 @@ public class Entry extends ConnectwiseCommon
   }
 
   @JsonGetter( "HoursDeduct" )
-  public double hoursDeduct()
+  public Double hoursDeduct()
   {
     return this.hoursDeduct;
   }
 
   @JsonSetter( "HoursDeduct" )
-  public Entry hoursDeduct( final int hoursDeduct )
+  public Entry hoursDeduct( final Double hoursDeduct )
   {
     this.hoursDeduct = hoursDeduct;
 
@@ -282,13 +282,13 @@ public class Entry extends ConnectwiseCommon
   }
 
   @JsonGetter( "Overnight" )
-  public boolean overnight()
+  public Boolean overnight()
   {
     return this.overnight;
   }
 
   @JsonSetter( "Overnight" )
-  public Entry overnight( final boolean overnight )
+  public Entry overnight( final Boolean overnight )
   {
     this.overnight = overnight;
 
@@ -310,13 +310,13 @@ public class Entry extends ConnectwiseCommon
   }
 
   @JsonGetter( "TicketId" )
-  public int ticketId()
+  public Integer ticketId()
   {
     return this.ticketId;
   }
 
   @JsonSetter( "TicketId" )
-  public Entry ticketId( final int ticketId )
+  public Entry ticketId( final Integer ticketId )
   {
     this.ticketId = ticketId;
 

@@ -7,49 +7,49 @@ import java.util.Date;
 
 public class FoundSpecialInvoice
 {
-  private int     id;
+  private Integer     id;
   private String  invoiceNumber;
   private Date    invoiceDate;
-  private int     companyId;
-  private int     billToCompanyId;
-  private int     addressId;
+  private Integer     companyId;
+  private Integer     billToCompanyId;
+  private Integer     addressId;
   private String  applyToType;
-  private int     applyToId;
-  private double  total;
-  private double  invoiceTotal;
-  private double  remainingDownpayment;
+  private Integer     applyToId;
+  private Double  total;
+  private Double  invoiceTotal;
+  private Double  remainingDownpayment;
   private Date    dueDate;
   private String  customerPO;
   private String  invoiceTypeIdentifier;
   private String  invoiceType;
-  private int     billingStatusId;
+  private Integer     billingStatusId;
   private String  billingStatus;
-  private boolean closed;
-  private int     billingTermsId;
+  private Boolean closed;
+  private Integer     billingTermsId;
   private String  billingTerms;
-  private boolean taxable;
+  private Boolean taxable;
   private String  attention;
 
   @JsonGetter( "AddressId" )
-  public int addressId()
+  public Integer addressId()
   {
     return this.addressId;
   }
 
   @JsonSetter( "AddressId" )
-  public void addressId( final int addressId )
+  public void addressId( final Integer addressId )
   {
     this.addressId = addressId;
   }
 
   @JsonGetter( "ApplyToId" )
-  public int applyToId()
+  public Integer applyToId()
   {
     return this.applyToId;
   }
 
   @JsonSetter( "ApplyToId" )
-  public void applyToId( final int applyToId )
+  public void applyToId( final Integer applyToId )
   {
     this.applyToId = applyToId;
   }
@@ -79,13 +79,13 @@ public class FoundSpecialInvoice
   }
 
   @JsonGetter( "BillToCompanyId" )
-  public int billToCompanyId()
+  public Integer billToCompanyId()
   {
     return this.billToCompanyId;
   }
 
   @JsonSetter( "BillToCompanyId" )
-  public void billToCompanyId( final int billToCompanyId )
+  public void billToCompanyId( final Integer billToCompanyId )
   {
     this.billToCompanyId = billToCompanyId;
   }
@@ -103,13 +103,13 @@ public class FoundSpecialInvoice
   }
 
   @JsonGetter( "BillingStatusId" )
-  public int billingStatusId()
+  public Integer billingStatusId()
   {
     return this.billingStatusId;
   }
 
   @JsonSetter( "BillingStatusId" )
-  public void billingStatusId( final int billingStatusId )
+  public void billingStatusId( final Integer billingStatusId )
   {
     this.billingStatusId = billingStatusId;
   }
@@ -127,37 +127,37 @@ public class FoundSpecialInvoice
   }
 
   @JsonGetter( "BillingTermsId" )
-  public int billingTermsId()
+  public Integer billingTermsId()
   {
     return this.billingTermsId;
   }
 
   @JsonSetter( "BillingTermsId" )
-  public void billingTermsId( final int billingTermsId )
+  public void billingTermsId( final Integer billingTermsId )
   {
     this.billingTermsId = billingTermsId;
   }
 
   @JsonGetter( "Closed" )
-  public boolean closed()
+  public Boolean closed()
   {
     return this.closed;
   }
 
   @JsonSetter( "Closed" )
-  public void closed( final boolean closed )
+  public void closed( final Boolean closed )
   {
     this.closed = closed;
   }
 
   @JsonGetter( "CompanyId" )
-  public int companyId()
+  public Integer companyId()
   {
     return this.companyId;
   }
 
   @JsonSetter( "CompanyId" )
-  public void companyId( final int companyId )
+  public void companyId( final Integer companyId )
   {
     this.companyId = companyId;
   }
@@ -187,13 +187,13 @@ public class FoundSpecialInvoice
   }
 
   @JsonGetter( "Id" )
-  public int id()
+  public Integer id()
   {
     return this.id;
   }
 
   @JsonSetter( "Id" )
-  public void id( final int id )
+  public void id( final Integer id )
   {
     this.id = id;
   }
@@ -223,13 +223,13 @@ public class FoundSpecialInvoice
   }
 
   @JsonGetter( "InvoiceTotal" )
-  public double invoiceTotal()
+  public Double invoiceTotal()
   {
     return this.invoiceTotal;
   }
 
   @JsonSetter( "InvoiceTotal" )
-  public void invoiceTotal( final double invoiceTotal )
+  public void invoiceTotal( final Double invoiceTotal )
   {
     this.invoiceTotal = invoiceTotal;
   }
@@ -259,37 +259,37 @@ public class FoundSpecialInvoice
   }
 
   @JsonGetter( "RemainingDownpayment" )
-  public double remainingDownpayment()
+  public Double remainingDownpayment()
   {
     return this.remainingDownpayment;
   }
 
   @JsonSetter( "RemainingDownpayment" )
-  public void remainingDownpayment( final double remainingDownpayment )
+  public void remainingDownpayment( final Double remainingDownpayment )
   {
     this.remainingDownpayment = remainingDownpayment;
   }
 
   @JsonGetter( "Taxable" )
-  public boolean taxable()
+  public Boolean taxable()
   {
     return this.taxable;
   }
 
   @JsonSetter( "Taxable" )
-  public void taxable( final boolean taxable )
+  public void taxable( final Boolean taxable )
   {
     this.taxable = taxable;
   }
 
   @JsonGetter( "Total" )
-  public double total()
+  public Double total()
   {
     return this.total;
   }
 
   @JsonSetter( "Total" )
-  public void total( final double total )
+  public void total( final Double total )
   {
     this.total = total;
   }

@@ -37,9 +37,9 @@ public class CompanyCommon extends ConnectwiseCommon
 
   private String status;
 
-  private int defaultContactId;
+  private Integer defaultContactId;
 
-  private int defaultBillingContactId;
+  private Integer defaultBillingContactId;
 
   @JsonGetter( "CompanyName" )
   public String getCompanyName()
@@ -138,25 +138,25 @@ public class CompanyCommon extends ConnectwiseCommon
   }
 
   @JsonGetter( "DefaultContactId" )
-  public int getDefaultContactId()
+  public Integer getDefaultContactId()
   {
     return defaultContactId;
   }
 
   @JsonSetter( "DefaultContactId" )
-  public void setDefaultContactId( int defaultContactId )
+  public void setDefaultContactId( Integer defaultContactId )
   {
     this.defaultContactId = defaultContactId;
   }
 
   @JsonGetter( "DefaultBillingContactId" )
-  public int getDefaultBillingContactId()
+  public Integer getDefaultBillingContactId()
   {
     return defaultBillingContactId;
   }
 
   @JsonSetter( "DefaultBillingContactId" )
-  public void setDefaultBillingContactId( int defaultBillingContactId )
+  public void setDefaultBillingContactId( Integer defaultBillingContactId )
   {
     this.defaultBillingContactId = defaultBillingContactId;
   }

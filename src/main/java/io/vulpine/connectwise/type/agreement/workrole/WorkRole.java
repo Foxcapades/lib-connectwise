@@ -28,16 +28,16 @@ import java.util.Date;
 public class WorkRole extends WorkRoleCommon
 {
   @JacksonXmlProperty( localName = "LocationId" )
-  protected int LocationId;
+  protected Integer LocationId;
 
   @JacksonXmlProperty( localName = "RateType" )
   protected RateType RateType;
 
   @JacksonXmlProperty( localName = "Rate" )
-  protected double Rate;
+  protected Double Rate;
 
   @JacksonXmlProperty( localName = "LimitTo" )
-  protected double LimitTo;
+  protected Double LimitTo;
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty( localName = "EffectiveDate" )
@@ -47,12 +47,12 @@ public class WorkRole extends WorkRoleCommon
   @JacksonXmlProperty( localName = "EndingDate" )
   protected Date EndingDate;
 
-  public int getLocationId ()
+  public Integer getLocationId ()
   {
     return LocationId;
   }
 
-  public void setLocationId ( int locationId )
+  public void setLocationId ( Integer locationId )
   {
     LocationId = locationId;
   }
@@ -67,22 +67,22 @@ public class WorkRole extends WorkRoleCommon
     RateType = rateType;
   }
 
-  public double getRate ()
+  public Double getRate ()
   {
     return Rate;
   }
 
-  public void setRate ( double rate )
+  public void setRate ( Double rate )
   {
     Rate = rate;
   }
 
-  public double getLimitTo ()
+  public Double getLimitTo ()
   {
     return LimitTo;
   }
 
-  public void setLimitTo ( double limitTo )
+  public void setLimitTo ( Double limitTo )
   {
     LimitTo = limitTo;
   }

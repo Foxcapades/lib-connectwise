@@ -26,7 +26,7 @@ import java.util.Date;
 public class ProjectSummaryInfo extends ConnectwiseCommon
 {
   @JacksonXmlProperty(localName = "ScheduledHours")
-  protected double scheduledHours;
+  protected Double scheduledHours;
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "ScheduledStart")
@@ -37,7 +37,7 @@ public class ProjectSummaryInfo extends ConnectwiseCommon
   protected Date scheduledEnd;
 
   @JacksonXmlProperty(localName = "ActualHours")
-  protected double actualHours;
+  protected Double actualHours;
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   @JacksonXmlProperty(localName = "ActualStart")
@@ -48,14 +48,14 @@ public class ProjectSummaryInfo extends ConnectwiseCommon
   protected Date actualEnd;
 
   @JacksonXmlProperty(localName = "BudgetHours")
-  protected double budgetHours;
+  protected Double budgetHours;
 
-  public double getScheduledHours ()
+  public Double getScheduledHours ()
   {
     return scheduledHours;
   }
 
-  public void setScheduledHours ( final double scheduledHours )
+  public void setScheduledHours ( final Double scheduledHours )
   {
     this.scheduledHours = scheduledHours;
   }
@@ -80,12 +80,12 @@ public class ProjectSummaryInfo extends ConnectwiseCommon
     this.scheduledEnd = scheduledEnd;
   }
 
-  public double getActualHours ()
+  public Double getActualHours ()
   {
     return actualHours;
   }
 
-  public void setActualHours ( final double actualHours )
+  public void setActualHours ( final Double actualHours )
   {
     this.actualHours = actualHours;
   }
@@ -110,12 +110,12 @@ public class ProjectSummaryInfo extends ConnectwiseCommon
     this.actualEnd = actualEnd;
   }
 
-  public double getBudgetHours ()
+  public Double getBudgetHours ()
   {
     return budgetHours;
   }
 
-  public void setBudgetHours ( final double budgetHours )
+  public void setBudgetHours ( final Double budgetHours )
   {
     this.budgetHours = budgetHours;
   }

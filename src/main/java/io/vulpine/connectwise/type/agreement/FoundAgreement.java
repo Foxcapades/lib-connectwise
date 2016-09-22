@@ -22,40 +22,40 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 public class FoundAgreement extends Agreement
 {
   @JacksonXmlProperty( localName = "BoardId" )
-  protected int boardId;
+  protected Integer boardId;
 
   @JacksonXmlProperty( localName = "BoardDefaultFlag" )
-  protected boolean boardDefault;
+  protected Boolean boardDefault;
 
   @JacksonXmlProperty( localName = "ServiceTypeId" )
-  protected int serviceTypeId;
+  protected Integer serviceTypeId;
 
-  public int getBoardId ()
+  public Integer getBoardId ()
   {
     return boardId;
   }
 
-  public void setBoardId ( int boardId )
+  public void setBoardId ( Integer boardId )
   {
     this.boardId = boardId;
   }
 
-  public boolean isBoardDefault ()
+  public Boolean isBoardDefault ()
   {
     return boardDefault;
   }
 
-  public void setBoardDefault ( boolean boardDefault )
+  public void setBoardDefault ( Boolean boardDefault )
   {
     this.boardDefault = boardDefault;
   }
 
-  public int getServiceTypeId ()
+  public Integer getServiceTypeId ()
   {
     return serviceTypeId;
   }
 
-  public void setServiceTypeId ( int serviceTypeId )
+  public void setServiceTypeId ( Integer serviceTypeId )
   {
     this.serviceTypeId = serviceTypeId;
   }

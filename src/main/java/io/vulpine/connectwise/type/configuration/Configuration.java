@@ -144,7 +144,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "IsActive" )
-  public Configuration active( boolean active )
+  public Configuration active( Boolean active )
   {
     isActive = active;
 
@@ -162,7 +162,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "AddressId" )
-  public Configuration addressId( final int addressId )
+  public Configuration addressId( final Integer addressId )
   {
     this.addressId = addressId;
 
@@ -216,7 +216,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupBillableSpaceGb" )
-  public Configuration backupBillableSpaceGb( double backupBillableSpaceGb )
+  public Configuration backupBillableSpaceGb( Double backupBillableSpaceGb )
   {
     this.backupBillableSpaceGb = backupBillableSpaceGb;
 
@@ -234,7 +234,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupFailed" )
-  public Configuration backupFailed( final int backupFailed )
+  public Configuration backupFailed( final Integer backupFailed )
   {
     this.backupFailed = backupFailed;
 
@@ -252,7 +252,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupIncomplete" )
-  public Configuration backupIncomplete( final int backupIncomplete )
+  public Configuration backupIncomplete( final Integer backupIncomplete )
   {
     this.backupIncomplete = backupIncomplete;
 
@@ -270,7 +270,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupMonth" )
-  public Configuration backupMonth( final int backupMonth )
+  public Configuration backupMonth( final Integer backupMonth )
   {
     this.backupMonth = backupMonth;
 
@@ -306,7 +306,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupRestores" )
-  public Configuration backupRestores( final int backupRestores )
+  public Configuration backupRestores( final Integer backupRestores )
   {
     this.backupRestores = backupRestores;
 
@@ -342,7 +342,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupSuccesses" )
-  public Configuration backupSuccesses( final int backupSuccesses )
+  public Configuration backupSuccesses( final Integer backupSuccesses )
   {
     this.backupSuccesses = backupSuccesses;
 
@@ -360,7 +360,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupYear" )
-  public Configuration backupYear( final int backupYear )
+  public Configuration backupYear( final Integer backupYear )
   {
     this.backupYear = backupYear;
 
@@ -378,7 +378,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BillFlag" )
-  public Configuration billFlag( boolean billFlag )
+  public Configuration billFlag( Boolean billFlag )
   {
     this.billFlag = billFlag;
 
@@ -396,7 +396,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BusinessUnitId" )
-  public Configuration businessUnitId( final int businessUnitId )
+  public Configuration businessUnitId( final Integer businessUnitId )
   {
     this.businessUnitId = businessUnitId;
 
@@ -432,7 +432,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "CompanyId" )
-  public Configuration companyId( final int companyId )
+  public Configuration companyId( final Integer companyId )
   {
     this.companyId = companyId;
 
@@ -524,7 +524,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ConfigurationTypeId" )
-  public Configuration configurationTypeId( final int configurationTypeId )
+  public Configuration configurationTypeId( final Integer configurationTypeId )
   {
     this.configurationTypeId = configurationTypeId;
 
@@ -542,7 +542,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ContactId" )
-  public Configuration contactId( final int contactId )
+  public Configuration contactId( final Integer contactId )
   {
     this.contactId = contactId;
 
@@ -754,7 +754,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "LocationId" )
-  public Configuration locationId( final int locationId )
+  public Configuration locationId( final Integer locationId )
   {
     this.locationId = locationId;
 
@@ -880,7 +880,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ParentConfigurationId" )
-  public Configuration parentConfigurationId( final int parentConfigurationId )
+  public Configuration parentConfigurationId( final Integer parentConfigurationId )
   {
     this.parentConfigurationId = parentConfigurationId;
 
@@ -986,7 +986,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "StatusId" )
-  public Configuration statusId( final int statusId )
+  public Configuration statusId( final Integer statusId )
   {
     this.statusId = statusId;
 

@@ -16,6 +16,7 @@
 package io.vulpine.connectwise.type;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum PriceAttribute
 {
@@ -31,8 +32,8 @@ public enum PriceAttribute
     this.value = value;
   }
 
-
   @Override
+  @JsonValue
   public String toString ()
   {
     return this.value;

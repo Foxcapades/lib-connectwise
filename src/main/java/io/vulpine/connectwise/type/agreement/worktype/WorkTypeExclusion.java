@@ -24,27 +24,27 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 public class WorkTypeExclusion extends WorkTypeCommon
 {
   @JacksonXmlProperty( localName = "AddAllWorkTypes" )
-  protected boolean addAllWorkTypes;
+  protected Boolean addAllWorkTypes;
 
   @JacksonXmlProperty( localName = "RemoveAllWorkTypes" )
-  protected boolean removeAllWorkTypes;
+  protected Boolean removeAllWorkTypes;
 
-  public boolean isAddAllWorkTypes()
+  public Boolean isAddAllWorkTypes()
   {
     return addAllWorkTypes;
   }
 
-  public void setAddAllWorkTypes( boolean addAllWorkTypes )
+  public void setAddAllWorkTypes( Boolean addAllWorkTypes )
   {
     this.addAllWorkTypes = addAllWorkTypes;
   }
 
-  public boolean isRemoveAllWorkTypes()
+  public Boolean isRemoveAllWorkTypes()
   {
     return removeAllWorkTypes;
   }
 
-  public void setRemoveAllWorkTypes( boolean removeAllWorkTypes )
+  public void setRemoveAllWorkTypes( Boolean removeAllWorkTypes )
   {
     this.removeAllWorkTypes = removeAllWorkTypes;
   }

@@ -7,43 +7,43 @@ import java.util.List;
 
 public class SpecialInvoiceProduct
 {
-  private int id;
+  private Integer id;
 
-  private boolean dropship;
+  private Boolean dropship;
 
-  private boolean specialOrder;
+  private Boolean specialOrder;
 
-  private int forecastDetailId;
+  private Integer forecastDetailId;
 
-  private int ticketId;
+  private Integer ticketId;
 
-  private int projectId;
+  private Integer projectId;
 
-  private int invoiceId;
+  private Integer invoiceId;
 
-  private int salesOrderId;
+  private Integer salesOrderId;
 
-  private boolean invoice;
+  private Boolean invoice;
 
-  private boolean taxable;
+  private Boolean taxable;
 
-  private boolean billable;
+  private Boolean billable;
 
-  private double price;
+  private Double price;
 
-  private double cost;
+  private Double cost;
 
-  private double quantity;
+  private Double quantity;
 
-  private double quantityCancelled;
+  private Double quantityCancelled;
 
-  private int itemId;
+  private Integer itemId;
 
   private String description;
 
   private String shortDescription;
 
-  private int opportunityId;
+  private Integer opportunityId;
 
   private String warehouse;
 
@@ -53,26 +53,26 @@ public class SpecialInvoiceProduct
 
   private String quoteName;
 
-  private int locationId;
+  private Integer locationId;
 
-  private int businessUnitId;
+  private Integer businessUnitId;
 
-  private boolean isPhaseProduct;
+  private Boolean isPhaseProduct;
 
-  private double sequenceNumber;
+  private Double sequenceNumber;
 
   private List < BundleComponent > bundleComponents;
 
-  private int vendorId;
+  private Integer vendorId;
 
   @JsonGetter( "Billable" )
-  public boolean billable()
+  public Boolean billable()
   {
     return this.billable;
   }
 
   @JsonSetter( "Billable" )
-  public void billable( final boolean billable )
+  public void billable( final Boolean billable )
   {
     this.billable = billable;
   }
@@ -102,25 +102,25 @@ public class SpecialInvoiceProduct
   }
 
   @JsonGetter( "BusinessUnitId" )
-  public int businessUnitId()
+  public Integer businessUnitId()
   {
     return this.businessUnitId;
   }
 
   @JsonSetter( "BusinessUnitId" )
-  public void businessUnitId( final int businessUnitId )
+  public void businessUnitId( final Integer businessUnitId )
   {
     this.businessUnitId = businessUnitId;
   }
 
   @JsonGetter( "Cost" )
-  public double cost()
+  public Double cost()
   {
     return this.cost;
   }
 
   @JsonSetter( "Cost" )
-  public void cost( final double cost )
+  public void cost( final Double cost )
   {
     this.cost = cost;
   }
@@ -138,157 +138,157 @@ public class SpecialInvoiceProduct
   }
 
   @JsonGetter( "Dropship" )
-  public boolean dropship()
+  public Boolean dropship()
   {
     return this.dropship;
   }
 
   @JsonSetter( "Dropship" )
-  public void dropship( final boolean dropship )
+  public void dropship( final Boolean dropship )
   {
     this.dropship = dropship;
   }
 
   @JsonGetter( "ForecastDetailId" )
-  public int forecastDetailId()
+  public Integer forecastDetailId()
   {
     return this.forecastDetailId;
   }
 
   @JsonSetter( "ForecastDetailId" )
-  public void forecastDetailId( final int forecastDetailId )
+  public void forecastDetailId( final Integer forecastDetailId )
   {
     this.forecastDetailId = forecastDetailId;
   }
 
   @JsonGetter( "Id" )
-  public int id()
+  public Integer id()
   {
     return this.id;
   }
 
   @JsonSetter( "Id" )
-  public void id( final int id )
+  public void id( final Integer id )
   {
     this.id = id;
   }
 
   @JsonGetter( "Invoice" )
-  public boolean invoice()
+  public Boolean invoice()
   {
     return this.invoice;
   }
 
   @JsonSetter( "Invoice" )
-  public void invoice( final boolean invoice )
+  public void invoice( final Boolean invoice )
   {
     this.invoice = invoice;
   }
 
   @JsonGetter( "InvoiceId" )
-  public int invoiceId()
+  public Integer invoiceId()
   {
     return this.invoiceId;
   }
 
   @JsonSetter( "InvoiceId" )
-  public void invoiceId( final int invoiceId )
+  public void invoiceId( final Integer invoiceId )
   {
     this.invoiceId = invoiceId;
   }
 
   @JsonGetter( "IsPhaseProduct" )
-  public boolean isPhaseProduct()
+  public Boolean isPhaseProduct()
   {
     return this.isPhaseProduct;
   }
 
   @JsonSetter( "IsPhaseProduct" )
-  public void isPhaseProduct( final boolean isPhaseProduct )
+  public void isPhaseProduct( final Boolean isPhaseProduct )
   {
     this.isPhaseProduct = isPhaseProduct;
   }
 
   @JsonGetter( "ItemId" )
-  public int itemId()
+  public Integer itemId()
   {
     return this.itemId;
   }
 
   @JsonSetter( "ItemId" )
-  public void itemId( final int itemId )
+  public void itemId( final Integer itemId )
   {
     this.itemId = itemId;
   }
 
   @JsonGetter( "LocationId" )
-  public int locationId()
+  public Integer locationId()
   {
     return this.locationId;
   }
 
   @JsonSetter( "LocationId" )
-  public void locationId( final int locationId )
+  public void locationId( final Integer locationId )
   {
     this.locationId = locationId;
   }
 
   @JsonGetter( "OpportunityId" )
-  public int opportunityId()
+  public Integer opportunityId()
   {
     return this.opportunityId;
   }
 
   @JsonSetter( "OpportunityId" )
-  public void opportunityId( final int opportunityId )
+  public void opportunityId( final Integer opportunityId )
   {
     this.opportunityId = opportunityId;
   }
 
   @JsonGetter( "Price" )
-  public double price()
+  public Double price()
   {
     return this.price;
   }
 
   @JsonSetter( "Price" )
-  public void price( final double price )
+  public void price( final Double price )
   {
     this.price = price;
   }
 
   @JsonGetter( "ProjectId" )
-  public int projectId()
+  public Integer projectId()
   {
     return this.projectId;
   }
 
   @JsonSetter( "ProjectId" )
-  public void projectId( final int projectId )
+  public void projectId( final Integer projectId )
   {
     this.projectId = projectId;
   }
 
   @JsonGetter( "Quantity" )
-  public double quantity()
+  public Double quantity()
   {
     return this.quantity;
   }
 
   @JsonSetter( "Quantity" )
-  public void quantity( final double quantity )
+  public void quantity( final Double quantity )
   {
     this.quantity = quantity;
   }
 
   @JsonGetter( "QuantityCancelled" )
-  public double quantityCancelled()
+  public Double quantityCancelled()
   {
     return this.quantityCancelled;
   }
 
   @JsonSetter( "QuantityCancelled" )
-  public void quantityCancelled( final double quantityCancelled )
+  public void quantityCancelled( final Double quantityCancelled )
   {
     this.quantityCancelled = quantityCancelled;
   }
@@ -318,25 +318,25 @@ public class SpecialInvoiceProduct
   }
 
   @JsonGetter( "SalesOrderId" )
-  public int salesOrderId()
+  public Integer salesOrderId()
   {
     return this.salesOrderId;
   }
 
   @JsonSetter( "SalesOrderId" )
-  public void salesOrderId( final int salesOrderId )
+  public void salesOrderId( final Integer salesOrderId )
   {
     this.salesOrderId = salesOrderId;
   }
 
   @JsonGetter( "SequenceNumber" )
-  public double sequenceNumber()
+  public Double sequenceNumber()
   {
     return this.sequenceNumber;
   }
 
   @JsonSetter( "SequenceNumber" )
-  public void sequenceNumber( final double sequenceNumber )
+  public void sequenceNumber( final Double sequenceNumber )
   {
     this.sequenceNumber = sequenceNumber;
   }
@@ -354,49 +354,49 @@ public class SpecialInvoiceProduct
   }
 
   @JsonGetter( "SpecialOrder" )
-  public boolean specialOrder()
+  public Boolean specialOrder()
   {
     return this.specialOrder;
   }
 
   @JsonSetter( "SpecialOrder" )
-  public void specialOrder( final boolean specialOrder )
+  public void specialOrder( final Boolean specialOrder )
   {
     this.specialOrder = specialOrder;
   }
 
   @JsonGetter( "Taxable" )
-  public boolean taxable()
+  public Boolean taxable()
   {
     return this.taxable;
   }
 
   @JsonSetter( "Taxable" )
-  public void taxable( final boolean taxable )
+  public void taxable( final Boolean taxable )
   {
     this.taxable = taxable;
   }
 
   @JsonGetter( "TicketId" )
-  public int ticketId()
+  public Integer ticketId()
   {
     return this.ticketId;
   }
 
   @JsonSetter( "TicketId" )
-  public void ticketId( final int ticketId )
+  public void ticketId( final Integer ticketId )
   {
     this.ticketId = ticketId;
   }
 
   @JsonGetter( "VendorId" )
-  public int vendorId()
+  public Integer vendorId()
   {
     return this.vendorId;
   }
 
   @JsonSetter( "VendorId" )
-  public void vendorId( final int vendorId )
+  public void vendorId( final Integer vendorId )
   {
     this.vendorId = vendorId;
   }

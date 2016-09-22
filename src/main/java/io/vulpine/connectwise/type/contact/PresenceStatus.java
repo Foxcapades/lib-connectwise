@@ -23,17 +23,17 @@ import io.vulpine.connectwise.type.ConnectwiseCommon;
 public class PresenceStatus extends ConnectwiseCommon
 {
   @JacksonXmlProperty( localName = "ContactId" )
-  protected int contactId;
+  protected Integer contactId;
 
   @JacksonXmlProperty( localName = "PresenceDescription" )
   protected String presenceDescription;
 
-  public int getContactId ()
+  public Integer getContactId ()
   {
     return contactId;
   }
 
-  public void setContactId ( int contactId )
+  public void setContactId ( Integer contactId )
   {
     this.contactId = contactId;
   }

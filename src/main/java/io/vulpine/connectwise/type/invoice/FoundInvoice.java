@@ -7,14 +7,14 @@ import java.util.Date;
 
 public class FoundInvoice
 {
-  private int     id;
+  private Integer     id;
   private String  billingTypeIdentifier;
   private String  agreementName;
   private String  agreementType;
   private String  businessUnit;
   private String  location;
   private String  companyName;
-  private int     TicketNumber;
+  private Integer     TicketNumber;
   private String  ticketSummary;
   private Date    invoiceDate;
   private Date    dueDate;
@@ -23,33 +23,33 @@ public class FoundInvoice
   private String  projectName;
   private String  phaseName;
   private String  territory;
-  private boolean closed;
-  private boolean email;
+  private Boolean closed;
+  private Boolean email;
   private String  invoiceNumber;
-  private boolean glPosted;
+  private Boolean glPosted;
   private String  glBatchIdentifier;
   private String  billingDelivery;
   private String  routedMemberIdentifier;
   private String  routedMemberName;
-  private double  invoiceAmount;
-  private int     contactId;
-  private int     companyId;
-  private int     statusId;
-  private double  paidAmount;
+  private Double  invoiceAmount;
+  private Integer     contactId;
+  private Integer     companyId;
+  private Integer     statusId;
+  private Double  paidAmount;
   private Date    paidDate;
-  private int     projectId;
-  private int     agreementId;
+  private Integer     projectId;
+  private Integer     agreementId;
   private String  updatedBy;
   private Date    lastUpdated;
 
   @JsonGetter( "AgreementId" )
-  public int agreementId()
+  public Integer agreementId()
   {
     return this.agreementId;
   }
 
   @JsonSetter( "AgreementId" )
-  public void agreementId( final int agreementId )
+  public void agreementId( final Integer agreementId )
   {
     this.agreementId = agreementId;
   }
@@ -115,25 +115,25 @@ public class FoundInvoice
   }
 
   @JsonGetter( "Closed" )
-  public boolean closed()
+  public Boolean closed()
   {
     return this.closed;
   }
 
   @JsonSetter( "Closed" )
-  public void closed( final boolean closed )
+  public void closed( final Boolean closed )
   {
     this.closed = closed;
   }
 
   @JsonGetter( "CompanyId" )
-  public int companyId()
+  public Integer companyId()
   {
     return this.companyId;
   }
 
   @JsonSetter( "CompanyId" )
-  public void companyId( final int companyId )
+  public void companyId( final Integer companyId )
   {
     this.companyId = companyId;
   }
@@ -151,13 +151,13 @@ public class FoundInvoice
   }
 
   @JsonGetter( "ContactId" )
-  public int contactId()
+  public Integer contactId()
   {
     return this.contactId;
   }
 
   @JsonSetter( "ContactId" )
-  public void contactId( final int contactId )
+  public void contactId( final Integer contactId )
   {
     this.contactId = contactId;
   }
@@ -175,13 +175,13 @@ public class FoundInvoice
   }
 
   @JsonGetter( "Email" )
-  public boolean email()
+  public Boolean email()
   {
     return this.email;
   }
 
   @JsonSetter( "Email" )
-  public void email( final boolean email )
+  public void email( final Boolean email )
   {
     this.email = email;
   }
@@ -199,37 +199,37 @@ public class FoundInvoice
   }
 
   @JsonGetter( "GlPosted" )
-  public boolean glPosted()
+  public Boolean glPosted()
   {
     return this.glPosted;
   }
 
   @JsonSetter( "GlPosted" )
-  public void glPosted( final boolean glPosted )
+  public void glPosted( final Boolean glPosted )
   {
     this.glPosted = glPosted;
   }
 
   @JsonGetter( "Id" )
-  public int id()
+  public Integer id()
   {
     return this.id;
   }
 
   @JsonSetter( "Id" )
-  public void id( final int id )
+  public void id( final Integer id )
   {
     this.id = id;
   }
 
   @JsonGetter( "InvoiceAmount" )
-  public double invoiceAmount()
+  public Double invoiceAmount()
   {
     return this.invoiceAmount;
   }
 
   @JsonSetter( "InvoiceAmount" )
-  public void invoiceAmount( final double invoiceAmount )
+  public void invoiceAmount( final Double invoiceAmount )
   {
     this.invoiceAmount = invoiceAmount;
   }
@@ -295,13 +295,13 @@ public class FoundInvoice
   }
 
   @JsonGetter( "PaidAmount" )
-  public double paidAmount()
+  public Double paidAmount()
   {
     return this.paidAmount;
   }
 
   @JsonSetter( "PaidAmount" )
-  public void paidAmount( final double paidAmount )
+  public void paidAmount( final Double paidAmount )
   {
     this.paidAmount = paidAmount;
   }
@@ -331,13 +331,13 @@ public class FoundInvoice
   }
 
   @JsonGetter( "ProjectId" )
-  public int projectId()
+  public Integer projectId()
   {
     return this.projectId;
   }
 
   @JsonSetter( "ProjectId" )
-  public void projectId( final int projectId )
+  public void projectId( final Integer projectId )
   {
     this.projectId = projectId;
   }
@@ -391,13 +391,13 @@ public class FoundInvoice
   }
 
   @JsonGetter( "StatusId" )
-  public int statusId()
+  public Integer statusId()
   {
     return this.statusId;
   }
 
   @JsonSetter( "StatusId" )
-  public void statusId( final int statusId )
+  public void statusId( final Integer statusId )
   {
     this.statusId = statusId;
   }

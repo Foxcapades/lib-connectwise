@@ -34,17 +34,17 @@ public class FoundEntry extends ConnectwiseCommon
 
   private Date endTime;
 
-  private double hoursActual;
+  private Double hoursActual;
 
-  private double hoursInvoiced;
+  private Double hoursInvoiced;
 
-  private double hourlyRate;
+  private Double hourlyRate;
 
   private String notes;
 
   private String internalNotes;
 
-  private int ticketId;
+  private Integer ticketId;
 
   private String workRole;
 
@@ -54,20 +54,20 @@ public class FoundEntry extends ConnectwiseCommon
 
   private String invoiceNumber;
 
-  private double hoursBilled;
+  private Double hoursBilled;
 
-  private double hoursDeduct;
+  private Double hoursDeduct;
 
-  private int agreementId;
+  private Integer agreementId;
 
   @JsonGetter( "AgreementId" )
-  public int agreementId()
+  public Integer agreementId()
   {
     return this.agreementId;
   }
 
   @JsonSetter( "AgreementId" )
-  public FoundEntry agreementId( final int agreementId )
+  public FoundEntry agreementId( final Integer agreementId )
   {
     this.agreementId = agreementId;
 
@@ -103,13 +103,13 @@ public class FoundEntry extends ConnectwiseCommon
   }
 
   @JsonGetter( "HourlyRate" )
-  public double hourlyRate()
+  public Double hourlyRate()
   {
     return this.hourlyRate;
   }
 
   @JsonSetter( "HourlyRate" )
-  public FoundEntry hourlyRate( final int hourlyRate )
+  public FoundEntry hourlyRate( final Double hourlyRate )
   {
     this.hourlyRate = hourlyRate;
 
@@ -117,13 +117,13 @@ public class FoundEntry extends ConnectwiseCommon
   }
 
   @JsonGetter( "HoursActual" )
-  public double hoursActual()
+  public Double hoursActual()
   {
     return this.hoursActual;
   }
 
   @JsonSetter( "HoursActual" )
-  public FoundEntry hoursActual( final int hoursActual )
+  public FoundEntry hoursActual( final Double hoursActual )
   {
     this.hoursActual = hoursActual;
 
@@ -131,13 +131,13 @@ public class FoundEntry extends ConnectwiseCommon
   }
 
   @JsonGetter( "HoursBilled" )
-  public double hoursBilled()
+  public Double hoursBilled()
   {
     return this.hoursBilled;
   }
 
   @JsonSetter( "HoursBilled" )
-  public FoundEntry hoursBilled( final int hoursBilled )
+  public FoundEntry hoursBilled( final Double hoursBilled )
   {
     this.hoursBilled = hoursBilled;
 
@@ -145,13 +145,13 @@ public class FoundEntry extends ConnectwiseCommon
   }
 
   @JsonGetter( "HoursDeduct" )
-  public double hoursDeduct()
+  public Double hoursDeduct()
   {
     return this.hoursDeduct;
   }
 
   @JsonSetter( "HoursDeduct" )
-  public FoundEntry hoursDeduct( final int hoursDeduct )
+  public FoundEntry hoursDeduct( final Double hoursDeduct )
   {
     this.hoursDeduct = hoursDeduct;
 
@@ -159,13 +159,13 @@ public class FoundEntry extends ConnectwiseCommon
   }
 
   @JsonGetter( "HoursInvoiced" )
-  public double hoursInvoiced()
+  public Double hoursInvoiced()
   {
     return this.hoursInvoiced;
   }
 
   @JsonSetter( "HoursInvoiced" )
-  public FoundEntry hoursInvoiced( final int hoursInvoiced )
+  public FoundEntry hoursInvoiced( final Double hoursInvoiced )
   {
     this.hoursInvoiced = hoursInvoiced;
 
@@ -271,13 +271,13 @@ public class FoundEntry extends ConnectwiseCommon
   }
 
   @JsonGetter( "TicketId" )
-  public int ticketId()
+  public Integer ticketId()
   {
     return this.ticketId;
   }
 
   @JsonSetter( "TicketId" )
-  public FoundEntry ticketId( final int ticketId )
+  public FoundEntry ticketId( final Integer ticketId )
   {
     this.ticketId = ticketId;
 

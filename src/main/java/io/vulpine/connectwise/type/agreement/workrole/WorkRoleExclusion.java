@@ -23,27 +23,27 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 public class WorkRoleExclusion extends WorkRoleCommon
 {
   @JacksonXmlProperty( localName = "AddAllWorkRoles" )
-  protected boolean addAllWorkRoles;
+  protected Boolean addAllWorkRoles;
 
   @JacksonXmlProperty( localName = "RemoveAllWorkRoles" )
-  protected boolean removeAllWorkRoles;
+  protected Boolean removeAllWorkRoles;
 
-  public boolean isAddAllWorkRoles()
+  public Boolean isAddAllWorkRoles()
   {
     return addAllWorkRoles;
   }
 
-  public void setAddAllWorkRoles( boolean addAllWorkRoles )
+  public void setAddAllWorkRoles( Boolean addAllWorkRoles )
   {
     this.addAllWorkRoles = addAllWorkRoles;
   }
 
-  public boolean isRemoveAllWorkRoles()
+  public Boolean isRemoveAllWorkRoles()
   {
     return removeAllWorkRoles;
   }
 
-  public void setRemoveAllWorkRoles( boolean removeAllWorkRoles )
+  public void setRemoveAllWorkRoles( Boolean removeAllWorkRoles )
   {
     this.removeAllWorkRoles = removeAllWorkRoles;
   }

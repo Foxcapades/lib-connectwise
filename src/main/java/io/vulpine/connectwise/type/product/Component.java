@@ -22,31 +22,31 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 public class Component extends ProductCommon
 {
   @JacksonXmlProperty( localName = "SequenceNumber" )
-  protected int sequenceNumber;
+  protected Integer sequenceNumber;
 
   @JacksonXmlProperty( localName = "ParentId" )
-  protected int parentId;
+  protected Integer parentId;
 
   @JacksonXmlProperty( localName = "Quantity" )
-  protected int quantity;
+  protected Integer quantity;
 
   @JacksonXmlProperty( localName = "ProductId" )
-  protected int productId;
+  protected Integer productId;
 
   @JacksonXmlProperty( localName = "ItemId" )
-  protected int itemId;
+  protected Integer itemId;
 
   @JacksonXmlProperty( localName = "HidePrice" )
-  protected boolean hidePrice;
+  protected Boolean hidePrice;
 
   @JacksonXmlProperty( localName = "HideItemId" )
-  protected boolean hideItemId;
+  protected Boolean hideItemId;
 
   @JacksonXmlProperty( localName = "HideDescription" )
-  protected boolean hideDescription;
+  protected Boolean hideDescription;
 
   @JacksonXmlProperty( localName = "HideQuantity" )
-  protected boolean hideQuantity;
+  protected Boolean hideQuantity;
 
   @JacksonXmlProperty( localName = "Warehouse" )
   protected String warehouse;
@@ -54,92 +54,92 @@ public class Component extends ProductCommon
   @JacksonXmlProperty( localName = "Bin" )
   protected String bin;
 
-  public int getSequenceNumber ()
+  public Integer getSequenceNumber ()
   {
     return sequenceNumber;
   }
 
-  public void setSequenceNumber ( final int sequenceNumber )
+  public void setSequenceNumber ( final Integer sequenceNumber )
   {
     this.sequenceNumber = sequenceNumber;
   }
 
-  public int getParentId ()
+  public Integer getParentId ()
   {
     return parentId;
   }
 
-  public void setParentId ( final int parentId )
+  public void setParentId ( final Integer parentId )
   {
     this.parentId = parentId;
   }
 
-  public int getQuantity ()
+  public Integer getQuantity ()
   {
     return quantity;
   }
 
-  public void setQuantity ( final int quantity )
+  public void setQuantity ( final Integer quantity )
   {
     this.quantity = quantity;
   }
 
-  public int getProductId ()
+  public Integer getProductId ()
   {
     return productId;
   }
 
-  public void setProductId ( final int productId )
+  public void setProductId ( final Integer productId )
   {
     this.productId = productId;
   }
 
-  public int getItemId ()
+  public Integer getItemId ()
   {
     return itemId;
   }
 
-  public void setItemId ( final int itemId )
+  public void setItemId ( final Integer itemId )
   {
     this.itemId = itemId;
   }
 
-  public boolean isHidePrice ()
+  public Boolean isHidePrice ()
   {
     return hidePrice;
   }
 
-  public void setHidePrice ( final boolean hidePrice )
+  public void setHidePrice ( final Boolean hidePrice )
   {
     this.hidePrice = hidePrice;
   }
 
-  public boolean isHideItemId ()
+  public Boolean isHideItemId ()
   {
     return hideItemId;
   }
 
-  public void setHideItemId ( final boolean hideItemId )
+  public void setHideItemId ( final Boolean hideItemId )
   {
     this.hideItemId = hideItemId;
   }
 
-  public boolean isHideDescription ()
+  public Boolean isHideDescription ()
   {
     return hideDescription;
   }
 
-  public void setHideDescription ( final boolean hideDescription )
+  public void setHideDescription ( final Boolean hideDescription )
   {
     this.hideDescription = hideDescription;
   }
 
-  public boolean isHideQuantity ()
+  public Boolean isHideQuantity ()
   {
     return hideQuantity;
   }
 
-  public void setHideQuantity ( final boolean hideQuantity )
+  public void setHideQuantity ( final Boolean hideQuantity )
   {
     this.hideQuantity = hideQuantity;
   }

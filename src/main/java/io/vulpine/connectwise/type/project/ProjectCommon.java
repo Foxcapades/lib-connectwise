@@ -22,14 +22,14 @@ import io.vulpine.connectwise.type.ConnectwiseCommon;
 class ProjectCommon extends ConnectwiseCommon
 {
   @JacksonXmlProperty(localName = "ProjectId")
-  protected int projectId;
+  protected Integer projectId;
 
-  public int getProjectId()
+  public Integer getProjectId()
   {
     return projectId;
   }
 
-  public void setProjectId( final int projectId )
+  public void setProjectId( final Integer projectId )
   {
     this.projectId = projectId;
   }

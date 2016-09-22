@@ -25,10 +25,10 @@ public class ProjectNote extends ProjectCommon
   protected String notes;
 
   @JacksonXmlProperty(localName = "NoteTypeId")
-  protected int noteTypeId;
+  protected Integer noteTypeId;
 
   @JacksonXmlProperty (localName = "Flag")
-  protected boolean flag;
+  protected Boolean flag;
 
   public String getNotes ()
   {
@@ -40,22 +40,22 @@ public class ProjectNote extends ProjectCommon
     this.notes = notes;
   }
 
-  public int getNoteTypeId ()
+  public Integer getNoteTypeId ()
   {
     return noteTypeId;
   }
 
-  public void setNoteTypeId ( final int noteTypeId )
+  public void setNoteTypeId ( final Integer noteTypeId )
   {
     this.noteTypeId = noteTypeId;
   }
 
-  public boolean isFlag ()
+  public Boolean isFlag ()
   {
     return flag;
   }
 
-  public void setFlag ( final boolean flag )
+  public void setFlag ( final Boolean flag )
   {
     this.flag = flag;
   }

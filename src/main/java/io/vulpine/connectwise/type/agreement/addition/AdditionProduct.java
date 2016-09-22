@@ -24,31 +24,31 @@ import io.vulpine.connectwise.type.agreement.ProductClass;
 
 public class AdditionProduct extends ConnectwiseCommon
 {
-  private boolean applyCostBySerialNumber;
+  private Boolean applyCostBySerialNumber;
 
-  private boolean inactive;
+  private Boolean inactive;
 
-  private boolean serialized;
+  private Boolean serialized;
 
-  private boolean taxable;
+  private Boolean taxable;
 
-  private double cost;
+  private Double cost;
 
-  private double price;
+  private Double price;
 
-  private int categoryId;
+  private Integer categoryId;
 
-  private int manufacturerId;
+  private Integer manufacturerId;
 
-  private int minimumStock;
+  private Integer minimumStock;
 
-  private int productTypeId;
+  private Integer productTypeId;
 
-  private int subcategoryId;
+  private Integer subcategoryId;
 
-  private int uomId;
+  private Integer uomId;
 
-  private int vendorId;
+  private Integer vendorId;
 
   private PriceAttribute priceAttribute;
 
@@ -63,13 +63,13 @@ public class AdditionProduct extends ConnectwiseCommon
   private String vendorSku;
 
   @JsonGetter( "CategoryId" )
-  public int categoryId()
+  public Integer categoryId()
   {
     return categoryId;
   }
 
   @JsonSetter( "CategoryId" )
-  public AdditionProduct categoryId( final int categoryId )
+  public AdditionProduct categoryId( final Integer categoryId )
   {
     this.categoryId = categoryId;
 
@@ -77,13 +77,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "Cost" )
-  public double cost()
+  public Double cost()
   {
     return cost;
   }
 
   @JsonSetter( "Cost" )
-  public AdditionProduct cost( final double cost )
+  public AdditionProduct cost( final Double cost )
   {
     this.cost = cost;
 
@@ -119,13 +119,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "ManufacturerId" )
-  public int manufacturerId()
+  public Integer manufacturerId()
   {
     return manufacturerId;
   }
 
   @JsonSetter( "ManufacturerId" )
-  public AdditionProduct manufacturerId( final int manufacturerId )
+  public AdditionProduct manufacturerId( final Integer manufacturerId )
   {
     this.manufacturerId = manufacturerId;
 
@@ -147,13 +147,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "MinimumStock" )
-  public int minimumStock()
+  public Integer minimumStock()
   {
     return minimumStock;
   }
 
   @JsonSetter( "MinimumStock" )
-  public AdditionProduct minimumStock( final int minimumStock )
+  public AdditionProduct minimumStock( final Integer minimumStock )
   {
     this.minimumStock = minimumStock;
 
@@ -161,13 +161,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "Price" )
-  public double price()
+  public Double price()
   {
     return price;
   }
 
   @JsonSetter( "Price" )
-  public AdditionProduct price( final double price )
+  public AdditionProduct price( final Double price )
   {
     this.price = price;
 
@@ -203,13 +203,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "ProductTypeId" )
-  public int productTypeId()
+  public Integer productTypeId()
   {
     return productTypeId;
   }
 
   @JsonSetter( "ProductTypeId" )
-  public AdditionProduct productTypeId( final int productTypeId )
+  public AdditionProduct productTypeId( final Integer productTypeId )
   {
     this.productTypeId = productTypeId;
 
@@ -217,13 +217,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "SubcategoryId" )
-  public int subcategoryId()
+  public Integer subcategoryId()
   {
     return subcategoryId;
   }
 
   @JsonSetter( "SubcategoryId" )
-  public AdditionProduct subcategoryId( final int subcategoryId )
+  public AdditionProduct subcategoryId( final Integer subcategoryId )
   {
     this.subcategoryId = subcategoryId;
 
@@ -231,13 +231,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "UomId" )
-  public int uomId()
+  public Integer uomId()
   {
     return uomId;
   }
 
   @JsonSetter( "UomId" )
-  public AdditionProduct uomId( final int uomId )
+  public AdditionProduct uomId( final Integer uomId )
   {
     this.uomId = uomId;
 
@@ -245,13 +245,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "VendorId" )
-  public int vendorId()
+  public Integer vendorId()
   {
     return vendorId;
   }
 
   @JsonSetter( "VendorId" )
-  public AdditionProduct vendorId( final int vendorId )
+  public AdditionProduct vendorId( final Integer vendorId )
   {
     this.vendorId = vendorId;
 
@@ -273,13 +273,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "ApplyCostBySerialNumber" )
-  public boolean applyCostBySerialNumber()
+  public Boolean applyCostBySerialNumber()
   {
     return applyCostBySerialNumber;
   }
 
   @JsonSetter( "ApplyCostBySerialNumber" )
-  public AdditionProduct applyCostBySerialNumber( final boolean applyCostBySerialNumber )
+  public AdditionProduct applyCostBySerialNumber( final Boolean applyCostBySerialNumber )
   {
     this.applyCostBySerialNumber = applyCostBySerialNumber;
 
@@ -287,13 +287,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "Inactive" )
-  public boolean inactive()
+  public Boolean inactive()
   {
     return inactive;
   }
 
   @JsonSetter( "Inactive" )
-  public AdditionProduct inactive( final boolean inactive )
+  public AdditionProduct inactive( final Boolean inactive )
   {
     this.inactive = inactive;
 
@@ -301,13 +301,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "Serialized" )
-  public boolean serialized()
+  public Boolean serialized()
   {
     return serialized;
   }
 
   @JsonSetter( "Serialized" )
-  public AdditionProduct serialized( final boolean serialized )
+  public AdditionProduct serialized( final Boolean serialized )
   {
     this.serialized = serialized;
 
@@ -315,13 +315,13 @@ public class AdditionProduct extends ConnectwiseCommon
   }
 
   @JsonGetter( "Taxable" )
-  public boolean taxable()
+  public Boolean taxable()
   {
     return taxable;
   }
 
   @JsonSetter( "Taxable" )
-  public AdditionProduct taxable( final boolean taxable )
+  public AdditionProduct taxable( final Boolean taxable )
   {
     this.taxable = taxable;
 

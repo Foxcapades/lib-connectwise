@@ -31,7 +31,7 @@ public class ContactCommunicationItem extends ConnectwiseCommon
   protected Type type;
 
   @JacksonXmlProperty( localName = "CommunicationTypeId" )
-  protected int communicationTypeId;
+  protected Integer communicationTypeId;
 
   @JacksonXmlProperty( localName = "Value" )
   protected String value;
@@ -40,7 +40,7 @@ public class ContactCommunicationItem extends ConnectwiseCommon
   protected String valueExtension;
 
   @JacksonXmlProperty( localName = "IsDefaultForType" )
-  protected boolean isDefaultForType;
+  protected Boolean isDefaultForType;
 
   public Type getType ()
   {
@@ -52,12 +52,12 @@ public class ContactCommunicationItem extends ConnectwiseCommon
     this.type = type;
   }
 
-  public int getCommunicationTypeId ()
+  public Integer getCommunicationTypeId ()
   {
     return communicationTypeId;
   }
 
-  public void setCommunicationTypeId ( int communicationTypeId )
+  public void setCommunicationTypeId ( Integer communicationTypeId )
   {
     this.communicationTypeId = communicationTypeId;
   }
@@ -82,12 +82,12 @@ public class ContactCommunicationItem extends ConnectwiseCommon
     this.valueExtension = valueExtension;
   }
 
-  public boolean isDefaultForType ()
+  public Boolean isDefaultForType ()
   {
     return isDefaultForType;
   }
 
-  public void setDefaultForType ( boolean defaultForType )
+  public void setDefaultForType ( Boolean defaultForType )
   {
     isDefaultForType = defaultForType;
   }

@@ -25,16 +25,16 @@ public class Adjustment extends AbstractSubAgreement
 {
   private Date effectiveDate;
 
-  private double adjustmentAmount;
+  private Double adjustmentAmount;
 
   @JsonGetter( "AdjustmentAmount" )
-  public double adjustmentAmount()
+  public Double adjustmentAmount()
   {
     return adjustmentAmount;
   }
 
   @JsonSetter( "AdjustmentAmount" )
-  public Adjustment adjustmentAmount( double adjustmentAmount )
+  public Adjustment adjustmentAmount( Double adjustmentAmount )
   {
     this.adjustmentAmount = adjustmentAmount;
 

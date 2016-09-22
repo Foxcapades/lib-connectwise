@@ -57,13 +57,13 @@ public class Address extends ConnectwiseCommon
   }
 
   @JsonGetter( "CompanyId" )
-  public int companyId()
+  public Integer companyId()
   {
     return companyId;
   }
 
    @JsonSetter( "CompanyId" )
-  public void companyId( final int companyId )
+  public void companyId( final Integer companyId )
   {
     this.companyId = companyId;
   }
@@ -131,49 +131,49 @@ public class Address extends ConnectwiseCommon
   }
 
   @JsonGetter( "DefaultBillFlag" )
-  public boolean defaultBillFlag()
+  public Boolean defaultBillFlag()
   {
     return defaultBillFlag;
   }
 
   @JsonSetter( "DefaultBillFlag" )
-  public void defaultBillFlag( final boolean defaultBillFlag )
+  public void defaultBillFlag( final Boolean defaultBillFlag )
   {
     this.defaultBillFlag = defaultBillFlag;
   }
 
   @JsonGetter( "DefaultFlag" )
-  public boolean defaultFlag()
+  public Boolean defaultFlag()
   {
     return defaultFlag;
   }
 
   @JsonSetter( "DefaultFlag" )
-  public void defaultFlag( final boolean defaultFlag )
+  public void defaultFlag( final Boolean defaultFlag )
   {
     this.defaultFlag = defaultFlag;
   }
 
   @JsonGetter( "DefaultShipFlag" )
-  public boolean defaultShipFlag()
+  public Boolean defaultShipFlag()
   {
     return defaultShipFlag;
   }
 
   @JsonSetter( "DefaultShipFlag" )
-  public void defaultShipFlag( final boolean defaultShipFlag )
+  public void defaultShipFlag( final Boolean defaultShipFlag )
   {
     this.defaultShipFlag = defaultShipFlag;
   }
 
   @JsonGetter( "InactiveFlag" )
-  public boolean inactiveFlag()
+  public Boolean inactiveFlag()
   {
     return inactiveFlag;
   }
 
   @JsonSetter( "InactiveFlag" )
-  public void inactiveFlag( final boolean inactiveFlag )
+  public void inactiveFlag( final Boolean inactiveFlag )
   {
     this.inactiveFlag = inactiveFlag;
   }

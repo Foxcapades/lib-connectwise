@@ -30,7 +30,7 @@ public class ConnectwiseCommon
 
   private Date lastUpdated;
 
-  private int id;
+  private Integer id;
 
   private String description;
 
@@ -38,13 +38,13 @@ public class ConnectwiseCommon
 
 
   @JsonGetter( "Id" )
-  public int id()
+  public Integer id()
   {
     return id;
   }
 
   @JsonSetter( "Id" )
-  public ConnectwiseCommon id( final int id )
+  public ConnectwiseCommon id( final Integer id )
   {
     this.id = id;
 

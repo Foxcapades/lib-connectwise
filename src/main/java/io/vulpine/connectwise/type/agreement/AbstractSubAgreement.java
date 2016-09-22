@@ -21,16 +21,16 @@ import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 public abstract class AbstractSubAgreement extends ConnectwiseCommon
 {
-  protected int agreementId;
+  protected Integer agreementId;
 
   @JsonGetter( "AgreementId" )
-  public int agreementId ()
+  public Integer agreementId ()
   {
     return agreementId;
   }
 
   @JsonSetter( "AgreementId" )
-  public void agreementId ( int agreementId )
+  public void agreementId ( Integer agreementId )
   {
     this.agreementId = agreementId;
   }

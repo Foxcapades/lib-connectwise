@@ -21,20 +21,20 @@ import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 
 public class BoardDefault extends AbstractSubAgreement
 {
-  private boolean isDefault;
+  private Boolean isDefault;
 
-  private int boardId;
+  private Integer boardId;
 
-  private int serviceTypeId;
+  private Integer serviceTypeId;
 
   @JsonGetter( "BoardId" )
-  public int boardId ()
+  public Integer boardId ()
   {
     return boardId;
   }
 
   @JsonSetter( "BoardId" )
-  public BoardDefault boardId ( int boardId )
+  public BoardDefault boardId ( Integer boardId )
   {
     this.boardId = boardId;
 
@@ -42,13 +42,13 @@ public class BoardDefault extends AbstractSubAgreement
   }
 
   @JsonGetter( "ServiceTypeId" )
-  public int serviceTypeId ()
+  public Integer serviceTypeId ()
   {
     return serviceTypeId;
   }
 
   @JsonSetter( "ServiceTypeId" )
-  public BoardDefault serviceTypeId ( int serviceTypeId )
+  public BoardDefault serviceTypeId ( Integer serviceTypeId )
   {
     this.serviceTypeId = serviceTypeId;
 
@@ -56,13 +56,13 @@ public class BoardDefault extends AbstractSubAgreement
   }
 
   @JsonGetter( "DefaultFlag" )
-  public boolean defaultFlag ()
+  public Boolean defaultFlag ()
   {
     return isDefault;
   }
 
   @JsonSetter( "DefaultFlag" )
-  public BoardDefault defaultFlag ( boolean aDefault )
+  public BoardDefault defaultFlag ( Boolean aDefault )
   {
     isDefault = aDefault;
 

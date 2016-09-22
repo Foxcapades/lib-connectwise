@@ -25,10 +25,10 @@ public class ConfigurationType extends ConnectwiseCommon
   protected String name;
 
   @JacksonXmlProperty( localName = "InactiveFlag" )
-  protected boolean inactiveFlag;
+  protected Boolean inactiveFlag;
 
   @JacksonXmlProperty( localName = "SystemFlag" )
-  protected boolean systemFlag;
+  protected Boolean systemFlag;
 
   @JacksonXmlProperty (localName = "ConfigurationTypeQuestions")
   protected ConfigurationTypeQuestion[] configurationTypeQuestions;
@@ -43,22 +43,22 @@ public class ConfigurationType extends ConnectwiseCommon
     this.name = name;
   }
 
-  public boolean isInactiveFlag ()
+  public Boolean isInactiveFlag ()
   {
     return inactiveFlag;
   }
 
-  public void setInactiveFlag ( boolean inactiveFlag )
+  public void setInactiveFlag ( Boolean inactiveFlag )
   {
     this.inactiveFlag = inactiveFlag;
   }
 
-  public boolean isSystemFlag ()
+  public Boolean isSystemFlag ()
   {
     return systemFlag;
   }
 
-  public void setSystemFlag ( boolean systemFlag )
+  public void setSystemFlag ( Boolean systemFlag )
   {
     this.systemFlag = systemFlag;
   }

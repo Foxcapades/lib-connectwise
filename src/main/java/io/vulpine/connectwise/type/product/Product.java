@@ -51,7 +51,7 @@ public class Product extends ProductCommon
   protected String productClass;
 
   @JacksonXmlProperty( localName = "IsPhaseProduct" )
-  protected boolean phaseProduct;
+  protected Boolean phaseProduct;
 
   @JacksonXmlProperty( localName = "ManufacturerPartNumber" )
   protected String manufacturerPartNumber;
@@ -152,12 +152,12 @@ public class Product extends ProductCommon
     this.productClass = productClass;
   }
 
-  public boolean isPhaseProduct ()
+  public Boolean isPhaseProduct ()
   {
     return phaseProduct;
   }
 
-  public void setPhaseProduct ( final boolean phaseProduct )
+  public void setPhaseProduct ( final Boolean phaseProduct )
   {
     this.phaseProduct = phaseProduct;
   }

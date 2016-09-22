@@ -31,7 +31,7 @@ public class FoundContact extends ConnectwiseCommon
   private String companyName;
 
   @JacksonXmlProperty( localName = "CompanyId" )
-  private int companyId;
+  private Integer companyId;
 
   @JacksonXmlProperty( localName = "Phone" )
   private String phone;
@@ -46,7 +46,7 @@ public class FoundContact extends ConnectwiseCommon
   private String relationship;
 
   @JacksonXmlProperty( localName = "DefaultFlag" )
-  private boolean isDefault;
+  private Boolean isDefault;
 
   @JacksonXmlProperty( localName = "AddressLine1" )
   private String addressLine1;
@@ -67,10 +67,10 @@ public class FoundContact extends ConnectwiseCommon
   private String country;
 
   @JacksonXmlProperty( localName = "PortalSecurityLevel" )
-  private int portalSecurityLevel;
+  private Integer portalSecurityLevel;
 
   @JacksonXmlProperty( localName = "DisablePortalLogin" )
-  private boolean isPortalLoginDisabled;
+  private Boolean isPortalLoginDisabled;
 
   @JacksonXmlProperty( localName = "PortalSecurityCaption" )
   private String portalSecurityCaption;
@@ -79,10 +79,10 @@ public class FoundContact extends ConnectwiseCommon
   private String sid;
 
   @JacksonXmlProperty( localName = "ManagerId" )
-  private int managerId;
+  private Integer managerId;
 
   @JacksonXmlProperty( localName = "AssistantId" )
-  private int assistantId;
+  private Integer assistantId;
 
   public FoundContact()
   {
@@ -118,12 +118,12 @@ public class FoundContact extends ConnectwiseCommon
     this.companyName = companyName;
   }
 
-  public int getCompanyId()
+  public Integer getCompanyId()
   {
     return companyId;
   }
 
-  public void setCompanyId( final int companyId )
+  public void setCompanyId( final Integer companyId )
   {
     this.companyId = companyId;
   }
@@ -168,12 +168,12 @@ public class FoundContact extends ConnectwiseCommon
     this.relationship = relationship;
   }
 
-  public boolean isDefault()
+  public Boolean isDefault()
   {
     return isDefault;
   }
 
-  public void setDefault( final boolean aDefault )
+  public void setDefault( final Boolean aDefault )
   {
     isDefault = aDefault;
   }
@@ -238,22 +238,22 @@ public class FoundContact extends ConnectwiseCommon
     this.country = country;
   }
 
-  public int getPortalSecurityLevel()
+  public Integer getPortalSecurityLevel()
   {
     return portalSecurityLevel;
   }
 
-  public void setPortalSecurityLevel( final int portalSecurityLevel )
+  public void setPortalSecurityLevel( final Integer portalSecurityLevel )
   {
     this.portalSecurityLevel = portalSecurityLevel;
   }
 
-  public boolean isPortalLoginDisabled()
+  public Boolean isPortalLoginDisabled()
   {
     return isPortalLoginDisabled;
   }
 
-  public void setPortalLoginDisabled( final boolean portalLoginDisabled )
+  public void setPortalLoginDisabled( final Boolean portalLoginDisabled )
   {
     isPortalLoginDisabled = portalLoginDisabled;
   }
@@ -278,22 +278,22 @@ public class FoundContact extends ConnectwiseCommon
     this.sid = sid;
   }
 
-  public int getManagerId()
+  public Integer getManagerId()
   {
     return managerId;
   }
 
-  public void setManagerId( final int managerId )
+  public void setManagerId( final Integer managerId )
   {
     this.managerId = managerId;
   }
 
-  public int getAssistantId()
+  public Integer getAssistantId()
   {
     return assistantId;
   }
 
-  public void setAssistantId( final int assistantId )
+  public void setAssistantId( final Integer assistantId )
   {
     this.assistantId = assistantId;
   }
