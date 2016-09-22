@@ -124,7 +124,6 @@ public final class ConnectwiseApi implements ConnectwiseInterface
     final Logger       log = this.logger;
     final String       response;
 
-    System.out.println(xml);
     log.trace(ConnectwiseApi.class, url, xml);
     log.debug(String.format("Connectwise Request: %s", xml));
 
