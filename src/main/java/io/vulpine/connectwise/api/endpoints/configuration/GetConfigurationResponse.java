@@ -19,13 +19,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import io.vulpine.connectwise.api.common.ResponseData;
-import io.vulpine.connectwise.type.configuration.Configuration;
+import io.vulpine.connectwise.type.configuration.SimpleConfiguration;
 
 @JsonRootName( "GetConfigurationResponse" )
-public class GetConfigurationResponse extends ResponseData < Configuration >
+public class GetConfigurationResponse extends ResponseData < SimpleConfiguration >
 {
   @JsonCreator
-  public GetConfigurationResponse( @JsonProperty( "GetConfigurationResult" ) final Configuration result )
+  public GetConfigurationResponse( @JsonProperty( "GetConfigurationResult" ) final SimpleConfiguration result )
   {
     super(result);
   }

@@ -20,44 +20,34 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
+import io.vulpine.connectwise.util.Field;
+import io.vulpine.connectwise.util.SimpleField;
 
 import java.util.Date;
 import java.util.List;
 
 @JsonRootName( "Configuration" )
-public class Configuration extends ConnectwiseCommon
+public class SimpleConfiguration extends ConnectwiseCommon implements io.vulpine.connectwise.type.def.Configuration
 {
-  private Integer addressId = null;
+  private Field < Integer >
+    addressId             = new SimpleField <>("AddressId"),
+    backupFailed          = new SimpleField <>("BackupFailed"),
+    backupIncomplete      = new SimpleField <>("BackupIncomplete"),
+    backupMonth           = new SimpleField <>("BackupMonth"),
+    backupRestores        = new SimpleField <>("BackupRestores"),
+    backupSuccesses       = new SimpleField <>("BackupSuccesses"),
+    businessUnitId        = new SimpleField <>("BusinessUnitId"),
+    backupYear            = new SimpleField <>("BackupYear"),
+    companyId             = new SimpleField <>("CompanyId"),
+    contactId             = new SimpleField <>("ContactId"),
+    configurationTypeId   = new SimpleField <>("ConfigurationTypeId"),
+    locationId            = new SimpleField <>("LocationId"),
+    parentConfigurationId = new SimpleField <>("ParentConfigurationId"),
+    statusId              = new SimpleField <>("StatusId");
 
-  private Integer backupFailed = null;
-
-  private Integer backupIncomplete = null;
-
-  private Integer backupMonth = null;
-
-  private Integer backupRestores = null;
-
-  private Integer backupSuccesses = null;
-
-  private Integer businessUnitId = null;
-
-  private Integer backupYear = null;
-
-  private Integer companyId = null;
-
-  private Integer contactId = null;
-
-  private Integer configurationTypeId = null;
-
-  private Integer locationId = null;
-
-  private Integer parentConfigurationId = null;
-
-  private Integer statusId = null;
-
-  private Boolean billFlag = null;
-
-  private Boolean isActive = null;
+  private Field < Boolean >
+    billFlag = new SimpleField <>("BillFlag"),
+    isActive = new SimpleField <>("IsActive");
 
   private Double backupBillableSpaceGb = null;
 
@@ -75,63 +65,63 @@ public class Configuration extends ConnectwiseCommon
 
   private Date warrantyExpiration = null;
 
-  private String addressLine1 = null;
+  private Field < String > addressLine1 = new SimpleField <>("AddressLine1");
 
-  private String addressLine2 = null;
+  private Field < String > addressLine2 = new SimpleField <>("AddressLine2");
 
-  private String backupServerName = null;
+  private Field < String > backupServerName = new SimpleField <>("BackupServerName");
 
-  private String backupProtectedDeviceList = null;
+  private Field < String > backupProtectedDeviceList = new SimpleField <>("");
 
-  private String city = null;
+  private Field < String > city = new SimpleField <>();
 
-  private String companyName = null;
+  private Field < String > companyName = new SimpleField <>();
 
-  private String configurationName = null;
+  private Field < String > configurationName = new SimpleField <>();
 
-  private String configurationType = null;
+  private Field < String > configurationType = new SimpleField <>();
 
-  private String contactName = null;
+  private Field < String > contactName = new SimpleField <>();
 
-  private String country = null;
+  private Field < String > country = new SimpleField <>();
 
-  private String cpuSpeed = null;
+  private Field < String > cpuSpeed = new SimpleField <>();
 
-  private String defaultGateway = null;
+  private Field < String > defaultGateway = new SimpleField <>();
 
-  private String deviceIdentifier = null;
+  private Field < String > deviceIdentifier = new SimpleField <>();
 
-  private String installedBy = null;
+  private Field < String > installedBy = new SimpleField <>();
 
-  private String ipAddress = null;
+  private Field < String > ipAddress = new SimpleField <>();
 
-  private String lastLoginName = null;
+  private Field < String > lastLoginName = new SimpleField <>();
 
-  private String localHardDrives = null;
+  private Field < String > localHardDrives = new SimpleField <>();
 
-  private String macAddress = null;
+  private Field < String > macAddress = new SimpleField <>();
 
-  private String modelNumber = null;
+  private Field < String > modelNumber = new SimpleField <>();
 
-  private String notes = null;
+  private Field < String > notes = new SimpleField <>();
 
-  private String osType = null;
+  private Field < String > osType = new SimpleField <>();
 
-  private String osInfo = null;
+  private Field < String > osInfo = new SimpleField <>();
 
-  private String serialNumber = null;
+  private Field < String > serialNumber = new SimpleField <>();
 
-  private String state = null;
+  private Field < String > state = new SimpleField <>();
 
-  private String status = null;
+  private Field < String > status = new SimpleField <>();
 
-  private String ram = null;
+  private Field < String > ram = new SimpleField <>();
 
-  private String tagNumber = null;
+  private Field < String > tagNumber = new SimpleField <>();
 
-  private String vendorNotes = null;
+  private Field < String > vendorNotes = new SimpleField <>();
 
-  private String zipCode = null;
+  private Field < String > zipCode = new SimpleField <>();
 
   @JsonGetter( "IsActive" )
   public Boolean active()
@@ -144,7 +134,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "IsActive" )
-  public Configuration active( Boolean active )
+  public SimpleConfiguration active( Boolean active )
   {
     isActive = active;
 
@@ -162,7 +152,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "AddressId" )
-  public Configuration addressId( final Integer addressId )
+  public SimpleConfiguration addressId( final Integer addressId )
   {
     this.addressId = addressId;
 
@@ -180,7 +170,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "AddressLine1" )
-  public Configuration addressLine1( final String addressLine1 )
+  public SimpleConfiguration addressLine1( final String addressLine1 )
   {
     this.addressLine1 = addressLine1;
 
@@ -198,7 +188,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "AddressLine2" )
-  public Configuration addressLine2( final String addressLine2 )
+  public SimpleConfiguration addressLine2( final String addressLine2 )
   {
     this.addressLine2 = addressLine2;
 
@@ -216,7 +206,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupBillableSpaceGb" )
-  public Configuration backupBillableSpaceGb( Double backupBillableSpaceGb )
+  public SimpleConfiguration backupBillableSpaceGb( Double backupBillableSpaceGb )
   {
     this.backupBillableSpaceGb = backupBillableSpaceGb;
 
@@ -234,7 +224,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupFailed" )
-  public Configuration backupFailed( final Integer backupFailed )
+  public SimpleConfiguration backupFailed( final Integer backupFailed )
   {
     this.backupFailed = backupFailed;
 
@@ -252,7 +242,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupIncomplete" )
-  public Configuration backupIncomplete( final Integer backupIncomplete )
+  public SimpleConfiguration backupIncomplete( final Integer backupIncomplete )
   {
     this.backupIncomplete = backupIncomplete;
 
@@ -270,7 +260,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupMonth" )
-  public Configuration backupMonth( final Integer backupMonth )
+  public SimpleConfiguration backupMonth( final Integer backupMonth )
   {
     this.backupMonth = backupMonth;
 
@@ -288,7 +278,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupProtectedDeviceList" )
-  public Configuration backupProtectedDeviceList( final String backupProtectedDeviceList )
+  public SimpleConfiguration backupProtectedDeviceList( final String backupProtectedDeviceList )
   {
     this.backupProtectedDeviceList = backupProtectedDeviceList;
 
@@ -306,7 +296,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupRestores" )
-  public Configuration backupRestores( final Integer backupRestores )
+  public SimpleConfiguration backupRestores( final Integer backupRestores )
   {
     this.backupRestores = backupRestores;
 
@@ -324,7 +314,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupServerName" )
-  public Configuration backupServerName( final String backupServerName )
+  public SimpleConfiguration backupServerName( final String backupServerName )
   {
     this.backupServerName = backupServerName;
 
@@ -342,7 +332,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupSuccesses" )
-  public Configuration backupSuccesses( final Integer backupSuccesses )
+  public SimpleConfiguration backupSuccesses( final Integer backupSuccesses )
   {
     this.backupSuccesses = backupSuccesses;
 
@@ -360,7 +350,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BackupYear" )
-  public Configuration backupYear( final Integer backupYear )
+  public SimpleConfiguration backupYear( final Integer backupYear )
   {
     this.backupYear = backupYear;
 
@@ -378,7 +368,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BillFlag" )
-  public Configuration billFlag( Boolean billFlag )
+  public SimpleConfiguration billFlag( Boolean billFlag )
   {
     this.billFlag = billFlag;
 
@@ -396,7 +386,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "BusinessUnitId" )
-  public Configuration businessUnitId( final Integer businessUnitId )
+  public SimpleConfiguration businessUnitId( final Integer businessUnitId )
   {
     this.businessUnitId = businessUnitId;
 
@@ -414,7 +404,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "City" )
-  public Configuration city( final String city )
+  public SimpleConfiguration city( final String city )
   {
     this.city = city;
 
@@ -432,7 +422,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "CompanyId" )
-  public Configuration companyId( final Integer companyId )
+  public SimpleConfiguration companyId( final Integer companyId )
   {
     this.companyId = companyId;
 
@@ -450,7 +440,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "CompanyName" )
-  public Configuration companyName( final String companyName )
+  public SimpleConfiguration companyName( final String companyName )
   {
     this.companyName = companyName;
 
@@ -470,7 +460,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ConfigurationName" )
-  public Configuration configurationName( final String configurationName )
+  public SimpleConfiguration configurationName( final String configurationName )
   {
     this.configurationName = configurationName;
 
@@ -488,7 +478,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ConfigurationQuestions" )
-  public Configuration configurationQuestions( final List < ConfigurationQuestion > configurationQuestions )
+  public SimpleConfiguration configurationQuestions( final List < ConfigurationQuestion > configurationQuestions )
   {
     this.configurationQuestions = configurationQuestions;
 
@@ -506,7 +496,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ConfigurationType" )
-  public Configuration configurationType( final String configurationType )
+  public SimpleConfiguration configurationType( final String configurationType )
   {
     this.configurationType = configurationType;
 
@@ -524,7 +514,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ConfigurationTypeId" )
-  public Configuration configurationTypeId( final Integer configurationTypeId )
+  public SimpleConfiguration configurationTypeId( final Integer configurationTypeId )
   {
     this.configurationTypeId = configurationTypeId;
 
@@ -542,7 +532,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ContactId" )
-  public Configuration contactId( final Integer contactId )
+  public SimpleConfiguration contactId( final Integer contactId )
   {
     this.contactId = contactId;
 
@@ -560,7 +550,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ContactName" )
-  public Configuration contactName( final String contactName )
+  public SimpleConfiguration contactName( final String contactName )
   {
     this.contactName = contactName;
 
@@ -578,7 +568,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "Country" )
-  public Configuration country( final String country )
+  public SimpleConfiguration country( final String country )
   {
     this.country = country;
 
@@ -596,7 +586,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "CPUSpeed" )
-  public Configuration cpuSpeed( final String cpuSpeed )
+  public SimpleConfiguration cpuSpeed( final String cpuSpeed )
   {
     this.cpuSpeed = cpuSpeed;
 
@@ -614,7 +604,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "DefaultGateway" )
-  public Configuration defaultGateway( final String defaultGateway )
+  public SimpleConfiguration defaultGateway( final String defaultGateway )
   {
     this.defaultGateway = defaultGateway;
 
@@ -632,7 +622,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "DeviceIdentifier" )
-  public Configuration deviceIdentifier( final String deviceIdentifier )
+  public SimpleConfiguration deviceIdentifier( final String deviceIdentifier )
   {
     this.deviceIdentifier = deviceIdentifier;
 
@@ -648,7 +638,7 @@ public class Configuration extends ConnectwiseCommon
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
   @JsonSetter( "InstallationDate" )
-  public Configuration installationDate( final Date installationDate )
+  public SimpleConfiguration installationDate( final Date installationDate )
   {
     this.installationDate = installationDate;
 
@@ -666,7 +656,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "InstalledBy" )
-  public Configuration installedBy( final String installedBy )
+  public SimpleConfiguration installedBy( final String installedBy )
   {
     this.installedBy = installedBy;
 
@@ -684,7 +674,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "IPAddress" )
-  public Configuration ipAddress( final String ipAddress )
+  public SimpleConfiguration ipAddress( final String ipAddress )
   {
     this.ipAddress = ipAddress;
 
@@ -700,7 +690,7 @@ public class Configuration extends ConnectwiseCommon
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
   @JsonSetter( "LastBackupDate" )
-  public Configuration lastBackupDate( final Date lastBackupDate )
+  public SimpleConfiguration lastBackupDate( final Date lastBackupDate )
   {
     this.lastBackupDate = lastBackupDate;
 
@@ -718,7 +708,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "LastLoginName" )
-  public Configuration lastLoginName( final String lastLoginName )
+  public SimpleConfiguration lastLoginName( final String lastLoginName )
   {
     this.lastLoginName = lastLoginName;
 
@@ -736,7 +726,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "LocalHardDrives" )
-  public Configuration localHardDrives( final String localHardDrives )
+  public SimpleConfiguration localHardDrives( final String localHardDrives )
   {
     this.localHardDrives = localHardDrives;
 
@@ -754,7 +744,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "LocationId" )
-  public Configuration locationId( final Integer locationId )
+  public SimpleConfiguration locationId( final Integer locationId )
   {
     this.locationId = locationId;
 
@@ -772,7 +762,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "MacAddress" )
-  public Configuration macAddress( final String macAddress )
+  public SimpleConfiguration macAddress( final String macAddress )
   {
     this.macAddress = macAddress;
 
@@ -790,7 +780,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ManufacturerCompany" )
-  public Configuration manufacturerCompany( ManufacturerCompany manufacturerCompany )
+  public SimpleConfiguration manufacturerCompany( ManufacturerCompany manufacturerCompany )
   {
     this.manufacturerCompany = manufacturerCompany;
 
@@ -808,7 +798,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ModelNumber" )
-  public Configuration modelNumber( final String modelNumber )
+  public SimpleConfiguration modelNumber( final String modelNumber )
   {
     this.modelNumber = modelNumber;
 
@@ -826,7 +816,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "Notes" )
-  public Configuration notes( final String notes )
+  public SimpleConfiguration notes( final String notes )
   {
     this.notes = notes;
 
@@ -844,7 +834,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "OSInfo" )
-  public Configuration osInfo( final String osInfo )
+  public SimpleConfiguration osInfo( final String osInfo )
   {
     this.osInfo = osInfo;
 
@@ -862,7 +852,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "OSType" )
-  public Configuration osType( final String osType )
+  public SimpleConfiguration osType( final String osType )
   {
     this.osType = osType;
 
@@ -880,7 +870,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ParentConfigurationId" )
-  public Configuration parentConfigurationId( final Integer parentConfigurationId )
+  public SimpleConfiguration parentConfigurationId( final Integer parentConfigurationId )
   {
     this.parentConfigurationId = parentConfigurationId;
 
@@ -896,7 +886,7 @@ public class Configuration extends ConnectwiseCommon
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
   @JsonSetter( "PurchaseDate" )
-  public Configuration purchaseDate( final Date purchaseDate )
+  public SimpleConfiguration purchaseDate( final Date purchaseDate )
   {
     this.purchaseDate = purchaseDate;
 
@@ -914,7 +904,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "RAM" )
-  public Configuration ram( final String ram )
+  public SimpleConfiguration ram( final String ram )
   {
     this.ram = ram;
 
@@ -932,7 +922,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "SerialNumber" )
-  public Configuration serialNumber( final String serialNumber )
+  public SimpleConfiguration serialNumber( final String serialNumber )
   {
     this.serialNumber = serialNumber;
 
@@ -950,7 +940,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "State" )
-  public Configuration state( final String state )
+  public SimpleConfiguration state( final String state )
   {
     this.state = state;
 
@@ -968,7 +958,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "Status" )
-  public Configuration status( final String status )
+  public SimpleConfiguration status( final String status )
   {
     this.status = status;
 
@@ -986,7 +976,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "StatusId" )
-  public Configuration statusId( final Integer statusId )
+  public SimpleConfiguration statusId( final Integer statusId )
   {
     this.statusId = statusId;
 
@@ -1004,7 +994,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "TagNumber" )
-  public Configuration tagNumber( final String tagNumber )
+  public SimpleConfiguration tagNumber( final String tagNumber )
   {
     this.tagNumber = tagNumber;
 
@@ -1022,7 +1012,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "VendorCompany" )
-  public Configuration vendorCompany( VendorCompany vendorCompany )
+  public SimpleConfiguration vendorCompany( VendorCompany vendorCompany )
   {
     this.vendorCompany = vendorCompany;
 
@@ -1040,7 +1030,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "VendorNotes" )
-  public Configuration vendorNotes( final String vendorNotes )
+  public SimpleConfiguration vendorNotes( final String vendorNotes )
   {
     this.vendorNotes = vendorNotes;
 
@@ -1056,7 +1046,7 @@ public class Configuration extends ConnectwiseCommon
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
   @JsonSetter( "WarrantyExpiration" )
-  public Configuration warrantyExpiration( final Date warrantyExpiration )
+  public SimpleConfiguration warrantyExpiration( final Date warrantyExpiration )
   {
     this.warrantyExpiration = warrantyExpiration;
 
@@ -1074,7 +1064,7 @@ public class Configuration extends ConnectwiseCommon
    * @return This Configuration
    */
   @JsonSetter( "ZipCode" )
-  public Configuration zipCode( final String zipCode )
+  public SimpleConfiguration zipCode( final String zipCode )
   {
     this.zipCode = zipCode;
 

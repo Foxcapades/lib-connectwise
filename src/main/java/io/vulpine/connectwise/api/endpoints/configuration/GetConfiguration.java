@@ -20,9 +20,9 @@ import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.common.request.SimpleGetRequest;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.endpoints.Endpoint;
-import io.vulpine.connectwise.type.configuration.Configuration;
+import io.vulpine.connectwise.type.configuration.SimpleConfiguration;
 
-public class GetConfiguration extends SimpleGetRequest < Configuration >
+public class GetConfiguration extends SimpleGetRequest < SimpleConfiguration >
 {
   public GetConfiguration( Credentials credentials, XmlMapper xmlMapper, SubApiInterface api, int id )
   {

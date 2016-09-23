@@ -22,7 +22,6 @@ import io.vulpine.connectwise.type.agreement.RateType;
 
 import java.util.Date;
 
-@SuppressWarnings( "unused" )
 @JacksonXmlRootElement( localName = "GetAgreementWorkTypeResult" )
 public class WorkType extends WorkTypeCommon// implements AgreementWorkType
 {

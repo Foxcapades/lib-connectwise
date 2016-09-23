@@ -13,17 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.type.def;
+package io.vulpine.connectwise.type.def.gen;
 
+import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.util.Field;
 
 import java.util.Date;
 
-public interface HasLastUpdate< T extends XmlSerializable >
+/**
+ * = XmlSerializable Object with a StartDate Field
+ *
+ * @param <T>
+ *
+ * @since 0.10.0
+ * @version 1.0.0
+ */
+public interface HasStartDate < T extends HasStartDate > extends XmlSerializable
 {
-  Date lastUpdate();
+  default Date startDate()
+  {
+    return startDateField().get();
+  }
 
-  Field < Date > lastUpdateField();
+  Field< Date > startDateField();
 
-  T lastUpdate( Date d );
+  T startDate( Date d );
 }

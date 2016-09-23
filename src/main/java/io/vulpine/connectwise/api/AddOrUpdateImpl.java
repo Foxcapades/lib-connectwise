@@ -42,7 +42,7 @@ import io.vulpine.connectwise.type.agreement.workrole.WorkRole;
 import io.vulpine.connectwise.type.agreement.worktype.WorkType;
 import io.vulpine.connectwise.type.company.Company;
 import io.vulpine.connectwise.type.company.CompanyNote;
-import io.vulpine.connectwise.type.configuration.Configuration;
+import io.vulpine.connectwise.type.configuration.SimpleConfiguration;
 import io.vulpine.connectwise.type.configuration.ConfigurationType;
 
 class AddOrUpdateImpl extends ConnectwiseSubApi implements AddOrUpdate
@@ -130,7 +130,7 @@ class AddOrUpdateImpl extends ConnectwiseSubApi implements AddOrUpdate
     return new AddOrUpdateConfiguration();
   }
 
-  public AddOrUpdateConfiguration configuration( final Configuration configuration )
+  public AddOrUpdateConfiguration configuration( final SimpleConfiguration configuration )
   {
     return new AddOrUpdateConfiguration();
   }

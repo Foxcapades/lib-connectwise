@@ -47,89 +47,70 @@ public class SimpleAgreement implements Agreement
     restrictLocation       = new BooleanField("RestrictLocationFlag"),
     taxable                = new BooleanField("Taxable"),
     topComment             = new BooleanField("TopComment"),
-    boardDefault           = new SimpleField < Boolean >("BoardDefaultFlag");
+    boardDefault           = new SimpleField <>("BoardDefaultFlag");
 
   private Field < Date >
-    billStartDate = new SimpleField < Date >("BillStartDate"),
-    dateCancelled = new SimpleField < Date >("DateCancelled"),
-    endDate       = new SimpleField < Date >("EndDate"),
-    startDate     = new SimpleField < Date >("StartDate"),
-    lastUpdate    = new SimpleField < Date >("LastUpdate");
+    billStartDate = new SimpleField <>("BillStartDate"),
+    dateCancelled = new SimpleField <>("DateCancelled"),
+    endDate       = new SimpleField <>("EndDate"),
+    startDate     = new SimpleField <>("StartDate"),
+    lastUpdate    = new SimpleField <>("LastUpdate");
 
   private Field < Double >
-    applicationLimit = new SimpleField < Double >("ApplicationLimit"),
-    billAmount       = new SimpleField < Double >("BillAmount"),
-    compHourlyRate   = new SimpleField < Double >("CompHourlyRate"),
-    compLimitAmount  = new SimpleField < Double >("CompLimitAmount"),
-    prorateFirstBill = new SimpleField < Double >("ProrateFirstBill");
+    applicationLimit = new SimpleField <>("ApplicationLimit"),
+    billAmount       = new SimpleField <>("BillAmount"),
+    compHourlyRate   = new SimpleField <>("CompHourlyRate"),
+    compLimitAmount  = new SimpleField <>("CompLimitAmount"),
+    prorateFirstBill = new SimpleField <>("ProrateFirstBill");
 
   private Field < Integer >
-    id                   = new SimpleField < Integer >("Id"),
-    agreementTypeId      = new SimpleField < Integer >("AgreementTypeId"),
-    billCycleId          = new SimpleField < Integer >("BillCycleId"),
-    billTermsId          = new SimpleField < Integer >("BillTermsId"),
-    billToAddressId      = new SimpleField < Integer >("BillToAddressId"),
-    billToCompanyId      = new SimpleField < Integer >("BillToCompanyId"),
-    contactId            = new SimpleField < Integer >("ContactId"),
-    companyId            = new SimpleField < Integer >("CompanyId"),
-    departmentId         = new SimpleField < Integer >("DepartmentId"),
-    expiredDays          = new SimpleField < Integer >("ExpiredDays"),
-    invoiceTemplateId    = new SimpleField < Integer >("InvoiceTemplateId"),
-    limit                = new SimpleField < Integer >("Limit"),
-    locationId           = new SimpleField < Integer >("LocationId"),
-    opportunityId        = new SimpleField < Integer >("OpportunityId"),
-    parentAgreementId    = new SimpleField < Integer >("ParentAgreementId"),
-    projectTypeId        = new SimpleField < Integer >("ProjectTypeId"),
-    slaId                = new SimpleField < Integer >("SlaId"),
-    subContractCompanyId = new SimpleField < Integer >("SubContractCompanyId"),
-    subContractContactId = new SimpleField < Integer >("SubContractContactId"),
-    taxCodeId            = new SimpleField < Integer >("TaxCodeId"),
-    workRoleId           = new SimpleField < Integer >("WorkRoleId"),
-    workTypeId           = new SimpleField < Integer >("WorkTypeId"),
-    boardId              = new SimpleField < Integer >("BoardId"),
-    serviceTypeId        = new SimpleField < Integer >("ServiceTypeId");
+    id                   = new SimpleField <>("Id"),
+    agreementTypeId      = new SimpleField <>("AgreementTypeId"),
+    billCycleId          = new SimpleField <>("BillCycleId"),
+    billTermsId          = new SimpleField <>("BillTermsId"),
+    billToAddressId      = new SimpleField <>("BillToAddressId"),
+    billToCompanyId      = new SimpleField <>("BillToCompanyId"),
+    contactId            = new SimpleField <>("ContactId"),
+    companyId            = new SimpleField <>("CompanyId"),
+    departmentId         = new SimpleField <>("DepartmentId"),
+    expiredDays          = new SimpleField <>("ExpiredDays"),
+    invoiceTemplateId    = new SimpleField <>("InvoiceTemplateId"),
+    limit                = new SimpleField <>("Limit"),
+    locationId           = new SimpleField <>("LocationId"),
+    opportunityId        = new SimpleField <>("OpportunityId"),
+    parentAgreementId    = new SimpleField <>("ParentAgreementId"),
+    projectTypeId        = new SimpleField <>("ProjectTypeId"),
+    slaId                = new SimpleField <>("SlaId"),
+    subContractCompanyId = new SimpleField <>("SubContractCompanyId"),
+    subContractContactId = new SimpleField <>("SubContractContactId"),
+    taxCodeId            = new SimpleField <>("TaxCodeId"),
+    workRoleId           = new SimpleField <>("WorkRoleId"),
+    workTypeId           = new SimpleField <>("WorkTypeId"),
+    boardId              = new SimpleField <>("BoardId"),
+    serviceTypeId        = new SimpleField <>("ServiceTypeId");
 
   private Field < String >
-    agreementName         = new SimpleField < String >("AgreementName"),
-    applicationCycle      = new SimpleField < String >("ApplicationCycle"),
-    applicationUnits      = new SimpleField < String >("ApplicationUnits"),
-    billExpenses          = new SimpleField < String >("BillExpenses"),
-    billProducts          = new SimpleField < String >("BillProducts"),
-    billTime              = new SimpleField < String >("BillTime"),
-    customerPo            = new SimpleField < String >("CustomerPO"),
-    employeeCompNotExceed = new SimpleField < String >("EmployeeCompNotExceed"),
-    employeeCompRate      = new SimpleField < String >("EmployeeCompRate"),
-    invoiceDescription    = new SimpleField < String >("InvoiceDescription"),
-    invoicingCycle        = new SimpleField < String >("InvoicingCycle"),
-    internalNotes         = new SimpleField < String >("InternalNotes"),
-    periodType            = new SimpleField < String >("PeriodType"),
-    reasonCancelled       = new SimpleField < String >("ReasonCancelled"),
-    workOrder             = new SimpleField < String >("WorkOrder"),
-    updatedBy             = new SimpleField < String >("UpdatedBy");
-
-  @Override
-  public Integer id()
-  {
-    return id.get();
-  }
+    agreementName         = new SimpleField <>("AgreementName"),
+    applicationCycle      = new SimpleField <>("ApplicationCycle"),
+    applicationUnits      = new SimpleField <>("ApplicationUnits"),
+    billExpenses          = new SimpleField <>("BillExpenses"),
+    billProducts          = new SimpleField <>("BillProducts"),
+    billTime              = new SimpleField <>("BillTime"),
+    customerPo            = new SimpleField <>("CustomerPO"),
+    employeeCompNotExceed = new SimpleField <>("EmployeeCompNotExceed"),
+    employeeCompRate      = new SimpleField <>("EmployeeCompRate"),
+    invoiceDescription    = new SimpleField <>("InvoiceDescription"),
+    invoicingCycle        = new SimpleField <>("InvoicingCycle"),
+    internalNotes         = new SimpleField <>("InternalNotes"),
+    periodType            = new SimpleField <>("PeriodType"),
+    reasonCancelled       = new SimpleField <>("ReasonCancelled"),
+    workOrder             = new SimpleField <>("WorkOrder"),
+    updatedBy             = new SimpleField <>("UpdatedBy");
 
   @Override
   public Field < Integer > idField()
   {
     return id;
-  }
-
-  @Override
-  public Agreement id( final Integer i )
-  {
-    id.set(i);
-    return this;
-  }
-
-  @Override
-  public String agreementName()
-  {
-    return agreementName.get();
   }
 
   @Override
@@ -139,30 +120,9 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement agreementName( final String s )
-  {
-    agreementName.set(s);
-
-    return this;
-  }
-
-  @Override
-  public Integer agreementTypeId()
-  {
-    return agreementTypeId.get();
-  }
-
-  @Override
   public Field < Integer > agreementTypeIdField()
   {
     return agreementTypeId;
-  }
-
-  @Override
-  public Agreement agreementTypeId( final Integer i )
-  {
-    agreementTypeId.set(i);
-    return this;
   }
 
   @Override
@@ -178,14 +138,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement applicationCycle( final String s )
-  {
-    applicationCycle.set(s);
-
-    return this;
-  }
-
-  @Override
   public Double applicationLimit()
   {
     return applicationLimit.get();
@@ -195,14 +147,6 @@ public class SimpleAgreement implements Agreement
   public Field < Double > applicationLimitField()
   {
     return applicationLimit;
-  }
-
-  @Override
-  public Agreement applicationLimit( final Double d )
-  {
-    applicationLimit.set(d);
-
-    return this;
   }
 
   @Override
@@ -218,14 +162,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement applicationUnits( final String s )
-  {
-    applicationUnits.set(s);
-
-    return this;
-  }
-
-  @Override
   public Double billAmount()
   {
     return billAmount.get();
@@ -235,14 +171,6 @@ public class SimpleAgreement implements Agreement
   public Field < Double > billAmountField()
   {
     return billAmount;
-  }
-
-  @Override
-  public Agreement billAmount( final Double d )
-  {
-    billAmount.set(d);
-
-    return this;
   }
 
   @Override
@@ -258,14 +186,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement billCycleId( final Integer i )
-  {
-    billCycleId.set(i);
-
-    return this;
-  }
-
-  @Override
   public String billExpenses()
   {
     return billExpenses.get();
@@ -275,14 +195,6 @@ public class SimpleAgreement implements Agreement
   public Field < String > billExpensesField()
   {
     return billExpenses;
-  }
-
-  @Override
-  public Agreement billExpenses( final String s )
-  {
-    billExpenses.set(s);
-
-    return this;
   }
 
   @Override
@@ -298,14 +210,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement billProducts( final String s )
-  {
-    billProducts.set(s);
-
-    return this;
-  }
-
-  @Override
   public Date billStartDate()
   {
     return billStartDate.get();
@@ -315,14 +219,6 @@ public class SimpleAgreement implements Agreement
   public Field < Date > billStartDateField()
   {
     return billStartDate;
-  }
-
-  @Override
-  public Agreement billStartDate( final Date d )
-  {
-    billStartDate.set(d);
-
-    return this;
   }
 
   @Override
@@ -338,14 +234,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement billTermsId( final Integer i )
-  {
-    billTermsId.set(i);
-
-    return this;
-  }
-
-  @Override
   public String billTime()
   {
     return billTime.get();
@@ -355,14 +243,6 @@ public class SimpleAgreement implements Agreement
   public Field < String > billTimeField()
   {
     return billTime;
-  }
-
-  @Override
-  public Agreement billTime( final String s )
-  {
-    billTime.set(s);
-
-    return this;
   }
 
   @Override
@@ -378,14 +258,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement billToAddressId( final Integer i )
-  {
-    billToAddressId.set(i);
-
-    return this;
-  }
-
-  @Override
   public Integer billToCompanyId()
   {
     return billToCompanyId.get();
@@ -395,14 +267,6 @@ public class SimpleAgreement implements Agreement
   public Field < Integer > billToCompanyIdField()
   {
     return billToCompanyId;
-  }
-
-  @Override
-  public Agreement billToCompanyId( final Integer i )
-  {
-    billToCompanyId.set(i);
-
-    return this;
   }
 
   @Override
@@ -418,14 +282,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement compHourlyRate( final Double d )
-  {
-    compHourlyRate.set(d);
-
-    return this;
-  }
-
-  @Override
   public Double compLimitAmount()
   {
     return compLimitAmount.get();
@@ -438,31 +294,9 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement compLimitAmount( final Double d )
-  {
-    compLimitAmount.set(d);
-
-    return this;
-  }
-
-  @Override
-  public Integer companyId()
-  {
-    return companyId.get();
-  }
-
-  @Override
   public Field < Integer > companyIdField()
   {
     return companyId;
-  }
-
-  @Override
-  public Agreement companyId( final Integer i )
-  {
-    companyId.set(i);
-
-    return this;
   }
 
   @Override
@@ -478,14 +312,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement contactId( final Integer i )
-  {
-    contactId.set(i);
-
-    return this;
-  }
-
-  @Override
   public String customerPo()
   {
     return customerPo.get();
@@ -495,14 +321,6 @@ public class SimpleAgreement implements Agreement
   public Field < String > customerPoField()
   {
     return customerPo;
-  }
-
-  @Override
-  public Agreement customerPo( final String s )
-  {
-    customerPo.set(s);
-
-    return this;
   }
 
   @Override
@@ -518,14 +336,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement dateCancelled( final Date d )
-  {
-    dateCancelled.set(d);
-
-    return this;
-  }
-
-  @Override
   public Integer departmentId()
   {
     return departmentId.get();
@@ -535,14 +345,6 @@ public class SimpleAgreement implements Agreement
   public Field < Integer > departmentIdField()
   {
     return departmentId;
-  }
-
-  @Override
-  public Agreement departmentId( final Integer i )
-  {
-    departmentId.set(i);
-
-    return this;
   }
 
   @Override
@@ -558,14 +360,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement employeeCompNotExceed( final String s )
-  {
-    employeeCompNotExceed.set(s);
-
-    return this;
-  }
-
-  @Override
   public String employeeCompRate()
   {
     return employeeCompRate.get();
@@ -575,20 +369,6 @@ public class SimpleAgreement implements Agreement
   public Field < String > employeeCompRateField()
   {
     return employeeCompRate;
-  }
-
-  @Override
-  public Agreement employeeCompRate( final String s )
-  {
-    employeeCompRate.set(s);
-
-    return this;
-  }
-
-  @Override
-  public Date endDate()
-  {
-    return endDate.get();
   }
 
   @Override
@@ -618,14 +398,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement expiredDays( final Integer i )
-  {
-    expiredDays.set(i);
-
-    return this;
-  }
-
-  @Override
   public String internalNotes()
   {
     return internalNotes.get();
@@ -635,14 +407,6 @@ public class SimpleAgreement implements Agreement
   public Field < String > internalNotesField()
   {
     return internalNotes;
-  }
-
-  @Override
-  public Agreement internalNotes( final String s )
-  {
-    internalNotes.set(s);
-
-    return this;
   }
 
   @Override
@@ -658,14 +422,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement invoiceDescription( final String s )
-  {
-    invoiceDescription.set(s);
-
-    return this;
-  }
-
-  @Override
   public Integer invoiceTemplateId()
   {
     return invoiceTemplateId.get();
@@ -675,14 +431,6 @@ public class SimpleAgreement implements Agreement
   public Field < Integer > invoiceTemplateIdField()
   {
     return invoiceTemplateId;
-  }
-
-  @Override
-  public Agreement invoiceTemplateId( final Integer i )
-  {
-    invoiceTemplateId.set(i);
-
-    return this;
   }
 
   @Override
@@ -698,14 +446,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement invoicingCycle( final String s )
-  {
-    invoicingCycle.set(s);
-
-    return this;
-  }
-
-  @Override
   public Integer limit()
   {
     return limit.get();
@@ -715,20 +455,6 @@ public class SimpleAgreement implements Agreement
   public Field < Integer > limitField()
   {
     return limit;
-  }
-
-  @Override
-  public Agreement limit( final Integer l )
-  {
-    limit.set(l);
-
-    return this;
-  }
-
-  @Override
-  public Integer locationId()
-  {
-    return locationId.get();
   }
 
   @Override
@@ -758,14 +484,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement opportunityId( final Integer i )
-  {
-    opportunityId.set(i);
-
-    return this;
-  }
-
-  @Override
   public Integer parentAgreementId()
   {
     return parentAgreementId.get();
@@ -775,14 +493,6 @@ public class SimpleAgreement implements Agreement
   public Field < Integer > parentAgreementIdField()
   {
     return parentAgreementId;
-  }
-
-  @Override
-  public Agreement parentAgreementId( final Integer i )
-  {
-    parentAgreementId.set(i);
-
-    return this;
   }
 
   @Override
@@ -798,14 +508,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement periodType( final String s )
-  {
-    periodType.set(s);
-
-    return this;
-  }
-
-  @Override
   public Integer projectTypeId()
   {
     return projectTypeId.get();
@@ -815,14 +517,6 @@ public class SimpleAgreement implements Agreement
   public Field < Integer > projectTypeIdField()
   {
     return projectTypeId;
-  }
-
-  @Override
-  public Agreement projectTypeId( final Integer i )
-  {
-    projectTypeId.set(i);
-
-    return this;
   }
 
   @Override
@@ -838,14 +532,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement prorateFirstBill( final Double d )
-  {
-    prorateFirstBill.set(d);
-
-    return this;
-  }
-
-  @Override
   public String reasonCancelled()
   {
     return reasonCancelled.get();
@@ -858,14 +544,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement reasonCancelled( final String s )
-  {
-    reasonCancelled.set(s);
-
-    return this;
-  }
-
-  @Override
   public Integer slaId()
   {
     return slaId.get();
@@ -875,20 +553,6 @@ public class SimpleAgreement implements Agreement
   public Field < Integer > slaIdField()
   {
     return slaId;
-  }
-
-  @Override
-  public Agreement slaId( final Integer i )
-  {
-    slaId.set(i);
-
-    return this;
-  }
-
-  @Override
-  public Date startDate()
-  {
-    return startDate.get();
   }
 
   @Override
@@ -918,14 +582,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement subContractCompanyId( final Integer i )
-  {
-    subContractCompanyId.set(i);
-
-    return this;
-  }
-
-  @Override
   public Integer subContractContactId()
   {
     return subContractContactId.get();
@@ -935,14 +591,6 @@ public class SimpleAgreement implements Agreement
   public Field < Integer > subContractContactIdField()
   {
     return subContractContactId;
-  }
-
-  @Override
-  public Agreement subContractContactId( final Integer i )
-  {
-    subContractContactId.set(i);
-
-    return this;
   }
 
   @Override
@@ -958,14 +606,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement taxCodeId( final Integer i )
-  {
-    taxCodeId.set(i);
-
-    return this;
-  }
-
-  @Override
   public String workOrder()
   {
     return workOrder.get();
@@ -975,14 +615,6 @@ public class SimpleAgreement implements Agreement
   public Field < String > workOrderField()
   {
     return workOrder;
-  }
-
-  @Override
-  public Agreement workOrder( final String s )
-  {
-    workOrder.set(s);
-
-    return this;
   }
 
   @Override
@@ -998,14 +630,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement workRoleId( final Integer i )
-  {
-    workRoleId.set(i);
-
-    return this;
-  }
-
-  @Override
   public Integer workTypeId()
   {
     return workTypeId.get();
@@ -1015,14 +639,6 @@ public class SimpleAgreement implements Agreement
   public Field < Integer > workTypeIdField()
   {
     return workTypeId;
-  }
-
-  @Override
-  public Agreement workTypeId( final Integer i )
-  {
-    workTypeId.set(i);
-
-    return this;
   }
 
   @Override
@@ -1038,14 +654,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement allowOverruns( final Boolean b )
-  {
-    allowOverruns.set(b);
-
-    return this;
-  }
-
-  @Override
   public Boolean applicationUnlimited()
   {
     return applicationUnlimited.get();
@@ -1055,14 +663,6 @@ public class SimpleAgreement implements Agreement
   public Field < Boolean > applicationUnlimitedField()
   {
     return applicationUnlimited;
-  }
-
-  @Override
-  public Agreement applicationUnlimited( final Boolean b )
-  {
-    applicationUnlimited.set(b);
-
-    return this;
   }
 
   @Override
@@ -1078,14 +678,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement billOneTime( final Boolean b )
-  {
-    billOneTime.set(b);
-
-    return this;
-  }
-
-  @Override
   public Boolean billableExpenseInvoice()
   {
     return billableExpenseInvoice.get();
@@ -1095,14 +687,6 @@ public class SimpleAgreement implements Agreement
   public Field < Boolean > billableExpenseInvoiceField()
   {
     return billableExpenseInvoice;
-  }
-
-  @Override
-  public Agreement billableExpenseInvoice( final Boolean b )
-  {
-    billableExpenseInvoice.set(b);
-
-    return this;
   }
 
   @Override
@@ -1118,14 +702,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement billableProductInvoice( final Boolean b )
-  {
-    billableProductInvoice.set(b);
-
-    return this;
-  }
-
-  @Override
   public Boolean billableTimeInvoice()
   {
     return billableTimeInvoice.get();
@@ -1135,14 +711,6 @@ public class SimpleAgreement implements Agreement
   public Field < Boolean > billableTimeInvoiceField()
   {
     return billableTimeInvoice;
-  }
-
-  @Override
-  public Agreement billableTimeInvoice( final Boolean b )
-  {
-    billableTimeInvoice.set(b);
-
-    return this;
   }
 
   @Override
@@ -1158,14 +726,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement bottomComment( final Boolean b )
-  {
-    bottomComment.set(b);
-
-    return this;
-  }
-
-  @Override
   public Boolean cancelled()
   {
     return cancelled.get();
@@ -1175,14 +735,6 @@ public class SimpleAgreement implements Agreement
   public Field < Boolean > cancelledField()
   {
     return cancelled;
-  }
-
-  @Override
-  public Agreement cancelled( final Boolean b )
-  {
-    cancelled.set(b);
-
-    return this;
   }
 
   @Override
@@ -1198,14 +750,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement carryOverUnused( final Boolean b )
-  {
-    carryOverUnused.set(b);
-
-    return this;
-  }
-
-  @Override
   public Boolean chargeToFirm()
   {
     return chargeToFirm.get();
@@ -1215,14 +759,6 @@ public class SimpleAgreement implements Agreement
   public Field < Boolean > chargeToFirmField()
   {
     return chargeToFirm;
-  }
-
-  @Override
-  public Agreement chargeToFirm( final Boolean b )
-  {
-    chargeToFirm.set(b);
-
-    return this;
   }
 
   @Override
@@ -1238,14 +774,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement coverAgreementExpense( final Boolean b )
-  {
-    coverAgreementExpense.set(b);
-
-    return this;
-  }
-
-  @Override
   public Boolean coverAgreementProduct()
   {
     return coverAgreementProduct.get();
@@ -1255,14 +783,6 @@ public class SimpleAgreement implements Agreement
   public Field < Boolean > coverAgreementProductField()
   {
     return coverAgreementProduct;
-  }
-
-  @Override
-  public Agreement coverAgreementProduct( final Boolean b )
-  {
-    coverAgreementProduct.set(b);
-
-    return this;
   }
 
   @Override
@@ -1278,14 +798,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement coverAgreementTime( final Boolean b )
-  {
-    coverAgreementTime.set(b);
-
-    return this;
-  }
-
-  @Override
   public Boolean coverSalesTax()
   {
     return coverSalesTax.get();
@@ -1295,14 +807,6 @@ public class SimpleAgreement implements Agreement
   public Field < Boolean > coverSalesTaxField()
   {
     return coverSalesTax;
-  }
-
-  @Override
-  public Agreement coverSalesTax( final Boolean b )
-  {
-    coverSalesTax.set(b);
-
-    return this;
   }
 
   @Override
@@ -1318,14 +822,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement expireWhenZero( final Boolean b )
-  {
-    expireWhenZero.set(b);
-
-    return this;
-  }
-
-  @Override
   public Boolean noEndingDate()
   {
     return noEndingDate.get();
@@ -1335,14 +831,6 @@ public class SimpleAgreement implements Agreement
   public Field < Boolean > noEndingDateField()
   {
     return noEndingDate;
-  }
-
-  @Override
-  public Agreement noEndingDate( final Boolean b )
-  {
-    noEndingDate.set(b);
-
-    return this;
   }
 
   @Override
@@ -1358,14 +846,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement oneTime( final Boolean b )
-  {
-    oneTime.set(b);
-
-    return this;
-  }
-
-  @Override
   public Boolean restrictDepartment()
   {
     return restrictDepartment.get();
@@ -1375,14 +855,6 @@ public class SimpleAgreement implements Agreement
   public Field < Boolean > restrictDepartmentField()
   {
     return restrictDepartment;
-  }
-
-  @Override
-  public Agreement restrictDepartment( final Boolean b )
-  {
-    restrictDepartment.set(b);
-
-    return this;
   }
 
   @Override
@@ -1398,14 +870,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement restrictDownPayment( final Boolean b )
-  {
-    restrictDownPayment.set(b);
-
-    return this;
-  }
-
-  @Override
   public Boolean restrictLocation()
   {
     return restrictLocation.get();
@@ -1415,14 +879,6 @@ public class SimpleAgreement implements Agreement
   public Field < Boolean > restrictLocationField()
   {
     return restrictLocation;
-  }
-
-  @Override
-  public Agreement restrictLocation( final Boolean b )
-  {
-    restrictLocation.set(b);
-
-    return this;
   }
 
   @Override
@@ -1438,14 +894,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement taxable( final Boolean b )
-  {
-    taxable.set(b);
-
-    return this;
-  }
-
-  @Override
   public Boolean topComment()
   {
     return topComment.get();
@@ -1455,20 +903,6 @@ public class SimpleAgreement implements Agreement
   public Field < Boolean > topCommentField()
   {
     return topComment;
-  }
-
-  @Override
-  public Agreement topComment( final Boolean b )
-  {
-    topComment.set(b);
-
-    return this;
-  }
-
-  @Override
-  public Date lastUpdate()
-  {
-    return lastUpdate.get();
   }
 
   @Override
@@ -1483,12 +917,6 @@ public class SimpleAgreement implements Agreement
     lastUpdate.set(d);
 
     return this;
-  }
-
-  @Override
-  public String updatedBy()
-  {
-    return updatedBy.get();
   }
 
   @Override
@@ -1518,14 +946,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement boardDefault( final Boolean b )
-  {
-    boardDefault.set(b);
-
-    return this;
-  }
-
-  @Override
   public Integer boardId()
   {
     return boardId.get();
@@ -1538,14 +958,6 @@ public class SimpleAgreement implements Agreement
   }
 
   @Override
-  public Agreement boardId( final Integer i )
-  {
-    boardId.set(i);
-
-    return this;
-  }
-
-  @Override
   public Integer serviceTypeId()
   {
     return serviceTypeId.get();
@@ -1555,13 +967,6 @@ public class SimpleAgreement implements Agreement
   public Field < Integer > serviceTypeIdField()
   {
     return serviceTypeId;
-  }
-
-  @Override
-  public Agreement serviceTypeId( final Integer i )
-  {
-    serviceTypeId.set(i);
-    return this;
   }
 
   @Override

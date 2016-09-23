@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.company.Address;
+import io.vulpine.connectwise.type.def.gen.HasId;
 import io.vulpine.connectwise.util.Field;
 
 import java.util.List;

@@ -15,7 +15,7 @@
  */
 package io.vulpine.connectwise.type.def;
 
-import io.vulpine.connectwise.type.def.agreement.HasLocationId;
+import io.vulpine.connectwise.type.def.gen.*;
 import io.vulpine.connectwise.util.Field;
 
 import java.util.Date;
@@ -29,424 +29,762 @@ import java.util.Date;
 public interface Agreement
   extends
   XmlSerializable,
+  HasCompanyId < Agreement >,
+  HasEndDate < Agreement >,
   HasId < Agreement >,
   HasLastUpdate < Agreement >,
-  HasUpdatedBy < Agreement >,
-  HasLocationId < Agreement >
+  HasLocationId < Agreement >,
+  HasStartDate < Agreement >,
+  HasUpdatedBy < Agreement >
 {
-  String agreementName();
+  /*
+
+  INHERITED DEFAULTS
+
+   */
+  default Agreement id( Integer id )
+  {
+    idField().set(id);
+
+    return this;
+  }
+
+  default Agreement companyId( final Integer i )
+  {
+    companyIdField().set(i);
+
+    return this;
+  }
+
+  default String agreementName()
+  {
+    return agreementNameField().get();
+  }
 
   Field < String > agreementNameField();
 
-  Agreement agreementName( String s );
+  default Agreement agreementName( String s )
+  {
+    agreementNameField().set(s);
 
-  Integer agreementTypeId();
+    return this;
+  }
+
+  default Integer agreementTypeId()
+  {
+    return agreementTypeIdField().get();
+  }
 
   Field < Integer > agreementTypeIdField();
 
-  Agreement agreementTypeId( Integer i );
+  default Agreement agreementTypeId( final Integer i )
+  {
+    agreementTypeIdField().set(i);
+
+    return this;
+  }
 
   String applicationCycle();
 
   Field < String > applicationCycleField();
 
-  Agreement applicationCycle( String s );
+  default Agreement applicationCycle( final String s )
+  {
+    applicationCycleField().set(s);
+
+    return this;
+  }
 
   Double applicationLimit();
 
   Field < Double > applicationLimitField();
 
-  Agreement applicationLimit( Double d );
+  default Agreement applicationLimit( final Double d )
+  {
+    applicationLimitField().set(d);
+
+    return this;
+  }
 
   String applicationUnits();
 
   Field < String > applicationUnitsField();
 
-  Agreement applicationUnits( String s );
+  default Agreement applicationUnits( final String s )
+  {
+    applicationUnitsField().set(s);
+
+    return this;
+  }
 
   Double billAmount();
 
   Field < Double > billAmountField();
 
-  Agreement billAmount( Double d );
+  default Agreement billAmount( final Double d )
+  {
+    billAmountField().set(d);
+
+    return this;
+  }
 
   Integer billCycleId();
 
   Field < Integer > billCycleIdField();
 
-  Agreement billCycleId( Integer i );
+  default Agreement billCycleId( final Integer i )
+  {
+    billCycleIdField().set(i);
+
+    return this;
+  }
 
   String billExpenses();
 
   Field < String > billExpensesField();
 
-  Agreement billExpenses( String s );
+  default Agreement billExpenses( final String s )
+  {
+    billExpensesField().set(s);
+
+    return this;
+  }
 
   String billProducts();
 
   Field < String > billProductsField();
 
-  Agreement billProducts( String s );
+  default Agreement billProducts( final String s )
+  {
+    billProductsField().set(s);
+
+    return this;
+  }
 
   Date billStartDate();
 
   Field < Date > billStartDateField();
 
-  Agreement billStartDate( Date d );
+  default Agreement billStartDate( final Date d )
+  {
+    billStartDateField().set(d);
+
+    return this;
+  }
 
   Integer billTermsId();
 
   Field < Integer > billTermsIdField();
 
-  Agreement billTermsId( Integer i );
+  default Agreement billTermsId( final Integer i )
+  {
+    billTermsIdField().set(i);
+
+    return this;
+  }
 
   String billTime();
 
   Field < String > billTimeField();
 
-  Agreement billTime( String s );
+  default Agreement billTime( final String s )
+  {
+    billTimeField().set(s);
+
+    return this;
+  }
 
   Integer billToAddressId();
 
   Field < Integer > billToAddressIdField();
 
-  Agreement billToAddressId( Integer i );
+  default Agreement billToAddressId( final Integer i )
+  {
+    billToAddressIdField().set(i);
+
+    return this;
+  }
 
   Integer billToCompanyId();
 
   Field < Integer > billToCompanyIdField();
 
-  Agreement billToCompanyId( Integer i );
+  default Agreement billToCompanyId( final Integer i )
+  {
+    billToCompanyIdField().set(i);
+
+    return this;
+  }
 
   Double compHourlyRate();
 
   Field < Double > compHourlyRateField();
 
-  Agreement compHourlyRate( Double d );
+  default Agreement compHourlyRate( final Double d )
+  {
+    compHourlyRateField().set(d);
+
+    return this;
+  }
 
   Double compLimitAmount();
 
   Field < Double > compLimitAmountField();
 
-  Agreement compLimitAmount( Double d );
+  default Agreement compLimitAmount( final Double d )
+  {
+    compLimitAmountField().set(d);
 
-  Integer companyId();
-
-  Field < Integer > companyIdField();
-
-  Agreement companyId( Integer i );
+    return this;
+  }
 
   Integer contactId();
 
   Field < Integer > contactIdField();
 
-  Agreement contactId( Integer i );
+  default Agreement contactId( final Integer i )
+  {
+    contactIdField().set(i);
+
+    return this;
+  }
 
   String customerPo();
 
   Field < String > customerPoField();
 
-  Agreement customerPo( String s );
+  default Agreement customerPo( final String s )
+  {
+    customerPoField().set(s);
+
+    return this;
+  }
 
   Date dateCancelled();
 
   Field < Date > dateCancelledField();
 
-  Agreement dateCancelled( Date d );
+  default Agreement dateCancelled( final Date d )
+  {
+    dateCancelledField().set(d);
+
+    return this;
+  }
 
   Integer departmentId();
 
   Field < Integer > departmentIdField();
 
-  Agreement departmentId( Integer i );
+  default Agreement departmentId( final Integer i )
+  {
+    departmentIdField().set(i);
+
+    return this;
+  }
 
   String employeeCompNotExceed();
 
   Field < String > employeeCompNotExceedField();
 
-  Agreement employeeCompNotExceed( String s );
+  default Agreement employeeCompNotExceed( final String s )
+  {
+    employeeCompNotExceedField().set(s);
+
+    return this;
+  }
 
   String employeeCompRate();
 
   Field < String > employeeCompRateField();
 
-  Agreement employeeCompRate( String s );
+  default Agreement employeeCompRate( final String s )
+  {
+    employeeCompRateField().set(s);
 
-  Date endDate();
-
-  Field < Date > endDateField();
-
-  Agreement endDate( Date d );
+    return this;
+  }
 
   Integer expiredDays();
 
   Field < Integer > expiredDaysField();
 
-  Agreement expiredDays( Integer d );
+  default Agreement expiredDays( final Integer d )
+  {
+    expiredDaysField().set(d);
+
+    return this;
+  }
 
   String internalNotes();
 
   Field < String > internalNotesField();
 
-  Agreement internalNotes( String s );
+  default Agreement internalNotes( final String s )
+  {
+    internalNotesField().set(s);
+
+    return this;
+  }
 
   String invoiceDescription();
 
   Field < String > invoiceDescriptionField();
 
-  Agreement invoiceDescription( String s );
+  default Agreement invoiceDescription( final String s )
+  {
+    invoiceDescriptionField().set(s);
+
+    return this;
+  }
 
   Integer invoiceTemplateId();
 
   Field < Integer > invoiceTemplateIdField();
 
-  Agreement invoiceTemplateId( Integer i );
+  default Agreement invoiceTemplateId( final Integer i )
+  {
+    invoiceTemplateIdField().set(i);
+
+    return this;
+  }
 
   String invoicingCycle();
 
   Field < String > invoicingCycleField();
 
-  Agreement invoicingCycle( String s );
+  default Agreement invoicingCycle( final String s )
+  {
+    invoicingCycleField().set(s);
+
+    return this;
+  }
 
   Integer limit();
 
   Field < Integer > limitField();
 
-  Agreement limit( Integer l );
+  default Agreement limit( final Integer l )
+  {
+    limitField().set(l);
+
+    return this;
+  }
 
   Integer opportunityId();
 
   Field < Integer > opportunityIdField();
 
-  Agreement opportunityId( Integer i );
+  default Agreement opportunityId( final Integer i )
+  {
+    opportunityIdField().set(i);
+
+    return this;
+  }
 
   Integer parentAgreementId();
 
   Field < Integer > parentAgreementIdField();
 
-  Agreement parentAgreementId( Integer i );
+  default Agreement parentAgreementId( final Integer i )
+  {
+    parentAgreementIdField().set(i);
+
+    return this;
+  }
 
   String periodType();
 
   Field < String > periodTypeField();
 
-  Agreement periodType( String s );
+  default Agreement periodType( final String s )
+  {
+    periodTypeField().set(s);
+
+    return this;
+  }
 
   Integer projectTypeId();
 
   Field < Integer > projectTypeIdField();
 
-  Agreement projectTypeId( Integer i );
+  default Agreement projectTypeId( final Integer i )
+  {
+    projectTypeIdField().set(i);
+
+    return this;
+  }
 
   Double prorateFirstBill();
 
   Field < Double > prorateFirstBillField();
 
-  Agreement prorateFirstBill( Double d );
+  default Agreement prorateFirstBill( final Double d )
+  {
+    prorateFirstBillField().set(d);
+
+    return this;
+  }
 
   String reasonCancelled();
 
   Field < String > reasonCancelledField();
 
-  Agreement reasonCancelled( String s );
+  default Agreement reasonCancelled( final String s )
+  {
+    reasonCancelledField().set(s);
+
+    return this;
+  }
 
   Integer slaId();
 
   Field < Integer > slaIdField();
 
-  Agreement slaId( Integer i );
+  default Agreement slaId( final Integer i )
+  {
+    slaIdField().set(i);
 
-  Date startDate();
-
-  Field < Date > startDateField();
-
-  Agreement startDate( Date d );
+    return this;
+  }
 
   Integer subContractCompanyId();
 
   Field < Integer > subContractCompanyIdField();
 
-  Agreement subContractCompanyId( Integer i );
+  default Agreement subContractCompanyId( final Integer i )
+  {
+    subContractCompanyIdField().set(i);
+
+    return this;
+  }
 
   Integer subContractContactId();
 
   Field < Integer > subContractContactIdField();
 
-  Agreement subContractContactId( Integer i );
+  default Agreement subContractContactId( final Integer i )
+  {
+    subContractContactIdField().set(i);
+
+    return this;
+  }
 
   Integer taxCodeId();
 
   Field < Integer > taxCodeIdField();
 
-  Agreement taxCodeId( Integer i );
+  default Agreement taxCodeId( final Integer i )
+  {
+    taxCodeIdField().set(i);
+
+    return this;
+  }
 
   String workOrder();
 
   Field < String > workOrderField();
 
-  Agreement workOrder( String s );
+  default Agreement workOrder( final String s )
+  {
+    workOrderField().set(s);
+
+    return this;
+  }
 
   Integer workRoleId();
 
   Field < Integer > workRoleIdField();
 
-  Agreement workRoleId( Integer i );
+  default Agreement workRoleId( final Integer i )
+  {
+    workRoleIdField().set(i);
+
+    return this;
+  }
 
   Integer workTypeId();
 
   Field < Integer > workTypeIdField();
 
-  Agreement workTypeId( Integer i );
+  default Agreement workTypeId( final Integer i )
+  {
+    workTypeIdField().set(i);
+
+    return this;
+  }
 
   Boolean allowOverruns();
 
   Field < Boolean > allowOverrunsField();
 
-  Agreement allowOverruns( Boolean b );
+  default Agreement allowOverruns( final Boolean b )
+  {
+    allowOverrunsField().set(b);
+
+    return this;
+  }
 
   Boolean applicationUnlimited();
 
   Field < Boolean > applicationUnlimitedField();
 
-  Agreement applicationUnlimited( Boolean b );
+  default Agreement applicationUnlimited( final Boolean b )
+  {
+    applicationUnlimitedField().set(b);
+
+    return this;
+  }
 
   Boolean billOneTime();
 
   Field < Boolean > billOneTimeField();
 
-  Agreement billOneTime( Boolean b );
+  default Agreement billOneTime( final Boolean b )
+  {
+    billOneTimeField().set(b);
+
+    return this;
+  }
 
   Boolean billableExpenseInvoice();
 
   Field < Boolean > billableExpenseInvoiceField();
 
-  Agreement billableExpenseInvoice( Boolean b );
+  default Agreement billableExpenseInvoice( final Boolean b )
+  {
+    billableExpenseInvoiceField().set(b);
+
+    return this;
+  }
 
   Boolean billableProductInvoice();
 
   Field < Boolean > billableProductInvoiceField();
 
-  Agreement billableProductInvoice( Boolean b );
+  default Agreement billableProductInvoice( final Boolean b )
+  {
+    billableProductInvoiceField().set(b);
+
+    return this;
+  }
 
   Boolean billableTimeInvoice();
 
   Field < Boolean > billableTimeInvoiceField();
 
-  Agreement billableTimeInvoice( Boolean b );
+  default Agreement billableTimeInvoice( final Boolean b )
+  {
+    billableTimeInvoiceField().set(b);
+
+    return this;
+  }
 
   Boolean bottomComment();
 
   Field < Boolean > bottomCommentField();
 
-  Agreement bottomComment( Boolean b );
+  default Agreement bottomComment( final Boolean b )
+  {
+    bottomCommentField().set(b);
+
+    return this;
+  }
 
   Boolean cancelled();
 
   Field < Boolean > cancelledField();
 
-  Agreement cancelled( Boolean b );
+  default Agreement cancelled( final Boolean b )
+  {
+    cancelledField().set(b);
+
+    return this;
+  }
 
   Boolean carryOverUnused();
 
   Field < Boolean > carryOverUnusedField();
 
-  Agreement carryOverUnused( Boolean b );
+  default Agreement carryOverUnused( final Boolean b )
+  {
+    carryOverUnusedField().set(b);
+
+    return this;
+  }
 
   Boolean chargeToFirm();
 
   Field < Boolean > chargeToFirmField();
 
-  Agreement chargeToFirm( Boolean b );
+  default Agreement chargeToFirm( final Boolean b )
+  {
+    chargeToFirmField().set(b);
+
+    return this;
+  }
 
   Boolean coverAgreementExpense();
 
   Field < Boolean > coverAgreementExpenseField();
 
-  Agreement coverAgreementExpense( Boolean b );
+  default Agreement coverAgreementExpense( final Boolean b )
+  {
+    coverAgreementExpenseField().set(b);
+
+    return this;
+  }
 
   Boolean coverAgreementProduct();
 
   Field < Boolean > coverAgreementProductField();
 
-  Agreement coverAgreementProduct( Boolean b );
+  default Agreement coverAgreementProduct( final Boolean b )
+  {
+    coverAgreementProductField().set(b);
+
+    return this;
+  }
 
   Boolean coverAgreementTime();
 
   Field < Boolean > coverAgreementTimeField();
 
-  Agreement coverAgreementTime( Boolean b );
+  default Agreement coverAgreementTime( final Boolean b )
+  {
+    coverAgreementTimeField().set(b);
+
+    return this;
+  }
 
   Boolean coverSalesTax();
 
   Field < Boolean > coverSalesTaxField();
 
-  Agreement coverSalesTax( Boolean b );
+  default Agreement coverSalesTax( final Boolean b )
+  {
+    coverSalesTaxField().set(b);
+
+    return this;
+  }
 
   Boolean expireWhenZero();
 
   Field < Boolean > expireWhenZeroField();
 
-  Agreement expireWhenZero( Boolean b );
+  default Agreement expireWhenZero( final Boolean b )
+  {
+    expireWhenZeroField().set(b);
+
+    return this;
+  }
 
   Boolean noEndingDate();
 
   Field < Boolean > noEndingDateField();
 
-  Agreement noEndingDate( Boolean b );
+  default Agreement noEndingDate( final Boolean b )
+  {
+    noEndingDateField().set(b);
+
+    return this;
+  }
 
   Boolean oneTime();
 
   Field < Boolean > oneTimeField();
 
-  Agreement oneTime( Boolean b );
+  default Agreement oneTime( final Boolean b )
+  {
+    oneTimeField().set(b);
+
+    return this;
+  }
 
   Boolean restrictDepartment();
 
   Field < Boolean > restrictDepartmentField();
 
-  Agreement restrictDepartment( Boolean b );
+  default Agreement restrictDepartment( final Boolean b )
+  {
+    restrictDepartmentField().set(b);
+
+    return this;
+  }
 
   Boolean restrictDownPayment();
 
   Field < Boolean > restrictDownPaymentField();
 
-  Agreement restrictDownPayment( Boolean b );
+  default Agreement restrictDownPayment( final Boolean b )
+  {
+    restrictDownPaymentField().set(b);
+
+    return this;
+  }
 
   Boolean restrictLocation();
 
   Field < Boolean > restrictLocationField();
 
-  Agreement restrictLocation( Boolean b );
+  default Agreement restrictLocation( final Boolean b )
+  {
+    restrictLocationField().set(b);
+
+    return this;
+  }
 
   Boolean taxable();
 
   Field < Boolean > taxableField();
 
-  Agreement taxable( Boolean b );
+  default Agreement taxable( final Boolean b )
+  {
+    taxableField().set(b);
+
+    return this;
+  }
 
   Boolean topComment();
 
   Field < Boolean > topCommentField();
 
-  Agreement topComment( Boolean b );
+  default Agreement topComment( final Boolean b )
+  {
+    topCommentField().set(b);
+
+    return this;
+  }
 
   Integer boardId();
 
   Field < Integer > boardIdField();
 
-  Agreement boardId( Integer i );
+  default Agreement boardId( final Integer i )
+  {
+    boardIdField().set(i);
+
+    return this;
+  }
 
   Boolean boardDefault();
 
   Field < Boolean > boardDefaultField();
 
-  Field < Boolean > boardDefaultField();
+  default Agreement boardDefault( final Boolean b )
+  {
+    boardDefaultField().set(b);
 
-  Agreement boardDefault( Boolean b );
+    return this;
+  }
 
   Integer serviceTypeId();
 
   Field < Integer > serviceTypeIdField();
 
-  Agreement serviceTypeId( Integer i );
+  default Agreement serviceTypeId( final Integer i )
+  {
+    serviceTypeIdField().set(i);
+
+    return this;
+  }
 }

@@ -13,16 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.type.def.agreement;
+package io.vulpine.connectwise.type.def.gen;
 
 import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.util.Field;
 
-public interface HasLocationId < T extends HasLocationId > extends XmlSerializable
+import java.util.Date;
+
+/**
+ * = {@link XmlSerializable} Object with an EndDate Field
+ *
+ * @param <T>
+ *
+ * @since 0.10.0
+ * @version 1.0.0
+ */
+public interface HasEndDate < T extends HasEndDate > extends XmlSerializable
 {
-  Integer locationId();
+  default Date endDate()
+  {
+    return endDateField().get();
+  }
 
-  Field< Integer > locationIdField();
+  Field< Date > endDateField();
 
-  T locationId( Integer i );
+  T endDate( Date d );
 }

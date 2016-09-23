@@ -13,15 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.type.def;
+package io.vulpine.connectwise.type.def.gen;
 
+import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.util.Field;
 
-public interface HasUpdatedBy< T >
+/**
+ * = XmlSerializable Object with the CompanyId field.
+ *
+ * @param <T>
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
+public interface HasCompanyId < T extends HasCompanyId > extends XmlSerializable
 {
-  String updatedBy();
+  default Integer companyId()
+  {
+    return companyIdField().get();
+  }
 
-  Field< String > updatedByField();
+  Field< Integer > companyIdField();
 
-  T updatedBy( String s );
+  T companyId( Integer i );
 }

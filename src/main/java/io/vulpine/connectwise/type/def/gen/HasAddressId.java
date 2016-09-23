@@ -13,23 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.type.def;
+package io.vulpine.connectwise.type.def.gen;
 
+import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.util.Field;
 
 /**
- * = XmlSerializable Object with the CompanyId field.
+ * = {@link XmlSerializable} Object with an AddressId Field
  *
- * @param <T>
+ * @param <T> The implementing or extending class or interface type.
  *
- * @since 0.1.0
+ * @since 0.10.0
  * @version 1.0.0
  */
-public interface HasCompanyId < T extends HasCompanyId > extends XmlSerializable
+public interface HasAddressId< T extends HasAddressId > extends XmlSerializable
 {
-  Integer companyId();
+  Integer addressId();
 
-  Field< Integer > companyIdField();
+  Field< Integer > addressIdField();
 
-  T companyId( Integer i );
+  T addressId( Integer i );
 }

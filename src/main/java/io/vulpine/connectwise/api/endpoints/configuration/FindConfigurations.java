@@ -20,7 +20,6 @@ import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.common.request.FindRequest;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.endpoints.Endpoint;
-import io.vulpine.connectwise.type.configuration.Configuration;
 import io.vulpine.connectwise.type.configuration.FoundConfiguration;
 
 import java.io.IOException;

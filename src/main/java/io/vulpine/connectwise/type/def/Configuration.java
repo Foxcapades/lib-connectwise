@@ -15,13 +15,16 @@
  */
 package io.vulpine.connectwise.type.def;
 
-import io.vulpine.connectwise.util.Field;
+import io.vulpine.connectwise.type.def.gen.*;
 
-public interface HasId< T >
+public interface Configuration
+extends
+  XmlSerializable,
+  HasAddressId < Configuration >,
+  HasCompanyId < Configuration >,
+  HasId < Configuration >,
+  HasLastUpdated < Configuration >,
+  HasLocationId < Configuration >,
+  HasUpdatedBy < Configuration >
 {
-  Integer id();
-
-  Field< Integer > idField();
-
-  T id( Integer id );
 }

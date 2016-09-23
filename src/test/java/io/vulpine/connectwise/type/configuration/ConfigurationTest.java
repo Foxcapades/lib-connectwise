@@ -36,12 +36,12 @@ public class ConfigurationTest
   private static final int     TEST_INT     = 666;
   private static final Date    TEST_DATE    = new Date();
 
-  private Configuration configuration;
+  private SimpleConfiguration configuration;
 
   @Before
   public void setUp() throws Exception
   {
-    configuration = new Configuration();
+    configuration = new SimpleConfiguration();
   }
 
   public class ConfigurationTypeId
@@ -50,7 +50,7 @@ public class ConfigurationTest
 
     public ConfigurationTypeId() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("configurationTypeId");
+      prop = SimpleConfiguration.class.getDeclaredField("configurationTypeId");
       prop.setAccessible(true);
     }
 
@@ -75,7 +75,7 @@ public class ConfigurationTest
 
     public ConfigurationType() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("configurationType");
+      prop = SimpleConfiguration.class.getDeclaredField("configurationType");
       prop.setAccessible(true);
     }
 
@@ -100,7 +100,7 @@ public class ConfigurationTest
 
     public StatusId() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("statusId");
+      prop = SimpleConfiguration.class.getDeclaredField("statusId");
       prop.setAccessible(true);
     }
 
@@ -125,7 +125,7 @@ public class ConfigurationTest
 
     public Status() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("status");
+      prop = SimpleConfiguration.class.getDeclaredField("status");
       prop.setAccessible(true);
     }
 
@@ -150,7 +150,7 @@ public class ConfigurationTest
 
     public ConfigurationName() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("configurationName");
+      prop = SimpleConfiguration.class.getDeclaredField("configurationName");
       prop.setAccessible(true);
     }
 
@@ -175,7 +175,7 @@ public class ConfigurationTest
 
     public ContactName() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("contactName");
+      prop = SimpleConfiguration.class.getDeclaredField("contactName");
       prop.setAccessible(true);
     }
 
@@ -200,7 +200,7 @@ public class ConfigurationTest
 
     public CompanyName() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("companyName");
+      prop = SimpleConfiguration.class.getDeclaredField("companyName");
       prop.setAccessible(true);
     }
 
@@ -225,7 +225,7 @@ public class ConfigurationTest
 
     public CompanyId() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("companyId");
+      prop = SimpleConfiguration.class.getDeclaredField("companyId");
       prop.setAccessible(true);
     }
 
@@ -250,7 +250,7 @@ public class ConfigurationTest
 
     public ContactId() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("contactId");
+      prop = SimpleConfiguration.class.getDeclaredField("contactId");
       prop.setAccessible(true);
     }
 
@@ -275,7 +275,7 @@ public class ConfigurationTest
 
     public LocationId() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("locationId");
+      prop = SimpleConfiguration.class.getDeclaredField("locationId");
       prop.setAccessible(true);
     }
 
@@ -300,7 +300,7 @@ public class ConfigurationTest
 
     public BusinessUnitId() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("businessUnitId");
+      prop = SimpleConfiguration.class.getDeclaredField("businessUnitId");
       prop.setAccessible(true);
     }
 
@@ -325,7 +325,7 @@ public class ConfigurationTest
 
     public DeviceIdentifier() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("deviceIdentifier");
+      prop = SimpleConfiguration.class.getDeclaredField("deviceIdentifier");
       prop.setAccessible(true);
     }
 
@@ -350,7 +350,7 @@ public class ConfigurationTest
 
     public SerialNumber() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("serialNumber");
+      prop = SimpleConfiguration.class.getDeclaredField("serialNumber");
       prop.setAccessible(true);
     }
 
@@ -375,7 +375,7 @@ public class ConfigurationTest
 
     public ModelNumber() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("modelNumber");
+      prop = SimpleConfiguration.class.getDeclaredField("modelNumber");
       prop.setAccessible(true);
     }
 
@@ -400,7 +400,7 @@ public class ConfigurationTest
 
     public TagNumber() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("tagNumber");
+      prop = SimpleConfiguration.class.getDeclaredField("tagNumber");
       prop.setAccessible(true);
     }
 
@@ -425,7 +425,7 @@ public class ConfigurationTest
 
     public PurchaseDate() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("purchaseDate");
+      prop = SimpleConfiguration.class.getDeclaredField("purchaseDate");
       prop.setAccessible(true);
     }
 
@@ -450,7 +450,7 @@ public class ConfigurationTest
 
     public InstallationDate() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("installationDate");
+      prop = SimpleConfiguration.class.getDeclaredField("installationDate");
       prop.setAccessible(true);
     }
 
@@ -475,7 +475,7 @@ public class ConfigurationTest
 
     public InstalledBy() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("installedBy");
+      prop = SimpleConfiguration.class.getDeclaredField("installedBy");
       prop.setAccessible(true);
     }
 
@@ -500,7 +500,7 @@ public class ConfigurationTest
 
     public WarrantyExpiration() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("warrantyExpiration");
+      prop = SimpleConfiguration.class.getDeclaredField("warrantyExpiration");
       prop.setAccessible(true);
     }
 
@@ -525,7 +525,7 @@ public class ConfigurationTest
 
     public AddressId() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("addressId");
+      prop = SimpleConfiguration.class.getDeclaredField("addressId");
       prop.setAccessible(true);
     }
 
@@ -550,7 +550,7 @@ public class ConfigurationTest
 
     public AddressLine1() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("addressLine1");
+      prop = SimpleConfiguration.class.getDeclaredField("addressLine1");
       prop.setAccessible(true);
     }
 
@@ -575,7 +575,7 @@ public class ConfigurationTest
 
     public AddressLine2() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("addressLine2");
+      prop = SimpleConfiguration.class.getDeclaredField("addressLine2");
       prop.setAccessible(true);
     }
 
@@ -600,7 +600,7 @@ public class ConfigurationTest
 
     public City() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("city");
+      prop = SimpleConfiguration.class.getDeclaredField("city");
       prop.setAccessible(true);
     }
 
@@ -625,7 +625,7 @@ public class ConfigurationTest
 
     public State() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("state");
+      prop = SimpleConfiguration.class.getDeclaredField("state");
       prop.setAccessible(true);
     }
 
@@ -650,7 +650,7 @@ public class ConfigurationTest
 
     public ZipCode() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("zipCode");
+      prop = SimpleConfiguration.class.getDeclaredField("zipCode");
       prop.setAccessible(true);
     }
 
@@ -675,7 +675,7 @@ public class ConfigurationTest
 
     public Country() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("country");
+      prop = SimpleConfiguration.class.getDeclaredField("country");
       prop.setAccessible(true);
     }
 
@@ -700,7 +700,7 @@ public class ConfigurationTest
 
     public VendorNotes() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("vendorNotes");
+      prop = SimpleConfiguration.class.getDeclaredField("vendorNotes");
       prop.setAccessible(true);
     }
 
@@ -725,7 +725,7 @@ public class ConfigurationTest
 
     public Notes() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("notes");
+      prop = SimpleConfiguration.class.getDeclaredField("notes");
       prop.setAccessible(true);
     }
 
@@ -750,7 +750,7 @@ public class ConfigurationTest
 
     public MacAddress() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("macAddress");
+      prop = SimpleConfiguration.class.getDeclaredField("macAddress");
       prop.setAccessible(true);
     }
 
@@ -775,7 +775,7 @@ public class ConfigurationTest
 
     public LastLoginName() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("lastLoginName");
+      prop = SimpleConfiguration.class.getDeclaredField("lastLoginName");
       prop.setAccessible(true);
     }
 
@@ -800,7 +800,7 @@ public class ConfigurationTest
 
     public BillFlag() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("billFlag");
+      prop = SimpleConfiguration.class.getDeclaredField("billFlag");
       prop.setAccessible(true);
     }
 
@@ -825,7 +825,7 @@ public class ConfigurationTest
 
     public BackupSuccesses() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("backupSuccesses");
+      prop = SimpleConfiguration.class.getDeclaredField("backupSuccesses");
       prop.setAccessible(true);
     }
 
@@ -850,7 +850,7 @@ public class ConfigurationTest
 
     public BackupIncomplete() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("backupIncomplete");
+      prop = SimpleConfiguration.class.getDeclaredField("backupIncomplete");
       prop.setAccessible(true);
     }
 
@@ -875,7 +875,7 @@ public class ConfigurationTest
 
     public BackupFailed() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("backupFailed");
+      prop = SimpleConfiguration.class.getDeclaredField("backupFailed");
       prop.setAccessible(true);
     }
 
@@ -900,7 +900,7 @@ public class ConfigurationTest
 
     public BackupRestores() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("backupRestores");
+      prop = SimpleConfiguration.class.getDeclaredField("backupRestores");
       prop.setAccessible(true);
     }
 
@@ -925,7 +925,7 @@ public class ConfigurationTest
 
     public LastBackupDate() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("lastBackupDate");
+      prop = SimpleConfiguration.class.getDeclaredField("lastBackupDate");
       prop.setAccessible(true);
     }
 
@@ -950,7 +950,7 @@ public class ConfigurationTest
 
     public BackupServerName() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("backupServerName");
+      prop = SimpleConfiguration.class.getDeclaredField("backupServerName");
       prop.setAccessible(true);
     }
 
@@ -975,7 +975,7 @@ public class ConfigurationTest
 
     public BackupBillableSpaceGb() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("backupBillableSpaceGb");
+      prop = SimpleConfiguration.class.getDeclaredField("backupBillableSpaceGb");
       prop.setAccessible(true);
     }
 
@@ -1000,7 +1000,7 @@ public class ConfigurationTest
 
     public BackupProtectedDeviceList() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("backupProtectedDeviceList");
+      prop = SimpleConfiguration.class.getDeclaredField("backupProtectedDeviceList");
       prop.setAccessible(true);
     }
 
@@ -1025,7 +1025,7 @@ public class ConfigurationTest
 
     public BackupYear() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("backupYear");
+      prop = SimpleConfiguration.class.getDeclaredField("backupYear");
       prop.setAccessible(true);
     }
 
@@ -1050,7 +1050,7 @@ public class ConfigurationTest
 
     public BackupMonth() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("backupMonth");
+      prop = SimpleConfiguration.class.getDeclaredField("backupMonth");
       prop.setAccessible(true);
     }
 
@@ -1075,7 +1075,7 @@ public class ConfigurationTest
 
     public IPAddress() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("ipAddress");
+      prop = SimpleConfiguration.class.getDeclaredField("ipAddress");
       prop.setAccessible(true);
     }
 
@@ -1100,7 +1100,7 @@ public class ConfigurationTest
 
     public DefaultGateway() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("defaultGateway");
+      prop = SimpleConfiguration.class.getDeclaredField("defaultGateway");
       prop.setAccessible(true);
     }
 
@@ -1125,7 +1125,7 @@ public class ConfigurationTest
 
     public OSType() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("osType");
+      prop = SimpleConfiguration.class.getDeclaredField("osType");
       prop.setAccessible(true);
     }
 
@@ -1151,7 +1151,7 @@ public class ConfigurationTest
 
     public OSInfo() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("osInfo");
+      prop = SimpleConfiguration.class.getDeclaredField("osInfo");
       prop.setAccessible(true);
     }
 
@@ -1176,7 +1176,7 @@ public class ConfigurationTest
 
     public CPUSpeed() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("cpuSpeed");
+      prop = SimpleConfiguration.class.getDeclaredField("cpuSpeed");
       prop.setAccessible(true);
     }
 
@@ -1201,7 +1201,7 @@ public class ConfigurationTest
 
     public RAM() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("ram");
+      prop = SimpleConfiguration.class.getDeclaredField("ram");
       prop.setAccessible(true);
     }
 
@@ -1226,7 +1226,7 @@ public class ConfigurationTest
 
     public LocalHardDrives() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("localHardDrives");
+      prop = SimpleConfiguration.class.getDeclaredField("localHardDrives");
       prop.setAccessible(true);
     }
 
@@ -1251,7 +1251,7 @@ public class ConfigurationTest
 
     public IsActive() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("isActive");
+      prop = SimpleConfiguration.class.getDeclaredField("isActive");
       prop.setAccessible(true);
     }
 
@@ -1276,7 +1276,7 @@ public class ConfigurationTest
 
     public ParentConfigurationId() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("parentConfigurationId");
+      prop = SimpleConfiguration.class.getDeclaredField("parentConfigurationId");
       prop.setAccessible(true);
     }
 
@@ -1302,7 +1302,7 @@ public class ConfigurationTest
 
     public ConfigurationQuestions() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("configurationQuestions");
+      prop = SimpleConfiguration.class.getDeclaredField("configurationQuestions");
       test = new LinkedList < ConfigurationQuestion >();
       prop.setAccessible(true);
     }
@@ -1329,7 +1329,7 @@ public class ConfigurationTest
 
     public VendorCompany() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("vendorCompany");
+      prop = SimpleConfiguration.class.getDeclaredField("vendorCompany");
       test = new io.vulpine.connectwise.type.configuration.VendorCompany();
       prop.setAccessible(true);
     }
@@ -1356,7 +1356,7 @@ public class ConfigurationTest
 
     public ManufacturerCompany() throws Exception
     {
-      prop = Configuration.class.getDeclaredField("manufacturerCompany");
+      prop = SimpleConfiguration.class.getDeclaredField("manufacturerCompany");
       test = new io.vulpine.connectwise.type.configuration.ManufacturerCompany();
       prop.setAccessible(true);
     }
