@@ -15,17 +15,13 @@
  */
 package io.vulpine.connectwise.type.agreement.addition;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonRootName;
-import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
 import io.vulpine.connectwise.type.agreement.BillCustomer;
+import io.vulpine.connectwise.type.def.AgreementAddition;
 
 import java.util.Date;
 
-@JsonRootName( "AgreementAddition" )
-public class Addition extends AbstractSubAgreement
+public class Addition extends AbstractSubAgreement implements AgreementAddition
 {
   private AdditionProduct additionProduct;
 
@@ -65,13 +61,13 @@ public class Addition extends AbstractSubAgreement
 
   private String uom;
 
-  @JsonGetter( "AdditionsProduct" )
+  @Override
   public AdditionProduct additionProduct()
   {
     return additionProduct;
   }
 
-  @JsonSetter( "AdditionsProduct" )
+  @Override
   public Addition additionProduct( final AdditionProduct additionProduct )
   {
     this.additionProduct = additionProduct;
@@ -79,13 +75,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "BillCustomer" )
+  @Override
   public BillCustomer billCustomer()
   {
     return billCustomer;
   }
 
-  @JsonSetter( "BillCustomer" )
+  @Override
   public Addition billCustomer( final BillCustomer billCustomer )
   {
     this.billCustomer = billCustomer;
@@ -93,13 +89,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "BilledQuantity" )
+  @Override
   public Double billedQuantity()
   {
     return billedQuantity;
   }
 
-  @JsonSetter( "BilledQuantity" )
+  @Override
   public Addition billedQuantity( final Double billedQuantity )
   {
     this.billedQuantity = billedQuantity;
@@ -107,15 +103,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonGetter( "CancelledDate" )
+  @Override
   public Date cancelledDate()
   {
     return cancelledDate;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonSetter( "CancelledDate" )
+  @Override
   public Addition cancelledDate( final Date cancelledDate )
   {
     this.cancelledDate = cancelledDate;
@@ -123,15 +117,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonGetter( "EffectiveDate" )
+  @Override
   public Date effectiveDate()
   {
     return effectiveDate;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonSetter( "EffectiveDate" )
+  @Override
   public Addition effectiveDate( final Date effectiveDate )
   {
     this.effectiveDate = effectiveDate;
@@ -139,13 +131,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "ExtCost" )
+  @Override
   public Double extCost()
   {
     return extCost;
   }
 
-  @JsonSetter( "ExtCost" )
+  @Override
   public Addition extCost( final Double extCost )
   {
     this.extCost = extCost;
@@ -153,13 +145,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "ExtPrice" )
+  @Override
   public Double extPrice()
   {
     return extPrice;
   }
 
-  @JsonSetter( "ExtPrice" )
+  @Override
   public Addition extPrice( final Double extPrice )
   {
     this.extPrice = extPrice;
@@ -167,13 +159,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "InvoiceDescription" )
+  @Override
   public String invoiceDescription()
   {
     return invoiceDescription;
   }
 
-  @JsonSetter( "InvoiceDescription" )
+  @Override
   public Addition invoiceDescription( final String invoiceDescription )
   {
     this.invoiceDescription = invoiceDescription;
@@ -181,13 +173,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "LessIncluded" )
+  @Override
   public Double lessIncluded()
   {
     return lessIncluded;
   }
 
-  @JsonSetter( "LessIncluded" )
+  @Override
   public Addition lessIncluded( final Double lessIncluded )
   {
     this.lessIncluded = lessIncluded;
@@ -195,13 +187,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "Margin" )
+  @Override
   public Double margin()
   {
     return margin;
   }
 
-  @JsonSetter( "Margin" )
+  @Override
   public Addition margin( final Double margin )
   {
     this.margin = margin;
@@ -209,13 +201,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "ProductId" )
+  @Override
   public Integer productId()
   {
     return productId;
   }
 
-  @JsonSetter( "ProductId" )
+  @Override
   public Addition productId( Integer productId )
   {
     this.productId = productId;
@@ -223,13 +215,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "Quantity" )
+  @Override
   public Double quantity()
   {
     return quantity;
   }
 
-  @JsonSetter( "Quantity" )
+  @Override
   public Addition quantity( final Double quantity )
   {
     this.quantity = quantity;
@@ -237,13 +229,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "SerialNumber" )
+  @Override
   public String serialNumber()
   {
     return serialNumber;
   }
 
-  @JsonSetter( "SerialNumber" )
+  @Override
   public Addition serialNumber( final String serialNumber )
   {
     this.serialNumber = serialNumber;
@@ -251,13 +243,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "UnitCost" )
+  @Override
   public Double unitCost()
   {
     return unitCost;
   }
 
-  @JsonSetter( "UnitCost" )
+  @Override
   public Addition unitCost( final Double unitCost )
   {
     this.unitCost = unitCost;
@@ -265,13 +257,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "UnitPrice" )
+  @Override
   public Double unitPrice()
   {
     return unitPrice;
   }
 
-  @JsonSetter( "UnitPrice" )
+  @Override
   public Addition unitPrice( final Double unitPrice )
   {
     this.unitPrice = unitPrice;
@@ -279,13 +271,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "UOM" )
+  @Override
   public String uom()
   {
     return uom;
   }
 
-  @JsonSetter( "UOM" )
+  @Override
   public Addition uom( final String uom )
   {
     this.uom = uom;
@@ -293,13 +285,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "PurchaseItemFlag" )
+  @Override
   public Boolean purchaseItem()
   {
     return purchaseItem;
   }
 
-  @JsonSetter( "PurchaseItemFlag" )
+  @Override
   public Addition purchaseItem( final Boolean purchaseItem )
   {
     this.purchaseItem = purchaseItem;
@@ -307,13 +299,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "SpecialOrderFlag" )
+  @Override
   public Boolean specialOrder()
   {
     return specialOrder;
   }
 
-  @JsonSetter( "SpecialOrderFlag" )
+  @Override
   public Addition specialOrder( final Boolean specialOrder )
   {
     this.specialOrder = specialOrder;
@@ -321,13 +313,13 @@ public class Addition extends AbstractSubAgreement
     return this;
   }
 
-  @JsonGetter( "TaxableFlag" )
+  @Override
   public Boolean taxable()
   {
     return taxable;
   }
 
-  @JsonSetter( "TaxableFlag" )
+  @Override
   public Addition taxable( final Boolean taxable )
   {
     this.taxable = taxable;

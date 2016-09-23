@@ -17,11 +17,13 @@ package io.vulpine.connectwise.api.common.request;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 
 import io.vulpine.connectwise.api.common.Credentials;
+import io.vulpine.connectwise.api.common.ResponseData;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.endpoints.Endpoint;
 
@@ -37,6 +39,8 @@ abstract public class FindRequest < T > extends ConnectwiseRequest< T >
   protected int limit;
 
   protected int skip;
+
+  protected Class < ? extends ResponseData < T > > responseClass;
 
   protected List < String > returnFields;
 
@@ -74,6 +78,18 @@ abstract public class FindRequest < T > extends ConnectwiseRequest< T >
   {
     this.orderBy = orderBy;
     return this;
+  }
+
+  @JsonIgnore
+  public Class < ? extends ResponseData < T > > getResponseClass()
+  {
+    return responseClass;
+  }
+
+  @JsonIgnore
+  public void setResponseClass( final Class < ? extends ResponseData < T > > responseClass )
+  {
+    this.responseClass = responseClass;
   }
 
   @JsonGetter( "limit" )

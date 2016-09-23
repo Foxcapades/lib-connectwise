@@ -13,14 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.type.company;
+package io.vulpine.connectwise.util;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import io.vulpine.connectwise.type.ConnectwiseCommon;
-
-public class CompanyCommon extends ConnectwiseCommon
+public class IntegerField extends SimpleField < Integer >
 {
-  private String companyName;
+  public IntegerField()
+  {
+  }
 
+  public IntegerField( final Integer value )
+  {
+    super(value);
+  }
 
+  public IntegerField( final String name, final Integer value )
+  {
+    super(name, value);
+  }
+
+  public IntegerField( final String name, final boolean optional, final boolean nullable )
+  {
+    super(name, optional, nullable);
+  }
 }

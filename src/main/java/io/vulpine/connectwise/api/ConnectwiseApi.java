@@ -33,6 +33,7 @@ import io.vulpine.logging.LoggerManager;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
 import java.util.regex.Pattern;
 
 /**
@@ -96,6 +97,7 @@ public final class ConnectwiseApi implements ConnectwiseInterface
     this.credentials = new Credentials().setCompanyId(company).setIntegratorLoginId(username).setIntegratorPassword(password);
     this.apiPath = apiPath + (apiPath.endsWith("/") ? "v4_6_release/apis/2.0/" : "/v4_6_release/apis/2.0/");
 
+    this.xmlMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss"));
     this.xmlMapper.setFilterProvider(new SimpleFilterProvider().addFilter("filter-empty", new EmptyFilter()));
 
     this.logger = LoggerManager.getLogger("lib-connectwise");

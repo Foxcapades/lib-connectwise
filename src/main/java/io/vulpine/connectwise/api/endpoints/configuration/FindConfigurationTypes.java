@@ -34,11 +34,12 @@ public class FindConfigurationTypes extends FindRequest < List< ConfigurationTyp
   )
   {
     super(credentials, xmlMapper, api, Endpoint.CONFIGURATION);
+    responseClass = FindConfigurationTypesResponse.class;
   }
 
   @Override
   public List < ConfigurationType > submit() throws IOException
   {
-    return submit(FindConfigurationTypesResponse.class);
+    return submit(responseClass);
   }
 }

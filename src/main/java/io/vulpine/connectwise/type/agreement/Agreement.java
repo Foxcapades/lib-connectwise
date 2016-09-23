@@ -15,14 +15,11 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 
 import java.util.Date;
 
-public class Agreement extends ConnectwiseCommon
+public class Agreement extends ConnectwiseCommon implements io.vulpine.connectwise.type.def.Agreement
 {
   private Boolean allowOverruns;
 
@@ -158,13 +155,13 @@ public class Agreement extends ConnectwiseCommon
 
   private String workOrder;
 
-  @JsonGetter( "AgreementName" )
+  @Override
   public String agreementName()
   {
     return agreementName;
   }
 
-  @JsonSetter( "AgreementName" )
+  @Override
   public Agreement agreementName( String agreementName )
   {
     this.agreementName = agreementName;
@@ -172,13 +169,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "AgreementTypeId" )
+  @Override
   public Integer agreementTypeId()
   {
     return agreementTypeId;
   }
 
-  @JsonSetter( "AgreementTypeId" )
+  @Override
   public Agreement agreementTypeId( Integer agreementTypeId )
   {
     this.agreementTypeId = agreementTypeId;
@@ -186,13 +183,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "ApplicationCycle" )
+  @Override
   public String applicationCycle()
   {
     return applicationCycle;
   }
 
-  @JsonSetter( "ApplicationCycle" )
+  @Override
   public Agreement applicationCycle( String applicationCycle )
   {
     this.applicationCycle = applicationCycle;
@@ -200,13 +197,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "ApplicationLimit" )
+  @Override
   public Double applicationLimit()
   {
     return applicationLimit;
   }
 
-  @JsonSetter( "ApplicationLimit" )
+  @Override
   public Agreement applicationLimit( Double applicationLimit )
   {
     this.applicationLimit = applicationLimit;
@@ -214,13 +211,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "ApplicationUnits" )
+  @Override
   public String applicationUnits()
   {
     return applicationUnits;
   }
 
-  @JsonSetter( "ApplicationUnits" )
+  @Override
   public Agreement applicationUnits( String applicationUnits )
   {
     this.applicationUnits = applicationUnits;
@@ -228,13 +225,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillAmount" )
+  @Override
   public Double billAmount()
   {
     return billAmount;
   }
 
-  @JsonSetter( "BillAmount" )
+  @Override
   public Agreement billAmount( Double billAmount )
   {
     this.billAmount = billAmount;
@@ -242,13 +239,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillCycleId" )
+  @Override
   public Integer billCycleId()
   {
     return billCycleId;
   }
 
-  @JsonSetter( "BillCycleId" )
+  @Override
   public Agreement billCycleId( Integer billCycleId )
   {
     this.billCycleId = billCycleId;
@@ -256,13 +253,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillExpenses" )
+  @Override
   public String billExpenses()
   {
     return billExpenses;
   }
 
-  @JsonSetter( "BillExpenses" )
+  @Override
   public Agreement billExpenses( String billExpenses )
   {
     this.billExpenses = billExpenses;
@@ -270,13 +267,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillProducts" )
+  @Override
   public String billProducts()
   {
     return billProducts;
   }
 
-  @JsonSetter( "BillProducts" )
+  @Override
   public Agreement billProducts( String billProducts )
   {
     this.billProducts = billProducts;
@@ -284,15 +281,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonGetter( "BillStartDate" )
+  @Override
   public Date billStartDate()
   {
     return billStartDate;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonSetter( "BillStartDate" )
+  @Override
   public Agreement billStartDate( final Date billStartDate )
   {
     this.billStartDate = billStartDate;
@@ -300,13 +295,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillTermsId" )
+  @Override
   public Integer billTermsId()
   {
     return billTermsId;
   }
 
-  @JsonSetter( "BillTermsId" )
+  @Override
   public Agreement billTermsId( Integer billTermsId )
   {
     this.billTermsId = billTermsId;
@@ -314,13 +309,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillTime" )
+  @Override
   public String billTime()
   {
     return billTime;
   }
 
-  @JsonSetter( "BillTime" )
+  @Override
   public Agreement billTime( String billTime )
   {
     this.billTime = billTime;
@@ -328,13 +323,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillToAddressId" )
+  @Override
   public Integer billToAddressId()
   {
     return billToAddressId;
   }
 
-  @JsonSetter( "BillToAddressId" )
+  @Override
   public Agreement billToAddressId( Integer billToAddressId )
   {
     this.billToAddressId = billToAddressId;
@@ -342,13 +337,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillToCompanyId" )
+  @Override
   public Integer billToCompanyId()
   {
     return billToCompanyId;
   }
 
-  @JsonSetter( "BillToCompanyId" )
+  @Override
   public Agreement billToCompanyId( Integer billToCompanyId )
   {
     this.billToCompanyId = billToCompanyId;
@@ -356,13 +351,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "CompHourlyRate" )
+  @Override
   public Double compHourlyRate()
   {
     return compHourlyRate;
   }
 
-  @JsonSetter( "CompHourlyRate" )
+  @Override
   public Agreement compHourlyRate( Double compHourlyRate )
   {
     this.compHourlyRate = compHourlyRate;
@@ -370,13 +365,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "CompLimitAmount" )
+  @Override
   public Double compLimitAmount()
   {
     return compLimitAmount;
   }
 
-  @JsonSetter( "CompLimitAmount" )
+  @Override
   public Agreement compLimitAmount( Double compLimitAmount )
   {
     this.compLimitAmount = compLimitAmount;
@@ -384,13 +379,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "CompanyId" )
+  @Override
   public Integer companyId()
   {
     return companyId;
   }
 
-  @JsonSetter( "CompanyId" )
+  @Override
   public Agreement companyId( Integer companyId )
   {
     this.companyId = companyId;
@@ -398,13 +393,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "ContactId" )
+  @Override
   public Integer contactId()
   {
     return contactId;
   }
 
-  @JsonSetter( "ContactId" )
+  @Override
   public Agreement contactId( Integer contactId )
   {
     this.contactId = contactId;
@@ -412,13 +407,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "CustomerPO" )
+  @Override
   public String customerPo()
   {
     return customerPo;
   }
 
-  @JsonSetter( "CustomerPO" )
+  @Override
   public Agreement customerPo( String customerPo )
   {
     this.customerPo = customerPo;
@@ -426,15 +421,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonGetter( "DateCancelled" )
+  @Override
   public Date dateCancelled()
   {
     return dateCancelled;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonSetter( "DateCancelled" )
+  @Override
   public Agreement dateCancelled( final Date dateCancelled )
   {
     this.dateCancelled = dateCancelled;
@@ -442,13 +435,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "DepartmentId" )
+  @Override
   public Integer departmentId()
   {
     return departmentId;
   }
 
-  @JsonSetter( "DepartmentId" )
+  @Override
   public Agreement departmentId( Integer departmentId )
   {
     this.departmentId = departmentId;
@@ -456,13 +449,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "EmployeeCompNotExceed" )
+  @Override
   public String employeeCompNotExceed()
   {
     return employeeCompNotExceed;
   }
 
-  @JsonSetter( "EmployeeCompNotExceed" )
+  @Override
   public Agreement employeeCompNotExceed( String employeeCompNotExceed )
   {
     this.employeeCompNotExceed = employeeCompNotExceed;
@@ -470,13 +463,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "EmployeeCompRate" )
+  @Override
   public String employeeCompRate()
   {
     return employeeCompRate;
   }
 
-  @JsonSetter( "EmployeeCompRate" )
+  @Override
   public Agreement employeeCompRate( String employeeCompRate )
   {
     this.employeeCompRate = employeeCompRate;
@@ -484,15 +477,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonGetter( "EndDate" )
+  @Override
   public Date endDate()
   {
     return endDate;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonSetter( "EndDate" )
+  @Override
   public Agreement endDate( final Date endDate )
   {
     this.endDate = endDate;
@@ -500,13 +491,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "ExpiredDays" )
+  @Override
   public Integer expiredDays()
   {
     return expiredDays;
   }
 
-  @JsonSetter( "ExpiredDays" )
+  @Override
   public Agreement expiredDays( Integer expiredDays )
   {
     this.expiredDays = expiredDays;
@@ -514,13 +505,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "InternalNotes" )
+  @Override
   public String internalNotes()
   {
     return internalNotes;
   }
 
-  @JsonSetter( "InternalNotes" )
+  @Override
   public Agreement internalNotes( String internalNotes )
   {
     this.internalNotes = internalNotes;
@@ -528,13 +519,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "InvoiceDescription" )
+  @Override
   public String invoiceDescription()
   {
     return invoiceDescription;
   }
 
-  @JsonSetter( "InvoiceDescription" )
+  @Override
   public Agreement invoiceDescription( String invoiceDescription )
   {
     this.invoiceDescription = invoiceDescription;
@@ -542,13 +533,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "InvoiceTemplateId" )
+  @Override
   public Integer invoiceTemplateId()
   {
     return invoiceTemplateId;
   }
 
-  @JsonSetter( "InvoiceTemplateId" )
+  @Override
   public Agreement invoiceTemplateId( Integer invoiceTemplateId )
   {
     this.invoiceTemplateId = invoiceTemplateId;
@@ -556,13 +547,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "InvoicingCycle" )
+  @Override
   public String invoicingCycle()
   {
     return invoicingCycle;
   }
 
-  @JsonSetter( "InvoicingCycle" )
+  @Override
   public Agreement invoicingCycle( String invoicingCycle )
   {
     this.invoicingCycle = invoicingCycle;
@@ -570,13 +561,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "Limit" )
+  @Override
   public Integer limit()
   {
     return limit;
   }
 
-  @JsonSetter( "Limit" )
+  @Override
   public Agreement limit( Integer limit )
   {
     this.limit = limit;
@@ -584,13 +575,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "LocationId" )
+  @Override
   public Integer locationId()
   {
     return locationId;
   }
 
-  @JsonSetter( "LocationId" )
+  @Override
   public Agreement locationId( Integer locationId )
   {
     this.locationId = locationId;
@@ -598,13 +589,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "OpportunityId" )
+  @Override
   public Integer opportunityId()
   {
     return opportunityId;
   }
 
-  @JsonSetter( "OpportunityId" )
+  @Override
   public Agreement opportunityId( Integer opportunityId )
   {
     this.opportunityId = opportunityId;
@@ -612,13 +603,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( value = "ParentAgreementId" )
+  @Override
   public Integer parentAgreementId()
   {
     return parentAgreementId;
   }
 
-  @JsonGetter( value = "ParentAgreementId" )
+  @Override
   public Agreement parentAgreementId( Integer parentAgreementId )
   {
     this.parentAgreementId = parentAgreementId;
@@ -626,13 +617,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "PeriodType" )
+  @Override
   public String periodType()
   {
     return periodType;
   }
 
-  @JsonSetter( "PeriodType" )
+  @Override
   public Agreement periodType( String periodType )
   {
     this.periodType = periodType;
@@ -640,13 +631,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "ProjectTypeId" )
+  @Override
   public Integer projectTypeId()
   {
     return projectTypeId;
   }
 
-  @JsonSetter( "ProjectTypeId" )
+  @Override
   public Agreement projectTypeId( Integer projectTypeId )
   {
     this.projectTypeId = projectTypeId;
@@ -654,13 +645,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "ProrateFirstBill" )
+  @Override
   public Double prorateFirstBill()
   {
     return prorateFirstBill;
   }
 
-  @JsonSetter( "ProrateFirstBill" )
+  @Override
   public Agreement prorateFirstBill( Double prorateFirstBill )
   {
     this.prorateFirstBill = prorateFirstBill;
@@ -668,13 +659,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "ReasonCancelled" )
+  @Override
   public String reasonCancelled()
   {
     return reasonCancelled;
   }
 
-  @JsonSetter( "ReasonCancelled" )
+  @Override
   public Agreement reasonCancelled( String reasonCancelled )
   {
     this.reasonCancelled = reasonCancelled;
@@ -682,13 +673,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "SlaId" )
+  @Override
   public Integer slaId()
   {
     return slaId;
   }
 
-  @JsonSetter( "SlaId" )
+  @Override
   public Agreement slaId( Integer slaId )
   {
     this.slaId = slaId;
@@ -696,15 +687,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonGetter( "StartDate" )
+  @Override
   public Date startDate()
   {
     return startDate;
   }
 
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonSetter( "StartDate" )
+  @Override
   public Agreement startDate( final Date startDate )
   {
     this.startDate = startDate;
@@ -712,13 +701,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "SubContractCompanyId" )
+  @Override
   public Integer subContractCompanyId()
   {
     return subContractCompanyId;
   }
 
-  @JsonSetter( "SubContractCompanyId" )
+  @Override
   public Agreement subContractCompanyId( Integer subContractCompanyId )
   {
     this.subContractCompanyId = subContractCompanyId;
@@ -726,13 +715,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "SubContractContactId" )
+  @Override
   public Integer subContractContactId()
   {
     return subContractContactId;
   }
 
-  @JsonSetter( "SubContractContactId" )
+  @Override
   public Agreement subContractContactId( Integer subContractContactId )
   {
     this.subContractContactId = subContractContactId;
@@ -740,13 +729,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "TaxCodeId" )
+  @Override
   public Integer taxCodeId()
   {
     return taxCodeId;
   }
 
-  @JsonSetter( "TaxCodeId" )
+  @Override
   public Agreement taxCodeId( Integer taxCodeId )
   {
     this.taxCodeId = taxCodeId;
@@ -754,13 +743,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "WorkOrder" )
+  @Override
   public String workOrder()
   {
     return workOrder;
   }
 
-  @JsonSetter( "WorkOrder" )
+  @Override
   public Agreement workOrder( String workOrder )
   {
     this.workOrder = workOrder;
@@ -768,13 +757,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "WorkRoleId" )
+  @Override
   public Integer workRoleId()
   {
     return workRoleId;
   }
 
-  @JsonSetter( "WorkRoleId" )
+  @Override
   public Agreement workRoleId( Integer workRoleId )
   {
     this.workRoleId = workRoleId;
@@ -782,13 +771,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "WorkTypeId" )
+  @Override
   public Integer workTypeId()
   {
     return workTypeId;
   }
 
-  @JsonSetter( "WorkTypeId" )
+  @Override
   public Agreement workTypeId( Integer workTypeId )
   {
     this.workTypeId = workTypeId;
@@ -796,13 +785,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "AllowOverruns" )
+  @Override
   public Boolean allowOverruns()
   {
     return allowOverruns;
   }
 
-  @JsonSetter( "AllowOverruns" )
+  @Override
   public Agreement allowOverruns( Boolean allowOverruns )
   {
     this.allowOverruns = allowOverruns;
@@ -810,13 +799,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "ApplicationUnlimitedFlag" )
+  @Override
   public Boolean applicationUnlimited()
   {
     return applicationUnlimited;
   }
 
-  @JsonSetter( "ApplicationUnlimitedFlag" )
+  @Override
   public Agreement applicationUnlimited( Boolean applicationUnlimited )
   {
     this.applicationUnlimited = applicationUnlimited;
@@ -824,13 +813,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillOneTimeFlag" )
+  @Override
   public Boolean billOneTime()
   {
     return billOneTime;
   }
 
-  @JsonSetter( "BillOneTimeFlag" )
+  @Override
   public Agreement billOneTime( Boolean billOneTime )
   {
     this.billOneTime = billOneTime;
@@ -838,13 +827,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillableExpenseInvoice" )
+  @Override
   public Boolean billableExpenseInvoice()
   {
     return billableExpenseInvoice;
   }
 
-  @JsonSetter( "BillableExpenseInvoice" )
+  @Override
   public Agreement billableExpenseInvoice( Boolean billableExpenseInvoice )
   {
     this.billableExpenseInvoice = billableExpenseInvoice;
@@ -852,13 +841,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillableProductInvoice" )
+  @Override
   public Boolean billableProductInvoice()
   {
     return billableProductInvoice;
   }
 
-  @JsonSetter( "BillableProductInvoice" )
+  @Override
   public Agreement billableProductInvoice( Boolean billableProductInvoice )
   {
     this.billableProductInvoice = billableProductInvoice;
@@ -866,13 +855,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BillableTimeInvoice" )
+  @Override
   public Boolean billableTimeInvoice()
   {
     return billableTimeInvoice;
   }
 
-  @JsonSetter( "BillableTimeInvoice" )
+  @Override
   public Agreement billableTimeInvoice( Boolean billableTimeInvoice )
   {
     this.billableTimeInvoice = billableTimeInvoice;
@@ -880,13 +869,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "BottomComment" )
+  @Override
   public Boolean bottomComment()
   {
     return bottomComment;
   }
 
-  @JsonSetter( "BottomComment" )
+  @Override
   public Agreement bottomComment( Boolean bottomComment )
   {
     this.bottomComment = bottomComment;
@@ -894,13 +883,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "CancelledFlag" )
+  @Override
   public Boolean cancelled()
   {
     return cancelled;
   }
 
-  @JsonSetter( "CancelledFlag" )
+  @Override
   public Agreement cancelled( Boolean cancelled )
   {
     this.cancelled = cancelled;
@@ -908,13 +897,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "CarryOverUnused" )
+  @Override
   public Boolean carryOverUnused()
   {
     return carryOverUnused;
   }
 
-  @JsonSetter( "CarryOverUnused" )
+  @Override
   public Agreement carryOverUnused( Boolean carryOverUnused )
   {
     this.carryOverUnused = carryOverUnused;
@@ -922,13 +911,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "ChargeToFirm" )
+  @Override
   public Boolean chargeToFirm()
   {
     return chargeToFirm;
   }
 
-  @JsonSetter( "ChargeToFirm" )
+  @Override
   public Agreement chargeToFirm( Boolean chargeToFirm )
   {
     this.chargeToFirm = chargeToFirm;
@@ -936,13 +925,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "CoverAgreementExpense" )
+  @Override
   public Boolean coverAgreementExpense()
   {
     return coverAgreementExpense;
   }
 
-  @JsonSetter( "CoverAgreementExpense" )
+  @Override
   public Agreement coverAgreementExpense( Boolean coverAgreementExpense )
   {
     this.coverAgreementExpense = coverAgreementExpense;
@@ -950,13 +939,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "CoverAgreementProduct" )
+  @Override
   public Boolean coverAgreementProduct()
   {
     return coverAgreementProduct;
   }
 
-  @JsonSetter( "CoverAgreementProduct" )
+  @Override
   public Agreement coverAgreementProduct( Boolean coverAgreementProduct )
   {
     this.coverAgreementProduct = coverAgreementProduct;
@@ -964,13 +953,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "CoverAgreementTime" )
+  @Override
   public Boolean coverAgreementTime()
   {
     return coverAgreementTime;
   }
 
-  @JsonSetter( "CoverAgreementTime" )
+  @Override
   public Agreement coverAgreementTime( Boolean coverAgreementTime )
   {
     this.coverAgreementTime = coverAgreementTime;
@@ -978,13 +967,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "CoverSalesTax" )
+  @Override
   public Boolean coverSalesTax()
   {
     return coverSalesTax;
   }
 
-  @JsonSetter( "CoverSalesTax" )
+  @Override
   public Agreement coverSalesTax( Boolean coverSalesTax )
   {
     this.coverSalesTax = coverSalesTax;
@@ -992,13 +981,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "ExpireWhenZero" )
+  @Override
   public Boolean expireWhenZero()
   {
     return expireWhenZero;
   }
 
-  @JsonSetter( "ExpireWhenZero" )
+  @Override
   public Agreement expireWhenZero( Boolean expireWhenZero )
   {
     this.expireWhenZero = expireWhenZero;
@@ -1006,13 +995,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "NoEndingDateFlag" )
+  @Override
   public Boolean noEndingDate()
   {
     return noEndingDate;
   }
 
-  @JsonSetter( "NoEndingDateFlag" )
+  @Override
   public Agreement noEndingDate( Boolean noEndingDate )
   {
     this.noEndingDate = noEndingDate;
@@ -1020,13 +1009,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "OneTimeFlag" )
+  @Override
   public Boolean oneTime()
   {
     return oneTime;
   }
 
-  @JsonSetter( "OneTimeFlag" )
+  @Override
   public Agreement oneTime( Boolean oneTime )
   {
     this.oneTime = oneTime;
@@ -1034,13 +1023,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "RestrictDepartmentFlag" )
+  @Override
   public Boolean restrictDepartment()
   {
     return restrictDepartment;
   }
 
-  @JsonSetter( "RestrictDepartmentFlag" )
+  @Override
   public Agreement restrictDepartment( final Boolean restrictDepartment )
   {
     this.restrictDepartment = restrictDepartment;
@@ -1048,13 +1037,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "RestrictDownPayment" )
+  @Override
   public Boolean restrictDownPayment()
   {
     return restrictDownPayment;
   }
 
-  @JsonSetter( "RestrictDownPayment" )
+  @Override
   public Agreement restrictDownPayment( Boolean restrictDownPayment )
   {
     this.restrictDownPayment = restrictDownPayment;
@@ -1062,13 +1051,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "RestrictLocationFlag" )
+  @Override
   public Boolean restrictLocation()
   {
     return restrictLocation;
   }
 
-  @JsonSetter( "RestrictLocationFlag" )
+  @Override
   public Agreement restrictLocation( Boolean restrictLocation )
   {
     this.restrictLocation = restrictLocation;
@@ -1076,13 +1065,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "Taxable" )
+  @Override
   public Boolean taxable()
   {
     return taxable;
   }
 
-  @JsonSetter( "Taxable" )
+  @Override
   public Agreement taxable( Boolean taxable )
   {
     this.taxable = taxable;
@@ -1090,13 +1079,13 @@ public class Agreement extends ConnectwiseCommon
     return this;
   }
 
-  @JsonGetter( "TopComment" )
+  @Override
   public Boolean topComment()
   {
     return topComment;
   }
 
-  @JsonSetter( "TopComment" )
+  @Override
   public Agreement topComment( Boolean topComment )
   {
     this.topComment = topComment;

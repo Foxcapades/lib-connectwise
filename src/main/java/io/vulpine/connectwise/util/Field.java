@@ -13,14 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.type.company;
+package io.vulpine.connectwise.util;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import io.vulpine.connectwise.type.ConnectwiseCommon;
+import com.fasterxml.jackson.annotation.JsonValue;
 
-public class CompanyCommon extends ConnectwiseCommon
+import java.util.Map;
+
+public interface Field < T >
 {
-  private String companyName;
+  String getName();
 
+  Field < T > setName( String s );
 
+  @JsonValue
+  T get();
+
+  Field < T > set( T val );
+
+  boolean isNullable();
+
+  Field < T > setNullable( boolean val );
+
+  Map < String, String > attributes();
+
+  Field < T > setAttribute( String key, String val );
+
+  boolean isOptional();
+
+  Field < T > setOptional( boolean val );
+
+  String toXml();
 }

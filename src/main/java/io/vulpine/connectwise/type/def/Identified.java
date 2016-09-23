@@ -13,14 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.type.company;
+package io.vulpine.connectwise.type.def;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import io.vulpine.connectwise.type.ConnectwiseCommon;
-
-public class CompanyCommon extends ConnectwiseCommon
+interface Identified < T >
 {
-  private String companyName;
-
-
+  Integer id();
+  T id( Integer id );
 }

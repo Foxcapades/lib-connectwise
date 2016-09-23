@@ -61,33 +61,33 @@ public class AddCompany extends AddRequest < Company >
   public AddCompany companyName( String companyName )
   {
     this.logger.trace(this.getClass(), companyName);
-    data.setCompanyName(companyName);
+    data.companyName(companyName);
     return this;
   }
 
   public String companyIdentifier()
   {
     this.logger.trace(this.getClass());
-    return data.getCompanyIdentifier();
+    return data.companyIdentifier();
   }
 
   public AddCompany companyIdentifier( String companyIdentifier )
   {
     this.logger.trace(this.getClass(), companyIdentifier);
-    data.setCompanyIdentifier(companyIdentifier);
+    data.companyIdentifier(companyIdentifier);
     return this;
   }
 
   public Address defaultAddress()
   {
     this.logger.trace(this.getClass());
-    return data.getDefaultAddress();
+    return data.defaultAddress();
   }
 
   public AddCompany defaultAddress( Address defaultAddress )
   {
     this.logger.trace(this.getClass(), defaultAddress);
-    data.setDefaultAddress(defaultAddress);
+    data.defaultAddress(defaultAddress);
     return this;
   }
 
@@ -133,7 +133,7 @@ public class AddCompany extends AddRequest < Company >
   public String webSite()
   {
     this.logger.trace(this.getClass());
-    return data.getWebSite();
+    return data.webSite();
   }
 
   public AddCompany webSite( String webSite )
@@ -178,33 +178,33 @@ public class AddCompany extends AddRequest < Company >
   public AddCompany type( String type )
   {
     this.logger.trace(this.getClass(), type);
-    data.setType(type);
+    data.type(type);
     return this;
   }
 
   public String status()
   {
     this.logger.trace(this.getClass());
-    return data.getStatus();
+    return data.status();
   }
 
   public AddCompany status( String status )
   {
     this.logger.trace(this.getClass(), status);
-    data.setStatus(status);
+    data.status(status);
     return this;
   }
 
   public String accountNumber()
   {
     this.logger.trace(this.getClass());
-    return data.getAccountNumber();
+    return data.accountNumber();
   }
 
   public AddCompany accountNumber( String accountNumber )
   {
     this.logger.trace(this.getClass(), accountNumber);
-    data.setAccountNumber(accountNumber);
+    data.accountNumber(accountNumber);
     return this;
   }
 

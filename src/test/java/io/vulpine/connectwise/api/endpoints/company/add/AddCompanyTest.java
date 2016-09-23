@@ -58,7 +58,7 @@ public class AddCompanyTest
   public void companyName_passes_value_to_company_instance() throws Exception
   {
     request.companyName(TEST_STRING);
-    Mockito.verify(company, Mockito.times(1)).setCompanyName(TEST_STRING);
+    Mockito.verify(company, Mockito.times(1)).companyName(TEST_STRING);
   }
 
   @Test
@@ -72,14 +72,14 @@ public class AddCompanyTest
   public void companyIdentifier_passes_value_to_company_instance() throws Exception
   {
     request.companyIdentifier(TEST_STRING);
-    Mockito.verify(company, Mockito.times(1)).setCompanyIdentifier(TEST_STRING);
+    Mockito.verify(company, Mockito.times(1)).companyIdentifier(TEST_STRING);
   }
 
   @Test
   public void companyIdentifier_fetches_value_from_company_instance() throws Exception
   {
     request.companyIdentifier();
-    Mockito.verify(company, Mockito.times(1)).getCompanyIdentifier();
+    Mockito.verify(company, Mockito.times(1)).companyIdentifier();
   }
 
   @Test
@@ -87,14 +87,14 @@ public class AddCompanyTest
   {
     final Address address = new Address();
     request.defaultAddress(address);
-    Mockito.verify(company, Mockito.times(1)).setDefaultAddress(address);
+    Mockito.verify(company, Mockito.times(1)).defaultAddress(address);
   }
 
   @Test
   public void defaultAddress_fetches_value_from_company_instance() throws Exception
   {
     request.defaultAddress();
-    Mockito.verify(company, Mockito.times(1)).getDefaultAddress();
+    Mockito.verify(company, Mockito.times(1)).defaultAddress();
   }
 
   @Test
@@ -151,7 +151,7 @@ public class AddCompanyTest
   public void webSite_fetches_value_from_company_instance() throws Exception
   {
     request.webSite();
-    Mockito.verify(company, Mockito.times(1)).getWebSite();
+    Mockito.verify(company, Mockito.times(1)).webSite();
   }
 
   @Test
@@ -186,7 +186,7 @@ public class AddCompanyTest
   public void type_passes_value_to_company_instance() throws Exception
   {
     request.type(TEST_STRING);
-    Mockito.verify(company, Mockito.times(1)).setType(TEST_STRING);
+    Mockito.verify(company, Mockito.times(1)).type(TEST_STRING);
   }
 
   @Test
@@ -200,28 +200,28 @@ public class AddCompanyTest
   public void status_passes_value_to_company_instance() throws Exception
   {
     request.status(TEST_STRING);
-    Mockito.verify(company, Mockito.times(1)).setStatus(TEST_STRING);
+    Mockito.verify(company, Mockito.times(1)).status(TEST_STRING);
   }
 
   @Test
   public void status_fetches_value_from_company_instance() throws Exception
   {
     request.status();
-    Mockito.verify(company, Mockito.times(1)).getStatus();
+    Mockito.verify(company, Mockito.times(1)).status();
   }
 
   @Test
   public void accountNumber_passes_value_to_company_instance() throws Exception
   {
     request.accountNumber(TEST_STRING);
-    Mockito.verify(company, Mockito.times(1)).setAccountNumber(TEST_STRING);
+    Mockito.verify(company, Mockito.times(1)).accountNumber(TEST_STRING);
   }
 
   @Test
   public void accountNumber_fetches_value_from_company_instance() throws Exception
   {
     request.accountNumber();
-    Mockito.verify(company, Mockito.times(1)).getAccountNumber();
+    Mockito.verify(company, Mockito.times(1)).accountNumber();
   }
 
   @Test

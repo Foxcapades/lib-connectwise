@@ -16,7 +16,6 @@
 
 package io.vulpine.connectwise.type.agreement.worktype;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.type.agreement.BillableOption;
 import io.vulpine.connectwise.type.agreement.RateType;
@@ -25,122 +24,172 @@ import java.util.Date;
 
 @SuppressWarnings( "unused" )
 @JacksonXmlRootElement( localName = "GetAgreementWorkTypeResult" )
-public class WorkType extends WorkTypeCommon
+public class WorkType extends WorkTypeCommon// implements AgreementWorkType
 {
-  @JacksonXmlProperty( localName = "LocationId" )
-  protected Integer LocationId;
+  protected Integer id;
 
-  @JacksonXmlProperty( localName = "RateType" )
-  protected RateType RateType;
+  protected Integer locationId;
 
-  @JacksonXmlProperty( localName = "Rate" )
-  protected Double Rate;
+  protected RateType rateType;
 
-  @JacksonXmlProperty( localName = "EffectiveDate" )
-  protected Date EffectiveDate;
+  protected Double rate;
 
-  @JacksonXmlProperty( localName = "EndingDate" )
-  protected Date EndingDate;
+  protected Date effectiveDate;
 
-  @JacksonXmlProperty( localName = "BillTime" )
-  protected BillableOption BillTime;
+  protected Date endingDate;
 
-  @JacksonXmlProperty( localName = "HoursMin" )
-  protected Double HoursMin;
+  protected BillableOption billTime;
 
-  @JacksonXmlProperty( localName = "HoursMax" )
-  protected Double HoursMax;
+  protected Double hoursMin;
 
-  @JacksonXmlProperty( localName = "AddressId" )
-  protected Integer AddressId;
+  protected Double hoursMax;
 
-  public Integer getLocationId ()
+  protected Integer addressId;
+
+  protected Integer workTypeId;
+
+  private Date lastUpdate;
+
+  public Integer id()
   {
-    return LocationId;
+    return id;
   }
 
-  public void setLocationId ( Integer locationId )
+  public WorkType id( final Integer id )
   {
-    LocationId = locationId;
+    this.id = id;
+
+    return this;
   }
 
-  public Double getRate ()
+  public Integer locationId ()
   {
-    return Rate;
+    return locationId;
   }
 
-  public void setRate ( Double rate )
+  public WorkType locationId ( Integer locationId )
   {
-    Rate = rate;
+    this.locationId = locationId;
+
+    return this;
   }
 
-  public Date getEffectiveDate ()
+  public Double rate ()
   {
-    return EffectiveDate;
+    return rate;
   }
 
-  public void setEffectiveDate ( Date effectiveDate )
+  public WorkType rate ( Double rate )
   {
-    EffectiveDate = effectiveDate;
+    this.rate = rate;
+
+    return this;
   }
 
-  public Date getEndingDate ()
+  public Date effectiveDate ()
   {
-    return EndingDate;
+    return effectiveDate;
   }
 
-  public void setEndingDate ( Date endingDate )
+  public WorkType effectiveDate ( Date effectiveDate )
   {
-    EndingDate = endingDate;
+    this.effectiveDate = effectiveDate;
+
+    return this;
   }
 
-  public Double getHoursMin ()
+  public Date endingDate ()
   {
-    return HoursMin;
+    return endingDate;
   }
 
-  public void setHoursMin ( Double hoursMin )
+  public WorkType endingDate ( Date endingDate )
   {
-    HoursMin = hoursMin;
+    this.endingDate = endingDate;
+
+    return this;
   }
 
-  public Double getHoursMax ()
+  public Double hoursMin ()
   {
-    return HoursMax;
+    return hoursMin;
   }
 
-  public void setHoursMax ( Double hoursMax )
+  public WorkType hoursMin ( Double hoursMin )
   {
-    HoursMax = hoursMax;
+    this.hoursMin = hoursMin;
+
+    return this;
   }
 
-  public Integer getAddressId ()
+  public Double hoursMax ()
   {
-    return AddressId;
+    return hoursMax;
   }
 
-  public void setAddressId ( Integer addressId )
+  public WorkType hoursMax ( Double hoursMax )
   {
-    AddressId = addressId;
+    this.hoursMax = hoursMax;
+
+    return this;
   }
 
-  public RateType getRateType ()
+  public Integer addressId ()
   {
-    return RateType;
+    return addressId;
   }
 
-  public void setRateType ( RateType rateType )
+  public WorkType addressId ( Integer addressId )
   {
-    RateType = rateType;
+    this.addressId = addressId;
+
+    return this;
   }
 
-  public BillableOption getBillTime ()
+  public RateType rateType ()
   {
-    return BillTime;
+    return rateType;
   }
 
-  public void setBillTime ( BillableOption billTime )
+  public WorkType rateType ( RateType rateType )
   {
-    BillTime = billTime;
+    this.rateType = rateType;
+    return this;
+  }
+
+  public BillableOption billTime ()
+  {
+    return billTime;
+  }
+
+  public WorkType billTime ( BillableOption billTime )
+  {
+    this.billTime = billTime;
+
+    return this;
+  }
+
+  public Integer workTypeId ()
+  {
+    return workTypeId;
+  }
+
+  public WorkType workTypeId ( Integer workTypeId )
+  {
+    this.workTypeId = workTypeId;
+
+    return this;
+  }
+
+  public Date lastUpdate()
+  {
+    return this.lastUpdate;
+  }
+
+  public WorkType lastUpdate( final Date lastUpdate )
+  {
+    this.lastUpdate = lastUpdate;
+
+    return this;
   }
 }

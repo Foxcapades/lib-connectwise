@@ -44,7 +44,7 @@ public class CompanyCommonTest
     final String        value = "Test Value.";
 
     field.setAccessible(true);
-    comp.setCompanyName(value);
+    comp.companyName(value);
 
     assertEquals(value, field.get(comp));
   }
@@ -59,7 +59,7 @@ public class CompanyCommonTest
     field.setAccessible(true);
     field.set(comp, value);
 
-    assertEquals(value, comp.getCompanyIdentifier());
+    assertEquals(value, comp.companyIdentifier());
   }
 
   @Test
@@ -70,7 +70,7 @@ public class CompanyCommonTest
     final String        value = "Test Value.";
 
     field.setAccessible(true);
-    comp.setCompanyIdentifier(value);
+    comp.companyIdentifier(value);
 
     assertEquals(value, field.get(comp));
   }
