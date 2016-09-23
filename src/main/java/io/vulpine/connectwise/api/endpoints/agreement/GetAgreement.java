@@ -19,11 +19,11 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.common.ResponseData;
 import io.vulpine.connectwise.api.def.SubApiInterface;
-import io.vulpine.connectwise.type.agreement.Agreement;
+import io.vulpine.connectwise.type.agreement.SimpleAgreement;
 
 import java.io.IOException;
 
-public class GetAgreement extends _GetCommon< Agreement >
+public class GetAgreement extends _GetCommon< SimpleAgreement >
 {
   public GetAgreement( Credentials credentials, XmlMapper xmlMapper, SubApiInterface api, int id )
   {
@@ -43,10 +43,10 @@ public class GetAgreement extends _GetCommon< Agreement >
    * @throws IOException
    */
   @Override
-  public Agreement submit() throws IOException
+  public SimpleAgreement submit() throws IOException
   {
-    this.logger.trace(this.getClass(), Agreement.class);
-    final ResponseData< Agreement > res;
+    this.logger.trace(this.getClass(), SimpleAgreement.class);
+    final ResponseData< SimpleAgreement > res;
 
     res = getXmlMapper()
       .readerFor(GetAgreementResponse.class)

@@ -13,24 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package io.vulpine.connectwise.type.def;
 
-package io.vulpine.connectwise.api.endpoints.agreement;
+import io.vulpine.connectwise.util.Field;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.agreement.SimpleAgreement;
-
-public class AddOrUpdateAgreementResponse
+/**
+ * = XmlSerializable Object with the CompanyId field.
+ *
+ * @param <T>
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
+public interface HasCompanyId < T extends HasCompanyId > extends XmlSerializable
 {
-  @JacksonXmlProperty( localName = "AddOrUpdateAgreementResult" )
-  protected SimpleAgreement updatedAgreement;
+  Integer companyId();
 
-  public SimpleAgreement getUpdatedAgreement()
-  {
-    return updatedAgreement;
-  }
+  Field< Integer > companyIdField();
 
-  public void setUpdatedAgreement( final SimpleAgreement updatedAgreement )
-  {
-    this.updatedAgreement = updatedAgreement;
-  }
+  T companyId( Integer i );
 }

@@ -23,18 +23,18 @@ import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.common.request.AddOrUpdateRequest;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.endpoints.Endpoint;
-import io.vulpine.connectwise.type.agreement.Agreement;
+import io.vulpine.connectwise.type.agreement.SimpleAgreement;
 
 import java.io.IOException;
 
 @JacksonXmlRootElement( localName = "AddOrUpdateAgreement" )
-public class AddOrUpdateAgreement extends AddOrUpdateRequest < Agreement >
+public class AddOrUpdateAgreement extends AddOrUpdateRequest < SimpleAgreement >
 {
   public AddOrUpdateAgreement(
     final Credentials credentials,
     final XmlMapper xmlMapper,
     final SubApiInterface api,
-    final Agreement data
+    final SimpleAgreement data
   )
   {
     super(credentials, xmlMapper, api, Endpoint.AGREEMENT, data);
@@ -43,13 +43,13 @@ public class AddOrUpdateAgreement extends AddOrUpdateRequest < Agreement >
   @Override
   @JsonFilter( "filter-empty" )
   @JacksonXmlProperty( localName = "agreement" )
-  public Agreement getRequestData()
+  public SimpleAgreement getRequestData()
   {
     return data;
   }
 
   @Override
-  public Agreement submit() throws IOException
+  public SimpleAgreement submit() throws IOException
   {
     final AddOrUpdateAgreementResponse res = getXmlMapper().readerFor(AddOrUpdateAgreementResponse.class).readValue(
       getApi().send(this).replaceAll("AllowOverrruns", "AllowOverruns"));

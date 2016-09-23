@@ -19,7 +19,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 @JacksonXmlRootElement( localName = "AgreementFindResult" )
-public class FoundAgreement extends Agreement
+public class FoundAgreement extends SimpleAgreement
 {
   @JacksonXmlProperty( localName = "BoardId" )
   protected Integer boardId;

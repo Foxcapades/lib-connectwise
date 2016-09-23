@@ -15,8 +15,13 @@
  */
 package io.vulpine.connectwise.type.def;
 
-interface Identified < T >
+import io.vulpine.connectwise.util.Field;
+
+public interface HasId< T >
 {
   Integer id();
+
+  Field< Integer > idField();
+
   T id( Integer id );
 }

@@ -19,18 +19,20 @@ import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import io.vulpine.connectwise.util.Field;
+import io.vulpine.connectwise.util.SimpleField;
 
 import java.util.Date;
 
 @JsonFilter( "filter-empty" )
-public class ConnectwiseCommon
+public class ConnectwiseCommon < T extends ConnectwiseCommon >
 {
 
   private Date lastUpdate;
 
   private Date lastUpdated;
 
-  private Integer id;
+  private Field < Integer > id = new SimpleField < Integer >("Id", false, true);
 
   private String description;
 
@@ -40,13 +42,13 @@ public class ConnectwiseCommon
   @JsonGetter( "Id" )
   public Integer id()
   {
-    return id;
+    return id.get();
   }
 
   @JsonSetter( "Id" )
-  public ConnectwiseCommon id( final Integer id )
+  public ConnectwiseCommon<T> id( final Integer i )
   {
-    this.id = id;
+    id.set(i);
 
     return this;
   }

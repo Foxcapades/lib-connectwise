@@ -23,7 +23,7 @@ import io.vulpine.connectwise.util.Field;
 
 import java.util.List;
 
-public interface Company extends ConnectwiseSerializable
+public interface Company extends XmlSerializable, HasId< Company >
 {
   @JsonGetter( "AccountNumber" )
   String accountNumber();

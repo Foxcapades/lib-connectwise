@@ -19,13 +19,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.api.common.ResponseData;
-import io.vulpine.connectwise.type.agreement.Agreement;
+import io.vulpine.connectwise.type.agreement.SimpleAgreement;
 
 @JacksonXmlRootElement( localName = "GetAgreementAdditionResponse" )
-public class GetAgreementResponse extends ResponseData < Agreement >
+public class GetAgreementResponse extends ResponseData < SimpleAgreement >
 {
   @JsonCreator
-  public GetAgreementResponse( @JacksonXmlProperty( localName = "GetAgreementResult" ) final Agreement result )
+  public GetAgreementResponse( @JacksonXmlProperty( localName = "GetAgreementResult" ) final SimpleAgreement result )
   {
     super(result);
   }

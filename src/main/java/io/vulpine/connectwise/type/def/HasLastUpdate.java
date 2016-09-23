@@ -13,24 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package io.vulpine.connectwise.type.def;
 
-package io.vulpine.connectwise.api.endpoints.agreement;
+import io.vulpine.connectwise.util.Field;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import io.vulpine.connectwise.type.agreement.SimpleAgreement;
+import java.util.Date;
 
-public class AddOrUpdateAgreementResponse
+public interface HasLastUpdate< T extends XmlSerializable >
 {
-  @JacksonXmlProperty( localName = "AddOrUpdateAgreementResult" )
-  protected SimpleAgreement updatedAgreement;
+  Date lastUpdate();
 
-  public SimpleAgreement getUpdatedAgreement()
-  {
-    return updatedAgreement;
-  }
+  Field < Date > lastUpdateField();
 
-  public void setUpdatedAgreement( final SimpleAgreement updatedAgreement )
-  {
-    this.updatedAgreement = updatedAgreement;
-  }
+  T lastUpdate( Date d );
 }

@@ -101,12 +101,12 @@ public class AgreementTest
     billableExpenseInvoice,
     billableProductInvoice;
 
-  private Agreement agreement;
+  private SimpleAgreement agreement;
 
   @BeforeClass
   public static void setUpClass () throws Exception
   {
-    final Class < Agreement > clazz = Agreement.class;
+    final Class < SimpleAgreement > clazz = SimpleAgreement.class;
     agreementTypeId = clazz.getDeclaredField("agreementTypeId");
     agreementTypeId.setAccessible(true);
     agreementName = clazz.getDeclaredField("agreementName");
@@ -248,7 +248,7 @@ public class AgreementTest
   @Before
   public void setUp ()
   {
-    agreement = new Agreement();
+    agreement = new SimpleAgreement();
   }
 
   @Test

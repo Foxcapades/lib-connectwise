@@ -15,412 +15,438 @@
  */
 package io.vulpine.connectwise.type.def;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
+import io.vulpine.connectwise.type.def.agreement.HasLocationId;
+import io.vulpine.connectwise.util.Field;
 
 import java.util.Date;
 
-public interface Agreement //extends Identified < Agreement >
+/**
+ * = Agreement
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
+public interface Agreement
+  extends
+  XmlSerializable,
+  HasId < Agreement >,
+  HasLastUpdate < Agreement >,
+  HasUpdatedBy < Agreement >,
+  HasLocationId < Agreement >
 {
-  @JsonGetter( "AgreementName" )
   String agreementName();
 
-  @JsonSetter( "AgreementName" )
-  Agreement agreementName( String agreementName );
+  Field < String > agreementNameField();
 
-  @JsonGetter( "AgreementTypeId" )
+  Agreement agreementName( String s );
+
   Integer agreementTypeId();
 
-  @JsonSetter( "AgreementTypeId" )
-  Agreement agreementTypeId( Integer agreementTypeId );
+  Field < Integer > agreementTypeIdField();
 
-  @JsonGetter( "ApplicationCycle" )
+  Agreement agreementTypeId( Integer i );
+
   String applicationCycle();
 
-  @JsonSetter( "ApplicationCycle" )
-  Agreement applicationCycle( String applicationCycle );
+  Field < String > applicationCycleField();
 
-  @JsonGetter( "ApplicationLimit" )
+  Agreement applicationCycle( String s );
+
   Double applicationLimit();
 
-  @JsonSetter( "ApplicationLimit" )
-  Agreement applicationLimit( Double applicationLimit );
+  Field < Double > applicationLimitField();
 
-  @JsonGetter( "ApplicationUnits" )
+  Agreement applicationLimit( Double d );
+
   String applicationUnits();
 
-  @JsonSetter( "ApplicationUnits" )
-  Agreement applicationUnits( String applicationUnits );
+  Field < String > applicationUnitsField();
 
-  @JsonGetter( "BillAmount" )
+  Agreement applicationUnits( String s );
+
   Double billAmount();
 
-  @JsonSetter( "BillAmount" )
-  Agreement billAmount( Double billAmount );
+  Field < Double > billAmountField();
 
-  @JsonGetter( "BillCycleId" )
+  Agreement billAmount( Double d );
+
   Integer billCycleId();
 
-  @JsonSetter( "BillCycleId" )
-  Agreement billCycleId( Integer billCycleId );
+  Field < Integer > billCycleIdField();
 
-  @JsonGetter( "BillExpenses" )
+  Agreement billCycleId( Integer i );
+
   String billExpenses();
 
-  @JsonSetter( "BillExpenses" )
-  Agreement billExpenses( String billExpenses );
+  Field < String > billExpensesField();
 
-  @JsonGetter( "BillProducts" )
+  Agreement billExpenses( String s );
+
   String billProducts();
 
-  @JsonSetter( "BillProducts" )
-  Agreement billProducts( String billProducts );
+  Field < String > billProductsField();
 
-  @JsonGetter( "BillStartDate" )
+  Agreement billProducts( String s );
+
   Date billStartDate();
 
-  @JsonSetter( "BillStartDate" )
-  Agreement billStartDate( Date billStartDate );
+  Field < Date > billStartDateField();
 
-  @JsonGetter( "BillTermsId" )
+  Agreement billStartDate( Date d );
+
   Integer billTermsId();
 
-  @JsonSetter( "BillTermsId" )
-  Agreement billTermsId( Integer billTermsId );
+  Field < Integer > billTermsIdField();
 
-  @JsonGetter( "BillTime" )
+  Agreement billTermsId( Integer i );
+
   String billTime();
 
-  @JsonSetter( "BillTime" )
-  Agreement billTime( String billTime );
+  Field < String > billTimeField();
 
-  @JsonGetter( "BillToAddressId" )
+  Agreement billTime( String s );
+
   Integer billToAddressId();
 
-  @JsonSetter( "BillToAddressId" )
-  Agreement billToAddressId( Integer billToAddressId );
+  Field < Integer > billToAddressIdField();
 
-  @JsonGetter( "BillToCompanyId" )
+  Agreement billToAddressId( Integer i );
+
   Integer billToCompanyId();
 
-  @JsonSetter( "BillToCompanyId" )
-  Agreement billToCompanyId( Integer billToCompanyId );
+  Field < Integer > billToCompanyIdField();
 
-  @JsonGetter( "CompHourlyRate" )
+  Agreement billToCompanyId( Integer i );
+
   Double compHourlyRate();
 
-  @JsonSetter( "CompHourlyRate" )
-  Agreement compHourlyRate( Double compHourlyRate );
+  Field < Double > compHourlyRateField();
 
-  @JsonGetter( "CompLimitAmount" )
+  Agreement compHourlyRate( Double d );
+
   Double compLimitAmount();
 
-  @JsonSetter( "CompLimitAmount" )
-  Agreement compLimitAmount( Double compLimitAmount );
+  Field < Double > compLimitAmountField();
 
-  @JsonGetter( "CompanyId" )
+  Agreement compLimitAmount( Double d );
+
   Integer companyId();
 
-  @JsonSetter( "CompanyId" )
-  Agreement companyId( Integer companyId );
+  Field < Integer > companyIdField();
 
-  @JsonGetter( "ContactId" )
+  Agreement companyId( Integer i );
+
   Integer contactId();
 
-  @JsonSetter( "ContactId" )
-  Agreement contactId( Integer contactId );
+  Field < Integer > contactIdField();
 
-  @JsonGetter( "CustomerPO" )
+  Agreement contactId( Integer i );
+
   String customerPo();
 
-  @JsonSetter( "CustomerPO" )
-  Agreement customerPo( String customerPo );
+  Field < String > customerPoField();
 
-  @JsonGetter( "DateCancelled" )
+  Agreement customerPo( String s );
+
   Date dateCancelled();
 
-  @JsonSetter( "DateCancelled" )
-  Agreement dateCancelled( Date dateCancelled );
+  Field < Date > dateCancelledField();
 
-  @JsonGetter( "DepartmentId" )
+  Agreement dateCancelled( Date d );
+
   Integer departmentId();
 
-  @JsonSetter( "DepartmentId" )
-  Agreement departmentId( Integer departmentId );
+  Field < Integer > departmentIdField();
 
-  @JsonGetter( "EmployeeCompNotExceed" )
+  Agreement departmentId( Integer i );
+
   String employeeCompNotExceed();
 
-  @JsonSetter( "EmployeeCompNotExceed" )
-  Agreement employeeCompNotExceed( String employeeCompNotExceed );
+  Field < String > employeeCompNotExceedField();
 
-  @JsonGetter( "EmployeeCompRate" )
+  Agreement employeeCompNotExceed( String s );
+
   String employeeCompRate();
 
-  @JsonSetter( "EmployeeCompRate" )
-  Agreement employeeCompRate( String employeeCompRate );
+  Field < String > employeeCompRateField();
 
-  @JsonGetter( "EndDate" )
+  Agreement employeeCompRate( String s );
+
   Date endDate();
 
-  @JsonSetter( "EndDate" )
-  Agreement endDate( Date endDate );
+  Field < Date > endDateField();
 
-  @JsonGetter( "ExpiredDays" )
+  Agreement endDate( Date d );
+
   Integer expiredDays();
 
-  @JsonSetter( "ExpiredDays" )
-  Agreement expiredDays( Integer expiredDays );
+  Field < Integer > expiredDaysField();
 
-  @JsonGetter( "InternalNotes" )
+  Agreement expiredDays( Integer d );
+
   String internalNotes();
 
-  @JsonSetter( "InternalNotes" )
-  Agreement internalNotes( String internalNotes );
+  Field < String > internalNotesField();
 
-  @JsonGetter( "InvoiceDescription" )
+  Agreement internalNotes( String s );
+
   String invoiceDescription();
 
-  @JsonSetter( "InvoiceDescription" )
-  Agreement invoiceDescription( String invoiceDescription );
+  Field < String > invoiceDescriptionField();
 
-  @JsonGetter( "InvoiceTemplateId" )
+  Agreement invoiceDescription( String s );
+
   Integer invoiceTemplateId();
 
-  @JsonSetter( "InvoiceTemplateId" )
-  Agreement invoiceTemplateId( Integer invoiceTemplateId );
+  Field < Integer > invoiceTemplateIdField();
 
-  @JsonGetter( "InvoicingCycle" )
+  Agreement invoiceTemplateId( Integer i );
+
   String invoicingCycle();
 
-  @JsonSetter( "InvoicingCycle" )
-  Agreement invoicingCycle( String invoicingCycle );
+  Field < String > invoicingCycleField();
 
-  @JsonGetter( "Limit" )
+  Agreement invoicingCycle( String s );
+
   Integer limit();
 
-  @JsonSetter( "Limit" )
-  Agreement limit( Integer limit );
+  Field < Integer > limitField();
 
-  @JsonGetter( "LocationId" )
-  Integer locationId();
+  Agreement limit( Integer l );
 
-  @JsonSetter( "LocationId" )
-  Agreement locationId( Integer locationId );
-
-  @JsonGetter( "OpportunityId" )
   Integer opportunityId();
 
-  @JsonSetter( "OpportunityId" )
-  Agreement opportunityId( Integer opportunityId );
+  Field < Integer > opportunityIdField();
 
-  @JsonGetter( value = "ParentAgreementId" )
+  Agreement opportunityId( Integer i );
+
   Integer parentAgreementId();
 
-  @JsonGetter( value = "ParentAgreementId" )
-  Agreement parentAgreementId( Integer parentAgreementId );
+  Field < Integer > parentAgreementIdField();
 
-  @JsonGetter( "PeriodType" )
+  Agreement parentAgreementId( Integer i );
+
   String periodType();
 
-  @JsonSetter( "PeriodType" )
-  Agreement periodType( String periodType );
+  Field < String > periodTypeField();
 
-  @JsonGetter( "ProjectTypeId" )
+  Agreement periodType( String s );
+
   Integer projectTypeId();
 
-  @JsonSetter( "ProjectTypeId" )
-  Agreement projectTypeId( Integer projectTypeId );
+  Field < Integer > projectTypeIdField();
 
-  @JsonGetter( "ProrateFirstBill" )
+  Agreement projectTypeId( Integer i );
+
   Double prorateFirstBill();
 
-  @JsonSetter( "ProrateFirstBill" )
-  Agreement prorateFirstBill( Double prorateFirstBill );
+  Field < Double > prorateFirstBillField();
 
-  @JsonGetter( "ReasonCancelled" )
+  Agreement prorateFirstBill( Double d );
+
   String reasonCancelled();
 
-  @JsonSetter( "ReasonCancelled" )
-  Agreement reasonCancelled( String reasonCancelled );
+  Field < String > reasonCancelledField();
 
-  @JsonGetter( "SlaId" )
+  Agreement reasonCancelled( String s );
+
   Integer slaId();
 
-  @JsonSetter( "SlaId" )
-  Agreement slaId( Integer slaId );
+  Field < Integer > slaIdField();
 
-  @JsonGetter( "StartDate" )
+  Agreement slaId( Integer i );
+
   Date startDate();
 
-  @JsonSetter( "StartDate" )
-  Agreement startDate( Date startDate );
+  Field < Date > startDateField();
 
-  @JsonGetter( "SubContractCompanyId" )
+  Agreement startDate( Date d );
+
   Integer subContractCompanyId();
 
-  @JsonSetter( "SubContractCompanyId" )
-  Agreement subContractCompanyId( Integer subContractCompanyId );
+  Field < Integer > subContractCompanyIdField();
 
-  @JsonGetter( "SubContractContactId" )
+  Agreement subContractCompanyId( Integer i );
+
   Integer subContractContactId();
 
-  @JsonSetter( "SubContractContactId" )
-  Agreement subContractContactId( Integer subContractContactId );
+  Field < Integer > subContractContactIdField();
 
-  @JsonGetter( "TaxCodeId" )
+  Agreement subContractContactId( Integer i );
+
   Integer taxCodeId();
 
-  @JsonSetter( "TaxCodeId" )
-  Agreement taxCodeId( Integer taxCodeId );
+  Field < Integer > taxCodeIdField();
 
-  @JsonGetter( "WorkOrder" )
+  Agreement taxCodeId( Integer i );
+
   String workOrder();
 
-  @JsonSetter( "WorkOrder" )
-  Agreement workOrder( String workOrder );
+  Field < String > workOrderField();
 
-  @JsonGetter( "WorkRoleId" )
+  Agreement workOrder( String s );
+
   Integer workRoleId();
 
-  @JsonSetter( "WorkRoleId" )
-  Agreement workRoleId( Integer workRoleId );
+  Field < Integer > workRoleIdField();
 
-  @JsonGetter( "WorkTypeId" )
+  Agreement workRoleId( Integer i );
+
   Integer workTypeId();
 
-  @JsonSetter( "WorkTypeId" )
-  Agreement workTypeId( Integer workTypeId );
+  Field < Integer > workTypeIdField();
 
-  @JsonGetter( "AllowOverruns" )
+  Agreement workTypeId( Integer i );
+
   Boolean allowOverruns();
 
-  @JsonSetter( "AllowOverruns" )
-  Agreement allowOverruns( Boolean allowOverruns );
+  Field < Boolean > allowOverrunsField();
 
-  @JsonGetter( "ApplicationUnlimitedFlag" )
+  Agreement allowOverruns( Boolean b );
+
   Boolean applicationUnlimited();
 
-  @JsonSetter( "ApplicationUnlimitedFlag" )
-  Agreement applicationUnlimited( Boolean applicationUnlimited );
+  Field < Boolean > applicationUnlimitedField();
 
-  @JsonGetter( "BillOneTimeFlag" )
+  Agreement applicationUnlimited( Boolean b );
+
   Boolean billOneTime();
 
-  @JsonSetter( "BillOneTimeFlag" )
-  Agreement billOneTime( Boolean billOneTime );
+  Field < Boolean > billOneTimeField();
 
-  @JsonGetter( "BillableExpenseInvoice" )
+  Agreement billOneTime( Boolean b );
+
   Boolean billableExpenseInvoice();
 
-  @JsonSetter( "BillableExpenseInvoice" )
-  Agreement billableExpenseInvoice( Boolean billableExpenseInvoice );
+  Field < Boolean > billableExpenseInvoiceField();
 
-  @JsonGetter( "BillableProductInvoice" )
+  Agreement billableExpenseInvoice( Boolean b );
+
   Boolean billableProductInvoice();
 
-  @JsonSetter( "BillableProductInvoice" )
-  Agreement billableProductInvoice( Boolean billableProductInvoice );
+  Field < Boolean > billableProductInvoiceField();
 
-  @JsonGetter( "BillableTimeInvoice" )
+  Agreement billableProductInvoice( Boolean b );
+
   Boolean billableTimeInvoice();
 
-  @JsonSetter( "BillableTimeInvoice" )
-  Agreement billableTimeInvoice( Boolean billableTimeInvoice );
+  Field < Boolean > billableTimeInvoiceField();
 
-  @JsonGetter( "BottomComment" )
+  Agreement billableTimeInvoice( Boolean b );
+
   Boolean bottomComment();
 
-  @JsonSetter( "BottomComment" )
-  Agreement bottomComment( Boolean bottomComment );
+  Field < Boolean > bottomCommentField();
 
-  @JsonGetter( "CancelledFlag" )
+  Agreement bottomComment( Boolean b );
+
   Boolean cancelled();
 
-  @JsonSetter( "CancelledFlag" )
-  Agreement cancelled( Boolean cancelled );
+  Field < Boolean > cancelledField();
 
-  @JsonGetter( "CarryOverUnused" )
+  Agreement cancelled( Boolean b );
+
   Boolean carryOverUnused();
 
-  @JsonSetter( "CarryOverUnused" )
-  Agreement carryOverUnused( Boolean carryOverUnused );
+  Field < Boolean > carryOverUnusedField();
 
-  @JsonGetter( "ChargeToFirm" )
+  Agreement carryOverUnused( Boolean b );
+
   Boolean chargeToFirm();
 
-  @JsonSetter( "ChargeToFirm" )
-  Agreement chargeToFirm( Boolean chargeToFirm );
+  Field < Boolean > chargeToFirmField();
 
-  @JsonGetter( "CoverAgreementExpense" )
+  Agreement chargeToFirm( Boolean b );
+
   Boolean coverAgreementExpense();
 
-  @JsonSetter( "CoverAgreementExpense" )
-  Agreement coverAgreementExpense( Boolean coverAgreementExpense );
+  Field < Boolean > coverAgreementExpenseField();
 
-  @JsonGetter( "CoverAgreementProduct" )
+  Agreement coverAgreementExpense( Boolean b );
+
   Boolean coverAgreementProduct();
 
-  @JsonSetter( "CoverAgreementProduct" )
-  Agreement coverAgreementProduct( Boolean coverAgreementProduct );
+  Field < Boolean > coverAgreementProductField();
 
-  @JsonGetter( "CoverAgreementTime" )
+  Agreement coverAgreementProduct( Boolean b );
+
   Boolean coverAgreementTime();
 
-  @JsonSetter( "CoverAgreementTime" )
-  Agreement coverAgreementTime( Boolean coverAgreementTime );
+  Field < Boolean > coverAgreementTimeField();
 
-  @JsonGetter( "CoverSalesTax" )
+  Agreement coverAgreementTime( Boolean b );
+
   Boolean coverSalesTax();
 
-  @JsonSetter( "CoverSalesTax" )
-  Agreement coverSalesTax( Boolean coverSalesTax );
+  Field < Boolean > coverSalesTaxField();
 
-  @JsonGetter( "ExpireWhenZero" )
+  Agreement coverSalesTax( Boolean b );
+
   Boolean expireWhenZero();
 
-  @JsonSetter( "ExpireWhenZero" )
-  Agreement expireWhenZero( Boolean expireWhenZero );
+  Field < Boolean > expireWhenZeroField();
 
-  @JsonGetter( "NoEndingDateFlag" )
+  Agreement expireWhenZero( Boolean b );
+
   Boolean noEndingDate();
 
-  @JsonSetter( "NoEndingDateFlag" )
-  Agreement noEndingDate( Boolean noEndingDate );
+  Field < Boolean > noEndingDateField();
 
-  @JsonGetter( "OneTimeFlag" )
+  Agreement noEndingDate( Boolean b );
+
   Boolean oneTime();
 
-  @JsonSetter( "OneTimeFlag" )
-  Agreement oneTime( Boolean oneTime );
+  Field < Boolean > oneTimeField();
 
-  @JsonGetter( "RestrictDepartmentFlag" )
+  Agreement oneTime( Boolean b );
+
   Boolean restrictDepartment();
 
-  @JsonSetter( "RestrictDepartmentFlag" )
-  Agreement restrictDepartment( Boolean restrictDepartment );
+  Field < Boolean > restrictDepartmentField();
 
-  @JsonGetter( "RestrictDownPayment" )
+  Agreement restrictDepartment( Boolean b );
+
   Boolean restrictDownPayment();
 
-  @JsonSetter( "RestrictDownPayment" )
-  Agreement restrictDownPayment( Boolean restrictDownPayment );
+  Field < Boolean > restrictDownPaymentField();
 
-  @JsonGetter( "RestrictLocationFlag" )
+  Agreement restrictDownPayment( Boolean b );
+
   Boolean restrictLocation();
 
-  @JsonSetter( "RestrictLocationFlag" )
-  Agreement restrictLocation( Boolean restrictLocation );
+  Field < Boolean > restrictLocationField();
 
-  @JsonGetter( "Taxable" )
+  Agreement restrictLocation( Boolean b );
+
   Boolean taxable();
 
-  @JsonSetter( "Taxable" )
-  Agreement taxable( Boolean taxable );
+  Field < Boolean > taxableField();
 
-  @JsonGetter( "TopComment" )
+  Agreement taxable( Boolean b );
+
   Boolean topComment();
 
-  @JsonSetter( "TopComment" )
-  Agreement topComment( Boolean topComment );
+  Field < Boolean > topCommentField();
+
+  Agreement topComment( Boolean b );
+
+  Integer boardId();
+
+  Field < Integer > boardIdField();
+
+  Agreement boardId( Integer i );
+
+  Boolean boardDefault();
+
+  Field < Boolean > boardDefaultField();
+
+  Field < Boolean > boardDefaultField();
+
+  Agreement boardDefault( Boolean b );
+
+  Integer serviceTypeId();
+
+  Field < Integer > serviceTypeIdField();
+
+  Agreement serviceTypeId( Integer i );
 }

@@ -15,10 +15,13 @@
  */
 package io.vulpine.connectwise.type.def;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
+import io.vulpine.connectwise.util.Field;
 
-@JsonFilter( "filter-empty" )
-public interface ConnectwiseSerializable
+public interface HasUpdatedBy< T >
 {
-  String toXml( String rootName );
+  String updatedBy();
+
+  Field< String > updatedByField();
+
+  T updatedBy( String s );
 }
