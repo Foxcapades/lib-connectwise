@@ -42,6 +42,7 @@ public interface Agreement
   INHERITED DEFAULTS
 
    */
+  @Override
   default Agreement id( Integer id )
   {
     idField().set(id);
@@ -49,9 +50,50 @@ public interface Agreement
     return this;
   }
 
+  @Override
   default Agreement companyId( final Integer i )
   {
     companyIdField().set(i);
+
+    return this;
+  }
+
+  @Override
+  default Agreement updatedBy( final String s )
+  {
+    updatedByField().set(s);
+
+    return this;
+  }
+
+  @Override
+  default Agreement startDate( final Date d )
+  {
+    startDateField().set(d);
+
+    return this;
+  }
+
+  @Override
+  default Agreement endDate( final Date d )
+  {
+    endDateField().set(d);
+
+    return this;
+  }
+
+  @Override
+  default Agreement locationId( final Integer i )
+  {
+    locationIdField().set(i);
+
+    return this;
+  }
+
+  @Override
+  default Agreement lastUpdate( final Date d )
+  {
+    lastUpdateField().set(d);
 
     return this;
   }
@@ -84,7 +126,10 @@ public interface Agreement
     return this;
   }
 
-  String applicationCycle();
+  default String applicationCycle()
+  {
+    return applicationCycleField().get();
+  }
 
   Field < String > applicationCycleField();
 
@@ -95,7 +140,10 @@ public interface Agreement
     return this;
   }
 
-  Double applicationLimit();
+  default Double applicationLimit()
+  {
+    return applicationLimitField().get();
+  }
 
   Field < Double > applicationLimitField();
 
@@ -106,7 +154,10 @@ public interface Agreement
     return this;
   }
 
-  String applicationUnits();
+  default String applicationUnits()
+  {
+    return applicationUnitsField().get();
+  }
 
   Field < String > applicationUnitsField();
 
@@ -117,7 +168,10 @@ public interface Agreement
     return this;
   }
 
-  Double billAmount();
+  default Double billAmount()
+  {
+    return billAmountField().get();
+  }
 
   Field < Double > billAmountField();
 
@@ -128,7 +182,10 @@ public interface Agreement
     return this;
   }
 
-  Integer billCycleId();
+  default Integer billCycleId()
+  {
+    return billCycleIdField().get();
+  }
 
   Field < Integer > billCycleIdField();
 
@@ -139,7 +196,10 @@ public interface Agreement
     return this;
   }
 
-  String billExpenses();
+  default String billExpenses()
+  {
+    return billExpensesField().get();
+  }
 
   Field < String > billExpensesField();
 
@@ -150,7 +210,10 @@ public interface Agreement
     return this;
   }
 
-  String billProducts();
+  default String billProducts()
+  {
+    return billProductsField().get();
+  }
 
   Field < String > billProductsField();
 
@@ -161,7 +224,10 @@ public interface Agreement
     return this;
   }
 
-  Date billStartDate();
+  default Date billStartDate()
+  {
+    return billStartDateField().get();
+  }
 
   Field < Date > billStartDateField();
 
@@ -172,7 +238,10 @@ public interface Agreement
     return this;
   }
 
-  Integer billTermsId();
+  default Integer billTermsId()
+  {
+    return billTermsIdField().get();
+  }
 
   Field < Integer > billTermsIdField();
 
@@ -183,7 +252,10 @@ public interface Agreement
     return this;
   }
 
-  String billTime();
+  default String billTime()
+  {
+    return billTimeField().get();
+  }
 
   Field < String > billTimeField();
 
@@ -194,7 +266,10 @@ public interface Agreement
     return this;
   }
 
-  Integer billToAddressId();
+  default Integer billToAddressId()
+  {
+    return billToAddressIdField().get();
+  }
 
   Field < Integer > billToAddressIdField();
 
@@ -205,7 +280,10 @@ public interface Agreement
     return this;
   }
 
-  Integer billToCompanyId();
+  default Integer billToCompanyId()
+  {
+    return billToCompanyIdField().get();
+  }
 
   Field < Integer > billToCompanyIdField();
 
@@ -216,7 +294,10 @@ public interface Agreement
     return this;
   }
 
-  Double compHourlyRate();
+  default Double compHourlyRate()
+  {
+    return compHourlyRateField().get();
+  }
 
   Field < Double > compHourlyRateField();
 
@@ -227,7 +308,10 @@ public interface Agreement
     return this;
   }
 
-  Double compLimitAmount();
+  default Double compLimitAmount()
+  {
+    return compLimitAmountField().get();
+  }
 
   Field < Double > compLimitAmountField();
 
@@ -238,7 +322,10 @@ public interface Agreement
     return this;
   }
 
-  Integer contactId();
+  default Integer contactId()
+  {
+    return contactIdField().get();
+  }
 
   Field < Integer > contactIdField();
 
@@ -249,7 +336,10 @@ public interface Agreement
     return this;
   }
 
-  String customerPo();
+  default String customerPo()
+  {
+    return customerPoField().get();
+  }
 
   Field < String > customerPoField();
 
@@ -260,7 +350,10 @@ public interface Agreement
     return this;
   }
 
-  Date dateCancelled();
+  default Date dateCancelled()
+  {
+    return dateCancelledField().get();
+  }
 
   Field < Date > dateCancelledField();
 
@@ -271,7 +364,10 @@ public interface Agreement
     return this;
   }
 
-  Integer departmentId();
+  default Integer departmentId()
+  {
+    return departmentIdField().get();
+  }
 
   Field < Integer > departmentIdField();
 
@@ -282,7 +378,10 @@ public interface Agreement
     return this;
   }
 
-  String employeeCompNotExceed();
+  default String employeeCompNotExceed()
+  {
+    return employeeCompNotExceedField().get();
+  }
 
   Field < String > employeeCompNotExceedField();
 
@@ -293,7 +392,10 @@ public interface Agreement
     return this;
   }
 
-  String employeeCompRate();
+  default String employeeCompRate()
+  {
+    return employeeCompRateField().get();
+  }
 
   Field < String > employeeCompRateField();
 
@@ -304,7 +406,10 @@ public interface Agreement
     return this;
   }
 
-  Integer expiredDays();
+  default Integer expiredDays()
+  {
+    return expiredDaysField().get();
+  }
 
   Field < Integer > expiredDaysField();
 
@@ -315,7 +420,10 @@ public interface Agreement
     return this;
   }
 
-  String internalNotes();
+  default String internalNotes()
+  {
+    return internalNotesField().get();
+  }
 
   Field < String > internalNotesField();
 
@@ -326,7 +434,10 @@ public interface Agreement
     return this;
   }
 
-  String invoiceDescription();
+  default String invoiceDescription()
+  {
+    return invoiceDescriptionField().get();
+  }
 
   Field < String > invoiceDescriptionField();
 
@@ -337,7 +448,10 @@ public interface Agreement
     return this;
   }
 
-  Integer invoiceTemplateId();
+  default Integer invoiceTemplateId()
+  {
+    return invoiceTemplateIdField().get();
+  }
 
   Field < Integer > invoiceTemplateIdField();
 
@@ -348,7 +462,10 @@ public interface Agreement
     return this;
   }
 
-  String invoicingCycle();
+  default String invoicingCycle()
+  {
+    return invoicingCycleField().get();
+  }
 
   Field < String > invoicingCycleField();
 
@@ -359,7 +476,10 @@ public interface Agreement
     return this;
   }
 
-  Integer limit();
+  default Integer limit()
+  {
+    return limitField().get();
+  }
 
   Field < Integer > limitField();
 
@@ -370,7 +490,10 @@ public interface Agreement
     return this;
   }
 
-  Integer opportunityId();
+  default Integer opportunityId()
+  {
+    return opportunityIdField().get();
+  }
 
   Field < Integer > opportunityIdField();
 
@@ -381,7 +504,10 @@ public interface Agreement
     return this;
   }
 
-  Integer parentAgreementId();
+  default Integer parentAgreementId()
+  {
+    return parentAgreementIdField().get();
+  }
 
   Field < Integer > parentAgreementIdField();
 
@@ -392,7 +518,10 @@ public interface Agreement
     return this;
   }
 
-  String periodType();
+  default String periodType()
+  {
+    return periodTypeField().get();
+  }
 
   Field < String > periodTypeField();
 
@@ -403,7 +532,10 @@ public interface Agreement
     return this;
   }
 
-  Integer projectTypeId();
+  default Integer projectTypeId()
+  {
+    return projectTypeIdField().get();
+  }
 
   Field < Integer > projectTypeIdField();
 
@@ -414,7 +546,10 @@ public interface Agreement
     return this;
   }
 
-  Double prorateFirstBill();
+  default Double prorateFirstBill()
+  {
+    return prorateFirstBillField().get();
+  }
 
   Field < Double > prorateFirstBillField();
 
@@ -425,7 +560,10 @@ public interface Agreement
     return this;
   }
 
-  String reasonCancelled();
+  default String reasonCancelled()
+  {
+    return reasonCancelledField().get();
+  }
 
   Field < String > reasonCancelledField();
 
@@ -436,7 +574,10 @@ public interface Agreement
     return this;
   }
 
-  Integer slaId();
+  default Integer slaId()
+  {
+    return slaIdField().get();
+  }
 
   Field < Integer > slaIdField();
 
@@ -447,7 +588,10 @@ public interface Agreement
     return this;
   }
 
-  Integer subContractCompanyId();
+  default Integer subContractCompanyId()
+  {
+    return subContractCompanyIdField().get();
+  }
 
   Field < Integer > subContractCompanyIdField();
 
@@ -458,7 +602,10 @@ public interface Agreement
     return this;
   }
 
-  Integer subContractContactId();
+  default Integer subContractContactId()
+  {
+    return subContractContactIdField().get();
+  }
 
   Field < Integer > subContractContactIdField();
 
@@ -469,7 +616,10 @@ public interface Agreement
     return this;
   }
 
-  Integer taxCodeId();
+  default Integer taxCodeId()
+  {
+    return taxCodeIdField().get();
+  }
 
   Field < Integer > taxCodeIdField();
 
@@ -480,7 +630,10 @@ public interface Agreement
     return this;
   }
 
-  String workOrder();
+  default String workOrder()
+  {
+    return workOrderField().get();
+  }
 
   Field < String > workOrderField();
 
@@ -491,7 +644,10 @@ public interface Agreement
     return this;
   }
 
-  Integer workRoleId();
+  default Integer workRoleId()
+  {
+    return workRoleIdField().get();
+  }
 
   Field < Integer > workRoleIdField();
 
@@ -502,7 +658,10 @@ public interface Agreement
     return this;
   }
 
-  Integer workTypeId();
+  default Integer workTypeId()
+  {
+    return workTypeIdField().get();
+  }
 
   Field < Integer > workTypeIdField();
 
@@ -513,7 +672,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean allowOverruns();
+  default Boolean allowOverruns()
+  {
+    return allowOverrunsField().get();
+  }
 
   Field < Boolean > allowOverrunsField();
 
@@ -524,7 +686,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean applicationUnlimited();
+  default Boolean applicationUnlimited()
+  {
+    return applicationUnlimitedField().get();
+  }
 
   Field < Boolean > applicationUnlimitedField();
 
@@ -535,7 +700,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean billOneTime();
+  default Boolean billOneTime()
+  {
+    return billOneTimeField().get();
+  }
 
   Field < Boolean > billOneTimeField();
 
@@ -546,7 +714,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean billableExpenseInvoice();
+  default Boolean billableExpenseInvoice()
+  {
+    return billableExpenseInvoiceField().get();
+  }
 
   Field < Boolean > billableExpenseInvoiceField();
 
@@ -557,7 +728,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean billableProductInvoice();
+  default Boolean billableProductInvoice()
+  {
+    return billableProductInvoiceField().get();
+  }
 
   Field < Boolean > billableProductInvoiceField();
 
@@ -568,7 +742,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean billableTimeInvoice();
+  default Boolean billableTimeInvoice()
+  {
+    return billableTimeInvoiceField().get();
+  }
 
   Field < Boolean > billableTimeInvoiceField();
 
@@ -579,7 +756,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean bottomComment();
+  default Boolean bottomComment()
+  {
+    return bottomCommentField().get();
+  }
 
   Field < Boolean > bottomCommentField();
 
@@ -590,7 +770,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean cancelled();
+  default Boolean cancelled()
+  {
+    return cancelledField().get();
+  }
 
   Field < Boolean > cancelledField();
 
@@ -601,7 +784,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean carryOverUnused();
+  default Boolean carryOverUnused()
+  {
+    return carryOverUnusedField().get();
+  }
 
   Field < Boolean > carryOverUnusedField();
 
@@ -612,7 +798,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean chargeToFirm();
+  default Boolean chargeToFirm()
+  {
+    return chargeToFirmField().get();
+  }
 
   Field < Boolean > chargeToFirmField();
 
@@ -623,7 +812,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean coverAgreementExpense();
+  default Boolean coverAgreementExpense()
+  {
+    return coverAgreementExpenseField().get();
+  }
 
   Field < Boolean > coverAgreementExpenseField();
 
@@ -634,7 +826,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean coverAgreementProduct();
+  default Boolean coverAgreementProduct()
+  {
+    return coverAgreementProductField().get();
+  }
 
   Field < Boolean > coverAgreementProductField();
 
@@ -645,7 +840,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean coverAgreementTime();
+  default Boolean coverAgreementTime()
+  {
+    return coverAgreementTimeField().get();
+  }
 
   Field < Boolean > coverAgreementTimeField();
 
@@ -656,7 +854,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean coverSalesTax();
+  default Boolean coverSalesTax()
+  {
+    return coverSalesTaxField().get();
+  }
 
   Field < Boolean > coverSalesTaxField();
 
@@ -667,7 +868,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean expireWhenZero();
+  default Boolean expireWhenZero()
+  {
+    return expireWhenZeroField().get();
+  }
 
   Field < Boolean > expireWhenZeroField();
 
@@ -678,7 +882,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean noEndingDate();
+  default Boolean noEndingDate()
+  {
+    return noEndingDateField().get();
+  }
 
   Field < Boolean > noEndingDateField();
 
@@ -689,7 +896,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean oneTime();
+  default Boolean oneTime()
+  {
+    return oneTimeField().get();
+  }
 
   Field < Boolean > oneTimeField();
 
@@ -700,7 +910,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean restrictDepartment();
+  default Boolean restrictDepartment()
+  {
+    return restrictDepartmentField().get();
+  }
 
   Field < Boolean > restrictDepartmentField();
 
@@ -711,7 +924,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean restrictDownPayment();
+  default Boolean restrictDownPayment()
+  {
+    return restrictDownPaymentField().get();
+  }
 
   Field < Boolean > restrictDownPaymentField();
 
@@ -722,7 +938,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean restrictLocation();
+  default Boolean restrictLocation()
+  {
+    return restrictLocationField().get();
+  }
 
   Field < Boolean > restrictLocationField();
 
@@ -733,7 +952,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean taxable();
+  default Boolean taxable()
+  {
+    return taxableField().get();
+  }
 
   Field < Boolean > taxableField();
 
@@ -744,7 +966,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean topComment();
+  default Boolean topComment()
+  {
+    return topCommentField().get();
+  }
 
   Field < Boolean > topCommentField();
 
@@ -755,7 +980,10 @@ public interface Agreement
     return this;
   }
 
-  Integer boardId();
+  default Integer boardId()
+  {
+    return boardIdField().get();
+  }
 
   Field < Integer > boardIdField();
 
@@ -766,7 +994,10 @@ public interface Agreement
     return this;
   }
 
-  Boolean boardDefault();
+  default Boolean boardDefault()
+  {
+    return boardDefaultField().get();
+  }
 
   Field < Boolean > boardDefaultField();
 
@@ -777,7 +1008,10 @@ public interface Agreement
     return this;
   }
 
-  Integer serviceTypeId();
+  default Integer serviceTypeId()
+  {
+    return serviceTypeIdField().get();
+  }
 
   Field < Integer > serviceTypeIdField();
 

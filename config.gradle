@@ -25,12 +25,12 @@ config.project = [
   group: 'lib',
   name: 'connectwise',
   version: '0.10.0',
-  slug: "${config.project.group}-${config.project.name}",
+  slug: "lib-connectwise",
   jvm: '1.8',
   description: 'Simplified Connectwise SOAP API wrapper.',
-  site: "${config.organization.site}/${config.project.slug}",
-  vcs: "${config.organization.site}/${config.project.slug}.git",
-  tracker: "${config.organization.site}/${config.project.slug}/issues"
+  site: "${config.organization.site}/lib-connectwise",
+  vcs: "${config.organization.site}/lib-connectwise.git",
+  tracker: "${config.organization.site}/lib-connectwise/issues"
 ]
 
 config.developer = new HashMap()
