@@ -55,7 +55,7 @@ public class AddCompany extends AddRequest < Company >
   public String companyName()
   {
     this.logger.trace(this.getClass());
-    return data.getCompanyName();
+    return data.companyName();
   }
 
   public AddCompany companyName( String companyName )
@@ -107,26 +107,26 @@ public class AddCompany extends AddRequest < Company >
   public String phoneNumber()
   {
     this.logger.trace(this.getClass());
-    return data.getPhoneNumber();
+    return data.phoneNumber();
   }
 
   public AddCompany phoneNumber( String phoneNumber )
   {
     this.logger.trace(this.getClass(), phoneNumber);
-    data.setPhoneNumber(phoneNumber);
+    data.phoneNumber(phoneNumber);
     return this;
   }
 
   public String faxNumber()
   {
     this.logger.trace(this.getClass());
-    return data.getFaxNumber();
+    return data.faxNumber();
   }
 
   public AddCompany faxNumber( String faxNumber )
   {
     this.logger.trace(this.getClass(), faxNumber);
-    data.setFaxNumber(faxNumber);
+    data.faxNumber(faxNumber);
     return this;
   }
 
@@ -139,40 +139,40 @@ public class AddCompany extends AddRequest < Company >
   public AddCompany webSite( String webSite )
   {
     this.logger.trace(this.getClass(), webSite);
-    data.setWebSite(webSite);
+    data.webSite(webSite);
     return this;
   }
 
   public String territory()
   {
     this.logger.trace(this.getClass());
-    return data.getTerritory();
+    return data.territory();
   }
 
   public AddCompany territory( String territory )
   {
     this.logger.trace(this.getClass(), territory);
-    data.setTerritory(territory);
+    data.territory(territory);
     return this;
   }
 
   public String market()
   {
     this.logger.trace(this.getClass());
-    return data.getMarket();
+    return data.market();
   }
 
   public AddCompany market( String market )
   {
     this.logger.trace(this.getClass(), market);
-    data.setMarket(market);
+    data.market(market);
     return this;
   }
 
   public String type()
   {
     this.logger.trace(this.getClass());
-    return data.getType();
+    return data.type();
   }
 
   public AddCompany type( String type )
@@ -211,26 +211,26 @@ public class AddCompany extends AddRequest < Company >
   public int defaultContactId()
   {
     this.logger.trace(this.getClass());
-    return data.getDefaultContactId();
+    return data.defaultContactId();
   }
 
   public AddCompany defaultContactId( int defaultContactId )
   {
     this.logger.trace(this.getClass(), defaultContactId);
-    data.setDefaultContactId(defaultContactId);
+    data.defaultContactId(defaultContactId);
     return this;
   }
 
   public int defaultBillingContactId()
   {
     this.logger.trace(this.getClass());
-    return data.getDefaultBillingContactId();
+    return data.defaultBillingContactId();
   }
 
   public AddCompany defaultBillingContactId( int defaultBillingContactId )
   {
     this.logger.trace(this.getClass(), defaultBillingContactId);
-    data.setDefaultBillingContactId(defaultBillingContactId);
+    data.defaultBillingContactId(defaultBillingContactId);
     return this;
   }
 

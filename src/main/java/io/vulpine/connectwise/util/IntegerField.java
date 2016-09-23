@@ -21,17 +21,17 @@ public class IntegerField extends SimpleField < Integer >
   {
   }
 
-  public IntegerField( final Integer value )
+  public IntegerField( String name )
   {
-    super(value);
+    super(name);
   }
 
-  public IntegerField( final String name, final Integer value )
+  public IntegerField( String name, Integer value )
   {
     super(name, value);
   }
 
-  public IntegerField( final String name, final boolean optional, final boolean nullable )
+  public IntegerField( String name, boolean optional, boolean nullable )
   {
     super(name, optional, nullable);
   }

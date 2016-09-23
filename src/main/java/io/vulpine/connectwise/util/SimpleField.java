@@ -34,9 +34,9 @@ public class SimpleField < T > implements Field < T >
   {
   }
 
-  public SimpleField( T value )
+  public SimpleField( String name )
   {
-    this.value = value;
+    this.name = name;
   }
 
   public SimpleField( String name, T value )

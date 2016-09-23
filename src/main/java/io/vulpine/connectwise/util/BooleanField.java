@@ -21,17 +21,17 @@ public class BooleanField extends SimpleField < Boolean >
   {
   }
 
-  public BooleanField( final Boolean value )
+  public BooleanField( String name )
   {
-    super(value);
+    super(name);
   }
 
-  public BooleanField( final String name, final Boolean value )
+  public BooleanField( String name, Boolean value )
   {
     super(name, value);
   }
 
-  public BooleanField( final String name, final boolean optional, final boolean nullable )
+  public BooleanField( String name, boolean optional, boolean nullable )
   {
     super(name, optional, nullable);
   }

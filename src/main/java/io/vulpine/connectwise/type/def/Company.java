@@ -41,18 +41,21 @@ public interface Company extends ConnectwiseSerializable
   Company setAddresses( List < Address > addresses );
 
   @JsonGetter( "CompanyIdentifier" )
-  String getCompanyIdentifier();
+  String companyIdentifier();
 
+  @JsonIgnore
   Field < String > companyIdentifierField();
 
   @JsonSetter( "CompanyIdentifier" )
-  Company setCompanyIdentifier( String companyIdentifier );
+  Company companyIdentifier( String companyIdentifier );
 
   @JsonGetter( "CompanyName" )
-  String getCompanyName();
+  String companyName();
+
+  Field < String > companyNameField();
 
   @JsonSetter( "CompanyName" )
-  Company setCompanyName( String companyName );
+  Company companyName( String companyName );
 
   @JsonGetter( "DefaultAddress" )
   Address defaultAddress();
@@ -64,34 +67,44 @@ public interface Company extends ConnectwiseSerializable
   Company defaultAddress( Address defaultAddress );
 
   @JsonGetter( "DefaultBillingContactId" )
-  Integer getDefaultBillingContactId();
+  Integer defaultBillingContactId();
+
+  Field < Integer > defaultBillingContactIdField();
 
   @JsonSetter( "DefaultBillingContactId" )
-  Company setDefaultBillingContactId( Integer defaultBillingContactId );
+  Company defaultBillingContactId( Integer defaultBillingContactId );
 
   @JsonGetter( "DefaultContactId" )
-  Integer getDefaultContactId();
+  Integer defaultContactId();
+
+  Field < Integer > defaultContactIdField();
 
   @JsonSetter( "DefaultContactId" )
-  Company setDefaultContactId( Integer defaultContactId );
+  Company defaultContactId( Integer defaultContactId );
 
   @JsonGetter( "FaxNumber" )
-  String getFaxNumber();
+  String faxNumber();
+
+  Field < String > faxNumberField();
 
   @JsonSetter( "FaxNumber" )
-  Company setFaxNumber( String faxNumber );
+  Company faxNumber( String faxNumber );
 
   @JsonGetter( "Market" )
-  String getMarket();
+  String market();
+
+  Field < String > marketField();
 
   @JsonSetter( "Market" )
-  Company setMarket( String market );
+  Company market( String market );
 
   @JsonGetter( "PhoneNumber" )
-  String getPhoneNumber();
+  String phoneNumber();
+
+  Field < String > phoneNumberField();
 
   @JsonSetter( "PhoneNumber" )
-  Company setPhoneNumber( String phoneNumber );
+  Company phoneNumber( String phoneNumber );
 
   @JsonGetter( "Status" )
   String status();
@@ -102,13 +115,15 @@ public interface Company extends ConnectwiseSerializable
   Company status( String status );
 
   @JsonGetter( "Territory" )
-  String getTerritory();
+  String territory();
+
+  Field < String >  territoryField();
 
   @JsonSetter( "Territory" )
-  Company setTerritory( String territory );
+  Company territory( String territory );
 
   @JsonGetter( "Type" )
-  String getType();
+  String type();
 
   Field < String > typeField();
 
@@ -121,7 +136,7 @@ public interface Company extends ConnectwiseSerializable
   Field < String > webSiteField();
 
   @JsonSetter( "WebSite" )
-  Company setWebSite( String webSite );
+  Company webSite( String webSite );
 
   @JsonIgnore
   Field < Boolean > inactiveField();

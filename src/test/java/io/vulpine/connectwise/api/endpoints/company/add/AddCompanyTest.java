@@ -65,7 +65,7 @@ public class AddCompanyTest
   public void companyName_fetches_value_from_company_instance() throws Exception
   {
     request.companyName();
-    Mockito.verify(company, Mockito.times(1)).getCompanyName();
+    Mockito.verify(company, Mockito.times(1)).companyName();
   }
 
   @Test
@@ -116,35 +116,35 @@ public class AddCompanyTest
   public void phoneNumber_passes_value_to_company_instance() throws Exception
   {
     request.phoneNumber(TEST_STRING);
-    Mockito.verify(company, Mockito.times(1)).setPhoneNumber(TEST_STRING);
+    Mockito.verify(company, Mockito.times(1)).phoneNumber(TEST_STRING);
   }
 
   @Test
   public void phoneNumber_fetches_value_from_company_instance() throws Exception
   {
     request.phoneNumber();
-    Mockito.verify(company, Mockito.times(1)).getPhoneNumber();
+    Mockito.verify(company, Mockito.times(1)).phoneNumber();
   }
 
   @Test
   public void faxNumber_passes_value_to_company_instance() throws Exception
   {
     request.faxNumber(TEST_STRING);
-    Mockito.verify(company, Mockito.times(1)).setFaxNumber(TEST_STRING);
+    Mockito.verify(company, Mockito.times(1)).faxNumber(TEST_STRING);
   }
 
   @Test
   public void faxNumber_fetches_value_from_company_instance() throws Exception
   {
     request.faxNumber();
-    Mockito.verify(company, Mockito.times(1)).getFaxNumber();
+    Mockito.verify(company, Mockito.times(1)).faxNumber();
   }
 
   @Test
   public void webSite_passes_value_to_company_instance() throws Exception
   {
     request.webSite(TEST_STRING);
-    Mockito.verify(company, Mockito.times(1)).setWebSite(TEST_STRING);
+    Mockito.verify(company, Mockito.times(1)).webSite(TEST_STRING);
   }
 
   @Test
@@ -158,28 +158,28 @@ public class AddCompanyTest
   public void territory_passes_value_to_company_instance() throws Exception
   {
     request.territory(TEST_STRING);
-    Mockito.verify(company, Mockito.times(1)).setTerritory(TEST_STRING);
+    Mockito.verify(company, Mockito.times(1)).territory(TEST_STRING);
   }
 
   @Test
   public void territory_fetches_value_from_company_instance() throws Exception
   {
     request.territory();
-    Mockito.verify(company, Mockito.times(1)).getTerritory();
+    Mockito.verify(company, Mockito.times(1)).territory();
   }
 
   @Test
   public void market_passes_value_to_company_instance() throws Exception
   {
     request.market(TEST_STRING);
-    Mockito.verify(company, Mockito.times(1)).setMarket(TEST_STRING);
+    Mockito.verify(company, Mockito.times(1)).market(TEST_STRING);
   }
 
   @Test
   public void market_fetches_value_from_company_instance() throws Exception
   {
     request.market();
-    Mockito.verify(company, Mockito.times(1)).getMarket();
+    Mockito.verify(company, Mockito.times(1)).market();
   }
 
   @Test
@@ -193,7 +193,7 @@ public class AddCompanyTest
   public void type_fetches_value_from_company_instance() throws Exception
   {
     request.type();
-    Mockito.verify(company, Mockito.times(1)).getType();
+    Mockito.verify(company, Mockito.times(1)).type();
   }
 
   @Test
@@ -228,27 +228,27 @@ public class AddCompanyTest
   public void defaultContactId_passes_value_to_company_instance() throws Exception
   {
     request.defaultContactId(TEST_INT);
-    Mockito.verify(company, Mockito.times(1)).setDefaultContactId(TEST_INT);
+    Mockito.verify(company, Mockito.times(1)).defaultContactId(TEST_INT);
   }
 
   @Test
   public void defaultContactId_fetches_value_from_company_instance() throws Exception
   {
     request.defaultContactId();
-    Mockito.verify(company, Mockito.times(1)).getDefaultContactId();
+    Mockito.verify(company, Mockito.times(1)).defaultContactId();
   }
 
   @Test
   public void defaultBillingContactId_passes_value_to_company_instance() throws Exception
   {
     request.defaultBillingContactId(TEST_INT);
-    Mockito.verify(company, Mockito.times(1)).setDefaultBillingContactId(TEST_INT);
+    Mockito.verify(company, Mockito.times(1)).defaultBillingContactId(TEST_INT);
   }
 
   @Test
   public void defaultBillingContactId_fetches_value_from_company_instance() throws Exception
   {
     request.defaultBillingContactId();
-    Mockito.verify(company, Mockito.times(1)).getDefaultBillingContactId();
+    Mockito.verify(company, Mockito.times(1)).defaultBillingContactId();
   }
 }

@@ -21,17 +21,17 @@ public class StringField extends SimpleField < String >
   {
   }
 
-  public StringField( final String value )
+  public StringField( String name )
   {
-    super(value);
+    super(name);
   }
 
-  public StringField( final String name, final String value )
+  public StringField( String name, String value )
   {
     super(name, value);
   }
 
-  public StringField( final String name, final boolean optional, final boolean nullable )
+  public StringField( String name, boolean optional, boolean nullable )
   {
     super(name, optional, nullable);
   }

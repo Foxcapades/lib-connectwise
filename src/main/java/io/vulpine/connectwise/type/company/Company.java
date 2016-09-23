@@ -15,19 +15,14 @@
  */
 package io.vulpine.connectwise.type.company;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
-import io.vulpine.connectwise.util.BooleanField;
-import io.vulpine.connectwise.util.Field;
-import io.vulpine.connectwise.util.SimpleField;
-import io.vulpine.connectwise.util.StringField;
+import io.vulpine.connectwise.util.*;
 
 import java.util.List;
 
 public class Company extends ConnectwiseCommon implements io.vulpine.connectwise.type.def.Company
 {
-  private final Field < Address > defaultAddress = new SimpleField < Address >();
+  private final Field < Address > defaultAddress = new SimpleField < Address >("DefaultAddress");
 
   private List < Address > addresses;
 
@@ -35,7 +30,7 @@ public class Company extends ConnectwiseCommon implements io.vulpine.connectwise
 
   private final Field < String > webSite = new StringField("WebSite");
 
-  private final Field < Boolean > inactive = new BooleanField();
+  private final Field < Boolean > inactive = new BooleanField("InactiveFlag");
 
   private final Field < String > companyName = new StringField("CompanyName");
 
@@ -47,9 +42,9 @@ public class Company extends ConnectwiseCommon implements io.vulpine.connectwise
 
   private final Field < String > territory = new StringField("Territory");
 
-  private Integer defaultBillingContactId;
+  private final Field < Integer > defaultBillingContactId = new IntegerField("DefaultBillingContactId");
 
-  private Integer defaultContactId;
+  private final Field < Integer > defaultContactId = new IntegerField("DefaultContactId");
 
   private final Field < String > status = new StringField("Status");
 
@@ -57,9 +52,24 @@ public class Company extends ConnectwiseCommon implements io.vulpine.connectwise
 
   private final Field < String > market = new StringField("Market");
 
-  @Override public Address defaultAddress() { return defaultAddress.get(); }
-  @Override public Field < Address > defaultAddressField() { return defaultAddress; }
-  @Override public Company defaultAddress( Address a ) { defaultAddress.set(a); return this; }
+  @Override
+  public Address defaultAddress()
+  {
+    return defaultAddress.get();
+  }
+
+  @Override
+  public Field < Address > defaultAddressField()
+  {
+    return defaultAddress;
+  }
+
+  @Override
+  public io.vulpine.connectwise.type.def.Company defaultAddress( Address a )
+  {
+    defaultAddress.set(a);
+    return this;
+  }
 
   @Override
   public List < Address > getAddresses()
@@ -68,111 +78,277 @@ public class Company extends ConnectwiseCommon implements io.vulpine.connectwise
   }
 
   @Override
-  public Company setAddresses( List < Address > addresses )
+  public io.vulpine.connectwise.type.def.Company setAddresses( List < Address > addresses )
   {
     this.addresses = addresses;
     return this;
   }
 
-  @Override public String accountNumber() { return accountNumber.get(); }
-  @Override public Field < String > accountNumberField() { return accountNumber; }
-  @Override public Company accountNumber( final String s ) { accountNumber.set(s); return this; }
+  @Override
+  public String accountNumber()
+  {
+    return accountNumber.get();
+  }
 
-  @Override public String webSite() { return webSite.get(); }
-  @Override public Field < String > webSiteField() { return webSite; }
-  @Override public Company setWebSite( final String s ) { webSite.set(s); return this; }
+  @Override
+  public Field < String > accountNumberField()
+  {
+    return accountNumber;
+  }
 
-  @Override public Boolean inactive() { return inactive.get(); }
-  @Override public Field < Boolean > inactiveField() { return inactive; }
-  @Override public Company inactive( final Boolean b ) { inactive.set(b); return this; }
+  @Override
+  public io.vulpine.connectwise.type.def.Company accountNumber( final String s )
+  {
+    accountNumber.set(s);
+    return this;
+  }
 
-  @Override public Company companyName( final String s ) { companyName.set(s); return this; }
+  @Override
+  public String webSite()
+  {
+    return webSite.get();
+  }
 
-  @Override public String companyIdentifier() { return companyIdentifier.get(); }
-  @Override public Field < String > companyIdentifierField() { return companyIdentifier; }
-  @Override public Company companyIdentifier( final String s ) { companyIdentifier.set(s); return this; }
+  @Override
+  public Field < String > webSiteField()
+  {
+    return webSite;
+  }
 
-  @JsonGetter( "PhoneNumber" )
-  public String getPhoneNumber()
+  @Override
+  public io.vulpine.connectwise.type.def.Company webSite( final String s )
+  {
+    webSite.set(s);
+    return this;
+  }
+
+  @Override
+  public Boolean inactive()
+  {
+    return inactive.get();
+  }
+
+  @Override
+  public Field < Boolean > inactiveField()
+  {
+    return inactive;
+  }
+
+  @Override
+  public io.vulpine.connectwise.type.def.Company inactive( final Boolean b )
+  {
+    inactive.set(b);
+    return this;
+  }
+
+  @Override
+  public String companyName()
+  {
+    return companyName.get();
+  }
+
+  @Override
+  public Field < String > companyNameField()
+  {
+    return companyName;
+  }
+
+  @Override
+  public io.vulpine.connectwise.type.def.Company companyName( final String s )
+  {
+    companyName.set(s);
+    return this;
+  }
+
+  @Override
+  public String companyIdentifier()
+  {
+    return companyIdentifier.get();
+  }
+
+  @Override
+  public Field < String > companyIdentifierField()
+  {
+    return companyIdentifier;
+  }
+
+  @Override
+  public io.vulpine.connectwise.type.def.Company companyIdentifier( final String s )
+  {
+    companyIdentifier.set(s);
+    return this;
+  }
+
+  @Override
+  public String phoneNumber()
+  {
+    return phoneNumber.get();
+  }
+
+  @Override
+  public Field < String > phoneNumberField()
   {
     return phoneNumber;
   }
 
-  @JsonSetter( "PhoneNumber" )
-  public void setPhoneNumber( final String phoneNumber )
+  @Override
+  public io.vulpine.connectwise.type.def.Company phoneNumber( final String p )
   {
-    this.phoneNumber = phoneNumber;
+    phoneNumber.set(p);
+    return this;
   }
 
-  @JsonGetter( "FaxNumber" )
-  public String getFaxNumber()
+  @Override
+  public String faxNumber()
+  {
+    return faxNumber.get();
+  }
+
+  @Override
+  public Field < String > faxNumberField()
   {
     return faxNumber;
   }
 
-  @JsonSetter( "FaxNumber" )
-  public void setFaxNumber( final String faxNumber )
+  @Override
+  public io.vulpine.connectwise.type.def.Company faxNumber( final String s )
   {
-    this.faxNumber = faxNumber;
+    faxNumber.set(s);
+    return this;
   }
 
-  @JsonGetter( "Territory" )
-  public String getTerritory()
+  @Override
+  public String territory()
   {
-    return territory;
+    return territory.get();
   }
 
-  @JsonSetter( "Territory" )
-  public void setTerritory( final String territory )
+  @Override
+  public Field < String > territoryField()
   {
-    this.territory = territory;
+    return this.territory;
   }
 
-  @JsonGetter( "Market" )
-  public String getMarket()
+  @Override
+  public io.vulpine.connectwise.type.def.Company territory( final String s )
   {
-    return market;
+    territory.set(s);
+    return this;
   }
 
-  @JsonSetter( "Market" )
-  public Company setMarket( final String market )
+  @Override
+  public String market()
   {
-    this.market = market;
-
+    return market.get();
   }
 
-  @Override public String getType() { return type.get(); }
-  @Override public Field < String > typeField() { return type; }
-  @Override public Company type( final String s ) { type.set(s); return this; }
+  @Override
+  public Field < String > marketField()
+  {
+    return this.market;
+  }
 
-  @Override public String status() { return status.get(); }
-  @Override public Field < String > statusField() { return status; }
-  @Override public Company status( final String s ) { status.set(s); return this; }
+  @Override
+  public io.vulpine.connectwise.type.def.Company market( final String s )
+  {
+    market.set(s);
+    return this;
+  }
 
-  @JsonGetter( "DefaultContactId" )
-  public Integer getDefaultContactId()
+  @Override
+  public String type()
+  {
+    return type.get();
+  }
+
+  @Override
+  public Field < String > typeField()
+  {
+    return type;
+  }
+
+  @Override
+  public io.vulpine.connectwise.type.def.Company type( final String s )
+  {
+    type.set(s);
+    return this;
+  }
+
+  @Override
+  public String status()
+  {
+    return status.get();
+  }
+
+  @Override
+  public Field < String > statusField()
+  {
+    return status;
+  }
+
+  @Override
+  public io.vulpine.connectwise.type.def.Company status( final String s )
+  {
+    status.set(s);
+    return this;
+  }
+
+  @Override
+  public Integer defaultContactId()
+  {
+    return defaultContactId.get();
+  }
+
+  @Override
+  public Field < Integer > defaultContactIdField()
   {
     return defaultContactId;
   }
 
-  @JsonSetter( "DefaultContactId" )
-  public void setDefaultContactId( final Integer i )
+  @Override
+  public io.vulpine.connectwise.type.def.Company defaultContactId( final Integer i )
   {
-    defaultContactId = i;
+    defaultContactId.set(i);
+    return this;
   }
 
-  @JsonGetter( "DefaultBillingContactId" )
-  public Integer getDefaultBillingContactId()
+  @Override
+  public Integer defaultBillingContactId()
+  {
+    return defaultBillingContactId.get();
+  }
+
+  @Override
+  public Field < Integer > defaultBillingContactIdField()
   {
     return defaultBillingContactId;
   }
 
-  @JsonSetter( "DefaultBillingContactId" )
-  public void setDefaultBillingContactId( final Integer i )
+  @Override
+  public io.vulpine.connectwise.type.def.Company defaultBillingContactId( final Integer i )
   {
-    defaultBillingContactId = i;
+    defaultBillingContactId.set(i);
+    return this;
   }
 
-
-  @Override public String getCompanyName() { return companyName.get(); }
+  @Override
+  public String toXml( final String name )
+  {
+    return "<" + name + ">" +
+      defaultAddress.toXml() +
+      accountNumber.toXml() +
+      webSite.toXml() +
+      inactive.toXml() +
+      companyName.toXml() +
+      companyIdentifier.toXml() +
+      phoneNumber.toXml() +
+      faxNumber.toXml() +
+      territory.toXml() +
+      defaultBillingContactId.toXml() +
+      defaultContactId.toXml() +
+      status.toXml() +
+      type.toXml() +
+      market.toXml() +
+      "</" + name + '>';
+  }
 }

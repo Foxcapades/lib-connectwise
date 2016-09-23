@@ -20,4 +20,5 @@ import com.fasterxml.jackson.annotation.JsonFilter;
 @JsonFilter( "filter-empty" )
 public interface ConnectwiseSerializable
 {
+  String toXml( String rootName );
 }
