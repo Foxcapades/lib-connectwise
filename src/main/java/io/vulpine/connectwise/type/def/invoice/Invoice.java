@@ -122,29 +122,29 @@ public interface Invoice
     return this;
   }
 
-  Field < Date > nvoiceDateField();
+  Field < Date > invoiceDateField();
 
-  default Date nvoiceDate()
+  default Date invoiceDate()
   {
-    return nvoiceDateField().get();
+    return invoiceDateField().get();
   }
 
-  default Invoice nvoiceDate( final Date v )
+  default Invoice invoiceDate( final Date v )
   {
-    nvoiceDateField().set(v);
+    invoiceDateField().set(v);
     return this;
   }
 
-  Field < String > nvoiceTypeField();
+  Field < String > invoiceTypeField();
 
-  default String nvoiceType()
+  default String invoiceType()
   {
-    return nvoiceTypeField().get();
+    return invoiceTypeField().get();
   }
 
-  default Invoice nvoiceType( final String v )
+  default Invoice invoiceType( final String v )
   {
-    nvoiceTypeField().set(v);
+    invoiceTypeField().set(v);
     return this;
   }
 
@@ -161,16 +161,16 @@ public interface Invoice
     return this;
   }
 
-  Field < Double > nvoiceAmountField();
+  Field < Double > invoiceAmountField();
 
-  default Double nvoiceAmount()
+  default Double invoiceAmount()
   {
-    return nvoiceAmountField().get();
+    return invoiceAmountField().get();
   }
 
-  default Invoice nvoiceAmount( final Double v )
+  default Invoice invoiceAmount( final Double v )
   {
-    nvoiceAmountField().set(v);
+    invoiceAmountField().set(v);
     return this;
   }
 
@@ -382,16 +382,16 @@ public interface Invoice
     return this;
   }
 
-  Field < String > nvoiceNumberField();
+  Field < String > invoiceNumberField();
 
-  default String nvoiceNumber()
+  default String invoiceNumber()
   {
-    return nvoiceNumberField().get();
+    return invoiceNumberField().get();
   }
 
-  default Invoice nvoiceNumber( final String v )
+  default Invoice invoiceNumber( final String v )
   {
-    nvoiceNumberField().set(v);
+    invoiceNumberField().set(v);
     return this;
   }
 
