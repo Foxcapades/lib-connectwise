@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.type.def;
+package io.vulpine.connectwise.type.def.agreement;
 
+import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.type.def.gen.*;
 import io.vulpine.connectwise.util.Field;
 
@@ -807,11 +808,7 @@ extends
    */
 
   @Override
-  default Agreement agreementName( String s )
-  {
-    agreementNameField().set(s);
-    return this;
-  }
+  Agreement agreementName( final String s );
 
   @Override
   default Agreement boardId( final Integer i )
@@ -883,12 +880,7 @@ extends
     return this;
   }
 
-  @Override
-  default Agreement taxable( final Boolean b )
-  {
-    taxableField().set(b);
-    return this;
-  }
+  @Override Agreement taxable( final Boolean b );
 
   @Override
   default Agreement updatedBy( final String s )

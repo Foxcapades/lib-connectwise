@@ -16,7 +16,7 @@
 package io.vulpine.connectwise.type.agreement.adjustment;
 
 import io.vulpine.connectwise.type.ConnectwiseCommon;
-import io.vulpine.connectwise.type.def.AgreementAdjustment;
+import io.vulpine.connectwise.type.def.agreement.AgreementAdjustment;
 import io.vulpine.connectwise.util.*;
 
 /**

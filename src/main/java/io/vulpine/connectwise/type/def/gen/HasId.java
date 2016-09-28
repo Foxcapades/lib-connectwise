@@ -15,17 +15,21 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.util.Field;
 
-public interface HasId extends XmlSerializable
+public interface HasId
 {
+  Field< Integer > idField();
+
   default Integer id()
   {
     return idField().get();
   }
 
-  Field< Integer > idField();
+  default HasId id( final Integer i )
+  {
+    idField().set(i);
 
-  HasId id( final Integer i );
+    return this;
+  }
 }

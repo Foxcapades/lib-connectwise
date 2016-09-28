@@ -26,14 +26,19 @@ import java.util.Date;
  * @since 0.10.0
  * @version 1.0.0
  */
-public interface HasLastUpdated extends XmlSerializable
+public interface HasLastUpdated
 {
+  Field< Date > lastUpdatedField();
+
   default Date lastUpdated()
   {
     return lastUpdatedField().get();
   }
 
-  Field< Date > lastUpdatedField();
+  default HasLastUpdated lastUpdated( Date d )
+  {
+    lastUpdatedField().set(d);
 
-  HasLastUpdated lastUpdated( Date d );
+    return this;
+  }
 }

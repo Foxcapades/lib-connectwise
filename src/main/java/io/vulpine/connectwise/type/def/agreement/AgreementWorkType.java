@@ -15,95 +15,167 @@
  */
 package io.vulpine.connectwise.type.def.agreement;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
 import io.vulpine.connectwise.type.agreement.BillableOption;
 import io.vulpine.connectwise.type.agreement.RateType;
+import io.vulpine.connectwise.type.def.XmlSerializable;
+import io.vulpine.connectwise.type.def.gen.*;
+import io.vulpine.connectwise.util.Field;
 
 import java.util.Date;
 
 public interface AgreementWorkType
+extends
+  HasAddressId,
+  HasEffectiveDate,
+  HasEndDate,
+  HasLocationId,
+  HasRate,
+  HasRateType,
+  HasWorkTypeId,
+  SubAgreement,
+  XmlSerializable
 {
-  @JsonGetter("Id")
-  Integer id();
+  Field < BillableOption > billTimeField();
+  Field < Double > hoursMinField();
+  Field < Double > hoursMaxField();
 
-  @JsonGetter("Id")
-  AgreementWorkType id( Integer id );
+  default BillableOption billTime()
+  {
+    return billTimeField().get();
+  }
 
-  @JsonGetter("WorkTypeId")
-  Integer workTypeId();
+  default AgreementWorkType billTime( final BillableOption b )
+  {
+    billTimeField().set(b);
 
-  @JsonGetter("WorkTypeId")
-  AgreementWorkType workTypeId( Integer workTypeId );
+    return this;
+  }
 
-  @JsonGetter("AgreementId")
-  Integer agreementId();
+  default Double hoursMin()
+  {
+    return hoursMinField().get();
+  }
 
-  @JsonGetter("AgreementId")
-  AgreementWorkType agreementId( Integer agreementId );
+  default AgreementWorkType hoursMin( final Double d )
+  {
+    hoursMinField().set(d);
 
-  @JsonGetter("LocationId")
-  Integer locationId();
+    return this;
+  }
 
-  @JsonGetter("LocationId")
-  AgreementWorkType locationId( Integer locationId );
+  default Double hoursMax()
+  {
+    return hoursMaxField().get();
+  }
 
-  @JsonGetter("RateType")
-  RateType rateType();
+  default AgreementWorkType hoursMax( final Double d )
+  {
+    hoursMaxField().set(d);
 
-  @JsonGetter("RateType")
-  AgreementWorkType rateType( RateType rateType );
+    return this;
+  }
 
-  @JsonGetter("Rate")
-  Double rate();
+  @Override
+  default AgreementWorkType rate( final Double d )
+  {
+    rateField().set(d);
 
-  @JsonGetter("Rate")
-  AgreementWorkType rate( Double  rate );
+    return this;
+  }
 
-  @JsonGetter("EffectiveDate")
-  Date effectiveDate();
+  @Override
+  default AgreementWorkType workTypeId( final Integer i )
+  {
+    workTypeIdField().set(i);
 
-  @JsonGetter("EffectiveDate")
-  AgreementWorkType effectiveDate( Date  Date );
+    return this;
+  }
 
-  @JsonGetter("EndingDate")
-  Date endingDate();
+  @Override
+  default AgreementWorkType effectiveDate( Date d )
+  {
+    effectiveDateField().set(d);
 
-  @JsonGetter("EndingDate")
-  AgreementWorkType endingDate( Date  Date );
+    return this;
+  }
 
-  @JsonGetter("BillTime")
-  BillableOption billTime();
+  @Override
+  AgreementWorkType rateType( final RateType r );
 
-  @JsonGetter("BillTime")
-  AgreementWorkType billTime( BillableOption billTime );
+  @Override
+  default AgreementWorkType id( final Integer i )
+  {
+    idField().set(i);
 
-  @JsonGetter("HoursMin")
-  Double hoursMin();
+    return this;
+  }
 
-  @JsonGetter("HoursMin")
-  AgreementWorkType hoursMin( Double hoursMin );
+  @Override
+  default AgreementWorkType updatedBy( final String s )
+  {
+    updatedByField().set(s);
 
-  @JsonGetter("HoursMax")
-  Double hoursMax();
+    return this;
+  }
 
-  @JsonGetter("HoursMax")
-  AgreementWorkType hoursMax( Double hoursMax );
+  @Override
+  default AgreementWorkType locationId( Integer i )
+  {
+    locationIdField().set(i);
 
-  @JsonGetter("AddressId")
-  Integer addressId();
+    return this;
+  }
 
-  @JsonGetter("AddressId")
-  AgreementWorkType addressId( Integer addressId );
+  @Override
+  default AgreementWorkType lastUpdate( final Date d )
+  {
+    lastUpdateField().set(d);
 
-  @JsonGetter("LastUpdate")
-  Date lastUpdate();
+    return this;
+  }
 
-  @JsonGetter("LastUpdate")
-  AgreementWorkType lastUpdate( Date lastUpdate );
+  @Override
+  default AgreementWorkType addressId( Integer i )
+  {
+    addressIdField().set(i);
 
-  @JsonGetter("UpdatedBy")
-  String updatedBy();
+    return this;
+  }
 
-  @JsonGetter("UpdatedBy")
-  AgreementWorkType updatedBy( String updatedBy );
+  @Override
+  default AgreementWorkType agreementId( final Integer i )
+  {
+    agreementIdField().set(i);
+
+    return this;
+  }
+
+  @Override
+  default AgreementWorkType endDate( Date d )
+  {
+    endDateField().set(d);
+
+    return this;
+  }
+
+  @Override
+  default String toXml( String rootName )
+  {
+    return "<" + rootName + ">"
+      + idField().toXml()
+      + workTypeIdField().toXml()
+      + agreementIdField().toXml()
+      + locationIdField().toXml()
+      + rateTypeField().toXml()
+      + rateField().toXml()
+      + effectiveDateField().toXml()
+      + endDateField().toXml()
+      + billTimeField().toXml()
+      + hoursMinField().toXml()
+      + hoursMaxField().toXml()
+      + addressIdField().toXml()
+      + lastUpdateField().toXml()
+      + updatedByField().toXml()
+      + "</" + rootName + ">";
+  }
 }

@@ -15,7 +15,7 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
-import io.vulpine.connectwise.type.def.Agreement;
+import io.vulpine.connectwise.type.def.agreement.Agreement;
 import io.vulpine.connectwise.util.BooleanField;
 import io.vulpine.connectwise.util.Field;
 import io.vulpine.connectwise.util.SimpleObjectField;

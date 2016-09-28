@@ -16,9 +16,7 @@
 package io.vulpine.connectwise.type.def;
 
 import io.vulpine.connectwise.type.company.Address;
-import io.vulpine.connectwise.type.def.gen.HasAccountNumber;
-import io.vulpine.connectwise.type.def.gen.HasId;
-import io.vulpine.connectwise.type.def.gen.HasLastUpdated;
+import io.vulpine.connectwise.type.def.gen.*;
 import io.vulpine.connectwise.util.Field;
 import io.vulpine.connectwise.util.ListField;
 
@@ -30,7 +28,10 @@ public interface Company
   XmlSerializable,
   HasAccountNumber,
   HasId,
-  HasLastUpdated
+  HasLastUpdated,
+  HasStatus,
+  HasType,
+  HasTerritory
 {
   Field < String > companyIdentifierField();
 
@@ -47,12 +48,6 @@ public interface Company
   Field < String > marketField();
 
   Field < String > phoneNumberField();
-
-  Field < String > statusField();
-
-  Field < String > territoryField();
-
-  Field < String > typeField();
 
   Field < String > webSiteField();
 
@@ -165,39 +160,6 @@ public interface Company
     return this;
   }
 
-  default String status()
-  {
-    return statusField().get();
-  }
-
-  default Company status( final String s )
-  {
-    statusField().set(s);
-    return this;
-  }
-
-  default String territory()
-  {
-    return territoryField().get();
-  }
-
-  default Company territory( final String s )
-  {
-    territoryField().set(s);
-    return this;
-  }
-
-  default String type()
-  {
-    return typeField().get();
-  }
-
-  default Company type( final String s )
-  {
-    typeField().set(s);
-    return this;
-  }
-
   default String webSite()
   {
     return webSiteField().get();
@@ -216,23 +178,20 @@ public interface Company
    */
 
   @Override
-  default Company lastUpdated( final Date d )
-  {
-    lastUpdatedField().set(d);
-    return this;
-  }
+  Company status( final String s );
 
   @Override
-  default Company id( final Integer i )
-  {
-    idField().set(i);
-    return this;
-  }
+  Company lastUpdated( final Date d );
 
   @Override
-  default Company accountNumber( final String s )
-  {
-    accountNumberField().set(s);
-    return this;
-  }
+  Company id( final Integer i );
+
+  @Override
+  Company accountNumber( final String s );
+
+  @Override
+  Company territory( final String s );
+
+  @Override
+  Company type( final String s );
 }

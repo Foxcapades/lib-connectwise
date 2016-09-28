@@ -18,14 +18,19 @@ package io.vulpine.connectwise.type.def.gen;
 import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.util.Field;
 
-public interface HasUpdatedBy extends XmlSerializable
+public interface HasUpdatedBy
 {
+  Field< String > updatedByField();
+
   default String updatedBy()
   {
     return updatedByField().get();
   }
 
-  Field< String > updatedByField();
+  default HasUpdatedBy updatedBy( final String s )
+  {
+    updatedByField().set(s);
 
-  HasUpdatedBy updatedBy( final String s );
+    return this;
+  }
 }

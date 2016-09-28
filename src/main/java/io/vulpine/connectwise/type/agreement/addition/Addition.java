@@ -16,10 +16,7 @@
 package io.vulpine.connectwise.type.agreement.addition;
 
 import io.vulpine.connectwise.type.agreement.AbstractSubAgreement;
-import io.vulpine.connectwise.type.agreement.BillCustomer;
-import io.vulpine.connectwise.type.def.AgreementAddition;
-
-import java.util.Date;
+import io.vulpine.connectwise.type.def.agreement.AgreementAddition;
 
 public class Addition extends AbstractSubAgreement implements AgreementAddition
 {
