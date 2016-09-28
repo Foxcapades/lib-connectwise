@@ -15,23 +15,30 @@
  */
 package io.vulpine.connectwise.util;
 
-public class IntegerField extends SimpleField < Integer >
+/**
+ * = Integer Field
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ * @author https://github.com/elliefops[Elizabeth Harper]
+ */
+public class SimpleIntegerField extends SimpleNumberField < Integer > implements NumberField < Integer >
 {
-  public IntegerField()
+  public SimpleIntegerField()
   {
   }
 
-  public IntegerField( String name )
+  public SimpleIntegerField( String name )
   {
     super(name);
   }
 
-  public IntegerField( String name, Integer value )
+  public SimpleIntegerField( String name, Integer value )
   {
     super(name, value);
   }
 
-  public IntegerField( String name, boolean optional, boolean nullable )
+  public SimpleIntegerField( String name, boolean optional, boolean nullable )
   {
     super(name, optional, nullable);
   }

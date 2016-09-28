@@ -15,7 +15,7 @@
  */
 package io.vulpine.connectwise.util;
 
-public class BooleanField extends SimpleField < Boolean >
+public class BooleanField extends SimpleObjectField< Boolean >
 {
   public BooleanField()
   {

@@ -21,12 +21,10 @@ import io.vulpine.connectwise.util.Field;
 /**
  * = XmlSerializable Object with the CompanyId field.
  *
- * @param <T>
- *
  * @since 0.1.0
  * @version 1.0.0
  */
-public interface HasCompanyId < T extends HasCompanyId > extends XmlSerializable
+public interface HasCompanyId extends XmlSerializable
 {
   default Integer companyId()
   {
@@ -35,5 +33,5 @@ public interface HasCompanyId < T extends HasCompanyId > extends XmlSerializable
 
   Field< Integer > companyIdField();
 
-  T companyId( Integer i );
+  HasCompanyId companyId( Integer i );
 }

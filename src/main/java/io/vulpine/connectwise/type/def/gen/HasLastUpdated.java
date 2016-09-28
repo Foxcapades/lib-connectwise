@@ -23,16 +23,17 @@ import java.util.Date;
 /**
  * = {@link XmlSerializable} Object with a LastUpdated Field
  *
- * @param <T> The implementing or extending class or interface type.
- *
  * @since 0.10.0
  * @version 1.0.0
  */
-public interface HasLastUpdated < T extends  HasLastUpdated > extends XmlSerializable
+public interface HasLastUpdated extends XmlSerializable
 {
-  Date lastUpdated();
+  default Date lastUpdated()
+  {
+    return lastUpdatedField().get();
+  }
 
   Field< Date > lastUpdatedField();
 
-  T lastUpdated( Date d );
+  HasLastUpdated lastUpdated( Date d );
 }

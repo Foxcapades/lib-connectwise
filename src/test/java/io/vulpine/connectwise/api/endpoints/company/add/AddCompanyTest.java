@@ -19,7 +19,7 @@ package io.vulpine.connectwise.api.endpoints.company.add;
 import io.vulpine.connectwise.api.common.request.AddRequest;
 import io.vulpine.connectwise.api.endpoints.company.AddCompany;
 import io.vulpine.connectwise.type.company.Address;
-import io.vulpine.connectwise.type.company.Company;
+import io.vulpine.connectwise.type.company.SimpleCompany;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,9 +34,9 @@ public class AddCompanyTest
   private static final String TEST_STRING = "Test string value.";
   private static final int TEST_INT = 666;
 
-  private static Field      dataField;
-  private        Company    company;
-  private        AddCompany request;
+  private static Field         dataField;
+  private        SimpleCompany company;
+  private        AddCompany    request;
 
   @BeforeClass
   public static void setUpClass() throws NoSuchFieldException
@@ -48,7 +48,7 @@ public class AddCompanyTest
   @Before
   public void setUp() throws Exception
   {
-    company = Mockito.spy(Company.class);
+    company = Mockito.spy(SimpleCompany.class);
     request = new AddCompany(null, null, null);
 
     dataField.set(request, company);

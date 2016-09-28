@@ -22,12 +22,12 @@ import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.common.request.GetRequest;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.endpoints.Endpoint;
-import io.vulpine.connectwise.type.company.Company;
+import io.vulpine.connectwise.type.company.SimpleCompany;
 
 import java.io.IOException;
 
 @JacksonXmlRootElement( localName = "GetCompany" )
-public class GetCompany extends GetRequest < Company >
+public class GetCompany extends GetRequest < SimpleCompany >
 {
   public GetCompany( final Credentials credentials, final XmlMapper xmlMapper, final SubApiInterface api, final int id )
   {
@@ -35,7 +35,7 @@ public class GetCompany extends GetRequest < Company >
   }
 
   @Override
-  public Company submit() throws IOException
+  public SimpleCompany submit() throws IOException
   {
     return submit(GetCompanyResponse.class);
   }

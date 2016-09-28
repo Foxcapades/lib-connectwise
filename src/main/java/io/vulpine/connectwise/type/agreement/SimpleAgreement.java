@@ -18,7 +18,7 @@ package io.vulpine.connectwise.type.agreement;
 import io.vulpine.connectwise.type.def.Agreement;
 import io.vulpine.connectwise.util.BooleanField;
 import io.vulpine.connectwise.util.Field;
-import io.vulpine.connectwise.util.SimpleField;
+import io.vulpine.connectwise.util.SimpleObjectField;
 import org.w3c.dom.Document;
 
 import java.beans.XMLDecoder;
@@ -49,65 +49,65 @@ public class SimpleAgreement implements Agreement
     restrictLocation       = new BooleanField("RestrictLocationFlag"),
     taxable                = new BooleanField("Taxable"),
     topComment             = new BooleanField("TopComment"),
-    boardDefault           = new SimpleField <>("BoardDefaultFlag");
+    boardDefault           = new SimpleObjectField<>("BoardDefaultFlag");
 
   private Field < Date >
-    billStartDate = new SimpleField <>("BillStartDate"),
-    dateCancelled = new SimpleField <>("DateCancelled"),
-    endDate       = new SimpleField <>("EndDate"),
-    startDate     = new SimpleField <>("StartDate"),
-    lastUpdate    = new SimpleField <>("LastUpdate");
+    billStartDate = new SimpleObjectField<>("BillStartDate"),
+    dateCancelled = new SimpleObjectField<>("DateCancelled"),
+    endDate       = new SimpleObjectField<>("EndDate"),
+    startDate     = new SimpleObjectField<>("StartDate"),
+    lastUpdate    = new SimpleObjectField<>("LastUpdate");
 
   private Field < Double >
-    applicationLimit = new SimpleField <>("ApplicationLimit"),
-    billAmount       = new SimpleField <>("BillAmount"),
-    compHourlyRate   = new SimpleField <>("CompHourlyRate"),
-    compLimitAmount  = new SimpleField <>("CompLimitAmount"),
-    prorateFirstBill = new SimpleField <>("ProrateFirstBill");
+    applicationLimit = new SimpleObjectField<>("ApplicationLimit"),
+    billAmount       = new SimpleObjectField<>("BillAmount"),
+    compHourlyRate   = new SimpleObjectField<>("CompHourlyRate"),
+    compLimitAmount  = new SimpleObjectField<>("CompLimitAmount"),
+    prorateFirstBill = new SimpleObjectField<>("ProrateFirstBill");
 
   private Field < Integer >
-    id                   = new SimpleField <>("Id"),
-    agreementTypeId      = new SimpleField <>("AgreementTypeId"),
-    billCycleId          = new SimpleField <>("BillCycleId"),
-    billTermsId          = new SimpleField <>("BillTermsId"),
-    billToAddressId      = new SimpleField <>("BillToAddressId"),
-    billToCompanyId      = new SimpleField <>("BillToCompanyId"),
-    contactId            = new SimpleField <>("ContactId"),
-    companyId            = new SimpleField <>("CompanyId"),
-    departmentId         = new SimpleField <>("DepartmentId"),
-    expiredDays          = new SimpleField <>("ExpiredDays"),
-    invoiceTemplateId    = new SimpleField <>("InvoiceTemplateId"),
-    limit                = new SimpleField <>("Limit"),
-    locationId           = new SimpleField <>("LocationId"),
-    opportunityId        = new SimpleField <>("OpportunityId"),
-    parentAgreementId    = new SimpleField <>("ParentAgreementId"),
-    projectTypeId        = new SimpleField <>("ProjectTypeId"),
-    slaId                = new SimpleField <>("SlaId"),
-    subContractCompanyId = new SimpleField <>("SubContractCompanyId"),
-    subContractContactId = new SimpleField <>("SubContractContactId"),
-    taxCodeId            = new SimpleField <>("TaxCodeId"),
-    workRoleId           = new SimpleField <>("WorkRoleId"),
-    workTypeId           = new SimpleField <>("WorkTypeId"),
-    boardId              = new SimpleField <>("BoardId"),
-    serviceTypeId        = new SimpleField <>("ServiceTypeId");
+    id                   = new SimpleObjectField<>("Id"),
+    agreementTypeId      = new SimpleObjectField<>("AgreementTypeId"),
+    billCycleId          = new SimpleObjectField<>("BillCycleId"),
+    billTermsId          = new SimpleObjectField<>("BillTermsId"),
+    billToAddressId      = new SimpleObjectField<>("BillToAddressId"),
+    billToCompanyId      = new SimpleObjectField<>("BillToCompanyId"),
+    contactId            = new SimpleObjectField<>("ContactId"),
+    companyId            = new SimpleObjectField<>("CompanyId"),
+    departmentId         = new SimpleObjectField<>("DepartmentId"),
+    expiredDays          = new SimpleObjectField<>("ExpiredDays"),
+    invoiceTemplateId    = new SimpleObjectField<>("InvoiceTemplateId"),
+    limit                = new SimpleObjectField<>("Limit"),
+    locationId           = new SimpleObjectField<>("LocationId"),
+    opportunityId        = new SimpleObjectField<>("OpportunityId"),
+    parentAgreementId    = new SimpleObjectField<>("ParentAgreementId"),
+    projectTypeId        = new SimpleObjectField<>("ProjectTypeId"),
+    slaId                = new SimpleObjectField<>("SlaId"),
+    subContractCompanyId = new SimpleObjectField<>("SubContractCompanyId"),
+    subContractContactId = new SimpleObjectField<>("SubContractContactId"),
+    taxCodeId            = new SimpleObjectField<>("TaxCodeId"),
+    workRoleId           = new SimpleObjectField<>("WorkRoleId"),
+    workTypeId           = new SimpleObjectField<>("WorkTypeId"),
+    boardId              = new SimpleObjectField<>("BoardId"),
+    serviceTypeId        = new SimpleObjectField<>("ServiceTypeId");
 
   private Field < String >
-    agreementName         = new SimpleField <>("AgreementName"),
-    applicationCycle      = new SimpleField <>("ApplicationCycle"),
-    applicationUnits      = new SimpleField <>("ApplicationUnits"),
-    billExpenses          = new SimpleField <>("BillExpenses"),
-    billProducts          = new SimpleField <>("BillProducts"),
-    billTime              = new SimpleField <>("BillTime"),
-    customerPo            = new SimpleField <>("CustomerPO"),
-    employeeCompNotExceed = new SimpleField <>("EmployeeCompNotExceed"),
-    employeeCompRate      = new SimpleField <>("EmployeeCompRate"),
-    invoiceDescription    = new SimpleField <>("InvoiceDescription"),
-    invoicingCycle        = new SimpleField <>("InvoicingCycle"),
-    internalNotes         = new SimpleField <>("InternalNotes"),
-    periodType            = new SimpleField <>("PeriodType"),
-    reasonCancelled       = new SimpleField <>("ReasonCancelled"),
-    workOrder             = new SimpleField <>("WorkOrder"),
-    updatedBy             = new SimpleField <>("UpdatedBy");
+    agreementName         = new SimpleObjectField<>("AgreementName"),
+    applicationCycle      = new SimpleObjectField<>("ApplicationCycle"),
+    applicationUnits      = new SimpleObjectField<>("ApplicationUnits"),
+    billExpenses          = new SimpleObjectField<>("BillExpenses"),
+    billProducts          = new SimpleObjectField<>("BillProducts"),
+    billTime              = new SimpleObjectField<>("BillTime"),
+    customerPo            = new SimpleObjectField<>("CustomerPO"),
+    employeeCompNotExceed = new SimpleObjectField<>("EmployeeCompNotExceed"),
+    employeeCompRate      = new SimpleObjectField<>("EmployeeCompRate"),
+    invoiceDescription    = new SimpleObjectField<>("InvoiceDescription"),
+    invoicingCycle        = new SimpleObjectField<>("InvoicingCycle"),
+    internalNotes         = new SimpleObjectField<>("InternalNotes"),
+    periodType            = new SimpleObjectField<>("PeriodType"),
+    reasonCancelled       = new SimpleObjectField<>("ReasonCancelled"),
+    workOrder             = new SimpleObjectField<>("WorkOrder"),
+    updatedBy             = new SimpleObjectField<>("UpdatedBy");
 
   @Override
   public Field < Integer > idField()

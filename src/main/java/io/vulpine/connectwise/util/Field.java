@@ -15,17 +15,25 @@
  */
 package io.vulpine.connectwise.util;
 
-import com.fasterxml.jackson.annotation.JsonValue;
+import io.vulpine.connectwise.type.def.XmlSerializable;
 
 import java.util.Map;
 
-public interface Field < T >
+/**
+ * = Field
+ *
+ * @param <T>
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ * @author https://github.com/elliefops[Elizabeth Harper]
+ */
+public interface Field < T > extends XmlSerializable
 {
   String getName();
 
   Field < T > setName( String s );
 
-  @JsonValue
   T get();
 
   Field < T > set( T val );
@@ -43,4 +51,6 @@ public interface Field < T >
   Field < T > setOptional( boolean val );
 
   String toXml();
+
+  default String toXml( final String s ) { return toXml(); }
 }

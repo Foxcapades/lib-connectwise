@@ -23,11 +23,10 @@ import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.common.request.AddRequest;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.endpoints.Endpoint;
-import io.vulpine.connectwise.type.company.Address;
+import io.vulpine.connectwise.type.company.SimpleCompany;
 import io.vulpine.connectwise.type.def.Company;
 
 import java.io.IOException;
-import java.util.List;
 
 @JsonFilter( "filter-empty" )
 @JacksonXmlRootElement( localName = "AddCompany" )
@@ -39,7 +38,7 @@ public class AddCompany extends AddRequest < Company >
     final SubApiInterface subApi
   )
   {
-    super(credentials, xmlMapper, subApi, Endpoint.COMPANY, new io.vulpine.connectwise.type.company.Company());
+    super(credentials, xmlMapper, subApi, Endpoint.COMPANY, new SimpleCompany());
   }
 
   public AddCompany(

@@ -37,10 +37,10 @@ import io.vulpine.connectwise.api.endpoints.opportunity.AddOrUpdateOpportunityIt
 import io.vulpine.connectwise.api.endpoints.product.*;
 import io.vulpine.connectwise.type.agreement.SimpleAgreement;
 import io.vulpine.connectwise.type.agreement.addition.Addition;
-import io.vulpine.connectwise.type.agreement.adjustment.Adjustment;
+import io.vulpine.connectwise.type.agreement.adjustment.SimpleAdjustment;
 import io.vulpine.connectwise.type.agreement.workrole.WorkRole;
 import io.vulpine.connectwise.type.agreement.worktype.WorkType;
-import io.vulpine.connectwise.type.company.Company;
+import io.vulpine.connectwise.type.company.SimpleCompany;
 import io.vulpine.connectwise.type.company.CompanyNote;
 import io.vulpine.connectwise.type.configuration.SimpleConfiguration;
 import io.vulpine.connectwise.type.configuration.ConfigurationType;
@@ -78,7 +78,7 @@ class AddOrUpdateImpl extends ConnectwiseSubApi implements AddOrUpdate
     return new AddOrUpdateAdjustment();
   }
 
-  public AddOrUpdateAdjustment adjustment( final Adjustment adjustment )
+  public AddOrUpdateAdjustment adjustment( final SimpleAdjustment adjustment )
   {
     return new AddOrUpdateAdjustment();
   }
@@ -100,7 +100,7 @@ class AddOrUpdateImpl extends ConnectwiseSubApi implements AddOrUpdate
     return new AddOrUpdateCompany();
   }
 
-  public AddOrUpdateCompany company( final Company company )
+  public AddOrUpdateCompany company( final SimpleCompany company )
   {
     return new AddOrUpdateCompany();
   }

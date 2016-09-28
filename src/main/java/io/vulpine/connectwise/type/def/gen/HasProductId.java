@@ -21,16 +21,14 @@ import io.vulpine.connectwise.util.Field;
 /**
  * = {@link XmlSerializable} Object with an ProductId Field
  *
- * @param <T> The implementing or extending class or interface type.
- *
  * @since 0.10.0
  * @version 1.0.0
  */
-public interface HasProductId < T extends HasProductId > extends XmlSerializable
+public interface HasProductId extends XmlSerializable
 {
   Integer productId();
 
   Field< Integer > productIdField();
 
-  T productId( Integer i );
+  HasProductId productId( Integer i );
 }

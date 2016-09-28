@@ -15,129 +15,91 @@
  */
 package io.vulpine.connectwise.type.def;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonRootName;
-import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.agreement.BillCustomer;
-import io.vulpine.connectwise.type.agreement.addition.Addition;
-import io.vulpine.connectwise.type.agreement.addition.AdditionProduct;
+import io.vulpine.connectwise.type.def.gen.*;
+import io.vulpine.connectwise.util.Field;
 
 import java.util.Date;
 
-@JsonRootName( "AgreementAddition" )
 public interface AgreementAddition
+extends
+  HasAgreementId,
+  HasEffectiveDate,
+  HasLastUpdate,
+  HasTaxable,
+  HasUpdatedBy,
+  SubAgreement,
+  XmlSerializable
 {
-  @JsonGetter( "AdditionsProduct" )
-  AdditionProduct additionProduct();
+  Field < Double > quantityField();
+  Field < AdditionProduct > additionProductField();
+  Field < Double > lessIncludedField();
+  Field < Double > unitPriceField();
+  Field < Double > unitCostField();
+  Field < Date > cancelledDateField();
+  Field < BillCustomer > billCustomerField();
+  Field < String > serialNumberField();
+  Field < String > invoiceDescriptionField();
+  Field < Boolean > purchaseItemField();
+  Field < Boolean > specialOrderField();
+  Field < Double > billedQuantityField();
+  Field < String > uomField();
+  Field < Double > extPriceField();
+  Field < Double > extCostField();
+  Field < Double > marginField();
 
-  @JsonSetter( "AdditionsProduct" )
-  Addition additionProduct( AdditionProduct additionProduct );
+  default Double quantity() { return quantityField().get(); }
+  default AgreementAddition quantity( final Double d ) { quantityField().set(d); return this; }
 
-  @JsonGetter( "BillCustomer" )
-  BillCustomer billCustomer();
+  default AdditionProduct additionProduct() { return additionProductField().get(); }
+  default AgreementAddition additionProduct( final AdditionProduct a ) { additionProductField().set(a); return this; }
 
-  @JsonSetter( "BillCustomer" )
-  Addition billCustomer( BillCustomer billCustomer );
+  default Double lessIncluded() { return lessIncludedField().get(); }
+  default AgreementAddition lessIncluded( final Double d ) { lessIncludedField().set(d); return this; }
 
-  @JsonGetter( "BilledQuantity" )
-  Double billedQuantity();
+  default Double unitPrice() { return unitPriceField().get(); }
+  default AgreementAddition unitPrice( final Double d ) { unitPriceField().set(d); return this; }
 
-  @JsonSetter( "BilledQuantity" )
-  Addition billedQuantity( Double billedQuantity );
+  default Double unitCost() { return unitCostField().get(); }
+  default AgreementAddition unitCost( final Double d ) { unitCostField().set(d); return this; }
 
-  @JsonGetter( "CancelledDate" )
-  Date cancelledDate();
+  default Date cancelledDate() { return cancelledDateField().get(); }
+  default AgreementAddition cancelledDate( final Date d ) { cancelledDateField().set(d); return this; }
 
-  @JsonSetter( "CancelledDate" )
-  Addition cancelledDate( Date cancelledDate );
+  default BillCustomer billCustomer() { return billCustomerField().get(); }
+  default AgreementAddition billCustomer( final BillCustomer b ) { billCustomerField().set(b); return this; }
 
-  @JsonGetter( "EffectiveDate" )
-  Date effectiveDate();
+  default String serialNumber() { return serialNumberField().get(); }
+  default AgreementAddition serialNumber( final String s ) { serialNumberField().set(s); return this; }
 
-  @JsonSetter( "EffectiveDate" )
-  Addition effectiveDate( Date effectiveDate );
+  default String invoiceDescription() { return invoiceDescriptionField().get(); }
+  default AgreementAddition invoiceDescription( final String s ) { invoiceDescriptionField().set(s); return this; }
 
-  @JsonGetter( "ExtCost" )
-  Double extCost();
+  default Boolean purchaseItem() { return purchaseItemField().get(); }
+  default AgreementAddition purchaseItem( final Boolean b ) { purchaseItemField().set(b); return this; }
 
-  @JsonSetter( "ExtCost" )
-  Addition extCost( Double extCost );
+  default Boolean specialOrder() { return specialOrderField().get(); }
+  default AgreementAddition specialOrder( final Boolean b ) { specialOrderField().set(b); return this; }
 
-  @JsonGetter( "ExtPrice" )
-  Double extPrice();
+  default Double billedQuantity() { return billedQuantityField().get(); }
+  default AgreementAddition billedQuantity( final Double d ) { billedQuantityField().set(d); return this; }
 
-  @JsonSetter( "ExtPrice" )
-  Addition extPrice( Double extPrice );
+  default String uom() { return uomField().get(); }
+  default AgreementAddition uom( final String s ) { uomField().set(s); return this; }
 
-  @JsonGetter( "InvoiceDescription" )
-  String invoiceDescription();
+  default Double extPrice() { return extPriceField().get(); }
+  default AgreementAddition extPrice( final Double d ) { extPriceField().set(d); return this; }
 
-  @JsonSetter( "InvoiceDescription" )
-  Addition invoiceDescription( String invoiceDescription );
+  default Double extCost() { return extCostField().get(); }
+  default AgreementAddition extCost( final Double d ) { extCostField().set(d); return this; }
 
-  @JsonGetter( "LessIncluded" )
-  Double lessIncluded();
+  default Double margin() { return marginField().get(); }
+  default AgreementAddition margin( final Double d ) { marginField().set(d); return this; }
 
-  @JsonSetter( "LessIncluded" )
-  Addition lessIncluded( Double lessIncluded );
-
-  @JsonGetter( "Margin" )
-  Double margin();
-
-  @JsonSetter( "Margin" )
-  Addition margin( Double margin );
-
-  @JsonGetter( "ProductId" )
-  Integer productId();
-
-  @JsonSetter( "ProductId" )
-  Addition productId( Integer productId );
-
-  @JsonGetter( "Quantity" )
-  Double quantity();
-
-  @JsonSetter( "Quantity" )
-  Addition quantity( Double quantity );
-
-  @JsonGetter( "SerialNumber" )
-  String serialNumber();
-
-  @JsonSetter( "SerialNumber" )
-  Addition serialNumber( String serialNumber );
-
-  @JsonGetter( "UnitCost" )
-  Double unitCost();
-
-  @JsonSetter( "UnitCost" )
-  Addition unitCost( Double unitCost );
-
-  @JsonGetter( "UnitPrice" )
-  Double unitPrice();
-
-  @JsonSetter( "UnitPrice" )
-  Addition unitPrice( Double unitPrice );
-
-  @JsonGetter( "UOM" )
-  String uom();
-
-  @JsonSetter( "UOM" )
-  Addition uom( String uom );
-
-  @JsonGetter( "PurchaseItemFlag" )
-  Boolean purchaseItem();
-
-  @JsonSetter( "PurchaseItemFlag" )
-  Addition purchaseItem( Boolean purchaseItem );
-
-  @JsonGetter( "SpecialOrderFlag" )
-  Boolean specialOrder();
-
-  @JsonSetter( "SpecialOrderFlag" )
-  Addition specialOrder( Boolean specialOrder );
-
-  @JsonGetter( "TaxableFlag" )
-  Boolean taxable();
-
-  @JsonSetter( "TaxableFlag" )
-  Addition taxable( Boolean taxable );
+  @Override default AgreementAddition taxable( final Boolean b ) { taxableField().set(b); return this; }
+  @Override default AgreementAddition effectiveDate( final Date d ) { effectiveDateField().set(d); return this; }
+  @Override default AgreementAddition id( final Integer i ) { idField().set(i); return this; }
+  @Override default AgreementAddition updatedBy( final String s ) { updatedByField().set(s); return this; }
+  @Override default AgreementAddition lastUpdate( final Date d ) { lastUpdateField().set(d); return this; }
+  @Override default AgreementAddition agreementId( final Integer i ) { agreementIdField().set(i); return this; }
 }

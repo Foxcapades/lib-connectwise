@@ -21,16 +21,14 @@ import io.vulpine.connectwise.util.Field;
 /**
  * = {@link XmlSerializable} Object with an AddressId Field
  *
- * @param <T> The implementing or extending class or interface type.
- *
  * @since 0.10.0
  * @version 1.0.0
  */
-public interface HasAddressId< T extends HasAddressId > extends XmlSerializable
+public interface HasAddressId extends XmlSerializable
 {
   Integer addressId();
 
   Field< Integer > addressIdField();
 
-  T addressId( Integer i );
+  HasAddressId addressId( Integer i );
 }

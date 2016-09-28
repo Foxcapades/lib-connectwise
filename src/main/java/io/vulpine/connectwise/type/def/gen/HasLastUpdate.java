@@ -20,14 +20,11 @@ import io.vulpine.connectwise.util.Field;
 
 import java.util.Date;
 
-public interface HasLastUpdate< T extends XmlSerializable >
+public interface HasLastUpdate extends XmlSerializable
 {
-  default Date lastUpdate()
-  {
-    return lastUpdateField().get();
-  }
+  default Date lastUpdate() { return lastUpdateField().get(); }
 
   Field < Date > lastUpdateField();
 
-  T lastUpdate( Date d );
+  HasLastUpdate lastUpdate( final Date d );
 }

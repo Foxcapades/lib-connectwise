@@ -26,11 +26,11 @@ import io.vulpine.connectwise.util.Field;
  * @since 0.10.0
  * @version 1.0.0
  */
-public interface HasAgreementId < T extends HasAgreementId > extends XmlSerializable
+public interface HasAgreementId extends XmlSerializable
 {
-  Integer agreementId();
+  default Integer agreementId() { return agreementIdField().get(); }
 
   Field< Integer > agreementIdField();
 
-  T agreementId( Integer i );
+  HasAgreementId agreementId( final Integer i );
 }

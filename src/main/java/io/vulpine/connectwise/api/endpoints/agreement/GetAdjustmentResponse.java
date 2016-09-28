@@ -19,13 +19,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import io.vulpine.connectwise.api.common.ResponseData;
-import io.vulpine.connectwise.type.agreement.adjustment.Adjustment;
+import io.vulpine.connectwise.type.agreement.adjustment.SimpleAdjustment;
 
 @JsonRootName("GetAgreementAdjustmentResponse")
-public class GetAdjustmentResponse extends ResponseData < Adjustment >
+public class GetAdjustmentResponse extends ResponseData < SimpleAdjustment >
 {
   @JsonCreator
-  public GetAdjustmentResponse( @JsonProperty("GetAgreementAdjustmentResult") final Adjustment result )
+  public GetAdjustmentResponse( @JsonProperty("GetAgreementAdjustmentResult") final SimpleAdjustment result )
   {
     super(result);
   }

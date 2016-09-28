@@ -23,12 +23,10 @@ import java.util.Date;
 /**
  * = {@link XmlSerializable} Object with an EndDate Field
  *
- * @param <T>
- *
  * @since 0.10.0
  * @version 1.0.0
  */
-public interface HasEndDate < T extends HasEndDate > extends XmlSerializable
+public interface HasEndDate extends XmlSerializable
 {
   default Date endDate()
   {
@@ -37,5 +35,5 @@ public interface HasEndDate < T extends HasEndDate > extends XmlSerializable
 
   Field< Date > endDateField();
 
-  T endDate( Date d );
+  HasEndDate endDate( Date d );
 }

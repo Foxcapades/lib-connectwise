@@ -18,7 +18,16 @@ package io.vulpine.connectwise.util;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SimpleField < T > implements Field < T >
+/**
+ * = Field
+ *
+ * @param <T> Type of this field
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ * @author https://github.com/elliefops[Elizabeth Harper]
+ */
+public class SimpleObjectField < T > implements Field < T >
 {
   private boolean optional = true;
 
@@ -28,24 +37,24 @@ public class SimpleField < T > implements Field < T >
 
   private Map< String, String > attributes = new HashMap < String, String >();
 
-  private String name;
+  private String name = "";
 
-  public SimpleField()
+  public SimpleObjectField()
   {
   }
 
-  public SimpleField( String name )
+  public SimpleObjectField( String name )
   {
     this.name = name;
   }
 
-  public SimpleField( String name, T value )
+  public SimpleObjectField( String name, T value )
   {
     this.name = name;
     this.value = value;
   }
 
-  public SimpleField( String name , final boolean optional, final boolean nullable )
+  public SimpleObjectField( String name , final boolean optional, final boolean nullable )
   {
     this.name = name;
     this.optional = optional;

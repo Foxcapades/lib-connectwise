@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 import io.vulpine.connectwise.util.Field;
-import io.vulpine.connectwise.util.SimpleField;
+import io.vulpine.connectwise.util.SimpleObjectField;
 
 import java.util.Date;
 import java.util.List;
@@ -30,24 +30,24 @@ import java.util.List;
 public class SimpleConfiguration extends ConnectwiseCommon implements io.vulpine.connectwise.type.def.Configuration
 {
   private Field < Integer >
-    addressId             = new SimpleField <>("AddressId"),
-    backupFailed          = new SimpleField <>("BackupFailed"),
-    backupIncomplete      = new SimpleField <>("BackupIncomplete"),
-    backupMonth           = new SimpleField <>("BackupMonth"),
-    backupRestores        = new SimpleField <>("BackupRestores"),
-    backupSuccesses       = new SimpleField <>("BackupSuccesses"),
-    businessUnitId        = new SimpleField <>("BusinessUnitId"),
-    backupYear            = new SimpleField <>("BackupYear"),
-    companyId             = new SimpleField <>("CompanyId"),
-    contactId             = new SimpleField <>("ContactId"),
-    configurationTypeId   = new SimpleField <>("ConfigurationTypeId"),
-    locationId            = new SimpleField <>("LocationId"),
-    parentConfigurationId = new SimpleField <>("ParentConfigurationId"),
-    statusId              = new SimpleField <>("StatusId");
+    addressId             = new SimpleObjectField<>("AddressId"),
+    backupFailed          = new SimpleObjectField<>("BackupFailed"),
+    backupIncomplete      = new SimpleObjectField<>("BackupIncomplete"),
+    backupMonth           = new SimpleObjectField<>("BackupMonth"),
+    backupRestores        = new SimpleObjectField<>("BackupRestores"),
+    backupSuccesses       = new SimpleObjectField<>("BackupSuccesses"),
+    businessUnitId        = new SimpleObjectField<>("BusinessUnitId"),
+    backupYear            = new SimpleObjectField<>("BackupYear"),
+    companyId             = new SimpleObjectField<>("CompanyId"),
+    contactId             = new SimpleObjectField<>("ContactId"),
+    configurationTypeId   = new SimpleObjectField<>("ConfigurationTypeId"),
+    locationId            = new SimpleObjectField<>("LocationId"),
+    parentConfigurationId = new SimpleObjectField<>("ParentConfigurationId"),
+    statusId              = new SimpleObjectField<>("StatusId");
 
   private Field < Boolean >
-    billFlag = new SimpleField <>("BillFlag"),
-    isActive = new SimpleField <>("IsActive");
+    billFlag = new SimpleObjectField<>("BillFlag"),
+    isActive = new SimpleObjectField<>("IsActive");
 
   private Double backupBillableSpaceGb = null;
 
@@ -65,63 +65,63 @@ public class SimpleConfiguration extends ConnectwiseCommon implements io.vulpine
 
   private Date warrantyExpiration = null;
 
-  private Field < String > addressLine1 = new SimpleField <>("AddressLine1");
+  private Field < String > addressLine1 = new SimpleObjectField<>("AddressLine1");
 
-  private Field < String > addressLine2 = new SimpleField <>("AddressLine2");
+  private Field < String > addressLine2 = new SimpleObjectField<>("AddressLine2");
 
-  private Field < String > backupServerName = new SimpleField <>("BackupServerName");
+  private Field < String > backupServerName = new SimpleObjectField<>("BackupServerName");
 
-  private Field < String > backupProtectedDeviceList = new SimpleField <>("");
+  private Field < String > backupProtectedDeviceList = new SimpleObjectField<>("");
 
-  private Field < String > city = new SimpleField <>();
+  private Field < String > city = new SimpleObjectField<>();
 
-  private Field < String > companyName = new SimpleField <>();
+  private Field < String > companyName = new SimpleObjectField<>();
 
-  private Field < String > configurationName = new SimpleField <>();
+  private Field < String > configurationName = new SimpleObjectField<>();
 
-  private Field < String > configurationType = new SimpleField <>();
+  private Field < String > configurationType = new SimpleObjectField<>();
 
-  private Field < String > contactName = new SimpleField <>();
+  private Field < String > contactName = new SimpleObjectField<>();
 
-  private Field < String > country = new SimpleField <>();
+  private Field < String > country = new SimpleObjectField<>();
 
-  private Field < String > cpuSpeed = new SimpleField <>();
+  private Field < String > cpuSpeed = new SimpleObjectField<>();
 
-  private Field < String > defaultGateway = new SimpleField <>();
+  private Field < String > defaultGateway = new SimpleObjectField<>();
 
-  private Field < String > deviceIdentifier = new SimpleField <>();
+  private Field < String > deviceIdentifier = new SimpleObjectField<>();
 
-  private Field < String > installedBy = new SimpleField <>();
+  private Field < String > installedBy = new SimpleObjectField<>();
 
-  private Field < String > ipAddress = new SimpleField <>();
+  private Field < String > ipAddress = new SimpleObjectField<>();
 
-  private Field < String > lastLoginName = new SimpleField <>();
+  private Field < String > lastLoginName = new SimpleObjectField<>();
 
-  private Field < String > localHardDrives = new SimpleField <>();
+  private Field < String > localHardDrives = new SimpleObjectField<>();
 
-  private Field < String > macAddress = new SimpleField <>();
+  private Field < String > macAddress = new SimpleObjectField<>();
 
-  private Field < String > modelNumber = new SimpleField <>();
+  private Field < String > modelNumber = new SimpleObjectField<>();
 
-  private Field < String > notes = new SimpleField <>();
+  private Field < String > notes = new SimpleObjectField<>();
 
-  private Field < String > osType = new SimpleField <>();
+  private Field < String > osType = new SimpleObjectField<>();
 
-  private Field < String > osInfo = new SimpleField <>();
+  private Field < String > osInfo = new SimpleObjectField<>();
 
-  private Field < String > serialNumber = new SimpleField <>();
+  private Field < String > serialNumber = new SimpleObjectField<>();
 
-  private Field < String > state = new SimpleField <>();
+  private Field < String > state = new SimpleObjectField<>();
 
-  private Field < String > status = new SimpleField <>();
+  private Field < String > status = new SimpleObjectField<>();
 
-  private Field < String > ram = new SimpleField <>();
+  private Field < String > ram = new SimpleObjectField<>();
 
-  private Field < String > tagNumber = new SimpleField <>();
+  private Field < String > tagNumber = new SimpleObjectField<>();
 
-  private Field < String > vendorNotes = new SimpleField <>();
+  private Field < String > vendorNotes = new SimpleObjectField<>();
 
-  private Field < String > zipCode = new SimpleField <>();
+  private Field < String > zipCode = new SimpleObjectField<>();
 
   @JsonGetter( "IsActive" )
   public Boolean active()

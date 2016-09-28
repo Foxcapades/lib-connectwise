@@ -23,12 +23,10 @@ import java.util.Date;
 /**
  * = XmlSerializable Object with a StartDate Field
  *
- * @param <T>
- *
  * @since 0.10.0
  * @version 1.0.0
  */
-public interface HasStartDate < T extends HasStartDate > extends XmlSerializable
+public interface HasStartDate extends XmlSerializable
 {
   default Date startDate()
   {
@@ -37,5 +35,5 @@ public interface HasStartDate < T extends HasStartDate > extends XmlSerializable
 
   Field< Date > startDateField();
 
-  T startDate( Date d );
+  HasStartDate startDate( Date d );
 }

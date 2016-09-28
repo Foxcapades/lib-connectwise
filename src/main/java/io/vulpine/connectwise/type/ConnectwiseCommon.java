@@ -15,101 +15,38 @@
  */
 package io.vulpine.connectwise.type;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.util.Field;
-import io.vulpine.connectwise.util.SimpleField;
+import io.vulpine.connectwise.util.SimpleObjectField;
 
 import java.util.Date;
 
-@JsonFilter( "filter-empty" )
-public class ConnectwiseCommon < T extends ConnectwiseCommon >
+public abstract class ConnectwiseCommon
 {
+  protected Field < Integer > id = new SimpleObjectField<>("Id", false, true);
 
-  private Date lastUpdate;
+  protected Field < Date > lastUpdate = new SimpleObjectField<>("LastUpdate");
 
-  private Date lastUpdated;
+  protected Field < Date > lastUpdated = new SimpleObjectField<>("LastUpdated");
 
-  private Field < Integer > id = new SimpleField < Integer >("Id", false, true);
+  protected Field < String > updatedBy = new SimpleObjectField<>("UpdatedBy");
 
-  private String description;
-
-  private String updatedBy;
-
-
-  @JsonGetter( "Id" )
-  public Integer id()
+  public Field < Integer > idField()
   {
-    return id.get();
+    return id;
   }
 
-  @JsonSetter( "Id" )
-  public ConnectwiseCommon<T> id( final Integer i )
+  public Field < Date > lastUpdatedField()
   {
-    id.set(i);
-
-    return this;
+    return lastUpdated;
   }
 
-  @JsonGetter( "UpdatedBy" )
-  public String updatedBy()
+  public Field < Date > lastUpdateField()
+  {
+    return lastUpdate;
+  }
+
+  public Field < String > updatedByField()
   {
     return updatedBy;
-  }
-
-  @JsonSetter( "UpdatedBy" )
-  public ConnectwiseCommon updatedBy( String updatedBy )
-  {
-    this.updatedBy = updatedBy;
-
-    return this;
-  }
-
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonGetter( "LastUpdate" )
-  public Date lastUpdate()
-  {
-    return null == this.lastUpdate ? null : new Date(this.lastUpdate.getTime());
-  }
-
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonSetter( "LastUpdate" )
-  public ConnectwiseCommon lastUpdate( final Date lastUpdate )
-  {
-    this.lastUpdate = new Date(lastUpdate.getTime());
-
-    return this;
-  }
-
-  @JsonGetter( "Description" )
-  public String description()
-  {
-    return description;
-  }
-
-  @JsonSetter( "Description" )
-  public ConnectwiseCommon description( final String description )
-  {
-    this.description = description;
-
-    return this;
-  }
-
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonGetter( "LastUpdated" )
-  public Date lastUpdated()
-  {
-    return null == this.lastUpdated ? null : new Date(this.lastUpdated.getTime());
-  }
-
-  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
-  @JsonSetter( "LastUpdated" )
-  public ConnectwiseCommon lastUpdated( final Date lastUpdated )
-  {
-    this.lastUpdated = new Date(lastUpdated.getTime());
-
-    return this;
   }
 }

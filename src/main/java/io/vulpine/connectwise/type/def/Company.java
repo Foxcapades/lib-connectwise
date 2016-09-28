@@ -15,137 +15,224 @@
  */
 package io.vulpine.connectwise.type.def;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.company.Address;
+import io.vulpine.connectwise.type.def.gen.HasAccountNumber;
 import io.vulpine.connectwise.type.def.gen.HasId;
+import io.vulpine.connectwise.type.def.gen.HasLastUpdated;
 import io.vulpine.connectwise.util.Field;
+import io.vulpine.connectwise.util.ListField;
 
+import java.util.Date;
 import java.util.List;
 
-public interface Company extends XmlSerializable, HasId< Company >
+public interface Company
+  extends
+  XmlSerializable,
+  HasAccountNumber,
+  HasId,
+  HasLastUpdated
 {
-  @JsonGetter( "AccountNumber" )
-  String accountNumber();
-
-  @JsonIgnore
-  Field< String > accountNumberField();
-
-  @JsonSetter( "AccountNumber" )
-  Company accountNumber( String accountNumber );
-
-  @JsonGetter( "Addresses" )
-  List < Address > getAddresses();
-
-  @JsonSetter( "Addresses" )
-  Company setAddresses( List < Address > addresses );
-
-  @JsonGetter( "CompanyIdentifier" )
-  String companyIdentifier();
-
-  @JsonIgnore
   Field < String > companyIdentifierField();
-
-  @JsonSetter( "CompanyIdentifier" )
-  Company companyIdentifier( String companyIdentifier );
-
-  @JsonGetter( "CompanyName" )
-  String companyName();
 
   Field < String > companyNameField();
 
-  @JsonSetter( "CompanyName" )
-  Company companyName( String companyName );
-
-  @JsonGetter( "DefaultAddress" )
-  Address defaultAddress();
-
-  @JsonIgnore
   Field < Address > defaultAddressField();
-
-  @JsonSetter( "DefaultAddress" )
-  Company defaultAddress( Address defaultAddress );
-
-  @JsonGetter( "DefaultBillingContactId" )
-  Integer defaultBillingContactId();
 
   Field < Integer > defaultBillingContactIdField();
 
-  @JsonSetter( "DefaultBillingContactId" )
-  Company defaultBillingContactId( Integer defaultBillingContactId );
-
-  @JsonGetter( "DefaultContactId" )
-  Integer defaultContactId();
-
   Field < Integer > defaultContactIdField();
-
-  @JsonSetter( "DefaultContactId" )
-  Company defaultContactId( Integer defaultContactId );
-
-  @JsonGetter( "FaxNumber" )
-  String faxNumber();
 
   Field < String > faxNumberField();
 
-  @JsonSetter( "FaxNumber" )
-  Company faxNumber( String faxNumber );
-
-  @JsonGetter( "Market" )
-  String market();
-
   Field < String > marketField();
-
-  @JsonSetter( "Market" )
-  Company market( String market );
-
-  @JsonGetter( "PhoneNumber" )
-  String phoneNumber();
 
   Field < String > phoneNumberField();
 
-  @JsonSetter( "PhoneNumber" )
-  Company phoneNumber( String phoneNumber );
-
-  @JsonGetter( "Status" )
-  String status();
-
   Field < String > statusField();
 
-  @JsonSetter( "Status" )
-  Company status( String status );
-
-  @JsonGetter( "Territory" )
-  String territory();
-
-  Field < String >  territoryField();
-
-  @JsonSetter( "Territory" )
-  Company territory( String territory );
-
-  @JsonGetter( "Type" )
-  String type();
+  Field < String > territoryField();
 
   Field < String > typeField();
 
-  @JsonSetter( "Type" )
-  Company type( String type );
-
-  @JsonGetter( "WebSite" )
-  String webSite();
-
   Field < String > webSiteField();
 
-  @JsonSetter( "WebSite" )
-  Company webSite( String webSite );
+  ListField < Address > addressesField();
 
-  @JsonIgnore
-  Field < Boolean > inactiveField();
+  /*
 
-  @JsonSetter( "InactiveFlag" )
-  Company inactive( Boolean inactive );
+  Default Implementations
 
-  @JsonGetter( "InactiveFlag" )
-  Boolean inactive();
+   */
 
+  default List < Address > addresses()
+  {
+    return addressesField().get();
+  }
+
+  default Company addresses( List < Address > addresses )
+  {
+    addressesField().get().clear();
+    addressesField().get().addAll(addresses);
+
+    return this;
+  }
+
+  default String companyIdentifier()
+  {
+    return companyIdentifierField().get();
+  }
+
+  default Company companyIdentifier( final String s )
+  {
+    companyIdentifierField().set(s);
+    return this;
+  }
+
+  default String companyName()
+  {
+    return companyNameField().get();
+  }
+
+  default Company companyName( final String s )
+  {
+    companyNameField().set(s);
+    return this;
+  }
+
+  default Address defaultAddress()
+  {
+    return defaultAddressField().get();
+  }
+
+  default Company defaultAddress( final Address a )
+  {
+    defaultAddressField().set(a);
+    return this;
+  }
+
+  default Integer defaultBillingContactId()
+  {
+    return defaultBillingContactIdField().get();
+  }
+
+  default Company defaultBillingContactId( final Integer i )
+  {
+    defaultBillingContactIdField().set(i);
+    return this;
+  }
+
+  default Integer defaultContactId()
+  {
+    return defaultContactIdField().get();
+  }
+
+  default Company defaultContactId( final Integer i )
+  {
+    defaultContactIdField().set(i);
+    return this;
+  }
+
+  default String faxNumber()
+  {
+    return faxNumberField().get();
+  }
+
+  default Company faxNumber( final String s )
+  {
+    faxNumberField().set(s);
+    return this;
+  }
+
+  default String market()
+  {
+    return marketField().get();
+  }
+
+  default Company market( final String s )
+  {
+    marketField().set(s);
+    return this;
+  }
+
+  default String phoneNumber()
+  {
+    return phoneNumberField().get();
+  }
+
+  default Company phoneNumber( final String s )
+  {
+    phoneNumberField().set(s);
+    return this;
+  }
+
+  default String status()
+  {
+    return statusField().get();
+  }
+
+  default Company status( final String s )
+  {
+    statusField().set(s);
+    return this;
+  }
+
+  default String territory()
+  {
+    return territoryField().get();
+  }
+
+  default Company territory( final String s )
+  {
+    territoryField().set(s);
+    return this;
+  }
+
+  default String type()
+  {
+    return typeField().get();
+  }
+
+  default Company type( final String s )
+  {
+    typeField().set(s);
+    return this;
+  }
+
+  default String webSite()
+  {
+    return webSiteField().get();
+  }
+
+  default Company webSite( final String s )
+  {
+    webSiteField().set(s);
+    return this;
+  }
+
+  /*
+
+  Interface Overrides
+
+   */
+
+  @Override
+  default Company lastUpdated( final Date d )
+  {
+    lastUpdatedField().set(d);
+    return this;
+  }
+
+  @Override
+  default Company id( final Integer i )
+  {
+    idField().set(i);
+    return this;
+  }
+
+  @Override
+  default Company accountNumber( final String s )
+  {
+    accountNumberField().set(s);
+    return this;
+  }
 }

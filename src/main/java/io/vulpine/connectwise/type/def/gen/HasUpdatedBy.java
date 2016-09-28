@@ -18,7 +18,7 @@ package io.vulpine.connectwise.type.def.gen;
 import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.util.Field;
 
-public interface HasUpdatedBy < T extends HasUpdatedBy > extends XmlSerializable
+public interface HasUpdatedBy extends XmlSerializable
 {
   default String updatedBy()
   {
@@ -27,5 +27,5 @@ public interface HasUpdatedBy < T extends HasUpdatedBy > extends XmlSerializable
 
   Field< String > updatedByField();
 
-  T updatedBy( String s );
+  HasUpdatedBy updatedBy( final String s );
 }

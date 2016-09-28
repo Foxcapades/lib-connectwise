@@ -18,22 +18,22 @@ package io.vulpine.connectwise.api.endpoints.company;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.type.company.Company;
+import io.vulpine.connectwise.type.company.SimpleCompany;
 
 @JacksonXmlRootElement ( localName = "AddCompanyResponse" )
 public class AddCompanyResponse
 {
-  protected final Company result;
+  protected final SimpleCompany result;
 
 
   public AddCompanyResponse (
-    @JacksonXmlProperty( localName = "AddCompanyResult" ) final Company result
+    @JacksonXmlProperty( localName = "AddCompanyResult" ) final SimpleCompany result
   )
   {
     this.result = result;
   }
 
-  public Company getResult ()
+  public SimpleCompany getResult ()
   {
     return result;
   }

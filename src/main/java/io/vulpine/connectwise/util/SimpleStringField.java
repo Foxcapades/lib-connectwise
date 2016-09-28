@@ -15,23 +15,23 @@
  */
 package io.vulpine.connectwise.util;
 
-public class StringField extends SimpleField < String >
+public class SimpleStringField extends SimpleObjectField< String >
 {
-  public StringField()
+  public SimpleStringField()
   {
   }
 
-  public StringField( String name )
+  public SimpleStringField( String name )
   {
     super(name);
   }
 
-  public StringField( String name, String value )
+  public SimpleStringField( String name, String value )
   {
     super(name, value);
   }
 
-  public StringField( String name, boolean optional, boolean nullable )
+  public SimpleStringField( String name, boolean optional, boolean nullable )
   {
     super(name, optional, nullable);
   }

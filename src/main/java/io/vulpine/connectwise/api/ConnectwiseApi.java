@@ -38,6 +38,10 @@ import java.util.regex.Pattern;
 
 /**
  * Fluent API Wrapper for the Connectwise SOAP API v2.0
+ *
+ * @since 0.1.0
+ * @version 2.8.0
+ * @author https://github.com/elliefops[Elizabeth Harper]
  */
 public final class ConnectwiseApi implements ConnectwiseInterface
 {
