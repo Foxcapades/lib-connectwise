@@ -15,7 +15,7 @@
  */
 package io.vulpine.connectwise.util;
 
-public class SimpleStringField extends SimpleObjectField< String >
+public class SimpleStringField extends SimpleObjectField< String > implements StringField
 {
   public SimpleStringField()
   {
@@ -34,5 +34,21 @@ public class SimpleStringField extends SimpleObjectField< String >
   public SimpleStringField( String name, boolean optional, boolean nullable )
   {
     super(name, optional, nullable);
+  }
+
+  @Override
+  public StringField append( final String s )
+  {
+    final StringField r = new SimpleStringField();
+    r.set(get() + s);
+    return r;
+  }
+
+  @Override
+  public StringField prepend( String s )
+  {
+    final StringField r = new SimpleStringField();
+    r.set(s + get());
+    return r;
   }
 }
