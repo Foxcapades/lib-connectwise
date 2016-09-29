@@ -219,7 +219,12 @@ public interface ProductDetail
    */
 
   @Override
-  ProductDetail agreementAmount( final Double d );
+  default ProductDetail agreementAmount( final Double d )
+  {
+    agreementAmountField().set(d);
+
+    return this;
+  }
 
   @Override
   ProductDetail billable( final Boolean b );

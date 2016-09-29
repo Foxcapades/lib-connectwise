@@ -187,7 +187,12 @@ public interface Company
   Company id( final Integer i );
 
   @Override
-  Company accountNumber( final String s );
+  default Company accountNumber( String s )
+  {
+    accountNumberField().set(s);
+
+    return this;
+  }
 
   @Override
   Company territory( final String s );

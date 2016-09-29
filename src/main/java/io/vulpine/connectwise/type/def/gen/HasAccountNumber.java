@@ -17,16 +17,17 @@ package io.vulpine.connectwise.type.def.gen;
 
 import io.vulpine.connectwise.util.Field;
 
+/**
+ * = Object with an AccountNumber Field
+ *
+ * @since 0.10.0
+ * @version 1.0.0
+ */
 public interface HasAccountNumber
 {
   Field< String > accountNumberField();
 
   default String accountNumber() { return accountNumberField().get(); }
 
-  default HasAccountNumber accountNumber( String s )
-  {
-    accountNumberField().set(s);
-
-    return this;
-  }
+  HasAccountNumber accountNumber( String s );
 }

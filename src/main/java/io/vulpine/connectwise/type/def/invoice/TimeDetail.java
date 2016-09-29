@@ -212,7 +212,12 @@ public interface TimeDetail
   TimeDetail agreementType( final String v );
 
   @Override
-  TimeDetail agreementAmount( final Double v );
+  default TimeDetail agreementAmount( final Double d )
+  {
+    agreementAmountField().set(d);
+
+    return this;
+  }
 
   @Override
   TimeDetail billable( final Boolean v );

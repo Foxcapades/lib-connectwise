@@ -20,7 +20,10 @@ import io.vulpine.connectwise.type.contact.Contact;
 import io.vulpine.connectwise.type.def.Company;
 import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.type.def.gen.*;
+import io.vulpine.connectwise.util.DateField;
 import io.vulpine.connectwise.util.Field;
+import io.vulpine.connectwise.util.ListField;
+import io.vulpine.connectwise.util.NumberField;
 
 import java.util.Date;
 import java.util.List;
@@ -83,16 +86,16 @@ public interface Invoice
     return this;
   }
 
-  Field < Boolean > entField();
+  Field < Boolean > sentField();
 
-  default Boolean ent()
+  default Boolean sent()
   {
-    return entField().get();
+    return sentField().get();
   }
 
-  default Invoice ent( final Boolean v )
+  default Invoice sent( final Boolean v )
   {
-    entField().set(v);
+    sentField().set(v);
     return this;
   }
 
@@ -109,7 +112,7 @@ public interface Invoice
     return this;
   }
 
-  Field < Date > dueDateField();
+  DateField dueDateField();
 
   default Date dueDate()
   {
@@ -122,7 +125,7 @@ public interface Invoice
     return this;
   }
 
-  Field < Date > invoiceDateField();
+  DateField invoiceDateField();
 
   default Date invoiceDate()
   {
@@ -148,7 +151,7 @@ public interface Invoice
     return this;
   }
 
-  Field < Double > downpaymentAmountField();
+  NumberField < Double > downpaymentAmountField();
 
   default Double downpaymentAmount()
   {
@@ -161,7 +164,7 @@ public interface Invoice
     return this;
   }
 
-  Field < Double > invoiceAmountField();
+  NumberField < Double > invoiceAmountField();
 
   default Double invoiceAmount()
   {
@@ -174,7 +177,7 @@ public interface Invoice
     return this;
   }
 
-  Field < Double > projectBillingAmountField();
+  NumberField < Double > projectBillingAmountField();
 
   default Double projectBillingAmount()
   {
@@ -187,7 +190,7 @@ public interface Invoice
     return this;
   }
 
-  Field < Double > projectBillingRateField();
+  NumberField < Double > projectBillingRateField();
 
   default Double projectBillingRate()
   {
@@ -200,20 +203,20 @@ public interface Invoice
     return this;
   }
 
-  Field < Double > alesTaxAmountField();
+  NumberField < Double > salesTaxAmountField();
 
-  default Double alesTaxAmount()
+  default Double salesTaxAmount()
   {
-    return alesTaxAmountField().get();
+    return salesTaxAmountField().get();
   }
 
-  default Invoice alesTaxAmount( final Double v )
+  default Invoice salesTaxAmount( final Double v )
   {
-    alesTaxAmountField().set(v);
+    salesTaxAmountField().set(v);
     return this;
   }
 
-  Field < Double > taxableAmountField();
+  NumberField < Double > taxableAmountField();
 
   default Double taxableAmount()
   {
@@ -226,7 +229,7 @@ public interface Invoice
     return this;
   }
 
-  Field < Double > taxRateField();
+  NumberField < Double > taxRateField();
 
   default Double taxRate()
   {
@@ -239,7 +242,7 @@ public interface Invoice
     return this;
   }
 
-  Field < Double > ticketBillingAmountField();
+  NumberField < Double > ticketBillingAmountField();
 
   default Double ticketBillingAmount()
   {
@@ -252,7 +255,7 @@ public interface Invoice
     return this;
   }
 
-  Field < Date > dueDaysField();
+  DateField dueDaysField();
 
   default Date dueDays()
   {
@@ -460,16 +463,16 @@ public interface Invoice
     return this;
   }
 
-  Field < String > alesRepIdentifierField();
+  Field < String > salesRepIdentifierField();
 
-  default String alesRepIdentifier()
+  default String salesRepIdentifier()
   {
-    return alesRepIdentifierField().get();
+    return salesRepIdentifierField().get();
   }
 
-  default Invoice alesRepIdentifier( final String v )
+  default Invoice salesRepIdentifier( final String v )
   {
-    alesRepIdentifierField().set(v);
+    salesRepIdentifierField().set(v);
     return this;
   }
 
@@ -577,77 +580,72 @@ public interface Invoice
     return this;
   }
 
-  Field < List > expenseDetailsField();
+  ListField < ExpenseDetail > expenseDetailsField();
 
-  default List expenseDetails()
+  default List < ExpenseDetail > expenseDetails()
   {
     return expenseDetailsField().get();
   }
 
-  default Invoice expenseDetails( final List v )
+  default Invoice expenseDetails( final List < ExpenseDetail > v )
   {
     expenseDetailsField().set(v);
     return this;
   }
 
-  < ExpenseDetail >
-  Field < List > productDetailsField();
+  ListField < ProductDetail > productDetailsField();
 
-  default List productDetails()
+  default List < ProductDetail > productDetails()
   {
     return productDetailsField().get();
   }
 
-  default Invoice productDetails( final List v )
+  default Invoice productDetails( final List < ProductDetail > v )
   {
     productDetailsField().set(v);
     return this;
   }
 
-  < ProductDetail >
-  Field < List > timeDetailsField();
+  ListField < TimeDetail > timeDetailsField();
 
-  default List timeDetails()
+  default List < TimeDetail > timeDetails()
   {
     return timeDetailsField().get();
   }
 
-  default Invoice timeDetails( final List v )
+  default Invoice timeDetails( final List < TimeDetail > v )
   {
     timeDetailsField().set(v);
     return this;
   }
 
-  < TimeDetail >
-  Field < List > alesTaxDetailsField();
+  ListField < SalesTaxDetail > salesTaxDetailsField();
 
-  default List alesTaxDetails()
+  default List < SalesTaxDetail > salesTaxDetails()
   {
-    return alesTaxDetailsField().get();
+    return salesTaxDetailsField().get();
   }
 
-  default Invoice alesTaxDetails( final List v )
+  default Invoice salesTaxDetails( final List < SalesTaxDetail > v )
   {
-    alesTaxDetailsField().set(v);
+    salesTaxDetailsField().set(v);
     return this;
   }
 
-  < SalesTaxDetail >
-  Field < List > agreementDetailsField();
+  ListField < AgreementDetail > agreementDetailsField();
 
-  default List agreementDetails()
+  default List < AgreementDetail > agreementDetails()
   {
     return agreementDetailsField().get();
   }
 
-  default Invoice agreementDetails( final List v )
+  default Invoice agreementDetails( final List < AgreementDetail > v )
   {
     agreementDetailsField().set(v);
     return this;
   }
 
-  < AgreementDetail >
-  Field < Date > paidDateField();
+  DateField paidDateField();
 
   default Date paidDate()
   {
@@ -660,7 +658,7 @@ public interface Invoice
     return this;
   }
 
-  Field < Double > paidAmountField();
+  NumberField < Double > paidAmountField();
 
   default Double paidAmount()
   {
@@ -686,7 +684,7 @@ public interface Invoice
     return this;
   }
 
-  Field < Date > processingDateField();
+  DateField processingDateField();
 
   default Date processingDate()
   {
@@ -699,22 +697,89 @@ public interface Invoice
     return this;
   }
 
-  Field < String > alesRepFullNameField();
+  Field < String > salesRepFullNameField();
 
-  default String alesRepFullName()
+  default String salesRepFullName()
   {
-    return alesRepFullNameField().get();
+    return salesRepFullNameField().get();
   }
 
-  default Invoice alesRepFullName( final String v )
+  default Invoice salesRepFullName( final String v )
   {
-    alesRepFullNameField().set(v);
+    salesRepFullNameField().set(v);
     return this;
   }
 
   @Override
   default String toXml( String rootName )
   {
-    return null;
+    return "<" + rootName + ">"
+      + idField().toXml()
+      + clientLocationField().toXml()
+      + taxableField().toXml()
+      + emailField().toXml()
+      + closedField().toXml()
+      + sentField().toXml()
+      + glPostedField().toXml()
+      + dueDateField().toXml()
+      + invoiceDateField().toXml()
+      + invoiceTypeField().toXml()
+      + downpaymentAmountField().toXml()
+      + invoiceAmountField().toXml()
+      + projectBillingAmountField().toXml()
+      + projectBillingRateField().toXml()
+      + salesTaxAmountField().toXml()
+      + taxableAmountField().toXml()
+      + taxRateField().toXml()
+      + ticketBillingAmountField().toXml()
+      + dueDaysField().toXml()
+      + agreementNameField().toXml()
+      + agreementTypeField().toXml()
+      + billingDeliveryField().toXml()
+      + billingMethodField().toXml()
+      + billingTermsField().toXml()
+      + billingTermsXrefField().toXml()
+      + businessUnitField().toXml()
+      + currencyNameField().toXml()
+      + currencySymbolField().toXml()
+      + glBatchIdField().toXml()
+      + topCommentField().toXml()
+      + bottomCommentField().toXml()
+      + invoiceNumberField().toXml()
+      + locationField().toXml()
+      + poNumberField().toXml()
+      + projectNameField().toXml()
+      + projectNumberField().toXml()
+      + phaseNameField().toXml()
+      + routedMemberIdentifierField().toXml()
+      + routedMemberNameField().toXml()
+      + remitNameField().toXml()
+      + remitPhoneField().toXml()
+      + salesRepIdentifierField().toXml()
+      + statusField().toXml()
+      + taxCodeDescriptionField().toXml()
+      + taxCodeField().toXml()
+      + territoryField().toXml()
+      + ticketNumberField().toXml()
+      + ticketResolutionField().toXml()
+      + ticketSummaryField().toXml()
+      + companyField().toXml()
+      + billToCompanyField().toXml()
+      + contactField().toXml()
+      + billingAddressField().toXml()
+      + remitAddressField().toXml()
+      + expenseDetailsField().toXml()
+      + productDetailsField().toXml()
+      + timeDetailsField().toXml()
+      + salesTaxDetailsField().toXml()
+      + agreementDetailsField().toXml()
+      + paidDateField().toXml()
+      + paidAmountField().toXml()
+      + lastUpdatedField().toXml()
+      + updatedByField().toXml()
+      + processingFlagField().toXml()
+      + processingDateField().toXml()
+      + salesRepFullNameField().toXml()
+      + "</" + rootName + ">";
   }
 }

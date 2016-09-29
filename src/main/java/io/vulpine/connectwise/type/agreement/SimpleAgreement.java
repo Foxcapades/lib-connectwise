@@ -616,10 +616,4 @@ public class SimpleAgreement implements Agreement
       + "</" + s + ">";
   }
 
-  @Override
-  public Agreement fromXml( final Document document )
-  {
-    new XMLDecoder()
-    document.get
-  }
 }

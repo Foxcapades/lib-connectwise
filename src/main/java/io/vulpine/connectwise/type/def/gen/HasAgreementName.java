@@ -17,6 +17,12 @@ package io.vulpine.connectwise.type.def.gen;
 
 import io.vulpine.connectwise.util.Field;
 
+/**
+ * = Object with an AgreementName Field
+ *
+ * @since 0.10.0
+ * @version 1.0.0
+ */
 public interface HasAgreementName
 {
   Field< String > agreementNameField();

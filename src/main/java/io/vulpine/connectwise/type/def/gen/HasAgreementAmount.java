@@ -17,19 +17,20 @@ package io.vulpine.connectwise.type.def.gen;
 
 import io.vulpine.connectwise.util.Field;
 
+/**
+ * = Object with an AgreementAmount Field
+ *
+ * @since 0.10.0
+ * @version 1.0.0
+ */
 public interface HasAgreementAmount
 {
   Field < Double > agreementAmountField();
 
+  HasAgreementAmount agreementAmount( final Double d );
+
   default Double agreementAmount()
   {
     return agreementAmountField().get();
-  }
-
-  default HasAgreementAmount agreementAmount( final Double d )
-  {
-    agreementAmountField().set(d);
-
-    return this;
   }
 }

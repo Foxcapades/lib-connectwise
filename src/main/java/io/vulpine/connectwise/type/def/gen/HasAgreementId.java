@@ -15,18 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.util.Field;
 
 /**
- * = {@link XmlSerializable} Object with an AgreementId Field
- *
- * @param <T> The implementing or extending class or interface type.
+ * = Object with an AgreementId Field
  *
  * @since 0.10.0
  * @version 1.0.0
  */
-public interface HasAgreementId extends XmlSerializable
+public interface HasAgreementId
 {
   default Integer agreementId() { return agreementIdField().get(); }
 

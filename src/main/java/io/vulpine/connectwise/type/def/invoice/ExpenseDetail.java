@@ -22,7 +22,7 @@ import io.vulpine.connectwise.util.Field;
 import java.util.Date;
 
 public interface ExpenseDetail
-extends
+  extends
   HasAgreementName,
   HasAgreementType,
   HasAgreementAmount,
@@ -54,7 +54,7 @@ extends
     return reimbursableField().get();
   }
 
-default ExpenseDetail actualAmount( final Double v )
+  default ExpenseDetail actualAmount( final Double v )
   {
     actualAmountField().set(v);
 
@@ -184,16 +184,44 @@ default ExpenseDetail actualAmount( final Double v )
   |*| INHERITED DEFAULTS
    */
 
-  @Override ExpenseDetail agreementAmount( final Double v );
-  @Override ExpenseDetail billable( final Boolean v );
-  @Override ExpenseDetail businessUnit( final String s );
-  @Override ExpenseDetail chargeTo( final String s );
-  @Override ExpenseDetail date( final Date v );
-  @Override ExpenseDetail invoiceAmount( final Double v );
-  @Override ExpenseDetail location( final String s );
-  @Override ExpenseDetail phaseName( final String s );
-  @Override ExpenseDetail projectName( final String s );
-  @Override ExpenseDetail projectNumber( final Integer i );
-  @Override ExpenseDetail ticketNumber( final Integer i );
-  @Override ExpenseDetail ticketSummary( final String s );
+  @Override
+  default ExpenseDetail agreementAmount( final Double d )
+  {
+    agreementAmountField().set(d);
+
+    return this;
+  }
+
+  @Override
+  ExpenseDetail billable( final Boolean v );
+
+  @Override
+  ExpenseDetail businessUnit( final String s );
+
+  @Override
+  ExpenseDetail chargeTo( final String s );
+
+  @Override
+  ExpenseDetail date( final Date v );
+
+  @Override
+  ExpenseDetail invoiceAmount( final Double v );
+
+  @Override
+  ExpenseDetail location( final String s );
+
+  @Override
+  ExpenseDetail phaseName( final String s );
+
+  @Override
+  ExpenseDetail projectName( final String s );
+
+  @Override
+  ExpenseDetail projectNumber( final Integer i );
+
+  @Override
+  ExpenseDetail ticketNumber( final Integer i );
+
+  @Override
+  ExpenseDetail ticketSummary( final String s );
 }
