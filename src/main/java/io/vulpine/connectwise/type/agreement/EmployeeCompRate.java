@@ -15,7 +15,6 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum EmployeeCompRate
@@ -30,14 +29,12 @@ public enum EmployeeCompRate
     this.value = value;
   }
 
-  @Override
   @JsonValue
   public String toString()
   {
     return value;
   }
 
-  @JsonCreator
   public static EmployeeCompRate fromString( final String value )
   {
     for ( final EmployeeCompRate r : values() )

@@ -15,9 +15,6 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 public enum RateType
 {
   ADJUSTMENT_AMOUNT("AdjAmount"),
@@ -32,13 +29,11 @@ public enum RateType
   }
 
   @Override
-  @JsonValue
   public String toString ()
   {
     return value;
   }
 
-  @JsonCreator
   public static RateType fromString( final String s )
   {
     for ( final RateType r : values() ) {

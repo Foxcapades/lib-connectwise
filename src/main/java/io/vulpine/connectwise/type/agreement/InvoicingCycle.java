@@ -15,9 +15,6 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 public enum InvoicingCycle
 {
   CALENDAR_YEAR("CalendarYear"),
@@ -27,7 +24,6 @@ public enum InvoicingCycle
 
   InvoicingCycle ( String v ) {this.value = v;}
 
-  @JsonCreator
   public static InvoicingCycle fromString( final String v )
   {
     for ( final InvoicingCycle i : values() ) {
@@ -39,7 +35,6 @@ public enum InvoicingCycle
   }
 
   @Override
-  @JsonValue
   public String toString()
   {
     return value;

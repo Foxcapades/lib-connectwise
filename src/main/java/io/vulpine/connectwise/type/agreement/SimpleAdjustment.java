@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.type.agreement.adjustment;
+package io.vulpine.connectwise.type.agreement;
 
 import io.vulpine.connectwise.type.ConnectwiseCommon;
 import io.vulpine.connectwise.type.def.agreement.AgreementAdjustment;

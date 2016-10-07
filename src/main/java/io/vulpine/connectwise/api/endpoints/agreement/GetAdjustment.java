@@ -18,7 +18,7 @@ package io.vulpine.connectwise.api.endpoints.agreement;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.def.SubApiInterface;
-import io.vulpine.connectwise.type.agreement.adjustment.SimpleAdjustment;
+import io.vulpine.connectwise.type.agreement.SimpleAdjustment;
 
 public class GetAdjustment extends _GetCommon< SimpleAdjustment >
 {
