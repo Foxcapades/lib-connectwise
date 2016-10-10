@@ -15,9 +15,6 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 public enum ApplicationUnit
 {
   AMOUNT("Amount"),
@@ -29,10 +26,8 @@ public enum ApplicationUnit
   ApplicationUnit ( String value ) {this.value = value;}
 
   @Override
-  @JsonValue
   public String toString () { return value; }
 
-  @JsonCreator
   public static ApplicationUnit fromString ( final String value )
   {
     for ( final ApplicationUnit u : ApplicationUnit.values() ) if ( u.value.equals(value) ) return u;

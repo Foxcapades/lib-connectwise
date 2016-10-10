@@ -15,9 +15,6 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 public enum PeriodType
 {
   CURRENT("Current"),
@@ -33,13 +30,11 @@ public enum PeriodType
   }
 
   @Override
-  @JsonValue
   public String toString ()
   {
     return value;
   }
 
-  @JsonCreator
   public static PeriodType fromString ( final String value )
   {
     for ( PeriodType p : values() ) if ( p.value.equals(value) ) return p;

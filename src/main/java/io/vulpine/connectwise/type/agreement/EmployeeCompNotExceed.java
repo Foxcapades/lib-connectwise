@@ -15,9 +15,6 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 public enum EmployeeCompNotExceed
 {
   BILLING("Billing"),
@@ -29,10 +26,8 @@ public enum EmployeeCompNotExceed
   EmployeeCompNotExceed ( String value ) {this.value = value;}
 
   @Override
-  @JsonValue
   public String toString () { return value; }
 
-  @JsonCreator
   public static EmployeeCompNotExceed fromString ( final String v )
   {
     for ( final EmployeeCompNotExceed e : values() ) {
