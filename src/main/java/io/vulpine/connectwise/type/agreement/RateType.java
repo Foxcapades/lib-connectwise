@@ -15,9 +15,25 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
+/**
+ * = Agreement Rate Type
+ *
+ * [source,xml]
+ * .WSDL Definition
+ * ----
+ * <s:simpleType name="RateType">
+ *   <s:restriction base="s:string">
+ *     <s:enumeration value="AdjAmount"/>
+ *     <s:enumeration value="Custom"/>
+ *     <s:enumeration value="Multiplier"/>
+ *   </s:restriction>
+ * </s:simpleType>
+ * ----
+ *
+ * @version 2.0.0
+ * @since 0.0.5
+ * @author https://github.com/EllieFops[Elizabeth Harper]
+ */
 public enum RateType
 {
   ADJUSTMENT_AMOUNT("AdjAmount"),
@@ -31,14 +47,11 @@ public enum RateType
     this.value = v;
   }
 
-  @Override
-  @JsonValue
   public String toString ()
   {
     return value;
   }
 
-  @JsonCreator
   public static RateType fromString( final String s )
   {
     for ( final RateType r : values() ) {

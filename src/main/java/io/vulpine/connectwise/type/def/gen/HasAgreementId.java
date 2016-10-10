@@ -15,19 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 /**
- * = Object with an AgreementId Field
+ * = Object with an AgreementId
  *
- * @since 0.10.0
+ * @since 0.1.0
  * @version 1.0.0
  */
 public interface HasAgreementId
 {
-  default Integer agreementId() { return agreementIdField().get(); }
-
-  Field< Integer > agreementIdField();
-
   HasAgreementId agreementId( final Integer i );
+
+  Integer agreementId();
 }

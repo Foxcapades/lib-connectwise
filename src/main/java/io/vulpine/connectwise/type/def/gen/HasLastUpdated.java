@@ -15,30 +15,17 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
 import java.util.Date;
 
 /**
- * = {@link XmlSerializable} Object with a LastUpdated Field
+ * = Object with a LastUpdated Field
  *
- * @since 0.10.0
+ * @since 0.1.0
  * @version 1.0.0
  */
 public interface HasLastUpdated
 {
-  Field< Date > lastUpdatedField();
+  Date lastUpdated();
 
-  default Date lastUpdated()
-  {
-    return lastUpdatedField().get();
-  }
-
-  default HasLastUpdated lastUpdated( Date d )
-  {
-    lastUpdatedField().set(d);
-
-    return this;
-  }
+  HasLastUpdated lastUpdated( Date d );
 }

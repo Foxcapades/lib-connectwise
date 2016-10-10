@@ -1,181 +1,63 @@
-/*
- * Copyright 2016 Elizabeth Harper
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package io.vulpine.connectwise.type.def.agreement;
 
 import io.vulpine.connectwise.type.agreement.BillableOption;
-import io.vulpine.connectwise.type.agreement.RateType;
 import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.type.def.gen.*;
-import io.vulpine.connectwise.util.Field;
 
-import java.util.Date;
-
+/**
+ * = Agreement Work Type
+ *
+ * [source,xml]
+ * .WSDL Definition
+ * ----
+ * <s:complexType name="AgreementWorkType">
+ *   <s:sequence>
+ *     <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="WorkTypeId" nillable="true" type="s:int"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="AgreementId" nillable="true" type="s:int"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="LocationId" nillable="true" type="s:int"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="RateType" nillable="true" type="tns:RateType"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="Rate" nillable="true" type="s:decimal"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="EffectiveDate" nillable="true" type="s:dateTime"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="EndingDate" nillable="true" type="s:dateTime"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="BillTime" nillable="true" type="tns:BillableOptions"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="HoursMin" nillable="true" type="s:decimal"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="HoursMax" nillable="true" type="s:decimal"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="AddressId" nillable="true" type="s:int"/>
+ *     <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime"/>
+ *     <s:element minOccurs="0" maxOccurs="1" name="UpdatedBy" type="s:string"/>
+ *   </s:sequence>
+ * </s:complexType>
+ * ----
+ *
+ * @version 2.0.0
+ * @since 0.1.0
+ * @author https://github.com/EllieFops[Elizabeth Harper]
+ */
 public interface AgreementWorkType
 extends
-  HasAddressId,
+  HasId,
+  HasWorkTypeId,
+  HasAgreementId,
+  HasLocationId,
+  HasRateType,
+  HasRate,
   HasEffectiveDate,
   HasEndDate,
-  HasLocationId,
-  HasRate,
-  HasRateType,
-  HasWorkTypeId,
-  SubAgreement,
+  HasAddressId,
+  HasLastUpdate,
+  HasUpdatedBy,
   XmlSerializable
 {
-  Field < BillableOption > billTimeField();
-  Field < Double > hoursMinField();
-  Field < Double > hoursMaxField();
+  BillableOption billTime();
 
-  default BillableOption billTime()
-  {
-    return billTimeField().get();
-  }
+  AgreementWorkType billTime( final BillableOption bo );
 
-  default AgreementWorkType billTime( final BillableOption b )
-  {
-    billTimeField().set(b);
+  Double hoursMin();
 
-    return this;
-  }
+  AgreementWorkType hoursMin( final Double d );
 
-  default Double hoursMin()
-  {
-    return hoursMinField().get();
-  }
+  Double hoursMax();
 
-  default AgreementWorkType hoursMin( final Double d )
-  {
-    hoursMinField().set(d);
-
-    return this;
-  }
-
-  default Double hoursMax()
-  {
-    return hoursMaxField().get();
-  }
-
-  default AgreementWorkType hoursMax( final Double d )
-  {
-    hoursMaxField().set(d);
-
-    return this;
-  }
-
-  @Override
-  default AgreementWorkType rate( final Double d )
-  {
-    rateField().set(d);
-
-    return this;
-  }
-
-  @Override
-  default AgreementWorkType workTypeId( final Integer i )
-  {
-    workTypeIdField().set(i);
-
-    return this;
-  }
-
-  @Override
-  default AgreementWorkType effectiveDate( Date d )
-  {
-    effectiveDateField().set(d);
-
-    return this;
-  }
-
-  @Override
-  AgreementWorkType rateType( final RateType r );
-
-  @Override
-  default AgreementWorkType id( final Integer i )
-  {
-    idField().set(i);
-
-    return this;
-  }
-
-  @Override
-  default AgreementWorkType updatedBy( final String s )
-  {
-    updatedByField().set(s);
-
-    return this;
-  }
-
-  @Override
-  default AgreementWorkType locationId( Integer i )
-  {
-    locationIdField().set(i);
-
-    return this;
-  }
-
-  @Override
-  default AgreementWorkType lastUpdate( final Date d )
-  {
-    lastUpdateField().set(d);
-
-    return this;
-  }
-
-  @Override
-  default AgreementWorkType addressId( Integer i )
-  {
-    addressIdField().set(i);
-
-    return this;
-  }
-
-  @Override
-  default AgreementWorkType agreementId( final Integer i )
-  {
-    agreementIdField().set(i);
-
-    return this;
-  }
-
-  @Override
-  default AgreementWorkType endDate( Date d )
-  {
-    endDateField().set(d);
-
-    return this;
-  }
-
-  @Override
-  default String toXml( String rootName )
-  {
-    return "<" + rootName + ">"
-      + idField().toXml()
-      + workTypeIdField().toXml()
-      + agreementIdField().toXml()
-      + locationIdField().toXml()
-      + rateTypeField().toXml()
-      + rateField().toXml()
-      + effectiveDateField().toXml()
-      + endDateField().toXml()
-      + billTimeField().toXml()
-      + hoursMinField().toXml()
-      + hoursMaxField().toXml()
-      + addressIdField().toXml()
-      + lastUpdateField().toXml()
-      + updatedByField().toXml()
-      + "</" + rootName + ">";
-  }
+  AgreementWorkType hoursMax( final Double d );
 }

@@ -15,27 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 /**
- * = Object with an AgreementName Field
+ * = Object with an AgreementName
  *
- * @since 0.10.0
+ * @since 0.1.0
  * @version 1.0.0
  */
 public interface HasAgreementName
 {
-  Field< String > agreementNameField();
+  String agreementName();
 
-  default HasAgreementName agreementName( String s )
-  {
-    agreementNameField().set(s);
-
-    return this;
-  }
-
-  default String agreementName()
-  {
-    return agreementNameField().get();
-  }
+  HasAgreementName agreementName( final String s );
 }

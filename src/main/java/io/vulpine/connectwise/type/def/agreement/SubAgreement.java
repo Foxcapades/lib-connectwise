@@ -15,12 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.agreement;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.type.def.gen.HasAgreementId;
-import io.vulpine.connectwise.type.def.gen.HasId;
-import io.vulpine.connectwise.type.def.gen.HasLastUpdate;
 import io.vulpine.connectwise.type.def.gen.HasUpdatedBy;
 
-interface SubAgreement extends HasAgreementId, HasId, HasLastUpdate, HasUpdatedBy, XmlSerializable
+interface SubAgreement
 {
+
 }

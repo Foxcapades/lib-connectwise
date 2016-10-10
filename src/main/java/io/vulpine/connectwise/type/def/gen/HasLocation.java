@@ -21,15 +21,10 @@ public interface HasLocation
 {
   Field < String > locationField();
 
+  HasLocation location( final String s );
+
   default String location()
   {
     return locationField().get();
-  }
-
-  default HasLocation location( final String s )
-  {
-    locationField().set(s);
-
-    return this;
   }
 }

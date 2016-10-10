@@ -45,6 +45,13 @@ public interface Company
 
   Field < String > faxNumberField();
 
+  default Integer id()
+  {
+    return idField().get();
+  }
+
+  Field< Integer > idField();
+
   Field < String > marketField();
 
   Field < String > phoneNumberField();
@@ -183,7 +190,6 @@ public interface Company
   @Override
   Company lastUpdated( final Date d );
 
-  @Override
   Company id( final Integer i );
 
   @Override

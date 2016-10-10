@@ -16,6 +16,7 @@
 package io.vulpine.connectwise.type.agreement.addition;
 
 import io.vulpine.connectwise.type.agreement.BillCustomer;
+import io.vulpine.connectwise.type.agreement.SimpleAgreementAddition;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -28,9 +29,9 @@ public class AdditionTest
   @Test
   public void getAdditionProduct () throws Exception
   {
-    final Addition        addition = new Addition();
-    final Field           field    = addition.getClass().getDeclaredField("additionProduct");
-    final AdditionProduct value    = new AdditionProduct();
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("additionProduct");
+    final AdditionProduct         value    = new AdditionProduct();
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -41,9 +42,9 @@ public class AdditionTest
   @Test
   public void setAdditionProduct () throws Exception
   {
-    final Addition        addition = new Addition();
-    final Field           field    = addition.getClass().getDeclaredField("additionProduct");
-    final AdditionProduct value    = new AdditionProduct();
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("additionProduct");
+    final AdditionProduct         value    = new AdditionProduct();
 
     field.setAccessible(true);
     addition.additionProduct(value);
@@ -54,9 +55,9 @@ public class AdditionTest
   @Test
   public void getQuantity () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("quantity");
-    final double   value    = 66.6;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("quantity");
+    final double                  value    = 66.6;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -67,9 +68,9 @@ public class AdditionTest
   @Test
   public void setQuantity () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("quantity");
-    final double   value    = 66.6;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("quantity");
+    final double                  value    = 66.6;
 
     field.setAccessible(true);
     addition.quantity(value);
@@ -80,9 +81,9 @@ public class AdditionTest
   @Test
   public void getLessIncluded () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("lessIncluded");
-    final double   value    = 6.66;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("lessIncluded");
+    final double                  value    = 6.66;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -93,9 +94,9 @@ public class AdditionTest
   @Test
   public void setLessIncluded () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("lessIncluded");
-    final double   value    = 6.66;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("lessIncluded");
+    final double                  value    = 6.66;
 
     field.setAccessible(true);
     addition.lessIncluded(value);
@@ -106,9 +107,9 @@ public class AdditionTest
   @Test
   public void getUnitPrice () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("unitPrice");
-    final double   value    = 666.0;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("unitPrice");
+    final double                  value    = 666.0;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -119,9 +120,9 @@ public class AdditionTest
   @Test
   public void setUnitPrice () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("unitPrice");
-    final double   value    = 666.0;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("unitPrice");
+    final double                  value    = 666.0;
 
     field.setAccessible(true);
     addition.unitPrice(value);
@@ -132,9 +133,9 @@ public class AdditionTest
   @Test
   public void getUnitCost () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("unitCost");
-    final double   value    = 6.66;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("unitCost");
+    final double                  value    = 6.66;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -145,9 +146,9 @@ public class AdditionTest
   @Test
   public void setUnitCost () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("unitCost");
-    final double   value    = 6.66;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("unitCost");
+    final double                  value    = 6.66;
 
     field.setAccessible(true);
     addition.unitCost(value);
@@ -158,9 +159,9 @@ public class AdditionTest
   @Test
   public void getEffectiveDate () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("effectiveDate");
-    final Date     value    = new Date();
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("effectiveDate");
+    final Date                    value    = new Date();
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -171,9 +172,9 @@ public class AdditionTest
   @Test
   public void setEffectiveDate () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("effectiveDate");
-    final Date     value    = new Date();
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("effectiveDate");
+    final Date                    value    = new Date();
 
     field.setAccessible(true);
     addition.effectiveDate(value);
@@ -184,9 +185,9 @@ public class AdditionTest
   @Test
   public void getCancelledDate () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("cancelledDate");
-    final Date     value    = new Date();
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("cancelledDate");
+    final Date                    value    = new Date();
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -197,9 +198,9 @@ public class AdditionTest
   @Test
   public void setCancelledDate () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("cancelledDate");
-    final Date     value    = new Date();
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("cancelledDate");
+    final Date                    value    = new Date();
 
     field.setAccessible(true);
     addition.cancelledDate(value);
@@ -210,9 +211,9 @@ public class AdditionTest
   @Test
   public void getBillCustomer () throws Exception
   {
-    final Addition     addition = new Addition();
-    final Field        field    = addition.getClass().getDeclaredField("billCustomer");
-    final BillCustomer value    = BillCustomer.DO_NOT_BILL;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("billCustomer");
+    final BillCustomer            value    = BillCustomer.DO_NOT_BILL;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -223,9 +224,9 @@ public class AdditionTest
   @Test
   public void setBillCustomer () throws Exception
   {
-    final Addition     addition = new Addition();
-    final Field        field    = addition.getClass().getDeclaredField("billCustomer");
-    final BillCustomer value    = BillCustomer.DO_NOT_BILL;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("billCustomer");
+    final BillCustomer            value    = BillCustomer.DO_NOT_BILL;
 
     field.setAccessible(true);
     addition.billCustomer(value);
@@ -236,9 +237,9 @@ public class AdditionTest
   @Test
   public void isTaxable () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("taxable");
-    final boolean  value    = true;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("taxable");
+    final boolean                 value    = true;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -249,9 +250,9 @@ public class AdditionTest
   @Test
   public void setTaxable () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("taxable");
-    final boolean  value    = true;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("taxable");
+    final boolean                 value    = true;
 
     field.setAccessible(true);
     addition.taxable(value);
@@ -262,9 +263,9 @@ public class AdditionTest
   @Test
   public void getSerialNumber () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("serialNumber");
-    final String   value    = "Test Value";
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("serialNumber");
+    final String                  value    = "Test Value";
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -275,9 +276,9 @@ public class AdditionTest
   @Test
   public void setSerialNumber () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("serialNumber");
-    final String   value    = "Test Value";
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("serialNumber");
+    final String                  value    = "Test Value";
 
     field.setAccessible(true);
     addition.serialNumber(value);
@@ -288,9 +289,9 @@ public class AdditionTest
   @Test
   public void getInvoiceDescription () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("invoiceDescription");
-    final String   value    = "Test Value.";
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("invoiceDescription");
+    final String                  value    = "Test Value.";
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -301,9 +302,9 @@ public class AdditionTest
   @Test
   public void setInvoiceDescription () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("invoiceDescription");
-    final String   value    = "Test Value.";
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("invoiceDescription");
+    final String                  value    = "Test Value.";
 
     field.setAccessible(true);
     addition.invoiceDescription(value);
@@ -314,9 +315,9 @@ public class AdditionTest
   @Test
   public void isPurchaseItem () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("purchaseItem");
-    final boolean  value    = true;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("purchaseItem");
+    final boolean                 value    = true;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -327,9 +328,9 @@ public class AdditionTest
   @Test
   public void setPurchaseItem () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("purchaseItem");
-    final boolean  value    = true;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("purchaseItem");
+    final boolean                 value    = true;
 
     field.setAccessible(true);
     addition.purchaseItem(value);
@@ -340,9 +341,9 @@ public class AdditionTest
   @Test
   public void isSpecialOrder () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("specialOrder");
-    final boolean  value    = true;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("specialOrder");
+    final boolean                 value    = true;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -353,9 +354,9 @@ public class AdditionTest
   @Test
   public void setSpecialOrder () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("specialOrder");
-    final boolean  value    = true;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("specialOrder");
+    final boolean                 value    = true;
 
     field.setAccessible(true);
     addition.specialOrder(value);
@@ -366,9 +367,9 @@ public class AdditionTest
   @Test
   public void getBilledQuantity () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("billedQuantity");
-    final double   value    = 66.6;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("billedQuantity");
+    final double                  value    = 66.6;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -379,9 +380,9 @@ public class AdditionTest
   @Test
   public void setBilledQuantity () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("billedQuantity");
-    final double   value    = 66.6;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("billedQuantity");
+    final double                  value    = 66.6;
 
     field.setAccessible(true);
     addition.billedQuantity(value);
@@ -392,9 +393,9 @@ public class AdditionTest
   @Test
   public void getUom () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("uom");
-    final String   value    = "Test Value.";
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("uom");
+    final String                  value    = "Test Value.";
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -405,9 +406,9 @@ public class AdditionTest
   @Test
   public void setUom () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("uom");
-    final String   value    = "Test Value.";
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("uom");
+    final String                  value    = "Test Value.";
 
     field.setAccessible(true);
     addition.uom(value);
@@ -418,9 +419,9 @@ public class AdditionTest
   @Test
   public void getExtPrice () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("extPrice");
-    final double   value    = 66.6;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("extPrice");
+    final double                  value    = 66.6;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -431,9 +432,9 @@ public class AdditionTest
   @Test
   public void setExtPrice () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("extPrice");
-    final double   value    = 66.6;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("extPrice");
+    final double                  value    = 66.6;
 
     field.setAccessible(true);
     addition.extPrice(value);
@@ -444,9 +445,9 @@ public class AdditionTest
   @Test
   public void getExtCost () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("extCost");
-    final double   value    = 66.6;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("extCost");
+    final double                  value    = 66.6;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -457,9 +458,9 @@ public class AdditionTest
   @Test
   public void setExtCost () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("extCost");
-    final double   value    = 66.6;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("extCost");
+    final double                  value    = 66.6;
 
     field.setAccessible(true);
     addition.extCost(value);
@@ -470,9 +471,9 @@ public class AdditionTest
   @Test
   public void getMargin () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("margin");
-    final double   value    = 66.6;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("margin");
+    final double                  value    = 66.6;
 
     field.setAccessible(true);
     field.set(addition, value);
@@ -483,9 +484,9 @@ public class AdditionTest
   @Test
   public void setMargin () throws Exception
   {
-    final Addition addition = new Addition();
-    final Field    field    = addition.getClass().getDeclaredField("margin");
-    final double   value    = 66.6;
+    final SimpleAgreementAddition addition = new SimpleAgreementAddition();
+    final Field                   field    = addition.getClass().getDeclaredField("margin");
+    final double                  value    = 66.6;
 
     field.setAccessible(true);
     addition.margin(value);

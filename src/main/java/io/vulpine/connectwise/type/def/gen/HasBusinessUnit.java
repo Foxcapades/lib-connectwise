@@ -15,21 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
+/**
+ * = Object with a Business Unit
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
 public interface HasBusinessUnit
 {
-  Field< String > businessUnitField();
+  HasBusinessUnit businessUnit( final String s );
 
-  default String businessUnit()
-  {
-    return businessUnitField().get();
-  }
-
-  default HasBusinessUnit businessUnit( final String s )
-  {
-    businessUnitField().set(s);
-
-    return this;
-  }
+  String businessUnit();
 }

@@ -15,17 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
-public interface HasContactId extends XmlSerializable
+/**
+ * = Object with a Contact Id value.
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
+public interface HasContactId
 {
-  default Integer contactId()
-  {
-    return contactIdField().get();
-  }
+  Integer contactId();
 
-  Field < Integer > contactIdField();
-
-  HasContactId contactId( Integer i );
+  HasContactId contactId( final Integer i );
 }

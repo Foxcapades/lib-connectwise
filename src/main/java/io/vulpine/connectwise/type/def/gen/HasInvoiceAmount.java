@@ -15,21 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
+/**
+ * = Object with an Invoice Amount value.
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
 public interface HasInvoiceAmount
 {
-  Field < Double > invoiceAmountField();
+  HasInvoiceAmount invoiceAmount( final Double d );
 
-  default Double invoiceAmount()
-  {
-    return invoiceAmountField().get();
-  }
-
-  default HasInvoiceAmount invoiceAmount( final Double d )
-  {
-    invoiceAmountField().set(d);
-
-    return this;
-  }
+  Double invoiceAmount();
 }

@@ -24,26 +24,26 @@ import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.common.request.AddOrUpdateRequest;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.endpoints.Endpoint;
-import io.vulpine.connectwise.type.agreement.addition.Addition;
+import io.vulpine.connectwise.type.agreement.SimpleAgreementAddition;
 
 import java.io.IOException;
 
 @JsonFilter( "filter-empty" )
 @JacksonXmlRootElement( localName = "AddOrUpdateAgreementAddition" )
-public class AddOrUpdateAddition extends AddOrUpdateRequest < Addition >
+public class AddOrUpdateAddition extends AddOrUpdateRequest < SimpleAgreementAddition >
 {
   public AddOrUpdateAddition(
     final Credentials credentials,
     final XmlMapper xmlMapper,
     final SubApiInterface api,
-    final Addition data
+    final SimpleAgreementAddition data
   )
   {
     super(credentials, xmlMapper, api, Endpoint.AGREEMENT, data);
   }
 
   @Override
-  public Addition submit() throws IOException
+  public SimpleAgreementAddition submit() throws IOException
   {
     final AddOrUpdateAdditionResponse response = getXmlMapper()
       .readerFor(AddOrUpdateAdditionResponse.class)
@@ -54,7 +54,7 @@ public class AddOrUpdateAddition extends AddOrUpdateRequest < Addition >
   @Override
   @JsonFilter( "filter-empty" )
   @JacksonXmlProperty ( localName = "agreementAddition" )
-  public Addition getRequestData()
+  public SimpleAgreementAddition getRequestData()
   {
     return data;
   }

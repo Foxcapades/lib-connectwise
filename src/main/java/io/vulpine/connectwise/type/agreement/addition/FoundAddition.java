@@ -18,9 +18,10 @@ package io.vulpine.connectwise.type.agreement.addition;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import io.vulpine.connectwise.type.agreement.SimpleAgreementAddition;
 
 @JacksonXmlRootElement( localName = "AgreementAdditionFindResult")
-public class FoundAddition extends Addition
+public class FoundAddition extends SimpleAgreementAddition
 {
 
   @JacksonXmlProperty ( localName = "Taxable" )

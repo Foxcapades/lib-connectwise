@@ -15,9 +15,26 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
+/**
+ * = Billable Option Enumeration
+ *
+ * [source,xml]
+ * AgreementApi WSDL Definition
+ * ----
+ * <s:simpleType name="BillableOptions">
+ *   <s:restriction base="s:string">
+ *     <s:enumeration value="Billable"/>
+ *     <s:enumeration value="DoNotBill"/>
+ *     <s:enumeration value="NoCharge"/>
+ *     <s:enumeration value="NoDefault"/>
+ *   </s:restriction>
+ * </s:simpleType>
+ * ----
+ *
+ * @version 2.0.0
+ * @since 0.0.5
+ * @author https://github.com/EllieFops[Elizabeth Harper]
+ */
 public enum BillableOption
 {
   BILLABLE("Billable"),
@@ -32,14 +49,11 @@ public enum BillableOption
     this.value = value;
   }
 
-  @Override
-  @JsonValue
   public String toString ()
   {
     return value;
   }
 
-  @JsonCreator
   public static BillableOption fromString( final String value )
   {
     for ( final BillableOption opt : values() ) {

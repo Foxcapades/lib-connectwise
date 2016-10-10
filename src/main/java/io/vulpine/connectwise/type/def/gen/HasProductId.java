@@ -15,20 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
 /**
- * = {@link XmlSerializable} Object with an ProductId Field
+ * = Object with an ProductId Field
  *
- * @since 0.10.0
+ * @since 0.1.0
  * @version 1.0.0
  */
-public interface HasProductId extends XmlSerializable
+public interface HasProductId
 {
   Integer productId();
-
-  Field< Integer > productIdField();
 
   HasProductId productId( Integer i );
 }

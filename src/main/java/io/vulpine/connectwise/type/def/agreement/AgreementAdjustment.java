@@ -28,11 +28,21 @@ public interface AgreementAdjustment extends HasDescription, HasEffectiveDate, S
   default Double adjustmentAmount() { return adjustmentAmountField().get(); }
   default AgreementAdjustment adjustmentAmount( final Double d ) { adjustmentAmountField().set(d); return this;}
 
+  default Integer agreementId() { return agreementIdField().get(); }
+
   @Override default AgreementAdjustment description( final String s ) { descriptionField().set(s); return this; }
   @Override default AgreementAdjustment effectiveDate( final Date d ) { effectiveDateField().set(d); return this; }
-  @Override default AgreementAdjustment id( final Integer i ) { idField().set(i); return this; }
-  @Override default AgreementAdjustment updatedBy( final String s ) { updatedByField().set(s); return this; }
-  @Override default AgreementAdjustment lastUpdate( final Date d ) { lastUpdateField().set(d); return this; }
+  default AgreementAdjustment id( final Integer i ) { idField().set(i); return this; }
+
+  default Integer id()
+  {
+    return idField().get();
+  }
+
+  default Date lastUpdate() { return lastUpdateField().get(); }
+
+  default AgreementAdjustment updatedBy( final String s ) { updatedByField().set(s); return this; }
+  default AgreementAdjustment lastUpdate( final Date d ) { lastUpdateField().set(d); return this; }
   @Override default AgreementAdjustment agreementId( final Integer i ) { agreementIdField().set(i); return this; }
 
   @Override
@@ -47,5 +57,10 @@ public interface AgreementAdjustment extends HasDescription, HasEffectiveDate, S
       + lastUpdateField().toXml()
       + updatedByField().toXml()
       + "</" + rootName + ">";
+  }
+
+  default String updatedBy()
+  {
+    return updatedByField().get();
   }
 }

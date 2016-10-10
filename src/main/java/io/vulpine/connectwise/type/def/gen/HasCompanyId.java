@@ -15,23 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
 /**
- * = XmlSerializable Object with the CompanyId field.
+ * = Object with a Company Id value.
  *
  * @since 0.1.0
  * @version 1.0.0
  */
-public interface HasCompanyId extends XmlSerializable
+public interface HasCompanyId
 {
-  default Integer companyId()
-  {
-    return companyIdField().get();
-  }
+  Integer companyId();
 
-  Field< Integer > companyIdField();
-
-  HasCompanyId companyId( Integer i );
+  HasCompanyId companyId( final Integer i );
 }

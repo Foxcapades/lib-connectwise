@@ -15,21 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
+/**
+ * = Object with an Hourly Rate value.
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
 public interface HasHourlyRate
 {
-  Field < Double > hourlyRateField();
+  HasHourlyRate hourlyRate( final Double d );
 
-  default Double hourlyRate()
-  {
-    return hourlyRateField().get();
-  }
-
-  default HasHourlyRate hourlyRate( final Double d )
-  {
-    hourlyRateField().set(d);
-
-    return this;
-  }
+  Double hourlyRate();
 }

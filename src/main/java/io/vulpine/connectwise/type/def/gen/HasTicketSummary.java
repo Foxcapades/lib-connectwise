@@ -15,21 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 public interface HasTicketSummary
 {
-  Field < String > ticketSummaryField();
+  HasTicketSummary ticketSummary( final String s );
 
-  default String ticketSummary()
-  {
-    return ticketSummaryField().get();
-  }
-
-  default HasTicketSummary ticketSummary( final String s )
-  {
-    ticketSummaryField().set(s);
-
-    return this;
-  }
+  String ticketSummary();
 }

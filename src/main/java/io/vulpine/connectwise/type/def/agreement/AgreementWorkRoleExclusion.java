@@ -25,6 +25,15 @@ public interface AgreementWorkRoleExclusion extends HasWorkRoleId, SubAgreement,
 {
   Field < Boolean > addAllWorkRolesField();
 
+  default Integer agreementId() { return agreementIdField().get(); }
+
+  default Integer id()
+  {
+    return idField().get();
+  }
+
+  default Date lastUpdate() { return lastUpdateField().get(); }
+
   Field < Boolean > removeAllWorkRolesField();
 
   default Boolean addAllWorkRoles()
@@ -51,7 +60,11 @@ public interface AgreementWorkRoleExclusion extends HasWorkRoleId, SubAgreement,
     return this;
   }
 
-  @Override
+  default String updatedBy()
+  {
+    return updatedByField().get();
+  }
+
   default AgreementWorkRoleExclusion workRoleId( final Integer i )
   {
     workRoleIdField().set(i);
@@ -59,7 +72,6 @@ public interface AgreementWorkRoleExclusion extends HasWorkRoleId, SubAgreement,
     return this;
   }
 
-  @Override
   default AgreementWorkRoleExclusion id( final Integer i )
   {
     idField().set(i);
@@ -67,7 +79,6 @@ public interface AgreementWorkRoleExclusion extends HasWorkRoleId, SubAgreement,
     return this;
   }
 
-  @Override
   default AgreementWorkRoleExclusion updatedBy( final String s )
   {
     updatedByField().set(s);
@@ -75,7 +86,6 @@ public interface AgreementWorkRoleExclusion extends HasWorkRoleId, SubAgreement,
     return this;
   }
 
-  @Override
   default HasLastUpdate lastUpdate( final Date d )
   {
     lastUpdateField().set(d);
@@ -104,4 +114,8 @@ public interface AgreementWorkRoleExclusion extends HasWorkRoleId, SubAgreement,
       + lastUpdateField().toXml()
       + "</" + rootName + ">";
   }
+
+  default Integer workRoleId() { return workRoleIdField().get(); }
+
+  Field< Integer > workRoleIdField();
 }

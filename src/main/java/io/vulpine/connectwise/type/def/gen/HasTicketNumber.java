@@ -15,21 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 public interface HasTicketNumber
 {
-  Field < Integer > ticketNumberField();
+  HasTicketNumber ticketNumber( final Integer i );
 
-  default Integer ticketNumber()
-  {
-    return ticketNumberField().get();
-  }
-
-  default HasTicketNumber ticketNumber( final Integer i )
-  {
-    ticketNumberField().set(i);
-
-    return this;
-  }
+  Integer ticketNumber();
 }

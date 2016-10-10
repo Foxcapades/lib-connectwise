@@ -15,18 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
+/**
+ * = Object with a Description value.
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
 public interface HasDescription
 {
-  default String description() { return descriptionField().get(); }
+  String description();
 
-  Field< String > descriptionField();
-
-  default HasDescription description( String s )
-  {
-    descriptionField().set(s);
-
-    return this;
-  }
+  HasDescription description( String s );
 }

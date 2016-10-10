@@ -15,17 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
-public interface HasLocationId extends XmlSerializable
+public interface HasLocationId
 {
-  default Integer locationId()
-  {
-    return locationIdField().get();
-  }
+  Integer locationId();
 
-  Field< Integer > locationIdField();
-
-  HasLocationId locationId( Integer i );
+  HasLocationId locationId( final Integer i );
 }

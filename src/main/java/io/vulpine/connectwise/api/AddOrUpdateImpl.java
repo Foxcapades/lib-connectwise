@@ -36,7 +36,7 @@ import io.vulpine.connectwise.api.endpoints.opportunity.AddOrUpdateOpportunity;
 import io.vulpine.connectwise.api.endpoints.opportunity.AddOrUpdateOpportunityItem;
 import io.vulpine.connectwise.api.endpoints.product.*;
 import io.vulpine.connectwise.type.agreement.SimpleAgreement;
-import io.vulpine.connectwise.type.agreement.addition.Addition;
+import io.vulpine.connectwise.type.agreement.SimpleAgreementAddition;
 import io.vulpine.connectwise.type.agreement.adjustment.SimpleAdjustment;
 import io.vulpine.connectwise.type.agreement.workrole.WorkRole;
 import io.vulpine.connectwise.type.agreement.worktype.WorkType;
@@ -64,11 +64,11 @@ class AddOrUpdateImpl extends ConnectwiseSubApi implements AddOrUpdate
   @Override
   public AddOrUpdateAddition addition()
   {
-    return new AddOrUpdateAddition(credentials, xmlMapper, this, new Addition());
+    return new AddOrUpdateAddition(credentials, xmlMapper, this, new SimpleAgreementAddition());
   }
 
   @Override
-  public AddOrUpdateAddition addition( final Addition addition )
+  public AddOrUpdateAddition addition( final SimpleAgreementAddition addition )
   {
     return new AddOrUpdateAddition(credentials, xmlMapper, this, addition);
   }

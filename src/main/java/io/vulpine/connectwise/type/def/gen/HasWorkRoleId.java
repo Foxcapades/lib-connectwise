@@ -15,14 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
-public interface HasWorkRoleId extends XmlSerializable
+public interface HasWorkRoleId
 {
-  default Integer workRoleId() { return workRoleIdField().get(); }
-
-  Field< Integer > workRoleIdField();
+  Integer workRoleId();
 
   HasWorkRoleId workRoleId( final Integer i );
 }

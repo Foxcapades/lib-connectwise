@@ -15,21 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 public interface HasUnitPrice
 {
-  Field < Double > unitPriceField();
+  HasUnitPrice unitPrice( final Double d );
 
-  default Double unitPrice()
-  {
-    return unitPriceField().get();
-  }
-
-  default HasUnitPrice unitPrice( final Double d )
-  {
-    unitPriceField().set(d);
-
-    return this;
-  }
+  Double unitPrice();
 }

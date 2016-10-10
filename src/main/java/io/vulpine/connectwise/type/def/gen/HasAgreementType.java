@@ -18,19 +18,15 @@ package io.vulpine.connectwise.type.def.gen;
 import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.util.Field;
 
-public interface HasAgreementType extends XmlSerializable
+/**
+ * = Object with an AgreementType
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
+public interface HasAgreementType
 {
-  Field< String > agreementTypeField();
+  HasAgreementType agreementType( final String s );
 
-  default String agreementType()
-  {
-    return agreementTypeField().get();
-  }
-
-  default HasAgreementType agreementType( final String s )
-  {
-    agreementTypeField().set(s);
-
-    return this;
-  }
+  String agreementType();
 }

@@ -47,6 +47,15 @@ public interface Invoice
   HasUpdatedBy,
   XmlSerializable
 {
+  HasAgreementName agreementName( String s );
+
+  default String agreementName()
+  {
+    return agreementNameField().get();
+  }
+
+  Field< String > agreementNameField();
+
   Field < Boolean > clientLocationField();
 
   default Boolean clientLocation()
@@ -85,6 +94,15 @@ public interface Invoice
     closedField().set(v);
     return this;
   }
+
+  default Integer id()
+  {
+    return idField().get();
+  }
+
+  HasId id( final Integer i );
+
+  Field< Integer > idField();
 
   Field < Boolean > sentField();
 
@@ -216,6 +234,13 @@ public interface Invoice
     return this;
   }
 
+  HasTaxable taxable( final Boolean b );
+
+  default Boolean taxable()
+  {
+    return taxableField().get();
+  }
+
   NumberField < Double > taxableAmountField();
 
   default Double taxableAmount()
@@ -241,6 +266,8 @@ public interface Invoice
     taxRateField().set(v);
     return this;
   }
+
+  Field < Boolean > taxableField();
 
   NumberField < Double > ticketBillingAmountField();
 
@@ -782,4 +809,13 @@ public interface Invoice
       + salesRepFullNameField().toXml()
       + "</" + rootName + ">";
   }
+
+  HasUpdatedBy updatedBy( final String s );
+
+  default String updatedBy()
+  {
+    return updatedByField().get();
+  }
+
+  Field< String > updatedByField();
 }

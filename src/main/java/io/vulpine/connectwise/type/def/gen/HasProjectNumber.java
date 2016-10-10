@@ -15,21 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 public interface HasProjectNumber
 {
-  Field < Integer > projectNumberField();
+  HasProjectNumber projectNumber( final Integer i );
 
-  default Integer projectNumber()
-  {
-   return  projectNumberField().get();
-  }
-
-  default HasProjectNumber projectNumber( final Integer i )
-  {
-    projectNumberField().set(i);
-
-    return this;
-  }
+  Integer projectNumber();
 }

@@ -22,15 +22,10 @@ public interface HasUnitCost extends XmlSerializable
 {
   Field < Double > unitCostField();
 
+  HasUnitCost unitCost( final Double d );
+
   default Double unitCost()
   {
     return unitCostField().get();
-  }
-
-  default HasUnitCost unitCost( final Double d )
-  {
-    unitCostField().set(d);
-
-    return this;
   }
 }

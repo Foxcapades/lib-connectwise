@@ -18,20 +18,20 @@ package io.vulpine.connectwise.api.endpoints.agreement;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.type.agreement.addition.Addition;
+import io.vulpine.connectwise.type.agreement.SimpleAgreementAddition;
 
 @JacksonXmlRootElement( localName = "AddOrUpdateAgreementAdditionResponse" )
 public class AddOrUpdateAdditionResponse
 {
   @JacksonXmlProperty ( localName = "AddOrUpdateAgreementAdditionResult" )
-  protected Addition updatedAddition;
+  protected SimpleAgreementAddition updatedAddition;
 
-  public Addition getUpdatedAddition()
+  public SimpleAgreementAddition getUpdatedAddition()
   {
     return updatedAddition;
   }
 
-  public void setUpdatedAddition( final Addition updatedAddition )
+  public void setUpdatedAddition( final SimpleAgreementAddition updatedAddition )
   {
     this.updatedAddition = updatedAddition;
   }

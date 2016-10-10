@@ -19,13 +19,13 @@ import io.vulpine.connectwise.api.endpoints.agreement.AddOrUpdateAgreement;
 import io.vulpine.connectwise.api.endpoints.agreement.AddOrUpdateAddition;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.type.agreement.SimpleAgreement;
-import io.vulpine.connectwise.type.agreement.addition.Addition;
+import io.vulpine.connectwise.type.agreement.SimpleAgreementAddition;
 
 public interface AddOrUpdate extends SubApiInterface
 {
   AddOrUpdateAddition addition();
 
-  AddOrUpdateAddition addition( Addition addition );
+  AddOrUpdateAddition addition( SimpleAgreementAddition addition );
 
   AddOrUpdateAgreement agreement();
 

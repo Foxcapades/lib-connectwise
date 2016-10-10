@@ -16,21 +16,10 @@
 package io.vulpine.connectwise.type.def.gen;
 
 import io.vulpine.connectwise.type.agreement.RateType;
-import io.vulpine.connectwise.util.Field;
 
 public interface HasRateType
 {
-  Field< RateType > rateTypeField();
+  RateType rateType();
 
-  default RateType rateType()
-  {
-    return rateTypeField().get();
-  }
-
-  default HasRateType rateType( final RateType r )
-  {
-    rateTypeField().set(r);
-
-    return this;
-  }
+  HasRateType rateType( final RateType r );
 }

@@ -15,21 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
+/**
+ * = Object with a Charge To value
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
 public interface HasChargeTo
 {
-  Field < String > chargeToField();
+  HasChargeTo chargeTo( final String s );
 
-  default String chargeTo()
-  {
-    return chargeToField().get();
-  }
-
-  default HasChargeTo chargeTo( final String s )
-  {
-    chargeToField().set(s);
-
-    return this;
-  }
+  String chargeTo();
 }

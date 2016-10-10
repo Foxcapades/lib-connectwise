@@ -40,6 +40,15 @@ public interface ExpenseDetail
   XmlSerializable
 {
 
+  HasAgreementName agreementName( String s );
+
+  default String agreementName()
+  {
+    return agreementNameField().get();
+  }
+
+  Field< String > agreementNameField();
+
   default ExpenseDetail reimbursable( final Boolean v )
   {
     reimbursableField().set(v);
@@ -193,35 +202,90 @@ public interface ExpenseDetail
   }
 
   @Override
-  ExpenseDetail billable( final Boolean v );
+  default ExpenseDetail billable( final Boolean v )
+  {
+    billableField().set(v);
+
+    return this;
+  }
 
   @Override
-  ExpenseDetail businessUnit( final String s );
+  default ExpenseDetail businessUnit( final String s )
+  {
+    businessUnitField().set(s);
+
+    return this;
+  }
 
   @Override
-  ExpenseDetail chargeTo( final String s );
+  default ExpenseDetail chargeTo( final String s )
+  {
+    chargeToField().set(s);
+
+    return this;
+  }
 
   @Override
-  ExpenseDetail date( final Date v );
+  default ExpenseDetail date( final Date v )
+  {
+    dateField().set(v);
+
+    return this;
+  }
 
   @Override
-  ExpenseDetail invoiceAmount( final Double v );
+  default ExpenseDetail invoiceAmount( final Double v )
+  {
+    invoiceAmountField().set(v);
+
+    return this;
+  }
 
   @Override
-  ExpenseDetail location( final String s );
+  default ExpenseDetail location( final String s )
+  {
+    locationField().set(s);
+
+    return this;
+  }
 
   @Override
-  ExpenseDetail phaseName( final String s );
+  default ExpenseDetail phaseName( final String s )
+  {
+    phaseNameField().set(s);
+
+    return this;
+  }
 
   @Override
-  ExpenseDetail projectName( final String s );
+  default ExpenseDetail projectName( final String s )
+  {
+    projectNameField().set(s);
+
+    return this;
+  }
 
   @Override
-  ExpenseDetail projectNumber( final Integer i );
+  default ExpenseDetail projectNumber( final Integer i )
+  {
+    projectNumberField().set(i);
+
+    return this;
+  }
 
   @Override
-  ExpenseDetail ticketNumber( final Integer i );
+  default ExpenseDetail ticketNumber( final Integer i )
+  {
+    ticketNumberField().set(i);
+
+    return this;
+  }
 
   @Override
-  ExpenseDetail ticketSummary( final String s );
+  default ExpenseDetail ticketSummary( final String s )
+  {
+    ticketSummaryField().set(s);
+
+    return this;
+  }
 }

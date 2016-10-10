@@ -15,21 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 public interface HasStatus
 {
-  Field < String > statusField();
+  String status();
 
-  default String status()
-  {
-    return statusField().get();
-  }
-
-  default HasStatus status( final String s )
-  {
-    statusField().set(s);
-
-    return this;
-  }
+  HasStatus status( final String s );
 }

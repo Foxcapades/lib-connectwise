@@ -15,16 +15,12 @@
  */
 package io.vulpine.connectwise.type.agreement;
 
-import io.vulpine.connectwise.type.def.agreement.Agreement;
-import io.vulpine.connectwise.util.BooleanField;
-import io.vulpine.connectwise.util.Field;
-import io.vulpine.connectwise.util.SimpleObjectField;
-import org.w3c.dom.Document;
+import io.vulpine.connectwise.type.def.agreement.FieldAgreement;
+import io.vulpine.connectwise.util.*;
 
-import java.beans.XMLDecoder;
 import java.util.Date;
 
-public class SimpleAgreement implements Agreement
+class SimpleAgreement implements FieldAgreement
 {
   private Field < Boolean >
     allowOverruns          = new BooleanField("AllowOverruns"),
@@ -51,19 +47,19 @@ public class SimpleAgreement implements Agreement
     topComment             = new BooleanField("TopComment"),
     boardDefault           = new SimpleObjectField<>("BoardDefaultFlag");
 
-  private Field < Date >
-    billStartDate = new SimpleObjectField<>("BillStartDate"),
-    dateCancelled = new SimpleObjectField<>("DateCancelled"),
-    endDate       = new SimpleObjectField<>("EndDate"),
-    startDate     = new SimpleObjectField<>("StartDate"),
-    lastUpdate    = new SimpleObjectField<>("LastUpdate");
+  private DateField
+    billStartDate = new SimpleDateField("BillStartDate"),
+    dateCancelled = new SimpleDateField("DateCancelled"),
+    endDate       = new SimpleDateField("EndDate"),
+    startDate     = new SimpleDateField("StartDate"),
+    lastUpdate    = new SimpleDateField("LastUpdate");
 
-  private Field < Double >
-    applicationLimit = new SimpleObjectField<>("ApplicationLimit"),
-    billAmount       = new SimpleObjectField<>("BillAmount"),
-    compHourlyRate   = new SimpleObjectField<>("CompHourlyRate"),
-    compLimitAmount  = new SimpleObjectField<>("CompLimitAmount"),
-    prorateFirstBill = new SimpleObjectField<>("ProrateFirstBill");
+  private NumberField < Double >
+    applicationLimit = new SimpleDoubleField("ApplicationLimit"),
+    billAmount       = new SimpleDoubleField("BillAmount"),
+    compHourlyRate   = new SimpleDoubleField("CompHourlyRate"),
+    compLimitAmount  = new SimpleDoubleField("CompLimitAmount"),
+    prorateFirstBill = new SimpleDoubleField("ProrateFirstBill");
 
   private Field < Integer >
     id                   = new SimpleObjectField<>("Id"),
@@ -91,23 +87,23 @@ public class SimpleAgreement implements Agreement
     boardId              = new SimpleObjectField<>("BoardId"),
     serviceTypeId        = new SimpleObjectField<>("ServiceTypeId");
 
-  private Field < String >
-    agreementName         = new SimpleObjectField<>("AgreementName"),
-    applicationCycle      = new SimpleObjectField<>("ApplicationCycle"),
-    applicationUnits      = new SimpleObjectField<>("ApplicationUnits"),
-    billExpenses          = new SimpleObjectField<>("BillExpenses"),
-    billProducts          = new SimpleObjectField<>("BillProducts"),
-    billTime              = new SimpleObjectField<>("BillTime"),
-    customerPo            = new SimpleObjectField<>("CustomerPO"),
-    employeeCompNotExceed = new SimpleObjectField<>("EmployeeCompNotExceed"),
-    employeeCompRate      = new SimpleObjectField<>("EmployeeCompRate"),
-    invoiceDescription    = new SimpleObjectField<>("InvoiceDescription"),
-    invoicingCycle        = new SimpleObjectField<>("InvoicingCycle"),
-    internalNotes         = new SimpleObjectField<>("InternalNotes"),
-    periodType            = new SimpleObjectField<>("PeriodType"),
-    reasonCancelled       = new SimpleObjectField<>("ReasonCancelled"),
-    workOrder             = new SimpleObjectField<>("WorkOrder"),
-    updatedBy             = new SimpleObjectField<>("UpdatedBy");
+  private StringField
+    agreementName         = new SimpleStringField("AgreementName"),
+    applicationCycle      = new SimpleStringField("ApplicationCycle"),
+    applicationUnits      = new SimpleStringField("ApplicationUnits"),
+    billExpenses          = new SimpleStringField("BillExpenses"),
+    billProducts          = new SimpleStringField("BillProducts"),
+    billTime              = new SimpleStringField("BillTime"),
+    customerPo            = new SimpleStringField("CustomerPO"),
+    employeeCompNotExceed = new SimpleStringField("EmployeeCompNotExceed"),
+    employeeCompRate      = new SimpleStringField("EmployeeCompRate"),
+    invoiceDescription    = new SimpleStringField("InvoiceDescription"),
+    invoicingCycle        = new SimpleStringField("InvoicingCycle"),
+    internalNotes         = new SimpleStringField("InternalNotes"),
+    periodType            = new SimpleStringField("PeriodType"),
+    reasonCancelled       = new SimpleStringField("ReasonCancelled"),
+    workOrder             = new SimpleStringField("WorkOrder"),
+    updatedBy             = new SimpleStringField("UpdatedBy");
 
   @Override
   public Field < Integer > idField()

@@ -32,6 +32,22 @@ public interface AgreementWorkRole extends
   HasWorkRoleId,
   XmlSerializable
 {
+  default Integer agreementId() { return agreementIdField().get(); }
+
+  default Date endDate()
+  {
+    return endDateField().get();
+  }
+
+  Field< Date > endDateField();
+
+  default Integer id()
+  {
+    return idField().get();
+  }
+
+  default Date lastUpdate() { return lastUpdateField().get(); }
+
   Field < Double > limitToField();
 
   default Double limitTo()
@@ -62,7 +78,6 @@ public interface AgreementWorkRole extends
     return this;
   }
 
-  @Override
   default AgreementWorkRole endDate( final Date d )
   {
     endDateField().set(d);
@@ -70,7 +85,6 @@ public interface AgreementWorkRole extends
     return this;
   }
 
-  @Override
   default AgreementWorkRole id( final Integer i )
   {
     idField().set(i);
@@ -78,7 +92,6 @@ public interface AgreementWorkRole extends
     return this;
   }
 
-  @Override
   default AgreementWorkRole locationId( final Integer i )
   {
     locationIdField().set(i);
@@ -86,13 +99,19 @@ public interface AgreementWorkRole extends
     return this;
   }
 
-  @Override
   default AgreementWorkRole lastUpdate( final Date d )
   {
     lastUpdateField().set(d);
 
     return this;
   }
+
+  default Integer locationId()
+  {
+    return locationIdField().get();
+  }
+
+  Field< Integer > locationIdField();
 
   @Override
   default AgreementWorkRole rate( final Double d )
@@ -110,7 +129,6 @@ public interface AgreementWorkRole extends
     return this;
   }
 
-  @Override
   default AgreementWorkRole updatedBy( final String s )
   {
     updatedByField().set(s);
@@ -135,4 +153,15 @@ public interface AgreementWorkRole extends
       + updatedByField().toXml()
       + "</" + rootName + ">";
   }
+
+  default String updatedBy()
+  {
+    return updatedByField().get();
+  }
+
+  default Integer workRoleId() { return workRoleIdField().get(); }
+
+  HasWorkRoleId workRoleId( final Integer i );
+
+  Field< Integer > workRoleIdField();
 }

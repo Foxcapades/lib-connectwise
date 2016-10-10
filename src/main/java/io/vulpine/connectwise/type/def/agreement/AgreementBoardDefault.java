@@ -19,6 +19,7 @@ import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.type.def.gen.HasBoardId;
 import io.vulpine.connectwise.type.def.gen.HasDefaultFlag;
 import io.vulpine.connectwise.type.def.gen.HasServiceTypeId;
+import io.vulpine.connectwise.util.Field;
 
 import java.util.Date;
 
@@ -37,35 +38,51 @@ extends
     return this;
   }
 
-  @Override
+  default Integer agreementId() { return agreementIdField().get(); }
+
+  default Integer boardId()
+  {
+    return boardIdField().get();
+  }Field< Integer > boardIdField();
+
   default AgreementBoardDefault id( final Integer i )
   {
     idField().set(i);
     return this;
   }
 
-  @Override
+  default Integer id()
+  {
+    return idField().get();
+  }
+
+  default Date lastUpdate() { return lastUpdateField().get(); }
+
+  default Integer serviceTypeId()
+  {
+    return serviceTypeIdField().get();
+  }
+
+  Field< Integer > serviceTypeIdField();
+
   default AgreementBoardDefault updatedBy( final String s )
   {
     updatedByField().set(s);
     return this;
   }
 
-  @Override
   default AgreementBoardDefault lastUpdate( final Date d )
   {
     lastUpdateField().set(d);
     return this;
   }
 
-  @Override
   default AgreementBoardDefault serviceTypeId( final Integer i )
   {
     serviceTypeIdField().set(i);
     return this;
   }
 
-  @Override
   default AgreementBoardDefault boardId( final Integer i )
   {
     boardIdField().set(i);
@@ -91,5 +108,10 @@ extends
       + updatedByField().toXml()
       + lastUpdateField().toXml()
       + "</" + rootName + ">";
+  }
+
+  default String updatedBy()
+  {
+    return updatedByField().get();
   }
 }

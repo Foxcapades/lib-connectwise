@@ -15,37 +15,36 @@
  */
 package io.vulpine.connectwise.type;
 
-import io.vulpine.connectwise.util.Field;
-import io.vulpine.connectwise.util.SimpleObjectField;
+import io.vulpine.connectwise.util.*;
 
 import java.util.Date;
 
 public abstract class ConnectwiseCommon
 {
-  protected Field < Integer > id = new SimpleObjectField<>("Id", false, true);
+  protected NumberField< Integer > id = new SimpleIntegerField("Id", false, true);
 
-  protected Field < Date > lastUpdate = new SimpleObjectField<>("LastUpdate");
+  protected DateField lastUpdate = new SimpleDateField("LastUpdate");
 
-  protected Field < Date > lastUpdated = new SimpleObjectField<>("LastUpdated");
+  protected DateField lastUpdated = new SimpleDateField("LastUpdated");
 
-  protected Field < String > updatedBy = new SimpleObjectField<>("UpdatedBy");
+  protected StringField updatedBy = new SimpleStringField("UpdatedBy");
 
-  public Field < Integer > idField()
+  public NumberField < Integer > idField()
   {
     return id;
   }
 
-  public Field < Date > lastUpdatedField()
+  public DateField lastUpdatedField()
   {
     return lastUpdated;
   }
 
-  public Field < Date > lastUpdateField()
+  public DateField lastUpdateField()
   {
     return lastUpdate;
   }
 
-  public Field < String > updatedByField()
+  public StringField updatedByField()
   {
     return updatedBy;
   }

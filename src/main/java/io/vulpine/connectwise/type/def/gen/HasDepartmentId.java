@@ -15,17 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
-public interface HasDepartmentId extends XmlSerializable
+public interface HasDepartmentId
 {
-  default Integer departmentId()
-  {
-    return departmentIdField().get();
-  }
+  Integer departmentId();
 
-  Field< Integer > departmentIdField();
-
-  HasDepartmentId departmentId( Integer i );
+  HasDepartmentId departmentId( final Integer i );
 }

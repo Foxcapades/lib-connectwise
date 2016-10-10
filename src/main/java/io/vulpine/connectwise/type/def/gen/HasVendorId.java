@@ -15,17 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
-public interface HasVendorId extends XmlSerializable
+public interface HasVendorId
 {
-  Field< Integer > vendorIdField();
-
-  default Integer vendorId()
-  {
-    return vendorIdField().get();
-  }
+  Integer vendorId();
 
   HasVendorId vendorId( final Integer i );
 }

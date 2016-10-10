@@ -15,21 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 public interface HasQuantity
 {
-  Field < Double > quantityField();
+  Double quantity();
 
-  default Double quantity()
-  {
-    return quantityField().get();
-  }
-
-  default HasQuantity quantity( final Double d )
-  {
-    quantityField().set(d);
-
-    return this;
-  }
+  HasQuantity quantity( final Double d );
 }

@@ -18,9 +18,9 @@ package io.vulpine.connectwise.api.endpoints.agreement;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.def.SubApiInterface;
-import io.vulpine.connectwise.type.agreement.addition.Addition;
+import io.vulpine.connectwise.type.agreement.SimpleAgreementAddition;
 
-public class GetAddition extends _GetCommon< Addition >
+public class GetAddition extends _GetCommon< SimpleAgreementAddition >
 {
   public GetAddition( Credentials credentials, XmlMapper xmlMapper, SubApiInterface api, int id )
   {

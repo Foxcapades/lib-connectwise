@@ -15,21 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 public interface HasPhaseName
 {
-  Field < String > phaseNameField();
+  HasPhaseName phaseName( final String s );
 
-  default String phaseName()
-  {
-    return phaseNameField().get();
-  }
-
-  default HasPhaseName phaseName( final String s )
-  {
-    phaseNameField().set(s);
-
-    return this;
-  }
+  String phaseName();
 }

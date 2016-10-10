@@ -15,25 +15,18 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
 
 import java.util.Date;
 
 /**
- * = XmlSerializable Object with a StartDate Field
+ * = Object with a StartDate
  *
- * @since 0.10.0
+ * @since 0.1.0
  * @version 1.0.0
  */
-public interface HasStartDate extends XmlSerializable
+public interface HasStartDate
 {
-  default Date startDate()
-  {
-    return startDateField().get();
-  }
+  Date startDate();
 
-  Field< Date > startDateField();
-
-  HasStartDate startDate( Date d );
+  HasStartDate startDate( final Date d );
 }

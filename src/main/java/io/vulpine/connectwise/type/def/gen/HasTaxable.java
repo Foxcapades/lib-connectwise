@@ -15,21 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 public interface HasTaxable
 {
-  Field < Boolean > taxableField();
+  Boolean taxable();
 
-  default Boolean taxable()
-  {
-    return taxableField().get();
-  }
-
-  default HasTaxable taxable( final Boolean b )
-  {
-    taxableField().set(b);
-
-    return this;
-  }
+  HasTaxable taxable( final Boolean b );
 }

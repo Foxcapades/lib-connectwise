@@ -15,21 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 public interface HasType
 {
-  Field < String > typeField();
+  String type();
 
-  default String type()
-  {
-    return typeField().get();
-  }
-
-  default HasType type( final String s )
-  {
-    typeField().set(s);
-
-    return this;
-  }
+  HasType type( final String s );
 }

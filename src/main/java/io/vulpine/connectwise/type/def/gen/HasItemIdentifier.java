@@ -26,10 +26,5 @@ public interface HasItemIdentifier
     return itemIdentifierField().get();
   }
 
-  default HasItemIdentifier itemIdentifier( final String s )
-  {
-    itemIdentifierField().set(s);
-
-    return this;
-  }
+  HasItemIdentifier itemIdentifier( final String s );
 }

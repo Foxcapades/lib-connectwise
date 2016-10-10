@@ -15,23 +15,17 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 import java.util.Date;
 
+/**
+ * = Object with a Company Id value.
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
 public interface HasDate
 {
-  Field < Date > dateField();
+  HasDate date( final Date d );
 
-  default Date date()
-  {
-    return dateField().get();
-  }
-
-  default HasDate date( final Date d )
-  {
-    dateField().set(d);
-
-    return this;
-  }
+  Date date();
 }

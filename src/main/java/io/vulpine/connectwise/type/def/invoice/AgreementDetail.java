@@ -23,6 +23,13 @@ import io.vulpine.connectwise.util.NumberField;
 
 public interface AgreementDetail extends HasAgreementName, HasAgreementType, XmlSerializable
 {
+  default String agreementName()
+  {
+    return agreementNameField().get();
+  }
+
+  Field< String > agreementNameField();
+
   NumberField < Double > hoursField();
 
   default Double hours()
@@ -131,7 +138,6 @@ public interface AgreementDetail extends HasAgreementName, HasAgreementType, Xml
   |*| Inherited Overrides
    */
 
-  @Override
   AgreementDetail agreementName( final String s );
 
   @Override

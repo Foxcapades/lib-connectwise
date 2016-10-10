@@ -18,14 +18,15 @@ package io.vulpine.connectwise.type.def.gen;
 import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.util.Field;
 
-public interface HasCategoryId extends XmlSerializable
+/**
+ * = Object with a Category Id
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
+public interface HasCategoryId
 {
   HasCategoryId categoryId( final Integer i );
 
-  Field< Integer > categoryIdField();
-
-  default Integer categoryId()
-  {
-    return categoryIdField().get();
-  }
+  Integer categoryId();
 }

@@ -15,25 +15,17 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
 import java.util.Date;
 
 /**
- * = {@link XmlSerializable} Object with an EndDate Field
+ * = Object with an End Date
  *
- * @since 0.10.0
+ * @since 0.1.0
  * @version 1.0.0
  */
-public interface HasEndDate extends XmlSerializable
+public interface HasEndDate
 {
-  default Date endDate()
-  {
-    return endDateField().get();
-  }
+  Date endDate();
 
-  Field< Date > endDateField();
-
-  HasEndDate endDate( Date d );
+  HasEndDate endDate( final Date d );
 }

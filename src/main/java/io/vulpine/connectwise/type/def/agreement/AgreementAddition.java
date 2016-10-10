@@ -1,270 +1,101 @@
-/*
- * Copyright 2016 Elizabeth Harper
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package io.vulpine.connectwise.type.def.agreement;
 
 import io.vulpine.connectwise.type.agreement.BillCustomer;
 import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.type.def.gen.*;
-import io.vulpine.connectwise.util.Field;
 
 import java.util.Date;
 
-public interface AgreementAddition
-  extends
-  HasAgreementId,
-  HasEffectiveDate,
-  HasLastUpdate,
-  HasTaxable,
-  HasUpdatedBy,
-  HasQuantity,
-  SubAgreement,
-  XmlSerializable
+public interface AgreementAddition extends XmlSerializable
 {
-  Field < AdditionProduct > additionProductField();
+  AgreementAddition id( Integer i );
 
-  Field < Double > lessIncludedField();
+  Integer id();
 
-  Field < Double > unitPriceField();
+  AgreementAddition agreementId( Integer i );
 
-  Field < Double > unitCostField();
+  Integer agreementId();
 
-  Field < Date > cancelledDateField();
+  AgreementAddition additionProduct( AdditionProduct a );
 
-  Field < BillCustomer > billCustomerField();
+  AdditionProduct additionProduct();
 
-  Field < String > serialNumberField();
+  AgreementAddition quantity( Double d );
 
-  Field < String > invoiceDescriptionField();
+  Double quantity();
 
-  Field < Boolean > purchaseItemField();
+  AgreementAddition lessIncluded( Double d );
 
-  Field < Boolean > specialOrderField();
+  Double lessIncluded();
 
-  Field < Double > billedQuantityField();
+  AgreementAddition unitPrice( Double d );
 
-  Field < String > uomField();
+  Double unitPrice();
 
-  Field < Double > extPriceField();
+  AgreementAddition unitCost( Double d );
 
-  Field < Double > extCostField();
+  Double unitCost();
 
-  Field < Double > marginField();
+  AgreementAddition effectiveDate( Date d );
 
-  default AdditionProduct additionProduct()
-  {
-    return additionProductField().get();
-  }
+  Date effectiveDate();
 
-  default AgreementAddition additionProduct( final AdditionProduct a )
-  {
-    additionProductField().set(a);
-    return this;
-  }
+  AgreementAddition cancelledDate( Date d );
 
-  default Double lessIncluded()
-  {
-    return lessIncludedField().get();
-  }
+  Date cancelledDate();
 
-  default AgreementAddition lessIncluded( final Double d )
-  {
-    lessIncludedField().set(d);
-    return this;
-  }
+  AgreementAddition billCustomer( BillCustomer b );
 
-  default Double unitPrice()
-  {
-    return unitPriceField().get();
-  }
+  BillCustomer billCustomer();
 
-  default AgreementAddition unitPrice( final Double d )
-  {
-    unitPriceField().set(d);
-    return this;
-  }
+  AgreementAddition taxable( Boolean b );
 
-  default Double unitCost()
-  {
-    return unitCostField().get();
-  }
+  Boolean taxable();
 
-  default AgreementAddition unitCost( final Double d )
-  {
-    unitCostField().set(d);
-    return this;
-  }
+  AgreementAddition serialNumber( String s );
 
-  default Date cancelledDate()
-  {
-    return cancelledDateField().get();
-  }
+  String serialNumber();
 
-  default AgreementAddition cancelledDate( final Date d )
-  {
-    cancelledDateField().set(d);
-    return this;
-  }
+  AgreementAddition invoiceDescription( String s );
 
-  default BillCustomer billCustomer()
-  {
-    return billCustomerField().get();
-  }
+  String invoiceDescription();
 
-  default AgreementAddition billCustomer( final BillCustomer b )
-  {
-    billCustomerField().set(b);
-    return this;
-  }
+  AgreementAddition purchaseItem( Boolean b );
 
-  default String serialNumber()
-  {
-    return serialNumberField().get();
-  }
+  Boolean purchaseItem();
 
-  default AgreementAddition serialNumber( final String s )
-  {
-    serialNumberField().set(s);
-    return this;
-  }
+  AgreementAddition specialOrder( Boolean b );
 
-  default String invoiceDescription()
-  {
-    return invoiceDescriptionField().get();
-  }
+  Boolean specialOrder();
 
-  default AgreementAddition invoiceDescription( final String s )
-  {
-    invoiceDescriptionField().set(s);
-    return this;
-  }
+  AgreementAddition description( String s );
 
-  default Boolean purchaseItem()
-  {
-    return purchaseItemField().get();
-  }
+  String description();
 
-  default AgreementAddition purchaseItem( final Boolean b )
-  {
-    purchaseItemField().set(b);
-    return this;
-  }
+  AgreementAddition billedQuantity( Double d );
 
-  default Boolean specialOrder()
-  {
-    return specialOrderField().get();
-  }
+  Double billedQuantity();
 
-  default AgreementAddition specialOrder( final Boolean b )
-  {
-    specialOrderField().set(b);
-    return this;
-  }
+  AgreementAddition uom( String s );
 
-  default Double billedQuantity()
-  {
-    return billedQuantityField().get();
-  }
+  String uom();
 
-  default AgreementAddition billedQuantity( final Double d )
-  {
-    billedQuantityField().set(d);
-    return this;
-  }
+  AgreementAddition extPrice( Double d );
 
-  default String uom()
-  {
-    return uomField().get();
-  }
+  Double extPrice();
 
-  default AgreementAddition uom( final String s )
-  {
-    uomField().set(s);
-    return this;
-  }
+  AgreementAddition extCost( Double d );
 
-  default Double extPrice()
-  {
-    return extPriceField().get();
-  }
+  Double extCost();
 
-  default AgreementAddition extPrice( final Double d )
-  {
-    extPriceField().set(d);
-    return this;
-  }
+  AgreementAddition margin( Double d );
 
-  default Double extCost()
-  {
-    return extCostField().get();
-  }
+  Double margin();
 
-  default AgreementAddition extCost( final Double d )
-  {
-    extCostField().set(d);
-    return this;
-  }
+  AgreementAddition updatedBy( String s );
 
-  default Double margin()
-  {
-    return marginField().get();
-  }
+  String updatedBy();
 
-  default AgreementAddition margin( final Double d )
-  {
-    marginField().set(d);
-    return this;
-  }
+  AgreementAddition lastUpdate( Date d );
 
-  @Override
-  AgreementAddition taxable( final Boolean b );
-
-  @Override
-  default AgreementAddition effectiveDate( final Date d )
-  {
-    effectiveDateField().set(d);
-    return this;
-  }
-
-  @Override
-  default AgreementAddition id( final Integer i )
-  {
-    idField().set(i);
-    return this;
-  }
-
-  @Override
-  default AgreementAddition updatedBy( final String s )
-  {
-    updatedByField().set(s);
-    return this;
-  }
-
-  @Override
-  default AgreementAddition lastUpdate( final Date d )
-  {
-    lastUpdateField().set(d);
-    return this;
-  }
-
-  @Override
-  default AgreementAddition agreementId( final Integer i )
-  {
-    agreementIdField().set(i);
-    return this;
-  }
-
-  @Override AgreementAddition quantity( final Double d );
+  Date lastUpdate();
 }

@@ -32,11 +32,25 @@ public interface AdditionProduct
   HasVendorId,
   XmlSerializable
 {
+  default Integer id()
+  {
+    return idField().get();
+  }
+
+  Field< Integer > idField();
+
   Field < ProductClass > productClassField();
 
   Field < PriceAttribute > priceAttributeField();
 
   Field < Integer > subcategoryIdField();
+
+  default Boolean taxable()
+  {
+    return taxableField().get();
+  }
+
+  Field < Boolean > taxableField();
 
   Field < Integer > uomIdField();
 
@@ -221,7 +235,12 @@ public interface AdditionProduct
     return this;
   }
 
-  @Override AdditionProduct taxable( Boolean b );
+  default AdditionProduct taxable( Boolean b )
+  {
+    taxableField().set(b);
+
+    return this;
+  }
 
   @Override
   default AdditionProduct vendorId( final Integer i )
@@ -251,7 +270,6 @@ public interface AdditionProduct
     return this;
   }
 
-  @Override
   default AdditionProduct id( final Integer i )
   {
     idField().set(i);

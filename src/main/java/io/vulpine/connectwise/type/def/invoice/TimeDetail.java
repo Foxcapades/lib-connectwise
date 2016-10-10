@@ -43,6 +43,13 @@ public interface TimeDetail
   HasTicketSummary,
   XmlSerializable
 {
+  default String agreementName()
+  {
+    return agreementNameField().get();
+  }
+
+  Field< String > agreementNameField();
+
   DateField startTimeField();
 
   DateField endTimeField();
@@ -205,11 +212,20 @@ public interface TimeDetail
   |*| Inherited Overrides
    */
 
-  @Override
-  TimeDetail agreementName( final String v );
+  default TimeDetail agreementName( final String v )
+  {
+    agreementNameField().set(v);
+
+    return this;
+  }
 
   @Override
-  TimeDetail agreementType( final String v );
+  default TimeDetail agreementType( final String v )
+  {
+    agreementTypeField().set(v);
+
+    return this;
+  }
 
   @Override
   default TimeDetail agreementAmount( final Double d )
@@ -220,42 +236,106 @@ public interface TimeDetail
   }
 
   @Override
-  TimeDetail billable( final Boolean v );
+  default TimeDetail billable( final Boolean v )
+  {
+    billableField().set(v);
+
+    return this;
+  }
 
   @Override
-  TimeDetail businessUnit( final String s );
+  default TimeDetail businessUnit( final String s )
+  {
+    businessUnitField().set(s);
+
+    return this;
+  }
 
   @Override
-  TimeDetail chargeTo( final String s );
+  default TimeDetail chargeTo( final String s )
+  {
+    chargeToField().set(s);
+
+    return this;
+  }
 
   @Override
-  TimeDetail date( final Date d );
+  default TimeDetail date( final Date d )
+  {
+    dateField().set(d);
+
+    return this;
+  }
 
   @Override
-  TimeDetail hourlyRate( final Double d );
+  default TimeDetail hourlyRate( final Double d )
+  {
+    hourlyRateField().set(d);
+
+    return this;
+  }
 
   @Override
-  TimeDetail invoiceAmount( final Double d );
+  default TimeDetail invoiceAmount( final Double d )
+  {
+    invoiceAmountField().set(d);
+
+    return this;
+  }
 
   @Override
-  TimeDetail location( final String s );
+  default TimeDetail location( final String s )
+  {
+    locationField().set(s);
+
+    return this;
+  }
 
   @Override
-  TimeDetail notes( final String s );
+  default TimeDetail notes( final String s )
+  {
+    notesField().set(s);
+
+    return this;
+  }
 
   @Override
-  TimeDetail phaseName( final String s );
+  default TimeDetail phaseName( final String s )
+  {
+    phaseNameField().set(s);
+
+    return this;
+  }
 
   @Override
-  TimeDetail projectName( final String s );
+  default TimeDetail projectName( final String s )
+  {
+    projectNameField().set(s);
+
+    return this;
+  }
 
   @Override
-  TimeDetail projectNumber( final Integer i );
+  default TimeDetail projectNumber( final Integer i )
+  {
+    projectNumberField().set(i);
+
+    return this;
+  }
 
   @Override
-  TimeDetail ticketNumber( final Integer i );
+  default TimeDetail ticketNumber( final Integer i )
+  {
+    ticketNumberField().set(i);
+
+    return this;
+  }
 
   @Override
-  TimeDetail ticketSummary( final String s );
+  default TimeDetail ticketSummary( final String s )
+  {
+    ticketSummaryField().set(s);
 
+    return this;
+  }
 }

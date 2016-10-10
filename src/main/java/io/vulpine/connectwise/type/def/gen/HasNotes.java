@@ -19,17 +19,7 @@ import io.vulpine.connectwise.util.Field;
 
 public interface HasNotes
 {
-  Field < String > notesField();
+  HasNotes notes( final String s );
 
-  default String notes()
-  {
-    return notesField().get();
-  }
-
-  default HasNotes notes( final String s )
-  {
-    notesField().set(s);
-
-    return this;
-  }
+  String notes();
 }

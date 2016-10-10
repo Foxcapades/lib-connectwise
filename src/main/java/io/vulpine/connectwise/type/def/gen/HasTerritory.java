@@ -15,21 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 public interface HasTerritory
 {
-  Field< String > territoryField();
+  String territory();
 
-  default String territory()
-  {
-    return territoryField().get();
-  }
-
-  default HasTerritory territory( final String t )
-  {
-    territoryField().set(t);
-
-    return this;
-  }
+  HasTerritory territory( final String t );
 }

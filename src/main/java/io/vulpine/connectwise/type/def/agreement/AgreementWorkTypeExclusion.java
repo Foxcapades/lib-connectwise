@@ -27,6 +27,15 @@ public interface AgreementWorkTypeExclusion extends HasWorkTypeId, SubAgreement,
 {
   Field < Boolean > addAllWorkTypesField();
 
+  default Integer agreementId() { return agreementIdField().get(); }
+
+  default Integer id()
+  {
+    return idField().get();
+  }
+
+  default Date lastUpdate() { return lastUpdateField().get(); }
+
   Field < Boolean > removeAllWorkTypesField();
 
   default Boolean addAllWorkTypes()
@@ -53,7 +62,6 @@ public interface AgreementWorkTypeExclusion extends HasWorkTypeId, SubAgreement,
     return this;
   }
 
-  @Override
   default AgreementWorkTypeExclusion id( final Integer i )
   {
     idField().set(i);
@@ -69,7 +77,11 @@ public interface AgreementWorkTypeExclusion extends HasWorkTypeId, SubAgreement,
     return this;
   }
 
-  @Override
+  default String updatedBy()
+  {
+    return updatedByField().get();
+  }
+
   default AgreementWorkTypeExclusion workTypeId( final Integer i )
   {
     workTypeIdField().set(i);
@@ -77,7 +89,6 @@ public interface AgreementWorkTypeExclusion extends HasWorkTypeId, SubAgreement,
     return this;
   }
 
-  @Override
   default HasUpdatedBy updatedBy( final String s )
   {
     updatedByField().set(s);
@@ -85,7 +96,6 @@ public interface AgreementWorkTypeExclusion extends HasWorkTypeId, SubAgreement,
     return this;
   }
 
-  @Override
   default HasLastUpdate lastUpdate( final Date d )
   {
     lastUpdateField().set(d);
@@ -106,4 +116,11 @@ public interface AgreementWorkTypeExclusion extends HasWorkTypeId, SubAgreement,
       + lastUpdateField().toXml()
       + "</" + rootName + ">";
   }
+
+  default Integer workTypeId()
+  {
+    return workTypeIdField().get();
+  }
+
+  Field < Integer > workTypeIdField();
 }

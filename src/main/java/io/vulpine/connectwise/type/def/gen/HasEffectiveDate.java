@@ -15,16 +15,17 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
 import java.util.Date;
 
-public interface HasEffectiveDate extends XmlSerializable
+/**
+ * = Object with an Effective Date value.
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
+public interface HasEffectiveDate
 {
-  default Date effectiveDate() { return effectiveDateField().get(); }
-
-  Field< Date > effectiveDateField();
+  Date effectiveDate();
 
   HasEffectiveDate effectiveDate( Date d );
 }

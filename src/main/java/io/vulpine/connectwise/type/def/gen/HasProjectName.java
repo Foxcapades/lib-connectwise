@@ -15,21 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 public interface HasProjectName
 {
-  Field < String > projectNameField();
+  HasProjectName projectName( final String s );
 
-  default String projectName()
-  {
-    return projectNameField().get();
-  }
-
-  default HasProjectName projectName( final String s )
-  {
-    projectNameField().set(s);
-
-    return this;
-  }
+  String projectName();
 }

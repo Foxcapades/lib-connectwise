@@ -162,6 +162,13 @@ public interface ProductDetail
     return this;
   }
 
+  default Boolean taxable()
+  {
+    return taxableField().get();
+  }
+
+  Field < Boolean > taxableField();
+
   Field < String > vendorNameField();
 
   default String vendorName()
@@ -227,47 +234,121 @@ public interface ProductDetail
   }
 
   @Override
-  ProductDetail billable( final Boolean b );
+  default ProductDetail billable( final Boolean b )
+  {
+    billableField().set(b);
+
+    return this;
+  }
 
   @Override
-  ProductDetail businessUnit( final String s );
+  default ProductDetail businessUnit( final String s )
+  {
+    businessUnitField().set(s);
+
+    return this;
+  }
 
   @Override
-  ProductDetail chargeTo( final String s );
+  default ProductDetail chargeTo( final String s )
+  {
+    chargeToField().set(s);
+
+    return this;
+  }
 
   @Override
-  ProductDetail date( final Date d );
+  default ProductDetail date( final Date d )
+  {
+    dateField().set(d);
+
+    return this;
+  }
 
   @Override
-  ProductDetail description( final String d );
+  default ProductDetail description( final String d )
+  {
+    descriptionField().set(d);
+
+    return this;
+  }
 
   @Override
-  ProductDetail invoiceAmount( final Double d );
+  default ProductDetail invoiceAmount( final Double d )
+  {
+    invoiceAmountField().set(d);
+
+    return this;
+  }
 
   @Override
-  ProductDetail itemIdentifier( final String s );
+  default ProductDetail itemIdentifier( final String s )
+  {
+    itemIdentifierField().set(s);
+
+    return this;
+  }
 
   @Override
-  ProductDetail location( final String s );
+  default ProductDetail location( final String s )
+  {
+    locationField().set(s);
+
+    return this;
+  }
 
   @Override
-  ProductDetail phaseName( final String s );
+  default ProductDetail phaseName( final String s )
+  {
+    phaseNameField().set(s);
+
+    return this;
+  }
 
   @Override
-  ProductDetail quantity( final Double d );
+  default ProductDetail quantity( final Double d )
+  {
+    quantityField().set(d);
+
+    return this;
+  }
 
   @Override
-  ProductDetail ticketNumber( final Integer i );
+  default ProductDetail ticketNumber( final Integer i )
+  {
+    ticketNumberField().set(i);
+
+    return this;
+  }
 
   @Override
-  ProductDetail ticketSummary( final String s );
+  default ProductDetail ticketSummary( final String s )
+  {
+    ticketSummaryField().set(s);
+
+    return this;
+  }
+
+  default ProductDetail taxable( final Boolean b )
+  {
+    taxableField().set(b);
+
+    return this;
+  }
 
   @Override
-  ProductDetail taxable( final Boolean b );
+  default ProductDetail unitCost( final Double d )
+  {
+    unitCostField().set(d);
+
+    return this;
+  }
 
   @Override
-  ProductDetail unitCost( final Double d );
+  default ProductDetail unitPrice( final Double d )
+  {
+    unitCostField().set(d);
 
-  @Override
-  ProductDetail unitPrice( final Double d );
+    return this;
+  }
 }

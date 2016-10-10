@@ -15,19 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
 /**
- * = Object with an AddressId Field
+ * = Object with an AddressId
  *
- * @since 0.10.0
+ * @since 0.1.0
  * @version 1.0.0
  */
 public interface HasAddressId
 {
   Integer addressId();
-
-  Field< Integer > addressIdField();
 
   HasAddressId addressId( Integer i );
 }

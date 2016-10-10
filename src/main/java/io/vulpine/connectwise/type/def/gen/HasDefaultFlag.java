@@ -15,17 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
-public interface HasDefaultFlag extends XmlSerializable
+/**
+ * = Object with a Default Flag value.
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
+public interface HasDefaultFlag
 {
-  default Boolean defaultFlag()
-  {
-    return defaultFlagField().get();
-  }
-
-  Field< Boolean > defaultFlagField();
+  Boolean defaultFlag();
 
   HasDefaultFlag defaultFlag( final Boolean b );
 }

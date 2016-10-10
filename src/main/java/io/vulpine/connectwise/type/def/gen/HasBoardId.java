@@ -15,17 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-
-public interface HasBoardId extends XmlSerializable
+/**
+ * = Object with a Board Id
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
+public interface HasBoardId
 {
-  default Integer boardId()
-  {
-    return boardIdField().get();
-  }
-
-  Field < Integer > boardIdField();
+  Integer boardId();
 
   HasBoardId boardId( final Integer i );
 }

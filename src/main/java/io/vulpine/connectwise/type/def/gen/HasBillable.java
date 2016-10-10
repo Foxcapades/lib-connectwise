@@ -15,21 +15,15 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
-
+/**
+ * = Object with a Billable Flag
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
 public interface HasBillable
 {
-  Field < Boolean > billableField();
+  HasBillable billable( final Boolean b );
 
-  default Boolean billable()
-  {
-    return billableField().get();
-  }
-
-  default HasBillable billable( final Boolean b )
-  {
-    billableField().set(b);
-
-    return this;
-  }
+  Boolean billable();
 }

@@ -15,21 +15,18 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import io.vulpine.connectwise.type.def.agreement.Agreement;
 import io.vulpine.connectwise.util.Field;
 
+/**
+ * = Object with an Id value.
+ *
+ * @since 0.1.0
+ * @version 1.0.0
+ */
 public interface HasId
 {
-  Field< Integer > idField();
+  Integer id();
 
-  default Integer id()
-  {
-    return idField().get();
-  }
-
-  default HasId id( final Integer i )
-  {
-    idField().set(i);
-
-    return this;
-  }
+  HasId id( Integer i );
 }

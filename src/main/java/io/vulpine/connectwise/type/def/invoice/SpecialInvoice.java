@@ -59,6 +59,42 @@ public interface SpecialInvoice
     return this;
   }
 
+  default Integer companyId()
+  {
+    return companyIdField().get();
+  }
+
+  HasCompanyId companyId( Integer i );
+
+  Field< Integer > companyIdField();
+
+  default Integer departmentId()
+  {
+    return departmentIdField().get();
+  }
+
+  HasDepartmentId departmentId( Integer i );
+
+  Field< Integer > departmentIdField();
+
+  default Integer id()
+  {
+    return idField().get();
+  }
+
+  HasId id( final Integer i );
+
+  Field< Integer > idField();
+
+  default Integer locationId()
+  {
+    return locationIdField().get();
+  }
+
+  HasLocationId locationId( Integer i );
+
+  Field< Integer > locationIdField();
+
   StringField referenceField();
 
   default String reference()
@@ -216,6 +252,15 @@ public interface SpecialInvoice
     billingStatusField().set(s);
     return this;
   }
+
+  HasTaxable taxable( final Boolean b );
+
+  default Boolean taxable()
+  {
+    return taxableField().get();
+  }
+
+  Field < Boolean > taxableField();
 
   NumberField < Integer > territoryIdField();
 
