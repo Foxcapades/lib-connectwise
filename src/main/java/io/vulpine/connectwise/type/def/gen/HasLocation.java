@@ -15,16 +15,14 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.util.Field;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 public interface HasLocation
 {
-  Field < String > locationField();
+  @JsonGetter( "Location" )
+  String location();
 
+  @JsonSetter( "Location" )
   HasLocation location( final String s );
-
-  default String location()
-  {
-    return locationField().get();
-  }
 }

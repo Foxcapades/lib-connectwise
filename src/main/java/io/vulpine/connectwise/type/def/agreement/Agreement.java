@@ -8,6 +8,7 @@ import java.util.Date;
 public interface Agreement
   extends
   HasId,
+  HasParentAgreementId,
   HasAgreementTypeId,
   HasAgreementName,
   HasCompanyId,
@@ -19,14 +20,12 @@ public interface Agreement
   HasInternalNotes,
   HasTaxable,
   HasWorkRoleId,
+  HasWorkTypeId,
   HasLastUpdate,
+  HasTopComment,
   HasUpdatedBy,
   XmlSerializable
 {
-
-  Integer parentAgreementId();
-
-  Agreement parentAgreementId( Integer i );
 
   String customerPo();
 
@@ -204,21 +203,9 @@ public interface Agreement
 
   Agreement invoiceDescription( String s );
 
-  Boolean topComment();
-
-  Agreement topComment( Boolean b );
-
   Boolean bottomComment();
 
   Agreement bottomComment( Boolean b );
-
-  Agreement workRoleId( Integer i );
-
-  Integer workRoleId();
-
-  Agreement workTypeId( Integer i );
-
-  Integer workTypeId();
 
   Integer projectTypeId();
 

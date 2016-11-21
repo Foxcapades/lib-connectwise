@@ -15,9 +15,14 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 public interface HasTerritory
 {
+  @JsonGetter("Territory")
   String territory();
 
+  @JsonSetter("Territory")
   HasTerritory territory( final String t );
 }

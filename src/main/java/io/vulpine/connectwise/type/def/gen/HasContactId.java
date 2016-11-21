@@ -15,6 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 /**
  * = Object with a Contact Id value.
  *
@@ -23,7 +26,9 @@ package io.vulpine.connectwise.type.def.gen;
  */
 public interface HasContactId
 {
+  @JsonGetter( "ContactId" )
   Integer contactId();
 
+  @JsonSetter( "ContactId" )
   HasContactId contactId( final Integer i );
 }

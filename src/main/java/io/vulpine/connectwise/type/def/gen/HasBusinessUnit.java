@@ -15,6 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 /**
  * = Object with a Business Unit
  *
@@ -23,7 +26,9 @@ package io.vulpine.connectwise.type.def.gen;
  */
 public interface HasBusinessUnit
 {
-  HasBusinessUnit businessUnit( final String s );
-
+  @JsonGetter( "BusinessUnit" )
   String businessUnit();
+
+  @JsonSetter( "BusinessUnit" )
+  HasBusinessUnit businessUnit( final String s );
 }

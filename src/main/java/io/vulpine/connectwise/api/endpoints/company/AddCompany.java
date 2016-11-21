@@ -24,13 +24,13 @@ import io.vulpine.connectwise.api.common.request.AddRequest;
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.endpoints.Endpoint;
 import io.vulpine.connectwise.type.company.SimpleCompany;
-import io.vulpine.connectwise.type.def.Company;
+import io.vulpine.connectwise.type.def.FieldCompany;
 
 import java.io.IOException;
 
 @JsonFilter( "filter-empty" )
 @JacksonXmlRootElement( localName = "AddCompany" )
-public class AddCompany extends AddRequest < Company >
+public class AddCompany extends AddRequest < FieldCompany >
 {
   public AddCompany(
     final Credentials credentials,
@@ -45,14 +45,14 @@ public class AddCompany extends AddRequest < Company >
     final Credentials credentials,
     final XmlMapper xmlMapper,
     final SubApiInterface subApi,
-    final Company company
+    final FieldCompany company
   )
   {
     super(credentials, xmlMapper, subApi, Endpoint.COMPANY, company);
   }
 
   @Override
-  public Company submit() throws IOException
+  public FieldCompany submit() throws IOException
   {
     this.logger.trace(this.getClass());
     final AddCompanyResponse company = getXmlMapper().readerFor(AddCompanyResponse.class)
@@ -63,7 +63,7 @@ public class AddCompany extends AddRequest < Company >
   @Override
   @JacksonXmlProperty( localName = "company" )
   @JsonFilter( "filter-empty" )
-  public Company getRequestData()
+  public FieldCompany getRequestData()
   {
     this.logger.trace(this.getClass());
     return data;

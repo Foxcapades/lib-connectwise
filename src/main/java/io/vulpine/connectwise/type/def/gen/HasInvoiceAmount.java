@@ -15,6 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 /**
  * = Object with an Invoice Amount value.
  *
@@ -23,7 +26,9 @@ package io.vulpine.connectwise.type.def.gen;
  */
 public interface HasInvoiceAmount
 {
-  HasInvoiceAmount invoiceAmount( final Double d );
-
+  @JsonGetter( "InvoiceAmount" )
   Double invoiceAmount();
+
+  @JsonSetter( "InvoiceAmount" )
+  HasInvoiceAmount invoiceAmount( final Double d );
 }

@@ -16,10 +16,8 @@
 package io.vulpine.connectwise.type.company;
 
 import io.vulpine.connectwise.type.ConnectwiseCommon;
-import io.vulpine.connectwise.type.def.Company;
+import io.vulpine.connectwise.type.def.FieldCompany;
 import io.vulpine.connectwise.util.*;
-
-import java.util.List;
 
 /**
  * = ConnectWise Company Object
@@ -27,13 +25,13 @@ import java.util.List;
  * @since 0.0.1
  * @version 3.0.0
  */
-public class SimpleCompany extends ConnectwiseCommon implements Company
+public class SimpleCompany extends ConnectwiseCommon implements FieldCompany
 {
   private final Field < Address > defaultAddress = new SimpleObjectField<>("DefaultAddress");
 
-  private List < Address > addresses;
+  private ListField < Address > addresses = new ArrayListField<>();
 
-  private final Field < String >
+  private final StringField
     accountNumber     = new SimpleStringField("AccountNumber"),
     companyName       = new SimpleStringField("CompanyName"),
     companyIdentifier = new SimpleStringField("CompanyIdentifier"),
@@ -45,16 +43,14 @@ public class SimpleCompany extends ConnectwiseCommon implements Company
     type              = new SimpleStringField("Type"),
     webSite           = new SimpleStringField("WebSite");
 
-  private final Field < Integer > defaultBillingContactId = new SimpleIntegerField("DefaultBillingContactId");
+  private final NumberField < Integer > defaultBillingContactId = new SimpleIntegerField("DefaultBillingContactId");
 
-  private final Field < Integer > defaultContactId = new SimpleIntegerField("DefaultContactId");
+  private final NumberField < Integer > defaultContactId = new SimpleIntegerField("DefaultContactId");
 
   @Override
-  public Company setAddresses( List < Address > addresses )
+  public ListField < Address > addressesField()
   {
-    this.addresses = addresses;
-
-    return this;
+    return addresses;
   }
 
   @Override
@@ -64,79 +60,73 @@ public class SimpleCompany extends ConnectwiseCommon implements Company
   }
 
   @Override
-  public List < Address > getAddresses()
-  {
-    return addresses;
-  }
-
-  @Override
-  public Field < String > accountNumberField()
+  public StringField accountNumberField()
   {
     return accountNumber;
   }
 
   @Override
-  public Field < String > webSiteField()
+  public StringField webSiteField()
   {
     return webSite;
   }
 
   @Override
-  public Field < String > companyNameField()
+  public StringField companyNameField()
   {
     return companyName;
   }
 
   @Override
-  public Field < String > companyIdentifierField()
+  public StringField companyIdentifierField()
   {
     return companyIdentifier;
   }
 
   @Override
-  public Field < String > phoneNumberField()
+  public StringField phoneNumberField()
   {
     return phoneNumber;
   }
 
   @Override
-  public Field < String > faxNumberField()
+  public StringField faxNumberField()
   {
     return faxNumber;
   }
 
   @Override
-  public Field < String > territoryField()
+  public StringField territoryField()
   {
     return this.territory;
   }
 
   @Override
-  public Field < String > marketField()
+  public StringField marketField()
   {
     return this.market;
   }
 
   @Override
-  public Field < String > typeField()
+  public StringField typeField()
   {
     return type;
   }
 
   @Override
-  public Field < String > statusField()
+  public StringField statusField()
   {
     return status;
   }
 
   @Override
-  public Field < Integer > defaultContactIdField()
+  public NumberField < Integer > defaultContactIdField()
   {
     return defaultContactId;
   }
 
   @Override
-  public Field < Integer > defaultBillingContactIdField()
+  public NumberField < Integer > defaultBillingContactIdField()
   {
     return defaultBillingContactId;
   }
@@ -149,6 +139,7 @@ public class SimpleCompany extends ConnectwiseCommon implements Company
       + companyName.toXml()
       + companyIdentifier.toXml()
       + defaultAddress.toXml()
+      + addresses.toXml()
       + phoneNumber.toXml()
       + faxNumber.toXml()
       + webSite.toXml()

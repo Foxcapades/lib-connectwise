@@ -15,9 +15,14 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 public interface HasProjectNumber
 {
-  HasProjectNumber projectNumber( final Integer i );
-
+  @JsonGetter("ProjectNumber")
   Integer projectNumber();
+
+  @JsonSetter("ProjectNumber")
+  HasProjectNumber projectNumber( final Integer i );
 }

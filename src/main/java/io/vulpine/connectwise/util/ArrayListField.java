@@ -18,7 +18,7 @@ package io.vulpine.connectwise.util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayListField < T > extends SimpleObjectField< List < T > > implements ListField < T >
+public class ArrayListField < T > extends SimpleObjectField < List < T > > implements ListField < T >
 {
   private String wrapper = "string";
 

@@ -15,6 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 /**
  * = Object with an AgreementId
  *
@@ -23,7 +26,9 @@ package io.vulpine.connectwise.type.def.gen;
  */
 public interface HasAgreementId
 {
-  HasAgreementId agreementId( final Integer i );
-
+  @JsonGetter( "AgreementId" )
   Integer agreementId();
+
+  @JsonSetter( "AgreementId" )
+  HasAgreementId agreementId( final Integer i );
 }

@@ -15,9 +15,14 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 public interface HasTicketSummary
 {
-  HasTicketSummary ticketSummary( final String s );
-
+  @JsonGetter( "TicketSummary" )
   String ticketSummary();
+
+  @JsonSetter( "TicketSummary" )
+  HasTicketSummary ticketSummary( final String s );
 }

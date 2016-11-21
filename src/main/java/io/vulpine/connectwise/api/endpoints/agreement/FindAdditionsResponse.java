@@ -18,7 +18,7 @@ package io.vulpine.connectwise.api.endpoints.agreement;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.type.agreement.addition.FoundAddition;
+import io.vulpine.connectwise.type.agreement.addition.SimpleFoundAddition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,15 +27,15 @@ import java.util.List;
 public class FindAdditionsResponse
 {
   @JacksonXmlProperty( localName = "FindAgreementAdditionsResult" )
-  protected List < FoundAddition > result;
+  protected List < SimpleFoundAddition > result;
 
-  public List < FoundAddition > getResults()
+  public List < SimpleFoundAddition > getResults()
   {
     return result;
   }
 
-  public void setResult( final List < FoundAddition > l )
+  public void setResult( final List < SimpleFoundAddition > l )
   {
-    result = (null == l) ? new ArrayList < FoundAddition >() : l;
+    result = (null == l) ? new ArrayList <>() : l;
   }
 }

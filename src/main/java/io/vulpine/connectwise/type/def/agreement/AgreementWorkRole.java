@@ -19,11 +19,13 @@ import io.vulpine.connectwise.type.agreement.RateType;
 import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.type.def.gen.*;
 import io.vulpine.connectwise.util.Field;
+import io.vulpine.connectwise.util.NumberField;
 
 import java.util.Date;
 
 public interface AgreementWorkRole extends
   SubAgreement,
+  HasId,
   HasLocationId,
   HasEffectiveDate,
   HasEndDate,
@@ -32,19 +34,13 @@ public interface AgreementWorkRole extends
   HasWorkRoleId,
   XmlSerializable
 {
-  default Integer agreementId() { return agreementIdField().get(); }
-
-  default Date endDate()
-  {
-    return endDateField().get();
-  }
 
   Field< Date > endDateField();
+  @Override default Date endDate() { return endDateField().get(); }
 
-  default Integer id()
-  {
-    return idField().get();
-  }
+  NumberField<Integer> idField();
+  @Override default Integer id() { return idField().get(); }
+  @Override default AgreementWorkRole id( final Integer i ) { idField().set(i); return this; }
 
   default Date lastUpdate() { return lastUpdateField().get(); }
 
@@ -81,13 +77,6 @@ public interface AgreementWorkRole extends
   default AgreementWorkRole endDate( final Date d )
   {
     endDateField().set(d);
-
-    return this;
-  }
-
-  default AgreementWorkRole id( final Integer i )
-  {
-    idField().set(i);
 
     return this;
   }

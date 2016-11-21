@@ -15,8 +15,8 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 /**
  * = Object with an AgreementType
@@ -26,7 +26,9 @@ import io.vulpine.connectwise.util.Field;
  */
 public interface HasAgreementType
 {
-  HasAgreementType agreementType( final String s );
-
+  @JsonGetter( "AgreementType" )
   String agreementType();
+
+  @JsonSetter( "AgreementType" )
+  HasAgreementType agreementType( final String s );
 }

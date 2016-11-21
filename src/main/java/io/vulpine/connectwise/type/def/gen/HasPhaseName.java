@@ -15,9 +15,14 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 public interface HasPhaseName
 {
-  HasPhaseName phaseName( final String s );
-
+  @JsonGetter("PhaseName")
   String phaseName();
+
+  @JsonSetter("PhaseName")
+  HasPhaseName phaseName( final String s );
 }

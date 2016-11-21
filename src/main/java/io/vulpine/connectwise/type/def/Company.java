@@ -17,14 +17,11 @@ package io.vulpine.connectwise.type.def;
 
 import io.vulpine.connectwise.type.company.Address;
 import io.vulpine.connectwise.type.def.gen.*;
-import io.vulpine.connectwise.util.Field;
-import io.vulpine.connectwise.util.ListField;
 
-import java.util.Date;
 import java.util.List;
 
 public interface Company
-  extends
+extends
   XmlSerializable,
   HasAccountNumber,
   HasId,
@@ -33,176 +30,43 @@ public interface Company
   HasType,
   HasTerritory
 {
-  Field < String > companyIdentifierField();
+  List< Address > addresses();
 
-  Field < String > companyNameField();
+  Company addresses( List < Address > addresses );
 
-  Field < Address > defaultAddressField();
+  String companyIdentifier();
 
-  Field < Integer > defaultBillingContactIdField();
+  Company companyIdentifier( String s );
 
-  Field < Integer > defaultContactIdField();
+  String companyName();
 
-  Field < String > faxNumberField();
+  Company companyName( String s );
 
-  default Integer id()
-  {
-    return idField().get();
-  }
+  Address defaultAddress();
 
-  Field< Integer > idField();
+  Company defaultAddress( Address a );
 
-  Field < String > marketField();
+  Integer defaultBillingContactId();
 
-  Field < String > phoneNumberField();
+  Company defaultBillingContactId( Integer i );
 
-  Field < String > webSiteField();
+  Integer defaultContactId();
 
-  ListField < Address > addressesField();
+  Company defaultContactId( Integer i );
 
-  /*
+  String faxNumber();
 
-  Default Implementations
+  Company faxNumber( String s );
 
-   */
+  String market();
 
-  default List < Address > addresses()
-  {
-    return addressesField().get();
-  }
+  Company market( String s );
 
-  default Company addresses( List < Address > addresses )
-  {
-    addressesField().get().clear();
-    addressesField().get().addAll(addresses);
+  String phoneNumber();
 
-    return this;
-  }
+  Company phoneNumber( String s );
 
-  default String companyIdentifier()
-  {
-    return companyIdentifierField().get();
-  }
+  String webSite();
 
-  default Company companyIdentifier( final String s )
-  {
-    companyIdentifierField().set(s);
-    return this;
-  }
-
-  default String companyName()
-  {
-    return companyNameField().get();
-  }
-
-  default Company companyName( final String s )
-  {
-    companyNameField().set(s);
-    return this;
-  }
-
-  default Address defaultAddress()
-  {
-    return defaultAddressField().get();
-  }
-
-  default Company defaultAddress( final Address a )
-  {
-    defaultAddressField().set(a);
-    return this;
-  }
-
-  default Integer defaultBillingContactId()
-  {
-    return defaultBillingContactIdField().get();
-  }
-
-  default Company defaultBillingContactId( final Integer i )
-  {
-    defaultBillingContactIdField().set(i);
-    return this;
-  }
-
-  default Integer defaultContactId()
-  {
-    return defaultContactIdField().get();
-  }
-
-  default Company defaultContactId( final Integer i )
-  {
-    defaultContactIdField().set(i);
-    return this;
-  }
-
-  default String faxNumber()
-  {
-    return faxNumberField().get();
-  }
-
-  default Company faxNumber( final String s )
-  {
-    faxNumberField().set(s);
-    return this;
-  }
-
-  default String market()
-  {
-    return marketField().get();
-  }
-
-  default Company market( final String s )
-  {
-    marketField().set(s);
-    return this;
-  }
-
-  default String phoneNumber()
-  {
-    return phoneNumberField().get();
-  }
-
-  default Company phoneNumber( final String s )
-  {
-    phoneNumberField().set(s);
-    return this;
-  }
-
-  default String webSite()
-  {
-    return webSiteField().get();
-  }
-
-  default Company webSite( final String s )
-  {
-    webSiteField().set(s);
-    return this;
-  }
-
-  /*
-
-  Interface Overrides
-
-   */
-
-  @Override
-  Company status( final String s );
-
-  @Override
-  Company lastUpdated( final Date d );
-
-  Company id( final Integer i );
-
-  @Override
-  default Company accountNumber( String s )
-  {
-    accountNumberField().set(s);
-
-    return this;
-  }
-
-  @Override
-  Company territory( final String s );
-
-  @Override
-  Company type( final String s );
+  Company webSite( String s );
 }

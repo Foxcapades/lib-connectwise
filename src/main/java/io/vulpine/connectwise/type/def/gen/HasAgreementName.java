@@ -15,6 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 /**
  * = Object with an AgreementName
  *
@@ -23,7 +26,9 @@ package io.vulpine.connectwise.type.def.gen;
  */
 public interface HasAgreementName
 {
+  @JsonGetter( "AgreementName" )
   String agreementName();
 
+  @JsonSetter( "AgreementName" )
   HasAgreementName agreementName( final String s );
 }

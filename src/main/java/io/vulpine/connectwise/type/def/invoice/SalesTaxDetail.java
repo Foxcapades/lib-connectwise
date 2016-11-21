@@ -15,212 +15,86 @@
  */
 package io.vulpine.connectwise.type.def.invoice;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
-import io.vulpine.connectwise.util.Field;
-import io.vulpine.connectwise.util.NumberField;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
-public interface SalesTaxDetail extends XmlSerializable
+public interface SalesTaxDetail
 {
-  Field < Boolean > taxExpensesField();
+  @JsonGetter( "TaxExpenses" )
+  Boolean taxExpenses();
 
-  default Boolean taxExpenses()
-  {
-    return taxExpensesField().get();
-  }
+  @JsonSetter( "TaxExpenses" )
+  SalesTaxDetail taxExpenses( final Boolean b );
 
-  default SalesTaxDetail taxExpenses( final Boolean v )
-  {
-    taxExpensesField().set(v);
-    return this;
-  }
+  @JsonGetter( "TaxProducts" )
+  Boolean taxProducts();
 
-  Field < Boolean > taxProductsField();
+  @JsonSetter( "TaxProducts" )
+  SalesTaxDetail taxProducts( final Boolean b );
 
-  default Boolean taxProducts()
-  {
-    return taxProductsField().get();
-  }
+  @JsonGetter( "TaxServices" )
+  Boolean taxServices();
 
-  default SalesTaxDetail taxProducts( final Boolean v )
-  {
-    taxProductsField().set(v);
-    return this;
-  }
+  @JsonSetter( "TaxServices" )
+  SalesTaxDetail taxServices( final Boolean b );
 
-  Field < Boolean > taxServicesField();
+  @JsonGetter( "ApplySingleUnitLimit" )
+  Boolean applySingleUnitLimit();
 
-  default Boolean taxServices()
-  {
-    return taxServicesField().get();
-  }
+  @JsonSetter( "ApplySingleUnitLimit" )
+  SalesTaxDetail applySingleUnitLimit( final Boolean b );
 
-  default SalesTaxDetail taxServices( final Boolean v )
-  {
-    taxServicesField().set(v);
-    return this;
-  }
+  @JsonGetter( "TaxLevel" )
+  Integer taxLevel();
 
-  Field < Boolean > applySingelUnitLimitField();
+  @JsonSetter( "TaxLevel" )
+  SalesTaxDetail taxLevel( final Integer i );
 
-  default Boolean applySingelUnitLimit()
-  {
-    return applySingelUnitLimitField().get();
-  }
+  @JsonGetter( "Amount" )
+  Double amount();
 
-  default SalesTaxDetail applySingelUnitLimit( final Boolean v )
-  {
-    applySingelUnitLimitField().set(v);
-    return this;
-  }
+  @JsonSetter( "Amount" )
+  SalesTaxDetail amount( final Double d );
 
-  NumberField < Integer > taxLevelField();
+  @JsonGetter( "SingleUnitMax" )
+  Double singleUnitMax();
 
-  default Integer taxLevel()
-  {
-    return taxLevelField().get();
-  }
+  @JsonSetter( "SingleUnitMax" )
+  SalesTaxDetail singleUnitMax( final Double d );
 
-  default SalesTaxDetail taxLevel( final Integer v )
-  {
-    taxLevelField().set(v);
-    return this;
-  }
+  @JsonGetter( "SingleUnitMin" )
+  Double singleUnitMin();
 
-  NumberField < Double > amountField();
+  @JsonSetter( "SingleUnitMin" )
+  SalesTaxDetail singleUnitMin( final Double d );
 
-  default Double amount()
-  {
-    return amountField().get();
-  }
+  @JsonGetter( "TaxableMax" )
+  Double taxableMax();
 
-  default SalesTaxDetail amount( final Double v )
-  {
-    amountField().set(v);
-    return this;
-  }
+  @JsonSetter( "TaxableMax" )
+  SalesTaxDetail taxableMax( final Double d );
 
-  NumberField < Double > rateField();
+  @JsonGetter( "Caption" )
+  String caption();
 
-  default Double rate()
-  {
-    return rateField().get();
-  }
+  @JsonSetter( "Caption" )
+  SalesTaxDetail caption( final String s );
 
-  default SalesTaxDetail rate( final Double v )
-  {
-    rateField().set(v);
-    return this;
-  }
+  @JsonGetter( "RateType" )
+  String rateType();
 
-  NumberField < Double > singleUnitMaxField();
+  @JsonSetter( "RateType" )
+  SalesTaxDetail rateType( final String s );
 
-  default Double singleUnitMax()
-  {
-    return singleUnitMaxField().get();
-  }
+  @JsonGetter( "TaxAgencyXref" )
+  String taxAgencyXref();
 
-  default SalesTaxDetail singleUnitMax( final Double v )
-  {
-    singleUnitMaxField().set(v);
-    return this;
-  }
+  @JsonSetter( "TaxAgencyXref" )
+  SalesTaxDetail taxAgencyXref( final String s );
 
-  NumberField < Double > singleUnitMinField();
+  @JsonGetter( "TaxCodeXref" )
+  String taxCodeXref();
 
-  default Double singleUnitMin()
-  {
-    return singleUnitMinField().get();
-  }
-
-  default SalesTaxDetail singleUnitMin( final Double v )
-  {
-    singleUnitMinField().set(v);
-    return this;
-  }
-
-  NumberField < Double > taxableMaxField();
-
-  default Double taxableMax()
-  {
-    return taxableMaxField().get();
-  }
-
-  default SalesTaxDetail taxableMax( final Double v )
-  {
-    taxableMaxField().set(v);
-    return this;
-  }
-
-  Field < String > captionField();
-
-  default String caption()
-  {
-    return captionField().get();
-  }
-
-  default SalesTaxDetail caption( final String v )
-  {
-    captionField().set(v);
-    return this;
-  }
-
-  Field < String > rateTypeField();
-
-  default String rateType()
-  {
-    return rateTypeField().get();
-  }
-
-  default SalesTaxDetail rateType( final String v )
-  {
-    rateTypeField().set(v);
-    return this;
-  }
-
-  Field < String > taxAgencyXrefField();
-
-  default String taxAgencyXref()
-  {
-    return taxAgencyXrefField().get();
-  }
-
-  default SalesTaxDetail taxAgencyXref( final String v )
-  {
-    taxAgencyXrefField().set(v);
-    return this;
-  }
-
-  Field < String > taxCodeXrefField();
-
-  default String taxCodeXref()
-  {
-    return taxCodeXrefField().get();
-  }
-
-  default SalesTaxDetail taxCodeXref( final String v )
-  {
-    taxCodeXrefField().set(v);
-    return this;
-  }
-
-  @Override
-  default String toXml( String rootName )
-  {
-    return "<" + rootName + ">"
-      + taxExpensesField().toXml()
-      + taxProductsField().toXml()
-      + taxServicesField().toXml()
-      + applySingelUnitLimitField().toXml()
-      + taxLevelField().toXml()
-      + amountField().toXml()
-      + rateField().toXml()
-      + singleUnitMaxField().toXml()
-      + singleUnitMinField().toXml()
-      + taxableMaxField().toXml()
-      + captionField().toXml()
-      + rateTypeField().toXml()
-      + taxAgencyXrefField().toXml()
-      + taxCodeXrefField().toXml()
-      + "</" + rootName + ">";
-  }
+  @JsonSetter( "TaxCodeXref" )
+  SalesTaxDetail taxCodeXref( final String s );
 }

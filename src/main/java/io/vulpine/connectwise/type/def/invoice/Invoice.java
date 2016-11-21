@@ -15,807 +15,271 @@
  */
 package io.vulpine.connectwise.type.def.invoice;
 
-import io.vulpine.connectwise.type.company.Address;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.contact.Contact;
+import io.vulpine.connectwise.type.def.Address;
 import io.vulpine.connectwise.type.def.Company;
-import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.type.def.gen.*;
-import io.vulpine.connectwise.util.DateField;
-import io.vulpine.connectwise.util.Field;
-import io.vulpine.connectwise.util.ListField;
-import io.vulpine.connectwise.util.NumberField;
 
 import java.util.Date;
 import java.util.List;
 
 public interface Invoice
   extends
+  HasId,
+  HasTaxable,
+  HasDueDate,
+  HasInvoiceAmount,
   HasAgreementName,
   HasAgreementType,
+  HasInvoiceType,
+  HasGlPosted,
+  HasBillingDelivery,
   HasBusinessUnit,
-  HasId,
-  HasLastUpdated,
+  HasTopComment,
+  HasBottomComment,
+  HasInvoiceNumber,
   HasLocation,
-  HasPhaseName,
   HasProjectName,
   HasProjectNumber,
+  HasPhaseName,
+  HasRoutedMemberIdentifier,
+  HasRoutedMemberName,
   HasStatus,
-  HasTaxable,
   HasTerritory,
   HasTicketNumber,
   HasTicketSummary,
-  HasUpdatedBy,
-  XmlSerializable
+  HasPaidDate,
+  HasPaidAmount,
+  HasLastUpdated,
+  HasUpdatedBy
 {
-  HasAgreementName agreementName( String s );
-
-  default String agreementName()
-  {
-    return agreementNameField().get();
-  }
-
-  Field< String > agreementNameField();
-
-  Field < Boolean > clientLocationField();
-
-  default Boolean clientLocation()
-  {
-    return clientLocationField().get();
-  }
-
-  default Invoice clientLocation( final Boolean v )
-  {
-    clientLocationField().set(v);
-    return this;
-  }
-
-  Field < Boolean > emailField();
-
-  default Boolean email()
-  {
-    return emailField().get();
-  }
-
-  default Invoice email( final Boolean v )
-  {
-    emailField().set(v);
-    return this;
-  }
-
-  Field < Boolean > closedField();
-
-  default Boolean closed()
-  {
-    return closedField().get();
-  }
-
-  default Invoice closed( final Boolean v )
-  {
-    closedField().set(v);
-    return this;
-  }
-
-  default Integer id()
-  {
-    return idField().get();
-  }
-
-  HasId id( final Integer i );
-
-  Field< Integer > idField();
-
-  Field < Boolean > sentField();
-
-  default Boolean sent()
-  {
-    return sentField().get();
-  }
-
-  default Invoice sent( final Boolean v )
-  {
-    sentField().set(v);
-    return this;
-  }
-
-  Field < Boolean > glPostedField();
-
-  default Boolean glPosted()
-  {
-    return glPostedField().get();
-  }
-
-  default Invoice glPosted( final Boolean v )
-  {
-    glPostedField().set(v);
-    return this;
-  }
-
-  DateField dueDateField();
-
-  default Date dueDate()
-  {
-    return dueDateField().get();
-  }
-
-  default Invoice dueDate( final Date v )
-  {
-    dueDateField().set(v);
-    return this;
-  }
-
-  DateField invoiceDateField();
-
-  default Date invoiceDate()
-  {
-    return invoiceDateField().get();
-  }
-
-  default Invoice invoiceDate( final Date v )
-  {
-    invoiceDateField().set(v);
-    return this;
-  }
-
-  Field < String > invoiceTypeField();
-
-  default String invoiceType()
-  {
-    return invoiceTypeField().get();
-  }
-
-  default Invoice invoiceType( final String v )
-  {
-    invoiceTypeField().set(v);
-    return this;
-  }
-
-  NumberField < Double > downpaymentAmountField();
-
-  default Double downpaymentAmount()
-  {
-    return downpaymentAmountField().get();
-  }
-
-  default Invoice downpaymentAmount( final Double v )
-  {
-    downpaymentAmountField().set(v);
-    return this;
-  }
-
-  NumberField < Double > invoiceAmountField();
-
-  default Double invoiceAmount()
-  {
-    return invoiceAmountField().get();
-  }
-
-  default Invoice invoiceAmount( final Double v )
-  {
-    invoiceAmountField().set(v);
-    return this;
-  }
-
-  NumberField < Double > projectBillingAmountField();
-
-  default Double projectBillingAmount()
-  {
-    return projectBillingAmountField().get();
-  }
-
-  default Invoice projectBillingAmount( final Double v )
-  {
-    projectBillingAmountField().set(v);
-    return this;
-  }
-
-  NumberField < Double > projectBillingRateField();
-
-  default Double projectBillingRate()
-  {
-    return projectBillingRateField().get();
-  }
-
-  default Invoice projectBillingRate( final Double v )
-  {
-    projectBillingRateField().set(v);
-    return this;
-  }
-
-  NumberField < Double > salesTaxAmountField();
-
-  default Double salesTaxAmount()
-  {
-    return salesTaxAmountField().get();
-  }
-
-  default Invoice salesTaxAmount( final Double v )
-  {
-    salesTaxAmountField().set(v);
-    return this;
-  }
-
-  HasTaxable taxable( final Boolean b );
-
-  default Boolean taxable()
-  {
-    return taxableField().get();
-  }
-
-  NumberField < Double > taxableAmountField();
-
-  default Double taxableAmount()
-  {
-    return taxableAmountField().get();
-  }
-
-  default Invoice taxableAmount( final Double v )
-  {
-    taxableAmountField().set(v);
-    return this;
-  }
-
-  NumberField < Double > taxRateField();
-
-  default Double taxRate()
-  {
-    return taxRateField().get();
-  }
-
-  default Invoice taxRate( final Double v )
-  {
-    taxRateField().set(v);
-    return this;
-  }
-
-  Field < Boolean > taxableField();
-
-  NumberField < Double > ticketBillingAmountField();
-
-  default Double ticketBillingAmount()
-  {
-    return ticketBillingAmountField().get();
-  }
-
-  default Invoice ticketBillingAmount( final Double v )
-  {
-    ticketBillingAmountField().set(v);
-    return this;
-  }
-
-  DateField dueDaysField();
-
-  default Date dueDays()
-  {
-    return dueDaysField().get();
-  }
-
-  default Invoice dueDays( final Date v )
-  {
-    dueDaysField().set(v);
-    return this;
-  }
-
-  Field < String > billingDeliveryField();
-
-  default String billingDelivery()
-  {
-    return billingDeliveryField().get();
-  }
-
-  default Invoice billingDelivery( final String v )
-  {
-    billingDeliveryField().set(v);
-    return this;
-  }
-
-  Field < String > billingMethodField();
-
-  default String billingMethod()
-  {
-    return billingMethodField().get();
-  }
-
-  default Invoice billingMethod( final String v )
-  {
-    billingMethodField().set(v);
-    return this;
-  }
-
-  Field < String > billingTermsField();
-
-  default String billingTerms()
-  {
-    return billingTermsField().get();
-  }
-
-  default Invoice billingTerms( final String v )
-  {
-    billingTermsField().set(v);
-    return this;
-  }
-
-  Field < String > billingTermsXrefField();
-
-  default String billingTermsXref()
-  {
-    return billingTermsXrefField().get();
-  }
-
-  default Invoice billingTermsXref( final String v )
-  {
-    billingTermsXrefField().set(v);
-    return this;
-  }
-
-  Field < String > currencyNameField();
-
-  default String currencyName()
-  {
-    return currencyNameField().get();
-  }
-
-  default Invoice currencyName( final String v )
-  {
-    currencyNameField().set(v);
-    return this;
-  }
-
-  Field < String > currencySymbolField();
-
-  default String currencySymbol()
-  {
-    return currencySymbolField().get();
-  }
-
-  default Invoice currencySymbol( final String v )
-  {
-    currencySymbolField().set(v);
-    return this;
-  }
-
-  Field < String > glBatchIdField();
-
-  default String glBatchId()
-  {
-    return glBatchIdField().get();
-  }
-
-  default Invoice glBatchId( final String v )
-  {
-    glBatchIdField().set(v);
-    return this;
-  }
-
-  Field < String > topCommentField();
-
-  default String topComment()
-  {
-    return topCommentField().get();
-  }
-
-  default Invoice topComment( final String v )
-  {
-    topCommentField().set(v);
-    return this;
-  }
-
-  Field < String > bottomCommentField();
-
-  default String bottomComment()
-  {
-    return bottomCommentField().get();
-  }
-
-  default Invoice bottomComment( final String v )
-  {
-    bottomCommentField().set(v);
-    return this;
-  }
-
-  Field < String > invoiceNumberField();
-
-  default String invoiceNumber()
-  {
-    return invoiceNumberField().get();
-  }
-
-  default Invoice invoiceNumber( final String v )
-  {
-    invoiceNumberField().set(v);
-    return this;
-  }
-
-  Field < String > poNumberField();
-
-  default String poNumber()
-  {
-    return poNumberField().get();
-  }
-
-  default Invoice poNumber( final String v )
-  {
-    poNumberField().set(v);
-    return this;
-  }
-
-  Field < String > routedMemberIdentifierField();
-
-  default String routedMemberIdentifier()
-  {
-    return routedMemberIdentifierField().get();
-  }
-
-  default Invoice routedMemberIdentifier( final String v )
-  {
-    routedMemberIdentifierField().set(v);
-    return this;
-  }
-
-  Field < String > routedMemberNameField();
-
-  default String routedMemberName()
-  {
-    return routedMemberNameField().get();
-  }
-
-  default Invoice routedMemberName( final String v )
-  {
-    routedMemberNameField().set(v);
-    return this;
-  }
-
-  Field < String > remitNameField();
-
-  default String remitName()
-  {
-    return remitNameField().get();
-  }
-
-  default Invoice remitName( final String v )
-  {
-    remitNameField().set(v);
-    return this;
-  }
-
-  Field < String > remitPhoneField();
-
-  default String remitPhone()
-  {
-    return remitPhoneField().get();
-  }
-
-  default Invoice remitPhone( final String v )
-  {
-    remitPhoneField().set(v);
-    return this;
-  }
-
-  Field < String > salesRepIdentifierField();
-
-  default String salesRepIdentifier()
-  {
-    return salesRepIdentifierField().get();
-  }
-
-  default Invoice salesRepIdentifier( final String v )
-  {
-    salesRepIdentifierField().set(v);
-    return this;
-  }
-
-  Field < String > taxCodeDescriptionField();
-
-  default String taxCodeDescription()
-  {
-    return taxCodeDescriptionField().get();
-  }
-
-  default Invoice taxCodeDescription( final String v )
-  {
-    taxCodeDescriptionField().set(v);
-    return this;
-  }
-
-  Field < String > taxCodeField();
-
-  default String taxCode()
-  {
-    return taxCodeField().get();
-  }
-
-  default Invoice taxCode( final String v )
-  {
-    taxCodeField().set(v);
-    return this;
-  }
-
-  Field < String > ticketResolutionField();
-
-  default String ticketResolution()
-  {
-    return ticketResolutionField().get();
-  }
-
-  default Invoice ticketResolution( final String v )
-  {
-    ticketResolutionField().set(v);
-    return this;
-  }
-
-  Field < Company > companyField();
-
-  default Company company()
-  {
-    return companyField().get();
-  }
-
-  default Invoice company( final Company v )
-  {
-    companyField().set(v);
-    return this;
-  }
-
-  Field < Company > billToCompanyField();
-
-  default Company billToCompany()
-  {
-    return billToCompanyField().get();
-  }
-
-  default Invoice billToCompany( final Company v )
-  {
-    billToCompanyField().set(v);
-    return this;
-  }
-
-  Field < Contact > contactField();
-
-  default Contact contact()
-  {
-    return contactField().get();
-  }
-
-  default Invoice contact( final Contact v )
-  {
-    contactField().set(v);
-    return this;
-  }
-
-  Field < Address > billingAddressField();
-
-  default Address billingAddress()
-  {
-    return billingAddressField().get();
-  }
-
-  default Invoice billingAddress( final Address v )
-  {
-    billingAddressField().set(v);
-    return this;
-  }
-
-  Field < Address > remitAddressField();
-
-  default Address remitAddress()
-  {
-    return remitAddressField().get();
-  }
-
-  default Invoice remitAddress( final Address v )
-  {
-    remitAddressField().set(v);
-    return this;
-  }
-
-  ListField < ExpenseDetail > expenseDetailsField();
-
-  default List < ExpenseDetail > expenseDetails()
-  {
-    return expenseDetailsField().get();
-  }
-
-  default Invoice expenseDetails( final List < ExpenseDetail > v )
-  {
-    expenseDetailsField().set(v);
-    return this;
-  }
-
-  ListField < ProductDetail > productDetailsField();
-
-  default List < ProductDetail > productDetails()
-  {
-    return productDetailsField().get();
-  }
-
-  default Invoice productDetails( final List < ProductDetail > v )
-  {
-    productDetailsField().set(v);
-    return this;
-  }
-
-  ListField < TimeDetail > timeDetailsField();
-
-  default List < TimeDetail > timeDetails()
-  {
-    return timeDetailsField().get();
-  }
-
-  default Invoice timeDetails( final List < TimeDetail > v )
-  {
-    timeDetailsField().set(v);
-    return this;
-  }
-
-  ListField < SalesTaxDetail > salesTaxDetailsField();
-
-  default List < SalesTaxDetail > salesTaxDetails()
-  {
-    return salesTaxDetailsField().get();
-  }
-
-  default Invoice salesTaxDetails( final List < SalesTaxDetail > v )
-  {
-    salesTaxDetailsField().set(v);
-    return this;
-  }
-
-  ListField < AgreementDetail > agreementDetailsField();
-
-  default List < AgreementDetail > agreementDetails()
-  {
-    return agreementDetailsField().get();
-  }
-
-  default Invoice agreementDetails( final List < AgreementDetail > v )
-  {
-    agreementDetailsField().set(v);
-    return this;
-  }
-
-  DateField paidDateField();
-
-  default Date paidDate()
-  {
-    return paidDateField().get();
-  }
-
-  default Invoice paidDate( final Date v )
-  {
-    paidDateField().set(v);
-    return this;
-  }
-
-  NumberField < Double > paidAmountField();
-
-  default Double paidAmount()
-  {
-    return paidAmountField().get();
-  }
-
-  default Invoice paidAmount( final Double v )
-  {
-    paidAmountField().set(v);
-    return this;
-  }
-
-  Field < Boolean > processingFlagField();
-
-  default Boolean processingFlag()
-  {
-    return processingFlagField().get();
-  }
-
-  default Invoice processingFlag( final Boolean v )
-  {
-    processingFlagField().set(v);
-    return this;
-  }
-
-  DateField processingDateField();
-
-  default Date processingDate()
-  {
-    return processingDateField().get();
-  }
-
-  default Invoice processingDate( final Date v )
-  {
-    processingDateField().set(v);
-    return this;
-  }
-
-  Field < String > salesRepFullNameField();
-
-  default String salesRepFullName()
-  {
-    return salesRepFullNameField().get();
-  }
-
-  default Invoice salesRepFullName( final String v )
-  {
-    salesRepFullNameField().set(v);
-    return this;
-  }
-
-  @Override
-  default String toXml( String rootName )
-  {
-    return "<" + rootName + ">"
-      + idField().toXml()
-      + clientLocationField().toXml()
-      + taxableField().toXml()
-      + emailField().toXml()
-      + closedField().toXml()
-      + sentField().toXml()
-      + glPostedField().toXml()
-      + dueDateField().toXml()
-      + invoiceDateField().toXml()
-      + invoiceTypeField().toXml()
-      + downpaymentAmountField().toXml()
-      + invoiceAmountField().toXml()
-      + projectBillingAmountField().toXml()
-      + projectBillingRateField().toXml()
-      + salesTaxAmountField().toXml()
-      + taxableAmountField().toXml()
-      + taxRateField().toXml()
-      + ticketBillingAmountField().toXml()
-      + dueDaysField().toXml()
-      + agreementNameField().toXml()
-      + agreementTypeField().toXml()
-      + billingDeliveryField().toXml()
-      + billingMethodField().toXml()
-      + billingTermsField().toXml()
-      + billingTermsXrefField().toXml()
-      + businessUnitField().toXml()
-      + currencyNameField().toXml()
-      + currencySymbolField().toXml()
-      + glBatchIdField().toXml()
-      + topCommentField().toXml()
-      + bottomCommentField().toXml()
-      + invoiceNumberField().toXml()
-      + locationField().toXml()
-      + poNumberField().toXml()
-      + projectNameField().toXml()
-      + projectNumberField().toXml()
-      + phaseNameField().toXml()
-      + routedMemberIdentifierField().toXml()
-      + routedMemberNameField().toXml()
-      + remitNameField().toXml()
-      + remitPhoneField().toXml()
-      + salesRepIdentifierField().toXml()
-      + statusField().toXml()
-      + taxCodeDescriptionField().toXml()
-      + taxCodeField().toXml()
-      + territoryField().toXml()
-      + ticketNumberField().toXml()
-      + ticketResolutionField().toXml()
-      + ticketSummaryField().toXml()
-      + companyField().toXml()
-      + billToCompanyField().toXml()
-      + contactField().toXml()
-      + billingAddressField().toXml()
-      + remitAddressField().toXml()
-      + expenseDetailsField().toXml()
-      + productDetailsField().toXml()
-      + timeDetailsField().toXml()
-      + salesTaxDetailsField().toXml()
-      + agreementDetailsField().toXml()
-      + paidDateField().toXml()
-      + paidAmountField().toXml()
-      + lastUpdatedField().toXml()
-      + updatedByField().toXml()
-      + processingFlagField().toXml()
-      + processingDateField().toXml()
-      + salesRepFullNameField().toXml()
-      + "</" + rootName + ">";
-  }
-
-  HasUpdatedBy updatedBy( final String s );
-
-  default String updatedBy()
-  {
-    return updatedByField().get();
-  }
-
-  Field< String > updatedByField();
+  @JsonGetter( "IsClientLocation" )
+  Boolean isClientLocation();
+
+  @JsonSetter( "IsClientLocation" )
+  Invoice isClientLocation( final Boolean b );
+
+  @JsonGetter( "Email" )
+  Boolean email();
+
+  @JsonSetter( "Email" )
+  Invoice email( final Boolean b );
+
+  @JsonGetter( "Closed" )
+  Boolean closed();
+
+  @JsonSetter( "Closed" )
+  Invoice closed( final Boolean b );
+
+  @JsonGetter( "Sent" )
+  Boolean sent();
+
+  @JsonSetter( "Sent" )
+  Invoice sent( final Boolean b );
+
+  @JsonGetter( "DownpaymentAmount" )
+  Double downpaymentAmount();
+
+  @JsonSetter( "DownpaymentAmount" )
+  Invoice downpaymentAmount( final Double d );
+
+  @JsonGetter( "ProjectBillingAmount" )
+  Double projectBillingAmount();
+
+  @JsonSetter( "ProjectBillingAmount" )
+  Invoice projectBillingAmount( final Double d );
+
+  @JsonGetter( "ProjectBillingRate" )
+  Double projectBillingRate();
+
+  @JsonSetter( "ProjectBillingRate" )
+  Invoice projectBillingRate( final Double d );
+
+  @JsonGetter( "SalesTaxAmount" )
+  Double salesTaxAmount();
+
+  @JsonSetter( "SalesTaxAmount" )
+  Invoice salesTaxAmount( final Double d );
+
+  @JsonGetter( "TaxableAmount" )
+  Double taxableAmount();
+
+  @JsonSetter( "TaxableAmount" )
+  Invoice taxableAmount( final Double d );
+
+  @JsonGetter( "TaxRate" )
+  Double taxRate();
+
+  @JsonSetter( "TaxRate" )
+  Invoice taxRate( final Double d );
+
+  @JsonGetter( "TicketBillingAmount" )
+  Double ticketBillingAmount();
+
+  @JsonSetter( "TicketBillingAmount" )
+  Invoice ticketBillingAmount( final Double d );
+
+  @JsonGetter( "DueDays" )
+  Integer dueDays();
+
+  @JsonSetter( "DueDays" )
+  Invoice dueDays( final Integer i );
+
+  @JsonGetter( "BillingMethod" )
+  String billingMethod();
+
+  @JsonSetter( "BillingMethod" )
+  Invoice billingMethod( final String s );
+
+  @JsonGetter( "BillingTerms" )
+  String billingTerms();
+
+  @JsonSetter( "BillingTerms" )
+  Invoice billingTerms( final String s );
+
+  @JsonGetter( "BillingTermsXref" )
+  String billingTermsXref();
+
+  @JsonSetter( "BillingTermsXref" )
+  Invoice billingTermsXref( final String s );
+
+  @JsonGetter( "CurrencyName" )
+  String currencyName();
+
+  @JsonSetter( "CurrencyName" )
+  Invoice currencyName( final String s );
+
+  @JsonGetter( "CurrencySymbol" )
+  String currencySymbol();
+
+  @JsonSetter( "CurrencySymbol" )
+  Invoice currencySymbol( final String s );
+
+  @JsonGetter( "GlBatchId" )
+  String glBatchId();
+
+  @JsonSetter( "GlBatchId" )
+  Invoice glBatchId( final String s );
+
+  @JsonGetter( "PoNumber" )
+  String poNumber();
+
+  @JsonSetter( "PoNumber" )
+  Invoice poNumber( final String s );
+
+  @JsonGetter( "RemitName" )
+  String remitName();
+
+  @JsonSetter( "RemitName" )
+  Invoice remitName( final String s );
+
+  @JsonGetter( "RemitPhone" )
+  String remitPhone();
+
+  @JsonSetter( "RemitPhone" )
+  Invoice remitPhone( final String s );
+
+  @JsonGetter( "SalesRepIdentifier" )
+  String salesRepIdentifier();
+
+  @JsonSetter( "SalesRepIdentifier" )
+  Invoice salesRepIdentifier( final String s );
+
+  @JsonGetter( "TaxCodeDescription" )
+  String taxCodeDescription();
+
+  @JsonSetter( "TaxCodeDescription" )
+  Invoice taxCodeDescription( final String s );
+
+  @JsonGetter( "TaxCode" )
+  String taxCode();
+
+  @JsonSetter( "TaxCode" )
+  Invoice taxCode( final String s );
+
+  @JsonGetter( "TicketResolution" )
+  String ticketResolution();
+
+  @JsonSetter( "TicketResolution" )
+  Invoice ticketResolution( final String s );
+
+  @JsonGetter( "Company" )
+  Company company();
+
+  @JsonSetter( "Company" )
+  Invoice company( final Company c );
+
+  @JsonGetter( "BillToCompany" )
+  Company billToCompany();
+
+  @JsonSetter( "BillToCompany" )
+  Invoice billToCompany( final Company c );
+
+  @JsonGetter( "Contact" )
+  Contact contact();
+
+  @JsonSetter( "Contact" )
+  Invoice contact( final Contact c );
+
+  @JsonGetter( "BillingAddress" )
+  Address billingAddress();
+
+  @JsonSetter( "BillingAddress" )
+  Invoice billingAddress( final Address a );
+
+  @JsonGetter( "RemitAddress" )
+  Address remitAddress();
+
+  @JsonSetter( "RemitAddress" )
+  Invoice remitAddress( final Address a );
+
+  @JsonGetter( "ExpenseDetails" )
+  List < ExpenseDetail > expenseDetails();
+
+  @JsonSetter( "ExpenseDetails" )
+  Invoice expenseDetails( final List < ExpenseDetail > l );
+
+  @JsonGetter( "ProductDetails" )
+  List < ProductDetail > productDetails();
+
+  @JsonSetter( "ProductDetails" )
+  Invoice productDetails( final List < ProductDetail > l );
+
+  @JsonGetter( "TimeDetails" )
+  List < TimeDetail > timeDetails();
+
+  @JsonSetter( "TimeDetails" )
+  Invoice timeDetails( final List < TimeDetail > l );
+
+  @JsonGetter( "SalesTaxDetails" )
+  List < SalesTaxDetail > salesTaxDetails();
+
+  @JsonSetter( "SalesTaxDetails" )
+  Invoice salesTaxDetails( final List < SalesTaxDetail > l );
+
+  @JsonGetter( "AgreementDetails" )
+  List < AgreementDetail > agreementDetails();
+
+  @JsonSetter( "AgreementDetails" )
+  Invoice agreementDetails( final List < AgreementDetail > l );
+
+  @JsonGetter( "ProcessingFlag" )
+  Boolean processingFlag();
+
+  @JsonSetter( "ProcessingFlag" )
+  Invoice processingFlag( final Boolean b );
+
+  @JsonGetter( "ProcessingDate" )
+  Date processingDate();
+
+  @JsonSetter( "ProcessingDate" )
+  Invoice processingDate( final Date d );
+
+  @JsonGetter( "SalesRepFullName" )
+  String salesRepFullName();
+
+  @JsonSetter( "SalesRepFullName" )
+  Invoice salesRepFullName( final String s );
 }

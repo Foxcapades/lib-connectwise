@@ -15,8 +15,8 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-import io.vulpine.connectwise.type.def.agreement.Agreement;
-import io.vulpine.connectwise.util.Field;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 /**
  * = Object with an Id value.
@@ -26,7 +26,9 @@ import io.vulpine.connectwise.util.Field;
  */
 public interface HasId
 {
+  @JsonGetter( "Id" )
   Integer id();
 
-  HasId id( Integer i );
+  @JsonSetter( "Id" )
+  HasId id( final Integer i );
 }

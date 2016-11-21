@@ -15,6 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 import java.util.Date;
 
 /**
@@ -25,7 +28,9 @@ import java.util.Date;
  */
 public interface HasLastUpdated
 {
+  @JsonGetter( "LastUpdated" )
   Date lastUpdated();
 
-  HasLastUpdated lastUpdated( Date d );
+  @JsonSetter( "LastUpdated" )
+  HasLastUpdated lastUpdated( final Date d );
 }

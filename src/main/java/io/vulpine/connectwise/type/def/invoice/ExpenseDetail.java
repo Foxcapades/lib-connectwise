@@ -15,277 +15,53 @@
  */
 package io.vulpine.connectwise.type.def.invoice;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.type.def.gen.*;
-import io.vulpine.connectwise.util.Field;
-
-import java.util.Date;
 
 public interface ExpenseDetail
-  extends
+extends
+  HasBillable,
+  HasDate,
+  HasAgreementAmount,
   HasAgreementName,
   HasAgreementType,
-  HasAgreementAmount,
-  HasBillable,
   HasBusinessUnit,
   HasChargeTo,
-  HasDate,
-  HasInvoiceAmount,
   HasLocation,
-  HasPhaseName,
+  HasNotes,
   HasProjectName,
   HasProjectNumber,
+  HasPhaseName,
   HasTicketNumber,
   HasTicketSummary,
-  XmlSerializable
+  HasInvoicedAmount,
+  HasMemberName,
+  HasMemberIdentifier
 {
+  Boolean reimbursable();
 
-  HasAgreementName agreementName( String s );
+  ExpenseDetail reimbursable( final Boolean b );
 
-  default String agreementName()
-  {
-    return agreementNameField().get();
-  }
+  Double actualAmount();
 
-  Field< String > agreementNameField();
+  ExpenseDetail actualAmount( final Double d );
 
-  default ExpenseDetail reimbursable( final Boolean v )
-  {
-    reimbursableField().set(v);
+  Double odometerStart();
 
-    return this;
-  }
+  ExpenseDetail odometerStart( final Double d );
 
-  Field < Boolean > reimbursableField();
+  Double odometerEnd();
 
-  default Boolean reimbursable()
-  {
-    return reimbursableField().get();
-  }
+  ExpenseDetail odometerEnd( final Double d );
 
-  default ExpenseDetail actualAmount( final Double v )
-  {
-    actualAmountField().set(v);
+  String expenseClass();
 
-    return this;
-  }
+  ExpenseDetail expenseClass( final String s );
 
-  Field < Double > actualAmountField();
+  String expenseType();
 
-  default Double actualAmount()
-  {
-    return actualAmountField().get();
-  }
+  ExpenseDetail expenseType( final String s );
 
-  default ExpenseDetail odometerStart( final Double v )
-  {
-    odometerStartField().set(v);
+  String paymentMethod();
 
-    return this;
-  }
-
-  Field < Double > odometerStartField();
-
-  default Double odometerStart()
-  {
-    return odometerStartField().get();
-  }
-
-  default ExpenseDetail odometerEnd( final Double v )
-  {
-    odometerEndField().set(v);
-
-    return this;
-  }
-
-  Field < Double > odometerEndField();
-
-  default Double odometerEnd()
-  {
-    return odometerEndField().get();
-  }
-
-  default ExpenseDetail expenseClass( final String v )
-  {
-    expenseClassField().set(v);
-
-    return this;
-  }
-
-  Field < String > expenseClassField();
-
-  default String expenseClass()
-  {
-    return expenseClassField().get();
-  }
-
-  default ExpenseDetail expenseType( final String v )
-  {
-    expenseTypeField().set(v);
-
-    return this;
-  }
-
-  Field < String > expenseTypeField();
-
-  default String expenseType()
-  {
-    return expenseTypeField().get();
-  }
-
-  default ExpenseDetail memberIdentifier( final String v )
-  {
-    memberIdentifierField().set(v);
-
-    return this;
-  }
-
-  Field < String > memberIdentifierField();
-
-  default String memberIdentifier()
-  {
-    return memberIdentifierField().get();
-  }
-
-  default ExpenseDetail memberName( final String v )
-  {
-    memberNameField().set(v);
-
-    return this;
-  }
-
-  Field < String > memberNameField();
-
-  default String memberName()
-  {
-    return memberNameField().get();
-  }
-
-  default ExpenseDetail note( final String v )
-  {
-    noteField().set(v);
-
-    return this;
-  }
-
-  Field < String > noteField();
-
-  default String note()
-  {
-    return noteField().get();
-  }
-
-  default ExpenseDetail paymentMethod( final String v )
-  {
-    paymentMethodField().set(v);
-
-    return this;
-  }
-
-  Field < String > paymentMethodField();
-
-  default String paymentMethod()
-  {
-    return paymentMethodField().get();
-  }
-
-  /*
-  |*| INHERITED DEFAULTS
-   */
-
-  @Override
-  default ExpenseDetail agreementAmount( final Double d )
-  {
-    agreementAmountField().set(d);
-
-    return this;
-  }
-
-  @Override
-  default ExpenseDetail billable( final Boolean v )
-  {
-    billableField().set(v);
-
-    return this;
-  }
-
-  @Override
-  default ExpenseDetail businessUnit( final String s )
-  {
-    businessUnitField().set(s);
-
-    return this;
-  }
-
-  @Override
-  default ExpenseDetail chargeTo( final String s )
-  {
-    chargeToField().set(s);
-
-    return this;
-  }
-
-  @Override
-  default ExpenseDetail date( final Date v )
-  {
-    dateField().set(v);
-
-    return this;
-  }
-
-  @Override
-  default ExpenseDetail invoiceAmount( final Double v )
-  {
-    invoiceAmountField().set(v);
-
-    return this;
-  }
-
-  @Override
-  default ExpenseDetail location( final String s )
-  {
-    locationField().set(s);
-
-    return this;
-  }
-
-  @Override
-  default ExpenseDetail phaseName( final String s )
-  {
-    phaseNameField().set(s);
-
-    return this;
-  }
-
-  @Override
-  default ExpenseDetail projectName( final String s )
-  {
-    projectNameField().set(s);
-
-    return this;
-  }
-
-  @Override
-  default ExpenseDetail projectNumber( final Integer i )
-  {
-    projectNumberField().set(i);
-
-    return this;
-  }
-
-  @Override
-  default ExpenseDetail ticketNumber( final Integer i )
-  {
-    ticketNumberField().set(i);
-
-    return this;
-  }
-
-  @Override
-  default ExpenseDetail ticketSummary( final String s )
-  {
-    ticketSummaryField().set(s);
-
-    return this;
-  }
+  ExpenseDetail paymentMethod( final String s );
 }

@@ -13,22 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package io.vulpine.connectwise.api.endpoints.agreement;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-
-import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.type.agreement.addition.FoundAddition;
+import io.vulpine.connectwise.api.def.SubApiInterface;
+import io.vulpine.connectwise.type.agreement.addition.SimpleFoundAddition;
 
 import java.io.IOException;
 import java.util.List;
 
 @JacksonXmlRootElement( localName = "FindAgreementAdditions" )
-public class FindAdditions extends _FindCommon< List < FoundAddition > >
+public class FindAdditions extends _FindCommon < List < SimpleFoundAddition > >
 {
   @JacksonXmlProperty( localName = "isOpen" )
   protected Boolean open = null;
@@ -43,7 +41,7 @@ public class FindAdditions extends _FindCommon< List < FoundAddition > >
   }
 
   @Override
-  public List < FoundAddition > submit() throws IOException
+  public List < SimpleFoundAddition > submit() throws IOException
   {
     this.logger.trace(this.getClass());
     final FindAdditionsResponse r = getXmlMapper().readerFor(FindAdditionsResponse.class).readValue(

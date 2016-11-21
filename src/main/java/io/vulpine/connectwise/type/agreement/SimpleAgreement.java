@@ -106,6 +106,14 @@ class SimpleAgreement implements FieldAgreement
     updatedBy             = new SimpleStringField("UpdatedBy");
 
   @Override
+  public SimpleAgreement agreementName( final String s )
+  {
+    agreementName.set(s);
+
+    return this;
+  }
+
+  @Override
   public Field < Integer > idField()
   {
     return id;

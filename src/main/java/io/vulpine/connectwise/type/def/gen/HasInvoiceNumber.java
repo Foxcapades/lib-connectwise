@@ -13,18 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package io.vulpine.connectwise.type.def.gen;
 
-package io.vulpine.connectwise.type.agreement.addition;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.type.agreement.SimpleAgreementAddition;
-
-@JacksonXmlRootElement( localName = "AgreementAdditionFindResult")
-public class FoundAddition extends SimpleAgreementAddition
+public interface HasInvoiceNumber
 {
+  @JsonGetter("InvoiceNumber")
+  String invoiceNumber();
 
-  @JacksonXmlProperty ( localName = "Taxable" )
-  protected String taxable;
-
+  @JsonSetter("InvoiceNumber")
+  HasInvoiceNumber invoiceNumber( final String s );
 }

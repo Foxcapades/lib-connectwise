@@ -15,9 +15,14 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 public interface HasUpdatedBy
 {
+  @JsonGetter( "UpdatedBy" )
   String updatedBy();
 
+  @JsonSetter( "UpdatedBy" )
   HasUpdatedBy updatedBy( final String s );
 }

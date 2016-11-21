@@ -15,9 +15,14 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 public interface HasStatus
 {
+  @JsonGetter( "Status" )
   String status();
 
+  @JsonSetter( "Status" )
   HasStatus status( final String s );
 }

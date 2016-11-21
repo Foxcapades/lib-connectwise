@@ -15,148 +15,58 @@
  */
 package io.vulpine.connectwise.type.def.invoice;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import io.vulpine.connectwise.type.def.gen.HasAgreementName;
 import io.vulpine.connectwise.type.def.gen.HasAgreementType;
-import io.vulpine.connectwise.util.Field;
-import io.vulpine.connectwise.util.NumberField;
 
-public interface AgreementDetail extends HasAgreementName, HasAgreementType, XmlSerializable
+public interface AgreementDetail extends HasAgreementName, HasAgreementType
 {
-  default String agreementName()
-  {
-    return agreementNameField().get();
-  }
+  @JsonGetter( "Hours" )
+  Double hours();
 
-  Field< String > agreementNameField();
+  @JsonSetter( "Hours" )
+  AgreementDetail hours( final Double d );
 
-  NumberField < Double > hoursField();
+  @JsonGetter( "TimeAmount" )
+  Double timeAmount();
 
-  default Double hours()
-  {
-    return hoursField().get();
-  }
+  @JsonSetter( "TimeAmount" )
+  AgreementDetail timeAmount( final Double d );
 
-  default AgreementDetail hours( final Double v )
-  {
-    hoursField().set(v);
-    return this;
-  }
+  @JsonGetter( "ExpenseAmount" )
+  Double expenseAmount();
 
-  NumberField < Double > timeAmountField();
+  @JsonSetter( "ExpenseAmount" )
+  AgreementDetail expenseAmount( final Double d );
 
-  default Double timeAmount()
-  {
-    return timeAmountField().get();
-  }
+  @JsonGetter( "ProductAmount" )
+  Double productAmount();
 
-  default AgreementDetail timeAmount( final Double v )
-  {
-    timeAmountField().set(v);
-    return this;
-  }
+  @JsonSetter( "ProductAmount" )
+  AgreementDetail productAmount( final Double d );
 
-  NumberField < Double > expenseAmountField();
+  @JsonGetter( "SalesTaxAmount" )
+  Double salesTaxAmount();
 
-  default Double expenseAmount()
-  {
-    return expenseAmountField().get();
-  }
+  @JsonSetter( "SalesTaxAmount" )
+  AgreementDetail salesTaxAmount( final Double d );
 
-  default AgreementDetail expenseAmount( final Double v )
-  {
-    expenseAmountField().set(v);
-    return this;
-  }
+  @JsonGetter( "FixedFeeAmount" )
+  Double fixedFeeAmount();
 
-  NumberField < Double > productAmountField();
+  @JsonSetter( "FixedFeeAmount" )
+  AgreementDetail fixedFeeAmount( final Double d );
 
-  default Double productAmount()
-  {
-    return productAmountField().get();
-  }
+  @JsonGetter( "DetailType" )
+  String detailType();
 
-  default AgreementDetail productAmount( final Double v )
-  {
-    productAmountField().set(v);
-    return this;
-  }
+  @JsonSetter( "DetailType" )
+  AgreementDetail detailType( final String s );
 
-  NumberField < Double > salesTaxAmountField();
+  @JsonGetter( "BillingAmount" )
+  Double billingAmount();
 
-  default Double salesTaxAmount()
-  {
-    return salesTaxAmountField().get();
-  }
-
-  default AgreementDetail salesTaxAmount( final Double v )
-  {
-    salesTaxAmountField().set(v);
-    return this;
-  }
-
-  NumberField < Double > fixedFeeAmountField();
-
-  default Double fixedFeeAmount()
-  {
-    return fixedFeeAmountField().get();
-  }
-
-  default AgreementDetail fixedFeeAmount( final Double v )
-  {
-    fixedFeeAmountField().set(v);
-    return this;
-  }
-
-  Field < String > detailTypeField();
-
-  default String detailType()
-  {
-    return detailTypeField().get();
-  }
-
-  default AgreementDetail detailType( final String v )
-  {
-    detailTypeField().set(v);
-    return this;
-  }
-
-  NumberField < Double > billingAmountField();
-
-  default Double billingAmount()
-  {
-    return billingAmountField().get();
-  }
-
-  default AgreementDetail billingAmount( final Double v )
-  {
-    billingAmountField().set(v);
-    return this;
-  }
-
-  /*
-  |*| Inherited Overrides
-   */
-
-  AgreementDetail agreementName( final String s );
-
-  @Override
-  AgreementDetail agreementType( final String s );
-
-  @Override
-  default String toXml( String rootName )
-  {
-    return "<" + rootName + ">"
-      + hoursField().toXml()
-      + timeAmountField().toXml()
-      + expenseAmountField().toXml()
-      + productAmountField().toXml()
-      + salesTaxAmountField().toXml()
-      + fixedFeeAmountField().toXml()
-      + agreementNameField().toXml()
-      + agreementTypeField().toXml()
-      + detailTypeField().toXml()
-      + billingAmountField().toXml()
-      + "</" + rootName + ">";
-  }
+  @JsonSetter( "BillingAmount" )
+  AgreementDetail billingAmount( final String s );
 }

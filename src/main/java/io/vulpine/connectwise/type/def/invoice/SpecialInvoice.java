@@ -1,592 +1,236 @@
 package io.vulpine.connectwise.type.def.invoice;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+import io.vulpine.connectwise.type.def.ProductItem;
 import io.vulpine.connectwise.type.def.gen.*;
-import io.vulpine.connectwise.util.DateField;
-import io.vulpine.connectwise.util.Field;
-import io.vulpine.connectwise.util.NumberField;
-import io.vulpine.connectwise.util.StringField;
 
-import java.util.Date;
+import java.util.List;
 
 public interface SpecialInvoice
   extends
   HasId,
   HasCompanyId,
   HasAddressId,
+  HasInvoiceNumber,
+  HasInvoiceDate,
+  HasInvoiceType,
   HasLocationId,
   HasDepartmentId,
+  HasTopComment,
+  HasBottomComment,
   HasTaxable,
-  HasAgreementAmount,
-  XmlSerializable
+  HasInternalNotes,
+  HasDueDate,
+  HasAgreementAmount
 {
-  NumberField < Integer > billToCompanyIdField();
+  @JsonGetter( "BillToCompanyId" )
+  Integer billToCompanyId();
 
-  default Integer billToCompanyId()
-  {
-    return billToCompanyIdField().get();
-  }
+  @JsonSetter( "BillToCompanyId" )
+  SpecialInvoice billToCompanyId( final Integer i );
 
-  default SpecialInvoice billToCompanyId( final Integer v )
-  {
-    billToCompanyIdField().set(v);
-    return this;
-  }
+  @JsonGetter( "ApplyTo" )
+  ApplyTo applyTo();
 
-  StringField attentionField();
+  @JsonSetter( "ApplyTo" )
+  SpecialInvoice applyTo( final ApplyTo a );
 
-  default String attention()
-  {
-    return attentionField().get();
-  }
+  @JsonGetter( "Attention" )
+  String attention();
 
-  default SpecialInvoice attention( final String s )
-  {
-    attentionField().set(s);
-    return this;
-  }
+  @JsonSetter( "Attention" )
+  SpecialInvoice attention( final String s );
 
-  NumberField < Integer > billingTermsIdField();
+  @JsonGetter( "BillingTermsId" )
+  Integer billingTermsId();
 
-  default Integer billingTermsId()
-  {
-    return billingTermsIdField().get();
-  }
+  @JsonSetter( "BillingTermsId" )
+  SpecialInvoice billingTermsId( final Integer i );
 
-  default SpecialInvoice billingTermsId( final Integer v )
-  {
-    billingTermsIdField().set(v);
-    return this;
-  }
+  @JsonGetter( "Reference" )
+  String reference();
 
-  default Integer companyId()
-  {
-    return companyIdField().get();
-  }
+  @JsonSetter( "Reference" )
+  SpecialInvoice reference( final String s );
 
-  HasCompanyId companyId( Integer i );
+  @JsonGetter( "CustomerPO" )
+  String customerPo();
 
-  Field< Integer > companyIdField();
+  @JsonSetter( "CustomerPO" )
+  SpecialInvoice customerPo( final String s );
 
-  default Integer departmentId()
-  {
-    return departmentIdField().get();
-  }
+  @JsonGetter( "InvoiceTemplateId" )
+  Integer invoiceTemplateId();
 
-  HasDepartmentId departmentId( Integer i );
+  @JsonSetter( "InvoiceTemplateId" )
+  SpecialInvoice invoiceTemplateId( final Integer i );
 
-  Field< Integer > departmentIdField();
+  @JsonGetter( "InvoiceEmailTemplateId" )
+  Integer invoiceEmailTemplateId();
 
-  default Integer id()
-  {
-    return idField().get();
-  }
+  @JsonSetter( "InvoiceEmailTemplateId" )
+  SpecialInvoice invoiceEmailTemplateId( final Integer i );
 
-  HasId id( final Integer i );
+  @JsonGetter( "AddToBatchEmailList" )
+  Boolean addToBatchEmailList();
 
-  Field< Integer > idField();
+  @JsonSetter( "AddToBatchEmailList" )
+  SpecialInvoice addToBatchEmailList( final Boolean b );
 
-  default Integer locationId()
-  {
-    return locationIdField().get();
-  }
+  @JsonGetter( "InvoiceTypeIdentifier" )
+  String invoiceTypeIdentifier();
 
-  HasLocationId locationId( Integer i );
+  @JsonSetter( "InvoiceTypeIdentifier" )
+  SpecialInvoice invoiceTypeIdentifier( final String s );
 
-  Field< Integer > locationIdField();
+  @JsonGetter( "RestrictDownpayment" )
+  Boolean restrictDownpayment();
 
-  StringField referenceField();
+  @JsonSetter( "RestrictDownpayment" )
+  SpecialInvoice restrictDownpayment( final Boolean b );
 
-  default String reference()
-  {
-    return referenceField().get();
-  }
+  @JsonGetter( "BillingStatusId" )
+  Integer billingStatusId();
 
-  default SpecialInvoice reference( final String s )
-  {
-    referenceField().set(s);
-    return this;
-  }
+  @JsonSetter( "BillingStatusId" )
+  SpecialInvoice billingStatusId( final Integer i );
 
-  StringField customerPoField();
+  @JsonGetter( "BillingStatus" )
+  String billingStatus();
 
-  default String customerPo()
-  {
-    return customerPoField().get();
-  }
+  @JsonSetter( "BillingStatus" )
+  SpecialInvoice billingStatus( final String s );
 
-  default SpecialInvoice customerPo( final String s )
-  {
-    customerPoField().set(s);
-    return this;
-  }
+  @JsonGetter( "TerritoryId" )
+  Integer territoryId();
 
-  NumberField < Integer > invoiceTemplateIdField();
-
-  default Integer invoiceTemplateId()
-  {
-    return invoiceTemplateIdField().get();
-  }
+  @JsonSetter( "TerritoryId" )
+  SpecialInvoice territoryId( final Integer i );
 
-  default SpecialInvoice invoiceTemplateId( final Integer v )
-  {
-    invoiceTemplateIdField().set(v);
-    return this;
-  }
-
-  NumberField < Integer > invoiceEmailTemplateIdField();
+  @JsonGetter( "Total" )
+  Double total();
 
-  default Integer invoiceEmailTemplateId()
-  {
-    return invoiceEmailTemplateIdField().get();
-  }
+  @JsonSetter( "Total" )
+  SpecialInvoice total( final Double d );
 
-  default SpecialInvoice invoiceEmailTemplateId( final Integer v )
-  {
-    invoiceEmailTemplateIdField().set(v);
-    return this;
-  }
-
-  Field < Boolean > addToBatchEmailListField();
+  @JsonGetter( "TaxCodeId" )
+  Integer taxCodeId();
 
-  default Boolean addToBatchEmailList()
-  {
-    return addToBatchEmailListField().get();
-  }
-
-  default SpecialInvoice addToBatchEmailList( final Boolean b )
-  {
-    addToBatchEmailListField().set(b);
-    return this;
-  }
-
+  @JsonSetter( "TaxCodeId" )
+  SpecialInvoice taxCodeId( final Integer i );
 
-  StringField invoiceNumberField();
+  @JsonGetter( "DownpaymentPreviouslyTaxed" )
+  Boolean downpaymentPreviouslyTaxed();
 
-  default String invoiceNumber()
-  {
-    return invoiceNumberField().get();
-  }
+  @JsonSetter( "DownpaymentPreviouslyTaxed" )
+  SpecialInvoice downpaymentPreviouslyTaxed( final Boolean b );
 
-  default SpecialInvoice invoiceNumber( final String s )
-  {
-    invoiceNumberField().set(s);
-    return this;
-  }
-
-  DateField invoiceDateField();
+  @JsonGetter( "SpecialInvoiceProducts" )
+  List < ProductItem > specialInvoiceProducts();
 
-  default Date invoiceDate()
-  {
-    return invoiceDateField().get();
-  }
+  @JsonSetter( "SpecialInvoiceProducts" )
+  SpecialInvoice specialInvoiceProducts( final List < ProductItem > l );
 
-  default SpecialInvoice invoiceDate( final Date d )
-  {
-    invoiceDateField().set(d);
-    return this;
-  }
-
-  StringField invoiceTypeIdentifierField();
+  @JsonGetter( "ExpenseTotal" )
+  Double expenseTotal();
 
-  default String invoiceTypeIdentifier()
-  {
-    return invoiceTypeIdentifierField().get();
-  }
-
-  default SpecialInvoice invoiceTypeIdentifier( final String s )
-  {
-    invoiceTypeIdentifierField().set(s);
-    return this;
-  }
-
-  StringField invoiceTypeField();
-
-  default String invoiceType()
-  {
-    return invoiceTypeField().get();
-  }
-
-  default SpecialInvoice invoiceType( final String s )
-  {
-    invoiceTypeField().set(s);
-    return this;
-  }
-
-  Field < Boolean > restrictDownpaymentField();
-
-  default Boolean restrictDownpayment()
-  {
-    return restrictDownpaymentField().get();
-  }
-
-  default SpecialInvoice restrictDownpayment( final Boolean b )
-  {
-    restrictDownpaymentField().set(b);
-    return this;
-  }
-
-
-  NumberField < Integer > billingStatusIdField();
-
-  default Integer billingStatusId()
-  {
-    return billingStatusIdField().get();
-  }
-
-  default SpecialInvoice billingStatusId( final Integer v )
-  {
-    billingStatusIdField().set(v);
-    return this;
-  }
-
-  StringField billingStatusField();
-
-  default String billingStatus()
-  {
-    return billingStatusField().get();
-  }
-
-  default SpecialInvoice billingStatus( final String s )
-  {
-    billingStatusField().set(s);
-    return this;
-  }
-
-  HasTaxable taxable( final Boolean b );
-
-  default Boolean taxable()
-  {
-    return taxableField().get();
-  }
+  @JsonSetter( "ExpenseTotal" )
+  SpecialInvoice expenseTotal( final Double d );
 
-  Field < Boolean > taxableField();
-
-  NumberField < Integer > territoryIdField();
+  @JsonGetter( "ProductTotal" )
+  Double productTotal();
 
-  default Integer territoryId()
-  {
-    return territoryIdField().get();
-  }
-
-  default SpecialInvoice territoryId( final Integer v )
-  {
-    territoryIdField().set(v);
-    return this;
-  }
-
-  StringField topCommentField();
+  @JsonSetter( "ProductTotal" )
+  SpecialInvoice productTotal( final Double d );
 
-  default String topComment()
-  {
-    return topCommentField().get();
-  }
-
-  default SpecialInvoice topComment( final String s )
-  {
-    topCommentField().set(s);
-    return this;
-  }
-
-  StringField bottomCommentField();
-
-  default String bottomComment()
-  {
-    return bottomCommentField().get();
-  }
-
-  default SpecialInvoice bottomComment( final String s )
-  {
-    bottomCommentField().set(s);
-    return this;
-  }
-
-  NumberField < Double > totalField();
-
-  default Double total()
-  {
-    return totalField().get();
-  }
-
-  default SpecialInvoice total( final Double v )
-  {
-    totalField().set(v);
-    return this;
-  }
-
-  NumberField < Integer > taxCodeIdField();
-
-  default Integer taxCodeId()
-  {
-    return taxCodeIdField().get();
-  }
-
-  default SpecialInvoice taxCodeId( final Integer v )
-  {
-    taxCodeIdField().set(v);
-    return this;
-  }
-
-  StringField internalNotesField();
-
-  default String internalNotes()
-  {
-    return internalNotesField().get();
-  }
-
-  default SpecialInvoice internalNotes( final String s )
-  {
-    internalNotesField().set(s);
-    return this;
-  }
-
-  Field < Boolean > downpaymentPreviouslyTaxedField();
-
-  default Boolean downpaymentPreviouslyTaxed()
-  {
-    return downpaymentPreviouslyTaxedField().get();
-  }
-
-  default SpecialInvoice downpaymentPreviouslyTaxed( final Boolean b )
-  {
-    downpaymentPreviouslyTaxedField().set(b);
-    return this;
-  }
-
-
-  // SpecialInvoiceProducts
-
-  DateField dueDateField();
-
-  default Date dueDate()
-  {
-    return dueDateField().get();
-  }
-
-  default SpecialInvoice dueDate( final Date d )
-  {
-    dueDateField().set(d);
-    return this;
-  }
-
-  NumberField < Double > expenseTotalField();
-
-  default Double expenseTotal()
-  {
-    return expenseTotalField().get();
-  }
-
-  default SpecialInvoice expenseTotal( final Double v )
-  {
-    expenseTotalField().set(v);
-    return this;
-  }
-
-  NumberField < Double > productTotalField();
-
-  default Double productTotal()
-  {
-    return productTotalField().get();
-  }
-
-  default SpecialInvoice productTotal( final Double v )
-  {
-    productTotalField().set(v);
-    return this;
-  }
-
-  NumberField < Double > previousProgressAppliedField();
-
-  default Double previousProgressApplied()
-  {
-    return previousProgressAppliedField().get();
-  }
-
-  default SpecialInvoice previousProgressApplied( final Double v )
-  {
-    previousProgressAppliedField().set(v);
-    return this;
-  }
-
-  NumberField < Double > serviceAdjustmentAmountField();
-
-  default Double serviceAdjustmentAmount()
-  {
-    return serviceAdjustmentAmountField().get();
-  }
-
-  default SpecialInvoice serviceAdjustmentAmount( final Double v )
-  {
-    serviceAdjustmentAmountField().set(v);
-    return this;
-  }
-
-  NumberField < Double > downpaymentAppliedField();
-
-  default Double downpaymentApplied()
-  {
-    return downpaymentAppliedField().get();
-  }
-
-  default SpecialInvoice downpaymentApplied( final Double v )
-  {
-    downpaymentAppliedField().set(v);
-    return this;
-  }
-
-  NumberField < Double > invoiceSubtotalField();
-
-  default Double invoiceSubtotal()
-  {
-    return invoiceSubtotalField().get();
-  }
-
-  default SpecialInvoice invoiceSubtotal( final Double v )
-  {
-    invoiceSubtotalField().set(v);
-    return this;
-  }
-
-  NumberField < Double > remainingDownpaymentField();
-
-  default Double remainingDownpayment()
-  {
-    return remainingDownpaymentField().get();
-  }
-
-  default SpecialInvoice remainingDownpayment( final Double v )
-  {
-    remainingDownpaymentField().set(v);
-    return this;
-  }
-
-  NumberField < Double > salesTaxField();
-
-  default Double salesTax()
-  {
-    return salesTaxField().get();
-  }
-
-  default SpecialInvoice salesTax( final Double v )
-  {
-    salesTaxField().set(v);
-    return this;
-  }
-
-  NumberField < Double > invoiceTotalField();
-
-  default Double invoiceTotal()
-  {
-    return invoiceTotalField().get();
-  }
-
-  default SpecialInvoice invoiceTotal( final Double v )
-  {
-    invoiceTotalField().set(v);
-    return this;
-  }
-
-  StringField adjustmentReasonField();
-
-  default String adjustmentReason()
-  {
-    return adjustmentReasonField().get();
-  }
-
-  default SpecialInvoice adjustmentReason( final String s )
-  {
-    adjustmentReasonField().set(s);
-    return this;
-  }
-
-  StringField byField();
-
-  default String by()
-  {
-    return byField().get();
-  }
-
-  default SpecialInvoice by( final String s )
-  {
-    byField().set(s);
-    return this;
-  }
-
-  NumberField < Double > paymentsField();
-
-  default Double payments()
-  {
-    return paymentsField().get();
-  }
-
-  default SpecialInvoice payments( final Double v )
-  {
-    paymentsField().set(v);
-    return this;
-  }
-
-  NumberField < Double > creditsField();
-
-  default Double credits()
-  {
-    return creditsField().get();
-  }
-
-  default SpecialInvoice credits( final Double v )
-  {
-    creditsField().set(v);
-    return this;
-  }
-
-  NumberField < Double > invoiceBalanceField();
-
-  default Double invoiceBalance()
-  {
-    return invoiceBalanceField().get();
-  }
-
-  default SpecialInvoice invoiceBalance( final Double v )
-  {
-    invoiceBalanceField().set(v);
-    return this;
-  }
-
-  NumberField < Integer > shipToCompanyIdField();
-
-  default Integer shipToCompanyId()
-  {
-    return shipToCompanyIdField().get();
-  }
-
-  default SpecialInvoice shipToCompanyId( final Integer v )
-  {
-    shipToCompanyIdField().set(v);
-    return this;
-  }
-
-  NumberField < Integer > shipToAddressIdField();
-
-  default Integer shipToAddressId()
-  {
-    return shipToAddressIdField().get();
-  }
-
-  default SpecialInvoice shipToAddressId( final Integer v )
-  {
-    shipToAddressIdField().set(v);
-    return this;
-  }
-
-  StringField shipToAttentionField();
-
-  default String shipToAttention()
-  {
-    return shipToAttentionField().get();
-  }
-
-  default SpecialInvoice shipToAttention( final String s )
-  {
-    shipToAttentionField().set(s);
-    return this;
-  }
+  @JsonGetter( "PreviousProgressApplied" )
+  Double previousProgressApplied();
+
+  @JsonSetter( "PreviousProgressApplied" )
+  SpecialInvoice previousProgressApplied( final Double d );
+
+  @JsonGetter( "ServiceAdjustmentAmount" )
+  Double serviceAdjustmentAmount();
+
+  @JsonSetter( "ServiceAdjustmentAmount" )
+  SpecialInvoice serviceAdjustmentAmount( final Double d );
+
+  @JsonGetter( "DownpaymentApplied" )
+  Double downpaymentApplied();
+
+  @JsonSetter( "DownpaymentApplied" )
+  SpecialInvoice downpaymentApplied( final Double d );
+
+  @JsonGetter( "SalesTax" )
+  Double salesTax();
+
+  @JsonSetter( "SalesTax" )
+  SpecialInvoice salesTax( final Double d );
+
+  @JsonGetter( "InvoiceSubtotal" )
+  Double invoiceSubtotal();
+
+  @JsonSetter( "InvoiceSubtotal" )
+  SpecialInvoice invoiceSubtotal( final Double d );
+
+  @JsonGetter( "RemainingDownpayment" )
+  Double remainingDownpayment();
+
+  @JsonSetter( "RemainingDownpayment" )
+  SpecialInvoice remainingDownpayment( final Double d );
+
+  @JsonGetter( "InvoiceTotal" )
+  Double invoiceTotal();
+
+  @JsonSetter( "InvoiceTotal" )
+  SpecialInvoice invoiceTotal( final Double d );
+
+  @JsonGetter( "AdjustmentReason" )
+  String adjustmentReason();
+
+  @JsonSetter( "AdjustmentReason" )
+  SpecialInvoice adjustmentReason( final String s );
+
+  @JsonGetter( "By" )
+  String by();
+
+  @JsonSetter( "By" )
+  SpecialInvoice by( final String s );
+
+  @JsonGetter( "Payments" )
+  Double payments();
+
+  @JsonSetter( "Payments" )
+  SpecialInvoice payments( final Double d );
+
+  @JsonGetter( "Credits" )
+  Double credits();
+
+  @JsonSetter( "Credits" )
+  SpecialInvoice credits( final Double d );
+
+  @JsonGetter( "InvoiceBalance" )
+  Double invoiceBalance();
+
+  @JsonSetter( "InvoiceBalance" )
+  SpecialInvoice invoiceBalance( final Double d );
+
+  @JsonGetter( "ShipToCompanyId" )
+  Integer shipToCompanyId();
+
+  @JsonSetter( "ShipToCompanyId" )
+  SpecialInvoice shipToCompanyId( final Integer i );
+
+  @JsonGetter( "ShipToAddressId" )
+  Integer shipToAddressId();
+
+  @JsonSetter( "ShipToAddressId" )
+  SpecialInvoice shipToAddressId( final Integer i );
+
+  @JsonGetter( "ShipToAttention" )
+  String shipToAttention();
+
+  @JsonSetter( "ShipToAttention" )
+  SpecialInvoice shipToAttention( final String s );
 }

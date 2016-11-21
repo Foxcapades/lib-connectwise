@@ -15,9 +15,14 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 public interface HasTicketNumber
 {
-  HasTicketNumber ticketNumber( final Integer i );
-
+  @JsonGetter( "TicketNumber" )
   Integer ticketNumber();
+
+  @JsonSetter( "TicketNumber" )
+  HasTicketNumber ticketNumber( final Integer i );
 }

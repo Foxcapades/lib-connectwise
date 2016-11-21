@@ -18,17 +18,17 @@ package io.vulpine.connectwise.api.endpoints.company;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.common.Credentials;
 import io.vulpine.connectwise.api.common.request.FindRequest;
+import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.endpoints.Endpoint;
-import io.vulpine.connectwise.type.company.FoundCompany;
+import io.vulpine.connectwise.type.company.SimpleFoundCompany;
 
 import java.io.IOException;
 import java.util.List;
 
 @JacksonXmlRootElement ( localName = "FindCompanies" )
-public class FindCompanies extends FindRequest < List < FoundCompany > >
+public class FindCompanies extends FindRequest < List < SimpleFoundCompany > >
 {
   public FindCompanies( Credentials credentials, XmlMapper xmlMapper, SubApiInterface api )
   {
@@ -36,7 +36,7 @@ public class FindCompanies extends FindRequest < List < FoundCompany > >
   }
 
   @Override
-  public List < FoundCompany > submit () throws IOException
+  public List < SimpleFoundCompany > submit () throws IOException
   {
     this.logger.trace(this.getClass());
     return submit(FindCompanyResponse.class);

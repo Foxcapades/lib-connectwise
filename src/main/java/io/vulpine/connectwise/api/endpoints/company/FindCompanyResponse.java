@@ -20,16 +20,16 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.vulpine.connectwise.api.common.ResponseData;
-import io.vulpine.connectwise.type.company.FoundCompany;
+import io.vulpine.connectwise.type.company.SimpleFoundCompany;
 
 import java.util.List;
 
 @JacksonXmlRootElement( localName = "FindCompaniesResponse" )
-public class FindCompanyResponse extends ResponseData < List < FoundCompany > >
+public class FindCompanyResponse extends ResponseData < List < SimpleFoundCompany > >
 {
   @JsonCreator
   public FindCompanyResponse(
-    @JacksonXmlProperty( localName = "FindCompaniesResult" ) final List < FoundCompany > results
+    @JacksonXmlProperty( localName = "FindCompaniesResult" ) final List < SimpleFoundCompany > results
   )
   {
     super(results);

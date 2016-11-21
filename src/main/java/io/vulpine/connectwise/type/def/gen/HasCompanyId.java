@@ -15,6 +15,9 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 /**
  * = Object with a Company Id value.
  *
@@ -23,7 +26,9 @@ package io.vulpine.connectwise.type.def.gen;
  */
 public interface HasCompanyId
 {
+  @JsonGetter( "CompanyId" )
   Integer companyId();
 
+  @JsonSetter( "CompanyId" )
   HasCompanyId companyId( final Integer i );
 }
