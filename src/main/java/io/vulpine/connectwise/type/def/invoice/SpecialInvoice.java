@@ -17,12 +17,14 @@ public interface SpecialInvoice
   HasInvoiceType,
   HasLocationId,
   HasDepartmentId,
-  HasTopComment,
-  HasBottomComment,
+  HasTopComment < String >,
+  HasBottomComment < String >,
   HasTaxable,
   HasInternalNotes,
   HasDueDate,
-  HasAgreementAmount
+  HasAgreementAmount,
+  HasTaxCodeId,
+  HasCustomerPo
 {
   @JsonGetter( "BillToCompanyId" )
   Integer billToCompanyId();
@@ -53,12 +55,6 @@ public interface SpecialInvoice
 
   @JsonSetter( "Reference" )
   SpecialInvoice reference( final String s );
-
-  @JsonGetter( "CustomerPO" )
-  String customerPo();
-
-  @JsonSetter( "CustomerPO" )
-  SpecialInvoice customerPo( final String s );
 
   @JsonGetter( "InvoiceTemplateId" )
   Integer invoiceTemplateId();
@@ -113,12 +109,6 @@ public interface SpecialInvoice
 
   @JsonSetter( "Total" )
   SpecialInvoice total( final Double d );
-
-  @JsonGetter( "TaxCodeId" )
-  Integer taxCodeId();
-
-  @JsonSetter( "TaxCodeId" )
-  SpecialInvoice taxCodeId( final Integer i );
 
   @JsonGetter( "DownpaymentPreviouslyTaxed" )
   Boolean downpaymentPreviouslyTaxed();

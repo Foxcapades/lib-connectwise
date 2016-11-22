@@ -15,128 +15,68 @@
  */
 package io.vulpine.connectwise.type.def.agreement;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
+import io.vulpine.connectwise.type.def.agreement.gen.*;
 import io.vulpine.connectwise.type.def.gen.*;
 
-import java.util.Date;
-
-public interface AgreementFindResult extends
-  XmlSerializable,
-  HasId,
-  HasParentAgreementId,
-  HasAgreementTypeId,
+public interface AgreementFindResult
+  extends
   HasAgreementName,
+  HasAgreementTypeId,
+  HasAllowOverruns,
+  HasApplicationLimit,
+  HasApplicationUnlimited,
+  HasBillableExpenseInvoice,
+  HasBillableProductInvoice,
+  HasBillableTimeInvoice,
+  HasBillStartDate,
+  HasBoardId,
+  HasBottomComment < Boolean >,
+  HasCancelled,
+  HasCarryOverUnused,
+  HasChargeToFirm,
   HasCompanyId,
   HasContactId,
-  HasLocationId,
+  HasCoverAgreementExpense,
+  HasCoverAgreementProduct,
+  HasCoverAgreementTime,
+  HasCoverSalesTax,
+  HasCustomerPo,
+  HasDateCancelled,
   HasDepartmentId,
-  HasStartDate,
   HasEndDate,
+  HasExpiredDays,
+  HasId,
   HasInternalNotes,
+  HasLastUpdate,
+  HasLimit,
+  HasLocationId,
+  HasNoEndingDate,
+  HasOneTimeFlag,
+  HasOpportunityId,
+  HasParentAgreementId,
+  HasReasonCancelled,
+  HasRestrictDepartment,
+  HasRestrictLocation,
+  HasSlaId,
+  HasStartDate,
+  HasSubContractCompanyId,
+  HasSubContractContactId,
   HasTaxable,
+  HasTaxCodeId,
+  HasTopComment < Boolean >,
+  HasUpdatedBy,
+  HasWorkOrder,
   HasWorkRoleId,
   HasWorkTypeId,
-  HasBoardId,
-  HasUpdatedBy,
-  HasLastUpdate,
-  HasTopComment
+
+  HasCompHourlyRate,
+  HasBillOneTime,
+  HasBillCycleId,
+  HasBillTermsId,
+  HasBillToAddressId,
+  HasBillAmount,
+  HasRestrictDownPayment,
 {
-  String customerPo();
-
-  AgreementFindResult customerPo( final String s );
-
-  Boolean restrictLocation();
-
-  AgreementFindResult restrictLocation( final Boolean b );
-
-  Boolean restrictDepartment();
-
-  AgreementFindResult restrictDepartment( final Boolean b );
-
-  Boolean noEndingDate();
-
-  AgreementFindResult noEndingDate( final Boolean b );
-
-  Integer opportunityId();
-
-  AgreementFindResult opportunityId( final Integer i );
-
-  Boolean cancelled();
-
-  AgreementFindResult cancelled( final Boolean b );
-
-  Date dateCancelled();
-
-  AgreementFindResult dateCancelled( final Date d );
-
-  String reasonCancelled();
-
-  AgreementFindResult reasonCancelled( final String s );
-
-  Integer slaId();
-
-  AgreementFindResult slaId( final Integer i );
-
-  Integer subContractCompanyId();
-
-  AgreementFindResult subContractCompanyId( final Integer i );
-
-  Integer subContractContactId();
-
-  AgreementFindResult subContractContactId( final Integer i );
-
-  String workOrder();
-
-  AgreementFindResult workOrder( final String s );
-
-  Double applicationLimit();
-
-  AgreementFindResult applicationLimit( final Double d );
-
-  Boolean applicationUnlimited();
-
-  AgreementFindResult applicationUnlimited( final Boolean b );
-
-  Boolean oneTime();
-
-  AgreementFindResult oneTime( final Boolean b );
-
-  Boolean coverAgreementTime();
-
-  AgreementFindResult coverAgreementTime( final Boolean b );
-
-  Boolean coverAgreementProduct();
-
-  AgreementFindResult coverAgreementProduct( final Boolean b );
-
-  Boolean coverAgreementExpense();
-
-  AgreementFindResult coverAgreementExpense( final Boolean b );
-
-  Boolean coverSalesTax();
-
-  AgreementFindResult coverSalesTax( final Boolean b );
-
-  Boolean carryOverUnused();
-
-  AgreementFindResult carryOverUnused( final Boolean b );
-
-  Boolean allowOverruns();
-
-  AgreementFindResult allowOverruns( final Boolean b );
-
-  Integer expiredDays();
-
-  AgreementFindResult expiredDays( final Integer i );
-
-  Integer limit();
-
-  AgreementFindResult limit( final Integer i );
-
-  Boolean chargeToFirm();
-
-  AgreementFindResult chargeToFirm( final Boolean b );
-
   Double compHourlyRate();
 
   AgreementFindResult compHourlyRate( final Double d );
@@ -173,14 +113,6 @@ public interface AgreementFindResult extends
 
   AgreementFindResult prorateFirstBill( final Double d );
 
-  Date billStartDate();
-
-  AgreementFindResult billStartDate( final Date d );
-
-  Integer taxCodeId();
-
-  AgreementFindResult taxCodeId( final Integer i );
-
   Boolean restrictDownPayment();
 
   AgreementFindResult restrictDownPayment( final Boolean b );
@@ -189,10 +121,6 @@ public interface AgreementFindResult extends
 
   AgreementFindResult invoiceDescription( final String s );
 
-  Boolean bottomComment();
-
-  AgreementFindResult bottomComment( final Boolean b );
-
   Integer projectTypeId();
 
   AgreementFindResult projectTypeId( final Integer i );
@@ -200,18 +128,6 @@ public interface AgreementFindResult extends
   Integer invoiceTemplateId();
 
   AgreementFindResult invoiceTemplateId( final Integer i );
-
-  Boolean billableTimeInvoice();
-
-  AgreementFindResult billableTimeInvoice( final Boolean b );
-
-  Boolean billableExpenseInvoice();
-
-  AgreementFindResult billableExpenseInvoice( final Boolean b );
-
-  Boolean billableProductInvoice();
-
-  AgreementFindResult billableProductInvoice( final Boolean b );
 
   Boolean boardDefault();
 

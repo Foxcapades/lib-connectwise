@@ -13,20 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.type.def.gen.field;
+package io.vulpine.connectwise.type.def.gen;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.vulpine.connectwise.type.def.gen.HasBottomComment;
-import io.vulpine.connectwise.util.Field;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
-public interface HasBottomCommentField < T > extends HasBottomComment < T >
+public interface HasOpportunityId
 {
-  @JsonIgnore
-  Field < T > bottomCommentField();
+  @JsonGetter("OpportunityId")
+  Integer opportunityId();
 
-  @Override
-  default T bottomComment()
-  {
-    return bottomCommentField().get();
-  }
+  @JsonSetter("OpportunityId")
+  HasOpportunityId opportunityId( final Integer i );
 }

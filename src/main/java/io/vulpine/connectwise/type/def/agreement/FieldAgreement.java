@@ -15,7 +15,6 @@
  */
 package io.vulpine.connectwise.type.def.agreement;
 
-import io.vulpine.connectwise.type.def.XmlSerializable;
 import io.vulpine.connectwise.util.Field;
 
 import java.util.Date;
@@ -74,16 +73,6 @@ public interface FieldAgreement extends Agreement
   Field < Boolean > billableProductInvoiceField();
 
   Field < Boolean > billableTimeInvoiceField();
-
-  Field < Boolean > boardDefaultField();
-
-  @Override
-  default Integer boardId()
-  {
-    return boardIdField().get();
-  }
-
-  Field < Integer > boardIdField();
 
   Field < Boolean > bottomCommentField();
 
@@ -201,14 +190,6 @@ public interface FieldAgreement extends Agreement
   Field < Boolean > restrictDownPaymentField();
 
   Field < Boolean > restrictLocationField();
-
-  @Override
-  default Integer serviceTypeId()
-  {
-    return serviceTypeIdField().get();
-  }
-
-  Field< Integer > serviceTypeIdField();
 
   Field < Integer > slaIdField();
 
@@ -923,13 +904,13 @@ public interface FieldAgreement extends Agreement
   }
 
   @Override
-  default Boolean oneTime()
+  default Boolean oneTimeFlag()
   {
     return oneTimeField().get();
   }
 
   @Override
-  default FieldAgreement oneTime( final Boolean b )
+  default FieldAgreement oneTimeFlag( final Boolean b )
   {
     oneTimeField().set(b);
     return this;
@@ -987,31 +968,11 @@ public interface FieldAgreement extends Agreement
     return this;
   }
 
-  @Override
-  default Boolean boardDefault()
-  {
-    return boardDefaultField().get();
-  }
-
-  @Override
-  default FieldAgreement boardDefault( final Boolean b )
-  {
-    boardDefaultField().set(b);
-    return this;
-  }
-
   /*
 
   INHERITED DEFAULTS
 
    */
-
-  @Override
-  default FieldAgreement boardId( final Integer i )
-  {
-    boardIdField().set(i);
-    return this;
-  }
 
   @Override
   default FieldAgreement companyId( final Integer i )
@@ -1059,13 +1020,6 @@ public interface FieldAgreement extends Agreement
   default FieldAgreement locationId( final Integer i )
   {
     locationIdField().set(i);
-    return this;
-  }
-
-  @Override
-  default FieldAgreement serviceTypeId( final Integer i )
-  {
-    serviceTypeIdField().set(i);
     return this;
   }
 

@@ -15,9 +15,14 @@
  */
 package io.vulpine.connectwise.type.def.gen;
 
-public interface HasTopComment
-{
-  Boolean topComment();
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
-  HasTopComment topComment( Boolean b );
+public interface HasTopComment < T >
+{
+  @JsonGetter( "TopComment" )
+  T topComment();
+
+  @JsonSetter("TopComment")
+  HasTopComment topComment( final T t );
 }

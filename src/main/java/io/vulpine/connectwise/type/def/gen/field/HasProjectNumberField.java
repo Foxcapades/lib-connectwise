@@ -16,17 +16,17 @@
 package io.vulpine.connectwise.type.def.gen.field;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.vulpine.connectwise.type.def.gen.HasBottomComment;
-import io.vulpine.connectwise.util.Field;
+import io.vulpine.connectwise.type.def.gen.HasProjectNumber;
+import io.vulpine.connectwise.util.NumberField;
 
-public interface HasBottomCommentField < T > extends HasBottomComment < T >
+public interface HasProjectNumberField extends HasProjectNumber
 {
   @JsonIgnore
-  Field < T > bottomCommentField();
+  NumberField < Integer > projectNumberField();
 
   @Override
-  default T bottomComment()
+  default Integer projectNumber()
   {
-    return bottomCommentField().get();
+    return projectNumberField().get();
   }
 }

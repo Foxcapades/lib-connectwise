@@ -13,20 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.vulpine.connectwise.type.def.gen.field;
+package io.vulpine.connectwise.type.agreement;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.vulpine.connectwise.type.def.gen.HasBottomComment;
-import io.vulpine.connectwise.util.Field;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
-public interface HasBottomCommentField < T > extends HasBottomComment < T >
+@JacksonXmlRootElement( localName = "AgreementFindResult" )
+public class SimpleFoundAgreement implements FieldAgreementFindResult
 {
-  @JsonIgnore
-  Field < T > bottomCommentField();
-
-  @Override
-  default T bottomComment()
-  {
-    return bottomCommentField().get();
-  }
 }

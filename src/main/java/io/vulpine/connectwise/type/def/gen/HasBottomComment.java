@@ -18,11 +18,11 @@ package io.vulpine.connectwise.type.def.gen;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
-public interface HasBottomComment
+public interface HasBottomComment < T >
 {
   @JsonGetter("BottomComment")
-  String bottomComment();
+  T bottomComment();
 
   @JsonSetter("BottomComment")
-  HasBottomComment bottomComment( final String s );
+  HasBottomComment bottomComment( final T s );
 }

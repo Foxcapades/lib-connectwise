@@ -165,7 +165,7 @@ public class AgreementTest
     periodType.setAccessible(true);
     applicationUnlimited = clazz.getDeclaredField("applicationUnlimited");
     applicationUnlimited.setAccessible(true);
-    oneTime = clazz.getDeclaredField("oneTime");
+    oneTime = clazz.getDeclaredField("oneTimeFlag");
     oneTime.setAccessible(true);
     coverAgreementTime = clazz.getDeclaredField("coverAgreementTime");
     coverAgreementTime.setAccessible(true);
@@ -633,13 +633,13 @@ public class AgreementTest
   public void isOneTime () throws Exception
   {
     oneTime.set(agreement, booleanTest);
-    assertEquals(booleanTest, agreement.oneTime());
+    assertEquals(booleanTest, agreement.oneTimeFlag());
   }
 
   @Test
   public void setOneTime () throws Exception
   {
-    agreement.oneTime(booleanTest);
+    agreement.oneTimeFlag(booleanTest);
     assertEquals(booleanTest, oneTime.get(agreement));
   }
 

@@ -16,17 +16,17 @@
 package io.vulpine.connectwise.type.def.gen.field;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.vulpine.connectwise.type.def.gen.HasBottomComment;
-import io.vulpine.connectwise.util.Field;
+import io.vulpine.connectwise.type.def.gen.HasInvoiceAmount;
+import io.vulpine.connectwise.util.NumberField;
 
-public interface HasBottomCommentField < T > extends HasBottomComment < T >
+public interface HasInvoiceAmountField extends HasInvoiceAmount
 {
   @JsonIgnore
-  Field < T > bottomCommentField();
+  NumberField < Double > invoiceAmountField();
 
   @Override
-  default T bottomComment()
+  default Double invoiceAmount()
   {
-    return bottomCommentField().get();
+    return invoiceAmountField().get();
   }
 }

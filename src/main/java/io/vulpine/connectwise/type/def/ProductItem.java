@@ -35,7 +35,8 @@ public interface ProductItem
   HasVendorId,
   HasItemId,
   HasCost,
-  HasPrice
+  HasPrice,
+  HasOpportunityId
 {
   @JsonGetter( "Dropship" )
   Boolean dropship();
@@ -90,12 +91,6 @@ public interface ProductItem
 
   @JsonSetter( "ShortDescription" )
   ProductItem shortDescription( final String s );
-
-  @JsonGetter( "OpportunityId" )
-  Integer opportunityId();
-
-  @JsonSetter( "OpportunityId" )
-  ProductItem opportunityId( final Integer i );
 
   @JsonGetter( "QuoteNumber" )
   String quoteNumber();

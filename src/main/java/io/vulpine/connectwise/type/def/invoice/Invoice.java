@@ -37,8 +37,8 @@ public interface Invoice
   HasGlPosted,
   HasBillingDelivery,
   HasBusinessUnit,
-  HasTopComment,
-  HasBottomComment,
+  HasTopComment < String >,
+  HasBottomComment < String >,
   HasInvoiceNumber,
   HasLocation,
   HasProjectName,
@@ -53,19 +53,14 @@ public interface Invoice
   HasPaidDate,
   HasPaidAmount,
   HasLastUpdated,
-  HasUpdatedBy
+  HasUpdatedBy,
+  HasEmail < Boolean >
 {
   @JsonGetter( "IsClientLocation" )
   Boolean isClientLocation();
 
   @JsonSetter( "IsClientLocation" )
   Invoice isClientLocation( final Boolean b );
-
-  @JsonGetter( "Email" )
-  Boolean email();
-
-  @JsonSetter( "Email" )
-  Invoice email( final Boolean b );
 
   @JsonGetter( "Closed" )
   Boolean closed();

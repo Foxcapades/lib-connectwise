@@ -16,17 +16,17 @@
 package io.vulpine.connectwise.type.def.gen.field;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.vulpine.connectwise.type.def.gen.HasBottomComment;
-import io.vulpine.connectwise.util.Field;
+import io.vulpine.connectwise.type.def.gen.HasTaxable;
+import io.vulpine.connectwise.util.BooleanField;
 
-public interface HasBottomCommentField < T > extends HasBottomComment < T >
+public interface HasTaxableField extends HasTaxable
 {
   @JsonIgnore
-  Field < T > bottomCommentField();
+  BooleanField taxableField();
 
   @Override
-  default T bottomComment()
+  default Boolean taxable()
   {
-    return bottomCommentField().get();
+    return taxableField().get();
   }
 }

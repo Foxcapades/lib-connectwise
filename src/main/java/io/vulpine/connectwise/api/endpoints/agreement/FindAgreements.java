@@ -22,13 +22,13 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import io.vulpine.connectwise.api.def.SubApiInterface;
 import io.vulpine.connectwise.api.common.Credentials;
-import io.vulpine.connectwise.type.agreement.FoundAgreement;
+import io.vulpine.connectwise.type.agreement.SimpleFoundAgreement;
 
 import java.io.IOException;
 import java.util.List;
 
 @JacksonXmlRootElement(localName = "FindAgreements")
-public class FindAgreements extends _FindCommon< List < FoundAgreement > >
+public class FindAgreements extends _FindCommon< List < SimpleFoundAgreement > >
 {
   @JacksonXmlProperty( localName = "isOpen" )
   protected Boolean open = null;
@@ -56,7 +56,7 @@ public class FindAgreements extends _FindCommon< List < FoundAgreement > >
   }
 
   @Override
-  public List < FoundAgreement > submit () throws IOException
+  public List < SimpleFoundAgreement > submit () throws IOException
   {
     this.logger.trace(this.getClass());
     final FindAgreementsResponse r = getXmlMapper().readerFor(FindAgreementsResponse.class).readValue(getApi().send(this).replaceAll("Overrruns", "Overruns"));

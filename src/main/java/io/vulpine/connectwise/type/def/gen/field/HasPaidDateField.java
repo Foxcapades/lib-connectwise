@@ -16,17 +16,19 @@
 package io.vulpine.connectwise.type.def.gen.field;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.vulpine.connectwise.type.def.gen.HasBottomComment;
-import io.vulpine.connectwise.util.Field;
+import io.vulpine.connectwise.type.def.gen.HasPaidDate;
+import io.vulpine.connectwise.util.DateField;
 
-public interface HasBottomCommentField < T > extends HasBottomComment < T >
+import java.util.Date;
+
+public interface HasPaidDateField extends HasPaidDate
 {
   @JsonIgnore
-  Field < T > bottomCommentField();
+  DateField paidDateField();
 
   @Override
-  default T bottomComment()
+  default Date paidDate()
   {
-    return bottomCommentField().get();
+    return paidDateField().get();
   }
 }

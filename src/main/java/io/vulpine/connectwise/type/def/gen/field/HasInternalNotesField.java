@@ -16,17 +16,17 @@
 package io.vulpine.connectwise.type.def.gen.field;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.vulpine.connectwise.type.def.gen.HasBottomComment;
-import io.vulpine.connectwise.util.Field;
+import io.vulpine.connectwise.type.def.gen.HasInternalNotes;
+import io.vulpine.connectwise.util.StringField;
 
-public interface HasBottomCommentField < T > extends HasBottomComment < T >
+public interface HasInternalNotesField extends HasInternalNotes
 {
   @JsonIgnore
-  Field < T > bottomCommentField();
+  StringField internalNotesField();
 
   @Override
-  default T bottomComment()
+  default String internalNotes()
   {
-    return bottomCommentField().get();
+    return internalNotesField().get();
   }
 }
