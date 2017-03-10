@@ -24,49 +24,49 @@ import java.util.Date;
 
 public class Agreement extends ConnectwiseCommon
 {
-  private boolean allowOverruns;
+  private Boolean allowOverruns;
 
-  private boolean applicationUnlimited;
+  private Boolean applicationUnlimited;
 
-  private boolean billableExpenseInvoice;
+  private Boolean billableExpenseInvoice;
 
-  private boolean billableProductInvoice;
+  private Boolean billableProductInvoice;
 
-  private boolean billableTimeInvoice;
+  private Boolean billableTimeInvoice;
 
-  private boolean billOneTime;
+  private Boolean billOneTime;
 
-  private boolean bottomComment;
+  private Boolean bottomComment;
 
-  private boolean cancelled;
+  private Boolean cancelled;
 
-  private boolean carryOverUnused;
+  private Boolean carryOverUnused;
 
-  private boolean chargeToFirm;
+  private Boolean chargeToFirm;
 
-  private boolean coverAgreementExpense;
+  private Boolean coverAgreementExpense;
 
-  private boolean coverAgreementProduct;
+  private Boolean coverAgreementProduct;
 
-  private boolean coverAgreementTime;
+  private Boolean coverAgreementTime;
 
-  private boolean coverSalesTax;
+  private Boolean coverSalesTax;
 
-  private boolean expireWhenZero;
+  private Boolean expireWhenZero;
 
-  private boolean noEndingDate;
+  private Boolean noEndingDate;
 
-  private boolean oneTime;
+  private Boolean oneTime;
 
-  private boolean restrictDepartment;
+  private Boolean restrictDepartment;
 
-  private boolean restrictDownPayment;
+  private Boolean restrictDownPayment;
 
-  private boolean restrictLocation;
+  private Boolean restrictLocation;
 
-  private boolean taxable;
+  private Boolean taxable;
 
-  private boolean topComment;
+  private Boolean topComment;
 
   private Date billStartDate;
 
@@ -76,57 +76,57 @@ public class Agreement extends ConnectwiseCommon
 
   private Date startDate;
 
-  private double applicationLimit;
+  private Double applicationLimit;
 
-  private double billAmount;
+  private Double billAmount;
 
-  private double compHourlyRate;
+  private Double compHourlyRate;
 
-  private double compLimitAmount;
+  private Double compLimitAmount;
 
-  private double prorateFirstBill;
+  private Double prorateFirstBill;
 
-  private int agreementTypeId;
+  private Integer agreementTypeId;
 
-  private int billCycleId;
+  private Integer billCycleId;
 
-  private int billTermsId;
+  private Integer billTermsId;
 
-  private int billToAddressId;
+  private Integer billToAddressId;
 
-  private int billToCompanyId;
+  private Integer billToCompanyId;
 
-  private int contactId;
+  private Integer contactId;
 
-  private int companyId;
+  private Integer companyId;
 
-  private int departmentId;
+  private Integer departmentId;
 
-  private int expiredDays;
+  private Integer expiredDays;
 
-  private int invoiceTemplateId;
+  private Integer invoiceTemplateId;
 
-  private int limit;
+  private Integer limit;
 
-  private int locationId;
+  private Integer locationId;
 
-  private int opportunityId;
+  private Integer opportunityId;
 
-  private int parentAgreementId;
+  private Integer parentAgreementId;
 
-  private int projectTypeId;
+  private Integer projectTypeId;
 
-  private int slaId;
+  private Integer slaId;
 
-  private int subContractCompanyId;
+  private Integer subContractCompanyId;
 
-  private int subContractContactId;
+  private Integer subContractContactId;
 
-  private int taxCodeId;
+  private Integer taxCodeId;
 
-  private int workRoleId;
+  private Integer workRoleId;
 
-  private int workTypeId;
+  private Integer workTypeId;
 
   private String agreementName;
 
@@ -173,13 +173,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "AgreementTypeId" )
-  public int agreementTypeId()
+  public Integer agreementTypeId()
   {
     return agreementTypeId;
   }
 
   @JsonSetter( "AgreementTypeId" )
-  public Agreement agreementTypeId( int agreementTypeId )
+  public Agreement agreementTypeId( Integer agreementTypeId )
   {
     this.agreementTypeId = agreementTypeId;
 
@@ -201,13 +201,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "ApplicationLimit" )
-  public double applicationLimit()
+  public Double applicationLimit()
   {
     return applicationLimit;
   }
 
   @JsonSetter( "ApplicationLimit" )
-  public Agreement applicationLimit( double applicationLimit )
+  public Agreement applicationLimit( Double applicationLimit )
   {
     this.applicationLimit = applicationLimit;
 
@@ -229,13 +229,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillAmount" )
-  public double billAmount()
+  public Double billAmount()
   {
     return billAmount;
   }
 
   @JsonSetter( "BillAmount" )
-  public Agreement billAmount( double billAmount )
+  public Agreement billAmount( Double billAmount )
   {
     this.billAmount = billAmount;
 
@@ -243,13 +243,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillCycleId" )
-  public int billCycleId()
+  public Integer billCycleId()
   {
     return billCycleId;
   }
 
   @JsonSetter( "BillCycleId" )
-  public Agreement billCycleId( int billCycleId )
+  public Agreement billCycleId( Integer billCycleId )
   {
     this.billCycleId = billCycleId;
 
@@ -301,13 +301,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillTermsId" )
-  public int billTermsId()
+  public Integer billTermsId()
   {
     return billTermsId;
   }
 
   @JsonSetter( "BillTermsId" )
-  public Agreement billTermsId( int billTermsId )
+  public Agreement billTermsId( Integer billTermsId )
   {
     this.billTermsId = billTermsId;
 
@@ -329,13 +329,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillToAddressId" )
-  public int billToAddressId()
+  public Integer billToAddressId()
   {
     return billToAddressId;
   }
 
   @JsonSetter( "BillToAddressId" )
-  public Agreement billToAddressId( int billToAddressId )
+  public Agreement billToAddressId( Integer billToAddressId )
   {
     this.billToAddressId = billToAddressId;
 
@@ -343,13 +343,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillToCompanyId" )
-  public int billToCompanyId()
+  public Integer billToCompanyId()
   {
     return billToCompanyId;
   }
 
   @JsonSetter( "BillToCompanyId" )
-  public Agreement billToCompanyId( int billToCompanyId )
+  public Agreement billToCompanyId( Integer billToCompanyId )
   {
     this.billToCompanyId = billToCompanyId;
 
@@ -357,13 +357,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "CompHourlyRate" )
-  public double compHourlyRate()
+  public Double compHourlyRate()
   {
     return compHourlyRate;
   }
 
   @JsonSetter( "CompHourlyRate" )
-  public Agreement compHourlyRate( double compHourlyRate )
+  public Agreement compHourlyRate( Double compHourlyRate )
   {
     this.compHourlyRate = compHourlyRate;
 
@@ -371,13 +371,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "CompLimitAmount" )
-  public double compLimitAmount()
+  public Double compLimitAmount()
   {
     return compLimitAmount;
   }
 
   @JsonSetter( "CompLimitAmount" )
-  public Agreement compLimitAmount( double compLimitAmount )
+  public Agreement compLimitAmount( Double compLimitAmount )
   {
     this.compLimitAmount = compLimitAmount;
 
@@ -385,13 +385,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "CompanyId" )
-  public int companyId()
+  public Integer companyId()
   {
     return companyId;
   }
 
   @JsonSetter( "CompanyId" )
-  public Agreement companyId( int companyId )
+  public Agreement companyId( Integer companyId )
   {
     this.companyId = companyId;
 
@@ -399,13 +399,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "ContactId" )
-  public int contactId()
+  public Integer contactId()
   {
     return contactId;
   }
 
   @JsonSetter( "ContactId" )
-  public Agreement contactId( int contactId )
+  public Agreement contactId( Integer contactId )
   {
     this.contactId = contactId;
 
@@ -443,13 +443,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "DepartmentId" )
-  public int departmentId()
+  public Integer departmentId()
   {
     return departmentId;
   }
 
   @JsonSetter( "DepartmentId" )
-  public Agreement departmentId( int departmentId )
+  public Agreement departmentId( Integer departmentId )
   {
     this.departmentId = departmentId;
 
@@ -501,13 +501,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "ExpiredDays" )
-  public int expiredDays()
+  public Integer expiredDays()
   {
     return expiredDays;
   }
 
   @JsonSetter( "ExpiredDays" )
-  public Agreement expiredDays( int expiredDays )
+  public Agreement expiredDays( Integer expiredDays )
   {
     this.expiredDays = expiredDays;
 
@@ -543,13 +543,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "InvoiceTemplateId" )
-  public int invoiceTemplateId()
+  public Integer invoiceTemplateId()
   {
     return invoiceTemplateId;
   }
 
   @JsonSetter( "InvoiceTemplateId" )
-  public Agreement invoiceTemplateId( int invoiceTemplateId )
+  public Agreement invoiceTemplateId( Integer invoiceTemplateId )
   {
     this.invoiceTemplateId = invoiceTemplateId;
 
@@ -571,13 +571,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "Limit" )
-  public int limit()
+  public Integer limit()
   {
     return limit;
   }
 
   @JsonSetter( "Limit" )
-  public Agreement limit( int limit )
+  public Agreement limit( Integer limit )
   {
     this.limit = limit;
 
@@ -585,13 +585,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "LocationId" )
-  public int locationId()
+  public Integer locationId()
   {
     return locationId;
   }
 
   @JsonSetter( "LocationId" )
-  public Agreement locationId( int locationId )
+  public Agreement locationId( Integer locationId )
   {
     this.locationId = locationId;
 
@@ -599,13 +599,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "OpportunityId" )
-  public int opportunityId()
+  public Integer opportunityId()
   {
     return opportunityId;
   }
 
   @JsonSetter( "OpportunityId" )
-  public Agreement opportunityId( int opportunityId )
+  public Agreement opportunityId( Integer opportunityId )
   {
     this.opportunityId = opportunityId;
 
@@ -613,13 +613,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( value = "ParentAgreementId" )
-  public int parentAgreementId()
+  public Integer parentAgreementId()
   {
     return parentAgreementId;
   }
 
   @JsonGetter( value = "ParentAgreementId" )
-  public Agreement parentAgreementId( int parentAgreementId )
+  public Agreement parentAgreementId( Integer parentAgreementId )
   {
     this.parentAgreementId = parentAgreementId;
 
@@ -641,13 +641,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "ProjectTypeId" )
-  public int projectTypeId()
+  public Integer projectTypeId()
   {
     return projectTypeId;
   }
 
   @JsonSetter( "ProjectTypeId" )
-  public Agreement projectTypeId( int projectTypeId )
+  public Agreement projectTypeId( Integer projectTypeId )
   {
     this.projectTypeId = projectTypeId;
 
@@ -655,13 +655,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "ProrateFirstBill" )
-  public double prorateFirstBill()
+  public Double prorateFirstBill()
   {
     return prorateFirstBill;
   }
 
   @JsonSetter( "ProrateFirstBill" )
-  public Agreement prorateFirstBill( double prorateFirstBill )
+  public Agreement prorateFirstBill( Double prorateFirstBill )
   {
     this.prorateFirstBill = prorateFirstBill;
 
@@ -683,13 +683,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "SlaId" )
-  public int slaId()
+  public Integer slaId()
   {
     return slaId;
   }
 
   @JsonSetter( "SlaId" )
-  public Agreement slaId( int slaId )
+  public Agreement slaId( Integer slaId )
   {
     this.slaId = slaId;
 
@@ -713,13 +713,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "SubContractCompanyId" )
-  public int subContractCompanyId()
+  public Integer subContractCompanyId()
   {
     return subContractCompanyId;
   }
 
   @JsonSetter( "SubContractCompanyId" )
-  public Agreement subContractCompanyId( int subContractCompanyId )
+  public Agreement subContractCompanyId( Integer subContractCompanyId )
   {
     this.subContractCompanyId = subContractCompanyId;
 
@@ -727,13 +727,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "SubContractContactId" )
-  public int subContractContactId()
+  public Integer subContractContactId()
   {
     return subContractContactId;
   }
 
   @JsonSetter( "SubContractContactId" )
-  public Agreement subContractContactId( int subContractContactId )
+  public Agreement subContractContactId( Integer subContractContactId )
   {
     this.subContractContactId = subContractContactId;
 
@@ -741,13 +741,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "TaxCodeId" )
-  public int taxCodeId()
+  public Integer taxCodeId()
   {
     return taxCodeId;
   }
 
   @JsonSetter( "TaxCodeId" )
-  public Agreement taxCodeId( int taxCodeId )
+  public Agreement taxCodeId( Integer taxCodeId )
   {
     this.taxCodeId = taxCodeId;
 
@@ -769,13 +769,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "WorkRoleId" )
-  public int workRoleId()
+  public Integer workRoleId()
   {
     return workRoleId;
   }
 
   @JsonSetter( "WorkRoleId" )
-  public Agreement workRoleId( int workRoleId )
+  public Agreement workRoleId( Integer workRoleId )
   {
     this.workRoleId = workRoleId;
 
@@ -783,13 +783,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "WorkTypeId" )
-  public int workTypeId()
+  public Integer workTypeId()
   {
     return workTypeId;
   }
 
   @JsonSetter( "WorkTypeId" )
-  public Agreement workTypeId( int workTypeId )
+  public Agreement workTypeId( Integer workTypeId )
   {
     this.workTypeId = workTypeId;
 
@@ -797,13 +797,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "AllowOverruns" )
-  public boolean allowOverruns()
+  public Boolean allowOverruns()
   {
     return allowOverruns;
   }
 
   @JsonSetter( "AllowOverruns" )
-  public Agreement allowOverruns( boolean allowOverruns )
+  public Agreement allowOverruns( Boolean allowOverruns )
   {
     this.allowOverruns = allowOverruns;
 
@@ -811,13 +811,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "ApplicationUnlimitedFlag" )
-  public boolean applicationUnlimited()
+  public Boolean applicationUnlimited()
   {
     return applicationUnlimited;
   }
 
   @JsonSetter( "ApplicationUnlimitedFlag" )
-  public Agreement applicationUnlimited( boolean applicationUnlimited )
+  public Agreement applicationUnlimited( Boolean applicationUnlimited )
   {
     this.applicationUnlimited = applicationUnlimited;
 
@@ -825,13 +825,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillOneTimeFlag" )
-  public boolean billOneTime()
+  public Boolean billOneTime()
   {
     return billOneTime;
   }
 
   @JsonSetter( "BillOneTimeFlag" )
-  public Agreement billOneTime( boolean billOneTime )
+  public Agreement billOneTime( Boolean billOneTime )
   {
     this.billOneTime = billOneTime;
 
@@ -839,13 +839,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillableExpenseInvoice" )
-  public boolean billableExpenseInvoice()
+  public Boolean billableExpenseInvoice()
   {
     return billableExpenseInvoice;
   }
 
   @JsonSetter( "BillableExpenseInvoice" )
-  public Agreement billableExpenseInvoice( boolean billableExpenseInvoice )
+  public Agreement billableExpenseInvoice( Boolean billableExpenseInvoice )
   {
     this.billableExpenseInvoice = billableExpenseInvoice;
 
@@ -853,13 +853,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillableProductInvoice" )
-  public boolean billableProductInvoice()
+  public Boolean billableProductInvoice()
   {
     return billableProductInvoice;
   }
 
   @JsonSetter( "BillableProductInvoice" )
-  public Agreement billableProductInvoice( boolean billableProductInvoice )
+  public Agreement billableProductInvoice( Boolean billableProductInvoice )
   {
     this.billableProductInvoice = billableProductInvoice;
 
@@ -867,13 +867,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "BillableTimeInvoice" )
-  public boolean billableTimeInvoice()
+  public Boolean billableTimeInvoice()
   {
     return billableTimeInvoice;
   }
 
   @JsonSetter( "BillableTimeInvoice" )
-  public Agreement billableTimeInvoice( boolean billableTimeInvoice )
+  public Agreement billableTimeInvoice( Boolean billableTimeInvoice )
   {
     this.billableTimeInvoice = billableTimeInvoice;
 
@@ -881,13 +881,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "BottomComment" )
-  public boolean bottomComment()
+  public Boolean bottomComment()
   {
     return bottomComment;
   }
 
   @JsonSetter( "BottomComment" )
-  public Agreement bottomComment( boolean bottomComment )
+  public Agreement bottomComment( Boolean bottomComment )
   {
     this.bottomComment = bottomComment;
 
@@ -895,13 +895,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "CancelledFlag" )
-  public boolean cancelled()
+  public Boolean cancelled()
   {
     return cancelled;
   }
 
   @JsonSetter( "CancelledFlag" )
-  public Agreement cancelled( boolean cancelled )
+  public Agreement cancelled( Boolean cancelled )
   {
     this.cancelled = cancelled;
 
@@ -909,13 +909,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "CarryOverUnused" )
-  public boolean carryOverUnused()
+  public Boolean carryOverUnused()
   {
     return carryOverUnused;
   }
 
   @JsonSetter( "CarryOverUnused" )
-  public Agreement carryOverUnused( boolean carryOverUnused )
+  public Agreement carryOverUnused( Boolean carryOverUnused )
   {
     this.carryOverUnused = carryOverUnused;
 
@@ -923,13 +923,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "ChargeToFirm" )
-  public boolean chargeToFirm()
+  public Boolean chargeToFirm()
   {
     return chargeToFirm;
   }
 
   @JsonSetter( "ChargeToFirm" )
-  public Agreement chargeToFirm( boolean chargeToFirm )
+  public Agreement chargeToFirm( Boolean chargeToFirm )
   {
     this.chargeToFirm = chargeToFirm;
 
@@ -937,13 +937,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "CoverAgreementExpense" )
-  public boolean coverAgreementExpense()
+  public Boolean coverAgreementExpense()
   {
     return coverAgreementExpense;
   }
 
   @JsonSetter( "CoverAgreementExpense" )
-  public Agreement coverAgreementExpense( boolean coverAgreementExpense )
+  public Agreement coverAgreementExpense( Boolean coverAgreementExpense )
   {
     this.coverAgreementExpense = coverAgreementExpense;
 
@@ -951,13 +951,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "CoverAgreementProduct" )
-  public boolean coverAgreementProduct()
+  public Boolean coverAgreementProduct()
   {
     return coverAgreementProduct;
   }
 
   @JsonSetter( "CoverAgreementProduct" )
-  public Agreement coverAgreementProduct( boolean coverAgreementProduct )
+  public Agreement coverAgreementProduct( Boolean coverAgreementProduct )
   {
     this.coverAgreementProduct = coverAgreementProduct;
 
@@ -965,13 +965,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "CoverAgreementTime" )
-  public boolean coverAgreementTime()
+  public Boolean coverAgreementTime()
   {
     return coverAgreementTime;
   }
 
   @JsonSetter( "CoverAgreementTime" )
-  public Agreement coverAgreementTime( boolean coverAgreementTime )
+  public Agreement coverAgreementTime( Boolean coverAgreementTime )
   {
     this.coverAgreementTime = coverAgreementTime;
 
@@ -979,13 +979,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "CoverSalesTax" )
-  public boolean coverSalesTax()
+  public Boolean coverSalesTax()
   {
     return coverSalesTax;
   }
 
   @JsonSetter( "CoverSalesTax" )
-  public Agreement coverSalesTax( boolean coverSalesTax )
+  public Agreement coverSalesTax( Boolean coverSalesTax )
   {
     this.coverSalesTax = coverSalesTax;
 
@@ -993,13 +993,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "ExpireWhenZero" )
-  public boolean expireWhenZero()
+  public Boolean expireWhenZero()
   {
     return expireWhenZero;
   }
 
   @JsonSetter( "ExpireWhenZero" )
-  public Agreement expireWhenZero( boolean expireWhenZero )
+  public Agreement expireWhenZero( Boolean expireWhenZero )
   {
     this.expireWhenZero = expireWhenZero;
 
@@ -1007,13 +1007,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "NoEndingDateFlag" )
-  public boolean noEndingDate()
+  public Boolean noEndingDate()
   {
     return noEndingDate;
   }
 
   @JsonSetter( "NoEndingDateFlag" )
-  public Agreement noEndingDate( boolean noEndingDate )
+  public Agreement noEndingDate( Boolean noEndingDate )
   {
     this.noEndingDate = noEndingDate;
 
@@ -1021,13 +1021,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "OneTimeFlag" )
-  public boolean oneTime()
+  public Boolean oneTime()
   {
     return oneTime;
   }
 
   @JsonSetter( "OneTimeFlag" )
-  public Agreement oneTime( boolean oneTime )
+  public Agreement oneTime( Boolean oneTime )
   {
     this.oneTime = oneTime;
 
@@ -1035,13 +1035,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "RestrictDepartmentFlag" )
-  public boolean restrictDepartment()
+  public Boolean restrictDepartment()
   {
     return restrictDepartment;
   }
 
   @JsonSetter( "RestrictDepartmentFlag" )
-  public Agreement restrictDepartment( final boolean restrictDepartment )
+  public Agreement restrictDepartment( final Boolean restrictDepartment )
   {
     this.restrictDepartment = restrictDepartment;
 
@@ -1049,13 +1049,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "RestrictDownPayment" )
-  public boolean restrictDownPayment()
+  public Boolean restrictDownPayment()
   {
     return restrictDownPayment;
   }
 
   @JsonSetter( "RestrictDownPayment" )
-  public Agreement restrictDownPayment( boolean restrictDownPayment )
+  public Agreement restrictDownPayment( Boolean restrictDownPayment )
   {
     this.restrictDownPayment = restrictDownPayment;
 
@@ -1063,13 +1063,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "RestrictLocationFlag" )
-  public boolean restrictLocation()
+  public Boolean restrictLocation()
   {
     return restrictLocation;
   }
 
   @JsonSetter( "RestrictLocationFlag" )
-  public Agreement restrictLocation( boolean restrictLocation )
+  public Agreement restrictLocation( Boolean restrictLocation )
   {
     this.restrictLocation = restrictLocation;
 
@@ -1077,13 +1077,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "Taxable" )
-  public boolean taxable()
+  public Boolean taxable()
   {
     return taxable;
   }
 
   @JsonSetter( "Taxable" )
-  public Agreement taxable( boolean taxable )
+  public Agreement taxable( Boolean taxable )
   {
     this.taxable = taxable;
 
@@ -1091,13 +1091,13 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "TopComment" )
-  public boolean topComment()
+  public Boolean topComment()
   {
     return topComment;
   }
 
   @JsonSetter( "TopComment" )
-  public Agreement topComment( boolean topComment )
+  public Agreement topComment( Boolean topComment )
   {
     this.topComment = topComment;
 
