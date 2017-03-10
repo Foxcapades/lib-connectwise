@@ -797,12 +797,26 @@ public class Agreement extends ConnectwiseCommon
   }
 
   @JsonGetter( "AllowOverrruns" )
-  public Boolean allowOverruns()
+  public Boolean allowOverrruns()
   {
     return allowOverruns;
   }
 
   @JsonSetter( "AllowOverrruns" )
+  public Agreement allowOverrruns( Boolean allowOverruns )
+  {
+    this.allowOverruns = allowOverruns;
+
+    return this;
+  }
+
+  @JsonGetter( "AllowOverruns" )
+  public Boolean allowOverruns()
+  {
+    return allowOverruns;
+  }
+
+  @JsonSetter( "AllowOverruns" )
   public Agreement allowOverruns( Boolean allowOverruns )
   {
     this.allowOverruns = allowOverruns;
