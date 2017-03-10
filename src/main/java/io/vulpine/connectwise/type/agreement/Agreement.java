@@ -288,14 +288,14 @@ public class Agreement extends ConnectwiseCommon
   @JsonGetter( "BillStartDate" )
   public Date billStartDate()
   {
-    return new Date(billStartDate.getTime());
+    return billStartDate;
   }
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
   @JsonSetter( "BillStartDate" )
   public Agreement billStartDate( final Date billStartDate )
   {
-    this.billStartDate = new Date(billStartDate.getTime());
+    this.billStartDate = billStartDate;
 
     return this;
   }
@@ -437,7 +437,7 @@ public class Agreement extends ConnectwiseCommon
   @JsonSetter( "DateCancelled" )
   public Agreement dateCancelled( final Date dateCancelled )
   {
-    this.dateCancelled = new Date(dateCancelled.getTime());
+    this.dateCancelled = dateCancelled;
 
     return this;
   }
@@ -488,14 +488,14 @@ public class Agreement extends ConnectwiseCommon
   @JsonGetter( "EndDate" )
   public Date endDate()
   {
-    return new Date(endDate.getTime());
+    return endDate;
   }
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
   @JsonSetter( "EndDate" )
   public Agreement endDate( final Date endDate )
   {
-    this.endDate = new Date(endDate.getTime());
+    this.endDate = endDate;
 
     return this;
   }
@@ -700,14 +700,14 @@ public class Agreement extends ConnectwiseCommon
   @JsonGetter( "StartDate" )
   public Date startDate()
   {
-    return new Date(startDate.getTime());
+    return startDate;
   }
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss" )
   @JsonSetter( "StartDate" )
   public Agreement startDate( final Date startDate )
   {
-    this.startDate = new Date(startDate.getTime());
+    this.startDate = startDate;
 
     return this;
   }
